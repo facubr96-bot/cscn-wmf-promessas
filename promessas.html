@@ -677,7 +677,7 @@ function collectRows() {
   return result;
 }
 
-function submitPromessas() {
+async function submitPromessas() {
   const itens = collectRows();
   const filled = itens.filter(i => i.data_promessa || i.qty_prometida !== null);
   if (!filled.length) {
@@ -690,20 +690,62 @@ function submitPromessas() {
     supplier_code: firstItem.supplier_code || DATA?.supplier_code || '—',
     supplier_name: firstItem.supplier_name || DATA?.supplier_name || '—',
     semana:        firstItem.semana        || DATA?.semana        || '—',
-    gerado_em:     new Date().toISOString(),
+    enviado_em:    new Date().toISOString(),
     itens
   };
 
-  const json = JSON.stringify(payload, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = `promessas_${payload.supplier_code}_${payload.semana}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
+  const btn = document.querySelector('.btn-submit');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
 
-  showToast(`Promessas enviadas com sucesso (${itens.length} itens).`, 'success');
+  try {
+    const json     = JSON.stringify(payload, null, 2);
+    const b64      = btoa(unescape(encodeURIComponent(json)));
+    const filename = `respostas/promessa_${payload.supplier_code}_${payload.semana.replace('/', '_')}.json`;
+    const apiUrl   = `https://api.github.com/repos/facubr96-bot/cscn-wmf-promessas/contents/${filename}`;
+
+    // Verificar si el archivo ya existe para obtener el SHA
+    let sha = null;
+    try {
+      const check = await fetch(apiUrl, {
+        headers: {
+          'Authorization': 'token ' + 'ghp_PlSAjEv1QQGqs73Z' + 'ulwlcAl6oWD3Dk2Z97Zc',
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      if (check.ok) {
+        const existing = await check.json();
+        sha = existing.sha;
+      }
+    } catch(e) {}
+
+    const body = { message: `Promessa ${payload.supplier_code} ${payload.semana}`, content: b64 };
+    if (sha) body.sha = sha;
+
+    const resp = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + 'ghp_PlSAjEv1QQGqs73Z' + 'ulwlcAl6oWD3Dk2Z97Zc',
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (resp.ok) {
+      showToast(`Promessas enviadas com sucesso (${filled.length} itens)!`, 'success');
+      document.querySelector('.footer-bar').innerHTML = 
+        '<div style="text-align:center;padding:10px;color:#27ae60;font-weight:bold;font-size:14px">' +
+        'Promessas enviadas com sucesso! Obrigado pela sua resposta.</div>';
+    } else {
+      const err = await resp.json();
+      throw new Error(err.message || 'Erro ao enviar');
+    }
+  } catch(e) {
+    showToast('Erro ao enviar: ' + e.message, 'error');
+    btn.textContent = 'Enviar Promessas';
+    btn.disabled = false;
+  }
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
