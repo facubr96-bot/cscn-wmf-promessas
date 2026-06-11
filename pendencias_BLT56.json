@@ -1,0 +1,23 @@
+{
+  "supplier_code": "BLT56",
+  "supplier_name": "BORGWARNER BRASIL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "91841400",
+      "supplier_code": "BLT56",
+      "supplier_name": "BORGWARNER BRASIL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 84.0,
+      "ship_date": "20280907",
+      "ultima_nfe": "000396658-009",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
