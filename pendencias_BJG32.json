@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BJG32",
+  "supplier_name": "METALAC INDUSTRIAL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "51680983",
+      "supplier_code": "BJG32",
+      "supplier_name": "METALAC INDUSTRIAL LTDA",
+      "impact": "1 - Menor",
+      "past_due_wmf": 2500.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20270707",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51461425",
+      "supplier_code": "BJG32",
+      "supplier_name": "METALAC INDUSTRIAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 370.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000357856-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
