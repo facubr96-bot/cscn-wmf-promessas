@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BNL72",
+  "supplier_name": "METALURGICA FIMAC LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "87493681",
+      "supplier_code": "BNL72",
+      "supplier_name": "METALURGICA FIMAC LTDA",
+      "impact": "1 - Menor",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 100.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "000138278-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "87586665",
+      "supplier_code": "BNL72",
+      "supplier_name": "METALURGICA FIMAC LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 9.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000136043-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "90385400",
+      "supplier_code": "BNL72",
+      "supplier_name": "METALURGICA FIMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 50.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000137658-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84288671",
+      "supplier_code": "BNL72",
+      "supplier_name": "METALURGICA FIMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 20.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000136826-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
