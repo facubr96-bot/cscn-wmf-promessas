@@ -1,0 +1,53 @@
+{
+  "supplier_code": "BNM94",
+  "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "84172050",
+      "supplier_code": "BNM94",
+      "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
+      "impact": "1 - Menor",
+      "past_due_wmf": 107.0,
+      "firm_jun_wmf": 20.0,
+      "firm_jul_wmf": 9.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000384214-090",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "380740A1",
+      "supplier_code": "BNM94",
+      "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 50.0,
+      "firm_jul_wmf": 50.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000386277-090",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84176521",
+      "supplier_code": "BNM94",
+      "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 1.0,
+      "ship_date": "20260811",
+      "ultima_nfe": "000375059-090",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
