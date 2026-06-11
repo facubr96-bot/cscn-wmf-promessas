@@ -1,0 +1,53 @@
+{
+  "supplier_code": "BJD99",
+  "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "87399657",
+      "supplier_code": "BJD99",
+      "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 100.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000314349-003",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84603436",
+      "supplier_code": "BJD99",
+      "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 46.0,
+      "firm_jul_wmf": 120.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000314349-003",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "87373859",
+      "supplier_code": "BJD99",
+      "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 120.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000313004-003",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
