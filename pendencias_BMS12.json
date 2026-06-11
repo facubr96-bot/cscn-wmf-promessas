@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BMS12",
+  "supplier_name": "BORRACHAS CREPESUL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "47486738",
+      "supplier_code": "BMS12",
+      "supplier_name": "BORRACHAS CREPESUL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 40.0,
+      "firm_jul_wmf": 40.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000061105-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "47486420",
+      "supplier_code": "BMS12",
+      "supplier_name": "BORRACHAS CREPESUL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 60.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000061105-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
