@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BPH65",
+  "supplier_name": "FUNDICAO SIDERAL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "82014606",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 8.0,
+      "firm_jun_wmf": 16.0,
+      "firm_jul_wmf": 26.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000101526-004",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "47780042",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 19.0,
+      "firm_jul_wmf": 8.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000099729-004",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "82024272",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 18.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000099749-004",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "82031491",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 9.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000100021-004",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
