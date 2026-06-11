@@ -1,0 +1,83 @@
+{
+  "supplier_code": "BMQ74",
+  "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "87645102",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 80.0,
+      "firm_jun_wmf": 80.0,
+      "firm_jul_wmf": 240.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000175490-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91746555",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 144.0,
+      "firm_jul_wmf": 216.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000175490-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84485310",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 4.0,
+      "firm_jul_wmf": 15.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000175490-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84522781",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 19.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20280808",
+      "ultima_nfe": "000170998-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "84254520",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 4.0,
+      "firm_jul_wmf": 15.0,
+      "ship_date": "20271104",
+      "ultima_nfe": "000175490-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
