@@ -1,0 +1,23 @@
+{
+  "supplier_code": "FBW92",
+  "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "91802796",
+      "supplier_code": "FBW92",
+      "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 45.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "000143315-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
