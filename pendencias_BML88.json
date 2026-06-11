@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BML88",
+  "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "51599650",
+      "supplier_code": "BML88",
+      "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 75.0,
+      "ship_date": "20271208",
+      "ultima_nfe": "000167064-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51599652",
+      "supplier_code": "BML88",
+      "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 75.0,
+      "ship_date": "20271208",
+      "ultima_nfe": "000167064-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "48151919",
+      "supplier_code": "BML88",
+      "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 18.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000167064-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51679793",
+      "supplier_code": "BML88",
+      "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 36.0,
+      "ship_date": "20280907",
+      "ultima_nfe": "000172607-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
