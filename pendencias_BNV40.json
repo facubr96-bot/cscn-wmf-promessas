@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BNV40",
+  "supplier_name": "TRAVI PLASTICOS LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "51443489",
+      "supplier_code": "BNV40",
+      "supplier_name": "TRAVI PLASTICOS LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 50.0,
+      "ship_date": "20280904",
+      "ultima_nfe": "000178757-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91820727",
+      "supplier_code": "BNV40",
+      "supplier_name": "TRAVI PLASTICOS LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 40.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "000178758-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
