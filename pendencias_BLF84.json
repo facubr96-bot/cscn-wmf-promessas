@@ -2,7 +2,7 @@
   "supplier_code": "BLF84",
   "supplier_name": "DONALDSON DO BRASIL EQUIPTOS INDS L",
   "semana": "S24/2026",
-  "gerado_em": "09/06/2026 16:47",
+  "gerado_em": "11/06/2026 15:50",
   "itens": [
     {
       "part_number": "51517792",
@@ -12,7 +12,7 @@
       "past_due_wmf": 0.0,
       "firm_jun_wmf": 16.0,
       "firm_jul_wmf": 60.0,
-      "ship_date": "20281006",
+      "ship_date": "20260617",
       "ultima_nfe": "000241882-003",
       "semana": "S24/2026",
       "promessa_data": "",
@@ -27,7 +27,7 @@
       "past_due_wmf": 8.0,
       "firm_jun_wmf": 63.0,
       "firm_jul_wmf": 46.0,
-      "ship_date": "20281006",
+      "ship_date": "20260605",
       "ultima_nfe": "000241882-003",
       "semana": "S24/2026",
       "promessa_data": "",
