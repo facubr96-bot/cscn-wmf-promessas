@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BNF47",
+  "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "14499401",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 200.0,
+      "firm_jul_wmf": 100.0,
+      "ship_date": "20280803",
+      "ultima_nfe": "000013399-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "82004583",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 36.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20260615",
+      "ultima_nfe": "000013399-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "82034842",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 800.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "000012205-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "392530",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 1500.0,
+      "firm_jun_wmf": 300.0,
+      "firm_jul_wmf": 300.0,
+      "ship_date": "20280920",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
