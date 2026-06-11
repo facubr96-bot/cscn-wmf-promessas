@@ -1,0 +1,83 @@
+{
+  "supplier_code": "BNT57",
+  "supplier_name": "ETHOS INDUSTRIAL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "47895159",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
+      "impact": "1 - Menor",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 12.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000205759-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51679858",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 6.0,
+      "ship_date": "20280907",
+      "ultima_nfe": "000205755-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51679826",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 5.0,
+      "ship_date": "20280907",
+      "ultima_nfe": "000205754-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51679860",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 6.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000205756-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "47534864",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 20.0,
+      "ship_date": "20280707",
+      "ultima_nfe": "000204315-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
