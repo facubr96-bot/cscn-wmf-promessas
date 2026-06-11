@@ -1,0 +1,53 @@
+{
+  "supplier_code": "DYY59",
+  "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "92074204",
+      "supplier_code": "DYY59",
+      "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 20.0,
+      "firm_jul_wmf": 20.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000075750-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "92075047",
+      "supplier_code": "DYY59",
+      "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 40.0,
+      "firm_jul_wmf": 20.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000075830-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51668922",
+      "supplier_code": "DYY59",
+      "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 20.0,
+      "ship_date": "20261113",
+      "ultima_nfe": "000074505-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
