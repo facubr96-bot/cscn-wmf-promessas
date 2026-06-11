@@ -1,0 +1,23 @@
+{
+  "supplier_code": "BKH14",
+  "supplier_name": "SCHAEFFLER BRASIL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "51424330",
+      "supplier_code": "BKH14",
+      "supplier_name": "SCHAEFFLER BRASIL LTDA",
+      "impact": "1 - Menor",
+      "past_due_wmf": 900.0,
+      "firm_jun_wmf": 50.0,
+      "firm_jul_wmf": 50.0,
+      "ship_date": "20281006",
+      "ultima_nfe": "000790127-010",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
