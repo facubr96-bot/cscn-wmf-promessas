@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BPD14",
+  "supplier_name": "METALURGICA KONDAK LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "90501054",
+      "supplier_code": "BPD14",
+      "supplier_name": "METALURGICA KONDAK LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 100.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20280803",
+      "ultima_nfe": "000138551-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "389974A1",
+      "supplier_code": "BPD14",
+      "supplier_name": "METALURGICA KONDAK LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 4.0,
+      "firm_jun_wmf": 14.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20260626",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
