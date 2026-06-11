@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BJQ95",
+  "supplier_name": "MAGIUS METALURGICA INDUSTRIAL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "5190471",
+      "supplier_code": "BJQ95",
+      "supplier_name": "MAGIUS METALURGICA INDUSTRIAL LTDA",
+      "impact": "1 - Menor",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 18.0,
+      "firm_jul_wmf": 10.0,
+      "ship_date": "20260727",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "5190497",
+      "supplier_code": "BJQ95",
+      "supplier_name": "MAGIUS METALURGICA INDUSTRIAL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 5.0,
+      "ship_date": "20260727",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
