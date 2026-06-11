@@ -1,0 +1,53 @@
+{
+  "supplier_code": "BLL51",
+  "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "9578926",
+      "supplier_code": "BLL51",
+      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 24.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20260403",
+      "ultima_nfe": "000288141-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "5151891",
+      "supplier_code": "BLL51",
+      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 20.0,
+      "firm_jul_wmf": 40.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000283776-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "9576267",
+      "supplier_code": "BLL51",
+      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 20.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000283775-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
