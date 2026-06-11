@@ -1,0 +1,83 @@
+{
+  "supplier_code": "BMN58",
+  "supplier_name": "METALURGICA IMAC LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "84538095",
+      "supplier_code": "BMN58",
+      "supplier_name": "METALURGICA IMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 39.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20280803",
+      "ultima_nfe": "000142045-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "87602190",
+      "supplier_code": "BMN58",
+      "supplier_name": "METALURGICA IMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 130.0,
+      "firm_jun_wmf": 56.0,
+      "firm_jul_wmf": 44.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "51478960",
+      "supplier_code": "BMN58",
+      "supplier_name": "METALURGICA IMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 100.0,
+      "ship_date": "20280601",
+      "ultima_nfe": "000143075-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91891861",
+      "supplier_code": "BMN58",
+      "supplier_name": "METALURGICA IMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 500.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "000142174-000",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "87389815",
+      "supplier_code": "BMN58",
+      "supplier_name": "METALURGICA IMAC LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 18.0,
+      "ship_date": "20281003",
+      "ultima_nfe": "",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
