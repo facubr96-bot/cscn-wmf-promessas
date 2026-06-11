@@ -1,0 +1,83 @@
+{
+  "supplier_code": "BQV50",
+  "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "91803773",
+      "supplier_code": "BQV50",
+      "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 28.0,
+      "ship_date": "20280807",
+      "ultima_nfe": "000489878-011",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "90514850",
+      "supplier_code": "BQV50",
+      "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 4.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000488664-011",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91818117",
+      "supplier_code": "BQV50",
+      "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 2.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20260415",
+      "ultima_nfe": "000489878-011",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91815852",
+      "supplier_code": "BQV50",
+      "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 2.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 0.0,
+      "ship_date": "20260415",
+      "ultima_nfe": "000489878-011",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91803770",
+      "supplier_code": "BQV50",
+      "supplier_name": "APTIV MANUFATURA E SERVICOS DE DIST",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 40.0,
+      "ship_date": "20280807",
+      "ultima_nfe": "000486645-011",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
