@@ -1,0 +1,38 @@
+{
+  "supplier_code": "FHM67",
+  "supplier_name": "DENSO DO BRASIL LTDA",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "91757668",
+      "supplier_code": "FHM67",
+      "supplier_name": "DENSO DO BRASIL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 12.0,
+      "firm_jun_wmf": 33.0,
+      "firm_jul_wmf": 41.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000085435-018",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    },
+    {
+      "part_number": "91757663",
+      "supplier_code": "FHM67",
+      "supplier_name": "DENSO DO BRASIL LTDA",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 30.0,
+      "firm_jul_wmf": 41.0,
+      "ship_date": "20281005",
+      "ultima_nfe": "000100567-018",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
