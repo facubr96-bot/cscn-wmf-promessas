@@ -1,0 +1,23 @@
+{
+  "supplier_code": "BKG97",
+  "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
+  "semana": "S24/2026",
+  "gerado_em": "09/06/2026 16:47",
+  "itens": [
+    {
+      "part_number": "91768204",
+      "supplier_code": "BKG97",
+      "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
+      "impact": "4 - Stopper",
+      "past_due_wmf": 0.0,
+      "firm_jun_wmf": 0.0,
+      "firm_jul_wmf": 100.0,
+      "ship_date": "20280907",
+      "ultima_nfe": "000087989-001",
+      "semana": "S24/2026",
+      "promessa_data": "",
+      "promessa_qty": "",
+      "comentario": ""
+    }
+  ]
+}
