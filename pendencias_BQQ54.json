@@ -2,7 +2,7 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "S24/2026",
-  "gerado_em": "11/06/2026 17:02",
+  "gerado_em": "12/06/2026 08:33",
   "itens": [
     {
       "part_number": "91793224",
@@ -60,8 +60,8 @@
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "impact": "1 - Menor",
-      "past_due_wmf": 0.0,
-      "firm_jun_wmf": 15.0,
+      "past_due_wmf": 63.0,
+      "firm_jun_wmf": 0.0,
       "firm_jul_wmf": 0.0,
       "ship_date": "20260611",
       "ultima_nfe": "000055924-007",
