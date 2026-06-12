@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BRG98",
+  "supplier_name": "CONDUMAX - ELETRO METALURGICA CIAFU",
+  "semana": "S24/2026",
+  "enviado_em": "2026-06-12T17:16:45.032Z",
+  "itens": [
+    {
+      "part_number": "91759298",
+      "supplier_code": "BRG98",
+      "supplier_name": "CONDUMAX - ELETRO METALURGICA CIAFU",
+      "ship_date": "26/06/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000436925-003",
+      "semana": "S24/2026",
+      "data_promessa": "17/06/2026",
+      "qty_prometida": 56,
+      "comentario": ""
+    },
+    {
+      "part_number": "91759299",
+      "supplier_code": "BRG98",
+      "supplier_name": "CONDUMAX - ELETRO METALURGICA CIAFU",
+      "ship_date": "05/06/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000437310-003",
+      "semana": "S24/2026",
+      "data_promessa": "17/06/2026",
+      "qty_prometida": 60,
+      "comentario": ""
+    }
+  ]
+}
