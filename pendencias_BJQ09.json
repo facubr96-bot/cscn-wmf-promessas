@@ -2,7 +2,7 @@
   "supplier_code": "BJQ09",
   "supplier_name": "ZUKAUSKAS & CIA LTDA",
   "semana": "S24/2026",
-  "gerado_em": "12/06/2026 14:39",
+  "gerado_em": "12/06/2026 15:09",
   "itens": [
     {
       "part_number": "84989399",
@@ -15,10 +15,10 @@
       "ship_date": "20260618",
       "ultima_nfe": "000278737-001",
       "semana": "S24/2026",
-      "promessa_data": "26/06/2026",
-      "promessa_qty": "16",
+      "promessa_data": "",
+      "promessa_qty": "",
       "promessa_com": "",
-      "promessa_vigente": true,
+      "promessa_vigente": false,
       "comentario": ""
     },
     {
@@ -32,10 +32,10 @@
       "ship_date": "20260715",
       "ultima_nfe": "000275995-001",
       "semana": "S24/2026",
-      "promessa_data": "15/07/2026",
-      "promessa_qty": "100",
+      "promessa_data": "",
+      "promessa_qty": "",
       "promessa_com": "",
-      "promessa_vigente": true,
+      "promessa_vigente": false,
       "comentario": ""
     },
     {
@@ -49,10 +49,10 @@
       "ship_date": "20260728",
       "ultima_nfe": "000271575-001",
       "semana": "S24/2026",
-      "promessa_data": "28/07/2026",
-      "promessa_qty": "20",
+      "promessa_data": "",
+      "promessa_qty": "",
       "promessa_com": "",
-      "promessa_vigente": true,
+      "promessa_vigente": false,
       "comentario": ""
     },
     {
@@ -66,10 +66,10 @@
       "ship_date": "20260714",
       "ultima_nfe": "000280336-001",
       "semana": "S24/2026",
-      "promessa_data": "14/07/2026",
-      "promessa_qty": "10",
+      "promessa_data": "",
+      "promessa_qty": "",
       "promessa_com": "",
-      "promessa_vigente": true,
+      "promessa_vigente": false,
       "comentario": ""
     }
   ]
