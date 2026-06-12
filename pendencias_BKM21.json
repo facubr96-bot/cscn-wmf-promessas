@@ -2,7 +2,7 @@
   "supplier_code": "BKM21",
   "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
   "semana": "S24/2026",
-  "gerado_em": "11/06/2026 17:02",
+  "gerado_em": "12/06/2026 08:33",
   "itens": [
     {
       "part_number": "84032994",
@@ -60,8 +60,8 @@
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "impact": "4 - Stopper",
-      "past_due_wmf": 1.86,
-      "firm_jun_wmf": 17.0,
+      "past_due_wmf": 4.72,
+      "firm_jun_wmf": 16.0,
       "firm_jul_wmf": 11.0,
       "ship_date": "20260609",
       "ultima_nfe": "000080555-001",
