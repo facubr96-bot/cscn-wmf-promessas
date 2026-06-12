@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BJH90",
+  "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+  "semana": "S24/2026",
+  "enviado_em": "2026-06-12T18:30:31.889Z",
+  "itens": [
+    {
+      "part_number": "91757682",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "27/05/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000915251-003",
+      "semana": "S24/2026",
+      "data_promessa": "16/06/2026",
+      "qty_prometida": 24,
+      "comentario": ""
+    },
+    {
+      "part_number": "91757687",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "15/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000913985-003",
+      "semana": "S24/2026",
+      "data_promessa": "16/06/2026",
+      "qty_prometida": 52,
+      "comentario": ""
+    }
+  ]
+}
