@@ -1,8 +1,8 @@
 {
   "supplier_code": "BVJ30",
   "supplier_name": "HENNINGS VEDACOES HIDRAULICAS E PNE",
-  "semana": "S24/2026",
-  "gerado_em": "12/06/2026 16:59",
+  "semana": "S25/2026",
+  "gerado_em": "15/06/2026 09:36",
   "itens": [
     {
       "part_number": "92668823",
@@ -14,7 +14,7 @@
       "firm_jul_wmf": 20.0,
       "ship_date": "20260701",
       "ultima_nfe": "000085092-001",
-      "semana": "S24/2026",
+      "semana": "S25/2026",
       "promessa_data": "01/07/2026",
       "promessa_qty": "20",
       "promessa_com": "",
