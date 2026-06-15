@@ -1,0 +1,38 @@
+{
+  "supplier_code": "BNW32",
+  "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
+  "semana": "S24/2026",
+  "enviado_em": "2026-06-15T12:46:03.327Z",
+  "itens": [
+    {
+      "part_number": "84367743",
+      "supplier_code": "BNW32",
+      "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
+      "ship_date": "16/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000726707-001",
+      "semana": "S24/2026",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
+    },
+    {
+      "part_number": "87750369",
+      "supplier_code": "BNW32",
+      "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
+      "ship_date": "11/05/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000726705-001",
+      "semana": "S24/2026",
+      "data_promessa": "22/06/2026",
+      "qty_prometida": 29,
+      "comentario": "MAIS 4 PEÇAS EM 25/6"
+    }
+  ]
+}
