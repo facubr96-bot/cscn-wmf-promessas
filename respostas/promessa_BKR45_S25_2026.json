@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BKR45",
+  "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+  "semana": "S25/2026",
+  "enviado_em": "2026-06-15T13:16:49.292Z",
+  "itens": [
+    {
+      "part_number": "91739656",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+      "ship_date": "24/06/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000076943-001",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 80,
+      "comentario": ""
+    },
+    {
+      "part_number": "91859020",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+      "ship_date": "01/07/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000077380-001",
+      "semana": "S25/2026",
+      "data_promessa": "01/07/2026",
+      "qty_prometida": 20,
+      "comentario": ""
+    },
+    {
+      "part_number": "47469889",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+      "ship_date": "22/07/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000076652-001",
+      "semana": "S25/2026",
+      "data_promessa": "22/07/2026",
+      "qty_prometida": 24,
+      "comentario": ""
+    },
+    {
+      "part_number": "90397908",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+      "ship_date": "29/07/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000076872-001",
+      "semana": "S25/2026",
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 20,
+      "comentario": ""
+    }
+  ]
+}
