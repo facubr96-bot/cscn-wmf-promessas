@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKR45",
   "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
-  "semana": "S24/2026",
-  "gerado_em": "12/06/2026 16:59",
+  "semana": "S25/2026",
+  "gerado_em": "15/06/2026 09:36",
   "itens": [
     {
       "part_number": "91739656",
@@ -14,11 +14,11 @@
       "firm_jul_wmf": 80.0,
       "ship_date": "20260624",
       "ultima_nfe": "000076943-001",
-      "semana": "S24/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
+      "semana": "S25/2026",
+      "promessa_data": "24/06/2026",
+      "promessa_qty": "80",
       "promessa_com": "",
-      "promessa_vigente": false,
+      "promessa_vigente": true,
       "comentario": ""
     },
     {
@@ -29,11 +29,11 @@
       "past_due_wmf": 0.0,
       "firm_jun_wmf": 0.0,
       "firm_jul_wmf": 20.0,
-      "ship_date": "20260610",
-      "ultima_nfe": "000077034-001",
-      "semana": "S24/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
+      "ship_date": "20260701",
+      "ultima_nfe": "000077380-001",
+      "semana": "S25/2026",
+      "promessa_data": "10/06/2026",
+      "promessa_qty": "20",
       "promessa_com": "",
       "promessa_vigente": false,
       "comentario": ""
@@ -48,11 +48,11 @@
       "firm_jul_wmf": 24.0,
       "ship_date": "20260722",
       "ultima_nfe": "000076652-001",
-      "semana": "S24/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
+      "semana": "S25/2026",
+      "promessa_data": "22/07/2026",
+      "promessa_qty": "24",
       "promessa_com": "",
-      "promessa_vigente": false,
+      "promessa_vigente": true,
       "comentario": ""
     },
     {
@@ -65,11 +65,11 @@
       "firm_jul_wmf": 20.0,
       "ship_date": "20260729",
       "ultima_nfe": "000076872-001",
-      "semana": "S24/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
+      "semana": "S25/2026",
+      "promessa_data": "29/07/2026",
+      "promessa_qty": "20",
       "promessa_com": "",
-      "promessa_vigente": false,
+      "promessa_vigente": true,
       "comentario": ""
     }
   ]
