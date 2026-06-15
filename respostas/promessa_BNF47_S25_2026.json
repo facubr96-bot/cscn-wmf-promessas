@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BNF47",
+  "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+  "semana": "S25/2026",
+  "enviado_em": "2026-06-15T12:54:49.903Z",
+  "itens": [
+    {
+      "part_number": "14499401",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "01/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000013399-001",
+      "semana": "S25/2026",
+      "data_promessa": "12/06/2026",
+      "qty_prometida": 200,
+      "comentario": "Enviado pela NF 13423"
+    },
+    {
+      "part_number": "82004583",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "15/06/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000013399-001",
+      "semana": "S25/2026",
+      "data_promessa": "12/06/2026",
+      "qty_prometida": 36,
+      "comentario": "Enviado pela NF 13423"
+    },
+    {
+      "part_number": "82034842",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "15/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000012205-001",
+      "semana": "S25/2026",
+      "data_promessa": "19/06/2026",
+      "qty_prometida": 702,
+      "comentario": "Enviado 72un pela NF 13423, vamos enviar as 702 no dia 19/06"
+    },
+    {
+      "part_number": "392530",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "20/04/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "S25/2026",
+      "data_promessa": "19/06/2026",
+      "qty_prometida": 1200,
+      "comentario": "Vamos enviar no dia 19/06"
+    }
+  ]
+}
