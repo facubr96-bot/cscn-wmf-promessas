@@ -2,7 +2,7 @@
   "supplier_code": "BNF47",
   "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
   "semana": "S25/2026",
-  "gerado_em": "15/06/2026 11:00",
+  "gerado_em": "15/06/2026 12:06",
   "itens": [
     {
       "part_number": "14499401",
@@ -17,7 +17,7 @@
       "semana": "S25/2026",
       "promessa_data": "12/06/2026",
       "promessa_qty": "200",
-      "promessa_com": "Enviado na coleta de hoje",
+      "promessa_com": "Enviado pela NF 13423",
       "promessa_vigente": false,
       "comentario": ""
     },
@@ -34,7 +34,7 @@
       "semana": "S25/2026",
       "promessa_data": "12/06/2026",
       "promessa_qty": "36",
-      "promessa_com": "Enviado na coleta de hoje",
+      "promessa_com": "Enviado pela NF 13423",
       "promessa_vigente": false,
       "comentario": ""
     },
@@ -51,7 +51,7 @@
       "semana": "S25/2026",
       "promessa_data": "19/06/2026",
       "promessa_qty": "702",
-      "promessa_com": "Enviado 98un na coleta de hoje, será enviado o restante para coleta do dia 19/06.",
+      "promessa_com": "Enviado 72un pela NF 13423, vamos enviar as 702 no dia 19/06",
       "promessa_vigente": true,
       "comentario": ""
     },
@@ -68,7 +68,7 @@
       "semana": "S25/2026",
       "promessa_data": "19/06/2026",
       "promessa_qty": "1200",
-      "promessa_com": "Vamos ter o material disponível a partir do dia 15/06, porém temos coleta somente para dia 19/06.",
+      "promessa_com": "Vamos enviar no dia 19/06",
       "promessa_vigente": true,
       "comentario": ""
     }
