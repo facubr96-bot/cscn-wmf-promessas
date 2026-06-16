@@ -2,7 +2,7 @@
   "supplier_code": "BNF47",
   "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
   "semana": "S25/2026",
-  "gerado_em": "15/06/2026 17:51",
+  "gerado_em": "16/06/2026 08:56",
   "itens": [
     {
       "part_number": "14499401",
@@ -19,40 +19,6 @@
       "promessa_qty": "200",
       "promessa_com": "Enviado pela NF 13423",
       "promessa_vigente": false,
-      "comentario": ""
-    },
-    {
-      "part_number": "82004583",
-      "supplier_code": "BNF47",
-      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": 0.0,
-      "firm_jun_wmf": 36.0,
-      "firm_jul_wmf": 0.0,
-      "ship_date": "20260615",
-      "ultima_nfe": "000013399-001",
-      "semana": "S25/2026",
-      "promessa_data": "12/06/2026",
-      "promessa_qty": "36",
-      "promessa_com": "Enviado pela NF 13423",
-      "promessa_vigente": false,
-      "comentario": ""
-    },
-    {
-      "part_number": "82034842",
-      "supplier_code": "BNF47",
-      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
-      "impact": "4 - Stopper",
-      "past_due_wmf": 0.0,
-      "firm_jun_wmf": 800.0,
-      "firm_jul_wmf": 0.0,
-      "ship_date": "20260615",
-      "ultima_nfe": "000012205-001",
-      "semana": "S25/2026",
-      "promessa_data": "19/06/2026",
-      "promessa_qty": "702",
-      "promessa_com": "Enviado 72un pela NF 13423, vamos enviar as 702 no dia 19/06",
-      "promessa_vigente": true,
       "comentario": ""
     },
     {
