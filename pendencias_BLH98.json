@@ -2,7 +2,7 @@
   "supplier_code": "BLH98",
   "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
   "semana": "S25/2026",
-  "gerado_em": "15/06/2026 17:51",
+  "gerado_em": "16/06/2026 08:56",
   "itens": [
     {
       "part_number": "100015",
@@ -94,7 +94,7 @@
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "impact": "1 - Menor",
-      "past_due_wmf": 198.0,
+      "past_due_wmf": 248.0,
       "firm_jun_wmf": 50.0,
       "firm_jul_wmf": 100.0,
       "ship_date": "20260515",
