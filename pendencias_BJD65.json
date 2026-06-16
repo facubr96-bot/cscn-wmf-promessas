@@ -2,7 +2,7 @@
   "supplier_code": "BJD65",
   "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
   "semana": "S25/2026",
-  "gerado_em": "15/06/2026 17:51",
+  "gerado_em": "16/06/2026 08:56",
   "itens": [
     {
       "part_number": "84215095",
@@ -146,7 +146,7 @@
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "impact": "3 - No Funcional",
       "past_due_wmf": 0.0,
-      "firm_jun_wmf": 100.0,
+      "firm_jun_wmf": 50.0,
       "firm_jul_wmf": 100.0,
       "ship_date": "20260615",
       "ultima_nfe": "000143657-001",
