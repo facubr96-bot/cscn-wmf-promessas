@@ -1,0 +1,68 @@
+{
+  "supplier_code": "BMQ74",
+  "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+  "semana": "S25/2026",
+  "enviado_em": "2026-06-16T10:06:41.719Z",
+  "itens": [
+    {
+      "part_number": "87645102",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "24/06/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000175700-001",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 80,
+      "comentario": ""
+    },
+    {
+      "part_number": "91746555",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "17/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000175700-001",
+      "semana": "S25/2026",
+      "data_promessa": "17/06/2026",
+      "qty_prometida": 72,
+      "comentario": ""
+    },
+    {
+      "part_number": "84485310",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "24/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000175700-001",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 1,
+      "comentario": ""
+    },
+    {
+      "part_number": "84254520",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "24/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000175700-001",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 1,
+      "comentario": ""
+    }
+  ]
+}
