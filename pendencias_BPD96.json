@@ -2,13 +2,13 @@
   "supplier_code": "BPD96",
   "supplier_name": "NELSON DO BRASIL IND MET LTDA",
   "semana": "S25/2026",
-  "gerado_em": "16/06/2026 10:31",
+  "gerado_em": "17/06/2026 09:34",
   "itens": [
     {
       "part_number": "91760890",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
-      "impact": "4 - Stopper",
+      "impact": "3 - No Funcional",
       "past_due_wmf": 0.0,
       "firm_jun_wmf": 20.0,
       "firm_jul_wmf": 0.0,
