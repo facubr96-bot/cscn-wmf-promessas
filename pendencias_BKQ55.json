@@ -2,7 +2,7 @@
   "supplier_code": "BKQ55",
   "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
   "semana": "S25/2026",
-  "gerado_em": "16/06/2026 10:31",
+  "gerado_em": "17/06/2026 09:34",
   "itens": [
     {
       "part_number": "468476P",
@@ -25,7 +25,7 @@
       "part_number": "84562879",
       "supplier_code": "BKQ55",
       "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
-      "impact": "4 - Stopper",
+      "impact": "3 - No Funcional",
       "past_due_wmf": 0.0,
       "firm_jun_wmf": 10.0,
       "firm_jul_wmf": 10.0,
