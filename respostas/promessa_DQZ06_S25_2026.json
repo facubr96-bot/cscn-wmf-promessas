@@ -1,0 +1,23 @@
+{
+  "supplier_code": "DQZ06",
+  "supplier_name": "ALLIS ROLLER HCC INDUSTRIA E COMERC",
+  "semana": "S25/2026",
+  "enviado_em": "2026-06-17T10:42:39.429Z",
+  "itens": [
+    {
+      "part_number": "84299758",
+      "supplier_code": "DQZ06",
+      "supplier_name": "ALLIS ROLLER HCC INDUSTRIA E COMERC",
+      "ship_date": "30/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000007134-001",
+      "semana": "S25/2026",
+      "data_promessa": "30/06/2026",
+      "qty_prometida": 4,
+      "comentario": ""
+    }
+  ]
+}
