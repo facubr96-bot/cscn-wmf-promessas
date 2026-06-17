@@ -2,7 +2,7 @@
   "supplier_code": "BNF47",
   "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
   "semana": "S25/2026",
-  "gerado_em": "16/06/2026 10:31",
+  "gerado_em": "17/06/2026 09:34",
   "itens": [
     {
       "part_number": "14499401",
@@ -13,7 +13,7 @@
       "firm_jun_wmf": 100.0,
       "firm_jul_wmf": 100.0,
       "ship_date": "20260601",
-      "ultima_nfe": "000013399-001",
+      "ultima_nfe": "000013423-001",
       "semana": "S25/2026",
       "promessa_data": "12/06/2026",
       "promessa_qty": "200",
