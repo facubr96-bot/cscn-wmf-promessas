@@ -2,8 +2,23 @@
   "supplier_code": "BMX47",
   "supplier_name": "MAQUINAS SAZI LTDA",
   "semana": "S25/2026",
-  "enviado_em": "2026-06-17T19:16:34.396Z",
+  "enviado_em": "2026-06-18T17:09:45.530Z",
   "itens": [
+    {
+      "part_number": "47404763",
+      "supplier_code": "BMX47",
+      "supplier_name": "MAQUINAS SAZI LTDA",
+      "ship_date": "06/04/2026",
+      "impact": "1 - Menor",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000274312-001",
+      "semana": "S25/2026",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
+    },
     {
       "part_number": "84421713",
       "supplier_code": "BMX47",
@@ -17,22 +32,7 @@
       "semana": "S25/2026",
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "Faturado 100 pçs - NF 281930"
-    },
-    {
-      "part_number": "47404763",
-      "supplier_code": "BMX47",
-      "supplier_name": "MAQUINAS SAZI LTDA",
-      "ship_date": "06/04/2026",
-      "impact": "1 - Menor",
-      "past_due_wmf": true,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000274312-001",
-      "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 30,
-      "comentario": ""
+      "comentario": "Faturado 100 pçs - NF 281930 / sem pedidos em carteira"
     },
     {
       "part_number": "47832557",
@@ -45,8 +45,8 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000274311-001",
       "semana": "S25/2026",
-      "data_promessa": "03/07/2026",
-      "qty_prometida": 50,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -60,9 +60,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 5,
-      "comentario": "Faturado 11 pçs - NFs 281575 / 281683 + Previsto 5 pçs - 22/06"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "91761278",
@@ -90,9 +90,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281575-001",
       "semana": "S25/2026",
-      "data_promessa": "",
-      "qty_prometida": null,
-      "comentario": "Faturado 6 pçs - NF 281575"
+      "data_promessa": "13/07/2026",
+      "qty_prometida": 2,
+      "comentario": "Previsto 2 pçs - 13/07"
     },
     {
       "part_number": "87648216",
@@ -105,9 +105,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 6,
-      "comentario": "Faturado 82 pçs - NF 281683 + Previsto 6 pçs - 13/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "84422216",
@@ -120,9 +120,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 2,
-      "comentario": "Faturado 38 pçs - NF 281683 + previsto 2 pçs - 13/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "47755960",
@@ -135,8 +135,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000280675-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 3,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -160,7 +160,7 @@
       "supplier_name": "MAQUINAS SAZI LTDA",
       "ship_date": "08/06/2026",
       "impact": "4 - Stopper",
-      "past_due_wmf": false,
+      "past_due_wmf": true,
       "firm_jun_wmf": true,
       "firm_jul_wmf": false,
       "ultima_nfe": "000281683-001",
@@ -180,8 +180,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281930-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 32,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -210,8 +210,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 10,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -230,6 +230,21 @@
       "comentario": "Faturado 102 pçs - NF 281683"
     },
     {
+      "part_number": "90510379",
+      "supplier_code": "BMX47",
+      "supplier_name": "MAQUINAS SAZI LTDA",
+      "ship_date": "08/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000255379-001",
+      "semana": "S25/2026",
+      "data_promessa": "22/06/2026",
+      "qty_prometida": 60,
+      "comentario": "Previsto 60 pçs - 22/06"
+    },
+    {
       "part_number": "47484017",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
@@ -240,9 +255,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281575-001",
       "semana": "S25/2026",
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 50,
-      "comentario": "Faturado 50 pçs - NF 281575 + previsto 50 pçs - 27/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "84380852",
@@ -255,9 +270,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281930-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 27,
-      "comentario": "Faturado 20 pçs - NF 281930 + Previsto 27 pçs - 13/07 + 24 pçs - 20/07 + 20 pçs - 27/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "86975514",
@@ -270,9 +285,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000280675-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 40,
-      "comentario": "Previsto 40 pçs - 13/07 + 16 pçs - 20/07 + 16 pçs - 03/08"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "87680231",
@@ -285,8 +300,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000280675-001",
       "semana": "S25/2026",
-      "data_promessa": "16/07/2026",
-      "qty_prometida": 14,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -300,9 +315,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000279836-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 12,
-      "comentario": "Previsto 12 pçs - 13/07 + 14 pçs - 27/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "90447795",
@@ -315,9 +330,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000280675-001",
       "semana": "S25/2026",
-      "data_promessa": "20/07/2026",
-      "qty_prometida": 10,
-      "comentario": "Previsto 10 pçs - 20/07 + 10 pçs - 27/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "90465727",
@@ -330,8 +345,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000280675-001",
       "semana": "S25/2026",
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 20,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -347,7 +362,7 @@
       "semana": "S25/2026",
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "Faturado 28 pçs - NF 281683"
+      "comentario": "Faturado 28 pçs - NF 281683 / sem pedidos em carteira"
     },
     {
       "part_number": "87350863",
@@ -375,24 +390,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "16/07/2026",
-      "qty_prometida": 4,
-      "comentario": "Faturado 20 pçs - NF 281683 + Previsto 4 pçs - 16/07 + 10 pçs - 20/07"
-    },
-    {
-      "part_number": "84391407",
-      "supplier_code": "BMX47",
-      "supplier_name": "MAQUINAS SAZI LTDA",
-      "ship_date": "29/06/2026",
-      "impact": "4 - Stopper",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000281683-001",
-      "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 16,
-      "comentario": "Faturado 23 pçs - NF 281683 + Previsto 16 pçs - 13/07 + 12 pçs 20/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "90502717",
@@ -405,9 +405,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 4,
-      "comentario": "Faturado 26 pçs - NF 281683 + Previsto 4 pçs - 22/06"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "92133614",
@@ -420,8 +420,23 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000264614-001",
       "semana": "S25/2026",
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 15,
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
+    },
+    {
+      "part_number": "84391407",
+      "supplier_code": "BMX47",
+      "supplier_name": "MAQUINAS SAZI LTDA",
+      "ship_date": "29/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000281683-001",
+      "semana": "S25/2026",
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -435,9 +450,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 2,
-      "comentario": "Faturado 18 pçs - NF 281683 + Previsto 2 pçs - 13/07 + 4 pçs - 20/07 + 6 pçs - 27/07"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "84165836",
@@ -450,9 +465,9 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000281683-001",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 4,
-      "comentario": "Faturado 1 pç - NF 281683 + Previsto 4 pçs - 13/07 + 2 pçs - 03/08"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "84540032",
@@ -480,8 +495,8 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "",
       "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 10,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     }
   ]
