@@ -2,7 +2,7 @@
   "supplier_code": "BJG74",
   "supplier_name": "METALUS IND MEC LTDA",
   "semana": "S25/2026",
-  "gerado_em": "17/06/2026 10:44",
+  "gerado_em": "18/06/2026 09:27",
   "itens": [
     {
       "part_number": "84558047",
@@ -25,7 +25,7 @@
       "part_number": "51584166",
       "supplier_code": "BJG74",
       "supplier_name": "METALUS IND MEC LTDA",
-      "impact": "3 - No Funcional",
+      "impact": "1 - Menor",
       "past_due_wmf": 49.0,
       "firm_jun_wmf": 0.0,
       "firm_jul_wmf": 0.0,
