@@ -2,7 +2,7 @@
   "supplier_code": "BVJ94",
   "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
   "semana": "S25/2026",
-  "gerado_em": "17/06/2026 10:44",
+  "gerado_em": "18/06/2026 09:27",
   "itens": [
     {
       "part_number": "91729847",
@@ -25,7 +25,7 @@
       "part_number": "84575495",
       "supplier_code": "BVJ94",
       "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
-      "impact": "4 - Stopper",
+      "impact": "3 - No Funcional",
       "past_due_wmf": 20.0,
       "firm_jun_wmf": 69.0,
       "firm_jul_wmf": 69.0,
