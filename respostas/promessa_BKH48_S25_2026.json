@@ -2,7 +2,7 @@
   "supplier_code": "BKH48",
   "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
   "semana": "S25/2026",
-  "enviado_em": "2026-06-15T12:59:33.655Z",
+  "enviado_em": "2026-06-18T14:48:33.884Z",
   "itens": [
     {
       "part_number": "48164673",
@@ -13,11 +13,11 @@
       "past_due_wmf": false,
       "firm_jun_wmf": true,
       "firm_jul_wmf": true,
-      "ultima_nfe": "000255379-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
       "data_promessa": "12/06/2026",
       "qty_prometida": 275,
-      "comentario": "Material coletado sob NF258.880."
+      "comentario": "Material Coletado 12/06 sob NF258.880"
     },
     {
       "part_number": "47839513",
@@ -45,9 +45,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "",
       "semana": "S25/2026",
-      "data_promessa": "29/12/2029",
+      "data_promessa": "29/09/2039",
       "qty_prometida": 14,
-      "comentario": "Item sem RIAI Aprovado e sem Acordo Comercial referente a Ferramental."
+      "comentario": "Item sem Aprovação de RIAI e Sem acordo Comercial sobre Ferramental"
     },
     {
       "part_number": "84522311",
@@ -75,7 +75,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000258480-001",
       "semana": "S25/2026",
-      "data_promessa": "07/07/2026",
+      "data_promessa": "21/07/2026",
       "qty_prometida": 25,
       "comentario": ""
     },
@@ -90,7 +90,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000250746-001",
       "semana": "S25/2026",
-      "data_promessa": "30/06/2026",
+      "data_promessa": "23/06/2026",
       "qty_prometida": 400,
       "comentario": ""
     },
@@ -110,21 +110,6 @@
       "comentario": ""
     },
     {
-      "part_number": "84989342",
-      "supplier_code": "BKH48",
-      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
-      "ship_date": "07/07/2026",
-      "impact": "4 - Stopper",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000257882-001",
-      "semana": "S25/2026",
-      "data_promessa": "23/06/2026",
-      "qty_prometida": 10,
-      "comentario": ""
-    },
-    {
       "part_number": "84327223",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
@@ -133,11 +118,11 @@
       "past_due_wmf": false,
       "firm_jun_wmf": false,
       "firm_jul_wmf": true,
-      "ultima_nfe": "000253660-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
       "data_promessa": "12/06/2026",
       "qty_prometida": 100,
-      "comentario": "Material coletado sob NF258.880."
+      "comentario": "Material Coletado 12/06 sob NF258.880"
     },
     {
       "part_number": "47376576",
@@ -150,7 +135,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000257879-001",
       "semana": "S25/2026",
-      "data_promessa": "14/07/2026",
+      "data_promessa": "21/07/2026",
       "qty_prometida": 20,
       "comentario": ""
     },
@@ -163,11 +148,11 @@
       "past_due_wmf": false,
       "firm_jun_wmf": false,
       "firm_jul_wmf": true,
-      "ultima_nfe": "000255379-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
-      "data_promessa": "12/06/2026",
+      "data_promessa": "31/07/2026",
       "qty_prometida": 40,
-      "comentario": "Material coletado sob NF258.880."
+      "comentario": "40 peças coletadas 12/06 sob NF258.880"
     },
     {
       "part_number": "48094430",
@@ -180,7 +165,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000251388-001",
       "semana": "S25/2026",
-      "data_promessa": "14/07/2026",
+      "data_promessa": "28/07/2026",
       "qty_prometida": 280,
       "comentario": ""
     },
@@ -193,11 +178,11 @@
       "past_due_wmf": false,
       "firm_jun_wmf": true,
       "firm_jul_wmf": true,
-      "ultima_nfe": "000255379-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
-      "data_promessa": "12/06/2026",
-      "qty_prometida": 42,
-      "comentario": "Material coletado sob NF258.880."
+      "data_promessa": "28/07/2026",
+      "qty_prometida": 5,
+      "comentario": "42 peças coletadas 12/06 sob NF258.880"
     },
     {
       "part_number": "48168199",
@@ -210,23 +195,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000253068-001",
       "semana": "S25/2026",
-      "data_promessa": "21/07/2026",
+      "data_promessa": "28/07/2026",
       "qty_prometida": 20,
-      "comentario": ""
-    },
-    {
-      "part_number": "47671660",
-      "supplier_code": "BKH48",
-      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
-      "ship_date": "28/07/2026",
-      "impact": "4 - Stopper",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000257882-001",
-      "semana": "S25/2026",
-      "data_promessa": "21/07/2026",
-      "qty_prometida": 50,
       "comentario": ""
     },
     {
@@ -238,11 +208,11 @@
       "past_due_wmf": false,
       "firm_jun_wmf": true,
       "firm_jul_wmf": false,
-      "ultima_nfe": "000253070-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
       "data_promessa": "12/06/2026",
       "qty_prometida": 40,
-      "comentario": "Material coletado sob NF258.880."
+      "comentario": "Material Coletado 12/06 sob NF258.880"
     },
     {
       "part_number": "84307749",
@@ -255,7 +225,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000258479-001",
       "semana": "S25/2026",
-      "data_promessa": "07/07/2026",
+      "data_promessa": "30/06/2026",
       "qty_prometida": 20,
       "comentario": ""
     },
@@ -268,11 +238,41 @@
       "past_due_wmf": false,
       "firm_jun_wmf": false,
       "firm_jul_wmf": true,
-      "ultima_nfe": "000253072-001",
+      "ultima_nfe": "000258880-001",
       "semana": "S25/2026",
       "data_promessa": "12/06/2026",
       "qty_prometida": 40,
-      "comentario": "Material coletado sob NF258.880."
+      "comentario": "Material Coletado 12/06 sob NF258.880"
+    },
+    {
+      "part_number": "47671660",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "28/07/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000257882-001",
+      "semana": "S25/2026",
+      "data_promessa": "28/07/2026",
+      "qty_prometida": 50,
+      "comentario": ""
+    },
+    {
+      "part_number": "84989342",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "07/07/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000257882-001",
+      "semana": "S25/2026",
+      "data_promessa": "30/06/2026",
+      "qty_prometida": 10,
+      "comentario": ""
     },
     {
       "part_number": "84355817",
@@ -300,7 +300,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000257882-001",
       "semana": "S25/2026",
-      "data_promessa": "21/07/2026",
+      "data_promessa": "28/07/2026",
       "qty_prometida": 20,
       "comentario": ""
     }
