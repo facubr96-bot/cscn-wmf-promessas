@@ -1,0 +1,53 @@
+{
+  "supplier_code": "BJR79",
+  "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+  "semana": "S25/2026",
+  "enviado_em": "2026-06-19T12:40:26.567Z",
+  "itens": [
+    {
+      "part_number": "84390751",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "20/05/2026",
+      "impact": "3 - No Funcional",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000669277-011",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 59,
+      "comentario": ""
+    },
+    {
+      "part_number": "421490",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "10/06/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000681984-011",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 21,
+      "comentario": ""
+    },
+    {
+      "part_number": "47405749",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "20/05/2026",
+      "impact": "4 - Stopper",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000680591-011",
+      "semana": "S25/2026",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 21,
+      "comentario": ""
+    }
+  ]
+}
