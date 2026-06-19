@@ -2,7 +2,7 @@
   "supplier_code": "BPX73",
   "supplier_name": "DUGALE METALURGICA LTDA",
   "semana": "S25/2026",
-  "enviado_em": "2026-06-15T18:54:26.793Z",
+  "enviado_em": "2026-06-19T12:35:18.865Z",
   "itens": [
     {
       "part_number": "51537729",
@@ -17,7 +17,7 @@
       "semana": "S25/2026",
       "data_promessa": "01/07/2026",
       "qty_prometida": 250,
-      "comentario": "CSCN ALOCADO NO ATRASO - FORA DE LEAD TIME"
+      "comentario": "MATERIAL REPROGRAMADO NO ATRASO FAVOR AJUSTAR CSCN"
     },
     {
       "part_number": "91762153",
@@ -30,9 +30,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000062439-000",
       "semana": "S25/2026",
-      "data_promessa": "09/06/2026",
+      "data_promessa": "19/06/2026",
       "qty_prometida": 200,
-      "comentario": "NF 64.976"
+      "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE"
     },
     {
       "part_number": "51537736",
@@ -45,9 +45,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000061958-000",
       "semana": "S25/2026",
-      "data_promessa": "09/06/2026",
+      "data_promessa": "19/06/2026",
       "qty_prometida": 100,
-      "comentario": "NF 64.976"
+      "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE"
     },
     {
       "part_number": "48081177",
@@ -55,14 +55,14 @@
       "supplier_name": "DUGALE METALURGICA LTDA",
       "ship_date": "11/06/2026",
       "impact": "3 - No Funcional",
-      "past_due_wmf": false,
+      "past_due_wmf": true,
       "firm_jun_wmf": false,
       "firm_jul_wmf": true,
       "ultima_nfe": "000064368-000",
       "semana": "S25/2026",
-      "data_promessa": "09/06/2026",
+      "data_promessa": "19/06/2026",
       "qty_prometida": 70,
-      "comentario": "NF 64976"
+      "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE"
     },
     {
       "part_number": "84158468",
@@ -75,8 +75,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000062549-000",
       "semana": "S25/2026",
-      "data_promessa": "17/07/2026",
-      "qty_prometida": 29,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -90,8 +90,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064552-000",
       "semana": "S25/2026",
-      "data_promessa": "17/07/2026",
-      "qty_prometida": 30,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -105,8 +105,8 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000063207-000",
       "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 400,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -120,8 +120,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000062777-000",
       "semana": "S25/2026",
-      "data_promessa": "25/06/2026",
-      "qty_prometida": 4,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -135,8 +135,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064368-000",
       "semana": "S25/2026",
-      "data_promessa": "29/06/2026",
-      "qty_prometida": 30,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -146,13 +146,13 @@
       "ship_date": "16/06/2026",
       "impact": "4 - Stopper",
       "past_due_wmf": false,
-      "firm_jun_wmf": true,
+      "firm_jun_wmf": false,
       "firm_jul_wmf": true,
       "ultima_nfe": "000063931-000",
       "semana": "S25/2026",
-      "data_promessa": "16/06/2026",
-      "qty_prometida": 40,
-      "comentario": ""
+      "data_promessa": "19/06/2026",
+      "qty_prometida": null,
+      "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE "
     },
     {
       "part_number": "51535161",
@@ -165,8 +165,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064369-000",
       "semana": "S25/2026",
-      "data_promessa": "29/06/2026",
-      "qty_prometida": 30,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -180,9 +180,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000062776-000",
       "semana": "S25/2026",
-      "data_promessa": "30/06/2026",
-      "qty_prometida": 150,
-      "comentario": "AUMNTO DE DEMANDAE FORA DE LEAD TIME  - PRÓX ENTREGA DE  150 PÇS NO DIA 07/07/2026"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "47605347",
@@ -195,8 +195,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064800-000",
       "semana": "S25/2026",
-      "data_promessa": "07/07/2026",
-      "qty_prometida": 20,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -210,8 +210,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064372-000",
       "semana": "S25/2026",
-      "data_promessa": "07/07/2026",
-      "qty_prometida": 30,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -225,8 +225,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064372-000",
       "semana": "S25/2026",
-      "data_promessa": "10/07/2026",
-      "qty_prometida": 30,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -240,8 +240,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064371-000",
       "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 100,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -255,8 +255,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000062549-000",
       "semana": "S25/2026",
-      "data_promessa": "09/07/2026",
-      "qty_prometida": 400,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -270,8 +270,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000063801-000",
       "semana": "S25/2026",
-      "data_promessa": "14/07/2026",
-      "qty_prometida": 200,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -285,8 +285,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000063931-000",
       "semana": "S25/2026",
-      "data_promessa": "14/07/2026",
-      "qty_prometida": 100,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -300,8 +300,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000064370-000",
       "semana": "S25/2026",
-      "data_promessa": "31/07/2026",
-      "qty_prometida": 19,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -315,8 +315,8 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000064552-000",
       "semana": "S25/2026",
-      "data_promessa": "24/06/2026",
-      "qty_prometida": 50,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     },
     {
@@ -330,9 +330,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000060302-000",
       "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 50,
-      "comentario": "CSCN ALOCADO NO ATRASO - FORA DE LEAD TIME"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": ""
     },
     {
       "part_number": "86602984",
@@ -345,8 +345,8 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000059261-000",
       "semana": "S25/2026",
-      "data_promessa": "20/07/2026",
-      "qty_prometida": 6,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": ""
     }
   ]
