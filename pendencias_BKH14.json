@@ -1,25 +1,28 @@
 {
   "supplier_code": "BKH14",
   "supplier_name": "SCHAEFFLER BRASIL LTDA",
-  "semana": "S25/2026",
-  "gerado_em": "18/06/2026 11:14",
+  "semana": "2026-W26",
+  "gerado_em": "26/06/2026 11:57",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "51424330",
       "supplier_code": "BKH14",
       "supplier_name": "SCHAEFFLER BRASIL LTDA",
-      "impact": "1 - Menor",
-      "past_due_wmf": 270.0,
-      "firm_jun_wmf": 0.0,
-      "firm_jul_wmf": 150.0,
-      "ship_date": "20260403",
-      "ultima_nfe": "000790127-010",
-      "semana": "S25/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
-      "promessa_com": "",
-      "promessa_vigente": false,
-      "comentario": ""
+      "ship_date": "25/06/2026",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=257",
+      "sharepoint_reason": "Past Due",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
