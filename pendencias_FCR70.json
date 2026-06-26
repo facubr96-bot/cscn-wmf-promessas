@@ -1,0 +1,28 @@
+{
+  "supplier_code": "FCR70",
+  "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+  "semana": "2026-W26",
+  "gerado_em": "26/06/2026 11:57",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "91837962",
+      "supplier_code": "FCR70",
+      "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+      "ship_date": "25/06/2026",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=246",
+      "sharepoint_reason": "Systems Error",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
