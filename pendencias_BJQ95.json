@@ -2,7 +2,7 @@
   "supplier_code": "BJQ95",
   "supplier_name": "MAGIUS METALURGICA INDUSTRIAL LTDA",
   "semana": "2026-W26",
-  "gerado_em": "26/06/2026 11:57",
+  "gerado_em": "26/06/2026 12:36",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,9 +15,9 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": true,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
+      "past_due_wmf": 7,
+      "firm_jun_wmf": 3,
+      "firm_jul_wmf": 2,
       "ultima_nfe": "",
       "semana": "2026-W26",
       "data_promessa": "",
