@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BNF47",
+  "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+  "semana": "2026-W26",
+  "enviado_em": "2026-06-26T16:34:02.503Z",
+  "itens": [
+    {
+      "part_number": "392530",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "27/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "22/06/2026",
+      "qty_prometida": 1260,
+      "comentario": "Foi enviado pela NF 13435"
+    },
+    {
+      "part_number": "82034842",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "07/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "22/06/2026",
+      "qty_prometida": 702,
+      "comentario": "Foi enviado pela NF 13435"
+    }
+  ],
+  "recibido_en_worker": "2026-06-26T16:34:03.514Z"
+}
