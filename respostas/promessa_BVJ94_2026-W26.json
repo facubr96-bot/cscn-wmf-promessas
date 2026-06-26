@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BVJ94",
+  "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
+  "semana": "2026-W26",
+  "enviado_em": "2026-06-26T16:54:08.001Z",
+  "itens": [
+    {
+      "part_number": "84575495",
+      "supplier_code": "BVJ94",
+      "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
+      "ship_date": "05/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "30/06/2026",
+      "qty_prometida": 46,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "91729847",
+      "supplier_code": "BVJ94",
+      "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
+      "ship_date": "30/07/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "30/06/2026",
+      "qty_prometida": 58,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-06-26T16:54:08.746Z"
+}
