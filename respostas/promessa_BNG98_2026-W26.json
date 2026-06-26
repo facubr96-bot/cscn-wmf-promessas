@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BNG98",
+  "supplier_name": "IOCHPE MAXION S A",
+  "semana": "2026-W26",
+  "enviado_em": "2026-06-26T16:40:59.691Z",
+  "itens": [
+    {
+      "part_number": "84379626",
+      "supplier_code": "BNG98",
+      "supplier_name": "IOCHPE MAXION S A",
+      "ship_date": "09/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "09/09/2026",
+      "qty_prometida": 10,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-06-26T16:40:59.787Z"
+}
