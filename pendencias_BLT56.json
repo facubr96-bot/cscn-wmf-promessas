@@ -1,25 +1,28 @@
 {
   "supplier_code": "BLT56",
   "supplier_name": "BORGWARNER BRASIL LTDA",
-  "semana": "S25/2026",
-  "gerado_em": "18/06/2026 11:14",
+  "semana": "2026-W26",
+  "gerado_em": "26/06/2026 11:57",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91841400",
       "supplier_code": "BLT56",
       "supplier_name": "BORGWARNER BRASIL LTDA",
-      "impact": "4 - Stopper",
-      "past_due_wmf": 0.0,
-      "firm_jun_wmf": 0.0,
-      "firm_jul_wmf": 84.0,
-      "ship_date": "20260701",
-      "ultima_nfe": "000396658-009",
-      "semana": "S25/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
-      "promessa_com": "",
-      "promessa_vigente": false,
-      "comentario": ""
+      "ship_date": "08/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
