@@ -543,6 +543,17 @@ async function loadData() {
 
   try {
     const resp = await fetch(filename);
+    if (resp.status === 404) {
+      DATA = {
+        supplier_code: supplier,
+        supplier_name: '-',
+        semana: '-',
+        itens: [],
+        sem_pendencias: true
+      };
+      processData(DATA, supplier);
+      return;
+    }
     if (!resp.ok) throw new Error(`HTTP ${resp.status} - arquivo "${filename}" nao encontrado.`);
     DATA = await resp.json();
     processData(DATA, supplier);
