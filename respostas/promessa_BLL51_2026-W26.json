@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BLL51",
+  "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+  "semana": "2026-W26",
+  "enviado_em": "2026-07-01T11:29:01.968Z",
+  "itens": [
+    {
+      "part_number": "9578926",
+      "supplier_code": "BLL51",
+      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
+      "ship_date": "15/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W26",
+      "entrega_confirmada": false,
+      "data_promessa": "02/07/2026",
+      "qty_prometida": 30,
+      "comentario": "LOCAL COLETA. ALBERTO KLEMTZ 441 PORTÃO."
+    }
+  ],
+  "recibido_en_worker": "2026-07-01T11:29:02.340Z"
+}
