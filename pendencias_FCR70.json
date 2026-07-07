@@ -1,28 +1,28 @@
 {
   "supplier_code": "FCR70",
   "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
-  "semana": "2026-W26",
-  "gerado_em": "26/06/2026 12:36",
+  "semana": "2026-W27",
+  "gerado_em": "02/07/2026 11:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91837962",
       "supplier_code": "FCR70",
       "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
-      "ship_date": "25/06/2026",
+      "ship_date": "01/07/2026",
       "impact": "Hiper Critico",
       "sharepoint_critico": true,
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=246",
       "sharepoint_reason": "Systems Error",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Hiper Critico SharePoint - confirmar plano",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W26",
+      "semana": "2026-W27",
       "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "qty_prometida": 40,
+      "comentario": "Hiper Critico SharePoint - confirmar plano. Solicitar promessa."
     }
   ]
 }
