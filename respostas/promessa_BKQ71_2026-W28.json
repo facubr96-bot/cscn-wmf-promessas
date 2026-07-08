@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BKQ71",
+  "supplier_name": "METALURGICA TUZZI LTDA",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T16:22:27.658Z",
+  "itens": [
+    {
+      "part_number": "47929096",
+      "supplier_code": "BKQ71",
+      "supplier_name": "METALURGICA TUZZI LTDA",
+      "ship_date": "20/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000680658-001",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 19,
+      "comentario": ""
+    },
+    {
+      "part_number": "48133222",
+      "supplier_code": "BKQ71",
+      "supplier_name": "METALURGICA TUZZI LTDA",
+      "ship_date": "27/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000680661-001",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 16,
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T16:22:27.898Z"
+}
