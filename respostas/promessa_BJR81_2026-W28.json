@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BJR81",
+  "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T17:40:44.584Z",
+  "itens": [
+    {
+      "part_number": "84398273",
+      "supplier_code": "BJR81",
+      "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
+      "ship_date": "14/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000095789-010",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "08/07/2026",
+      "qty_prometida": 75,
+      "comentario": "FOi entregue em 30/06 nfe 103926"
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T17:40:45.296Z"
+}
