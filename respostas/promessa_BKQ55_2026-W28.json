@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BKQ55",
+  "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T16:07:02.421Z",
+  "itens": [
+    {
+      "part_number": "468476P",
+      "supplier_code": "BKQ55",
+      "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
+      "ship_date": "07/07/2026",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=285",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "25/06/2026",
+      "qty_prometida": 90,
+      "comentario": " Este item já foi enviado, foi coletado na Forbal 25/06/2026"
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T16:06:50.139Z"
+}
