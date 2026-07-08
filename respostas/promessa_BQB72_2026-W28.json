@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BQB72",
+  "supplier_name": "MERCOBOR IND E COM LTDA",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T16:11:04.638Z",
+  "itens": [
+    {
+      "part_number": "92173874",
+      "supplier_code": "BQB72",
+      "supplier_name": "MERCOBOR IND E COM LTDA",
+      "ship_date": "27/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000049021-001",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "27/07/2026",
+      "qty_prometida": 20,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
+    },
+    {
+      "part_number": "91763013",
+      "supplier_code": "BQB72",
+      "supplier_name": "MERCOBOR IND E COM LTDA",
+      "ship_date": "08/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000048927-001",
+      "semana": "2026-W28",
+      "entrega_confirmada": true,
+      "data_promessa": "13/07/2026",
+      "qty_prometida": 45,
+      "comentario": "Favor confirmar se esta entrega sera cumprida."
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T16:09:32.862Z"
+}
