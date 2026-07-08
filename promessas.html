@@ -401,8 +401,8 @@
   <div class="filter-group">
     <button class="btn-filter active"         data-filter="all"      onclick="setFilter('all',this)">Todos</button>
     <button class="btn-filter red-filter"     data-filter="pastdue"  onclick="setFilter('pastdue',this)">Somente Past Due</button>
-    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)">Firm Junho</button>
-    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)">Firm Julho</button>
+    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)">Firm Julho</button>
+    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)">Firm Agosto</button>
   </div>
 
   <div class="toolbar-sep"></div>
@@ -442,8 +442,8 @@
           <th>Acao</th>
           <th>Ship Date CSCN</th>
           <th style="text-align:center">Past Due WMF</th>
-          <th style="text-align:center">Firm Junho WMF</th>
           <th style="text-align:center">Firm Julho WMF</th>
+          <th style="text-align:center">Firm Agosto WMF</th>
           <th>Ultima NFe</th>
           <th style="text-align:center">Confirmar entrega</th>
           <th>Data Promessa</th>
@@ -572,7 +572,7 @@ async function loadData() {
   const filename = `pendencias_${supplier}.json`;
 
   try {
-    const resp = await fetch(filename);
+    const resp = await fetch(`${filename}?v=${Date.now()}`, { cache: 'no-store' });
     if (resp.status === 404) {
       DATA = {
         supplier_code: supplier,
