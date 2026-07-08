@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BQP01",
+  "supplier_name": "CCS TECNOLGIA E SERVICOS LTDA",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T17:51:24.836Z",
+  "itens": [
+    {
+      "part_number": "84261477",
+      "supplier_code": "BQP01",
+      "supplier_name": "CCS TECNOLGIA E SERVICOS LTDA",
+      "ship_date": "02/09/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000245482-003",
+      "semana": "2026-W28",
+      "entrega_confirmada": false,
+      "data_promessa": "30/07/2026",
+      "qty_prometida": 24,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T17:51:25.298Z"
+}
