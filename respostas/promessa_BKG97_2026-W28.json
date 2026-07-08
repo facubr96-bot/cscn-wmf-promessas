@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BKG97",
+  "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
+  "semana": "2026-W28",
+  "enviado_em": "2026-07-08T17:28:57.586Z",
+  "itens": [
+    {
+      "part_number": "92137790",
+      "supplier_code": "BKG97",
+      "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
+      "ship_date": "26/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000087991-001",
+      "semana": "2026-W28",
+      "entrega_confirmada": true,
+      "data_promessa": "15/07/2026",
+      "qty_prometida": 96,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. considerar multiplos de 08 peças por embalagem"
+    }
+  ],
+  "recibido_en_worker": "2026-07-08T17:28:57.809Z"
+}
