@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portal-version" content="2026-07-08 ultima-nfe">
+<!-- Atualizado em 08/07/2026: pendencias_*.json passam a enviar ultima_nfe. -->
+<title>CSCN WMF - Promessas de Entrega</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    background: #f0f2f5;
+    color: #222;
+    min-height: 100vh;
+  }
+
+  /*  HEADER  */
+  header {
+    background: #1F3864;
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.35);
+  }
+  header img.logo { height: 36px; filter: brightness(0) invert(1); }
+  header .divider { width: 1px; height: 36px; background: rgba(255,255,255,.3); }
+  header h1 { font-size: 17px; font-weight: 700; letter-spacing: .4px; }
+  header .subtitle { font-size: 11px; opacity: .75; margin-top: 2px; }
+
+  .link-warning {
+    background: #fff2cc;
+    border-bottom: 2px solid #bf9000;
+    color: #3d2b00;
+    padding: 10px 24px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .link-warning strong { color: #9c0006; }
+  .link-warning a { color: #1F3864; font-weight: 700; text-decoration: underline; }
+
+  /* INFO BAR */
+  .info-bar {
+    background: #fff;
+    border-bottom: 2px solid #1F3864;
+    padding: 10px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+  }
+  .info-chip { display: flex; flex-direction: column; }
+  .info-chip .label { font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: #888; }
+  .info-chip .value { font-size: 13px; font-weight: 700; color: #1F3864; margin-top: 1px; }
+  .info-chip.highlight .value { color: #c0392b; }
+
+  /*  TOOLBAR  */
+  .toolbar {
+    background: #fff;
+    padding: 10px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #dde1e7;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  .filter-group { display: flex; gap: 6px; }
+  .btn-filter {
+    padding: 5px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all .15s;
+    color: #444;
+  }
+  .btn-filter:hover { border-color: #1F3864; color: #1F3864; }
+  .btn-filter.active { background: #1F3864; color: #fff; border-color: #1F3864; }
+  .btn-filter.red-filter.active { background: #c0392b; border-color: #c0392b; color: #fff; }
+  .btn-filter.jun-filter.active { background: #2980b9; border-color: #2980b9; color: #fff; }
+  .btn-filter.jul-filter.active { background: #8e44ad; border-color: #8e44ad; color: #fff; }
+
+  .toolbar-sep { width: 1px; height: 28px; background: #dde1e7; margin: 0 4px; }
+
+  label.cb-label {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; cursor: pointer; color: #444;
+    white-space: nowrap;
+  }
+  label.cb-label input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: #1F3864; }
+
+  .toolbar-right { margin-left: auto; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  input[type=date].date-input {
+    padding: 5px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+  }
+  input[type=date].date-input:focus { outline: none; border-color: #1F3864; }
+
+  .btn-apply {
+    padding: 5px 14px;
+    background: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-apply:hover { background: #ca6f1e; }
+
+  .btn-clear {
+    padding: 5px 14px;
+    background: #ecf0f1;
+    color: #555;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-clear:hover { background: #d5d8dc; }
+
+  /*  TABLE WRAPPER  */
+  .table-wrap {
+    padding: 16px 24px 80px;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,.10);
+    font-size: 12px;
+  }
+
+  thead tr {
+    background: #1F3864;
+    color: #fff;
+    text-align: left;
+  }
+  thead th {
+    padding: 10px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,.12);
+  }
+  thead th:last-child { border-right: none; }
+
+  tbody tr {
+    border-bottom: 1px solid #eaecef;
+    transition: background .1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f5f7fb !important; }
+  tbody tr.past-due { background: #fff0f0; }
+  tbody tr.selected { background: #dbeafe !important; }
+
+  tbody td {
+    padding: 7px 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /* seq number */
+  td.seq { color: #aaa; font-size: 11px; text-align: center; }
+
+  /* Impact badge */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  .badge-critical, .bs { background: #fde8e8; color: #c0392b; }   /* Stopper / Critical */
+  .badge-high,     .bn { background: #fef3cd; color: #b7770d; }   /* No Funcional / High */
+  .badge-medium,   .bm { background: #e8f8e8; color: #217a3c; }   /* Menor / Medium/Low */
+  .badge-low           { background: #e8f8e8; color: #217a3c; }
+  .badge-none          { background: #f0f0f0; color: #777; }
+  .badge-hyper         { background: #c00000; color: #ffffff; box-shadow: 0 0 0 1px #7f0000 inset; }
+  .badge-action        { background: #eaf2ff; color: #1F3864; border: 1px solid #b8c9ea; }
+  .badge-confirm       { background: #e8f8e8; color: #217a3c; border: 1px solid #9fd09f; }
+  .badge-request       { background: #fff2cc; color: #8a5a00; border: 1px solid #e0bd62; }
+  .badge-insufficient  { background: #fde8e8; color: #c0392b; border: 1px solid #e5a0a0; }
+  .confirm-cell { text-align: center; }
+  .confirm-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1F3864;
+    font-weight: 700;
+    font-size: 11px;
+  }
+  .confirm-label input { width: 15px; height: 15px; accent-color: #217a3c; }
+
+  /* WMF flag cells */
+  td.wmf-cell { text-align: center; }
+  .wmf-yes { color: #c0392b; font-weight: 700; font-size: 11px; }
+  .wmf-no  { color: #bbb; font-size: 11px; }
+
+  /* editable inputs */
+  input.inp-date, input.inp-qty {
+    border: 1.5px solid #f0a04a;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 12px;
+    background: #fff9f0;
+    width: 120px;
+  }
+  input.inp-qty { width: 80px; }
+  input.inp-date:focus, input.inp-qty:focus {
+    outline: none; border-color: #e67e22; background: #fff3e0;
+  }
+
+  textarea.inp-comment {
+    border: 1.5px solid #82c882;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 12px;
+    background: #f4fbf4;
+    width: 160px;
+    resize: vertical;
+    min-height: 30px;
+    max-height: 80px;
+    font-family: inherit;
+  }
+  textarea.inp-comment:focus { outline: none; border-color: #27ae60; background: #eafcea; }
+
+  /*  FOOTER / SUBMIT  */
+  .footer-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-top: 2px solid #1F3864;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 200;
+    box-shadow: 0 -2px 8px rgba(0,0,0,.10);
+  }
+  .submit-info { font-size: 12px; color: #666; }
+  .submit-info strong { color: #1F3864; }
+
+  .btn-submit {
+    margin-left: auto;
+    padding: 9px 28px;
+    background: #1F3864;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .3px;
+    transition: background .15s;
+  }
+  .btn-submit:hover { background: #16294d; }
+  .btn-submit:active { background: #0f1e39; }
+
+  /*  EMPTY STATE  */
+  .empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: #aaa;
+  }
+  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; }
+
+  /*  ERROR STATE  */
+  .error-box {
+    margin: 24px;
+    background: #fff0f0;
+    border: 1.5px solid #e74c3c;
+    border-radius: 8px;
+    padding: 20px 24px;
+    color: #c0392b;
+    font-size: 13px;
+  }
+  .error-box strong { display: block; font-size: 15px; margin-bottom: 6px; }
+
+  /*  TOAST  */
+  .toast {
+    position: fixed;
+    bottom: 70px; right: 24px;
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all .3s;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.success { background: #27ae60; }
+  .toast.error   { background: #e74c3c; }
+
+  /*  LOADING  */
+  .loading {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; padding: 60px 24px; color: #888; font-size: 14px;
+  }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid #dde1e7;
+    border-top-color: #1F3864;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* hidden rows */
+  tr.hidden-row { display: none; }
+
+  /* part number mono */
+  td.part-num { font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; color: #1F3864; }
+
+  /* nfe */
+  td.nfe-cell { color: #555; font-size: 11px; }
+  td.nfe-cell span { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div style="font-size:12px;opacity:.6;letter-spacing:1px;text-transform:uppercase">CNH Industrial</div>
+    <h1>CSCN WMF &mdash; Promessas de Entrega</h1>
+  </div>
+  <div class="divider"></div>
+  <div>
+    <div style="font-size:10px;opacity:.6">Supply Chain - Supplier Commitment Portal</div>
+  </div>
+</header>
+
+<div class="link-warning">
+  <strong>ATENCAO:</strong> o link enviado ontem nao estava funcionando. Por favor considerar este novo LINK:
+  <a id="linkWarningUrl" href="#" target="_blank" rel="noopener"></a>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar" id="infoBar">
+  <div class="info-chip"><span class="label">Fornecedor</span><span class="value" id="ibFornecedor">-</span></div>
+  <div class="info-chip"><span class="label">Codigo</span><span class="value" id="ibCodigo">-</span></div>
+  <div class="info-chip"><span class="label">Semana CSCN</span><span class="value" id="ibSemana">-</span></div>
+  <div class="info-chip"><span class="label">Total de itens</span><span class="value" id="ibTotal">-</span></div>
+  <div class="info-chip highlight"><span class="label">Past Due</span><span class="value" id="ibPastDue">-</span></div>
+  <div class="info-chip"><span class="label">Exibindo</span><span class="value" id="ibExibindo">-</span></div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="filter-group">
+    <button class="btn-filter active"         data-filter="all"      onclick="setFilter('all',this)">Todos</button>
+    <button class="btn-filter red-filter"     data-filter="pastdue"  onclick="setFilter('pastdue',this)">Somente Past Due</button>
+    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)">Firm Junho</button>
+    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)">Firm Julho</button>
+  </div>
+
+  <div class="toolbar-sep"></div>
+
+  <label class="cb-label">
+    <input type="checkbox" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
+    Selecionar todos
+  </label>
+
+  <div class="toolbar-sep"></div>
+
+  <div class="toolbar-right">
+    <input type="date" id="bulkDate" class="date-input" title="Data a aplicar nas linhas selecionadas">
+    <button class="btn-apply" onclick="applyBulkDate()">Aplicar data aos selecionados</button>
+    <button class="btn-clear" onclick="clearSelection()">Limpar selecao</button>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap">
+  <div id="loadingState" class="loading"><div class="spinner"></div>Carregando pendencias...</div>
+  <div id="errorState"   class="error-box" style="display:none">
+    <strong>Erro ao carregar dados</strong>
+    <span id="errorMsg"></span>
+  </div>
+  <div id="tableContainer" style="display:none">
+    <table id="mainTable">
+      <thead>
+        <tr>
+          <th style="width:36px;text-align:center"><input type="checkbox" id="headCb" onchange="toggleSelectAll(this.checked)" style="accent-color:#fff;width:14px;height:14px"></th>
+          <th style="width:36px">#</th>
+          <th>Part Number</th>
+          <th>Impact</th>
+          <th>Acao</th>
+          <th>Ship Date CSCN</th>
+          <th style="text-align:center">Past Due WMF</th>
+          <th style="text-align:center">Firm Junho WMF</th>
+          <th style="text-align:center">Firm Julho WMF</th>
+          <th>Ultima NFe</th>
+          <th style="text-align:center">Confirmar entrega</th>
+          <th>Data Promessa</th>
+          <th>Qty Prometida</th>
+          <th>Comentario</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div id="emptyState" class="empty-state" style="display:none">
+      <div class="icon"></div>
+      <p>Nenhum item encontrado para o filtro selecionado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-bar">
+  <div class="submit-info">
+    Informe <strong>Data Promessa</strong> e <strong>Qty Prometida</strong>. Para itens em confirmacao, marque <strong>Confirmar entrega</strong> e clique em <strong>Enviar Promessas</strong>.
+  </div>
+  <button class="btn-submit" onclick="submitPromessas()">Enviar Promessas</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+//  State 
+let DATA        = null;   // raw JSON from server
+let ITEMS       = [];     // parsed items array
+let currentFilter = 'all';
+
+//  Helpers 
+function qs(sel)  { return document.querySelector(sel); }
+function qsa(sel) { return document.querySelectorAll(sel); }
+
+function fmtDate(raw) {
+  // accepts YYYYMMDD, YYYY-MM-DD or DD/MM/YYYY, returns DD/MM/YYYY
+  if (!raw) return '-';
+  raw = raw.toString().trim();
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) return raw;
+  if (/^\d{8}$/.test(raw)) {
+    // YYYYMMDD
+    return `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`;
+  }
+  if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
+    const [y,m,d] = raw.split('-');
+    return `${d}/${m}/${y}`;
+  }
+  return raw;
+}
+
+function toISODate(raw) {
+  // DD/MM/YYYY or YYYYMMDD or YYYY-MM-DD -> YYYY-MM-DD for <input type=date>
+  if (!raw || raw === '-') return '';
+  raw = raw.toString().trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+  if (/^\d{8}$/.test(raw)) return `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) {
+    const [d,m,y] = raw.split('/');
+    return `${y}-${m}-${d}`;
+  }
+  return '';
+}
+
+function impactBadge(val) {
+  if (!val) return '<span class="badge badge-none">-</span>';
+  const raw = val.toString();
+  const lower = raw.toLowerCase();
+  if (lower.includes('hiper')) return `<span class="badge badge-hyper">HIPER CRITICO</span>`;
+  // Values like "1 - Menor", "3 - No Funcional", "4 - Stopper"
+  const num = parseInt(val);
+  if (num === 4) return `<span class="badge bs">${val}</span>`;       // Stopper - vermelho
+  if (num === 3) return `<span class="badge bn">${val}</span>`;       // No Funcional - laranja
+  if (num === 1 || num === 2) return `<span class="badge bm">${val}</span>`; // Menor - verde
+  // Legacy English fallback
+  const v = val.toString().toLowerCase();
+  if (v === 'critical') return `<span class="badge bs">Critical</span>`;
+  if (v === 'high')     return `<span class="badge bn">High</span>`;
+  if (v === 'medium')   return `<span class="badge bm">Medium</span>`;
+  if (v === 'low')      return `<span class="badge bm">Low</span>`;
+  return `<span class="badge badge-none">${val}</span>`;
+}
+
+function actionBadge(val) {
+  const text = (val || 'Solicitar promessa').toString();
+  const lower = text.toLowerCase();
+  let cls = 'badge-action';
+  if (lower.includes('confirmar')) cls = 'badge-confirm';
+  if (lower.includes('solicitar')) cls = 'badge-request';
+  if (lower.includes('insuficiente')) cls = 'badge-insufficient';
+  return `<span class="badge ${cls}">${text}</span>`;
+}
+
+function wmfFlag(val) {
+  if (val === null || val === undefined || val === '' || val === false) return '<span class="wmf-no">-</span>';
+  const n = typeof val === 'number' ? val : parseFloat(val);
+  if (!isNaN(n)) return n > 0 ? `<span class="wmf-yes">${n.toLocaleString('pt-BR')}</span>` : '<span class="wmf-no">-</span>';
+  if (val === true || val === 'true' || val === 'sim' || val === 'yes' || val === '1')
+    return '<span class="wmf-yes">OK</span>';
+  return '<span class="wmf-no">-</span>';
+}
+
+function showToast(msg, type='') {
+  const t = qs('#toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => { t.className = 'toast'; }, 3200);
+}
+
+//  Load data 
+async function loadData() {
+  const params = new URLSearchParams(window.location.search);
+  const supplier = params.get('supplier');
+
+  if (!supplier) {
+    showError('Parametro <code>?supplier=CODIGO</code> nao encontrado na URL. Exemplo: <code>promessas.html?supplier=12345</code>');
+    return;
+  }
+
+  const filename = `pendencias_${supplier}.json`;
+
+  try {
+    const resp = await fetch(filename);
+    if (resp.status === 404) {
+      DATA = {
+        supplier_code: supplier,
+        supplier_name: '-',
+        semana: '-',
+        itens: [],
+        sem_pendencias: true
+      };
+      processData(DATA, supplier);
+      return;
+    }
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} - arquivo "${filename}" nao encontrado.`);
+    DATA = await resp.json();
+    processData(DATA, supplier);
+  } catch (e) {
+    showError(e.message || 'Erro desconhecido ao carregar o JSON.');
+  }
+}
+
+function showError(msg) {
+  qs('#loadingState').style.display = 'none';
+  qs('#errorState').style.display = 'block';
+  qs('#errorMsg').innerHTML = ' ' + msg;
+}
+
+function processData(data, supplierParam) {
+  // Support both flat array or wrapped object
+  ITEMS = Array.isArray(data) ? data
+        : (data.itens || data.items || data.pendencias || []);
+
+  const supplierName = ITEMS[0]?.supplier_name || data.supplier_name || '-';
+  const supplierCode = ITEMS[0]?.supplier_code || data.supplier_code || supplierParam;
+  const semana       = ITEMS[0]?.semana        || data.semana        || '-';
+
+  // Info bar
+  qs('#ibFornecedor').textContent = supplierName;
+  qs('#ibCodigo').textContent     = supplierCode;
+  qs('#ibSemana').textContent     = semana;
+  qs('#ibTotal').textContent      = ITEMS.length;
+  const pastDueCount = ITEMS.filter(i => flag(i.past_due_wmf)).length;
+  qs('#ibPastDue').textContent    = pastDueCount;
+
+  qs('#loadingState').style.display = 'none';
+  qs('#tableContainer').style.display = 'block';
+
+  renderTable();
+}
+
+function flag(val) {
+  if (val === null || val === undefined || val === '' || val === false) return false;
+  if (typeof val === 'number') return val > 0;
+  if (val === true || val === 1 || val === 'true' || val === 'sim' || val === 'yes' || val === '1') return true;
+  const n = parseFloat(val);
+  if (!isNaN(n)) return n > 0;
+  return false;
+}
+
+//  Render 
+function renderTable() {
+  const tbody = qs('#tableBody');
+  tbody.innerHTML = '';
+
+  const filtered = applyFilter(ITEMS);
+  qs('#ibExibindo').textContent = filtered.length + ' / ' + ITEMS.length;
+
+  if (filtered.length === 0) {
+    qs('#emptyState').style.display = 'block';
+  } else {
+    qs('#emptyState').style.display = 'none';
+    filtered.forEach((item, idx) => buildRow(item, idx + 1, tbody));
+  }
+  updateSelectAllState();
+}
+
+function applyFilter(items) {
+  if (currentFilter === 'all')     return items;
+  if (currentFilter === 'pastdue') return items.filter(i => flag(i.past_due_wmf));
+  if (currentFilter === 'jun')     return items.filter(i => flag(i.firm_jun_wmf));
+  if (currentFilter === 'jul')     return items.filter(i => flag(i.firm_jul_wmf));
+  return items;
+}
+
+function buildRow(item, seq, tbody) {
+  const isPastDue = flag(item.past_due_wmf);
+  const rowClass  = isPastDue ? 'past-due' : '';
+  const isoDate   = toISODate(item.ship_date);
+  const needsConfirm = (item.acao_requerida || '').toLowerCase().includes('confirmar');
+
+  const tr = document.createElement('tr');
+  tr.dataset.partNumber = item.part_number || '';
+  tr.className = rowClass;
+
+  tr.innerHTML = `
+    <td style="text-align:center">
+      <input type="checkbox" class="row-cb" onchange="rowCheckChange(this)" style="width:14px;height:14px;accent-color:#1F3864">
+    </td>
+    <td class="seq">${seq}</td>
+    <td class="part-num">${item.part_number || '-'}</td>
+    <td>${impactBadge(item.impact)}</td>
+    <td>${actionBadge(item.acao_requerida)}</td>
+    <td>${fmtDate(item.ship_date)}</td>
+    <td class="wmf-cell">${wmfFlag(item.past_due_wmf)}</td>
+    <td class="wmf-cell">${wmfFlag(item.firm_jun_wmf)}</td>
+    <td class="wmf-cell">${wmfFlag(item.firm_jul_wmf)}</td>
+    <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
+    <td class="confirm-cell">${needsConfirm ? '<label class="confirm-label"><input type="checkbox" class="inp-confirm" data-field="entrega_confirmada">Confirmo</label>' : '<span class="wmf-no">-</span>'}</td>
+    <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
+    <td><input type="number" class="inp-qty" data-field="qty_prometida" min="0" step="1" value="${item.qty_prometida !== undefined && item.qty_prometida !== null ? item.qty_prometida : ''}"></td>
+    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes...">${item.comentario || ''}</textarea></td>
+  `;
+  tbody.appendChild(tr);
+}
+
+//  Filter 
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  qsa('.btn-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+//  Selection 
+function toggleSelectAll(checked) {
+  qsa('.row-cb').forEach(cb => {
+    cb.checked = checked;
+    const tr = cb.closest('tr');
+    tr.classList.toggle('selected', checked);
+  });
+  qs('#headCb').checked    = checked;
+  qs('#selectAllCb').checked = checked;
+}
+
+function rowCheckChange(cb) {
+  const tr = cb.closest('tr');
+  tr.classList.toggle('selected', cb.checked);
+  updateSelectAllState();
+}
+
+function updateSelectAllState() {
+  const cbs = qsa('.row-cb');
+  const checked = [...cbs].filter(c => c.checked).length;
+  const allChecked = cbs.length > 0 && checked === cbs.length;
+  qs('#headCb').checked      = allChecked;
+  qs('#selectAllCb').checked = allChecked;
+}
+
+function clearSelection() {
+  qsa('.row-cb').forEach(cb => { cb.checked = false; cb.closest('tr').classList.remove('selected'); });
+  qs('#headCb').checked      = false;
+  qs('#selectAllCb').checked = false;
+}
+
+//  Bulk date 
+function applyBulkDate() {
+  const val = qs('#bulkDate').value;
+  if (!val) { showToast('Selecione uma data antes de aplicar.', 'error'); return; }
+  const selected = qsa('tr.selected');
+  if (!selected.length) { showToast('Nenhuma linha selecionada.', 'error'); return; }
+  selected.forEach(tr => {
+    const inp = tr.querySelector('.inp-date');
+    if (inp) inp.value = val;
+  });
+  showToast(`Data ${fmtDate(val)} aplicada a ${selected.length} linha(s).`, 'success');
+}
+
+//  Submit 
+function collectRows() {
+  const rows = qsa('#tableBody tr');
+  const result = [];
+  rows.forEach(tr => {
+    const part = tr.dataset.partNumber;
+    const original = ITEMS.find(i => i.part_number === part) || {};
+    const dateVal = tr.querySelector('.inp-date')?.value || '';
+    const qty     = tr.querySelector('.inp-qty')?.value;
+    const comment = tr.querySelector('.inp-comment')?.value || '';
+    const confirmed = !!tr.querySelector('.inp-confirm')?.checked;
+    result.push({
+      part_number:    part,
+      supplier_code:  original.supplier_code  || DATA?.supplier_code || '-',
+      supplier_name:  original.supplier_name  || DATA?.supplier_name || '-',
+      ship_date:      fmtDate(original.ship_date),
+      impact:         original.impact         || '',
+      sharepoint_critico: !!original.sharepoint_critico,
+      sharepoint_url: original.sharepoint_url || '',
+      acao_requerida: original.acao_requerida || '',
+      past_due_wmf:   flag(original.past_due_wmf),
+      firm_jun_wmf:   flag(original.firm_jun_wmf),
+      firm_jul_wmf:   flag(original.firm_jul_wmf),
+      ultima_nfe:     original.ultima_nfe     || '',
+      semana:         original.semana         || DATA?.semana || '-',
+      entrega_confirmada: confirmed,
+      data_promessa:  dateVal ? fmtDate(dateVal) : '',
+      qty_prometida:  qty !== '' && qty !== undefined ? Number(qty) : null,
+      comentario:     comment
+    });
+  });
+  return result;
+}
+
+async function submitPromessas() {
+  const itens = collectRows();
+  const filled = itens.filter(i => i.data_promessa || i.qty_prometida !== null || i.entrega_confirmada);
+  if (!filled.length) {
+    showToast('Preencha ao menos uma Data Promessa, Qty Prometida ou confirme uma entrega.', 'error');
+    return;
+  }
+
+  const firstItem = ITEMS[0] || {};
+  const payload = {
+    supplier_code: firstItem.supplier_code || DATA?.supplier_code || '-',
+    supplier_name: firstItem.supplier_name || DATA?.supplier_name || '-',
+    semana:        firstItem.semana        || DATA?.semana        || '-',
+    enviado_em:    new Date().toISOString(),
+    itens
+  };
+
+  const btn = document.querySelector('.btn-submit');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  try {
+    const resp = await fetch('https://promessas-api.cscn-wmf.workers.dev', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await resp.json().catch(() => ({}));
+
+    if (resp.ok && result.ok) {
+      showToast(`Promessas enviadas com sucesso (${filled.length} itens)!`, 'success');
+      document.querySelector('.footer-bar').innerHTML =
+        '<div style="text-align:center;padding:10px;color:#27ae60;font-weight:bold;font-size:14px">' +
+        'Promessas enviadas com sucesso! Obrigado pela sua resposta.</div>';
+    } else {
+      throw new Error(result.error || `HTTP ${resp.status}`);
+    }
+  } catch(e) {
+    showToast('Erro ao enviar: ' + e.message, 'error');
+    btn.textContent = 'Enviar Promessas';
+    btn.disabled = false;
+  }
+}
+
+//  Boot 
+const linkWarning = document.getElementById('linkWarningUrl');
+if (linkWarning) {
+  linkWarning.href = window.location.href;
+  linkWarning.textContent = window.location.href;
+}
+loadData();
+</script>
+</body>
+</html>
+
+
+
+
