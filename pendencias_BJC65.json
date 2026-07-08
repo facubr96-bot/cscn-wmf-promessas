@@ -1,25 +1,28 @@
 {
   "supplier_code": "BJC65",
   "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
-  "semana": "S28/2026",
-  "gerado_em": "07/07/2026 08:53",
+  "semana": "2026-W28",
+  "gerado_em": "08/07/2026 12:13",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "48172471",
       "supplier_code": "BJC65",
       "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
-      "impact": "1 - Menor",
-      "past_due_wmf": 18.0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 4.0,
-      "ship_date": "20260409",
+      "ship_date": "10/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 2,
+      "firm_jun_wmf": 4,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000195167-010",
-      "semana": "S28/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
-      "promessa_com": "",
-      "promessa_vigente": false,
-      "comentario": ""
+      "semana": "2026-W28",
+      "data_promessa": "29/06/2026",
+      "qty_prometida": 6,
+      "comentario": "Promessa vencida - solicitar nova data. Embarcou dia 29/06, na NF 0195367."
     }
   ]
 }
