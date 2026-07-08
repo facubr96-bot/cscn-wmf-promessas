@@ -1,25 +1,28 @@
 {
   "supplier_code": "BLJ46",
   "supplier_name": "HPPT - HIGH PERFORMANCE PLASTIC TEC",
-  "semana": "S28/2026",
-  "gerado_em": "07/07/2026 08:53",
+  "semana": "2026-W28",
+  "gerado_em": "08/07/2026 12:13",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "84236803",
       "supplier_code": "BLJ46",
       "supplier_name": "HPPT - HIGH PERFORMANCE PLASTIC TEC",
-      "impact": "1 - Menor",
-      "past_due_wmf": 0.0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 600.0,
-      "ship_date": "20260716",
+      "ship_date": "07/07/2026",
+      "impact": "1",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 600,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "S28/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
-      "promessa_com": "",
-      "promessa_vigente": false,
-      "comentario": ""
+      "semana": "2026-W28",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
