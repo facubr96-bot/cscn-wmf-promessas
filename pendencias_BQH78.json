@@ -1,25 +1,28 @@
 {
   "supplier_code": "BQH78",
   "supplier_name": "GBPLAST INDUSTRIA E COMERCIO LTDA",
-  "semana": "S28/2026",
-  "gerado_em": "07/07/2026 08:53",
+  "semana": "2026-W28",
+  "gerado_em": "08/07/2026 12:13",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "48094424",
       "supplier_code": "BQH78",
       "supplier_name": "GBPLAST INDUSTRIA E COMERCIO LTDA",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": 26.0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 84.0,
-      "ship_date": "20260701",
+      "ship_date": "19/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 26,
+      "firm_jun_wmf": 88,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000022405-001",
-      "semana": "S28/2026",
-      "promessa_data": "",
-      "promessa_qty": "",
-      "promessa_com": "",
-      "promessa_vigente": false,
-      "comentario": ""
+      "semana": "2026-W28",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
