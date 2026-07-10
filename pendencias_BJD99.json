@@ -2,7 +2,7 @@
   "supplier_code": "BJD99",
   "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,8 +15,8 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 40,
-      "firm_jun_wmf": 80,
+      "past_due_wmf": 60,
+      "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000315862-003",
       "semana": "2026-W28",
@@ -48,7 +48,7 @@
       "supplier_code": "BJD99",
       "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "ship_date": "03/09/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
