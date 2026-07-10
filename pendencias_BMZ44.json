@@ -2,14 +2,14 @@
   "supplier_code": "BMZ44",
   "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91781570",
       "supplier_code": "BMZ44",
       "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
-      "ship_date": "08/07/2026",
+      "ship_date": "21/07/2026",
       "impact": "Hiper Critico",
       "sharepoint_critico": true,
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=271",
