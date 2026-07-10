@@ -2,14 +2,14 @@
   "supplier_code": "BKH14",
   "supplier_name": "SCHAEFFLER BRASIL LTDA",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "51424330",
       "supplier_code": "BKH14",
       "supplier_name": "SCHAEFFLER BRASIL LTDA",
-      "ship_date": "17/09/2026",
+      "ship_date": "21/09/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
