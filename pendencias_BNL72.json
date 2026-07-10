@@ -2,7 +2,7 @@
   "supplier_code": "BNL72",
   "supplier_name": "METALURGICA FIMAC LTDA",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -14,15 +14,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 0,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000136826-001",
       "semana": "2026-W28",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "13/07/2026",
+      "qty_prometida": 20,
+      "comentario": "Favor confirmar se esta entrega sera cumprida."
     },
     {
       "part_number": "87586665",
@@ -33,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000138478-001",
       "semana": "2026-W28",
-      "data_promessa": "03/08/2026",
+      "data_promessa": "11/06/2026",
       "qty_prometida": 9,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. foi faturado no dia 11/06 nf 138478"
     }
   ]
 }
