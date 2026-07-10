@@ -2,28 +2,9 @@
   "supplier_code": "BKR45",
   "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
-    {
-      "part_number": "91739656",
-      "supplier_code": "BKR45",
-      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
-      "ship_date": "07/07/2026",
-      "impact": "Hiper Critico",
-      "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=279",
-      "sharepoint_reason": "Past Due",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 80,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "00101",
-      "semana": "2026-W28",
-      "data_promessa": "24/06/2026",
-      "qty_prometida": 80,
-      "comentario": "Promessa vencida - solicitar nova data."
-    },
     {
       "part_number": "91859020",
       "supplier_code": "BKR45",
@@ -41,6 +22,25 @@
       "semana": "2026-W28",
       "data_promessa": "01/07/2026",
       "qty_prometida": 20,
+      "comentario": "Promessa vencida - solicitar nova data."
+    },
+    {
+      "part_number": "91739656",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
+      "ship_date": "09/07/2026",
+      "impact": "1",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 80,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "00101",
+      "semana": "2026-W28",
+      "data_promessa": "24/06/2026",
+      "qty_prometida": 80,
       "comentario": "Promessa vencida - solicitar nova data."
     }
   ]
