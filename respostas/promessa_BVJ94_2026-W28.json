@@ -2,7 +2,7 @@
   "supplier_code": "BVJ94",
   "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
   "semana": "2026-W28",
-  "enviado_em": "2026-07-08T16:01:19.836Z",
+  "enviado_em": "2026-07-10T12:33:39.870Z",
   "itens": [
     {
       "part_number": "84575495",
@@ -20,8 +20,8 @@
       "semana": "2026-W28",
       "entrega_confirmada": false,
       "data_promessa": "14/07/2026",
-      "qty_prometida": 8,
-      "comentario": ""
+      "qty_prometida": 32,
+      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "91729847",
@@ -39,9 +39,9 @@
       "semana": "2026-W28",
       "entrega_confirmada": false,
       "data_promessa": "14/07/2026",
-      "qty_prometida": 28,
-      "comentario": ""
+      "qty_prometida": 32,
+      "comentario": "Promessa vencida - solicitar nova data."
     }
   ],
-  "recibido_en_worker": "2026-07-08T16:01:20.345Z"
+  "recibido_en_worker": "2026-07-10T12:33:40.010Z"
 }
