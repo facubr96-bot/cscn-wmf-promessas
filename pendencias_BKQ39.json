@@ -2,7 +2,7 @@
   "supplier_code": "BKQ39",
   "supplier_name": "CABS INTERNATIONAL LTDA",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -28,7 +28,7 @@
       "part_number": "84072623",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
-      "ship_date": "07/07/2026",
+      "ship_date": "09/07/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -47,7 +47,7 @@
       "part_number": "87712040",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
-      "ship_date": "10/08/2026",
+      "ship_date": "07/08/2026",
       "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -109,15 +109,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000064839-003",
+      "ultima_nfe": "000064916-003",
       "semana": "2026-W28",
       "data_promessa": "08/07/2026",
       "qty_prometida": 28,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
+      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "5171516",
@@ -132,7 +132,7 @@
       "past_due_wmf": 0,
       "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000064888-003",
+      "ultima_nfe": "000064916-003",
       "semana": "2026-W28",
       "data_promessa": "24/06/2026",
       "qty_prometida": 50,
@@ -142,7 +142,7 @@
       "part_number": "84075539",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
-      "ship_date": "20/11/2026",
+      "ship_date": "11/12/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -156,25 +156,6 @@
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "91707934",
-      "supplier_code": "BKQ39",
-      "supplier_name": "CABS INTERNATIONAL LTDA",
-      "ship_date": "03/09/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 70,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000063422-003",
-      "semana": "2026-W28",
-      "data_promessa": "15/07/2026",
-      "qty_prometida": 70,
-      "comentario": "Favor confirmar se esta entrega sera cumprida."
     }
   ]
 }
