@@ -2,7 +2,7 @@
   "supplier_code": "BPJ57",
   "supplier_name": "TUPER SA",
   "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "gerado_em": "10/07/2026 10:01",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 2,
+      "past_due_wmf": 14,
       "firm_jun_wmf": 11,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000170310-001",
@@ -34,7 +34,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 9,
+      "past_due_wmf": 21,
       "firm_jun_wmf": 17,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000170309-001",
