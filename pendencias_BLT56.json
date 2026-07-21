@@ -1,8 +1,8 @@
 {
   "supplier_code": "BLT56",
   "supplier_name": "BORGWARNER BRASIL LTDA",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000396658-009",
-      "semana": "2026-W28",
+      "semana": "2026-W30",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
