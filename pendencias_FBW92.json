@@ -1,0 +1,47 @@
+{
+  "supplier_code": "FBW92",
+  "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "91802211",
+      "supplier_code": "FBW92",
+      "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+      "ship_date": "02/09/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 50,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 50,
+      "ultima_nfe": "000143316-001",
+      "semana": "2026-W30",
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 50,
+      "comentario": "Favor confirmar se esta entrega sera cumprida."
+    },
+    {
+      "part_number": "91802796",
+      "supplier_code": "FBW92",
+      "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+      "ship_date": "27/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 45,
+      "firm_jul_wmf": 45,
+      "ultima_nfe": "000143315-001",
+      "semana": "2026-W30",
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 45,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Manter ambas no mesmo embarque."
+    }
+  ]
+}
