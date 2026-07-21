@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BJH90",
+  "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+  "semana": "2026-W30",
+  "enviado_em": "2026-07-21T19:25:09.969Z",
+  "itens": [
+    {
+      "part_number": "91757682",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "19/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000920148-003",
+      "semana": "2026-W30",
+      "entrega_confirmada": false,
+      "data_promessa": "28/07/2026",
+      "qty_prometida": 32,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "91757687",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "29/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "00103",
+      "semana": "2026-W30",
+      "entrega_confirmada": false,
+      "data_promessa": "06/08/2026",
+      "qty_prometida": 22,
+      "comentario": "Acrescimo de 38 peças dentro do periodo congelado de 05 semanas da Pordução Modine."
+    }
+  ],
+  "recibido_en_worker": "2026-07-21T19:25:10.318Z"
+}
