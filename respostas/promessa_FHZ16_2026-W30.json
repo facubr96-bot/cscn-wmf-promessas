@@ -2,7 +2,7 @@
   "supplier_code": "FHZ16",
   "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
   "semana": "2026-W30",
-  "enviado_em": "2026-07-21T19:22:01.078Z",
+  "enviado_em": "2026-07-21T19:27:21.474Z",
   "itens": [
     {
       "part_number": "100005",
@@ -21,7 +21,7 @@
       "entrega_confirmada": false,
       "data_promessa": "12/08/2026",
       "qty_prometida": null,
-      "comentario": "Ag. retorno do planejamento -  peças em processo de tratamento - ajustar data."
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "10798404",
@@ -40,7 +40,7 @@
       "entrega_confirmada": false,
       "data_promessa": "12/08/2026",
       "qty_prometida": null,
-      "comentario": "Validar o ajusta da data, validando a data de atendimento com a equipe de planejamento "
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "12626201",
@@ -211,8 +211,8 @@
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
       "qty_prometida": 1000,
-      "comentario": "AJUSTAR CONFORME MULTIPLO 1000"
+      "comentario": "AJUST. QUANT. P/ 1000"
     }
   ],
-  "recibido_en_worker": "2026-07-21T19:22:01.336Z"
+  "recibido_en_worker": "2026-07-21T19:27:21.587Z"
 }
