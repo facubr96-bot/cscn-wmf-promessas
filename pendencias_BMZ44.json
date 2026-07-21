@@ -1,8 +1,8 @@
 {
   "supplier_code": "BMZ44",
   "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -14,15 +14,15 @@
       "sharepoint_critico": true,
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=271",
       "sharepoint_reason": "Drop In",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 152,
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000032602-001",
-      "semana": "2026-W28",
-      "data_promessa": "29/06/2026",
-      "qty_prometida": 152,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "ultima_nfe": "000033259-001",
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
