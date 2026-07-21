@@ -1,8 +1,8 @@
 {
   "supplier_code": "BDC32",
   "supplier_name": "STAUFF BRASIL LTDA",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,11 +15,11 @@
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=286",
       "sharepoint_reason": "Drop In",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 200,
+      "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000154865-003",
-      "semana": "2026-W28",
+      "ultima_nfe": "000156792-003",
+      "semana": "2026-W30",
       "data_promessa": "02/07/2026",
       "qty_prometida": "",
       "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
