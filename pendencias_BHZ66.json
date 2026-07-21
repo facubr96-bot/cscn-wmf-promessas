@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BHZ66",
+  "supplier_name": "AUTOTRAVI BORRACHAS E PLASTICOS EIR",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "87716384",
+      "supplier_code": "BHZ66",
+      "supplier_name": "AUTOTRAVI BORRACHAS E PLASTICOS EIR",
+      "ship_date": "11/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 50,
+      "ultima_nfe": "000295423-001",
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
