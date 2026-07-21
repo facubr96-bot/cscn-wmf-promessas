@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKQ71",
   "supplier_name": "METALURGICA TUZZI LTDA",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -17,9 +17,9 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 19,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 18,
       "ultima_nfe": "000680658-001",
-      "semana": "2026-W28",
+      "semana": "2026-W30",
       "data_promessa": "01/07/2026",
       "qty_prometida": 29,
       "comentario": "Promessa vencida - solicitar nova data. 29 peças enviadas na NF 000680658.\nO saldo de 10 será embarcado conforme programação."
@@ -36,12 +36,50 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 16,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 24,
       "ultima_nfe": "000680661-001",
-      "semana": "2026-W28",
+      "semana": "2026-W30",
       "data_promessa": "01/07/2026",
       "qty_prometida": 40,
       "comentario": "Promessa vencida - solicitar nova data. 24 peças embarcadas na NF 000680661. O saldo de 16 seguirá conforme programação."
+    },
+    {
+      "part_number": "48169179",
+      "supplier_code": "BKQ71",
+      "supplier_name": "METALURGICA TUZZI LTDA",
+      "ship_date": "20/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 50,
+      "ultima_nfe": "000680660-001",
+      "semana": "2026-W30",
+      "data_promessa": "01/07/2026",
+      "qty_prometida": 50,
+      "comentario": "Promessa vencida - solicitar nova data. Enviado na NF 000680660"
+    },
+    {
+      "part_number": "51483493",
+      "supplier_code": "BKQ71",
+      "supplier_name": "METALURGICA TUZZI LTDA",
+      "ship_date": "25/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 40,
+      "ultima_nfe": "000680659-001",
+      "semana": "2026-W30",
+      "data_promessa": "01/07/2026",
+      "qty_prometida": 60,
+      "comentario": "Promessa vencida - solicitar nova data. Embarcadas na NF 000680659"
     }
   ]
 }
