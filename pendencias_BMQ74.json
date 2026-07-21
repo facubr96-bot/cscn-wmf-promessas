@@ -1,10 +1,29 @@
 {
   "supplier_code": "BMQ74",
   "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
+    {
+      "part_number": "47699301",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "14/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000173149-001",
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
     {
       "part_number": "87645102",
       "supplier_code": "BMQ74",
@@ -14,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 240,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 160,
       "ultima_nfe": "000176018-001",
-      "semana": "2026-W28",
-      "data_promessa": "24/06/2026",
-      "qty_prometida": 240,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "91746555",
@@ -33,15 +52,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 144,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 144,
       "ultima_nfe": "000176018-001",
-      "semana": "2026-W28",
-      "data_promessa": "24/06/2026",
-      "qty_prometida": 216,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
