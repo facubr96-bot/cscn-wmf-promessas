@@ -1,8 +1,8 @@
 {
   "supplier_code": "BVV34",
   "supplier_name": "DAGAN INDUSTRIA E COMERCIO DE PRODU",
-  "semana": "2026-W28",
-  "gerado_em": "08/07/2026 12:13",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,11 +15,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 20,
+      "past_due_wmf": 0,
       "firm_jun_wmf": 10,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000041816-000",
-      "semana": "2026-W28",
+      "ultima_nfe": "000042894-000",
+      "semana": "2026-W30",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
