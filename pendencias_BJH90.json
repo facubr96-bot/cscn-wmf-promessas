@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJH90",
   "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
-  "semana": "2026-W28",
-  "gerado_em": "10/07/2026 10:01",
+  "semana": "2026-W30",
+  "gerado_em": "21/07/2026 15:55",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -14,15 +14,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 51,
-      "firm_jun_wmf": 33,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "00102",
-      "semana": "2026-W28",
-      "data_promessa": "16/06/2026",
-      "qty_prometida": 24,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 7,
+      "firm_jun_wmf": 17,
+      "firm_jul_wmf": 47,
+      "ultima_nfe": "000920148-003",
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "91757687",
@@ -33,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 41,
-      "firm_jul_wmf": 0,
+      "firm_jun_wmf": 38,
+      "firm_jul_wmf": 52,
       "ultima_nfe": "00103",
-      "semana": "2026-W28",
-      "data_promessa": "16/06/2026",
-      "qty_prometida": 52,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "semana": "2026-W30",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
