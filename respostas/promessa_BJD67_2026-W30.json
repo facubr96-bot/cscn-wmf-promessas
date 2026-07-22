@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BJD67",
+  "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
+  "semana": "2026-W30",
+  "enviado_em": "2026-07-22T11:53:21.842Z",
+  "itens": [
+    {
+      "part_number": "51698953",
+      "supplier_code": "BJD67",
+      "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
+      "ship_date": "07/09/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000046328-001",
+      "semana": "2026-W30",
+      "entrega_confirmada": false,
+      "data_promessa": "20/07/2026",
+      "qty_prometida": 60,
+      "comentario": "Promessa vencida - solicitar nova data."
+    },
+    {
+      "part_number": "92136651",
+      "supplier_code": "BJD67",
+      "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
+      "ship_date": "18/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000046604-001",
+      "semana": "2026-W30",
+      "entrega_confirmada": false,
+      "data_promessa": "31/07/2026",
+      "qty_prometida": 60,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-07-22T11:53:22.693Z"
+}
