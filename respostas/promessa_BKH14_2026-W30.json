@@ -2,7 +2,7 @@
   "supplier_code": "BKH14",
   "supplier_name": "SCHAEFFLER BRASIL LTDA",
   "semana": "2026-W30",
-  "enviado_em": "2026-07-22T11:11:37.854Z",
+  "enviado_em": "2026-07-22T11:12:03.933Z",
   "itens": [
     {
       "part_number": "51424330",
@@ -24,5 +24,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-07-22T11:11:38.211Z"
+  "recibido_en_worker": "2026-07-22T11:12:03.945Z"
 }
