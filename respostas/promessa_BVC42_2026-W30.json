@@ -2,7 +2,7 @@
   "supplier_code": "BVC42",
   "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
   "semana": "2026-W30",
-  "enviado_em": "2026-07-22T18:39:02.201Z",
+  "enviado_em": "2026-07-24T12:14:56.109Z",
   "itens": [
     {
       "part_number": "48144672",
@@ -21,7 +21,7 @@
       "entrega_confirmada": false,
       "data_promessa": "17/07/2026",
       "qty_prometida": 80,
-      "comentario": "PEÇAS ENVIADAS 17/07"
+      "comentario": "enviado 17/07/26"
     },
     {
       "part_number": "84221442",
@@ -59,7 +59,7 @@
       "entrega_confirmada": false,
       "data_promessa": "17/07/2026",
       "qty_prometida": 60,
-      "comentario": "peças enviadas 17/07"
+      "comentario": "enviado 17/07"
     },
     {
       "part_number": "47435145",
@@ -76,8 +76,8 @@
       "ultima_nfe": "000113849-001",
       "semana": "2026-W30",
       "entrega_confirmada": false,
-      "data_promessa": "24/07/2026",
-      "qty_prometida": 16,
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 36,
       "comentario": "Solicitar promessa."
     },
     {
@@ -96,7 +96,7 @@
       "semana": "2026-W30",
       "entrega_confirmada": false,
       "data_promessa": "24/07/2026",
-      "qty_prometida": 320,
+      "qty_prometida": 280,
       "comentario": "Solicitar promessa."
     },
     {
@@ -116,7 +116,7 @@
       "entrega_confirmada": false,
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "Solicitar promessa."
+      "comentario": "não tem programa"
     },
     {
       "part_number": "48152926",
@@ -133,7 +133,7 @@
       "ultima_nfe": "000113984-001",
       "semana": "2026-W30",
       "entrega_confirmada": false,
-      "data_promessa": "24/07/2026",
+      "data_promessa": "29/07/2026",
       "qty_prometida": 22,
       "comentario": "Solicitar promessa."
     },
@@ -173,7 +173,7 @@
       "entrega_confirmada": false,
       "data_promessa": "17/07/2026",
       "qty_prometida": 26,
-      "comentario": "peças enviadas 17/07"
+      "comentario": "enviado dia 17/07/26"
     },
     {
       "part_number": "84131403",
@@ -192,7 +192,7 @@
       "entrega_confirmada": false,
       "data_promessa": "17/07/2026",
       "qty_prometida": 26,
-      "comentario": "peças enviadas 17/07"
+      "comentario": "enviado dia 17/07"
     },
     {
       "part_number": "84312030",
@@ -209,8 +209,8 @@
       "ultima_nfe": "000113849-001",
       "semana": "2026-W30",
       "entrega_confirmada": false,
-      "data_promessa": "17/07/2026",
-      "qty_prometida": 50,
+      "data_promessa": "24/07/2026",
+      "qty_prometida": 150,
       "comentario": "Solicitar promessa."
     },
     {
@@ -228,8 +228,8 @@
       "ultima_nfe": "000113984-001",
       "semana": "2026-W30",
       "entrega_confirmada": false,
-      "data_promessa": "31/07/2026",
-      "qty_prometida": 70,
+      "data_promessa": "29/07/2026",
+      "qty_prometida": 37,
       "comentario": "Solicitar promessa."
     },
     {
@@ -267,8 +267,8 @@
       "semana": "2026-W30",
       "entrega_confirmada": false,
       "data_promessa": "24/07/2026",
-      "qty_prometida": 50,
-      "comentario": "Solicitar promessa."
+      "qty_prometida": 111,
+      "comentario": "enviado 100 pçs 17/07 + 11 pçs 24/07/26"
     },
     {
       "part_number": "87571015",
@@ -285,9 +285,9 @@
       "ultima_nfe": "000113849-001",
       "semana": "2026-W30",
       "entrega_confirmada": false,
-      "data_promessa": "24/07/2026",
-      "qty_prometida": 49,
-      "comentario": "Solicitar promessa."
+      "data_promessa": "17/07/2026",
+      "qty_prometida": 100,
+      "comentario": "enviado 100 pçs 17/07/26"
     },
     {
       "part_number": "87653304",
@@ -305,9 +305,9 @@
       "semana": "2026-W30",
       "entrega_confirmada": false,
       "data_promessa": "24/07/2026",
-      "qty_prometida": 18,
+      "qty_prometida": 24,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-07-22T18:39:02.769Z"
+  "recibido_en_worker": "2026-07-24T12:14:56.331Z"
 }
