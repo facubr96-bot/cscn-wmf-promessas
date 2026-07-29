@@ -1,15 +1,15 @@
 {
   "supplier_code": "BKR43",
   "supplier_name": "STABILUS LTDA",
-  "semana": "2026-W30",
-  "gerado_em": "21/07/2026 15:55",
+  "semana": "2026-W31",
+  "gerado_em": "29/07/2026 07:30",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "47916086",
       "supplier_code": "BKR43",
       "supplier_name": "STABILUS LTDA",
-      "ship_date": "21/07/2026",
+      "ship_date": "27/07/2026",
       "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000078463-001",
-      "semana": "2026-W30",
+      "semana": "2026-W31",
       "data_promessa": "29/07/2026",
       "qty_prometida": 200,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
