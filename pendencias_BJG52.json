@@ -1,15 +1,15 @@
 {
   "supplier_code": "BJG52",
   "supplier_name": "METALURGICA FALLGATTER LTDA",
-  "semana": "2026-W30",
-  "gerado_em": "21/07/2026 15:55",
+  "semana": "2026-W31",
+  "gerado_em": "29/07/2026 07:30",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "87480926",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "ship_date": "31/08/2026",
+      "ship_date": "24/08/2026",
       "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,29 +19,10 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000530018-001",
-      "semana": "2026-W30",
+      "semana": "2026-W31",
       "data_promessa": "06/07/2026",
       "qty_prometida": 16,
       "comentario": "Promessa vencida - solicitar nova data. Material embarcado 000530018-1"
-    },
-    {
-      "part_number": "92186966",
-      "supplier_code": "BJG52",
-      "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "ship_date": "09/11/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 120,
-      "ultima_nfe": "000515301-001",
-      "semana": "2026-W30",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
     }
   ]
 }
