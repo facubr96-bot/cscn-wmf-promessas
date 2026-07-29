@@ -1,0 +1,47 @@
+{
+  "supplier_code": "BVH54",
+  "supplier_name": "CARRON AUTOMOTIVE LTDA",
+  "semana": "2026-W31",
+  "gerado_em": "29/07/2026 07:30",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "51599229",
+      "supplier_code": "BVH54",
+      "supplier_name": "CARRON AUTOMOTIVE LTDA",
+      "ship_date": "06/10/2026",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=299",
+      "sharepoint_reason": "Stock Loss",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 10,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "WMF-000719",
+      "semana": "2026-W31",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "51599213",
+      "supplier_code": "BVH54",
+      "supplier_name": "CARRON AUTOMOTIVE LTDA",
+      "ship_date": "06/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 10,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W31",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
