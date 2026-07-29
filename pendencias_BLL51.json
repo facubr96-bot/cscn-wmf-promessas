@@ -1,15 +1,15 @@
 {
   "supplier_code": "BLL51",
   "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
-  "semana": "2026-W30",
-  "gerado_em": "21/07/2026 15:55",
+  "semana": "2026-W31",
+  "gerado_em": "29/07/2026 07:30",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "5151891",
       "supplier_code": "BLL51",
       "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
-      "ship_date": "23/03/2027",
+      "ship_date": "31/03/2027",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000294205-001",
-      "semana": "2026-W30",
+      "semana": "2026-W31",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000295072-001",
-      "semana": "2026-W30",
+      "semana": "2026-W31",
       "data_promessa": "02/07/2026",
       "qty_prometida": 30,
       "comentario": "Promessa vencida - solicitar nova data. LOCAL COLETA. ALBERTO KLEMTZ 441 PORTÃO."
