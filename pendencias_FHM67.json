@@ -1,47 +1,47 @@
 {
   "supplier_code": "FHM67",
   "supplier_name": "DENSO DO BRASIL LTDA",
-  "semana": "2026-W30",
-  "gerado_em": "21/07/2026 15:55",
+  "semana": "2026-W31",
+  "gerado_em": "29/07/2026 07:30",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91757663",
       "supplier_code": "FHM67",
       "supplier_name": "DENSO DO BRASIL LTDA",
-      "ship_date": "24/08/2026",
-      "impact": "3",
+      "ship_date": "29/09/2026",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 21,
-      "firm_jun_wmf": 16,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 17,
       "ultima_nfe": "000107495-018",
-      "semana": "2026-W30",
-      "data_promessa": "09/07/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
+      "semana": "2026-W31",
+      "data_promessa": "24/07/2026",
+      "qty_prometida": 24,
+      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "91757668",
       "supplier_code": "FHM67",
       "supplier_name": "DENSO DO BRASIL LTDA",
-      "ship_date": "14/08/2026",
-      "impact": "3",
+      "ship_date": "29/09/2026",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 5,
-      "firm_jun_wmf": 18,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 18,
       "ultima_nfe": "000107495-018",
-      "semana": "2026-W30",
-      "data_promessa": "09/07/2026",
-      "qty_prometida": 32,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
+      "semana": "2026-W31",
+      "data_promessa": "24/07/2026",
+      "qty_prometida": 8,
+      "comentario": "Promessa vencida - solicitar nova data."
     }
   ]
 }
