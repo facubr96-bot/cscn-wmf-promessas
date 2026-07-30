@@ -2,7 +2,7 @@
   "supplier_code": "BLH98",
   "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
   "semana": "2026-W31",
-  "enviado_em": "2026-07-30T18:30:24.943Z",
+  "enviado_em": "2026-07-30T18:34:00.714Z",
   "itens": [
     {
       "part_number": "82034728",
@@ -20,7 +20,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 350,
       "comentario": "Item já coletado"
     },
     {
@@ -39,8 +39,8 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
-      "comentario": "Verificando saldo com a fábrica"
+      "qty_prometida": 300,
+      "comentario": "Item já coletado"
     },
     {
       "part_number": "87032825",
@@ -77,8 +77,8 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
-      "comentario": "Verificando saldo com a fábrica"
+      "qty_prometida": 500,
+      "comentario": "Item já coletado"
     },
     {
       "part_number": "10033411",
@@ -96,7 +96,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 500,
       "comentario": "Item já coletado"
     },
     {
@@ -115,7 +115,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 750,
       "comentario": "Item já coletado"
     },
     {
@@ -134,7 +134,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 250,
       "comentario": "Item já coletado"
     },
     {
@@ -153,7 +153,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 400,
       "comentario": "Item já coletado"
     },
     {
@@ -172,7 +172,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 200,
       "comentario": "Item já coletado"
     },
     {
@@ -191,7 +191,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 400,
       "comentario": "Item já coletado"
     },
     {
@@ -210,8 +210,8 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
-      "comentario": "Verificando saldo com a fábrica"
+      "qty_prometida": 1370,
+      "comentario": "Item já coletado"
     },
     {
       "part_number": "12601574",
@@ -229,8 +229,8 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
-      "comentario": "Verificando saldo com a fábrica"
+      "qty_prometida": 400,
+      "comentario": "Item já coletado"
     },
     {
       "part_number": "14460081",
@@ -248,7 +248,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 150,
       "comentario": "Item já coletado"
     },
     {
@@ -267,7 +267,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 3650,
       "comentario": "Item já coletado"
     },
     {
@@ -286,7 +286,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Item já coletado"
     },
     {
@@ -305,7 +305,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 50,
       "comentario": "Item já coletado"
     },
     {
@@ -324,7 +324,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 500,
       "comentario": "Item já coletado"
     },
     {
@@ -343,7 +343,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 1050,
       "comentario": "Item já coletado"
     },
     {
@@ -362,7 +362,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 1850,
       "comentario": "Item já coletado"
     },
     {
@@ -381,7 +381,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 1000,
       "comentario": "Item já coletado"
     },
     {
@@ -400,7 +400,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 1900,
       "comentario": "Item já coletado"
     },
     {
@@ -495,7 +495,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -514,7 +514,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 50,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -552,7 +552,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -628,7 +628,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -647,7 +647,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -723,7 +723,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -761,7 +761,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 150,
       "comentario": "Item já coletado"
     },
     {
@@ -780,7 +780,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -799,7 +799,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -818,7 +818,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 90,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -856,7 +856,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -875,7 +875,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -932,7 +932,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -951,7 +951,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 120,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1008,7 +1008,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1027,7 +1027,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1046,7 +1046,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1065,7 +1065,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1160,7 +1160,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1179,7 +1179,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1236,7 +1236,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1274,7 +1274,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1350,7 +1350,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     },
     {
@@ -1369,7 +1369,7 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "27/07/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 1000,
       "comentario": "Item já coletado"
     },
     {
@@ -1426,9 +1426,9 @@
       "semana": "2026-W31",
       "entrega_confirmada": false,
       "data_promessa": "07/08/2026",
-      "qty_prometida": 0,
+      "qty_prometida": 100,
       "comentario": "Incluso no embarque da próxima semana"
     }
   ],
-  "recibido_en_worker": "2026-07-30T18:30:25.067Z"
+  "recibido_en_worker": "2026-07-30T18:34:00.753Z"
 }
