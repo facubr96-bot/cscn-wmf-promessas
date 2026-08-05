@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BKH14",
+  "supplier_name": "SCHAEFFLER BRASIL LTDA",
+  "semana": "2026-W32",
+  "gerado_em": "05/08/2026 11:21",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "51424330",
+      "supplier_code": "BKH14",
+      "supplier_name": "SCHAEFFLER BRASIL LTDA",
+      "ship_date": "15/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 120,
+      "firm_jul_wmf": 180,
+      "ultima_nfe": "000811977-010",
+      "semana": "2026-W32",
+      "data_promessa": "01/09/2026",
+      "qty_prometida": 120,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+    }
+  ]
+}
