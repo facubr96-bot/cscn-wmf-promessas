@@ -1,0 +1,4629 @@
+{
+  "47462929": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47567456": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 300,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47632509": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47793426": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47801157": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47819163": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51593654": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51695225": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51627100": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 15,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84603436": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87373859": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 120,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47821777": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84128088": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51549217": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51549221": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51549223": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84076645": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 26,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84163827": {
+    "tem_promessa": true,
+    "data_promessa": "11/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84236803": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 400,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "91841400": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 84,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47763819": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47486420": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "48040231": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 30,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87370600": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51481648": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 120,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87108189": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 16,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87108187": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 8,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "82020477": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87108164": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87108166": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 21,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "44995060": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 68,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87751611": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84287963": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 25,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "51479874": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84589341": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 5,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "324467A1": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84186494": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47977364": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 6,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84121137": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 30,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87735435": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 8,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47800541": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 3,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "92198174": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "92196886": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47749392": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47800586": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47800590": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84588958": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84589343": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "91700978": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47840433": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "91803773": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 31,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "91893746": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 1000,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87326017": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47532877": {
+    "tem_promessa": true,
+    "data_promessa": "20/08/2026",
+    "qty_prometida": 90,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "86637977": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 300,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "15985034": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 18,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "82001040": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 800,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "83924734": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 45,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "11125721": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "120103": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 1000,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "90341203": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "12164221": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 200,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "12647601": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 5,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "370011": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 14,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "15977921": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "140016": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "393698": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87651026": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 84,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "43138": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "9706703": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 90,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87695418": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 1200,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "562106": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 240,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84441255": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "14496521": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 2000,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "120093": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 205,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "394629": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 83,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "412168": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 1000,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "84435244": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "86605625": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "87301326": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "9706693": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 14,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "9804278": {
+    "tem_promessa": true,
+    "data_promessa": "15/08/2026",
+    "qty_prometida": 456,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47705836": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 30,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47848830": {
+    "tem_promessa": true,
+    "data_promessa": "26/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47849683": {
+    "tem_promessa": true,
+    "data_promessa": "26/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "48194554": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "92161898": {
+    "tem_promessa": true,
+    "data_promessa": "26/08/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "48194547": {
+    "tem_promessa": true,
+    "data_promessa": "26/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "47705979": {
+    "tem_promessa": true,
+    "data_promessa": "26/08/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-08-05T11:17:08.881400"
+  },
+  "86988833": {
+    "tem_promessa": false,
+    "data_promessa": "02/07/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T16:45:22.067Z"
+  },
+  "87716384": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T15:56:28.009Z"
+  },
+  "48172471": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 6,
+    "comentario": "Embarcou dia 29/06, na NF 0195367.",
+    "ultima_atualizacao": "2026-07-08T14:27:31.306Z"
+  },
+  "90415132": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T14:07:52.897Z"
+  },
+  "87666897": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 15,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "87671843": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 8,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47606560": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47606561": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47638042": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 28,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47970260": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "51679859": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 40,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84475630": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 95,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "87676999": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 18,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47625506": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 75,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "47788748": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 20,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84215095": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 45,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84288644": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-10T16:54:49.768Z"
+  },
+  "84311538": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 3,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84392009": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 10,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84394057": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 2,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "48172787": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 80,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "84372492": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 10,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "87618166": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 9,
+    "comentario": "Promessa enviada",
+    "ultima_atualizacao": "2026-07-24T11:47:49.447Z"
+  },
+  "51698953": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:35:26.256Z"
+  },
+  "92136651": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 60,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:00:16.852Z"
+  },
+  "87480926": {
+    "tem_promessa": true,
+    "data_promessa": "06/07/2026",
+    "qty_prometida": 16,
+    "comentario": "Material embarcado 000530018-1",
+    "ultima_atualizacao": "2026-07-08T14:17:32.483Z"
+  },
+  "92186966": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 120,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-23T10:45:58.438Z"
+  },
+  "11125424": {
+    "tem_promessa": true,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": 3,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "11254134": {
+    "tem_promessa": true,
+    "data_promessa": "05/06/2026",
+    "qty_prometida": 6,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "14258131": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "47399711": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 2,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "47411035": {
+    "tem_promessa": true,
+    "data_promessa": "04/06/2026",
+    "qty_prometida": 5,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "47650283": {
+    "tem_promessa": false,
+    "data_promessa": "29/09/2029",
+    "qty_prometida": "",
+    "comentario": "Não temos demanda no EDI",
+    "ultima_atualizacao": "2026-07-08T19:01:33.098Z"
+  },
+  "82029234": {
+    "tem_promessa": true,
+    "data_promessa": "01/06/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "84480445": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87621792": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 6,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "15225924": {
+    "tem_promessa": true,
+    "data_promessa": "20/07/2026",
+    "qty_prometida": 5000,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:01:33.098Z"
+  },
+  "15985234": {
+    "tem_promessa": true,
+    "data_promessa": "09/06/2026",
+    "qty_prometida": 6,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "47700589": {
+    "tem_promessa": true,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "84382750": {
+    "tem_promessa": true,
+    "data_promessa": "06/07/2026",
+    "qty_prometida": 204,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:01:33.098Z"
+  },
+  "86975890": {
+    "tem_promessa": true,
+    "data_promessa": "03/06/2026",
+    "qty_prometida": 3,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "86980471": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 5,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87021006": {
+    "tem_promessa": true,
+    "data_promessa": "10/06/2026",
+    "qty_prometida": 2,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87367550": {
+    "tem_promessa": true,
+    "data_promessa": "20/07/2026",
+    "qty_prometida": 360,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:01:33.098Z"
+  },
+  "87670759": {
+    "tem_promessa": true,
+    "data_promessa": "02/06/2026",
+    "qty_prometida": 2,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87688509": {
+    "tem_promessa": true,
+    "data_promessa": "08/06/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87681209": {
+    "tem_promessa": true,
+    "data_promessa": "11/06/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87742362": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 2,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "87742368": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 3,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:13:13.195Z"
+  },
+  "47640356": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 30,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "84390314": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "não tem",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "84511578": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "não tem",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "87371243": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "não tem",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "51584166": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 100,
+    "comentario": "Ultima nf 216134",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "84402613": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "não tem",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "84558047": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 200,
+    "comentario": "Ultima nf 215983",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "47432806": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T18:38:50.469Z"
+  },
+  "91757682": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 24,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T18:30:31.889Z"
+  },
+  "91757687": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 52,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T18:30:31.889Z"
+  },
+  "87280339": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:08:29.250Z"
+  },
+  "47453920": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 25,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "47533115": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 6,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "47631585": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 51,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "87549630": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 14,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "91888067": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 11,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "47539160": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 1,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "84131732": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 5,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "84587081": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 14,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T19:29:10.699Z"
+  },
+  "85006229": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 18,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T15:06:48.407Z"
+  },
+  "87573236": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 18,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T15:06:48.407Z"
+  },
+  "84989399": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 16,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:35:08.493Z"
+  },
+  "51687031": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:35:08.493Z"
+  },
+  "87666924": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:35:08.493Z"
+  },
+  "48182573": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:35:08.493Z"
+  },
+  "90490510": {
+    "tem_promessa": true,
+    "data_promessa": "30/09/2026",
+    "qty_prometida": 20,
+    "comentario": "Ajustar LM para 20pçs",
+    "ultima_atualizacao": "2026-07-21T22:06:46.304Z"
+  },
+  "421490": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 21,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-19T12:40:26.567Z"
+  },
+  "47405749": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 21,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-19T12:40:26.567Z"
+  },
+  "84390751": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 59,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-19T12:40:26.567Z"
+  },
+  "87624046": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Inclusao fora do lead time",
+    "ultima_atualizacao": "2026-07-08T14:51:48.296Z"
+  },
+  "87677801": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 142,
+    "comentario": "item, pronto, iremos enviar no mesmo veiculo",
+    "ultima_atualizacao": "2026-07-08T14:51:48.296Z"
+  },
+  "84398273": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 75,
+    "comentario": "ITEM JA ENVIADO",
+    "ultima_atualizacao": "2026-07-08T14:51:48.296Z"
+  },
+  "51535733": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 270,
+    "comentario": "Inclusao fora do lead time",
+    "ultima_atualizacao": "2026-07-08T14:51:48.296Z"
+  },
+  "86528667": {
+    "tem_promessa": false,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-21T19:16:11.461Z"
+  },
+  "91838083": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Entregue em 30/06, nao temos mais pedidos em aberto",
+    "ultima_atualizacao": "2026-07-29T19:36:39.233Z"
+  },
+  "92137790": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 96,
+    "comentario": "considerar multiplos de 08 peças por embalagem",
+    "ultima_atualizacao": "2026-06-15T14:45:57.212Z"
+  },
+  "91768204": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T14:45:57.212Z"
+  },
+  "51424330": {
+    "tem_promessa": true,
+    "data_promessa": "01/09/2026",
+    "qty_prometida": 120,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T11:12:03.933Z"
+  },
+  "84312367": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 42,
+    "comentario": "Item colocado em atraso pela CNH. Estava como Planning para Outubro/2026",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "47360461": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 6,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "47361681": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Item já coletado!",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "47376576": {
+    "tem_promessa": true,
+    "data_promessa": "21/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47446294": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 40,
+    "comentario": "40 peças coletadas 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47631320": {
+    "tem_promessa": true,
+    "data_promessa": "09/06/2026",
+    "qty_prometida": 60,
+    "comentario": "Material coletado sob NF258.479.",
+    "ultima_atualizacao": "2026-06-15T11:56:28.171Z"
+  },
+  "47671660": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47797679": {
+    "tem_promessa": true,
+    "data_promessa": "11/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "48094430": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 280,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "48133443": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 5,
+    "comentario": "42 peças coletadas 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "48163594": {
+    "tem_promessa": true,
+    "data_promessa": "11/08/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "48168199": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "51446261": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "84128484": {
+    "tem_promessa": true,
+    "data_promessa": "15/09/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "84194670": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "84307749": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "84522311": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "87283209": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "87686906": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "91761204": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 55,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "91843696": {
+    "tem_promessa": true,
+    "data_promessa": "18/08/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-29T14:09:05.752Z"
+  },
+  "91861868": {
+    "tem_promessa": true,
+    "data_promessa": "21/07/2026",
+    "qty_prometida": 25,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "48164673": {
+    "tem_promessa": true,
+    "data_promessa": "12/06/2026",
+    "qty_prometida": 275,
+    "comentario": "Material Coletado 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47839513": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 42,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "92192014": {
+    "tem_promessa": true,
+    "data_promessa": "29/09/2039",
+    "qty_prometida": 14,
+    "comentario": "Item sem Aprovação de RIAI e Sem acordo Comercial sobre Ferramental",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "91868936": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 400,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47631580": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "84989342": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "84327223": {
+    "tem_promessa": true,
+    "data_promessa": "12/06/2026",
+    "qty_prometida": 100,
+    "comentario": "Material Coletado 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47558169": {
+    "tem_promessa": true,
+    "data_promessa": "12/06/2026",
+    "qty_prometida": 40,
+    "comentario": "Material Coletado 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "47558167": {
+    "tem_promessa": true,
+    "data_promessa": "12/06/2026",
+    "qty_prometida": 40,
+    "comentario": "Material Coletado 12/06 sob NF258.880",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "84355817": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:48:33.884Z"
+  },
+  "92170964": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 53,
+    "comentario": "ENVIADO 53 PEÇAS 13/07/2026, NFE 81280",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "389973A2": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 24,
+    "comentario": "ENVIADO 29 PEÇAS 13/07/2026, NFE 81279,81278,81280",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "416747A1": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 75,
+    "comentario": "ENVIADO 150 PEÇAS 13/07/2026 NFE 81280",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "51563283": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 23,
+    "comentario": "ENTREGA PREVISTA PARA 31/07/2026",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "552991": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 3,
+    "comentario": "ENTREGA PREVISTA PARA 31/07/2026",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "84032994": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 108,
+    "comentario": "ENTREGA PREVISTA PARA 31/07/2026",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "87302102": {
+    "tem_promessa": true,
+    "data_promessa": "02/08/2026",
+    "qty_prometida": 200,
+    "comentario": "ENTREGA PREVISTA PARA 02/07/2026",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "87653940": {
+    "tem_promessa": true,
+    "data_promessa": "16/02/2027",
+    "qty_prometida": 10,
+    "comentario": "ENTREGA PREVISTA PARA 16/02/2027",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "87666994": {
+    "tem_promessa": true,
+    "data_promessa": "10/09/2026",
+    "qty_prometida": 15,
+    "comentario": "ENTREGA PREVISTA PARA 10/09/2026",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "427677": {
+    "tem_promessa": true,
+    "data_promessa": "02/04/2027",
+    "qty_prometida": 50,
+    "comentario": "ENTREGA PREVISTA PARA 02/04/2027",
+    "ultima_atualizacao": "2026-07-24T12:20:39.397Z"
+  },
+  "84072623": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 3,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "47873275": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 16,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "48094425": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 14,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "48116615": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 28,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "5171516": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "91894360": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "92034957": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "91707934": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 70,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "90350855": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "item nao faz parte da nossa carteira , por gentileza retirar da programaçao",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "91752532": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:22:07.440Z"
+  },
+  "468476P": {
+    "tem_promessa": true,
+    "data_promessa": "25/06/2026",
+    "qty_prometida": 90,
+    "comentario": "Este item já foi enviado, foi coletado na Forbal 25/06/2026",
+    "ultima_atualizacao": "2026-07-08T14:18:16.827Z"
+  },
+  "84562879": {
+    "tem_promessa": true,
+    "data_promessa": "25/06/2026",
+    "qty_prometida": 20,
+    "comentario": "Este item já foi enviado, foi coletado na Forbal 25/06/2026",
+    "ultima_atualizacao": "2026-07-08T14:18:16.827Z"
+  },
+  "84563495": {
+    "tem_promessa": true,
+    "data_promessa": "25/06/2026",
+    "qty_prometida": 100,
+    "comentario": "Este item já foi enviado, foi coletado na Forbal 25/06/2026",
+    "ultima_atualizacao": "2026-07-08T14:18:16.827Z"
+  },
+  "47929096": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 29,
+    "comentario": "29 peças enviadas na NF 000680658.\nO saldo de 10 será embarcado conforme programação.",
+    "ultima_atualizacao": "2026-07-08T14:17:43.066Z"
+  },
+  "48133222": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 40,
+    "comentario": "24 peças embarcadas na NF 000680661. O saldo de 16 seguirá conforme programação.",
+    "ultima_atualizacao": "2026-07-08T14:17:43.066Z"
+  },
+  "48169179": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Enviado na NF 000680660",
+    "ultima_atualizacao": "2026-07-08T14:17:43.066Z"
+  },
+  "51483493": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 60,
+    "comentario": "Embarcadas na NF 000680659",
+    "ultima_atualizacao": "2026-07-08T14:17:43.066Z"
+  },
+  "47916086": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 200,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T16:22:58.714Z"
+  },
+  "91739656": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:16:49.292Z"
+  },
+  "91859020": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:16:49.292Z"
+  },
+  "47469889": {
+    "tem_promessa": true,
+    "data_promessa": "22/07/2026",
+    "qty_prometida": 24,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:16:49.292Z"
+  },
+  "90397908": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:16:49.292Z"
+  },
+  "84263413": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 30,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "197526C1": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 50,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "51513335": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 34,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "84315380": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 50,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "84579597": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 30,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "86602999": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 10,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "86974605": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 10,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "86975897": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 32,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "48169262": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 30,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "87331106": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 14,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "87542324": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 32,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "87687173": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 28,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "92134067": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "87377478": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 3,
+    "comentario": "Agrupando pedidos",
+    "ultima_atualizacao": "2026-06-15T17:50:55.956Z"
+  },
+  "51517792": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T18:48:10.021Z"
+  },
+  "84597412": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T18:48:10.021Z"
+  },
+  "82034728": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 350,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87032825": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "100015": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 500,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10033411": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 500,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10516674": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 750,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10615279": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 250,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10798301": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 400,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "1186238": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 400,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "120075": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 150,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "12601274": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 3000,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "12601574": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 400,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "12638621": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 300,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "14059214": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 400,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "14442031": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 200,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "14460081": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 150,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14496601": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 3650,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "15541921": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "15970611": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "16288324": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 500,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "300480": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 550,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "395528": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 150,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "43188": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 250,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "748961": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 300,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "86511326": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1050,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86592700": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 200,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "86625213": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 300,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86625254": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1000,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86625256": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 4100,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "86639037": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 1000,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "87308841": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 1050,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "87377778": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1900,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87698834": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 350,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "9804255": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 150,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "9804261": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 100,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "9838356": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 300,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "10519201": {
+    "tem_promessa": true,
+    "data_promessa": "20/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Previsto para 20/07",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "120104": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1370,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "12164121": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 1000,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "84370842": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 750,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "86624182": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1850,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87024336": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 500,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "87752072": {
+    "tem_promessa": true,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": 150,
+    "comentario": "Aguardando confirmação da fábrica sobre o prazo de entrega",
+    "ultima_atualizacao": "2026-07-09T12:02:47.045Z"
+  },
+  "11116631": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 200,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10516871": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Verificando saldo com a fábrica",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "10520001": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item inexistente na tabela focus",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11106234": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11107521": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11115321": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11119231": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 50,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11119921": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "11124834": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "12577211": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item antigo. Verificando questões comerciais",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "12644401": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Novo item. Verificando questões comerciais",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "12646704": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "13517320": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14305221": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14306324": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14432334": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14441321": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "14442431": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "15981234": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "16044024": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 150,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "16208430": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "47539577": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "47540519": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 90,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "4899093": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Verificando saldo com a fábrica",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "4899402": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "4899843": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "492-11031": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Novo item. Verificando questões comerciais",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "5100516": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "81871666": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "82012528": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 120,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "82025437": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "82028022": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "82028028": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "82028480": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "83949265": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "83949267": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "84021874": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Novo item. Verificando questões comerciais",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "84058945": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "84145763": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "84188433": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86015195": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86511325": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86518210": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86624003": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86625038": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "86637979": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item inexistente na tabela focus",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87000148": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87021759": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87030775": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87312644": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87331401": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87597953": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1000,
+    "comentario": "Item já coletado",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "87803278": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Verificando saldo com a fábrica",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "9511052": {
+    "tem_promessa": false,
+    "data_promessa": "31/12/2026",
+    "qty_prometida": "",
+    "comentario": "Item não firmado em seu EDI",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "9842687": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Incluso no embarque da próxima semana",
+    "ultima_atualizacao": "2026-07-30T18:34:00.714Z"
+  },
+  "84993999": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T16:08:32.577Z"
+  },
+  "84994000": {
+    "tem_promessa": true,
+    "data_promessa": "04/11/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:13:06.593Z"
+  },
+  "9578926": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 24,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T12:10:33.569Z"
+  },
+  "5151891": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T12:10:33.569Z"
+  },
+  "9576267": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T12:10:33.569Z"
+  },
+  "51599650": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 75,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:25:33.274Z"
+  },
+  "51599652": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 75,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:25:33.274Z"
+  },
+  "48151919": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 18,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:25:33.274Z"
+  },
+  "51679793": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 36,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:25:33.274Z"
+  },
+  "47976356": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-21T19:29:06.909Z"
+  },
+  "84538095": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 39,
+    "comentario": "Promessa vencida - solicitar nova data. NF 145582 - 39pç.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "134084": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Promessa vencida - solicitar nova data.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "51478960": {
+    "tem_promessa": false,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": "",
+    "comentario": "Promessa vencida - solicitar nova data. NF 145582 - 25pç, saldo de 75pç, embarque até 24/07/2026.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "87602190": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 188,
+    "comentario": "Promessa vencida - solicitar nova data. NF 145582 - 188pç.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "87300110": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 400,
+    "comentario": "Favor confirmar se esta entrega sera cumprida.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "91891861": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 500,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "87389815": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 12,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "87602186": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "91891862": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 500,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "91891863": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 500,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T16:42:28.520Z"
+  },
+  "47699301": {
+    "tem_promessa": false,
+    "data_promessa": "30/07/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T11:00:00.995Z"
+  },
+  "87645102": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 240,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T15:06:25.865Z"
+  },
+  "91746555": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 216,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T15:06:25.865Z"
+  },
+  "84485310": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T15:06:25.865Z"
+  },
+  "84254520": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 1,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T15:06:25.865Z"
+  },
+  "47486947": {
+    "tem_promessa": true,
+    "data_promessa": "12/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-24T11:43:32.032Z"
+  },
+  "47404763": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 40,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "47612065": {
+    "tem_promessa": true,
+    "data_promessa": "21/09/2026",
+    "qty_prometida": 10,
+    "comentario": "nf 284374",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "47832557": {
+    "tem_promessa": false,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": "",
+    "comentario": "sem pedido",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "48015204": {
+    "tem_promessa": false,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": "",
+    "comentario": "sem pedido",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "84236279": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 79 pçs - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "84391407": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 108,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84422216": {
+    "tem_promessa": true,
+    "data_promessa": "06/07/2026",
+    "qty_prometida": 1,
+    "comentario": "saldo cancelado",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "86975514": {
+    "tem_promessa": true,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": 96,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "87680231": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 26,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "87742029": {
+    "tem_promessa": false,
+    "data_promessa": "06/07/2026",
+    "qty_prometida": "",
+    "comentario": "sem pedido firme",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "90502717": {
+    "tem_promessa": false,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": "",
+    "comentario": "sem pedido firme",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "90510379": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 60,
+    "comentario": "Previsto 60 pçs - 22/06",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "91761278": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 12 pçs - NF 281575",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "91820700": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 102 pçs - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "82024370": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 85,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "84165836": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 6,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84293407": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 16,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84359856": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 14,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84380852": {
+    "tem_promessa": true,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": 179,
+    "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "87031211": {
+    "tem_promessa": true,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": 2,
+    "comentario": "Previsto 2 pçs - 13/07",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "87648216": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 26,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "87657886": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 7,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "90447795": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 10,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "51491289": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 20 pçs - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "87693234": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 71,
+    "comentario": "nf 284888, podemos cancelar saldo de 1 pç?",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "47484017": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "47922923": {
+    "tem_promessa": true,
+    "data_promessa": "20/07/2026",
+    "qty_prometida": 50,
+    "comentario": "nf 284374",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84471274": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 2,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "87350863": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "90447793": {
+    "tem_promessa": true,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": 39,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "90465727": {
+    "tem_promessa": false,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": "",
+    "comentario": "sem pedido firme",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "91866293": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 28,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "91891932": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 50,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "91891968": {
+    "tem_promessa": true,
+    "data_promessa": "07/09/2026",
+    "qty_prometida": 10,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "92133614": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 18,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "92269175": {
+    "tem_promessa": true,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": 30,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T19:27:24.955Z"
+  },
+  "47821768": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "82027541": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "87107781": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "90448481": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 30,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "91853053": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "91870937": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 32 pçs - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "92141411": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 36,
+    "comentario": "nf 284888",
+    "ultima_atualizacao": "2026-07-29T18:32:40.964Z"
+  },
+  "84421713": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 100 pçs - NF 281930 / sem pedidos em carteira",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "90460427": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 28 pçs - NF 281683 / sem pedidos em carteira",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "84540032": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Faturado 50 pçs - NF 281683",
+    "ultima_atualizacao": "2026-06-18T17:09:45.530Z"
+  },
+  "91781570": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 152,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T12:55:22.334Z"
+  },
+  "392530": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 1260,
+    "comentario": "Vamos enviar as 1260un na coleta de amanhã",
+    "ultima_atualizacao": "2026-06-18T14:34:22.403Z"
+  },
+  "82034842": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 702,
+    "comentario": "Enviado 98un na coleta de hoje, será enviado o restante para coleta do dia 19/06.",
+    "ultima_atualizacao": "2026-06-12T14:38:04.361Z"
+  },
+  "14499401": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 100,
+    "comentario": "Vamos enviar mais 100un na coleta de amanhã",
+    "ultima_atualizacao": "2026-06-18T14:34:22.403Z"
+  },
+  "47884293": {
+    "tem_promessa": true,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": 46,
+    "comentario": "Demanda de 11un + 35un em 24/Ago e 07/09, favor informar caso precise que antecipe. Vamos enviar tudo em uma coleta. (Dados CSCN)",
+    "ultima_atualizacao": "2026-07-29T12:12:37.715Z"
+  },
+  "14496421": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 150,
+    "comentario": "Vamos enviar as 150un quando abrir a coleta.",
+    "ultima_atualizacao": "2026-07-29T12:12:37.715Z"
+  },
+  "280244": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 150,
+    "comentario": "Enviamos 150un no dia 27/07 pela NF 13535",
+    "ultima_atualizacao": "2026-07-29T12:12:37.715Z"
+  },
+  "91740502": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 150,
+    "comentario": "Enviamos 150un no dia 27/07 pela NF 13535",
+    "ultima_atualizacao": "2026-07-29T12:12:37.715Z"
+  },
+  "82004583": {
+    "tem_promessa": true,
+    "data_promessa": "12/06/2026",
+    "qty_prometida": 36,
+    "comentario": "Enviado na coleta de hoje",
+    "ultima_atualizacao": "2026-06-12T14:38:04.361Z"
+  },
+  "48190269": {
+    "tem_promessa": true,
+    "data_promessa": "21/08/2026",
+    "qty_prometida": 40,
+    "comentario": "REPROGRAMA",
+    "ultima_atualizacao": "2026-07-08T16:12:02.624Z"
+  },
+  "84386338": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 250,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "84484657": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "90501011": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 250,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "91776795": {
+    "tem_promessa": true,
+    "data_promessa": "03/07/2026",
+    "qty_prometida": 65,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "92055144": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 75,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "48132344": {
+    "tem_promessa": true,
+    "data_promessa": "21/08/2026",
+    "qty_prometida": 50,
+    "comentario": "Reprograma",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "48133235": {
+    "tem_promessa": true,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "51483171": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "84164475": {
+    "tem_promessa": true,
+    "data_promessa": "14/08/2026",
+    "qty_prometida": 50,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "86974038": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 4,
+    "comentario": "Enviado 04pçs. NF 96103",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "87662509": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "48164692": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 120,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "47568424": {
+    "tem_promessa": true,
+    "data_promessa": "18/09/2026",
+    "qty_prometida": 300,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "47568431": {
+    "tem_promessa": true,
+    "data_promessa": "18/09/2026",
+    "qty_prometida": 300,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "47600811": {
+    "tem_promessa": true,
+    "data_promessa": "21/07/2026",
+    "qty_prometida": 90,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "51481660": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "51483216": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "87105383": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "90383649": {
+    "tem_promessa": true,
+    "data_promessa": "26/06/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:54:42.168Z"
+  },
+  "92138457": {
+    "tem_promessa": true,
+    "data_promessa": "14/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T14:11:32.300Z"
+  },
+  "84379626": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 14,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:08:09.705Z"
+  },
+  "51680859": {
+    "tem_promessa": true,
+    "data_promessa": "27/11/2026",
+    "qty_prometida": 36,
+    "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-22T12:30:30.288Z"
+  },
+  "51680860": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 36,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:08:09.705Z"
+  },
+  "48062322": {
+    "tem_promessa": true,
+    "data_promessa": "13/08/2026",
+    "qty_prometida": 41,
+    "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T11:57:15.457Z"
+  },
+  "51465592": {
+    "tem_promessa": true,
+    "data_promessa": "31/07/2026",
+    "qty_prometida": 30,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "83954379": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 51,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "87307686": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 7,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "87332721": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 90,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "87653932": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 44,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "87751613": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 45,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "913347": {
+    "tem_promessa": true,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": 200,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "91792267": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T19:48:56.274Z"
+  },
+  "87586665": {
+    "tem_promessa": true,
+    "data_promessa": "11/06/2026",
+    "qty_prometida": 9,
+    "comentario": "foi faturado no dia 11/06 nf 138478",
+    "ultima_atualizacao": "2026-07-08T15:23:15.299Z"
+  },
+  "87493681": {
+    "tem_promessa": true,
+    "data_promessa": "31/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T16:49:12.235Z"
+  },
+  "90385400": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 50,
+    "comentario": "foi faturado no dia 24/06 nf 138678",
+    "ultima_atualizacao": "2026-07-08T15:23:15.299Z"
+  },
+  "84288671": {
+    "tem_promessa": true,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T15:23:15.299Z"
+  },
+  "87728796": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:15:06.448Z"
+  },
+  "91839630": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 20,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:15:06.448Z"
+  },
+  "82941360": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:15:06.448Z"
+  },
+  "92678897": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 20,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:15:06.448Z"
+  },
+  "380740A1": {
+    "tem_promessa": true,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": 50,
+    "comentario": "NF 390337 AGUARDANDO AGENDAMENTO",
+    "ultima_atualizacao": "2026-06-18T19:46:47.518Z"
+  },
+  "84172050": {
+    "tem_promessa": true,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": 50,
+    "comentario": "NF 390338 AGUARDANDO AGENDAMENTO",
+    "ultima_atualizacao": "2026-06-18T19:46:47.518Z"
+  },
+  "83993406": {
+    "tem_promessa": true,
+    "data_promessa": "01/09/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:16:47.031Z"
+  },
+  "84176521": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "AJUSTAR MOQ",
+    "ultima_atualizacao": "2026-06-18T19:46:47.518Z"
+  },
+  "51563257": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 36,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:14:09.972Z"
+  },
+  "47782673": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-24T11:45:32.155Z"
+  },
+  "51443489": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T15:29:48.755Z"
+  },
+  "51443490": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-24T11:45:32.155Z"
+  },
+  "90501008": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-24T11:45:32.155Z"
+  },
+  "90501013": {
+    "tem_promessa": true,
+    "data_promessa": "17/08/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-24T11:45:32.155Z"
+  },
+  "91820727": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T15:29:48.755Z"
+  },
+  "87750369": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 29,
+    "comentario": "MAIS 4 PEÇAS EM 25/6",
+    "ultima_atualizacao": "2026-06-15T12:46:03.327Z"
+  },
+  "84367743": {
+    "tem_promessa": true,
+    "data_promessa": "20/07/2026",
+    "qty_prometida": 20,
+    "comentario": "Forecast Julho",
+    "ultima_atualizacao": "2026-06-15T19:56:48.640Z"
+  },
+  "90501054": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "material embarcado dia 29/06",
+    "ultima_atualizacao": "2026-07-08T14:52:26.059Z"
+  },
+  "47369005": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "47898380": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 42,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "48182269": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 80,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "82989565": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 50,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "82991996": {
+    "tem_promessa": true,
+    "data_promessa": "14/08/2026",
+    "qty_prometida": 150,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "83980528": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 300,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "83999876": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 150,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "87653930": {
+    "tem_promessa": true,
+    "data_promessa": "14/08/2026",
+    "qty_prometida": 130,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "91739285": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-30T12:56:22.342Z"
+  },
+  "389974A1": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 21,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T16:07:48.967Z"
+  },
+  "91760890": {
+    "tem_promessa": false,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "91789018": {
+    "tem_promessa": false,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "92033209": {
+    "tem_promessa": false,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:18:51.193Z"
+  },
+  "48191185": {
+    "tem_promessa": false,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "48191187": {
+    "tem_promessa": false,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "51478949": {
+    "tem_promessa": false,
+    "data_promessa": "29/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "91760891": {
+    "tem_promessa": false,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "91760896": {
+    "tem_promessa": false,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "48154727": {
+    "tem_promessa": false,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:34:43.697Z"
+  },
+  "51571367": {
+    "tem_promessa": true,
+    "data_promessa": "10/07/2026",
+    "qty_prometida": 44,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-10T12:19:30.939Z"
+  },
+  "51572706": {
+    "tem_promessa": true,
+    "data_promessa": "10/07/2026",
+    "qty_prometida": 20,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-10T12:19:30.939Z"
+  },
+  "51571372": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-10T12:19:30.939Z"
+  },
+  "47780042": {
+    "tem_promessa": false,
+    "data_promessa": "11/08/2026",
+    "qty_prometida": "",
+    "comentario": "Hiper Critico SharePoint - confirmar plano. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-31T11:12:34.165Z"
+  },
+  "82014606": {
+    "tem_promessa": false,
+    "data_promessa": "24/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-23T10:57:09.288Z"
+  },
+  "82024272": {
+    "tem_promessa": false,
+    "data_promessa": "20/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-23T10:57:09.288Z"
+  },
+  "82031491": {
+    "tem_promessa": false,
+    "data_promessa": "25/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-23T10:57:09.288Z"
+  },
+  "47502892": {
+    "tem_promessa": true,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": 9,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T18:12:00.922Z"
+  },
+  "47503568": {
+    "tem_promessa": true,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T18:12:00.922Z"
+  },
+  "92292083": {
+    "tem_promessa": false,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T18:12:00.922Z"
+  },
+  "92146827": {
+    "tem_promessa": false,
+    "data_promessa": "18/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T18:12:00.922Z"
+  },
+  "91821862": {
+    "tem_promessa": true,
+    "data_promessa": "19/08/2026",
+    "qty_prometida": 16,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:19:28.278Z"
+  },
+  "433008": {
+    "tem_promessa": true,
+    "data_promessa": "22/06/2026",
+    "qty_prometida": 172,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "430357": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "83952371": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "92167739": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "47843187": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "433007": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "14471380": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "47846438": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "430356": {
+    "tem_promessa": false,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": "",
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "87646191": {
+    "tem_promessa": true,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T17:46:47.972Z"
+  },
+  "47984018": {
+    "tem_promessa": false,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": "",
+    "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE",
+    "ultima_atualizacao": "2026-06-19T12:35:18.865Z"
+  },
+  "51537729": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 250,
+    "comentario": "MATERIAL REPROGRAMADO NO ATRASO FAVOR AJUSTAR CSCN",
+    "ultima_atualizacao": "2026-06-19T12:35:18.865Z"
+  },
+  "86551637": {
+    "tem_promessa": true,
+    "data_promessa": "16/06/2026",
+    "qty_prometida": 50,
+    "comentario": "JÁ COLETADO NF 65.035",
+    "ultima_atualizacao": "2026-06-30T16:47:31.808Z"
+  },
+  "90341401": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": 400,
+    "comentario": "JÁ COLETADO NF 65.035",
+    "ultima_atualizacao": "2026-06-30T16:47:31.808Z"
+  },
+  "47394879": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-30T16:47:31.808Z"
+  },
+  "47605347": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-30T16:47:31.808Z"
+  },
+  "47723551": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 5,
+    "comentario": "FATUROU DIA 28/07/26 NF 65.471 -  HOJE FATURA MAIS 5 PÇS",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "48081177": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 70,
+    "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE",
+    "ultima_atualizacao": "2026-06-19T12:35:18.865Z"
+  },
+  "51535161": {
+    "tem_promessa": true,
+    "data_promessa": "21/07/2026",
+    "qty_prometida": 30,
+    "comentario": "FATURADO E COLETADO  DIA 17/07 NF 65.339",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "51537262": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 30,
+    "comentario": "PREVISÃO DE FATURAMENTO 04/08/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "51537688": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 30,
+    "comentario": "FATURADO 28/07/26 NF 65.471",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "51537734": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 30,
+    "comentario": "FATURADO 28/07/26 - NF 65.471",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "84268760": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 400,
+    "comentario": "Promessa vencida - solicitar nova data.",
+    "ultima_atualizacao": "2026-07-08T16:40:54.067Z"
+  },
+  "91762976": {
+    "tem_promessa": true,
+    "data_promessa": "14/07/2026",
+    "qty_prometida": 200,
+    "comentario": "NÃO TEMOS PENDENCIAS NEM CSCN NO PORTAL PARA ESTE PN",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91775706": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 150,
+    "comentario": "JÁ FATURADO 150 PÇS NF 65.106 - EMBARQUE DE 150 PÇS 08/07/2026",
+    "ultima_atualizacao": "2026-07-08T16:40:54.067Z"
+  },
+  "91796110": {
+    "tem_promessa": true,
+    "data_promessa": "02/09/2026",
+    "qty_prometida": 100,
+    "comentario": "SEM CSCN FIME - ELAD TIME DE 30 DIAS - PRECISA SER INCLUSO NO CSCN",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "84461051": {
+    "tem_promessa": true,
+    "data_promessa": "08/09/2026",
+    "qty_prometida": 50,
+    "comentario": "PROXIMO EMBARQUE 08/09/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "86602984": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 6,
+    "comentario": "FATURADO NF 65471",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "47602805": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 30,
+    "comentario": "FATURAMENTO previsto 04/08",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "48065724": {
+    "tem_promessa": true,
+    "data_promessa": "11/08/2026",
+    "qty_prometida": 43,
+    "comentario": "PREVISÃO DE FATURAMENTO 11/08/2026",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "84053675": {
+    "tem_promessa": true,
+    "data_promessa": "28/07/2026",
+    "qty_prometida": 250,
+    "comentario": "FATURADO 28/07/26 NF 65.471",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91741680": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 50,
+    "comentario": "PREVISÃO DE FATURAR 04/08/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91794889": {
+    "tem_promessa": true,
+    "data_promessa": "18/08/2026",
+    "qty_prometida": 200,
+    "comentario": "PREVISÃO 18/08/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91803402": {
+    "tem_promessa": true,
+    "data_promessa": "18/08/2026",
+    "qty_prometida": 300,
+    "comentario": "PREVISÃO 18/08/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91836791": {
+    "tem_promessa": true,
+    "data_promessa": "04/08/2026",
+    "qty_prometida": 100,
+    "comentario": "PREVISÃO DE FATURAR 04/08/26",
+    "ultima_atualizacao": "2026-08-04T17:33:20.741Z"
+  },
+  "91762153": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 200,
+    "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE",
+    "ultima_atualizacao": "2026-06-19T12:35:18.865Z"
+  },
+  "51537736": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 100,
+    "comentario": "MATERIAL NÃO FOI COLETADO NA DUGALE",
+    "ultima_atualizacao": "2026-06-19T12:35:18.865Z"
+  },
+  "92173874": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:34:16.823Z"
+  },
+  "91763013": {
+    "tem_promessa": true,
+    "data_promessa": "13/07/2026",
+    "qty_prometida": 45,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T18:34:16.823Z"
+  },
+  "47787713": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 100,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:43:48.653Z"
+  },
+  "47840434": {
+    "tem_promessa": true,
+    "data_promessa": "10/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T18:43:48.653Z"
+  },
+  "84261477": {
+    "tem_promessa": true,
+    "data_promessa": "30/07/2026",
+    "qty_prometida": 24,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-08T17:51:24.836Z"
+  },
+  "91793224": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": 14,
+    "comentario": "Embarcado dia 18/06",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "92287283": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": 5,
+    "comentario": "Embarcado dia 18/06",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "92647097": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": 11,
+    "comentario": "Enviado 02pçs 15/05, 05pçs 05/06 e 03pçs 18/06",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "92137473": {
+    "tem_promessa": true,
+    "data_promessa": "03/08/2026",
+    "qty_prometida": 15,
+    "comentario": "Enviado 11pçs 15/05 e 05pçs",
+    "ultima_atualizacao": "2026-06-12T17:16:37.530Z"
+  },
+  "92169619": {
+    "tem_promessa": true,
+    "data_promessa": "09/07/2026",
+    "qty_prometida": 14,
+    "comentario": "Enviado 10pçs dia 18/06 e 36pçs em 25/06",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "90461158": {
+    "tem_promessa": true,
+    "data_promessa": "09/07/2026",
+    "qty_prometida": 10,
+    "comentario": "Previsão de embarque 09/07",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "91825928": {
+    "tem_promessa": true,
+    "data_promessa": "09/07/2026",
+    "qty_prometida": 16,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "47927424": {
+    "tem_promessa": true,
+    "data_promessa": "30/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:28:24.355Z"
+  },
+  "91759298": {
+    "tem_promessa": true,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": 56,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:16:45.032Z"
+  },
+  "91759299": {
+    "tem_promessa": true,
+    "data_promessa": "17/06/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:16:45.032Z"
+  },
+  "48129710": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "84131403": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 62,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "84221442": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 58,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T14:01:39.294Z"
+  },
+  "84312030": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 150,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "84384570": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 131,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "87579221": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 80,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "87653304": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 62,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T14:01:39.294Z"
+  },
+  "47435145": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 44,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "48144672": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "48152926": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 34,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "87307464": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 75,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "87484736": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 60,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "87571015": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 70,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "48055280": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 280,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T12:14:56.109Z"
+  },
+  "48154924": {
+    "tem_promessa": true,
+    "data_promessa": "24/07/2026",
+    "qty_prometida": 24,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-24T12:14:56.109Z"
+  },
+  "84130981": {
+    "tem_promessa": true,
+    "data_promessa": "17/07/2026",
+    "qty_prometida": 26,
+    "comentario": "enviado dia 17/07/26",
+    "ultima_atualizacao": "2026-07-24T12:14:56.109Z"
+  },
+  "87571013": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:23.337Z"
+  },
+  "92668823": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:27:26.598Z"
+  },
+  "84575495": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 32,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:30:40.376Z"
+  },
+  "91729847": {
+    "tem_promessa": true,
+    "data_promessa": "23/06/2026",
+    "qty_prometida": 32,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-18T14:30:40.376Z"
+  },
+  "92133426": {
+    "tem_promessa": true,
+    "data_promessa": "10/07/2026",
+    "qty_prometida": 40,
+    "comentario": "",
+    "ultima_atualizacao": "2026-07-08T14:48:19.177Z"
+  },
+  "84299758": {
+    "tem_promessa": true,
+    "data_promessa": "30/06/2026",
+    "qty_prometida": 4,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-17T10:42:39.429Z"
+  },
+  "92052721": {
+    "tem_promessa": true,
+    "data_promessa": "08/06/2026",
+    "qty_prometida": 14,
+    "comentario": "As quantidades foram compiladas em uma unica linha, por favor dividir as linhas com as quantidades especificas de cada data conforme o EDI",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "47910881": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "47910882": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "48154769": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "48154770": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 10,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "51475463": {
+    "tem_promessa": true,
+    "data_promessa": "08/06/2026",
+    "qty_prometida": 10,
+    "comentario": "Faturado na NF 84253, ajustar",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "51477898": {
+    "tem_promessa": true,
+    "data_promessa": "24/06/2026",
+    "qty_prometida": 10,
+    "comentario": "Data real, ajustar.",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "51501582": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 10,
+    "comentario": "As quantidades foram compiladas em uma unica linha, por favor dividir as linhas com as quantidades especificas de cada data conforme o EDI",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "84576361": {
+    "tem_promessa": true,
+    "data_promessa": "01/07/2026",
+    "qty_prometida": 5,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "92196881": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 50,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T16:22:56.694Z"
+  },
+  "92196882": {
+    "tem_promessa": true,
+    "data_promessa": "07/07/2026",
+    "qty_prometida": 20,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T16:22:56.694Z"
+  },
+  "47910880": {
+    "tem_promessa": true,
+    "data_promessa": "08/06/2026",
+    "qty_prometida": 10,
+    "comentario": "Faturado na NF 84253, ajustar",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "48154771": {
+    "tem_promessa": true,
+    "data_promessa": "15/07/2026",
+    "qty_prometida": 10,
+    "comentario": "Esse não é um pedido firmado, mas confirmei somente para o teste da plataforma",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "48154768": {
+    "tem_promessa": true,
+    "data_promessa": "22/07/2026",
+    "qty_prometida": 10,
+    "comentario": "Esse não é um pedido firmado, mas confirmei somente para o teste da plataforma",
+    "ultima_atualizacao": "2026-06-12T17:10:05.933Z"
+  },
+  "92074204": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T14:40:21.814Z"
+  },
+  "92075047": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T14:40:21.814Z"
+  },
+  "51668922": {
+    "tem_promessa": true,
+    "data_promessa": "03/07/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T14:40:21.814Z"
+  },
+  "91868610": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:55:45.197Z"
+  },
+  "92074622": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:55:45.197Z"
+  },
+  "92074626": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 62,
+    "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:55:45.197Z"
+  },
+  "92075169": {
+    "tem_promessa": true,
+    "data_promessa": "07/08/2026",
+    "qty_prometida": 60,
+    "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T17:55:45.197Z"
+  },
+  "91802211": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:12:43.818Z"
+  },
+  "91802796": {
+    "tem_promessa": true,
+    "data_promessa": "29/07/2026",
+    "qty_prometida": 45,
+    "comentario": "Manter ambas no mesmo embarque.",
+    "ultima_atualizacao": "2026-06-15T13:12:43.818Z"
+  },
+  "91837962": {
+    "tem_promessa": false,
+    "data_promessa": "",
+    "qty_prometida": 40,
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-06-26T17:19:19.389Z"
+  },
+  "91757663": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 20,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:27:19.403Z"
+  },
+  "91757668": {
+    "tem_promessa": true,
+    "data_promessa": "19/06/2026",
+    "qty_prometida": 32,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-15T13:27:19.403Z"
+  },
+  "100005": {
+    "tem_promessa": false,
+    "data_promessa": "12/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-21T19:27:21.474Z"
+  },
+  "10798404": {
+    "tem_promessa": false,
+    "data_promessa": "12/08/2026",
+    "qty_prometida": "",
+    "comentario": "Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-21T19:27:21.474Z"
+  },
+  "12626201": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 800,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "15896411": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1420,
+    "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:15:40.663Z"
+  },
+  "412066": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "43128": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 800,
+    "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:15:40.663Z"
+  },
+  "43140": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 780,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "82011899": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 55,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "86512498": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 800,
+    "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:15:40.663Z"
+  },
+  "86620024": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 300,
+    "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
+    "ultima_atualizacao": "2026-07-29T12:15:40.663Z"
+  },
+  "87384106": {
+    "tem_promessa": true,
+    "data_promessa": "27/07/2026",
+    "qty_prometida": 1000,
+    "comentario": "Promessa vencida - solicitar nova data. AJUST. QUANT. P/ 1000",
+    "ultima_atualizacao": "2026-07-29T12:15:40.663Z"
+  },
+  "322356": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 319,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "10902421": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 900,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "11106021": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 400,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "11106421": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 180,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "120056": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 148,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "120100": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 500,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "12647101": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 149,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "14304621": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 919,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "16044121": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 400,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "350616": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 15,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "386045": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 57,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "82880748": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 200,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "86536801": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 300,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "86585707": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 473,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "15540821": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 500,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "13000890": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 400,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "81865839": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 1100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "16051121": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 50,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "16214621": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 85,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "87015284": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 1050,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "51673035": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 200,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "15835231": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 100,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "825-2412": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 74,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "43139": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 600,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "120101": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 600,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "11112221": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 300,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "11126521": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 180,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "83416243": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 93,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "86512422": {
+    "tem_promessa": true,
+    "data_promessa": "15/06/2026",
+    "qty_prometida": 90,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-16T11:00:55.757Z"
+  },
+  "84219375": {
+    "tem_promessa": true,
+    "data_promessa": "08/07/2026",
+    "qty_prometida": 8,
+    "comentario": "",
+    "ultima_atualizacao": "2026-06-12T17:29:50.076Z"
+  }
+}
