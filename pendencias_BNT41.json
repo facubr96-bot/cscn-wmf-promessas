@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BNT41",
+  "supplier_name": "TRACTOR COMPONENTS PECAS PARA TRATO",
+  "semana": "2026-W32",
+  "gerado_em": "05/08/2026 11:21",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "86602978",
+      "supplier_code": "BNT41",
+      "supplier_name": "TRACTOR COMPONENTS PECAS PARA TRATO",
+      "ship_date": "26/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 10,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000220878-001",
+      "semana": "2026-W32",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
