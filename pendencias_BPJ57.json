@@ -1,8 +1,8 @@
 {
   "supplier_code": "BPJ57",
   "supplier_name": "TUPER SA",
-  "semana": "2026-W31",
-  "gerado_em": "29/07/2026 07:30",
+  "semana": "2026-W32",
+  "gerado_em": "05/08/2026 11:21",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -16,13 +16,13 @@
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 20,
-      "firm_jun_wmf": 5,
-      "firm_jul_wmf": 16,
+      "firm_jun_wmf": 16,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000170310-001",
-      "semana": "2026-W31",
+      "semana": "2026-W32",
       "data_promessa": "01/07/2026",
       "qty_prometida": 31,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
     },
     {
       "part_number": "47503568",
@@ -35,20 +35,20 @@
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 21,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 17,
+      "firm_jun_wmf": 27,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000170309-001",
-      "semana": "2026-W31",
+      "semana": "2026-W32",
       "data_promessa": "01/07/2026",
       "qty_prometida": 21,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
     },
     {
       "part_number": "92292083",
       "supplier_code": "BPJ57",
       "supplier_name": "TUPER SA",
-      "ship_date": "24/08/2026",
-      "impact": "3",
+      "ship_date": "19/08/2026",
+      "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -57,29 +57,10 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W31",
+      "semana": "2026-W32",
       "data_promessa": "03/07/2026",
       "qty_prometida": 30,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
-    },
-    {
-      "part_number": "91821862",
-      "supplier_code": "BPJ57",
-      "supplier_name": "TUPER SA",
-      "ship_date": "01/10/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 16,
-      "ultima_nfe": "000169304-001",
-      "semana": "2026-W31",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
     }
   ]
 }
