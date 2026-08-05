@@ -1,0 +1,28 @@
+{
+  "supplier_code": "DYC43",
+  "supplier_name": "RESIPLASTIC INDUSTRIA E COMERCIO LT",
+  "semana": "2026-W32",
+  "gerado_em": "05/08/2026 11:21",
+  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "itens": [
+    {
+      "part_number": "82991334",
+      "supplier_code": "DYC43",
+      "supplier_name": "RESIPLASTIC INDUSTRIA E COMERCIO LT",
+      "ship_date": "11/02/2027",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 30,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W32",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
