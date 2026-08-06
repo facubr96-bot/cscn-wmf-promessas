@@ -2,7 +2,7 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "2026-W32",
-  "gerado_em": "05/08/2026 11:21",
+  "gerado_em": "06/08/2026 14:29",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -23,6 +23,25 @@
       "data_promessa": "2026-07-31 00:00:00",
       "qty_prometida": 10,
       "comentario": "Promessa vencida - solicitar nova data. 2026-06-08 00:00:00"
+    },
+    {
+      "part_number": "47927424",
+      "supplier_code": "BQQ54",
+      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
+      "ship_date": "24/09/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 50,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000061384-007",
+      "semana": "2026-W32",
+      "data_promessa": "30/07/2026",
+      "qty_prometida": 50,
+      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "90461158",
@@ -80,25 +99,6 @@
       "data_promessa": "",
       "qty_prometida": 5,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Embarcado dia 18/06"
-    },
-    {
-      "part_number": "47927424",
-      "supplier_code": "BQQ54",
-      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
-      "ship_date": "24/09/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000061384-007",
-      "semana": "2026-W32",
-      "data_promessa": "30/07/2026",
-      "qty_prometida": 50,
-      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "91710126",
