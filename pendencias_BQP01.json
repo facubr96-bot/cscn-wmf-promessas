@@ -2,14 +2,14 @@
   "supplier_code": "BQP01",
   "supplier_name": "CCS TECNOLGIA E SERVICOS LTDA",
   "semana": "2026-W32",
-  "gerado_em": "05/08/2026 11:21",
+  "gerado_em": "06/08/2026 14:29",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "84261477",
       "supplier_code": "BQP01",
       "supplier_name": "CCS TECNOLGIA E SERVICOS LTDA",
-      "ship_date": "02/11/2026",
+      "ship_date": "03/11/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
