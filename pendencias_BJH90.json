@@ -2,7 +2,7 @@
   "supplier_code": "BJH90",
   "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
   "semana": "2026-W32",
-  "gerado_em": "06/08/2026 14:29",
+  "gerado_em": "07/08/2026 16:08",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -34,8 +34,8 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 44,
-      "firm_jun_wmf": 62,
+      "past_due_wmf": 16,
+      "firm_jun_wmf": 48,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000921675-003",
       "semana": "2026-W32",
@@ -52,15 +52,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 8,
-      "firm_jun_wmf": 84,
+      "firm_jun_wmf": 52,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000921676-003",
       "semana": "2026-W32",
       "data_promessa": "06/08/2026",
       "qty_prometida": 22,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Acrescimo de 38 peças dentro do periodo congelado de 05 semanas da Pordução Modine."
+      "comentario": "Promessa vencida - solicitar nova data. Acrescimo de 38 peças dentro do periodo congelado de 05 semanas da Pordução Modine."
     }
   ]
 }
