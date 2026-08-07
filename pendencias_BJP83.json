@@ -2,7 +2,7 @@
   "supplier_code": "BJP83",
   "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
   "semana": "2026-W32",
-  "gerado_em": "06/08/2026 14:29",
+  "gerado_em": "07/08/2026 16:08",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -25,6 +25,25 @@
       "comentario": "Promessa vencida - solicitar nova data."
     },
     {
+      "part_number": "87034256",
+      "supplier_code": "BJP83",
+      "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
+      "ship_date": "01/04/2027",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W32",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
       "part_number": "87573236",
       "supplier_code": "BJP83",
       "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
@@ -42,6 +61,25 @@
       "data_promessa": "15/07/2026",
       "qty_prometida": 18,
       "comentario": "Promessa vencida - solicitar nova data."
+    },
+    {
+      "part_number": "87593673",
+      "supplier_code": "BJP83",
+      "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
+      "ship_date": "05/03/2027",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000259775-001",
+      "semana": "2026-W32",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
