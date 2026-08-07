@@ -2,7 +2,7 @@
   "supplier_code": "BLL51",
   "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
   "semana": "2026-W32",
-  "gerado_em": "06/08/2026 14:29",
+  "gerado_em": "07/08/2026 16:08",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -54,7 +54,7 @@
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 20,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000294205-001",
       "semana": "2026-W32",
