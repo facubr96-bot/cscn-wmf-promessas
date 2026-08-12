@@ -22,26 +22,8 @@
       "data_promessa": "29/07/2027",
       "qty_prometida": 50,
       "comentario": "Favor confirmar se esta entrega sera cumprida."
-    },
-    {
-      "part_number": "87677801",
-      "supplier_code": "BJR81",
-      "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
-      "ship_date": "24/09/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "",
-      "semana": "2026-W26",
-      "entrega_confirmada": false,
-      "data_promessa": "29/06/2026",
-      "qty_prometida": 42,
-      "comentario": "Favor confirmar se esta entrega sera cumprida."
     }
   ],
-  "recibido_en_worker": "2026-06-30T10:29:10.315Z"
+  "recibido_en_worker": "2026-06-30T10:29:10.315Z",
+  "received_at": "2026-08-12 14:24:58"
 }
