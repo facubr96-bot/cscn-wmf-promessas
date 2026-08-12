@@ -41,45 +41,8 @@
       "data_promessa": "10/08/2026",
       "qty_prometida": 60,
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "91763013",
-      "supplier_code": "BQB72",
-      "supplier_name": "MERCOBOR IND E COM LTDA",
-      "ship_date": "08/09/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000049347-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 45,
-      "comentario": "Promessa vencida - solicitar nova data."
-    },
-    {
-      "part_number": "92173874",
-      "supplier_code": "BQB72",
-      "supplier_name": "MERCOBOR IND E COM LTDA",
-      "ship_date": "28/08/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000049347-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data."
     }
   ],
-  "recibido_en_worker": "2026-07-29T18:41:34.510Z"
+  "recibido_en_worker": "2026-07-29T18:41:34.510Z",
+  "received_at": "2026-08-12 14:25:32"
 }
