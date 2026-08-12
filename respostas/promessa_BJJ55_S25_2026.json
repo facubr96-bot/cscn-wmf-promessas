@@ -5,21 +5,6 @@
   "enviado_em": "2026-06-15T13:08:29.250Z",
   "itens": [
     {
-      "part_number": "87280339",
-      "supplier_code": "BJJ55",
-      "supplier_name": "SCREW IND METALMECANICA SA",
-      "ship_date": "22/06/2026",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000273144-001",
-      "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 20,
-      "comentario": ""
-    },
-    {
       "part_number": "51552615",
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
@@ -49,5 +34,6 @@
       "qty_prometida": null,
       "comentario": ""
     }
-  ]
+  ],
+  "received_at": "2026-08-12 14:24:54"
 }
