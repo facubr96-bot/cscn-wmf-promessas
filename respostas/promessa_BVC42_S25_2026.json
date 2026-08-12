@@ -20,36 +20,6 @@
       "comentario": ""
     },
     {
-      "part_number": "84221442",
-      "supplier_code": "BVC42",
-      "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
-      "ship_date": "17/06/2026",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000112856-001",
-      "semana": "S25/2026",
-      "data_promessa": "19/06/2026",
-      "qty_prometida": 58,
-      "comentario": ""
-    },
-    {
-      "part_number": "87653304",
-      "supplier_code": "BVC42",
-      "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
-      "ship_date": "16/06/2026",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000112856-001",
-      "semana": "S25/2026",
-      "data_promessa": "19/06/2026",
-      "qty_prometida": 62,
-      "comentario": ""
-    },
-    {
       "part_number": "87484736",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
@@ -214,5 +184,6 @@
       "qty_prometida": null,
       "comentario": ""
     }
-  ]
+  ],
+  "received_at": "2026-08-12 14:25:35"
 }
