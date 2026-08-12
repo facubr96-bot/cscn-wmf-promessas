@@ -5,25 +5,6 @@
   "enviado_em": "2026-07-29T17:15:06.448Z",
   "itens": [
     {
-      "part_number": "87586665",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "22/09/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": true,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000138478-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
-    },
-    {
       "part_number": "82941360",
       "supplier_code": "BNL72",
       "supplier_name": "METALURGICA FIMAC LTDA",
@@ -41,63 +22,6 @@
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "84288671",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "07/09/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000138915-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data."
-    },
-    {
-      "part_number": "87728796",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "12/04/2027",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000136127-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": true,
-      "data_promessa": "03/08/2026",
-      "qty_prometida": 100,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
-    },
-    {
-      "part_number": "91839630",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "25/09/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000137447-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": true,
-      "data_promessa": "03/08/2026",
-      "qty_prometida": 20,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "92678897",
@@ -119,5 +43,6 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-07-29T17:15:06.553Z"
+  "recibido_en_worker": "2026-07-29T17:15:06.553Z",
+  "received_at": "2026-08-12 14:25:22"
 }
