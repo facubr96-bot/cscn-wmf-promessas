@@ -18,21 +18,7 @@
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": ""
-    },
-    {
-      "part_number": "87750369",
-      "supplier_code": "BNW32",
-      "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
-      "ship_date": "11/05/2026",
-      "impact": "4 - Stopper",
-      "past_due_wmf": true,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000726705-001",
-      "semana": "S24/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 29,
-      "comentario": "MAIS 4 PEÇAS EM 25/6"
     }
-  ]
+  ],
+  "received_at": "2026-08-12 14:25:25"
 }
