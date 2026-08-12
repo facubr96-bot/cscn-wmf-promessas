@@ -80,21 +80,6 @@
       "comentario": "Faturado 12 pçs - NF 281575"
     },
     {
-      "part_number": "87031211",
-      "supplier_code": "BMX47",
-      "supplier_name": "MAQUINAS SAZI LTDA",
-      "ship_date": "18/05/2026",
-      "impact": "3 - No Funcional",
-      "past_due_wmf": true,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000281575-001",
-      "semana": "S25/2026",
-      "data_promessa": "13/07/2026",
-      "qty_prometida": 2,
-      "comentario": "Previsto 2 pçs - 13/07"
-    },
-    {
       "part_number": "87648216",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
@@ -228,21 +213,6 @@
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Faturado 102 pçs - NF 281683"
-    },
-    {
-      "part_number": "90510379",
-      "supplier_code": "BMX47",
-      "supplier_name": "MAQUINAS SAZI LTDA",
-      "ship_date": "08/06/2026",
-      "impact": "4 - Stopper",
-      "past_due_wmf": true,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000255379-001",
-      "semana": "S25/2026",
-      "data_promessa": "22/06/2026",
-      "qty_prometida": 60,
-      "comentario": "Previsto 60 pçs - 22/06"
     },
     {
       "part_number": "47484017",
@@ -499,5 +469,6 @@
       "qty_prometida": null,
       "comentario": ""
     }
-  ]
+  ],
+  "received_at": "2026-08-12 14:25:15"
 }
