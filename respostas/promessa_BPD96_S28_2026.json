@@ -24,25 +24,6 @@
       "comentario": ""
     },
     {
-      "part_number": "92033209",
-      "supplier_code": "BPD96",
-      "supplier_name": "NELSON DO BRASIL IND MET LTDA",
-      "ship_date": "20/07/2026",
-      "impact": "4 - Stopper",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000135373-001",
-      "semana": "S28/2026",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": null,
-      "comentario": ""
-    },
-    {
       "part_number": "91760891",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
@@ -100,5 +81,6 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-07-08T14:18:52.298Z"
+  "recibido_en_worker": "2026-07-08T14:18:52.298Z",
+  "received_at": "2026-08-12 14:25:28"
 }
