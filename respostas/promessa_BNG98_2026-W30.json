@@ -24,25 +24,6 @@
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
-      "part_number": "51680860",
-      "supplier_code": "BNG98",
-      "supplier_name": "IOCHPE MAXION S A",
-      "ship_date": "06/10/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000747238-003",
-      "semana": "2026-W30",
-      "entrega_confirmada": true,
-      "data_promessa": "29/07/2026",
-      "qty_prometida": 36,
-      "comentario": "Favor confirmar se esta entrega sera cumprida."
-    },
-    {
       "part_number": "84379626",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
@@ -62,5 +43,6 @@
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data."
     }
   ],
-  "recibido_en_worker": "2026-07-22T12:30:30.365Z"
+  "recibido_en_worker": "2026-07-22T12:30:30.365Z",
+  "received_at": "2026-08-12 14:25:20"
 }
