@@ -24,25 +24,6 @@
       "comentario": "Vamos enviar as 150un quando abrir a coleta."
     },
     {
-      "part_number": "280244",
-      "supplier_code": "BNF47",
-      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
-      "ship_date": "-",
-      "impact": "",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 150,
-      "comentario": "Enviamos 150un no dia 27/07 pela NF 13535"
-    },
-    {
       "part_number": "47884293",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
@@ -79,26 +60,8 @@
       "data_promessa": "10/02/2027",
       "qty_prometida": 702,
       "comentario": "Favor informar necessidade de material, próximo envio no CSCN somente para Fev/2027."
-    },
-    {
-      "part_number": "91740502",
-      "supplier_code": "BNF47",
-      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
-      "ship_date": "-",
-      "impact": "",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000013103-001",
-      "semana": "2026-W31",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 150,
-      "comentario": "Enviamos 150un no dia 27/07 pela NF 13535"
     }
   ],
-  "recibido_en_worker": "2026-07-29T12:12:38.117Z"
+  "recibido_en_worker": "2026-07-29T12:12:38.117Z",
+  "received_at": "2026-08-12 14:25:17"
 }
