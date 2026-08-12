@@ -5,44 +5,6 @@
   "enviado_em": "2026-07-24T11:45:32.155Z",
   "itens": [
     {
-      "part_number": "47782673",
-      "supplier_code": "BNV40",
-      "supplier_name": "TRAVI PLASTICOS LTDA",
-      "ship_date": "-",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "",
-      "semana": "2026-W30",
-      "entrega_confirmada": false,
-      "data_promessa": "27/07/2026",
-      "qty_prometida": 150,
-      "comentario": ""
-    },
-    {
-      "part_number": "51443489",
-      "supplier_code": "BNV40",
-      "supplier_name": "TRAVI PLASTICOS LTDA",
-      "ship_date": "06/10/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000178757-001",
-      "semana": "2026-W30",
-      "entrega_confirmada": true,
-      "data_promessa": "28/07/2026",
-      "qty_prometida": 50,
-      "comentario": "Favor confirmar se esta entrega sera cumprida."
-    },
-    {
       "part_number": "51443490",
       "supplier_code": "BNV40",
       "supplier_name": "TRAVI PLASTICOS LTDA",
@@ -119,5 +81,6 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-07-24T11:45:32.170Z"
+  "recibido_en_worker": "2026-07-24T11:45:32.170Z",
+  "received_at": "2026-08-12 14:25:25"
 }
