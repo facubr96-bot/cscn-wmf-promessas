@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKQ55",
   "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -16,10 +16,10 @@
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 90,
+      "firm_jun_wmf": 180,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000123589-005",
-      "semana": "2026-W32",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -28,20 +28,20 @@
       "part_number": "84562879",
       "supplier_code": "BKQ55",
       "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
-      "ship_date": "09/10/2026",
-      "impact": "4",
+      "ship_date": "08/10/2026",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
+      "firm_jun_wmf": 9,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000123590-005",
-      "semana": "2026-W32",
-      "data_promessa": "29/07/2026",
-      "qty_prometida": 10,
-      "comentario": "Promessa vencida - solicitar nova data. Pronto para coleta, coleta agendada para 29/07"
+      "ultima_nfe": "000124474-005",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
