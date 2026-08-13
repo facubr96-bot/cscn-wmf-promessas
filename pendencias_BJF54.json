@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJF54",
   "supplier_name": "KABEL WIRING SYSTEMS LTDA",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -16,10 +16,10 @@
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 93,
+      "firm_jun_wmf": 16,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W32",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -28,7 +28,7 @@
       "part_number": "92674262",
       "supplier_code": "BJF54",
       "supplier_name": "KABEL WIRING SYSTEMS LTDA",
-      "ship_date": "23/09/2026",
+      "ship_date": "24/09/2026",
       "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -36,9 +36,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000233858-001",
-      "semana": "2026-W32",
+      "firm_jul_wmf": 70,
+      "ultima_nfe": "000239325-001",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
