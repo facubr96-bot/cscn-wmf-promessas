@@ -1,8 +1,8 @@
 {
   "supplier_code": "BNN21",
   "supplier_name": "ACUMULADORES MOURA S A",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -10,19 +10,19 @@
       "supplier_code": "BNN21",
       "supplier_name": "ACUMULADORES MOURA S A",
       "ship_date": "26/08/2026",
-      "impact": "3",
+      "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 36,
       "firm_jun_wmf": 36,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 72,
       "ultima_nfe": "000024690-010",
-      "semana": "2026-W32",
-      "data_promessa": "17/07/2026",
-      "qty_prometida": 36,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
