@@ -2,14 +2,14 @@
   "supplier_code": "BJJ53",
   "supplier_name": "SCHULZ SA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 12:17",
+  "gerado_em": "13/08/2026 16:48",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "84574187",
       "supplier_code": "BJJ53",
       "supplier_name": "SCHULZ SA",
-      "ship_date": "",
+      "ship_date": "09/07/2026",
       "impact": "",
       "sharepoint_critico": false,
       "sharepoint_url": "",
