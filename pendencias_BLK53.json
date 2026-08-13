@@ -2,7 +2,7 @@
   "supplier_code": "BLK53",
   "supplier_name": "BSA SISTEMAS DE ARQUIVOS LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
-      "past_due_wmf": 0,
+      "past_due_wmf": 50,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 100,
       "ultima_nfe": "000010593-001",
