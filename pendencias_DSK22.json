@@ -1,15 +1,15 @@
 {
   "supplier_code": "DSK22",
   "supplier_name": "WAPMETAL INDUSTRIA E COMERCIO DE MO",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "84075179",
       "supplier_code": "DSK22",
       "supplier_name": "WAPMETAL INDUSTRIA E COMERCIO DE MO",
-      "ship_date": "07/12/2026",
+      "ship_date": "11/12/2026",
       "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W32",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
