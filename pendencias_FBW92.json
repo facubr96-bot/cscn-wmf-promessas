@@ -2,7 +2,7 @@
   "supplier_code": "FBW92",
   "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -34,7 +34,7 @@
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=311",
       "sharepoint_reason": "Past Due",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 45,
+      "past_due_wmf": 90,
       "firm_jun_wmf": 45,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000146231-001",
