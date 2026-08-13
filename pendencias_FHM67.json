@@ -2,7 +2,7 @@
   "supplier_code": "FHM67",
   "supplier_name": "DENSO DO BRASIL LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 21,
+      "past_due_wmf": 30,
       "firm_jun_wmf": 8,
       "firm_jul_wmf": 16,
       "ultima_nfe": "000110480-018",
@@ -34,7 +34,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 23,
+      "past_due_wmf": 33,
       "firm_jun_wmf": 8,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000110480-018",
