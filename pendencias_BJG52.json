@@ -2,14 +2,14 @@
   "supplier_code": "BJG52",
   "supplier_name": "METALURGICA FALLGATTER LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 12:17",
+  "gerado_em": "13/08/2026 16:48",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "92186966",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "ship_date": "26/10/2026",
+      "ship_date": "03/08/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -21,46 +21,8 @@
       "ultima_nfe": "000515301-001",
       "semana": "2026-W33",
       "data_promessa": "10/08/2026",
-      "qty_prometida": 120,
-      "comentario": "Promessa vencida - solicitar nova data."
-    },
-    {
-      "part_number": "87480926",
-      "supplier_code": "BJG52",
-      "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "ship_date": "30/09/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 16,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000532772-001",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "92176155",
-      "supplier_code": "BJG52",
-      "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "ship_date": "24/11/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 70,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000515302-001",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "qty_prometida": 121,
+      "comentario": "Promessa vencida - solicitar nova data. Faturado em 03/08, nf 534348"
     }
   ]
 }
