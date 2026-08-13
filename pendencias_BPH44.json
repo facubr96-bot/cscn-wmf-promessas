@@ -2,7 +2,7 @@
   "supplier_code": "BPH44",
   "supplier_name": "VOSS AUTOMOTIVE LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 73,
+      "past_due_wmf": 25,
       "firm_jun_wmf": 37,
       "firm_jul_wmf": 49,
       "ultima_nfe": "000236861-004",
@@ -53,7 +53,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 100,
+      "past_due_wmf": 33,
       "firm_jun_wmf": 28,
       "firm_jul_wmf": 56,
       "ultima_nfe": "000236861-004",
