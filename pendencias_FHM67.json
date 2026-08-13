@@ -1,28 +1,28 @@
 {
   "supplier_code": "FHM67",
   "supplier_name": "DENSO DO BRASIL LTDA",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91757663",
       "supplier_code": "FHM67",
       "supplier_name": "DENSO DO BRASIL LTDA",
-      "ship_date": "29/09/2026",
+      "ship_date": "28/09/2026",
       "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 21,
-      "firm_jun_wmf": 4,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000107495-018",
-      "semana": "2026-W32",
-      "data_promessa": "24/07/2026",
-      "qty_prometida": 24,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "firm_jun_wmf": 8,
+      "firm_jul_wmf": 16,
+      "ultima_nfe": "000110480-018",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "91757668",
@@ -33,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 5,
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 23,
       "firm_jun_wmf": 8,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000107495-018",
-      "semana": "2026-W32",
-      "data_promessa": "24/07/2026",
-      "qty_prometida": 8,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "firm_jul_wmf": 20,
+      "ultima_nfe": "000110480-018",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
