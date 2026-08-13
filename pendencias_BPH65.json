@@ -2,7 +2,7 @@
   "supplier_code": "BPH65",
   "supplier_name": "FUNDICAO SIDERAL LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 18,
+      "past_due_wmf": 22,
       "firm_jun_wmf": 13,
       "firm_jul_wmf": 2,
       "ultima_nfe": "000102628-004",
@@ -34,7 +34,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": 0,
+      "past_due_wmf": 6,
       "firm_jun_wmf": 6,
       "firm_jul_wmf": 12,
       "ultima_nfe": "000102628-004",
