@@ -401,8 +401,8 @@
   <div class="filter-group">
     <button class="btn-filter active"         data-filter="all"      onclick="setFilter('all',this)">Todos</button>
     <button class="btn-filter red-filter"     data-filter="pastdue"  onclick="setFilter('pastdue',this)">Somente Past Due</button>
-    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)">Firm Julho</button>
-    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)">Firm Agosto</button>
+    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)" id="filterJunBtn">Firm Julho</button>
+    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)" id="filterJulBtn">Firm Agosto</button>
   </div>
 
   <div class="toolbar-sep"></div>
@@ -442,8 +442,8 @@
           <th>Acao</th>
           <th>Ship Date CSCN</th>
           <th style="text-align:center">Past Due WMF</th>
-          <th style="text-align:center">Firm Julho WMF</th>
-          <th style="text-align:center">Firm Agosto WMF</th>
+          <th style="text-align:center" id="thFirmJun">Firm Julho WMF</th>
+          <th style="text-align:center" id="thFirmJul">Firm Agosto WMF</th>
           <th>Ultima NFe</th>
           <th style="text-align:center">Confirmar entrega</th>
           <th>Data Promessa</th>
@@ -480,6 +480,17 @@ let currentFilter = 'all';
 //  Helpers 
 function qs(sel)  { return document.querySelector(sel); }
 function qsa(sel) { return document.querySelectorAll(sel); }
+
+function setMonthLabels() {
+  const MESES_PT = ['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const now = new Date();
+  const cur = MESES_PT[now.getMonth()];
+  const nxt = MESES_PT[(now.getMonth() + 1) % 12];
+  qs('#filterJunBtn').textContent = `Firm ${cur}`;
+  qs('#filterJulBtn').textContent = `Firm ${nxt}`;
+  qs('#thFirmJun').textContent = `Firm ${cur} WMF`;
+  qs('#thFirmJul').textContent = `Firm ${nxt} WMF`;
+}
 
 function fmtDate(raw) {
   // accepts YYYYMMDD, YYYY-MM-DD or DD/MM/YYYY, returns DD/MM/YYYY
@@ -975,6 +986,7 @@ if (linkWarning) {
   linkWarning.href = window.location.href;
   linkWarning.textContent = window.location.href;
 }
+setMonthLabels();
 loadData();
 </script>
 </body>
