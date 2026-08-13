@@ -2,7 +2,7 @@
   "supplier_code": "DQZ06",
   "supplier_name": "ALLIS ROLLER HCC INDUSTRIA E COMERC",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 2,
+      "past_due_wmf": 10,
       "firm_jun_wmf": 4,
       "firm_jul_wmf": 4,
       "ultima_nfe": "000007242-001",
