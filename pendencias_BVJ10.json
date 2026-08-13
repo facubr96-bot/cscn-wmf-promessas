@@ -2,7 +2,7 @@
   "supplier_code": "BVJ10",
   "supplier_name": "PROMETEON TYRE GROUP INDUSTRIA BRAS",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 8,
+      "past_due_wmf": 0,
       "firm_jun_wmf": 10,
       "firm_jul_wmf": 30,
       "ultima_nfe": "000208969-007",
@@ -34,7 +34,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 22,
+      "past_due_wmf": 0,
       "firm_jun_wmf": 62,
       "firm_jul_wmf": 28,
       "ultima_nfe": "000208972-007",
