@@ -1,15 +1,15 @@
 {
   "supplier_code": "BLB24",
   "supplier_name": "TE CONNECTIVITY BRASIL INDUSTRIA EL",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "5802097746",
       "supplier_code": "BLB24",
       "supplier_name": "TE CONNECTIVITY BRASIL INDUSTRIA EL",
-      "ship_date": "03/06/2027",
+      "ship_date": "02/06/2027",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000955670-003",
-      "semana": "2026-W32",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
