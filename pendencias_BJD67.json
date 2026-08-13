@@ -1,28 +1,28 @@
 {
   "supplier_code": "BJD67",
   "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "51698953",
       "supplier_code": "BJD67",
       "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
-      "ship_date": "10/11/2026",
+      "ship_date": "12/11/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000046730-001",
-      "semana": "2026-W32",
-      "data_promessa": "17/07/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "92136651",
@@ -33,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000046604-001",
-      "semana": "2026-W32",
-      "data_promessa": "31/07/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "ultima_nfe": "000046791-001",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
