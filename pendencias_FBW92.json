@@ -1,8 +1,8 @@
 {
   "supplier_code": "FBW92",
   "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -18,11 +18,11 @@
       "past_due_wmf": 50,
       "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000143316-001",
-      "semana": "2026-W32",
-      "data_promessa": "29/07/2026",
-      "qty_prometida": 50,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "ultima_nfe": "000146230-001",
+      "semana": "2026-W33",
+      "data_promessa": "31/07/2026",
+      "qty_prometida": "",
+      "comentario": "Promessa vencida - solicitar nova data. Copiado do CPL: 7/31/2026"
     },
     {
       "part_number": "91802796",
@@ -34,14 +34,14 @@
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=311",
       "sharepoint_reason": "Past Due",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
+      "past_due_wmf": 45,
       "firm_jun_wmf": 45,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000143315-001",
-      "semana": "2026-W32",
-      "data_promessa": "29/07/2026",
-      "qty_prometida": 45,
-      "comentario": "Promessa vencida - solicitar nova data. Manter ambas no mesmo embarque."
+      "ultima_nfe": "000146231-001",
+      "semana": "2026-W33",
+      "data_promessa": "31/07/2026",
+      "qty_prometida": "",
+      "comentario": "Promessa vencida - solicitar nova data. Copiado do CPL: 7/31/2026"
     }
   ]
 }
