@@ -2,7 +2,7 @@
   "supplier_code": "BVJ94",
   "supplier_name": "CORNAGLIA DO BRASIL MAQUINAS E EQUI",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 13,
+      "past_due_wmf": 70,
       "firm_jun_wmf": 44,
       "firm_jul_wmf": 40,
       "ultima_nfe": "000015259-001",
@@ -34,7 +34,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 96,
+      "past_due_wmf": 122,
       "firm_jun_wmf": 40,
       "firm_jul_wmf": 40,
       "ultima_nfe": "000015298-001",
