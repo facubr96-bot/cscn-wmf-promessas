@@ -2,7 +2,7 @@
   "supplier_code": "BJF54",
   "supplier_name": "KABEL WIRING SYSTEMS LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 10:56",
+  "gerado_em": "13/08/2026 12:17",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,7 +15,7 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
+      "past_due_wmf": 77,
       "firm_jun_wmf": 16,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
