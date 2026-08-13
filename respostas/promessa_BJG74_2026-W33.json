@@ -1,0 +1,28 @@
+{
+  "supplier_code": "BJG74",
+  "supplier_name": "METALUS IND MEC LTDA",
+  "semana": "2026-W33",
+  "enviado_em": "2026-08-13T17:32:40.000Z",
+  "itens": [
+    {
+      "part_number": "87586519",
+      "supplier_code": "BJG74",
+      "supplier_name": "METALUS IND MEC LTDA",
+      "ship_date": "01/07/2027",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000210190-001",
+      "semana": "2026-W33",
+      "entrega_confirmada": false,
+      "data_promessa": "28/08/2026",
+      "qty_prometida": 32,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-08-13T17:32:40.409Z"
+}
