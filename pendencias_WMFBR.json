@@ -1,29 +1,10 @@
 {
   "supplier_code": "WMFBR",
   "supplier_name": "CNH Brasil WMF",
-  "semana": "2026-W32",
-  "gerado_em": "07/08/2026 16:08",
+  "semana": "2026-W33",
+  "gerado_em": "13/08/2026 10:56",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
-    {
-      "part_number": "401209",
-      "supplier_code": "WMFBR",
-      "supplier_name": "CNH Brasil WMF",
-      "ship_date": "",
-      "impact": "",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "",
-      "semana": "2026-W32",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
     {
       "part_number": "51514080",
       "supplier_code": "WMFBR",
@@ -38,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W32",
+      "semana": "2026-W33",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
