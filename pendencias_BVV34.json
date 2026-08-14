@@ -2,14 +2,14 @@
   "supplier_code": "BVV34",
   "supplier_name": "DAGAN INDUSTRIA E COMERCIO DE PRODU",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 12:17",
+  "gerado_em": "13/08/2026 16:48",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "87326017",
       "supplier_code": "BVV34",
       "supplier_name": "DAGAN INDUSTRIA E COMERCIO DE PRODU",
-      "ship_date": "18/11/2026",
+      "ship_date": "24/08/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
