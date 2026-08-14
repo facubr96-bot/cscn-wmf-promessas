@@ -2,7 +2,7 @@
   "supplier_code": "BML33",
   "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
   "semana": "2026-W33",
-  "enviado_em": "2026-08-14T17:17:06.386Z",
+  "enviado_em": "2026-08-14T17:36:16.386Z",
   "itens": [
     {
       "part_number": "87109873",
@@ -19,9 +19,9 @@
       "ultima_nfe": "000255328-003",
       "semana": "2026-W33",
       "entrega_confirmada": false,
-      "data_promessa": "28/08/2026",
-      "qty_prometida": 30,
-      "comentario": "Favor corrigir o past due, já enviamos essas peças no dia 28/07 NF 262182"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "47427210",
@@ -38,9 +38,9 @@
       "ultima_nfe": "",
       "semana": "2026-W33",
       "entrega_confirmada": false,
-      "data_promessa": "09/09/2026",
-      "qty_prometida": 100,
-      "comentario": "Pedido foi colocado fora do Leadtime, conseguimos atender somente em Setembro, devido ao leadtime do aprovisionamento de MP"
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "86614914",
@@ -57,8 +57,8 @@
       "ultima_nfe": "000261613-003",
       "semana": "2026-W33",
       "entrega_confirmada": false,
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 20,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": "Solicitar promessa."
     },
     {
@@ -76,8 +76,8 @@
       "ultima_nfe": "000261994-003",
       "semana": "2026-W33",
       "entrega_confirmada": false,
-      "data_promessa": "18/08/2026",
-      "qty_prometida": 60,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": "Solicitar promessa."
     },
     {
@@ -95,8 +95,8 @@
       "ultima_nfe": "000261113-003",
       "semana": "2026-W33",
       "entrega_confirmada": false,
-      "data_promessa": "01/09/2026",
-      "qty_prometida": 10,
+      "data_promessa": "",
+      "qty_prometida": null,
       "comentario": "Solicitar promessa."
     },
     {
@@ -119,5 +119,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-08-14T17:17:13.074Z"
+  "recibido_en_worker": "2026-08-14T17:36:22.820Z"
 }
