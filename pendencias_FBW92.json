@@ -2,7 +2,7 @@
   "supplier_code": "FBW92",
   "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -10,38 +10,38 @@
       "supplier_code": "FBW92",
       "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
       "ship_date": "03/08/2026",
-      "impact": "Hiper Critico",
-      "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=312",
-      "sharepoint_reason": "Past Due",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 50,
       "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000146230-001",
       "semana": "2026-W33",
-      "data_promessa": "31/07/2026",
+      "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Copiado do CPL: 7/31/2026"
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "91802796",
       "supplier_code": "FBW92",
       "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
       "ship_date": "03/08/2026",
-      "impact": "Hiper Critico",
-      "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=311",
-      "sharepoint_reason": "Past Due",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "impact": "1",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 90,
       "firm_jun_wmf": 45,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000146231-001",
       "semana": "2026-W33",
-      "data_promessa": "31/07/2026",
+      "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Copiado do CPL: 7/31/2026"
+      "comentario": "Solicitar promessa."
     }
   ]
 }
