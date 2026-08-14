@@ -2,18 +2,18 @@
   "supplier_code": "BVH54",
   "supplier_name": "CARRON AUTOMOTIVE LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
-      "part_number": "51599229",
+      "part_number": "51599213",
       "supplier_code": "BVH54",
       "supplier_name": "CARRON AUTOMOTIVE LTDA",
       "ship_date": "28/08/2026",
-      "impact": "Hiper Critico",
-      "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=299",
-      "sharepoint_reason": "Stock Loss",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 10,
@@ -25,7 +25,7 @@
       "comentario": "Solicitar promessa."
     },
     {
-      "part_number": "51599213",
+      "part_number": "51599229",
       "supplier_code": "BVH54",
       "supplier_name": "CARRON AUTOMOTIVE LTDA",
       "ship_date": "28/08/2026",
