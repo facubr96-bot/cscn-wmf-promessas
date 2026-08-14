@@ -2,7 +2,7 @@
   "supplier_code": "BLL51",
   "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -14,53 +14,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 40,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000294205-001",
       "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "437057",
-      "supplier_code": "BLL51",
-      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
-      "ship_date": "07/12/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000295417-001",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "9576276",
-      "supplier_code": "BLL51",
-      "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
-      "ship_date": "04/01/2027",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000295419-001",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "14/08/2026",
+      "qty_prometida": 40,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "9576476",
@@ -71,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 0,
       "firm_jun_wmf": 16,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000295418-001",
       "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "14/08/2026",
+      "qty_prometida": 16,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ]
 }
