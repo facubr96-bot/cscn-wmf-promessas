@@ -2,7 +2,7 @@
   "supplier_code": "BJQ09",
   "supplier_name": "ZUKAUSKAS & CIA LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -41,6 +41,44 @@
       "semana": "2026-W33",
       "data_promessa": "31/08/2026",
       "qty_prometida": 4,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+    },
+    {
+      "part_number": "87440363",
+      "supplier_code": "BJQ09",
+      "supplier_name": "ZUKAUSKAS & CIA LTDA",
+      "ship_date": "15/09/2026",
+      "impact": "",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "87666924",
+      "supplier_code": "BJQ09",
+      "supplier_name": "ZUKAUSKAS & CIA LTDA",
+      "ship_date": "17/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 10,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000281955-001",
+      "semana": "2026-W33",
+      "data_promessa": "22/09/2026",
+      "qty_prometida": 10,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     }
   ]
