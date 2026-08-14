@@ -2,7 +2,7 @@
   "supplier_code": "BKH99",
   "supplier_name": "SANVEN METALURGICA LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -10,19 +10,19 @@
       "supplier_code": "BKH99",
       "supplier_name": "SANVEN METALURGICA LTDA",
       "ship_date": "19/08/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
       "firm_jun_wmf": 30,
       "firm_jul_wmf": 30,
       "ultima_nfe": "000037795-002",
       "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "19/08/2026",
+      "qty_prometida": 30,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     }
   ]
 }
