@@ -2,27 +2,27 @@
   "supplier_code": "BNM94",
   "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
-      "part_number": "83961305",
+      "part_number": "380740A1",
       "supplier_code": "BNM94",
       "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
-      "ship_date": "27/08/2026",
+      "ship_date": "21/08/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 5,
+      "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "",
+      "ultima_nfe": "000393780-090",
       "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "26/08/2026",
+      "qty_prometida": 50,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
       "part_number": "84172050",
@@ -41,7 +41,26 @@
       "semana": "2026-W33",
       "data_promessa": "10/08/2026",
       "qty_prometida": 50,
-      "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
+    },
+    {
+      "part_number": "84176521",
+      "supplier_code": "BNM94",
+      "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
+      "ship_date": "07/09/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000375059-090",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
