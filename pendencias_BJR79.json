@@ -2,7 +2,7 @@
   "supplier_code": "BJR79",
   "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -44,25 +44,6 @@
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
-      "part_number": "47821777",
-      "supplier_code": "BJR79",
-      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
-      "ship_date": "08/12/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000699037-011",
-      "semana": "2026-W33",
-      "data_promessa": "10/08/2026",
-      "qty_prometida": 93,
-      "comentario": "Promessa vencida - solicitar nova data."
-    },
-    {
       "part_number": "827311",
       "supplier_code": "BJR79",
       "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
@@ -99,25 +80,6 @@
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "84128088",
-      "supplier_code": "BJR79",
-      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
-      "ship_date": "08/12/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000699037-011",
-      "semana": "2026-W33",
-      "data_promessa": "10/08/2026",
-      "qty_prometida": 93,
-      "comentario": "Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "84390751",
