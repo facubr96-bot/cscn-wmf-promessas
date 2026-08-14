@@ -2,7 +2,7 @@
   "supplier_code": "BNG96",
   "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -25,6 +25,25 @@
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Reprograma"
     },
     {
+      "part_number": "84164475",
+      "supplier_code": "BNG96",
+      "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
+      "ship_date": "13/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 50,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000093015-001",
+      "semana": "2026-W33",
+      "data_promessa": "21/08/2026",
+      "qty_prometida": 50,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+    },
+    {
       "part_number": "92055144",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
@@ -42,25 +61,6 @@
       "data_promessa": "21/08/2026",
       "qty_prometida": 136,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
-    },
-    {
-      "part_number": "84164475",
-      "supplier_code": "BNG96",
-      "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
-      "ship_date": "13/08/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 50,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000093015-001",
-      "semana": "2026-W33",
-      "data_promessa": "21/08/2026",
-      "qty_prometida": 50,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "86974038",
@@ -99,6 +99,25 @@
       "data_promessa": "21/09/2026",
       "qty_prometida": 78,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+    },
+    {
+      "part_number": "92683799",
+      "supplier_code": "BNG96",
+      "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
+      "ship_date": "11/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
