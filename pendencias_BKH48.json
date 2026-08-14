@@ -2,7 +2,7 @@
   "supplier_code": "BKH48",
   "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -23,6 +23,25 @@
       "data_promessa": "11/08/2026",
       "qty_prometida": 40,
       "comentario": "Promessa vencida - solicitar nova data. Material coletado sob NF262.083."
+    },
+    {
+      "part_number": "47360461",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "25/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 1,
+      "firm_jul_wmf": 5,
+      "ultima_nfe": "000261685-001",
+      "semana": "2026-W33",
+      "data_promessa": "25/08/2026",
+      "qty_prometida": 6,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
     },
     {
       "part_number": "47446294",
@@ -60,25 +79,6 @@
       "semana": "2026-W33",
       "data_promessa": "25/08/2026",
       "qty_prometida": 20,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
-    },
-    {
-      "part_number": "48168199",
-      "supplier_code": "BKH48",
-      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
-      "ship_date": "19/10/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000261306-001",
-      "semana": "2026-W33",
-      "data_promessa": "13/10/2026",
-      "qty_prometida": 11,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
     },
     {
@@ -120,6 +120,44 @@
       "comentario": "Promessa vencida - solicitar nova data. Material coletado sob NF262.352."
     },
     {
+      "part_number": "84355817",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "08/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000259239-001",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "90497495",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "08/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000225540-001",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
       "part_number": "91843696",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
@@ -156,6 +194,25 @@
       "data_promessa": "04/08/2026",
       "qty_prometida": 50,
       "comentario": "Promessa vencida - solicitar nova data. Material coletado sob NF261.684."
+    },
+    {
+      "part_number": "92167945",
+      "supplier_code": "BKH48",
+      "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
+      "ship_date": "01/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000242683-001",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
