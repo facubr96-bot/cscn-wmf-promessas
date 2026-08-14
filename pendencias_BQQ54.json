@@ -2,7 +2,7 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -23,6 +23,25 @@
       "data_promessa": "07/08/2026",
       "qty_prometida": 45,
       "comentario": "Promessa vencida - solicitar nova data. 45pçs enviadas dia 07/08/26"
+    },
+    {
+      "part_number": "92287283",
+      "supplier_code": "BQQ54",
+      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
+      "ship_date": "03/09/2026",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=324",
+      "sharepoint_reason": "Production Change",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 20,
+      "ultima_nfe": "000058657-007",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": 5,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Embarcado dia 18/06"
     },
     {
       "part_number": "91825928",
@@ -48,7 +67,7 @@
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "ship_date": "06/08/2027",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -137,25 +156,6 @@
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "92287283",
-      "supplier_code": "BQQ54",
-      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
-      "ship_date": "03/09/2026",
-      "impact": "1",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 20,
-      "ultima_nfe": "000058657-007",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": 5,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Embarcado dia 18/06"
     },
     {
       "part_number": "92647097",
