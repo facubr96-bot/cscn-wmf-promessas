@@ -2,7 +2,7 @@
   "supplier_code": "BNW32",
   "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -53,8 +53,8 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 8,
-      "firm_jun_wmf": 88,
+      "past_due_wmf": 20,
+      "firm_jun_wmf": 76,
       "firm_jul_wmf": 112,
       "ultima_nfe": "000730196-001",
       "semana": "2026-W33",
