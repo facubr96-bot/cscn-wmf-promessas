@@ -2,7 +2,7 @@
   "supplier_code": "BNF47",
   "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -23,6 +23,25 @@
       "data_promessa": "17/08/2026",
       "qty_prometida": 100,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Vamos enviar as 100un firme do dia 24/08 na coleta do dia 17/08."
+    },
+    {
+      "part_number": "14442021",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "07/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "14496421",
@@ -139,6 +158,25 @@
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Vamos enviar as 39un Firme do dia 24/08 na coleta do dia 17/08."
     },
     {
+      "part_number": "87036419",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "26/10/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
       "part_number": "87668116",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
@@ -194,6 +232,25 @@
       "data_promessa": "17/08/2026",
       "qty_prometida": 150,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Vamos enviar as 150un Firme do dia 17/08."
+    },
+    {
+      "part_number": "92308186",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMERCIO DE PECAS LTDA",
+      "ship_date": "07/09/2026",
+      "impact": "",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W33",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
