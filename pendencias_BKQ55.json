@@ -2,46 +2,27 @@
   "supplier_code": "BKQ55",
   "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 12:17",
+  "gerado_em": "13/08/2026 16:48",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "468476",
       "supplier_code": "BKQ55",
       "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
-      "ship_date": "",
+      "ship_date": "17/08/2026",
       "impact": "",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 0,
       "firm_jun_wmf": 180,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000123589-005",
       "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "84562879",
-      "supplier_code": "BKQ55",
-      "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
-      "ship_date": "08/10/2026",
-      "impact": "3",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 9,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000124474-005",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "data_promessa": "18/08/2026",
+      "qty_prometida": 180,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ]
 }
