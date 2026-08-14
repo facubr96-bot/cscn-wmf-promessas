@@ -2,7 +2,7 @@
   "supplier_code": "BJJ55",
   "supplier_name": "SCREW IND METALMECANICA SA",
   "semana": "2026-W33",
-  "gerado_em": "13/08/2026 16:48",
+  "gerado_em": "14/08/2026 13:40",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -10,7 +10,7 @@
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
       "ship_date": "10/08/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -105,7 +105,7 @@
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
       "ship_date": "17/08/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
