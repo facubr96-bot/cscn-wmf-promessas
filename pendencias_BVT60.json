@@ -1,15 +1,15 @@
 {
   "supplier_code": "BVT60",
   "supplier_name": "ISOESPUMA LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "91893746",
       "supplier_code": "BVT60",
       "supplier_name": "ISOESPUMA LTDA",
-      "ship_date": "05/10/2027",
+      "ship_date": "05/11/2027",
       "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000028008-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "07/08/2026",
       "qty_prometida": 1000,
       "comentario": "Promessa vencida - solicitar nova data."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000028008-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
