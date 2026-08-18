@@ -1,8 +1,8 @@
 {
   "supplier_code": "BPD14",
   "supplier_name": "METALURGICA KONDAK LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,10 +19,29 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 108,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+    },
+    {
+      "part_number": "82991996",
+      "supplier_code": "BPD14",
+      "supplier_name": "METALURGICA KONDAK LTDA",
+      "ship_date": "17/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 44,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000139685-001",
+      "semana": "2026-W34",
+      "data_promessa": "21/08/2026",
+      "qty_prometida": 44,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "87653930",
@@ -38,7 +57,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000137053-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 130,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
@@ -57,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +114,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -104,7 +123,7 @@
       "part_number": "82989565",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
-      "ship_date": "23/12/2026",
+      "ship_date": "24/12/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -114,29 +133,10 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
-    },
-    {
-      "part_number": "82991996",
-      "supplier_code": "BPD14",
-      "supplier_name": "METALURGICA KONDAK LTDA",
-      "ship_date": "17/08/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 44,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
-      "data_promessa": "21/08/2026",
-      "qty_prometida": 44,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "83980528",
@@ -152,7 +152,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -171,7 +171,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -180,7 +180,7 @@
       "part_number": "91739285",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
-      "ship_date": "17/12/2026",
+      "ship_date": "16/12/2026",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -190,7 +190,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000139685-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
