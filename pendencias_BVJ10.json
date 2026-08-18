@@ -1,8 +1,8 @@
 {
   "supplier_code": "BVJ10",
   "supplier_name": "PROMETEON TYRE GROUP INDUSTRIA BRAS",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -17,9 +17,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 10,
-      "firm_jul_wmf": 30,
-      "ultima_nfe": "000208969-007",
-      "semana": "2026-W33",
+      "firm_jul_wmf": 32,
+      "ultima_nfe": "000208965-007",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -36,9 +36,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 62,
-      "firm_jul_wmf": 28,
-      "ultima_nfe": "000208972-007",
-      "semana": "2026-W33",
+      "firm_jul_wmf": 40,
+      "ultima_nfe": "000208966-007",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -55,9 +55,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 48,
-      "firm_jul_wmf": 74,
+      "firm_jul_wmf": 92,
       "ultima_nfe": "000208971-007",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
