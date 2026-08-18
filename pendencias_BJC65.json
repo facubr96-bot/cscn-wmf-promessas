@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJC65",
   "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -15,11 +15,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
-      "past_due_wmf": 34,
-      "firm_jun_wmf": 87,
-      "firm_jul_wmf": 0,
+      "past_due_wmf": 48,
+      "firm_jun_wmf": 73,
+      "firm_jul_wmf": 8,
       "ultima_nfe": "000196284-010",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "20/08/2026",
       "qty_prometida": 34,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 22,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000195367-010",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 30,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000193141-010",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "20/08/2026",
       "qty_prometida": 14,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. 14Solicitar promessa."
@@ -67,7 +67,7 @@
       "supplier_code": "BJC65",
       "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
       "ship_date": "24/08/2026",
-      "impact": "4",
+      "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 30,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000193141-010",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "20/08/2026",
       "qty_prometida": 7,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
