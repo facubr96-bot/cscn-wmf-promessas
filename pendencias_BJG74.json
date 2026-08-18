@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJG74",
   "supplier_name": "METALUS IND MEC LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 2,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -37,11 +37,30 @@
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 30,
-      "ultima_nfe": "000216769-001",
-      "semana": "2026-W33",
+      "ultima_nfe": "000216767-001",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "87586519",
+      "supplier_code": "BJG74",
+      "supplier_name": "METALUS IND MEC LTDA",
+      "ship_date": "18/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 32,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000210190-001",
+      "semana": "2026-W34",
+      "data_promessa": "28/08/2026",
+      "qty_prometida": 32,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ]
 }
