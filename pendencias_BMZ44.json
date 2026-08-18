@@ -1,15 +1,15 @@
 {
   "supplier_code": "BMZ44",
   "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
       "part_number": "48006697",
       "supplier_code": "BMZ44",
       "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
-      "ship_date": "21/09/2026",
+      "ship_date": "07/09/2026",
       "impact": "",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -17,9 +17,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 90,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
