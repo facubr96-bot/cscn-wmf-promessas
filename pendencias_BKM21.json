@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKM21",
   "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 10,
       "ultima_nfe": "000081441-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 600,
       "ultima_nfe": "000081217-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -112,9 +112,9 @@
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 5,
       "firm_jun_wmf": 3,
-      "firm_jul_wmf": 6,
+      "firm_jul_wmf": 11,
       "ultima_nfe": "000081458-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "16/02/2027",
       "qty_prometida": 10,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. ENTREGA PREVISTA PARA 16/02/2027"
@@ -133,7 +133,7 @@
       "firm_jun_wmf": 150,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -152,7 +152,7 @@
       "firm_jun_wmf": 150,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -161,7 +161,7 @@
       "part_number": "84005115",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
-      "ship_date": "08/04/2027",
+      "ship_date": "04/06/2027",
       "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -171,7 +171,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000081458-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -190,7 +190,7 @@
       "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000081485-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -199,7 +199,7 @@
       "part_number": "84076645",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
-      "ship_date": "02/12/2026",
+      "ship_date": "",
       "impact": "",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -208,8 +208,8 @@
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000081439-001",
-      "semana": "2026-W33",
+      "ultima_nfe": "WMF-001959/2025",
+      "semana": "2026-W34",
       "data_promessa": "07/08/2026",
       "qty_prometida": 26,
       "comentario": "Promessa vencida - solicitar nova data."
@@ -228,7 +228,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 50,
       "ultima_nfe": "000081217-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -247,7 +247,7 @@
       "firm_jun_wmf": 1,
       "firm_jul_wmf": 28,
       "ultima_nfe": "000081458-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "10/09/2026",
       "qty_prometida": 15,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. ENTREGA PREVISTA PARA 10/09/2026"
@@ -266,7 +266,7 @@
       "firm_jun_wmf": 50,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000081280-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -283,9 +283,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 160,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -302,9 +302,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 160,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
