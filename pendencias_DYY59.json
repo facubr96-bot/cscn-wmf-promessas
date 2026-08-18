@@ -1,8 +1,8 @@
 {
   "supplier_code": "DYY59",
   "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -14,15 +14,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 60,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 80,
       "ultima_nfe": "000075224-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 60,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "92074622",
@@ -33,15 +33,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 60,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 80,
       "ultima_nfe": "000075750-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 60,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "92074626",
@@ -52,15 +52,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 62,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 80,
       "ultima_nfe": "000075749-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 62,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
       "part_number": "92075047",
@@ -71,15 +71,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 20,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000076987-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 20,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "92075169",
@@ -90,15 +90,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 60,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 80,
       "ultima_nfe": "000075750-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 60,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "51668922",
@@ -109,15 +109,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000076776-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 20,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Promessa vencida - solicitar nova data."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Promessa vencida - solicitar nova data."
     },
     {
       "part_number": "92074204",
@@ -128,15 +128,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 0,
       "firm_jun_wmf": 21,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000076988-000",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "14/08/2026",
       "qty_prometida": 11,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data."
     }
   ]
 }
