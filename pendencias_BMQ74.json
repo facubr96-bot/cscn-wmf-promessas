@@ -1,8 +1,8 @@
 {
   "supplier_code": "BMQ74",
   "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,8 +19,27 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000176991-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "19/08/2026",
+      "qty_prometida": "",
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+    },
+    {
+      "part_number": "87645102",
+      "supplier_code": "BMQ74",
+      "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
+      "ship_date": "19/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 80,
+      "firm_jul_wmf": 160,
+      "ultima_nfe": "000176921-001",
+      "semana": "2026-W34",
+      "data_promessa": "26/08/2026",
       "qty_prometida": "",
       "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
@@ -38,7 +57,7 @@
       "firm_jun_wmf": 144,
       "firm_jul_wmf": 144,
       "ultima_nfe": "000176921-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "19/08/2026",
       "qty_prometida": "",
       "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
