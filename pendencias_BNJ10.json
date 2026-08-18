@@ -1,8 +1,8 @@
 {
   "supplier_code": "BNJ10",
   "supplier_name": "V S DE LIMA & CIA LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000195604-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "13/08/2026",
       "qty_prometida": 41,
       "comentario": "Promessa vencida - solicitar nova data. CNH não veio coletar conforme solicitado no  portal."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "WMF-003207",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 5,
       "ultima_nfe": "00088",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
