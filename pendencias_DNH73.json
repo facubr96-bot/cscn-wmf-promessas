@@ -1,8 +1,8 @@
 {
   "supplier_code": "DNH73",
   "supplier_name": "ANGSTAHL INDUSTRIA E COMERCIO LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 30,
       "ultima_nfe": "000036142-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 90,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "20/08/2026",
       "qty_prometida": 90,
       "comentario": "Favor confirmar se esta entrega sera cumprida."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 30,
       "ultima_nfe": "000037947-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 30,
       "ultima_nfe": "000037947-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 40,
       "firm_jul_wmf": 40,
       "ultima_nfe": "WMF-002329/2025",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
