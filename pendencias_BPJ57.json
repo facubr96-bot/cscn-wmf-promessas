@@ -1,8 +1,8 @@
 {
   "supplier_code": "BPJ57",
   "supplier_name": "TUPER SA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -18,8 +18,8 @@
       "past_due_wmf": 16,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 10,
-      "ultima_nfe": "000171606-001",
-      "semana": "2026-W33",
+      "ultima_nfe": "000171605-001",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -38,10 +38,29 @@
       "firm_jun_wmf": 10,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000171603-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "92146827",
+      "supplier_code": "BPJ57",
+      "supplier_name": "TUPER SA",
+      "ship_date": "05/08/2026",
+      "impact": "3",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 10,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 10,
+      "ultima_nfe": "",
+      "semana": "2026-W34",
+      "data_promessa": "25/08/2026",
+      "qty_prometida": 10,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "91821862",
@@ -57,7 +76,7 @@
       "firm_jun_wmf": 16,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000169304-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "19/08/2026",
       "qty_prometida": 16,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
@@ -76,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000171608-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
