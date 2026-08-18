@@ -1,8 +1,8 @@
 {
   "supplier_code": "BPD87",
   "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 60,
       "ultima_nfe": "000222121-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -29,7 +29,7 @@
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
       "ship_date": "12/08/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000213601-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -47,17 +47,17 @@
       "part_number": "47969118",
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
-      "ship_date": "04/01/2027",
-      "impact": "1",
+      "ship_date": "07/09/2026",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 54,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 60,
       "ultima_nfe": "000220724-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 40,
       "ultima_nfe": "000219835-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
