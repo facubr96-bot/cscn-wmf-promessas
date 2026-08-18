@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJR79",
   "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 5,
       "firm_jul_wmf": 16,
       "ultima_nfe": "000702851-011",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "07/09/2026",
       "qty_prometida": 19,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 30,
       "firm_jul_wmf": 40,
       "ultima_nfe": "000702851-011",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "02/09/2026",
       "qty_prometida": 21,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 120,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 120,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000699037-011",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -93,9 +93,9 @@
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
       "firm_jun_wmf": 24,
-      "firm_jul_wmf": 49,
+      "firm_jul_wmf": 57,
       "ultima_nfe": "000702851-011",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 34,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
