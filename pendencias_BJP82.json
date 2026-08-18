@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJP82",
   "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 11,
       "firm_jul_wmf": 12,
       "ultima_nfe": "000622829-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "20226-08-18",
       "qty_prometida": 47,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. item em estoque aguardando coleta."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 9,
       "firm_jul_wmf": 18,
       "ultima_nfe": "000622829-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "25/08/2026",
       "qty_prometida": 12,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Item em estoque, aguardando coleta."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 12,
       "firm_jul_wmf": 6,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "18/08/2026",
       "qty_prometida": 6,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Item em estoque, aguardando coleta"
@@ -67,7 +67,7 @@
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "ship_date": "05/08/2026",
-      "impact": "1",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "18/08/2026",
       "qty_prometida": 33,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Item em estoque, aguardando coleta."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 77,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -114,10 +114,29 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "25/08/2026",
       "qty_prometida": 7,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. em produção"
+    },
+    {
+      "part_number": "47535865",
+      "supplier_code": "BJP82",
+      "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
+      "ship_date": "25/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 12,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W34",
+      "data_promessa": "25/08/2026",
+      "qty_prometida": 12,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. em produção"
     },
     {
       "part_number": "48133543",
@@ -133,7 +152,7 @@
       "firm_jun_wmf": 14,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "25/08/2026",
       "qty_prometida": 11,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. em produção"
@@ -152,7 +171,7 @@
       "firm_jun_wmf": 9,
       "firm_jul_wmf": 84,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "18/08/2026",
       "qty_prometida": 18,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Item em estoque, aguardando coleta"
@@ -171,7 +190,7 @@
       "firm_jun_wmf": 9,
       "firm_jul_wmf": 84,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "01/09/2026",
       "qty_prometida": 9,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. em produção"
@@ -190,7 +209,7 @@
       "firm_jun_wmf": 8,
       "firm_jul_wmf": 85,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "01/09/2026",
       "qty_prometida": 84,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. em produção"
@@ -199,7 +218,7 @@
       "part_number": "51598977",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
-      "ship_date": "23/09/2026",
+      "ship_date": "09/09/2026",
       "impact": "",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -207,9 +226,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 83,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -228,7 +247,7 @@
       "firm_jun_wmf": 4,
       "firm_jul_wmf": 15,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "01/09/2026",
       "qty_prometida": 19,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. em produção"
@@ -247,7 +266,7 @@
       "firm_jun_wmf": 6,
       "firm_jul_wmf": 7,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -266,7 +285,7 @@
       "firm_jun_wmf": 12,
       "firm_jul_wmf": 14,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -283,9 +302,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 12,
+      "firm_jul_wmf": 18,
       "ultima_nfe": "000624265-002",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
