@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKR45",
   "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000078321-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -29,7 +29,7 @@
       "supplier_code": "BKR45",
       "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
       "ship_date": "26/08/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 24,
       "firm_jul_wmf": 24,
       "ultima_nfe": "000078322-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -48,16 +48,16 @@
       "supplier_code": "BKR45",
       "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
       "ship_date": "26/08/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 20,
-      "firm_jul_wmf": 20,
+      "firm_jun_wmf": 24,
+      "firm_jul_wmf": 24,
       "ultima_nfe": "000075715-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 80,
       "ultima_nfe": "000078530-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 10,
       "ultima_nfe": "000078323-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
