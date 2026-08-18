@@ -1,8 +1,8 @@
 {
   "supplier_code": "BNG96",
   "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,10 +19,48 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000095059-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 50,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Reprograma"
+    },
+    {
+      "part_number": "48190269",
+      "supplier_code": "BNG96",
+      "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
+      "ship_date": "19/06/2026",
+      "impact": "1",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 40,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 19,
+      "ultima_nfe": "000095059-001",
+      "semana": "2026-W34",
+      "data_promessa": "28/08/2026",
+      "qty_prometida": 40,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. REPROGRAMA - 28/08"
+    },
+    {
+      "part_number": "51483216",
+      "supplier_code": "BNG96",
+      "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
+      "ship_date": "17/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 100,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000095623-001",
+      "semana": "2026-W34",
+      "data_promessa": "25/08/2026",
+      "qty_prometida": 100,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "84164475",
@@ -38,7 +76,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000093015-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 50,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
@@ -57,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000095623-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 136,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
@@ -76,7 +114,7 @@
       "firm_jun_wmf": 7,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000096103-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/08/2026",
       "qty_prometida": 7,
       "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
@@ -95,7 +133,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 80,
       "ultima_nfe": "000096370-001",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "21/09/2026",
       "qty_prometida": 78,
       "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
@@ -112,9 +150,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 103,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
