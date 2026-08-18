@@ -1,8 +1,8 @@
 {
   "supplier_code": "CBN07",
   "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -17,9 +17,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 54,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -36,9 +36,9 @@
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 54,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
