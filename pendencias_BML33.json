@@ -1,8 +1,8 @@
 {
   "supplier_code": "BML33",
   "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
-  "semana": "2026-W33",
-  "gerado_em": "14/08/2026 13:40",
+  "semana": "2026-W34",
+  "gerado_em": "18/08/2026 07:19",
   "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
   "itens": [
     {
@@ -19,7 +19,7 @@
       "firm_jun_wmf": 30,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000255328-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -38,7 +38,7 @@
       "firm_jun_wmf": 100,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -57,7 +57,7 @@
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 20,
       "ultima_nfe": "000261613-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -76,7 +76,7 @@
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 60,
       "ultima_nfe": "000261994-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -95,7 +95,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 10,
       "ultima_nfe": "000261113-003",
-      "semana": "2026-W33",
+      "semana": "2026-W34",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
@@ -109,15 +109,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
       "firm_jun_wmf": 9,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 12,
       "ultima_nfe": "000261114-003",
-      "semana": "2026-W33",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "semana": "2026-W34",
+      "data_promessa": "18/08/2026",
+      "qty_prometida": 9,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     }
   ]
 }
