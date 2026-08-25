@@ -1,15 +1,14 @@
 {
   "supplier_code": "BMW41",
   "supplier_name": "METALURGICA RIGITEC LTDA",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "47486947",
       "supplier_code": "BMW41",
       "supplier_name": "METALURGICA RIGITEC LTDA",
-      "ship_date": "24/11/2026",
+      "ship_date": "10/02/2027",
       "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
@@ -18,8 +17,8 @@
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000073098-001",
-      "semana": "2026-W34",
+      "ultima_nfe": "000073305-001",
+      "semana": "2026-W35",
       "data_promessa": "12/08/2026",
       "qty_prometida": 50,
       "comentario": "Promessa vencida - solicitar nova data."
