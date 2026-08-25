@@ -1,9 +1,8 @@
 {
   "supplier_code": "BJD88",
   "supplier_name": "INDUSTRIA AGRO-PERTENCES EIRELI",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "51627100",
@@ -15,11 +14,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 5,
-      "firm_jun_wmf": 5,
+      "past_due_wmf": 10,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000076478-001",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "07/08/2026",
       "qty_prometida": 15,
       "comentario": "Promessa vencida - solicitar nova data."
