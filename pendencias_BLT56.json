@@ -1,9 +1,8 @@
 {
   "supplier_code": "BLT56",
   "supplier_name": "BORGWARNER BRASIL LTDA",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "91841400",
@@ -15,11 +14,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 84,
+      "past_due_wmf": 84,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000403040-009",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "07/08/2026",
       "qty_prometida": 84,
       "comentario": "Promessa vencida - solicitar nova data."
