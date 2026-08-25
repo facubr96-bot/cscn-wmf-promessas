@@ -1,9 +1,8 @@
 {
   "supplier_code": "BJD94",
   "supplier_name": "INDUSTRIA PLASTICA AZULPLAST LTDA",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "827149",
@@ -15,11 +14,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 200,
+      "past_due_wmf": 200,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa."
