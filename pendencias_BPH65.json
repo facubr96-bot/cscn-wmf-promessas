@@ -1,9 +1,8 @@
 {
   "supplier_code": "BPH65",
   "supplier_name": "FUNDICAO SIDERAL LTDA",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "47780042",
@@ -15,33 +14,33 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 22,
-      "firm_jun_wmf": 13,
-      "firm_jul_wmf": 5,
+      "past_due_wmf": 35,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 18,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "11/08/2026",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Hiper Critico SharePoint - confirmar plano. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Hiper Critico SharePoint - confirmar plano. Solicitar promessa."
     },
     {
       "part_number": "82014606",
       "supplier_code": "BPH65",
       "supplier_name": "FUNDICAO SIDERAL LTDA",
       "ship_date": "06/07/2026",
-      "impact": "3",
+      "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 43,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 8,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "24/08/2026",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "82024272",
@@ -52,15 +51,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 6,
       "firm_jun_wmf": 6,
       "firm_jul_wmf": 12,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "20/08/2026",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "82031491",
@@ -76,10 +75,10 @@
       "firm_jun_wmf": 6,
       "firm_jul_wmf": 12,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "25/08/2026",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ]
 }
