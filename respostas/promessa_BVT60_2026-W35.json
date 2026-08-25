@@ -2,7 +2,7 @@
   "supplier_code": "BVT60",
   "supplier_name": "ISOESPUMA LTDA",
   "semana": "2026-W35",
-  "enviado_em": "2026-08-25T17:02:38.053Z",
+  "enviado_em": "2026-08-25T17:04:50.124Z",
   "itens": [
     {
       "part_number": "91893746",
@@ -19,7 +19,7 @@
       "ultima_nfe": "000028008-001",
       "semana": "2026-W35",
       "entrega_confirmada": false,
-      "data_promessa": "07/08/2026",
+      "data_promessa": "29/07/2026",
       "qty_prometida": 1000,
       "comentario": "Promessa vencida - solicitar nova data."
     },
@@ -62,5 +62,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-08-25T17:02:38.742Z"
+  "recibido_en_worker": "2026-08-25T17:04:50.668Z"
 }
