@@ -1,9 +1,8 @@
 {
   "supplier_code": "BJF54",
   "supplier_name": "KABEL WIRING SYSTEMS LTDA",
-  "semana": "2026-W34",
-  "gerado_em": "18/08/2026 07:19",
-  "aviso_link": "O link enviado ontem nao estava funcionando. Por favor considerar este novo link.",
+  "semana": "2026-W35",
+  "gerado_em": "25/08/2026 11:41",
   "itens": [
     {
       "part_number": "90408825",
@@ -15,11 +14,11 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 93,
+      "past_due_wmf": 63,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "",
-      "semana": "2026-W34",
+      "ultima_nfe": "000239707-001",
+      "semana": "2026-W35",
       "data_promessa": "17/08/2026",
       "qty_prometida": 16,
       "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
@@ -38,7 +37,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 70,
       "ultima_nfe": "000239325-001",
-      "semana": "2026-W34",
+      "semana": "2026-W35",
       "data_promessa": "17/08/2026",
       "qty_prometida": 70,
       "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
