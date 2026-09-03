@@ -2,7 +2,7 @@
   "supplier_code": "FLR29",
   "supplier_name": "DANFOSS DO BRASIL INDUSTRIA E COMER",
   "semana": "2026-W35",
-  "enviado_em": "2026-09-03T19:59:02.055Z",
+  "enviado_em": "2026-09-03T20:04:27.813Z",
   "itens": [
     {
       "part_number": "91766576",
@@ -138,5 +138,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-03T19:59:02.264Z"
+  "recibido_en_worker": "2026-09-03T20:04:28.001Z"
 }
