@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-07-08 ultima-nfe">
-<!-- Atualizado em 08/07/2026: pendencias_*.json passam a enviar ultima_nfe. -->
+<meta name="portal-version" content="2026-09-03 databricks-realtime-admin">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,7 +16,6 @@
     min-height: 100vh;
   }
 
-  /*  HEADER  */
   header {
     background: #1F3864;
     color: #fff;
@@ -27,12 +25,9 @@
     gap: 16px;
     box-shadow: 0 2px 6px rgba(0,0,0,.35);
   }
-  header img.logo { height: 36px; filter: brightness(0) invert(1); }
   header .divider { width: 1px; height: 36px; background: rgba(255,255,255,.3); }
   header h1 { font-size: 17px; font-weight: 700; letter-spacing: .4px; }
-  header .subtitle { font-size: 11px; opacity: .75; margin-top: 2px; }
 
-  /* INFO BAR */
   .info-bar {
     background: #fff;
     border-bottom: 2px solid #1F3864;
@@ -47,7 +42,6 @@
   .info-chip .value { font-size: 13px; font-weight: 700; color: #1F3864; margin-top: 1px; }
   .info-chip.highlight .value { color: #c0392b; }
 
-  /*  TOOLBAR  */
   .toolbar {
     background: #fff;
     padding: 10px 24px;
@@ -146,7 +140,6 @@
   }
   .import-summary.warn { color: #c0392b; }
 
-  /*  TABLE WRAPPER  */
   .table-wrap {
     padding: 16px 24px 80px;
     overflow-x: auto;
@@ -192,30 +185,9 @@
     white-space: nowrap;
   }
 
-  /* seq number */
   td.seq { color: #aaa; font-size: 11px; text-align: center; }
 
-  /* Impact badge */
-  .badge {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: .4px;
-    text-transform: uppercase;
-  }
-  .badge-critical, .bs { background: #fde8e8; color: #c0392b; }   /* Stopper / Critical */
-  .badge-high,     .bn { background: #fef3cd; color: #b7770d; }   /* No Funcional / High */
-  .badge-medium,   .bm { background: #e8f8e8; color: #217a3c; }   /* Menor / Medium/Low */
-  .badge-low           { background: #e8f8e8; color: #217a3c; }
-  .badge-none          { background: #f0f0f0; color: #777; }
-  .badge-hyper         { background: #c00000; color: #ffffff; box-shadow: 0 0 0 1px #7f0000 inset; }
-  .badge-action        { background: #eaf2ff; color: #1F3864; border: 1px solid #b8c9ea; }
-  .badge-confirm       { background: #e8f8e8; color: #217a3c; border: 1px solid #9fd09f; }
-  .badge-request       { background: #fff2cc; color: #8a5a00; border: 1px solid #e0bd62; }
-  .badge-insufficient  { background: #fde8e8; color: #c0392b; border: 1px solid #e5a0a0; }
-  .confirm-cell { text-align: center; }
+  .confirm-cell { text-align: center; vertical-align: top; }
   .confirm-label {
     display: inline-flex;
     align-items: center;
@@ -225,13 +197,26 @@
     font-size: 11px;
   }
   .confirm-label input { width: 15px; height: 15px; accent-color: #217a3c; }
+  .confirm-extra {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .confirm-extra input {
+    border: 1.5px solid #82c882;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 11px;
+    background: #f4fbf4;
+    width: 140px;
+  }
+  .confirm-extra input:focus { outline: none; border-color: #27ae60; background: #eafcea; }
 
-  /* WMF flag cells */
   td.wmf-cell { text-align: center; }
   .wmf-yes { color: #c0392b; font-weight: 700; font-size: 11px; }
   .wmf-no  { color: #bbb; font-size: 11px; }
 
-  /* editable inputs */
   input.inp-date, input.inp-qty {
     border: 1.5px solid #f0a04a;
     border-radius: 5px;
@@ -259,7 +244,6 @@
   }
   textarea.inp-comment:focus { outline: none; border-color: #27ae60; background: #eafcea; }
 
-  /*  FOOTER / SUBMIT  */
   .footer-bar {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -291,16 +275,13 @@
   .btn-submit:hover { background: #16294d; }
   .btn-submit:active { background: #0f1e39; }
 
-  /*  EMPTY STATE  */
   .empty-state {
     text-align: center;
     padding: 60px 24px;
     color: #aaa;
   }
-  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
   .empty-state p { font-size: 14px; }
 
-  /*  ERROR STATE  */
   .error-box {
     margin: 24px;
     background: #fff0f0;
@@ -312,7 +293,6 @@
   }
   .error-box strong { display: block; font-size: 15px; margin-bottom: 6px; }
 
-  /*  TOAST  */
   .toast {
     position: fixed;
     bottom: 70px; right: 24px;
@@ -331,7 +311,6 @@
   .toast.success { background: #27ae60; }
   .toast.error   { background: #e74c3c; }
 
-  /*  LOADING  */
   .loading {
     display: flex; align-items: center; justify-content: center;
     gap: 12px; padding: 60px 24px; color: #888; font-size: 14px;
@@ -345,20 +324,17 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* hidden rows */
   tr.hidden-row { display: none; }
 
-  /* part number mono */
   td.part-num { font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; color: #1F3864; }
+  td.supplier-cell { font-size: 11px; color: #444; }
 
-  /* nfe */
   td.nfe-cell { color: #555; font-size: 11px; }
   td.nfe-cell span { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div>
     <div style="font-size:12px;opacity:.6;letter-spacing:1px;text-transform:uppercase">CNH Industrial</div>
@@ -370,7 +346,6 @@
   </div>
 </header>
 
-<!-- INFO BAR -->
 <div class="info-bar" id="infoBar">
   <div class="info-chip"><span class="label">Fornecedor</span><span class="value" id="ibFornecedor">-</span></div>
   <div class="info-chip"><span class="label">Codigo</span><span class="value" id="ibCodigo">-</span></div>
@@ -380,13 +355,12 @@
   <div class="info-chip"><span class="label">Exibindo</span><span class="value" id="ibExibindo">-</span></div>
 </div>
 
-<!-- TOOLBAR -->
 <div class="toolbar">
   <div class="filter-group">
-    <button class="btn-filter active"         data-filter="all"      onclick="setFilter('all',this)">Todos</button>
-    <button class="btn-filter red-filter"     data-filter="pastdue"  onclick="setFilter('pastdue',this)">Somente Past Due</button>
-    <button class="btn-filter jun-filter"     data-filter="jun"      onclick="setFilter('jun',this)" id="filterJunBtn">Firm Julho</button>
-    <button class="btn-filter jul-filter"     data-filter="jul"      onclick="setFilter('jul',this)" id="filterJulBtn">Firm Agosto</button>
+    <button class="btn-filter active"     data-filter="all"      onclick="setFilter('all',this)">Todos</button>
+    <button class="btn-filter red-filter" data-filter="pastdue"  onclick="setFilter('pastdue',this)">Somente Past Due</button>
+    <button class="btn-filter jun-filter" data-filter="jun"      onclick="setFilter('jun',this)" id="filterJunBtn">Firm Setembro</button>
+    <button class="btn-filter jul-filter" data-filter="jul"      onclick="setFilter('jul',this)" id="filterJulBtn">Firm Outubro</button>
   </div>
 
   <div class="toolbar-sep"></div>
@@ -408,7 +382,6 @@
   </div>
 </div>
 
-<!-- TABLE -->
 <div class="table-wrap">
   <div id="loadingState" class="loading"><div class="spinner"></div>Carregando pendencias...</div>
   <div id="errorState"   class="error-box" style="display:none">
@@ -422,12 +395,11 @@
           <th style="width:36px;text-align:center"><input type="checkbox" id="headCb" onchange="toggleSelectAll(this.checked)" style="accent-color:#fff;width:14px;height:14px"></th>
           <th style="width:36px">#</th>
           <th>Part Number</th>
-          <th>Impact</th>
-          <th>Acao</th>
+          <th>Supplier</th>
           <th>Ship Date CSCN</th>
           <th style="text-align:center">Past Due WMF</th>
-          <th style="text-align:center" id="thFirmJun">Firm Julho WMF</th>
-          <th style="text-align:center" id="thFirmJul">Firm Agosto WMF</th>
+          <th style="text-align:center" id="thFirmJun">Firm Setembro WMF</th>
+          <th style="text-align:center" id="thFirmJul">Firm Outubro WMF</th>
           <th>Ultima NFe</th>
           <th style="text-align:center">Confirmar entrega</th>
           <th>Data Promessa</th>
@@ -438,32 +410,34 @@
       <tbody id="tableBody"></tbody>
     </table>
     <div id="emptyState" class="empty-state" style="display:none">
-      <div class="icon"></div>
       <p>Nenhum item encontrado para o filtro selecionado.</p>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer-bar">
   <div class="submit-info">
-    Informe <strong>Data Promessa</strong> e <strong>Qty Prometida</strong>. Para itens em confirmacao, marque <strong>Confirmar entrega</strong> e clique em <strong>Enviar Promessas</strong>.
+    Informe <strong>Data Promessa</strong> e <strong>Qty Prometida</strong>. Para itens ja entregues, marque <strong>Confirmar entrega</strong>, informe a data de coleta e a(s) NFe(s) enviada(s), e clique em <strong>Enviar Promessas</strong>.
   </div>
   <button class="btn-submit" onclick="submitPromessas()">Enviar Promessas</button>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-//  State 
-let DATA        = null;   // raw JSON from server
-let ITEMS       = [];     // parsed items array
+let DATA        = null;
+let ITEMS       = [];
 let currentFilter = 'all';
 
-//  Helpers 
+const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+
 function qs(sel)  { return document.querySelector(sel); }
 function qsa(sel) { return document.querySelectorAll(sel); }
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function setMonthLabels() {
   const MESES_PT = ['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
@@ -477,14 +451,10 @@ function setMonthLabels() {
 }
 
 function fmtDate(raw) {
-  // accepts YYYYMMDD, YYYY-MM-DD or DD/MM/YYYY, returns DD/MM/YYYY
   if (!raw) return '-';
   raw = raw.toString().trim();
   if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) return raw;
-  if (/^\d{8}$/.test(raw)) {
-    // YYYYMMDD
-    return `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`;
-  }
+  if (/^\d{8}$/.test(raw)) return `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`;
   if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
     const [y,m,d] = raw.split('-');
     return `${d}/${m}/${y}`;
@@ -493,7 +463,6 @@ function fmtDate(raw) {
 }
 
 function toISODate(raw) {
-  // DD/MM/YYYY or YYYYMMDD or YYYY-MM-DD -> YYYY-MM-DD for <input type=date>
   if (!raw || raw === '-') return '';
   raw = raw.toString().trim();
   if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
@@ -503,35 +472,6 @@ function toISODate(raw) {
     return `${y}-${m}-${d}`;
   }
   return '';
-}
-
-function impactBadge(val) {
-  if (!val) return '<span class="badge badge-none">-</span>';
-  const raw = val.toString();
-  const lower = raw.toLowerCase();
-  if (lower.includes('hiper')) return `<span class="badge badge-hyper">HIPER CRITICO</span>`;
-  // Values like "1 - Menor", "3 - No Funcional", "4 - Stopper"
-  const num = parseInt(val);
-  if (num === 4) return `<span class="badge bs">${val}</span>`;       // Stopper - vermelho
-  if (num === 3) return `<span class="badge bn">${val}</span>`;       // No Funcional - laranja
-  if (num === 1 || num === 2) return `<span class="badge bm">${val}</span>`; // Menor - verde
-  // Legacy English fallback
-  const v = val.toString().toLowerCase();
-  if (v === 'critical') return `<span class="badge bs">Critical</span>`;
-  if (v === 'high')     return `<span class="badge bn">High</span>`;
-  if (v === 'medium')   return `<span class="badge bm">Medium</span>`;
-  if (v === 'low')      return `<span class="badge bm">Low</span>`;
-  return `<span class="badge badge-none">${val}</span>`;
-}
-
-function actionBadge(val) {
-  const text = (val || 'Solicitar promessa').toString();
-  const lower = text.toLowerCase();
-  let cls = 'badge-action';
-  if (lower.includes('confirmar')) cls = 'badge-confirm';
-  if (lower.includes('solicitar')) cls = 'badge-request';
-  if (lower.includes('insuficiente')) cls = 'badge-insufficient';
-  return `<span class="badge ${cls}">${text}</span>`;
 }
 
 function wmfFlag(val) {
@@ -550,10 +490,31 @@ function showToast(msg, type='') {
   setTimeout(() => { t.className = 'toast'; }, 3200);
 }
 
-//  Load data 
+async function loadAllSuppliers() {
+  try {
+    const resp = await fetch(`pendencias_ALL.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} - pendencias_ALL.json nao encontrado.`);
+    DATA = await resp.json();
+    processData(DATA, 'TODOS');
+  } catch (e) {
+    showError(e.message || 'Erro ao carregar pendencias_ALL.json.');
+  }
+}
+
 async function loadData() {
-  const params = new URLSearchParams(window.location.search);
-  const supplier = params.get('supplier');
+  const params    = new URLSearchParams(window.location.search);
+  const supplier  = params.get('supplier');
+  const adminCode = params.get('admin');
+
+  if (adminCode) {
+    const hash = await sha256Hex(adminCode);
+    if (hash === ADMIN_HASH) {
+      await loadAllSuppliers();
+      return;
+    }
+    showError('Codigo de acesso invalido.');
+    return;
+  }
 
   if (!supplier) {
     showError(
@@ -569,13 +530,7 @@ async function loadData() {
   try {
     const resp = await fetch(`${filename}?v=${Date.now()}`, { cache: 'no-store' });
     if (resp.status === 404) {
-      DATA = {
-        supplier_code: supplier,
-        supplier_name: '-',
-        semana: '-',
-        itens: [],
-        sem_pendencias: true
-      };
+      DATA = { supplier_code: supplier, supplier_name: '-', semana: '-', itens: [], sem_pendencias: true };
       processData(DATA, supplier);
       return;
     }
@@ -594,15 +549,16 @@ function showError(msg) {
 }
 
 function processData(data, supplierParam) {
-  // Support both flat array or wrapped object
-  ITEMS = Array.isArray(data) ? data
-        : (data.itens || data.items || data.pendencias || []);
+  ITEMS = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
 
-  const supplierName = ITEMS[0]?.supplier_name || data.supplier_name || '-';
-  const supplierCode = ITEMS[0]?.supplier_code || data.supplier_code || supplierParam;
-  const semana       = ITEMS[0]?.semana        || data.semana        || '-';
+  const supplierName = supplierParam === 'TODOS'
+    ? 'Todos os fornecedores'
+    : (ITEMS[0]?.supplier_name || data.supplier_name || '-');
+  const supplierCode = supplierParam === 'TODOS'
+    ? `${new Set(ITEMS.map(i => i.supplier_code)).size} fornecedores`
+    : (ITEMS[0]?.supplier_code || data.supplier_code || supplierParam);
+  const semana = ITEMS[0]?.semana || data.semana || '-';
 
-  // Info bar
   qs('#ibFornecedor').textContent = supplierName;
   qs('#ibCodigo').textContent     = supplierCode;
   qs('#ibSemana').textContent     = semana;
@@ -625,7 +581,6 @@ function flag(val) {
   return false;
 }
 
-//  Render 
 function renderTable() {
   const tbody = qs('#tableBody');
   tbody.innerHTML = '';
@@ -653,8 +608,7 @@ function applyFilter(items) {
 function buildRow(item, seq, tbody) {
   const isPastDue = flag(item.past_due_wmf);
   const rowClass  = isPastDue ? 'past-due' : '';
-  const isoDate   = toISODate(item.ship_date);
-  const needsConfirm = (item.acao_requerida || '').toLowerCase().includes('confirmar');
+  const supplierLabel = item.supplier_name || DATA?.supplier_name || item.supplier_code || DATA?.supplier_code || '-';
 
   const tr = document.createElement('tr');
   tr.dataset.partNumber = item.part_number || '';
@@ -666,22 +620,34 @@ function buildRow(item, seq, tbody) {
     </td>
     <td class="seq">${seq}</td>
     <td class="part-num">${item.part_number || '-'}</td>
-    <td>${impactBadge(item.impact)}</td>
-    <td>${actionBadge(item.acao_requerida)}</td>
+    <td class="supplier-cell">${supplierLabel}</td>
     <td>${fmtDate(item.ship_date)}</td>
     <td class="wmf-cell">${wmfFlag(item.past_due_wmf)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jun_wmf)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jul_wmf)}</td>
     <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
-    <td class="confirm-cell">${needsConfirm ? '<label class="confirm-label"><input type="checkbox" class="inp-confirm" data-field="entrega_confirmada">Confirmo</label>' : '<span class="wmf-no">-</span>'}</td>
+    <td class="confirm-cell">
+      <label class="confirm-label">
+        <input type="checkbox" class="inp-confirm" data-field="entrega_confirmada" onchange="toggleConfirmFields(this)">
+        Confirmo
+      </label>
+      <div class="confirm-extra" style="display:none">
+        <input type="date" class="inp-data-coleta" title="Data de coleta">
+        <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)">
+      </div>
+    </td>
     <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
     <td><input type="number" class="inp-qty" data-field="qty_prometida" min="0" step="1" value="${item.qty_prometida !== undefined && item.qty_prometida !== null ? item.qty_prometida : ''}"></td>
-    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes...">${item.comentario || ''}</textarea></td>
+    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)..."></textarea></td>
   `;
   tbody.appendChild(tr);
 }
 
-//  Filter 
+function toggleConfirmFields(cb) {
+  const extra = cb.closest('td').querySelector('.confirm-extra');
+  extra.style.display = cb.checked ? 'flex' : 'none';
+}
+
 function setFilter(filter, btn) {
   currentFilter = filter;
   qsa('.btn-filter').forEach(b => b.classList.remove('active'));
@@ -689,20 +655,17 @@ function setFilter(filter, btn) {
   renderTable();
 }
 
-//  Selection 
 function toggleSelectAll(checked) {
   qsa('.row-cb').forEach(cb => {
     cb.checked = checked;
-    const tr = cb.closest('tr');
-    tr.classList.toggle('selected', checked);
+    cb.closest('tr').classList.toggle('selected', checked);
   });
-  qs('#headCb').checked    = checked;
+  qs('#headCb').checked      = checked;
   qs('#selectAllCb').checked = checked;
 }
 
 function rowCheckChange(cb) {
-  const tr = cb.closest('tr');
-  tr.classList.toggle('selected', cb.checked);
+  cb.closest('tr').classList.toggle('selected', cb.checked);
   updateSelectAllState();
 }
 
@@ -720,7 +683,6 @@ function clearSelection() {
   qs('#selectAllCb').checked = false;
 }
 
-// Import file from Excel saved as CSV/TXT.
 function normalizeKey(value) {
   return (value || '').toString().trim().toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -734,12 +696,8 @@ function splitDelimitedLine(line, sep) {
   for (let i = 0; i < line.length; i++) {
     const ch = line[i];
     if (ch === '"') {
-      if (quoted && line[i + 1] === '"') {
-        cur += '"';
-        i++;
-      } else {
-        quoted = !quoted;
-      }
+      if (quoted && line[i + 1] === '"') { cur += '"'; i++; }
+      else { quoted = !quoted; }
     } else if (ch === sep && !quoted) {
       out.push(cur.trim());
       cur = '';
@@ -767,7 +725,7 @@ function parsePromiseTable(text) {
   const headers = splitDelimitedLine(lines[0], sep).map(normalizeKey);
   const findCol = aliases => headers.findIndex(h => aliases.includes(h));
   const colPn = findCol(['pn', 'partnumber', 'partnumberlocal', 'material', 'item', 'part']);
-  const colDate = findCol(['datapromessa', 'data', 'fecha', 'promise date'.replace(/[^a-z0-9]/g, ''), 'promisedate', 'deliverydate']);
+  const colDate = findCol(['datapromessa', 'data', 'fecha', 'promisedate', 'deliverydate']);
   const colQty = findCol(['qtyprometida', 'qty', 'qtd', 'quantidade', 'cantidad', 'quantity', 'promessaqty', 'promiseqty']);
   const colComment = findCol(['comentario', 'comment', 'comments', 'observacao', 'observacion', 'obs']);
 
@@ -827,10 +785,7 @@ function applyImportedRows(rows) {
 
   rows.forEach(row => {
     const item = byPn.get(row.pn.toUpperCase());
-    if (!item) {
-      notFound.push(row.pn);
-      return;
-    }
+    if (!item) { notFound.push(row.pn); return; }
     const date = normalizeImportDate(row.date);
     const qty = normalizeImportQty(row.qty);
     if (row.date && !date) invalid.push(`linha ${row.row}: data "${row.date}"`);
@@ -860,17 +815,13 @@ function importPromiseFile(input) {
   }
   const reader = new FileReader();
   reader.onload = () => {
-    try {
-      applyImportedRows(parsePromiseTable(String(reader.result || '')));
-    } catch (e) {
-      showToast('Erro ao importar: ' + e.message, 'error');
-    }
+    try { applyImportedRows(parsePromiseTable(String(reader.result || ''))); }
+    catch (e) { showToast('Erro ao importar: ' + e.message, 'error'); }
   };
   reader.onerror = () => showToast('Erro ao ler arquivo.', 'error');
   reader.readAsText(file, 'utf-8');
 }
 
-//  Bulk date 
 function applyBulkDate() {
   const val = qs('#bulkDate').value;
   if (!val) { showToast('Selecione uma data antes de aplicar.', 'error'); return; }
@@ -883,32 +834,31 @@ function applyBulkDate() {
   showToast(`Data ${fmtDate(val)} aplicada a ${selected.length} linha(s).`, 'success');
 }
 
-//  Submit 
 function collectRows() {
   const rows = qsa('#tableBody tr');
   const result = [];
   rows.forEach(tr => {
     const part = tr.dataset.partNumber;
     const original = ITEMS.find(i => i.part_number === part) || {};
-    const dateVal = tr.querySelector('.inp-date')?.value || '';
-    const qty     = tr.querySelector('.inp-qty')?.value;
-    const comment = tr.querySelector('.inp-comment')?.value || '';
-    const confirmed = !!tr.querySelector('.inp-confirm')?.checked;
+    const dateVal      = tr.querySelector('.inp-date')?.value || '';
+    const qty          = tr.querySelector('.inp-qty')?.value;
+    const comment      = tr.querySelector('.inp-comment')?.value || '';
+    const confirmed    = !!tr.querySelector('.inp-confirm')?.checked;
+    const dataColeta   = tr.querySelector('.inp-data-coleta')?.value || '';
+    const nfeEnviada   = tr.querySelector('.inp-nfe-enviada')?.value || '';
     result.push({
       part_number:    part,
       supplier_code:  original.supplier_code  || DATA?.supplier_code || '-',
       supplier_name:  original.supplier_name  || DATA?.supplier_name || '-',
       ship_date:      fmtDate(original.ship_date),
-      impact:         original.impact         || '',
-      sharepoint_critico: !!original.sharepoint_critico,
-      sharepoint_url: original.sharepoint_url || '',
-      acao_requerida: original.acao_requerida || '',
       past_due_wmf:   flag(original.past_due_wmf),
       firm_jun_wmf:   flag(original.firm_jun_wmf),
       firm_jul_wmf:   flag(original.firm_jul_wmf),
       ultima_nfe:     original.ultima_nfe     || '',
       semana:         original.semana         || DATA?.semana || '-',
       entrega_confirmada: confirmed,
+      data_coleta:    dataColeta ? fmtDate(dataColeta) : '',
+      nfe_enviada:    nfeEnviada,
       data_promessa:  dateVal ? fmtDate(dateVal) : '',
       qty_prometida:  qty !== '' && qty !== undefined ? Number(qty) : null,
       comentario:     comment
@@ -941,9 +891,7 @@ async function submitPromessas() {
   try {
     const resp = await fetch('https://promessas-api.cscn-wmf.workers.dev', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
@@ -964,13 +912,8 @@ async function submitPromessas() {
   }
 }
 
-//  Boot
 setMonthLabels();
 loadData();
 </script>
 </body>
 </html>
-
-
-
-
