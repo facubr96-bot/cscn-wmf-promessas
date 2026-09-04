@@ -1,28 +1,9 @@
 {
   "supplier_code": "BVH68",
   "supplier_name": "MASTERMAG IND E COMERCIO PECAS AUTO",
-  "semana": "2026-W35",
-  "gerado_em": "25/08/2026 11:41",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
   "itens": [
-    {
-      "part_number": "84421717",
-      "supplier_code": "BVH68",
-      "supplier_name": "MASTERMAG IND E COMERCIO PECAS AUTO",
-      "ship_date": "05/04/2027",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000175281-001",
-      "semana": "2026-W35",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
-    },
     {
       "part_number": "92751763",
       "supplier_code": "BVH68",
@@ -32,15 +13,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 30,
+      "firm_jun_wmf": 30,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W35",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "semana": "2026-W36",
+      "data_promessa": "09/09/2026",
+      "qty_prometida": 30,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "92751765",
@@ -51,15 +32,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Confirmar entrega",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 30,
+      "firm_jun_wmf": 30,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "",
-      "semana": "2026-W35",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "semana": "2026-W36",
+      "data_promessa": "09/09/2026",
+      "qty_prometida": 30,
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ]
 }
