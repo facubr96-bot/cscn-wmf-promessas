@@ -427,6 +427,7 @@
 
   <select id="promiseFilterSelect" class="mini-filter" onchange="setPromiseFilter(this.value)">
     <option value="">Status Promessa: Todos</option>
+    <option value="confirmada">Confirmada</option>
     <option value="vencida">Promessa Vencida</option>
     <option value="verificar">Verificar Promessa</option>
     <option value="atual">Promessa Atual</option>
@@ -436,6 +437,7 @@
 
   <select id="atendeFilterSelect" class="mini-filter" onchange="setAtendeFilter(this.value)">
     <option value="">Promessa Atende: Todos</option>
+    <option value="confirmada">Confirmada</option>
     <option value="atende">Atende</option>
     <option value="insuf">Insuficiente</option>
     <option value="semqty">Sem Qty</option>
@@ -474,16 +476,16 @@
         <tr>
           <th style="width:36px;text-align:center"><input type="checkbox" id="headCb" onchange="toggleSelectAll(this.checked)" style="accent-color:#fff;width:14px;height:14px"></th>
           <th style="width:36px">#</th>
-          <th>Part Number</th>
-          <th>Supplier</th>
-          <th class="sortable" id="thDiasPastDue" onclick="toggleSortDias()" title="Clique para ordenar">Dias Past Due <span id="diasSortArrow">&#8597;</span></th>
-          <th>Ship Date CSCN</th>
-          <th style="text-align:center">Past Due WMF</th>
+          <th class="sortable" onclick="toggleSort('pn')" title="Clique para ordenar">Part Number <span id="sortArrow_pn">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('supplier')" title="Clique para ordenar">Supplier <span id="sortArrow_supplier">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('dias')" title="Clique para ordenar">Dias Past Due <span id="sortArrow_dias">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('shipdate')" title="Clique para ordenar">Ship Date CSCN <span id="sortArrow_shipdate">&#8597;</span></th>
+          <th class="sortable" style="text-align:center" onclick="toggleSort('pastdue')" title="Clique para ordenar">Past Due WMF <span id="sortArrow_pastdue">&#8597;</span></th>
           <th style="text-align:center" id="thFirmJun">Firm Setembro WMF</th>
           <th style="text-align:center" id="thFirmJul">Firm Outubro WMF</th>
-          <th>Ultima NFe</th>
+          <th class="sortable" onclick="toggleSort('nfe')" title="Clique para ordenar">Ultima NFe <span id="sortArrow_nfe">&#8597;</span></th>
           <th style="text-align:center">Confirmar entrega</th>
-          <th>Data Promessa</th>
+          <th class="sortable" onclick="toggleSort('datapromessa')" title="Clique para ordenar">Data Promessa <span id="sortArrow_datapromessa">&#8597;</span></th>
           <th>Qty Prometida</th>
           <th style="text-align:center">Status Promessa</th>
           <th style="text-align:center">Promessa Atende?</th>
@@ -515,7 +517,8 @@ let currentSupplierFilter = '';
 let currentPnFilter = '';
 let currentPromiseFilter = '';
 let currentAtendeFilter = '';
-let diasSortDir = null;
+let sortColumn = null;
+let sortDir = 'desc';
 
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
 
@@ -588,6 +591,9 @@ function diasPastDue(item) {
 }
 
 function statusPromessaInfo(item) {
+  if (item.entrega_confirmada) {
+    return { key: 'confirmada', label: 'Confirmada', cls: 'status-atende' };
+  }
   const promDate = parseDMY(item.data_promessa);
   if (!promDate) return null;
   const dias = Math.floor((START_OF_TODAY - promDate) / 86400000);
@@ -605,6 +611,9 @@ function statusPromessaHtml(item) {
 
 function promiseAtendeInfo(item) {
   if (!flag(item.past_due_wmf)) return null;
+  if (item.entrega_confirmada) {
+    return { key: 'confirmada', label: 'Confirmada', cls: 'status-atende' };
+  }
   const qtyProm = item.qty_prometida;
   const temPromessa = parseDMY(item.data_promessa) || (qtyProm !== null && qtyProm !== undefined && qtyProm !== '');
   if (!temPromessa) return null;
@@ -719,11 +728,38 @@ function setAtendeFilter(val) {
   renderTable();
 }
 
-function toggleSortDias() {
-  if (diasSortDir === null) diasSortDir = 'desc';
-  else if (diasSortDir === 'desc') diasSortDir = 'asc';
-  else diasSortDir = null;
-  qs('#diasSortArrow').innerHTML = diasSortDir === 'desc' ? '&#8595;' : diasSortDir === 'asc' ? '&#8593;' : '&#8597;';
+function sortValue(item, col) {
+  switch (col) {
+    case 'pn': return (item.part_number || '').toString().toLowerCase();
+    case 'supplier': return (item.supplier_name || item.supplier_code || '').toString().toLowerCase();
+    case 'pastdue': {
+      const n = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
+      return isFinite(n) ? n : -Infinity;
+    }
+    case 'dias': return diasPastDueValue(item) ?? -1;
+    case 'shipdate': { const d = parseDMY(item.ship_date); return d ? d.getTime() : -Infinity; }
+    case 'nfe': return (item.ultima_nfe || '').toString().toLowerCase();
+    case 'datapromessa': { const d = parseDMY(item.data_promessa); return d ? d.getTime() : -Infinity; }
+    default: return 0;
+  }
+}
+
+function updateSortArrows() {
+  ['pn','supplier','dias','shipdate','pastdue','nfe','datapromessa'].forEach(c => {
+    const el = qs('#sortArrow_' + c);
+    if (!el) return;
+    el.innerHTML = sortColumn === c ? (sortDir === 'desc' ? '&#8595;' : '&#8593;') : '&#8597;';
+  });
+}
+
+function toggleSort(col) {
+  if (sortColumn === col) {
+    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    sortColumn = col;
+    sortDir = 'desc';
+  }
+  updateSortArrows();
   renderTable();
 }
 
@@ -816,10 +852,14 @@ function applyFilter(items) {
 }
 
 function applySort(items) {
-  if (!diasSortDir) return items;
-  const withDias = items.map(i => ({ item: i, dias: diasPastDueValue(i) ?? -1 }));
-  withDias.sort((a, b) => diasSortDir === 'desc' ? b.dias - a.dias : a.dias - b.dias);
-  return withDias.map(x => x.item);
+  if (!sortColumn) return items;
+  const withVal = items.map(i => ({ item: i, val: sortValue(i, sortColumn) }));
+  withVal.sort((a, b) => {
+    if (a.val < b.val) return sortDir === 'asc' ? -1 : 1;
+    if (a.val > b.val) return sortDir === 'asc' ? 1 : -1;
+    return 0;
+  });
+  return withVal.map(x => x.item);
 }
 
 function buildRow(item, seq, tbody) {
