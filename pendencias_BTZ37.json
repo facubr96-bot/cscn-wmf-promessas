@@ -1,0 +1,27 @@
+{
+  "supplier_code": "BTZ37",
+  "supplier_name": "FVA INDUSTRIA DE VALVULAS AUTOMOTIV",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
+  "itens": [
+    {
+      "part_number": "9576934",
+      "supplier_code": "BTZ37",
+      "supplier_name": "FVA INDUSTRIA DE VALVULAS AUTOMOTIV",
+      "ship_date": "03/08/2028",
+      "impact": "Hiper Critico",
+      "sharepoint_critico": true,
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=330",
+      "sharepoint_reason": "Systems Error",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000041103-001",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
