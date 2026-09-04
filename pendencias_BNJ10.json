@@ -1,9 +1,28 @@
 {
   "supplier_code": "BNJ10",
   "supplier_name": "V S DE LIMA & CIA LTDA",
-  "semana": "2026-W35",
-  "gerado_em": "25/08/2026 11:41",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
   "itens": [
+    {
+      "part_number": "87478456",
+      "supplier_code": "BNJ10",
+      "supplier_name": "V S DE LIMA & CIA LTDA",
+      "ship_date": "02/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 5,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "00088",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
     {
       "part_number": "48062322",
       "supplier_code": "BNJ10",
@@ -18,29 +37,10 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000196485-001",
-      "semana": "2026-W35",
+      "semana": "2026-W36",
       "data_promessa": "13/08/2026",
       "qty_prometida": 41,
-      "comentario": "Promessa vencida - solicitar nova data. CNH não veio coletar conforme solicitado no  portal."
-    },
-    {
-      "part_number": "87478456",
-      "supplier_code": "BNJ10",
-      "supplier_name": "V S DE LIMA & CIA LTDA",
-      "ship_date": "02/09/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 5,
-      "ultima_nfe": "00088",
-      "semana": "2026-W35",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. CNH não veio coletar conforme solicitado no  portal."
     }
   ]
 }
