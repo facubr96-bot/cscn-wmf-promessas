@@ -1,8 +1,8 @@
 {
   "supplier_code": "BPH65",
   "supplier_name": "FUNDICAO SIDERAL LTDA",
-  "semana": "2026-W35",
-  "gerado_em": "25/08/2026 11:41",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
   "itens": [
     {
       "part_number": "47780042",
@@ -14,14 +14,14 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 35,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 18,
+      "past_due_wmf": 37,
+      "firm_jun_wmf": 18,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W35",
-      "data_promessa": "11/08/2026",
+      "semana": "2026-W36",
+      "data_promessa": "28/08/2026",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Hiper Critico SharePoint - confirmar plano. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Hiper Critico SharePoint - confirmar plano. Solicitar promessa."
     },
     {
       "part_number": "82014606",
@@ -34,13 +34,13 @@
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 43,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 8,
+      "firm_jun_wmf": 16,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W35",
-      "data_promessa": "24/08/2026",
+      "semana": "2026-W36",
+      "data_promessa": "28/08/2026",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "82024272",
@@ -52,14 +52,14 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 6,
+      "past_due_wmf": 24,
       "firm_jun_wmf": 6,
-      "firm_jul_wmf": 12,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W35",
-      "data_promessa": "20/08/2026",
+      "semana": "2026-W36",
+      "data_promessa": "28/08/2026",
       "qty_prometida": "",
-      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     },
     {
       "part_number": "82031491",
@@ -70,15 +70,53 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": 10,
-      "firm_jun_wmf": 6,
-      "firm_jul_wmf": 12,
+      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "past_due_wmf": 28,
+      "firm_jun_wmf": 9,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000102628-004",
-      "semana": "2026-W35",
-      "data_promessa": "25/08/2026",
+      "semana": "2026-W36",
+      "data_promessa": "28/08/2026",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Promessa vencida - solicitar nova data. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+    },
+    {
+      "part_number": "5172314",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "ship_date": "23/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 10,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "5199608",
+      "supplier_code": "BPH65",
+      "supplier_name": "FUNDICAO SIDERAL LTDA",
+      "ship_date": "23/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 18,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
     }
   ]
 }
