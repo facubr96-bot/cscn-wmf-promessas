@@ -1,8 +1,8 @@
 {
   "supplier_code": "BLJ46",
   "supplier_name": "HPPT - HIGH PERFORMANCE PLASTIC TEC",
-  "semana": "2026-W35",
-  "gerado_em": "25/08/2026 11:41",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
   "itens": [
     {
       "part_number": "84236803",
@@ -18,7 +18,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000059376-001",
-      "semana": "2026-W35",
+      "semana": "2026-W36",
       "data_promessa": "10/08/2026",
       "qty_prometida": 400,
       "comentario": "Promessa vencida - solicitar nova data."
