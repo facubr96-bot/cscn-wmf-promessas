@@ -1,0 +1,27 @@
+{
+  "supplier_code": "BLL25",
+  "supplier_name": "USINABRAS INDUSTRIAL LTDA",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
+  "itens": [
+    {
+      "part_number": "48096785",
+      "supplier_code": "BLL25",
+      "supplier_name": "USINABRAS INDUSTRIAL LTDA",
+      "ship_date": "",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "WMF-003275",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa."
+    }
+  ]
+}
