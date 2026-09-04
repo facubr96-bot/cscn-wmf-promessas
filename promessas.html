@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-04 admin-search-sort">
+<meta name="portal-version" content="2026-09-04 pn-filter-import-export">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,16 +93,16 @@
   }
   input[type=date].date-input:focus { outline: none; border-color: #1F3864; }
 
-  input.supplier-search {
+  input.search-box {
     padding: 5px 10px;
     border: 1.5px solid #ccc;
     border-radius: 6px;
     font-size: 12px;
     color: #333;
     background: #fff;
-    min-width: 200px;
+    min-width: 150px;
   }
-  input.supplier-search:focus { outline: none; border-color: #1F3864; }
+  input.search-box:focus { outline: none; border-color: #1F3864; }
 
   select.mini-filter {
     padding: 5px 10px;
@@ -141,7 +141,7 @@
   }
   .btn-clear:hover { background: #d5d8dc; }
 
-  .btn-import {
+  .btn-import, .btn-export {
     padding: 5px 14px;
     background: #1F3864;
     color: #fff;
@@ -152,7 +152,10 @@
     cursor: pointer;
     transition: background .15s;
   }
-  .btn-import:hover { background: #16294d; }
+  .btn-import:hover, .btn-export:hover { background: #16294d; }
+  .btn-export { background: #217a3c; }
+  .btn-export:hover { background: #185c2c; }
+
   .import-summary {
     flex-basis: 100%;
     font-size: 11px;
@@ -419,7 +422,8 @@
 
   <div class="toolbar-sep"></div>
 
-  <input type="text" id="supplierSearchInput" class="supplier-search" placeholder="Buscar fornecedor (nome ou codigo)..." oninput="setSupplierFilter(this.value)">
+  <input type="text" id="pnSearchInput" class="search-box" placeholder="Buscar PN..." oninput="setPnFilter(this.value)" style="max-width:140px">
+  <input type="text" id="supplierSearchInput" class="search-box" placeholder="Buscar fornecedor..." oninput="setSupplierFilter(this.value)">
 
   <select id="promiseFilterSelect" class="mini-filter" onchange="setPromiseFilter(this.value)">
     <option value="">Status Promessa: Todos</option>
@@ -450,6 +454,7 @@
   <div class="toolbar-right">
     <input type="file" id="excelImport" accept=".csv,.txt,.tsv,.xlsx,.xls" style="display:none" onchange="importPromiseFile(this)">
     <button class="btn-import" title="Importa planilha salva no Excel como CSV UTF-8" onclick="qs('#excelImport').click()">Importar Excel/CSV</button>
+    <button class="btn-export" title="Exporta os itens exibidos para CSV" onclick="exportToCSV()">Exportar Excel/CSV</button>
     <input type="date" id="bulkDate" class="date-input" title="Data a aplicar nas linhas selecionadas">
     <button class="btn-apply" onclick="applyBulkDate()">Aplicar data aos selecionados</button>
     <button class="btn-clear" onclick="clearSelection()">Limpar selecao</button>
@@ -507,6 +512,7 @@ let DATA        = null;
 let ITEMS       = [];
 let currentFilter = 'all';
 let currentSupplierFilter = '';
+let currentPnFilter = '';
 let currentPromiseFilter = '';
 let currentAtendeFilter = '';
 let diasSortDir = null;
@@ -698,6 +704,11 @@ function setSupplierFilter(val) {
   renderTable();
 }
 
+function setPnFilter(val) {
+  currentPnFilter = (val || '').trim().toLowerCase();
+  renderTable();
+}
+
 function setPromiseFilter(val) {
   currentPromiseFilter = val;
   renderTable();
@@ -769,6 +780,10 @@ function renderTable() {
 function applyFilter(items) {
   let result = items;
 
+  if (currentPnFilter) {
+    result = result.filter(i => (i.part_number || '').toString().toLowerCase().includes(currentPnFilter));
+  }
+
   if (currentSupplierFilter) {
     result = result.filter(i => {
       const code = (i.supplier_code || '').toLowerCase();
@@ -811,6 +826,7 @@ function buildRow(item, seq, tbody) {
   const isPastDue = flag(item.past_due_wmf);
   const rowClass  = isPastDue ? 'past-due' : '';
   const supplierLabel = item.supplier_name || DATA?.supplier_name || item.supplier_code || DATA?.supplier_code || '-';
+  const isConfirmed = !!item.entrega_confirmada;
 
   const tr = document.createElement('tr');
   tr.dataset.partNumber = item.part_number || '';
@@ -831,19 +847,19 @@ function buildRow(item, seq, tbody) {
     <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
     <td class="confirm-cell">
       <label class="confirm-label">
-        <input type="checkbox" class="inp-confirm" data-field="entrega_confirmada" onchange="toggleConfirmFields(this)">
+        <input type="checkbox" class="inp-confirm" data-field="entrega_confirmada" ${isConfirmed ? 'checked' : ''} onchange="toggleConfirmFields(this)">
         Confirmo
       </label>
-      <div class="confirm-extra" style="display:none">
-        <input type="date" class="inp-data-coleta" title="Data de coleta">
-        <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)">
+      <div class="confirm-extra" style="display:${isConfirmed ? 'flex' : 'none'}">
+        <input type="date" class="inp-data-coleta" title="Data de coleta" value="${item.data_coleta ? toISODate(item.data_coleta) : ''}">
+        <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)" value="${item.nfe_enviada || ''}">
       </div>
     </td>
     <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
     <td><input type="number" class="inp-qty" data-field="qty_prometida" min="0" step="1" value="${item.qty_prometida !== undefined && item.qty_prometida !== null ? item.qty_prometida : ''}"></td>
     <td class="status-promessa-cell">${statusPromessaHtml(item)}</td>
     <td class="atende-cell">${promiseAtendeHtml(item)}</td>
-    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)..."></textarea></td>
+    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)...">${item.comentario || ''}</textarea></td>
   `;
   tbody.appendChild(tr);
 }
@@ -922,6 +938,11 @@ function detectSeparator(text) {
     .sort((a, b) => b.count - a.count)[0].sep;
 }
 
+function parseImportBoolean(value) {
+  const v = (value || '').toString().trim().toLowerCase();
+  return ['sim', 'yes', 's', '1', 'true', 'x'].includes(v);
+}
+
 function parsePromiseTable(text) {
   const sep = detectSeparator(text);
   const lines = text.replace(/^\uFEFF/, '').split(/\r?\n/).filter(l => l.trim());
@@ -933,10 +954,13 @@ function parsePromiseTable(text) {
   const colDate = findCol(['datapromessa', 'data', 'fecha', 'promisedate', 'deliverydate']);
   const colQty = findCol(['qtyprometida', 'qty', 'qtd', 'quantidade', 'cantidad', 'quantity', 'promessaqty', 'promiseqty']);
   const colComment = findCol(['comentario', 'comment', 'comments', 'observacao', 'observacion', 'obs']);
+  const colConfirm = findCol(['confirmarentrega', 'confirmarentregar', 'entregaconfirmada', 'confirmar', 'confirmado']);
+  const colColeta = findCol(['datacoleta', 'datadecoleta', 'coleta', 'pickupdate']);
+  const colNfe = findCol(['nfeenviada', 'nfeenviadas', 'nfe', 'invoice', 'notafiscal']);
 
   if (colPn < 0) throw new Error('Coluna PN/Part Number nao encontrada.');
-  if (colDate < 0 && colQty < 0 && colComment < 0) {
-    throw new Error('Nenhuma coluna de Data, Qty ou Comentario foi encontrada.');
+  if (colDate < 0 && colQty < 0 && colComment < 0 && colConfirm < 0 && colColeta < 0 && colNfe < 0) {
+    throw new Error('Nenhuma coluna reconhecida foi encontrada.');
   }
 
   return lines.slice(1).map((line, idx) => {
@@ -946,7 +970,10 @@ function parsePromiseTable(text) {
       pn: (cells[colPn] || '').trim(),
       date: colDate >= 0 ? (cells[colDate] || '').trim() : '',
       qty: colQty >= 0 ? (cells[colQty] || '').trim() : '',
-      comment: colComment >= 0 ? (cells[colComment] || '').trim() : ''
+      comment: colComment >= 0 ? (cells[colComment] || '').trim() : '',
+      confirm: colConfirm >= 0 ? (cells[colConfirm] || '').trim() : '',
+      coleta: colColeta >= 0 ? (cells[colColeta] || '').trim() : '',
+      nfe: colNfe >= 0 ? (cells[colNfe] || '').trim() : ''
     };
   }).filter(r => r.pn);
 }
@@ -993,11 +1020,16 @@ function applyImportedRows(rows) {
     if (!item) { notFound.push(row.pn); return; }
     const date = normalizeImportDate(row.date);
     const qty = normalizeImportQty(row.qty);
+    const coleta = normalizeImportDate(row.coleta);
     if (row.date && !date) invalid.push(`linha ${row.row}: data "${row.date}"`);
     if (row.qty && !qty) invalid.push(`linha ${row.row}: qty "${row.qty}"`);
+    if (row.coleta && !coleta) invalid.push(`linha ${row.row}: data coleta "${row.coleta}"`);
     if (date) item.data_promessa = date;
     if (qty) item.qty_prometida = Number(qty);
     if (row.comment) item.comentario = row.comment;
+    if (row.confirm !== '') item.entrega_confirmada = parseImportBoolean(row.confirm);
+    if (coleta) item.data_coleta = coleta;
+    if (row.nfe) item.nfe_enviada = row.nfe;
     updated++;
   });
 
@@ -1025,6 +1057,57 @@ function importPromiseFile(input) {
   };
   reader.onerror = () => showToast('Erro ao ler arquivo.', 'error');
   reader.readAsText(file, 'utf-8');
+}
+
+function csvEscape(value) {
+  return `"${String(value === null || value === undefined ? '' : value).replace(/"/g, '""')}"`;
+}
+
+function exportToCSV() {
+  const rows = qsa('#tableBody tr');
+  if (!rows.length) {
+    showToast('Nenhuma linha para exportar (verifique os filtros).', 'error');
+    return;
+  }
+  const headers = ['PN','Supplier','Ship Date','Past Due WMF','Data Promessa','Qty Prometida','Confirmar Entrega','Data Coleta','NFe Enviada','Comentario'];
+  const lines = [headers.map(csvEscape).join(';')];
+
+  rows.forEach(tr => {
+    const part = tr.dataset.partNumber;
+    const original = ITEMS.find(i => i.part_number === part) || {};
+    const dateVal    = tr.querySelector('.inp-date')?.value || '';
+    const qty        = tr.querySelector('.inp-qty')?.value || '';
+    const confirmed  = tr.querySelector('.inp-confirm')?.checked ? 'Sim' : 'Nao';
+    const dataColeta = tr.querySelector('.inp-data-coleta')?.value || '';
+    const nfeEnviada = tr.querySelector('.inp-nfe-enviada')?.value || '';
+    const comment    = tr.querySelector('.inp-comment')?.value || '';
+
+    const line = [
+      part,
+      original.supplier_name || original.supplier_code || '',
+      fmtDate(original.ship_date),
+      original.past_due_wmf || '',
+      dateVal ? fmtDate(dateVal) : '',
+      qty,
+      confirmed,
+      dataColeta ? fmtDate(dataColeta) : '',
+      nfeEnviada,
+      comment
+    ].map(csvEscape).join(';');
+    lines.push(line);
+  });
+
+  const csv = '\uFEFF' + lines.join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `promessas_export_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`Exportado ${rows.length} linha(s).`, 'success');
 }
 
 function applyBulkDate() {
