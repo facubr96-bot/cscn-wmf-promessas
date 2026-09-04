@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-03 databricks-realtime-admin">
+<meta name="portal-version" content="2026-09-04 admin-filters-atende">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -92,6 +92,18 @@
     background: #fff;
   }
   input[type=date].date-input:focus { outline: none; border-color: #1F3864; }
+
+  select.supplier-filter {
+    padding: 5px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    min-width: 200px;
+    max-width: 300px;
+  }
+  select.supplier-filter:focus { outline: none; border-color: #1F3864; }
 
   .btn-apply {
     padding: 5px 14px;
@@ -216,6 +228,36 @@
   td.wmf-cell { text-align: center; }
   .wmf-yes { color: #c0392b; font-weight: 700; font-size: 11px; }
   .wmf-no  { color: #bbb; font-size: 11px; }
+
+  td.dias-cell { text-align: center; }
+  .dias-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fde8e8;
+    color: #c0392b;
+  }
+
+  td.status-promessa-cell { text-align: center; }
+  td.atende-cell { text-align: center; }
+  .status-badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .status-vencida   { background: #fde8e8; color: #c0392b; }
+  .status-verificar { background: #fef3cd; color: #b7770d; }
+  .status-atual     { background: #e8f8e8; color: #217a3c; }
+  .status-futura    { background: #eef1f5; color: #667085; }
+  .status-atende    { background: #e8f8e8; color: #217a3c; }
+  .status-insuf     { background: #fde8e8; color: #c0392b; }
 
   input.inp-date, input.inp-qty {
     border: 1.5px solid #f0a04a;
@@ -365,6 +407,21 @@
 
   <div class="toolbar-sep"></div>
 
+  <select id="supplierFilterSelect" class="supplier-filter" onchange="setSupplierFilter(this.value)">
+    <option value="">Todos os fornecedores</option>
+  </select>
+
+  <select id="promiseFilterSelect" class="supplier-filter" style="min-width:180px" onchange="setPromiseFilter(this.value)">
+    <option value="">Status Promessa: Todos</option>
+    <option value="vencida">Promessa Vencida</option>
+    <option value="verificar">Verificar Promessa</option>
+    <option value="atual">Promessa Atual</option>
+    <option value="futura">Promessa Futura</option>
+    <option value="sem">Sem Promessa</option>
+  </select>
+
+  <div class="toolbar-sep"></div>
+
   <label class="cb-label">
     <input type="checkbox" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
     Selecionar todos
@@ -398,12 +455,15 @@
           <th>Supplier</th>
           <th>Ship Date CSCN</th>
           <th style="text-align:center">Past Due WMF</th>
+          <th style="text-align:center">Dias Past Due</th>
           <th style="text-align:center" id="thFirmJun">Firm Setembro WMF</th>
           <th style="text-align:center" id="thFirmJul">Firm Outubro WMF</th>
           <th>Ultima NFe</th>
           <th style="text-align:center">Confirmar entrega</th>
           <th>Data Promessa</th>
           <th>Qty Prometida</th>
+          <th style="text-align:center">Status Promessa</th>
+          <th style="text-align:center">Promessa Atende?</th>
           <th>Comentario</th>
         </tr>
       </thead>
@@ -428,8 +488,13 @@
 let DATA        = null;
 let ITEMS       = [];
 let currentFilter = 'all';
+let currentSupplierFilter = '';
+let currentPromiseFilter = '';
 
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+
+const TODAY = new Date();
+const START_OF_TODAY = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
 
 function qs(sel)  { return document.querySelector(sel); }
 function qsa(sel) { return document.querySelectorAll(sel); }
@@ -472,6 +537,61 @@ function toISODate(raw) {
     return `${y}-${m}-${d}`;
   }
   return '';
+}
+
+function parseDMY(raw) {
+  if (!raw || raw === '-') return null;
+  const iso = toISODate(raw);
+  if (!iso) return null;
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+
+function diasPastDue(item) {
+  if (!flag(item.past_due_wmf)) return '';
+  const shipDate = parseDMY(item.ship_date);
+  if (!shipDate) return '';
+  const dias = Math.floor((START_OF_TODAY - shipDate) / 86400000);
+  return dias > 0 ? `<span class="dias-badge">${dias}d</span>` : '';
+}
+
+function statusPromessaInfo(item) {
+  const promDate = parseDMY(item.data_promessa);
+  if (!promDate) return null;
+  const dias = Math.floor((START_OF_TODAY - promDate) / 86400000);
+  if (dias >= 5)  return { key: 'vencida',   label: 'Promessa Vencida',   cls: 'status-vencida' };
+  if (dias >= 1)  return { key: 'verificar', label: 'Verificar Promessa', cls: 'status-verificar' };
+  if (dias >= -7) return { key: 'atual',     label: 'Promessa Atual',     cls: 'status-atual' };
+  return { key: 'futura', label: 'Promessa Futura', cls: 'status-futura' };
+}
+
+function statusPromessaHtml(item) {
+  const info = statusPromessaInfo(item);
+  if (!info) return '';
+  return `<span class="status-badge ${info.cls}">${info.label}</span>`;
+}
+
+function promiseAtendeInfo(item) {
+  if (!flag(item.past_due_wmf)) return null;
+  const qtyProm = item.qty_prometida;
+  const temPromessa = parseDMY(item.data_promessa) || (qtyProm !== null && qtyProm !== undefined && qtyProm !== '');
+  if (!temPromessa) return null;
+  if (qtyProm === null || qtyProm === undefined || qtyProm === '') {
+    return { label: 'Sem Qty', cls: 'status-verificar' };
+  }
+  const pastDueQty = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
+  const promQty = Number(qtyProm);
+  if (!isFinite(pastDueQty) || !isFinite(promQty)) return null;
+  return promQty >= pastDueQty
+    ? { label: 'Atende', cls: 'status-atende' }
+    : { label: 'Insuficiente', cls: 'status-insuf' };
+}
+
+function promiseAtendeHtml(item) {
+  const info = promiseAtendeInfo(item);
+  if (!info) return '';
+  return `<span class="status-badge ${info.cls}">${info.label}</span>`;
 }
 
 function wmfFlag(val) {
@@ -548,6 +668,30 @@ function showError(msg) {
   qs('#errorMsg').innerHTML = ' ' + msg;
 }
 
+function populateSupplierFilter() {
+  const sel = qs('#supplierFilterSelect');
+  if (!sel) return;
+  const seen = new Map();
+  ITEMS.forEach(i => {
+    const code = i.supplier_code;
+    if (code && !seen.has(code)) seen.set(code, i.supplier_name || code);
+  });
+  const codes = [...seen.keys()].sort();
+  sel.innerHTML = '<option value="">Todos os fornecedores</option>' +
+    codes.map(code => `<option value="${code}">${code} - ${seen.get(code)}</option>`).join('');
+  sel.value = currentSupplierFilter;
+}
+
+function setSupplierFilter(val) {
+  currentSupplierFilter = val;
+  renderTable();
+}
+
+function setPromiseFilter(val) {
+  currentPromiseFilter = val;
+  renderTable();
+}
+
 function processData(data, supplierParam) {
   ITEMS = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
 
@@ -569,6 +713,7 @@ function processData(data, supplierParam) {
   qs('#loadingState').style.display = 'none';
   qs('#tableContainer').style.display = 'block';
 
+  populateSupplierFilter();
   renderTable();
 }
 
@@ -598,11 +743,22 @@ function renderTable() {
 }
 
 function applyFilter(items) {
-  if (currentFilter === 'all')     return items;
-  if (currentFilter === 'pastdue') return items.filter(i => flag(i.past_due_wmf));
-  if (currentFilter === 'jun')     return items.filter(i => flag(i.firm_jun_wmf));
-  if (currentFilter === 'jul')     return items.filter(i => flag(i.firm_jul_wmf));
-  return items;
+  let result = items;
+  if (currentSupplierFilter) {
+    result = result.filter(i => i.supplier_code === currentSupplierFilter);
+  }
+  if (currentFilter === 'pastdue') result = result.filter(i => flag(i.past_due_wmf));
+  else if (currentFilter === 'jun') result = result.filter(i => flag(i.firm_jun_wmf));
+  else if (currentFilter === 'jul') result = result.filter(i => flag(i.firm_jul_wmf));
+
+  if (currentPromiseFilter) {
+    result = result.filter(i => {
+      const info = statusPromessaInfo(i);
+      if (currentPromiseFilter === 'sem') return !info;
+      return info && info.key === currentPromiseFilter;
+    });
+  }
+  return result;
 }
 
 function buildRow(item, seq, tbody) {
@@ -623,6 +779,7 @@ function buildRow(item, seq, tbody) {
     <td class="supplier-cell">${supplierLabel}</td>
     <td>${fmtDate(item.ship_date)}</td>
     <td class="wmf-cell">${wmfFlag(item.past_due_wmf)}</td>
+    <td class="dias-cell">${diasPastDue(item)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jun_wmf)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jul_wmf)}</td>
     <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
@@ -638,6 +795,8 @@ function buildRow(item, seq, tbody) {
     </td>
     <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
     <td><input type="number" class="inp-qty" data-field="qty_prometida" min="0" step="1" value="${item.qty_prometida !== undefined && item.qty_prometida !== null ? item.qty_prometida : ''}"></td>
+    <td class="status-promessa-cell">${statusPromessaHtml(item)}</td>
+    <td class="atende-cell">${promiseAtendeHtml(item)}</td>
     <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)..."></textarea></td>
   `;
   tbody.appendChild(tr);
