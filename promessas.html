@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-04 admin-filters-atende">
+<meta name="portal-version" content="2026-09-04 admin-search-sort">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,7 +93,7 @@
   }
   input[type=date].date-input:focus { outline: none; border-color: #1F3864; }
 
-  select.supplier-filter {
+  input.supplier-search {
     padding: 5px 10px;
     border: 1.5px solid #ccc;
     border-radius: 6px;
@@ -101,9 +101,19 @@
     color: #333;
     background: #fff;
     min-width: 200px;
-    max-width: 300px;
   }
-  select.supplier-filter:focus { outline: none; border-color: #1F3864; }
+  input.supplier-search:focus { outline: none; border-color: #1F3864; }
+
+  select.mini-filter {
+    padding: 5px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    min-width: 170px;
+  }
+  select.mini-filter:focus { outline: none; border-color: #1F3864; }
 
   .btn-apply {
     padding: 5px 14px;
@@ -181,6 +191,8 @@
     border-right: 1px solid rgba(255,255,255,.12);
   }
   thead th:last-child { border-right: none; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { background: #16294d; }
 
   tbody tr {
     border-bottom: 1px solid #eaecef;
@@ -407,17 +419,23 @@
 
   <div class="toolbar-sep"></div>
 
-  <select id="supplierFilterSelect" class="supplier-filter" onchange="setSupplierFilter(this.value)">
-    <option value="">Todos os fornecedores</option>
-  </select>
+  <input type="text" id="supplierSearchInput" class="supplier-search" placeholder="Buscar fornecedor (nome ou codigo)..." oninput="setSupplierFilter(this.value)">
 
-  <select id="promiseFilterSelect" class="supplier-filter" style="min-width:180px" onchange="setPromiseFilter(this.value)">
+  <select id="promiseFilterSelect" class="mini-filter" onchange="setPromiseFilter(this.value)">
     <option value="">Status Promessa: Todos</option>
     <option value="vencida">Promessa Vencida</option>
     <option value="verificar">Verificar Promessa</option>
     <option value="atual">Promessa Atual</option>
     <option value="futura">Promessa Futura</option>
     <option value="sem">Sem Promessa</option>
+  </select>
+
+  <select id="atendeFilterSelect" class="mini-filter" onchange="setAtendeFilter(this.value)">
+    <option value="">Promessa Atende: Todos</option>
+    <option value="atende">Atende</option>
+    <option value="insuf">Insuficiente</option>
+    <option value="semqty">Sem Qty</option>
+    <option value="none">Sem Promessa / N.A.</option>
   </select>
 
   <div class="toolbar-sep"></div>
@@ -453,9 +471,9 @@
           <th style="width:36px">#</th>
           <th>Part Number</th>
           <th>Supplier</th>
+          <th class="sortable" id="thDiasPastDue" onclick="toggleSortDias()" title="Clique para ordenar">Dias Past Due <span id="diasSortArrow">&#8597;</span></th>
           <th>Ship Date CSCN</th>
           <th style="text-align:center">Past Due WMF</th>
-          <th style="text-align:center">Dias Past Due</th>
           <th style="text-align:center" id="thFirmJun">Firm Setembro WMF</th>
           <th style="text-align:center" id="thFirmJul">Firm Outubro WMF</th>
           <th>Ultima NFe</th>
@@ -490,6 +508,8 @@ let ITEMS       = [];
 let currentFilter = 'all';
 let currentSupplierFilter = '';
 let currentPromiseFilter = '';
+let currentAtendeFilter = '';
+let diasSortDir = null;
 
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
 
@@ -548,12 +568,17 @@ function parseDMY(raw) {
   return new Date(y, m - 1, d);
 }
 
-function diasPastDue(item) {
-  if (!flag(item.past_due_wmf)) return '';
+function diasPastDueValue(item) {
+  if (!flag(item.past_due_wmf)) return null;
   const shipDate = parseDMY(item.ship_date);
-  if (!shipDate) return '';
+  if (!shipDate) return null;
   const dias = Math.floor((START_OF_TODAY - shipDate) / 86400000);
-  return dias > 0 ? `<span class="dias-badge">${dias}d</span>` : '';
+  return dias > 0 ? dias : null;
+}
+
+function diasPastDue(item) {
+  const dias = diasPastDueValue(item);
+  return dias ? `<span class="dias-badge">${dias}d</span>` : '';
 }
 
 function statusPromessaInfo(item) {
@@ -578,14 +603,14 @@ function promiseAtendeInfo(item) {
   const temPromessa = parseDMY(item.data_promessa) || (qtyProm !== null && qtyProm !== undefined && qtyProm !== '');
   if (!temPromessa) return null;
   if (qtyProm === null || qtyProm === undefined || qtyProm === '') {
-    return { label: 'Sem Qty', cls: 'status-verificar' };
+    return { key: 'semqty', label: 'Sem Qty', cls: 'status-verificar' };
   }
   const pastDueQty = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
   const promQty = Number(qtyProm);
   if (!isFinite(pastDueQty) || !isFinite(promQty)) return null;
   return promQty >= pastDueQty
-    ? { label: 'Atende', cls: 'status-atende' }
-    : { label: 'Insuficiente', cls: 'status-insuf' };
+    ? { key: 'atende', label: 'Atende', cls: 'status-atende' }
+    : { key: 'insuf', label: 'Insuficiente', cls: 'status-insuf' };
 }
 
 function promiseAtendeHtml(item) {
@@ -668,27 +693,26 @@ function showError(msg) {
   qs('#errorMsg').innerHTML = ' ' + msg;
 }
 
-function populateSupplierFilter() {
-  const sel = qs('#supplierFilterSelect');
-  if (!sel) return;
-  const seen = new Map();
-  ITEMS.forEach(i => {
-    const code = i.supplier_code;
-    if (code && !seen.has(code)) seen.set(code, i.supplier_name || code);
-  });
-  const codes = [...seen.keys()].sort();
-  sel.innerHTML = '<option value="">Todos os fornecedores</option>' +
-    codes.map(code => `<option value="${code}">${code} - ${seen.get(code)}</option>`).join('');
-  sel.value = currentSupplierFilter;
-}
-
 function setSupplierFilter(val) {
-  currentSupplierFilter = val;
+  currentSupplierFilter = (val || '').trim().toLowerCase();
   renderTable();
 }
 
 function setPromiseFilter(val) {
   currentPromiseFilter = val;
+  renderTable();
+}
+
+function setAtendeFilter(val) {
+  currentAtendeFilter = val;
+  renderTable();
+}
+
+function toggleSortDias() {
+  if (diasSortDir === null) diasSortDir = 'desc';
+  else if (diasSortDir === 'desc') diasSortDir = 'asc';
+  else diasSortDir = null;
+  qs('#diasSortArrow').innerHTML = diasSortDir === 'desc' ? '&#8595;' : diasSortDir === 'asc' ? '&#8593;' : '&#8597;';
   renderTable();
 }
 
@@ -713,7 +737,6 @@ function processData(data, supplierParam) {
   qs('#loadingState').style.display = 'none';
   qs('#tableContainer').style.display = 'block';
 
-  populateSupplierFilter();
   renderTable();
 }
 
@@ -730,7 +753,8 @@ function renderTable() {
   const tbody = qs('#tableBody');
   tbody.innerHTML = '';
 
-  const filtered = applyFilter(ITEMS);
+  let filtered = applyFilter(ITEMS);
+  filtered = applySort(filtered);
   qs('#ibExibindo').textContent = filtered.length + ' / ' + ITEMS.length;
 
   if (filtered.length === 0) {
@@ -744,9 +768,15 @@ function renderTable() {
 
 function applyFilter(items) {
   let result = items;
+
   if (currentSupplierFilter) {
-    result = result.filter(i => i.supplier_code === currentSupplierFilter);
+    result = result.filter(i => {
+      const code = (i.supplier_code || '').toLowerCase();
+      const name = (i.supplier_name || '').toLowerCase();
+      return code.includes(currentSupplierFilter) || name.includes(currentSupplierFilter);
+    });
   }
+
   if (currentFilter === 'pastdue') result = result.filter(i => flag(i.past_due_wmf));
   else if (currentFilter === 'jun') result = result.filter(i => flag(i.firm_jun_wmf));
   else if (currentFilter === 'jul') result = result.filter(i => flag(i.firm_jul_wmf));
@@ -758,7 +788,23 @@ function applyFilter(items) {
       return info && info.key === currentPromiseFilter;
     });
   }
+
+  if (currentAtendeFilter) {
+    result = result.filter(i => {
+      const info = promiseAtendeInfo(i);
+      if (currentAtendeFilter === 'none') return !info;
+      return info && info.key === currentAtendeFilter;
+    });
+  }
+
   return result;
+}
+
+function applySort(items) {
+  if (!diasSortDir) return items;
+  const withDias = items.map(i => ({ item: i, dias: diasPastDueValue(i) ?? -1 }));
+  withDias.sort((a, b) => diasSortDir === 'desc' ? b.dias - a.dias : a.dias - b.dias);
+  return withDias.map(x => x.item);
 }
 
 function buildRow(item, seq, tbody) {
@@ -777,9 +823,9 @@ function buildRow(item, seq, tbody) {
     <td class="seq">${seq}</td>
     <td class="part-num">${item.part_number || '-'}</td>
     <td class="supplier-cell">${supplierLabel}</td>
+    <td class="dias-cell">${diasPastDue(item)}</td>
     <td>${fmtDate(item.ship_date)}</td>
     <td class="wmf-cell">${wmfFlag(item.past_due_wmf)}</td>
-    <td class="dias-cell">${diasPastDue(item)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jun_wmf)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jul_wmf)}</td>
     <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
