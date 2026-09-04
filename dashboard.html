@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-04 dashboard-fornecedores">
+<meta name="portal-version" content="2026-09-04 dashboard-pct-promessas">
 <title>CSCN WMF - Dashboard de Fornecedores</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -74,6 +74,24 @@
   td.num-cell { text-align: center; font-weight: 700; }
   td.count-cell { color: #c0392b; }
   td.dias-cell { color: #c0392b; }
+
+  .pct-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+  .pct-bar-bg {
+    width: 60px;
+    height: 8px;
+    background: #eef1f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .pct-bar-fill { height: 100%; border-radius: 4px; }
+  .pct-bar-fill.promised { background: #e67e22; }
+  .pct-bar-fill.confirmed { background: #217a3c; }
+  .pct-label { font-size: 12px; font-weight: 700; min-width: 38px; text-align: right; }
 
   .btn-abrir {
     padding: 5px 16px;
@@ -155,6 +173,8 @@
           <th onclick="setSort('code')">Codigo</th>
           <th onclick="setSort('count')" style="text-align:center">Qtd PN Past Due &#8595;</th>
           <th onclick="setSort('dias')" style="text-align:center">Dias Vencido (pior caso)</th>
+          <th onclick="setSort('promised')" style="text-align:center">% Prometido (qty)</th>
+          <th onclick="setSort('confirmed')" style="text-align:center">% Confirmado (qty)</th>
           <th style="text-align:center">Acao</th>
         </tr>
       </thead>
@@ -251,17 +271,30 @@ function buildRollup(items, adminCode) {
     const name = item.supplier_name || code;
     const shipDate = parseDMY(item.ship_date);
     const dias = shipDate ? Math.floor((START_OF_TODAY - shipDate) / 86400000) : 0;
+    const pastDueQtyRaw = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
+    const pastDueQty = isFinite(pastDueQtyRaw) ? pastDueQtyRaw : 0;
+    const promQtyRaw = item.qty_prometida !== null && item.qty_prometida !== undefined ? Number(item.qty_prometida) : 0;
+    const promQty = isFinite(promQtyRaw) ? promQtyRaw : 0;
 
     if (!bySupplier.has(code)) {
-      bySupplier.set(code, { code, name, count: 0, maxDias: 0 });
+      bySupplier.set(code, {
+        code, name, count: 0, maxDias: 0,
+        totalPastDueQty: 0, promisedQty: 0, confirmedQty: 0
+      });
     }
     const entry = bySupplier.get(code);
     entry.count += 1;
     if (dias > entry.maxDias) entry.maxDias = dias;
+    entry.totalPastDueQty += pastDueQty;
+    if (promQty > 0) entry.promisedQty += promQty;
+    if (item.entrega_confirmada) entry.confirmedQty += promQty;
   });
 
   ROLLUP = [...bySupplier.values()];
-  ROLLUP.forEach(r => { r.adminCode = adminCode; });
+  ROLLUP.forEach(r => {
+    r.pctPromised = r.totalPastDueQty > 0 ? (r.promisedQty / r.totalPastDueQty * 100) : 0;
+    r.pctConfirmed = r.totalPastDueQty > 0 ? (r.confirmedQty / r.totalPastDueQty * 100) : 0;
+  });
 
   qs('#sumSuppliers').textContent = ROLLUP.length;
   qs('#sumPn').textContent = ROLLUP.reduce((acc, r) => acc + r.count, 0);
@@ -282,6 +315,16 @@ function setSort(key) {
   renderTable();
 }
 
+function pctBarHtml(pct, cls) {
+  const clamped = Math.max(0, Math.min(100, pct));
+  return `
+    <div class="pct-bar-wrap">
+      <div class="pct-bar-bg"><div class="pct-bar-fill ${cls}" style="width:${clamped}%"></div></div>
+      <div class="pct-label">${pct.toFixed(0)}%</div>
+    </div>
+  `;
+}
+
 function renderTable() {
   const search = (qs('#searchInput')?.value || '').trim().toLowerCase();
   let rows = ROLLUP.filter(r =>
@@ -293,6 +336,8 @@ function renderTable() {
     if (sortKey === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
     else if (sortKey === 'code') { va = a.code.toLowerCase(); vb = b.code.toLowerCase(); }
     else if (sortKey === 'dias') { va = a.maxDias; vb = b.maxDias; }
+    else if (sortKey === 'promised') { va = a.pctPromised; vb = b.pctPromised; }
+    else if (sortKey === 'confirmed') { va = a.pctConfirmed; vb = b.pctConfirmed; }
     else { va = a.count; vb = b.count; }
     if (va < vb) return sortDir === 'asc' ? -1 : 1;
     if (va > vb) return sortDir === 'asc' ? 1 : -1;
@@ -306,6 +351,8 @@ function renderTable() {
       <td>${r.code}</td>
       <td class="num-cell count-cell">${r.count}</td>
       <td class="num-cell dias-cell">${r.maxDias}d</td>
+      <td>${pctBarHtml(r.pctPromised, 'promised')}</td>
+      <td>${pctBarHtml(r.pctConfirmed, 'confirmed')}</td>
       <td style="text-align:center">
         <a class="btn-abrir" href="promessas.html?supplier=${encodeURIComponent(r.code)}" target="_blank">Abrir</a>
       </td>
