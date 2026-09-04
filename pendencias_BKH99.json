@@ -1,8 +1,8 @@
 {
   "supplier_code": "BKH99",
   "supplier_name": "SANVEN METALURGICA LTDA",
-  "semana": "2026-W35",
-  "gerado_em": "25/08/2026 11:41",
+  "semana": "2026-W36",
+  "gerado_em": "04/09/2026 12:47",
   "itens": [
     {
       "part_number": "47365716",
@@ -13,15 +13,15 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 0,
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "past_due_wmf": 30,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 30,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "000038874-002",
-      "semana": "2026-W35",
-      "data_promessa": "19/08/2026",
+      "semana": "2026-W36",
+      "data_promessa": "21/09/2026",
       "qty_prometida": 30,
-      "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa vencida - solicitar nova data. Solicitar promessa."
     }
   ]
 }
