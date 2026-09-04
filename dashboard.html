@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portal-version" content="2026-09-04 dashboard-fornecedores">
+<title>CSCN WMF - Dashboard de Fornecedores</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    background: #f0f2f5;
+    color: #222;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #1F3864;
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.35);
+  }
+  header .divider { width: 1px; height: 36px; background: rgba(255,255,255,.3); }
+  header h1 { font-size: 17px; font-weight: 700; letter-spacing: .4px; }
+
+  .toolbar {
+    background: #fff;
+    padding: 10px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #dde1e7;
+  }
+  input.search-input {
+    padding: 6px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    min-width: 260px;
+  }
+  input.search-input:focus { outline: none; border-color: #1F3864; }
+
+  .table-wrap { padding: 20px 24px 60px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,.10);
+    font-size: 13px;
+  }
+  thead tr { background: #1F3864; color: #fff; text-align: left; }
+  thead th {
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+  thead th:hover { background: #16294d; }
+  tbody tr { border-bottom: 1px solid #eaecef; }
+  tbody tr:hover { background: #f5f7fb; }
+  tbody td { padding: 9px 12px; vertical-align: middle; }
+
+  td.num-cell { text-align: center; font-weight: 700; }
+  td.count-cell { color: #c0392b; }
+  td.dias-cell { color: #c0392b; }
+
+  .btn-abrir {
+    padding: 5px 16px;
+    background: #1F3864;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-abrir:hover { background: #16294d; }
+
+  .loading {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; padding: 60px 24px; color: #888; font-size: 14px;
+  }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid #dde1e7;
+    border-top-color: #1F3864;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-box {
+    margin: 24px;
+    background: #fff0f0;
+    border: 1.5px solid #e74c3c;
+    border-radius: 8px;
+    padding: 20px 24px;
+    color: #c0392b;
+    font-size: 13px;
+  }
+
+  .summary-bar {
+    background: #fff;
+    padding: 10px 24px;
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid #dde1e7;
+  }
+  .summary-chip .label { font-size: 10px; text-transform: uppercase; color: #888; }
+  .summary-chip .value { font-size: 16px; font-weight: 700; color: #1F3864; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-size:12px;opacity:.6;letter-spacing:1px;text-transform:uppercase">CNH Industrial</div>
+    <h1>CSCN WMF &mdash; Dashboard de Fornecedores</h1>
+  </div>
+</header>
+
+<div id="errorState" class="error-box" style="display:none">
+  <strong>Erro</strong>
+  <span id="errorMsg"></span>
+</div>
+
+<div id="mainContent" style="display:none">
+  <div class="summary-bar">
+    <div class="summary-chip"><div class="label">Fornecedores com Past Due</div><div class="value" id="sumSuppliers">-</div></div>
+    <div class="summary-chip"><div class="label">Total PN em Past Due</div><div class="value" id="sumPn">-</div></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar fornecedor..." oninput="renderTable()">
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="setSort('name')">Fornecedor</th>
+          <th onclick="setSort('code')">Codigo</th>
+          <th onclick="setSort('count')" style="text-align:center">Qtd PN Past Due &#8595;</th>
+          <th onclick="setSort('dias')" style="text-align:center">Dias Vencido (pior caso)</th>
+          <th style="text-align:center">Acao</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div id="loadingState" class="loading"><div class="spinner"></div>Carregando dados...</div>
+
+<script>
+const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+
+let ROLLUP = [];
+let sortKey = 'count';
+let sortDir = 'desc';
+
+function qs(sel) { return document.querySelector(sel); }
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function toISODate(raw) {
+  if (!raw || raw === '-') return '';
+  raw = raw.toString().trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+  if (/^\d{8}$/.test(raw)) return `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) {
+    const [d,m,y] = raw.split('/');
+    return `${y}-${m}-${d}`;
+  }
+  return '';
+}
+
+function parseDMY(raw) {
+  const iso = toISODate(raw);
+  if (!iso) return null;
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+
+function flag(val) {
+  if (val === null || val === undefined || val === '' || val === false) return false;
+  if (typeof val === 'number') return val > 0;
+  if (val === true || val === 1 || val === 'true' || val === 'sim' || val === 'yes' || val === '1') return true;
+  const n = parseFloat(val);
+  if (!isNaN(n)) return n > 0;
+  return false;
+}
+
+function showError(msg) {
+  qs('#loadingState').style.display = 'none';
+  qs('#errorState').style.display = 'block';
+  qs('#errorMsg').textContent = msg;
+}
+
+async function loadData() {
+  const params = new URLSearchParams(window.location.search);
+  const adminCode = params.get('admin');
+
+  if (!adminCode) {
+    showError('Acesso restrito. Utilize o link com o parametro ?admin=CODIGO.');
+    return;
+  }
+  const hash = await sha256Hex(adminCode);
+  if (hash !== ADMIN_HASH) {
+    showError('Codigo de acesso invalido.');
+    return;
+  }
+
+  try {
+    const resp = await fetch(`pendencias_ALL.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} - pendencias_ALL.json nao encontrado.`);
+    const data = await resp.json();
+    const items = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
+    buildRollup(items, adminCode);
+  } catch (e) {
+    showError(e.message || 'Erro ao carregar pendencias_ALL.json.');
+  }
+}
+
+const TODAY = new Date();
+const START_OF_TODAY = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
+
+function buildRollup(items, adminCode) {
+  const bySupplier = new Map();
+
+  items.forEach(item => {
+    if (!flag(item.past_due_wmf)) return;
+    const code = item.supplier_code || '-';
+    const name = item.supplier_name || code;
+    const shipDate = parseDMY(item.ship_date);
+    const dias = shipDate ? Math.floor((START_OF_TODAY - shipDate) / 86400000) : 0;
+
+    if (!bySupplier.has(code)) {
+      bySupplier.set(code, { code, name, count: 0, maxDias: 0 });
+    }
+    const entry = bySupplier.get(code);
+    entry.count += 1;
+    if (dias > entry.maxDias) entry.maxDias = dias;
+  });
+
+  ROLLUP = [...bySupplier.values()];
+  ROLLUP.forEach(r => { r.adminCode = adminCode; });
+
+  qs('#sumSuppliers').textContent = ROLLUP.length;
+  qs('#sumPn').textContent = ROLLUP.reduce((acc, r) => acc + r.count, 0);
+
+  qs('#loadingState').style.display = 'none';
+  qs('#mainContent').style.display = 'block';
+
+  renderTable();
+}
+
+function setSort(key) {
+  if (sortKey === key) {
+    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    sortKey = key;
+    sortDir = 'desc';
+  }
+  renderTable();
+}
+
+function renderTable() {
+  const search = (qs('#searchInput')?.value || '').trim().toLowerCase();
+  let rows = ROLLUP.filter(r =>
+    !search || r.name.toLowerCase().includes(search) || r.code.toLowerCase().includes(search)
+  );
+
+  rows = rows.slice().sort((a, b) => {
+    let va, vb;
+    if (sortKey === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
+    else if (sortKey === 'code') { va = a.code.toLowerCase(); vb = b.code.toLowerCase(); }
+    else if (sortKey === 'dias') { va = a.maxDias; vb = b.maxDias; }
+    else { va = a.count; vb = b.count; }
+    if (va < vb) return sortDir === 'asc' ? -1 : 1;
+    if (va > vb) return sortDir === 'asc' ? 1 : -1;
+    return 0;
+  });
+
+  const tbody = qs('#tableBody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.name}</td>
+      <td>${r.code}</td>
+      <td class="num-cell count-cell">${r.count}</td>
+      <td class="num-cell dias-cell">${r.maxDias}d</td>
+      <td style="text-align:center">
+        <a class="btn-abrir" href="promessas.html?supplier=${encodeURIComponent(r.code)}" target="_blank">Abrir</a>
+      </td>
+    </tr>
+  `).join('');
+}
+
+loadData();
+</script>
+</body>
+</html>
