@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-04 pn-filter-import-export">
+<meta name="portal-version" content="2026-09-08 live-merge-databricks">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -164,6 +164,24 @@
     margin-top: -2px;
   }
   .import-summary.warn { color: #c0392b; }
+
+  .live-indicator {
+    font-size: 11px;
+    color: #217a3c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .live-indicator .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #217a3c;
+    display: inline-block;
+  }
+  .live-indicator.loading .dot { background: #b7770d; }
+  .live-indicator.error .dot { background: #c0392b; }
 
   .table-wrap {
     padding: 16px 24px 80px;
@@ -410,6 +428,7 @@
   <div class="info-chip"><span class="label">Total de itens</span><span class="value" id="ibTotal">-</span></div>
   <div class="info-chip highlight"><span class="label">Past Due</span><span class="value" id="ibPastDue">-</span></div>
   <div class="info-chip"><span class="label">Exibindo</span><span class="value" id="ibExibindo">-</span></div>
+  <div class="info-chip"><span class="label">Dados de promessas</span><span class="value" id="liveStatus"><span class="live-indicator loading"><span class="dot"></span>Verificando...</span></span></div>
 </div>
 
 <div class="toolbar">
@@ -521,6 +540,7 @@ let sortColumn = null;
 let sortDir = 'desc';
 
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev";
 
 const TODAY = new Date();
 const START_OF_TODAY = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
@@ -650,12 +670,64 @@ function showToast(msg, type='') {
   setTimeout(() => { t.className = 'toast'; }, 3200);
 }
 
+function setLiveStatus(state, count) {
+  const el = qs('#liveStatus');
+  if (!el) return;
+  if (state === 'loading') {
+    el.innerHTML = '<span class="live-indicator loading"><span class="dot"></span>Verificando...</span>';
+  } else if (state === 'ok') {
+    el.innerHTML = `<span class="live-indicator"><span class="dot"></span>Atualizado agora (${count} respostas)</span>`;
+  } else {
+    el.innerHTML = '<span class="live-indicator error"><span class="dot"></span>Nao foi possivel atualizar</span>';
+  }
+}
+
+async function fetchLivePromises(supplierParam) {
+  try {
+    const adminCode = new URLSearchParams(window.location.search).get('admin') || '';
+    const url = supplierParam === 'TODOS'
+      ? `${WORKER_URL}/?admin=${encodeURIComponent(adminCode)}`
+      : `${WORKER_URL}/?supplier=${encodeURIComponent(supplierParam)}`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+    if (!data.ok) return [];
+    return data.promises || [];
+  } catch (e) {
+    console.error('Erro ao buscar promessas em tempo real:', e);
+    return null;
+  }
+}
+
+function mergeLivePromises(items, livePromises) {
+  const liveByPn = new Map();
+  livePromises.forEach(lp => {
+    const existing = liveByPn.get(lp.pn);
+    if (!existing || new Date(lp.fecha_registro) > new Date(existing.fecha_registro)) {
+      liveByPn.set(lp.pn, lp);
+    }
+  });
+
+  let mergedCount = 0;
+  items.forEach(item => {
+    const live = liveByPn.get(item.part_number);
+    if (!live) return;
+    item.data_promessa = live.promise_date ? fmtDate(live.promise_date) : item.data_promessa;
+    item.qty_prometida = (live.promised_qty !== null && live.promised_qty !== undefined)
+      ? Number(live.promised_qty) : item.qty_prometida;
+    item.entrega_confirmada = live.entrega_confirmada === 'true' || live.entrega_confirmada === true;
+    item.data_coleta = live.data_coleta ? fmtDate(live.data_coleta) : item.data_coleta;
+    item.nfe_enviada = live.nfe_enviada || item.nfe_enviada;
+    mergedCount++;
+  });
+  return mergedCount;
+}
+
 async function loadAllSuppliers() {
   try {
     const resp = await fetch(`pendencias_ALL.json?v=${Date.now()}`, { cache: 'no-store' });
     if (!resp.ok) throw new Error(`HTTP ${resp.status} - pendencias_ALL.json nao encontrado.`);
     DATA = await resp.json();
-    processData(DATA, 'TODOS');
+    await processData(DATA, 'TODOS');
   } catch (e) {
     showError(e.message || 'Erro ao carregar pendencias_ALL.json.');
   }
@@ -691,12 +763,12 @@ async function loadData() {
     const resp = await fetch(`${filename}?v=${Date.now()}`, { cache: 'no-store' });
     if (resp.status === 404) {
       DATA = { supplier_code: supplier, supplier_name: '-', semana: '-', itens: [], sem_pendencias: true };
-      processData(DATA, supplier);
+      await processData(DATA, supplier);
       return;
     }
     if (!resp.ok) throw new Error(`HTTP ${resp.status} - arquivo "${filename}" nao encontrado.`);
     DATA = await resp.json();
-    processData(DATA, supplier);
+    await processData(DATA, supplier);
   } catch (e) {
     showError(e.message || 'Erro desconhecido ao carregar o JSON.');
   }
@@ -763,7 +835,7 @@ function toggleSort(col) {
   renderTable();
 }
 
-function processData(data, supplierParam) {
+async function processData(data, supplierParam) {
   ITEMS = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
 
   const supplierName = supplierParam === 'TODOS'
@@ -785,6 +857,16 @@ function processData(data, supplierParam) {
   qs('#tableContainer').style.display = 'block';
 
   renderTable();
+
+  setLiveStatus('loading');
+  const livePromises = await fetchLivePromises(supplierParam);
+  if (livePromises === null) {
+    setLiveStatus('error');
+  } else {
+    const merged = mergeLivePromises(ITEMS, livePromises);
+    setLiveStatus('ok', livePromises.length);
+    renderTable();
+  }
 }
 
 function flag(val) {
@@ -1217,7 +1299,7 @@ async function submitPromessas() {
   btn.disabled = true;
 
   try {
-    const resp = await fetch('https://promessas-api.cscn-wmf.workers.dev', {
+    const resp = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
