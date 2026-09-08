@@ -2,7 +2,7 @@
   "supplier_code": "BKQ39",
   "supplier_name": "CABS INTERNATIONAL LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "47624817",
@@ -21,7 +21,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47739624",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 80,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000063422-003",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 80,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47873275",
@@ -59,7 +65,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47909110",
@@ -70,15 +79,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 120,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000065059-003",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "48094425",
@@ -97,7 +109,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "48116615",
@@ -116,7 +131,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "5171516",
@@ -135,7 +153,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "84072623",
@@ -154,7 +175,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "84075539",
@@ -173,7 +197,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "86638316",
@@ -192,7 +219,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91723189",
@@ -203,15 +233,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 50,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000063096-003",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 50,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47763625",
@@ -230,7 +263,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "48136191",
@@ -249,7 +285,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "87712040",
@@ -268,7 +307,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91752532",
@@ -287,7 +329,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91894360",
@@ -306,7 +351,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92675548",
@@ -325,7 +373,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92675561",
@@ -344,7 +395,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
