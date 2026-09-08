@@ -2,7 +2,7 @@
   "supplier_code": "FCR70",
   "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "91837962",
@@ -13,15 +13,18 @@
       "sharepoint_critico": true,
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=329",
       "sharepoint_reason": "Systems Error",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000048383-001",
       "semana": "2026-W36",
       "data_promessa": "",
-      "qty_prometida": 40,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "48163044",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 30,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000049160-001",
       "semana": "2026-W36",
-      "data_promessa": "27/08/2026",
-      "qty_prometida": 10,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "86570650",
@@ -59,7 +65,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
