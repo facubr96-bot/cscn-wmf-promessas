@@ -2,7 +2,7 @@
   "supplier_code": "BLK53",
   "supplier_name": "BSA SISTEMAS DE ARQUIVOS LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "84993999",
@@ -13,15 +13,40 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 90,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000010612-001",
       "semana": "2026-W36",
-      "data_promessa": "19/10/2026",
-      "qty_prometida": 50,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
+    },
+    {
+      "part_number": "84994000",
+      "supplier_code": "BLK53",
+      "supplier_name": "BSA SISTEMAS DE ARQUIVOS LTDA",
+      "ship_date": "01/09/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 30,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000010612-001",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
