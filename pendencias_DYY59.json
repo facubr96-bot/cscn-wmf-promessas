@@ -2,7 +2,7 @@
   "supplier_code": "DYY59",
   "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "92074204",
@@ -13,15 +13,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 29,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077254-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 11,
-      "comentario": "Promessa vencida - solicitar nova data. envio Parcial nota fiscal 77253"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92075047",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 40,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077314-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data. envio parcial 20 peças dia 14/08, nota fiscal 77314"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92817756",
@@ -51,15 +57,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 128,
       "firm_jun_wmf": 128,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
       "semana": "2026-W36",
-      "data_promessa": "04/09/2026",
-      "qty_prometida": 128,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "51668140",
@@ -78,7 +87,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "51668922",
@@ -89,15 +101,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 20,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077252-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data. material já enviado Nota fiscal 77252"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91868610",
@@ -108,15 +123,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 80,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077252-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data. material já enviado Nota fiscal 77252"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92074622",
@@ -127,15 +145,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 80,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077254-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data. Material já enviado nota fiscal 77254"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92074626",
@@ -146,15 +167,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 80,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077252-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 62,
-      "comentario": "Promessa vencida - solicitar nova data. material já enviado Nota fiscal 77252"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92075169",
@@ -165,15 +189,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 80,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000077254-000",
       "semana": "2026-W36",
-      "data_promessa": "25/08/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data. Material já enviado nota fiscal 77254"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92817764",
@@ -192,7 +219,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
