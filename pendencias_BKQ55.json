@@ -2,7 +2,7 @@
   "supplier_code": "BKQ55",
   "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "468476",
@@ -13,15 +13,40 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 180,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000123589-005",
       "semana": "2026-W36",
-      "data_promessa": "17/08/2026",
-      "qty_prometida": 180,
-      "comentario": "Promessa vencida - solicitar nova data. Mercadoria já foi coletada na Forbal dia 17/08"
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
+    },
+    {
+      "part_number": "84562879",
+      "supplier_code": "BKQ55",
+      "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
+      "ship_date": "31/08/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 10,
+      "firm_jun_wmf": 10,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "000124474-005",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "84563493",
@@ -40,7 +65,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "84563495",
@@ -59,7 +87,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
