@@ -2,7 +2,7 @@
   "supplier_code": "BQH78",
   "supplier_name": "GBPLAST INDUSTRIA E COMERCIO LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "48094424",
@@ -13,15 +13,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 160,
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000022504-001",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 114,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
