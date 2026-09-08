@@ -2,7 +2,7 @@
   "supplier_code": "BPD96",
   "supplier_name": "NELSON DO BRASIL IND MET LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-08T14:43:51.616Z",
+  "enviado_em": "2026-09-08T14:47:53.155Z",
   "itens": [
     {
       "part_number": "47561240",
@@ -16,7 +16,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 15,
       "comentario": "Solicitar promessa."
@@ -33,7 +33,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 15,
       "comentario": "Solicitar promessa."
@@ -50,7 +50,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 2,
       "comentario": "Solicitar promessa."
@@ -67,7 +67,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 13,
       "comentario": "Solicitar promessa."
@@ -84,7 +84,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 60,
       "comentario": "Solicitar promessa."
@@ -101,7 +101,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 15,
       "comentario": "Solicitar promessa."
@@ -118,7 +118,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 25,
       "comentario": "Solicitar promessa."
@@ -135,7 +135,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "136.912",
       "data_promessa": "24/08/2026",
       "qty_prometida": 25,
       "comentario": "Solicitar promessa."
@@ -152,7 +152,7 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "",
-      "nfe_enviada": "",
+      "nfe_enviada": "137.122",
       "data_promessa": "31/08/2026",
       "qty_prometida": 12,
       "comentario": "Solicitar promessa."
@@ -277,5 +277,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-08T14:43:51.877Z"
+  "recibido_en_worker": "2026-09-08T14:47:53.232Z"
 }
