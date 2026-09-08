@@ -2,8 +2,30 @@
   "supplier_code": "BJH90",
   "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
+    {
+      "part_number": "47783349",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "10/07/2026",
+      "impact": "",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Solicitar promessa",
+      "past_due_wmf": 25,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 0,
+      "ultima_nfe": "",
+      "semana": "2026-W36",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
+    },
     {
       "part_number": "91757682",
       "supplier_code": "BJH90",
@@ -13,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 44,
       "firm_jun_wmf": 28,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000926754-003",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 24,
-      "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91757687",
@@ -32,15 +57,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 45,
       "firm_jun_wmf": 28,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000926755-003",
       "semana": "2026-W36",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 22,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Acrescimo de 38 peças dentro do periodo congelado de 05 semanas da Pordução Modine."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47783350",
@@ -59,7 +87,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
