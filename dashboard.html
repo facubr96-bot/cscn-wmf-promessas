@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-04 dashboard-pct-promessas">
+<meta name="portal-version" content="2026-09-08 dashboard-live-merge">
 <title>CSCN WMF - Dashboard de Fornecedores</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,6 +45,25 @@
     min-width: 260px;
   }
   input.search-input:focus { outline: none; border-color: #1F3864; }
+
+  .live-indicator {
+    font-size: 11px;
+    color: #217a3c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+  }
+  .live-indicator .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #217a3c;
+    display: inline-block;
+  }
+  .live-indicator.loading .dot { background: #b7770d; }
+  .live-indicator.error .dot { background: #c0392b; }
 
   .table-wrap { padding: 20px 24px 60px; }
 
@@ -134,6 +153,7 @@
     background: #fff;
     padding: 10px 24px;
     display: flex;
+    align-items: center;
     gap: 32px;
     border-bottom: 1px solid #dde1e7;
   }
@@ -159,6 +179,7 @@
   <div class="summary-bar">
     <div class="summary-chip"><div class="label">Fornecedores com Past Due</div><div class="value" id="sumSuppliers">-</div></div>
     <div class="summary-chip"><div class="label">Total PN em Past Due</div><div class="value" id="sumPn">-</div></div>
+    <div class="live-indicator loading" id="liveStatus"><span class="dot"></span>Verificando...</div>
   </div>
 
   <div class="toolbar">
@@ -187,6 +208,7 @@
 
 <script>
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev";
 
 let ROLLUP = [];
 let sortKey = 'count';
@@ -197,6 +219,18 @@ function qs(sel) { return document.querySelector(sel); }
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function fmtDate(raw) {
+  if (!raw) return '-';
+  raw = raw.toString().trim();
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) return raw;
+  if (/^\d{8}$/.test(raw)) return `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`;
+  if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
+    const [y,m,d] = raw.split('-');
+    return `${d}/${m}/${y}`;
+  }
+  return raw;
 }
 
 function toISODate(raw) {
@@ -234,6 +268,52 @@ function showError(msg) {
   qs('#errorMsg').textContent = msg;
 }
 
+function setLiveStatus(state, count) {
+  const el = qs('#liveStatus');
+  if (!el) return;
+  if (state === 'loading') {
+    el.className = 'live-indicator loading';
+    el.innerHTML = '<span class="dot"></span>Verificando...';
+  } else if (state === 'ok') {
+    el.className = 'live-indicator';
+    el.innerHTML = `<span class="dot"></span>Atualizado agora (${count} respostas)`;
+  } else {
+    el.className = 'live-indicator error';
+    el.innerHTML = '<span class="dot"></span>Nao foi possivel atualizar';
+  }
+}
+
+async function fetchLivePromises(adminCode) {
+  try {
+    const resp = await fetch(`${WORKER_URL}/?admin=${encodeURIComponent(adminCode)}`);
+    const data = await resp.json();
+    if (!data.ok) return null;
+    return data.promises || [];
+  } catch (e) {
+    console.error('Erro ao buscar promessas em tempo real:', e);
+    return null;
+  }
+}
+
+function mergeLivePromises(items, livePromises) {
+  const liveByPn = new Map();
+  livePromises.forEach(lp => {
+    const existing = liveByPn.get(lp.pn);
+    if (!existing || new Date(lp.fecha_registro) > new Date(existing.fecha_registro)) {
+      liveByPn.set(lp.pn, lp);
+    }
+  });
+
+  items.forEach(item => {
+    const live = liveByPn.get(item.part_number);
+    if (!live) return;
+    item.data_promessa = live.promise_date ? fmtDate(live.promise_date) : item.data_promessa;
+    item.qty_prometida = (live.promised_qty !== null && live.promised_qty !== undefined)
+      ? Number(live.promised_qty) : item.qty_prometida;
+    item.entrega_confirmada = live.entrega_confirmada === 'true' || live.entrega_confirmada === true;
+  });
+}
+
 async function loadData() {
   const params = new URLSearchParams(window.location.search);
   const adminCode = params.get('admin');
@@ -253,7 +333,18 @@ async function loadData() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status} - pendencias_ALL.json nao encontrado.`);
     const data = await resp.json();
     const items = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
+
     buildRollup(items, adminCode);
+
+    setLiveStatus('loading');
+    const livePromises = await fetchLivePromises(adminCode);
+    if (livePromises === null) {
+      setLiveStatus('error');
+    } else {
+      mergeLivePromises(items, livePromises);
+      setLiveStatus('ok', livePromises.length);
+      buildRollup(items, adminCode);
+    }
   } catch (e) {
     showError(e.message || 'Erro ao carregar pendencias_ALL.json.');
   }
