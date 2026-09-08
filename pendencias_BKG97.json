@@ -2,7 +2,7 @@
   "supplier_code": "BKG97",
   "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "51549217",
@@ -13,15 +13,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 40,
       "firm_jun_wmf": 40,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000089552-001",
       "semana": "2026-W36",
-      "data_promessa": "07/08/2026",
-      "qty_prometida": 93,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "51549221",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 53,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000089551-001",
       "semana": "2026-W36",
-      "data_promessa": "07/08/2026",
-      "qty_prometida": 93,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "51549223",
@@ -51,15 +57,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000089957-001",
       "semana": "2026-W36",
-      "data_promessa": "07/08/2026",
-      "qty_prometida": 93,
-      "comentario": "Promessa vencida - solicitar nova data."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91768204",
@@ -78,7 +87,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "91768206",
@@ -97,7 +109,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92137790",
@@ -116,7 +131,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92137791",
@@ -135,7 +153,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
