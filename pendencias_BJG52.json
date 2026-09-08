@@ -2,7 +2,7 @@
   "supplier_code": "BJG52",
   "supplier_name": "METALURGICA FALLGATTER LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "87480926",
@@ -13,15 +13,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 16,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000532772-001",
       "semana": "2026-W36",
-      "data_promessa": "11/09/2026",
+      "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92176155",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 70,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000515302-001",
       "semana": "2026-W36",
-      "data_promessa": "11/09/2026",
-      "qty_prometida": 70,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "90359771",
@@ -51,15 +57,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 258,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
       "semana": "2026-W36",
-      "data_promessa": "11/09/2026",
+      "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92242397",
@@ -78,7 +87,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92242398",
@@ -97,7 +109,10 @@
       "semana": "2026-W36",
       "data_promessa": "",
       "qty_prometida": "",
-      "comentario": "Solicitar promessa."
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
