@@ -2,7 +2,7 @@
   "supplier_code": "BJD67",
   "supplier_name": "IMPERADOR MECANICA INDUSTRIAL LTDA",
   "semana": "2026-W36",
-  "gerado_em": "04/09/2026 12:47",
+  "gerado_em": "04/09/2026 16:45",
   "itens": [
     {
       "part_number": "47783345",
@@ -13,15 +13,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 93,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
       "semana": "2026-W36",
-      "data_promessa": "09/09/2026",
-      "qty_prometida": 53,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "47783347",
@@ -32,15 +35,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 93,
       "firm_jul_wmf": 0,
       "ultima_nfe": "",
       "semana": "2026-W36",
-      "data_promessa": "09/09/2026",
-      "qty_prometida": 53,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "51698953",
@@ -51,15 +57,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000046856-001",
       "semana": "2026-W36",
-      "data_promessa": "18/08/2026",
-      "qty_prometida": 60,
-      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     },
     {
       "part_number": "92136651",
@@ -70,15 +79,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000046791-001",
       "semana": "2026-W36",
-      "data_promessa": "04/09/2026",
-      "qty_prometida": 60,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": ""
     }
   ]
 }
