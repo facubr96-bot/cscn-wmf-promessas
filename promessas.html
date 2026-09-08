@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-03 databricks-realtime-admin">
+<meta name="portal-version" content="2026-09-04 pn-filter-import-export">
 <title>CSCN WMF - Promessas de Entrega</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,6 +93,28 @@
   }
   input[type=date].date-input:focus { outline: none; border-color: #1F3864; }
 
+  input.search-box {
+    padding: 5px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    min-width: 150px;
+  }
+  input.search-box:focus { outline: none; border-color: #1F3864; }
+
+  select.mini-filter {
+    padding: 5px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    min-width: 170px;
+  }
+  select.mini-filter:focus { outline: none; border-color: #1F3864; }
+
   .btn-apply {
     padding: 5px 14px;
     background: #e67e22;
@@ -119,7 +141,7 @@
   }
   .btn-clear:hover { background: #d5d8dc; }
 
-  .btn-import {
+  .btn-import, .btn-export {
     padding: 5px 14px;
     background: #1F3864;
     color: #fff;
@@ -130,7 +152,10 @@
     cursor: pointer;
     transition: background .15s;
   }
-  .btn-import:hover { background: #16294d; }
+  .btn-import:hover, .btn-export:hover { background: #16294d; }
+  .btn-export { background: #217a3c; }
+  .btn-export:hover { background: #185c2c; }
+
   .import-summary {
     flex-basis: 100%;
     font-size: 11px;
@@ -169,6 +194,8 @@
     border-right: 1px solid rgba(255,255,255,.12);
   }
   thead th:last-child { border-right: none; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { background: #16294d; }
 
   tbody tr {
     border-bottom: 1px solid #eaecef;
@@ -216,6 +243,36 @@
   td.wmf-cell { text-align: center; }
   .wmf-yes { color: #c0392b; font-weight: 700; font-size: 11px; }
   .wmf-no  { color: #bbb; font-size: 11px; }
+
+  td.dias-cell { text-align: center; }
+  .dias-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fde8e8;
+    color: #c0392b;
+  }
+
+  td.status-promessa-cell { text-align: center; }
+  td.atende-cell { text-align: center; }
+  .status-badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .status-vencida   { background: #fde8e8; color: #c0392b; }
+  .status-verificar { background: #fef3cd; color: #b7770d; }
+  .status-atual     { background: #e8f8e8; color: #217a3c; }
+  .status-futura    { background: #eef1f5; color: #667085; }
+  .status-atende    { background: #e8f8e8; color: #217a3c; }
+  .status-insuf     { background: #fde8e8; color: #c0392b; }
 
   input.inp-date, input.inp-qty {
     border: 1.5px solid #f0a04a;
@@ -365,6 +422,30 @@
 
   <div class="toolbar-sep"></div>
 
+  <input type="text" id="pnSearchInput" class="search-box" placeholder="Buscar PN..." oninput="setPnFilter(this.value)" style="max-width:140px">
+  <input type="text" id="supplierSearchInput" class="search-box" placeholder="Buscar fornecedor..." oninput="setSupplierFilter(this.value)">
+
+  <select id="promiseFilterSelect" class="mini-filter" onchange="setPromiseFilter(this.value)">
+    <option value="">Status Promessa: Todos</option>
+    <option value="confirmada">Confirmada</option>
+    <option value="vencida">Promessa Vencida</option>
+    <option value="verificar">Verificar Promessa</option>
+    <option value="atual">Promessa Atual</option>
+    <option value="futura">Promessa Futura</option>
+    <option value="sem">Sem Promessa</option>
+  </select>
+
+  <select id="atendeFilterSelect" class="mini-filter" onchange="setAtendeFilter(this.value)">
+    <option value="">Promessa Atende: Todos</option>
+    <option value="confirmada">Confirmada</option>
+    <option value="atende">Atende</option>
+    <option value="insuf">Insuficiente</option>
+    <option value="semqty">Sem Qty</option>
+    <option value="none">Sem Promessa / N.A.</option>
+  </select>
+
+  <div class="toolbar-sep"></div>
+
   <label class="cb-label">
     <input type="checkbox" id="selectAllCb" onchange="toggleSelectAll(this.checked)">
     Selecionar todos
@@ -375,6 +456,7 @@
   <div class="toolbar-right">
     <input type="file" id="excelImport" accept=".csv,.txt,.tsv,.xlsx,.xls" style="display:none" onchange="importPromiseFile(this)">
     <button class="btn-import" title="Importa planilha salva no Excel como CSV UTF-8" onclick="qs('#excelImport').click()">Importar Excel/CSV</button>
+    <button class="btn-export" title="Exporta os itens exibidos para CSV" onclick="exportToCSV()">Exportar Excel/CSV</button>
     <input type="date" id="bulkDate" class="date-input" title="Data a aplicar nas linhas selecionadas">
     <button class="btn-apply" onclick="applyBulkDate()">Aplicar data aos selecionados</button>
     <button class="btn-clear" onclick="clearSelection()">Limpar selecao</button>
@@ -394,16 +476,19 @@
         <tr>
           <th style="width:36px;text-align:center"><input type="checkbox" id="headCb" onchange="toggleSelectAll(this.checked)" style="accent-color:#fff;width:14px;height:14px"></th>
           <th style="width:36px">#</th>
-          <th>Part Number</th>
-          <th>Supplier</th>
-          <th>Ship Date CSCN</th>
-          <th style="text-align:center">Past Due WMF</th>
+          <th class="sortable" onclick="toggleSort('pn')" title="Clique para ordenar">Part Number <span id="sortArrow_pn">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('supplier')" title="Clique para ordenar">Supplier <span id="sortArrow_supplier">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('dias')" title="Clique para ordenar">Dias Past Due <span id="sortArrow_dias">&#8597;</span></th>
+          <th class="sortable" onclick="toggleSort('shipdate')" title="Clique para ordenar">Ship Date CSCN <span id="sortArrow_shipdate">&#8597;</span></th>
+          <th class="sortable" style="text-align:center" onclick="toggleSort('pastdue')" title="Clique para ordenar">Past Due WMF <span id="sortArrow_pastdue">&#8597;</span></th>
           <th style="text-align:center" id="thFirmJun">Firm Setembro WMF</th>
           <th style="text-align:center" id="thFirmJul">Firm Outubro WMF</th>
-          <th>Ultima NFe</th>
+          <th class="sortable" onclick="toggleSort('nfe')" title="Clique para ordenar">Ultima NFe <span id="sortArrow_nfe">&#8597;</span></th>
           <th style="text-align:center">Confirmar entrega</th>
-          <th>Data Promessa</th>
+          <th class="sortable" onclick="toggleSort('datapromessa')" title="Clique para ordenar">Data Promessa <span id="sortArrow_datapromessa">&#8597;</span></th>
           <th>Qty Prometida</th>
+          <th style="text-align:center">Status Promessa</th>
+          <th style="text-align:center">Promessa Atende?</th>
           <th>Comentario</th>
         </tr>
       </thead>
@@ -428,8 +513,17 @@
 let DATA        = null;
 let ITEMS       = [];
 let currentFilter = 'all';
+let currentSupplierFilter = '';
+let currentPnFilter = '';
+let currentPromiseFilter = '';
+let currentAtendeFilter = '';
+let sortColumn = null;
+let sortDir = 'desc';
 
 const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
+
+const TODAY = new Date();
+const START_OF_TODAY = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
 
 function qs(sel)  { return document.querySelector(sel); }
 function qsa(sel) { return document.querySelectorAll(sel); }
@@ -472,6 +566,72 @@ function toISODate(raw) {
     return `${y}-${m}-${d}`;
   }
   return '';
+}
+
+function parseDMY(raw) {
+  if (!raw || raw === '-') return null;
+  const iso = toISODate(raw);
+  if (!iso) return null;
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+
+function diasPastDueValue(item) {
+  if (!flag(item.past_due_wmf)) return null;
+  const shipDate = parseDMY(item.ship_date);
+  if (!shipDate) return null;
+  const dias = Math.floor((START_OF_TODAY - shipDate) / 86400000);
+  return dias > 0 ? dias : null;
+}
+
+function diasPastDue(item) {
+  const dias = diasPastDueValue(item);
+  return dias ? `<span class="dias-badge">${dias}d</span>` : '';
+}
+
+function statusPromessaInfo(item) {
+  if (item.entrega_confirmada) {
+    return { key: 'confirmada', label: 'Confirmada', cls: 'status-atende' };
+  }
+  const promDate = parseDMY(item.data_promessa);
+  if (!promDate) return null;
+  const dias = Math.floor((START_OF_TODAY - promDate) / 86400000);
+  if (dias >= 5)  return { key: 'vencida',   label: 'Promessa Vencida',   cls: 'status-vencida' };
+  if (dias >= 1)  return { key: 'verificar', label: 'Verificar Promessa', cls: 'status-verificar' };
+  if (dias >= -7) return { key: 'atual',     label: 'Promessa Atual',     cls: 'status-atual' };
+  return { key: 'futura', label: 'Promessa Futura', cls: 'status-futura' };
+}
+
+function statusPromessaHtml(item) {
+  const info = statusPromessaInfo(item);
+  if (!info) return '';
+  return `<span class="status-badge ${info.cls}">${info.label}</span>`;
+}
+
+function promiseAtendeInfo(item) {
+  if (!flag(item.past_due_wmf)) return null;
+  if (item.entrega_confirmada) {
+    return { key: 'confirmada', label: 'Confirmada', cls: 'status-atende' };
+  }
+  const qtyProm = item.qty_prometida;
+  const temPromessa = parseDMY(item.data_promessa) || (qtyProm !== null && qtyProm !== undefined && qtyProm !== '');
+  if (!temPromessa) return null;
+  if (qtyProm === null || qtyProm === undefined || qtyProm === '') {
+    return { key: 'semqty', label: 'Sem Qty', cls: 'status-verificar' };
+  }
+  const pastDueQty = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
+  const promQty = Number(qtyProm);
+  if (!isFinite(pastDueQty) || !isFinite(promQty)) return null;
+  return promQty >= pastDueQty
+    ? { key: 'atende', label: 'Atende', cls: 'status-atende' }
+    : { key: 'insuf', label: 'Insuficiente', cls: 'status-insuf' };
+}
+
+function promiseAtendeHtml(item) {
+  const info = promiseAtendeInfo(item);
+  if (!info) return '';
+  return `<span class="status-badge ${info.cls}">${info.label}</span>`;
 }
 
 function wmfFlag(val) {
@@ -548,6 +708,61 @@ function showError(msg) {
   qs('#errorMsg').innerHTML = ' ' + msg;
 }
 
+function setSupplierFilter(val) {
+  currentSupplierFilter = (val || '').trim().toLowerCase();
+  renderTable();
+}
+
+function setPnFilter(val) {
+  currentPnFilter = (val || '').trim().toLowerCase();
+  renderTable();
+}
+
+function setPromiseFilter(val) {
+  currentPromiseFilter = val;
+  renderTable();
+}
+
+function setAtendeFilter(val) {
+  currentAtendeFilter = val;
+  renderTable();
+}
+
+function sortValue(item, col) {
+  switch (col) {
+    case 'pn': return (item.part_number || '').toString().toLowerCase();
+    case 'supplier': return (item.supplier_name || item.supplier_code || '').toString().toLowerCase();
+    case 'pastdue': {
+      const n = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
+      return isFinite(n) ? n : -Infinity;
+    }
+    case 'dias': return diasPastDueValue(item) ?? -1;
+    case 'shipdate': { const d = parseDMY(item.ship_date); return d ? d.getTime() : -Infinity; }
+    case 'nfe': return (item.ultima_nfe || '').toString().toLowerCase();
+    case 'datapromessa': { const d = parseDMY(item.data_promessa); return d ? d.getTime() : -Infinity; }
+    default: return 0;
+  }
+}
+
+function updateSortArrows() {
+  ['pn','supplier','dias','shipdate','pastdue','nfe','datapromessa'].forEach(c => {
+    const el = qs('#sortArrow_' + c);
+    if (!el) return;
+    el.innerHTML = sortColumn === c ? (sortDir === 'desc' ? '&#8595;' : '&#8593;') : '&#8597;';
+  });
+}
+
+function toggleSort(col) {
+  if (sortColumn === col) {
+    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    sortColumn = col;
+    sortDir = 'desc';
+  }
+  updateSortArrows();
+  renderTable();
+}
+
 function processData(data, supplierParam) {
   ITEMS = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
 
@@ -585,7 +800,8 @@ function renderTable() {
   const tbody = qs('#tableBody');
   tbody.innerHTML = '';
 
-  const filtered = applyFilter(ITEMS);
+  let filtered = applyFilter(ITEMS);
+  filtered = applySort(filtered);
   qs('#ibExibindo').textContent = filtered.length + ' / ' + ITEMS.length;
 
   if (filtered.length === 0) {
@@ -598,17 +814,59 @@ function renderTable() {
 }
 
 function applyFilter(items) {
-  if (currentFilter === 'all')     return items;
-  if (currentFilter === 'pastdue') return items.filter(i => flag(i.past_due_wmf));
-  if (currentFilter === 'jun')     return items.filter(i => flag(i.firm_jun_wmf));
-  if (currentFilter === 'jul')     return items.filter(i => flag(i.firm_jul_wmf));
-  return items;
+  let result = items;
+
+  if (currentPnFilter) {
+    result = result.filter(i => (i.part_number || '').toString().toLowerCase().includes(currentPnFilter));
+  }
+
+  if (currentSupplierFilter) {
+    result = result.filter(i => {
+      const code = (i.supplier_code || '').toLowerCase();
+      const name = (i.supplier_name || '').toLowerCase();
+      return code.includes(currentSupplierFilter) || name.includes(currentSupplierFilter);
+    });
+  }
+
+  if (currentFilter === 'pastdue') result = result.filter(i => flag(i.past_due_wmf));
+  else if (currentFilter === 'jun') result = result.filter(i => flag(i.firm_jun_wmf));
+  else if (currentFilter === 'jul') result = result.filter(i => flag(i.firm_jul_wmf));
+
+  if (currentPromiseFilter) {
+    result = result.filter(i => {
+      const info = statusPromessaInfo(i);
+      if (currentPromiseFilter === 'sem') return !info;
+      return info && info.key === currentPromiseFilter;
+    });
+  }
+
+  if (currentAtendeFilter) {
+    result = result.filter(i => {
+      const info = promiseAtendeInfo(i);
+      if (currentAtendeFilter === 'none') return !info;
+      return info && info.key === currentAtendeFilter;
+    });
+  }
+
+  return result;
+}
+
+function applySort(items) {
+  if (!sortColumn) return items;
+  const withVal = items.map(i => ({ item: i, val: sortValue(i, sortColumn) }));
+  withVal.sort((a, b) => {
+    if (a.val < b.val) return sortDir === 'asc' ? -1 : 1;
+    if (a.val > b.val) return sortDir === 'asc' ? 1 : -1;
+    return 0;
+  });
+  return withVal.map(x => x.item);
 }
 
 function buildRow(item, seq, tbody) {
   const isPastDue = flag(item.past_due_wmf);
   const rowClass  = isPastDue ? 'past-due' : '';
   const supplierLabel = item.supplier_name || DATA?.supplier_name || item.supplier_code || DATA?.supplier_code || '-';
+  const isConfirmed = !!item.entrega_confirmada;
 
   const tr = document.createElement('tr');
   tr.dataset.partNumber = item.part_number || '';
@@ -621,6 +879,7 @@ function buildRow(item, seq, tbody) {
     <td class="seq">${seq}</td>
     <td class="part-num">${item.part_number || '-'}</td>
     <td class="supplier-cell">${supplierLabel}</td>
+    <td class="dias-cell">${diasPastDue(item)}</td>
     <td>${fmtDate(item.ship_date)}</td>
     <td class="wmf-cell">${wmfFlag(item.past_due_wmf)}</td>
     <td class="wmf-cell">${wmfFlag(item.firm_jun_wmf)}</td>
@@ -628,17 +887,19 @@ function buildRow(item, seq, tbody) {
     <td class="nfe-cell"><span>${item.ultima_nfe || '-'}</span></td>
     <td class="confirm-cell">
       <label class="confirm-label">
-        <input type="checkbox" class="inp-confirm" data-field="entrega_confirmada" onchange="toggleConfirmFields(this)">
+        <input type="checkbox" class="inp-confirm" data-field="entrega_confirmada" ${isConfirmed ? 'checked' : ''} onchange="toggleConfirmFields(this)">
         Confirmo
       </label>
-      <div class="confirm-extra" style="display:none">
-        <input type="date" class="inp-data-coleta" title="Data de coleta">
-        <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)">
+      <div class="confirm-extra" style="display:${isConfirmed ? 'flex' : 'none'}">
+        <input type="date" class="inp-data-coleta" title="Data de coleta" value="${item.data_coleta ? toISODate(item.data_coleta) : ''}">
+        <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)" value="${item.nfe_enviada || ''}">
       </div>
     </td>
     <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
     <td><input type="number" class="inp-qty" data-field="qty_prometida" min="0" step="1" value="${item.qty_prometida !== undefined && item.qty_prometida !== null ? item.qty_prometida : ''}"></td>
-    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)..."></textarea></td>
+    <td class="status-promessa-cell">${statusPromessaHtml(item)}</td>
+    <td class="atende-cell">${promiseAtendeHtml(item)}</td>
+    <td><textarea class="inp-comment" data-field="comentario" rows="1" placeholder="Observacoes (opcional)...">${item.comentario || ''}</textarea></td>
   `;
   tbody.appendChild(tr);
 }
@@ -717,6 +978,11 @@ function detectSeparator(text) {
     .sort((a, b) => b.count - a.count)[0].sep;
 }
 
+function parseImportBoolean(value) {
+  const v = (value || '').toString().trim().toLowerCase();
+  return ['sim', 'yes', 's', '1', 'true', 'x'].includes(v);
+}
+
 function parsePromiseTable(text) {
   const sep = detectSeparator(text);
   const lines = text.replace(/^\uFEFF/, '').split(/\r?\n/).filter(l => l.trim());
@@ -728,10 +994,13 @@ function parsePromiseTable(text) {
   const colDate = findCol(['datapromessa', 'data', 'fecha', 'promisedate', 'deliverydate']);
   const colQty = findCol(['qtyprometida', 'qty', 'qtd', 'quantidade', 'cantidad', 'quantity', 'promessaqty', 'promiseqty']);
   const colComment = findCol(['comentario', 'comment', 'comments', 'observacao', 'observacion', 'obs']);
+  const colConfirm = findCol(['confirmarentrega', 'confirmarentregar', 'entregaconfirmada', 'confirmar', 'confirmado']);
+  const colColeta = findCol(['datacoleta', 'datadecoleta', 'coleta', 'pickupdate']);
+  const colNfe = findCol(['nfeenviada', 'nfeenviadas', 'nfe', 'invoice', 'notafiscal']);
 
   if (colPn < 0) throw new Error('Coluna PN/Part Number nao encontrada.');
-  if (colDate < 0 && colQty < 0 && colComment < 0) {
-    throw new Error('Nenhuma coluna de Data, Qty ou Comentario foi encontrada.');
+  if (colDate < 0 && colQty < 0 && colComment < 0 && colConfirm < 0 && colColeta < 0 && colNfe < 0) {
+    throw new Error('Nenhuma coluna reconhecida foi encontrada.');
   }
 
   return lines.slice(1).map((line, idx) => {
@@ -741,7 +1010,10 @@ function parsePromiseTable(text) {
       pn: (cells[colPn] || '').trim(),
       date: colDate >= 0 ? (cells[colDate] || '').trim() : '',
       qty: colQty >= 0 ? (cells[colQty] || '').trim() : '',
-      comment: colComment >= 0 ? (cells[colComment] || '').trim() : ''
+      comment: colComment >= 0 ? (cells[colComment] || '').trim() : '',
+      confirm: colConfirm >= 0 ? (cells[colConfirm] || '').trim() : '',
+      coleta: colColeta >= 0 ? (cells[colColeta] || '').trim() : '',
+      nfe: colNfe >= 0 ? (cells[colNfe] || '').trim() : ''
     };
   }).filter(r => r.pn);
 }
@@ -788,11 +1060,16 @@ function applyImportedRows(rows) {
     if (!item) { notFound.push(row.pn); return; }
     const date = normalizeImportDate(row.date);
     const qty = normalizeImportQty(row.qty);
+    const coleta = normalizeImportDate(row.coleta);
     if (row.date && !date) invalid.push(`linha ${row.row}: data "${row.date}"`);
     if (row.qty && !qty) invalid.push(`linha ${row.row}: qty "${row.qty}"`);
+    if (row.coleta && !coleta) invalid.push(`linha ${row.row}: data coleta "${row.coleta}"`);
     if (date) item.data_promessa = date;
     if (qty) item.qty_prometida = Number(qty);
     if (row.comment) item.comentario = row.comment;
+    if (row.confirm !== '') item.entrega_confirmada = parseImportBoolean(row.confirm);
+    if (coleta) item.data_coleta = coleta;
+    if (row.nfe) item.nfe_enviada = row.nfe;
     updated++;
   });
 
@@ -820,6 +1097,57 @@ function importPromiseFile(input) {
   };
   reader.onerror = () => showToast('Erro ao ler arquivo.', 'error');
   reader.readAsText(file, 'utf-8');
+}
+
+function csvEscape(value) {
+  return `"${String(value === null || value === undefined ? '' : value).replace(/"/g, '""')}"`;
+}
+
+function exportToCSV() {
+  const rows = qsa('#tableBody tr');
+  if (!rows.length) {
+    showToast('Nenhuma linha para exportar (verifique os filtros).', 'error');
+    return;
+  }
+  const headers = ['PN','Supplier','Ship Date','Past Due WMF','Data Promessa','Qty Prometida','Confirmar Entrega','Data Coleta','NFe Enviada','Comentario'];
+  const lines = [headers.map(csvEscape).join(';')];
+
+  rows.forEach(tr => {
+    const part = tr.dataset.partNumber;
+    const original = ITEMS.find(i => i.part_number === part) || {};
+    const dateVal    = tr.querySelector('.inp-date')?.value || '';
+    const qty        = tr.querySelector('.inp-qty')?.value || '';
+    const confirmed  = tr.querySelector('.inp-confirm')?.checked ? 'Sim' : 'Nao';
+    const dataColeta = tr.querySelector('.inp-data-coleta')?.value || '';
+    const nfeEnviada = tr.querySelector('.inp-nfe-enviada')?.value || '';
+    const comment    = tr.querySelector('.inp-comment')?.value || '';
+
+    const line = [
+      part,
+      original.supplier_name || original.supplier_code || '',
+      fmtDate(original.ship_date),
+      original.past_due_wmf || '',
+      dateVal ? fmtDate(dateVal) : '',
+      qty,
+      confirmed,
+      dataColeta ? fmtDate(dataColeta) : '',
+      nfeEnviada,
+      comment
+    ].map(csvEscape).join(';');
+    lines.push(line);
+  });
+
+  const csv = '\uFEFF' + lines.join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `promessas_export_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`Exportado ${rows.length} linha(s).`, 'success');
 }
 
 function applyBulkDate() {
