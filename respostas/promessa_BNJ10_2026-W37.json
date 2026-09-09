@@ -1,0 +1,60 @@
+{
+  "supplier_code": "BNJ10",
+  "supplier_name": "V S DE LIMA & CIA LTDA",
+  "semana": "2026-W37",
+  "enviado_em": "2026-09-09T10:55:27.774Z",
+  "itens": [
+    {
+      "part_number": "48062327",
+      "supplier_code": "BNJ10",
+      "supplier_name": "V S DE LIMA & CIA LTDA",
+      "ship_date": "26/08/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000185466-001",
+      "semana": "2026-W37",
+      "entrega_confirmada": true,
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "196747",
+      "data_promessa": "",
+      "qty_prometida": 130,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "87478456",
+      "supplier_code": "BNJ10",
+      "supplier_name": "V S DE LIMA & CIA LTDA",
+      "ship_date": "02/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "00088",
+      "semana": "2026-W37",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "data_promessa": "11/09/2026",
+      "qty_prometida": 5,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "48062322",
+      "supplier_code": "BNJ10",
+      "supplier_name": "V S DE LIMA & CIA LTDA",
+      "ship_date": "09/08/2027",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000196485-001",
+      "semana": "2026-W37",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-09-09T10:55:27.731Z"
+}
