@@ -1,0 +1,43 @@
+{
+  "supplier_code": "BJF54",
+  "supplier_name": "KABEL WIRING SYSTEMS LTDA",
+  "semana": "2026-W37",
+  "enviado_em": "2026-09-09T11:58:00.353Z",
+  "itens": [
+    {
+      "part_number": "90408825",
+      "supplier_code": "BJF54",
+      "supplier_name": "KABEL WIRING SYSTEMS LTDA",
+      "ship_date": "12/08/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000239707-001",
+      "semana": "2026-W37",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "data_promessa": "24/08/2026",
+      "qty_prometida": 63,
+      "comentario": "NF 239941"
+    },
+    {
+      "part_number": "92674262",
+      "supplier_code": "BJF54",
+      "supplier_name": "KABEL WIRING SYSTEMS LTDA",
+      "ship_date": "01/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000239325-001",
+      "semana": "2026-W37",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "data_promessa": "01/09/2026",
+      "qty_prometida": 70,
+      "comentario": "NF 240267"
+    }
+  ],
+  "recibido_en_worker": "2026-09-09T11:57:59.648Z"
+}
