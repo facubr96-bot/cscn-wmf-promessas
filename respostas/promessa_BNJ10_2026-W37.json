@@ -2,7 +2,7 @@
   "supplier_code": "BNJ10",
   "supplier_name": "V S DE LIMA & CIA LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-09T10:55:27.774Z",
+  "enviado_em": "2026-09-09T13:02:04.242Z",
   "itens": [
     {
       "part_number": "48062327",
@@ -31,9 +31,9 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "00088",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "27/08/2026",
+      "nfe_enviada": "196751",
       "data_promessa": "11/09/2026",
       "qty_prometida": 5,
       "comentario": "Solicitar promessa."
@@ -56,5 +56,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-09T10:55:27.731Z"
+  "recibido_en_worker": "2026-09-09T13:02:04.303Z"
 }
