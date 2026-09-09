@@ -2,7 +2,7 @@
   "supplier_code": "DNH73",
   "supplier_name": "ANGSTAHL INDUSTRIA E COMERCIO LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-09T10:52:40.918Z",
+  "enviado_em": "2026-09-09T10:53:12.773Z",
   "itens": [
     {
       "part_number": "48179528",
@@ -83,12 +83,12 @@
       "ultima_nfe": "000037947-001",
       "semana": "2026-W37",
       "entrega_confirmada": true,
-      "data_coleta": "",
+      "data_coleta": "26/08/2026",
       "nfe_enviada": "39043",
       "data_promessa": "10/09/2026",
       "qty_prometida": 30,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-09T10:52:40.893Z"
+  "recibido_en_worker": "2026-09-09T10:53:12.729Z"
 }
