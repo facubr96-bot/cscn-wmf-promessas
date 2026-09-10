@@ -1,0 +1,43 @@
+{
+  "supplier_code": "CBN07",
+  "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+  "semana": "2026-W37",
+  "enviado_em": "2026-09-10T16:59:05.722Z",
+  "itens": [
+    {
+      "part_number": "82941225",
+      "supplier_code": "CBN07",
+      "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+      "ship_date": "10/09/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W37",
+      "entrega_confirmada": true,
+      "data_coleta": "25/09/2026",
+      "nfe_enviada": "",
+      "data_promessa": "25/09/2026",
+      "qty_prometida": 54,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "82941231",
+      "supplier_code": "CBN07",
+      "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
+      "ship_date": "10/09/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W37",
+      "entrega_confirmada": true,
+      "data_coleta": "25/09/2026",
+      "nfe_enviada": "",
+      "data_promessa": "25/09/2026",
+      "qty_prometida": 54,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-09-10T16:59:05.890Z"
+}
