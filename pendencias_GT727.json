@@ -2,7 +2,7 @@
   "supplier_code": "GT727",
   "supplier_name": "RESIPLASTIC INDUSTRIA E COMERCIO",
   "semana": "2026-W37",
-  "gerado_em": "08/09/2026 14:30",
+  "gerado_em": "10/09/2026 10:26",
   "itens": [
     {
       "part_number": "84219375",
@@ -13,7 +13,7 @@
       "sharepoint_critico": true,
       "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=349",
       "sharepoint_reason": "Past Due",
-      "acao_requerida": "Confirmar entrega",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 18,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
@@ -21,7 +21,7 @@
       "semana": "2026-W37",
       "data_promessa": "09/09/2026",
       "qty_prometida": 18,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+      "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa.",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": ""
