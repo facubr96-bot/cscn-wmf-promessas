@@ -2,7 +2,7 @@
   "supplier_code": "BNK46",
   "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-10T14:24:40.438Z",
+  "enviado_em": "2026-09-10T14:26:50.554Z",
   "itens": [
     {
       "part_number": "51465592",
@@ -19,7 +19,7 @@
       "nfe_enviada": "",
       "data_promessa": "01/01/9999",
       "qty_prometida": 30,
-      "comentario": "Solicitar promessa."
+      "comentario": "PENDÊNCIA COMERCIAL"
     },
     {
       "part_number": "87332721",
@@ -328,5 +328,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-10T14:24:42.068Z"
+  "recibido_en_worker": "2026-09-10T14:26:50.570Z"
 }
