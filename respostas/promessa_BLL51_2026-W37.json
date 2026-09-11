@@ -2,7 +2,7 @@
   "supplier_code": "BLL51",
   "supplier_name": "TORTUGA PRODUTOS DE BORRACHA LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-09T19:41:38.652Z",
+  "enviado_em": "2026-09-11T11:48:11.903Z",
   "itens": [
     {
       "part_number": "5151891",
@@ -17,7 +17,7 @@
       "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
-      "data_promessa": "",
+      "data_promessa": "14/09/2026",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
     },
@@ -31,13 +31,13 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000295418-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
+      "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
-      "data_promessa": "",
+      "data_promessa": "14/09/2026",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-09T19:41:38.973Z"
+  "recibido_en_worker": "2026-09-11T11:48:12.032Z"
 }
