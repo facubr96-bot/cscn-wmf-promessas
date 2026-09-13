@@ -592,9 +592,11 @@ document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn =>
 async function loadData() {
   try {
     const resp = await fetch(DATA_URL + "?t=" + Date.now());
-    allItems = await resp.json();
+    const data = await resp.json();
+    allItems = Array.isArray(data) ? data : (data.items || []);
+    const genAt = data.generated_at || "";
     document.getElementById("statusText").textContent = `${allItems.length} PN cargados`;
-    document.getElementById("lastUpdate").textContent = "Actualizado: " + new Date().toLocaleString("pt-BR");
+    document.getElementById("lastUpdate").textContent = genAt ? "Generado: " + genAt : "";
     loadFromUrl();
     document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
     renderKpis();
