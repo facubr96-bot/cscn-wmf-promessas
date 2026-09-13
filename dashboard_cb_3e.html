@@ -79,6 +79,13 @@
   main { padding: 20px 24px 60px; }
 
   .kpi-section { margin-bottom: 22px; }
+  .kpi-columns { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 18px; align-items: start; }
+  .kpi-col { min-width: 0; }
+  .kpi-divider { background: var(--gray-300); align-self: stretch; }
+  @media (max-width: 900px) {
+    .kpi-columns { grid-template-columns: 1fr; }
+    .kpi-divider { display: none; }
+  }
   .kpi-section h2 {
     font-size: 12px;
     text-transform: uppercase;
@@ -214,29 +221,37 @@
 
 <main>
 
-  <div class="kpi-section">
-    <h2>Run Out</h2>
-    <div class="kpi-grid" id="kpiRunout"></div>
-  </div>
+  <div class="kpi-columns">
+    <div class="kpi-col">
+      <div class="kpi-section">
+        <h2>Run Out</h2>
+        <div class="kpi-grid" id="kpiRunout"></div>
+      </div>
 
-  <div class="kpi-section">
-    <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
-    <div class="kpi-grid" id="kpiCov1"></div>
-  </div>
+      <div class="kpi-section">
+        <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
+        <div class="kpi-grid" id="kpiCov1"></div>
+      </div>
+    </div>
 
-  <div class="kpi-section">
-    <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
-    <div class="kpi-grid" id="kpiCov2"></div>
-  </div>
+    <div class="kpi-divider"></div>
 
-  <div class="kpi-section">
-    <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
-    <div class="kpi-grid" id="kpiCov3"></div>
-  </div>
+    <div class="kpi-col">
+      <div class="kpi-section" id="kpiCov2Section">
+        <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
+        <div class="kpi-grid" id="kpiCov2"></div>
+      </div>
 
-  <div class="kpi-section">
-    <h2>Otros indicadores</h2>
-    <div class="kpi-grid" id="kpiOther"></div>
+      <div class="kpi-section" id="kpiCov3Section">
+        <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
+        <div class="kpi-grid" id="kpiCov3"></div>
+      </div>
+
+      <div class="kpi-section">
+        <h2>Otros indicadores</h2>
+        <div class="kpi-grid" id="kpiOther"></div>
+      </div>
+    </div>
   </div>
 
   <div class="toolbar">
@@ -270,8 +285,7 @@ const DATA_URL = "dashboard_cb_3e_data.json";
 
 let allItems = [];
 let plant = "3e";
-let activeKpiKey = null;
-let activeKpiLabel = null;
+const activeFilters = new Map(); // key -> {label, test}
 let sortCol = null, sortDir = 1;
 const dirty = {}; // pn -> {campo: valor}
 
@@ -387,14 +401,11 @@ function getKpiDefs() {
   const otherDefs = [
     { key: "cpl", label: "CPL (criticos)", tone: "red", test: i => !!i.cpl },
     { key: "con_nfe", label: "Con NFe", tone: "gray", test: i => !!(i.nfe_enviada || i.nfe_stock_ws) },
-    { key: "sin_nfe", label: "Sin NFe", tone: "gray", test: i => !(i.nfe_enviada || i.nfe_stock_ws) },
     { key: "con_promessa", label: "Con promessa", tone: "green", test: i => promesaVigente(i) },
-    { key: "sin_promessa", label: "Sin promessa", tone: "red", test: i => !promesaVigente(i) },
     { key: "entregas_conf", label: "Entregas confirmadas", tone: "green", test: i => !!i.entrega_confirmada },
     { key: "past_due", label: "Past Due", tone: "red", test: i => (i.wmf_qty_past_due || 0) > 0 },
     { key: "firm_atual", label: "Firm mes atual", tone: "gray", test: i => (i.wmf_qty_firm_current_month || 0) > 0 },
     { key: "firm_prox", label: "Firm mes que vem", tone: "gray", test: i => (i.wmf_qty_firm_next_month || 0) > 0 },
-    { key: "cum_rec", label: plant === "cb" ? "Cum Receipt CB" : "Cum Receipt 3E", tone: "gray", test: i => plant === "cb" ? (i.cum_rec_cb || 0) > 0 : (i.cum_rec_3e || 0) > 0 },
   ];
   return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
 }
@@ -404,8 +415,15 @@ function renderKpis() {
   const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
-  renderKpiGrid("kpiCov2", cov2Defs);
-  renderKpiGrid("kpiCov3", cov3Defs);
+  if (plant === "cb") {
+    document.getElementById("kpiCov2Section").style.display = "";
+    document.getElementById("kpiCov3Section").style.display = "none";
+    renderKpiGrid("kpiCov2", cov2Defs);
+  } else {
+    document.getElementById("kpiCov2Section").style.display = "none";
+    document.getElementById("kpiCov3Section").style.display = "";
+    renderKpiGrid("kpiCov3", cov3Defs);
+  }
   renderKpiGrid("kpiOther", otherDefs);
   document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
   document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
@@ -416,31 +434,22 @@ function renderKpiGrid(elId, defs) {
   defs.forEach(def => {
     const count = allItems.filter(def.test).length;
     const card = document.createElement("button");
-    card.className = `kpi-card tone-${def.tone}` + (activeKpiKey === def.key ? " active" : "");
+    card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
     card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
-    card.onclick = () => applyKpiFilter(def.key, def.label, def.test);
+    card.onclick = () => toggleKpiFilter(def.key, def.label, def.test);
     el.appendChild(card);
   });
 }
 
-let currentFilterFn = null;
-
-function applyKpiFilter(key, label, testFn) {
-  if (activeKpiKey === key) {
-    clearFilter();
-    return;
-  }
-  activeKpiKey = key;
-  activeKpiLabel = label;
-  currentFilterFn = testFn;
+function toggleKpiFilter(key, label, testFn) {
+  if (activeFilters.has(key)) activeFilters.delete(key);
+  else activeFilters.set(key, { label, test: testFn });
   updateUrl();
   renderKpis();
   renderTable();
 }
 function clearFilter() {
-  activeKpiKey = null;
-  activeKpiLabel = null;
-  currentFilterFn = null;
+  activeFilters.clear();
   updateUrl();
   renderKpis();
   renderTable();
@@ -448,19 +457,21 @@ function clearFilter() {
 function updateUrl() {
   const params = new URLSearchParams();
   params.set("planta", plant);
-  if (activeKpiKey) params.set("kpi", activeKpiKey);
+  if (activeFilters.size) params.set("kpi", [...activeFilters.keys()].join(","));
   history.replaceState(null, "", "?" + params.toString());
 }
 function loadFromUrl() {
   const params = new URLSearchParams(location.search);
   const p = params.get("planta");
   if (p === "cb" || p === "3e") plant = p;
-  const kpi = params.get("kpi");
-  if (kpi) {
+  const kpiParam = params.get("kpi");
+  if (kpiParam) {
     const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
     const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs];
-    const match = all.find(d => d.key === kpi);
-    if (match) { activeKpiKey = match.key; activeKpiLabel = match.label; currentFilterFn = match.test; }
+    kpiParam.split(",").forEach(k => {
+      const match = all.find(d => d.key === k);
+      if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
+    });
   }
 }
 
@@ -506,7 +517,9 @@ function getColumns() {
 
 function filteredItems() {
   let items = allItems;
-  if (currentFilterFn) items = items.filter(currentFilterFn);
+  if (activeFilters.size) {
+    for (const { test } of activeFilters.values()) items = items.filter(test);
+  }
   const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
@@ -541,9 +554,9 @@ function renderTable() {
   document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
 
   const chipEl = document.getElementById("activeFilterChip");
-  chipEl.innerHTML = activeKpiKey
-    ? `<span class="filter-chip">${activeKpiLabel} <button onclick="clearFilter()">✕</button></span>`
-    : "";
+  chipEl.innerHTML = [...activeFilters.entries()]
+    .map(([key, { label }]) => `<span class="filter-chip">${label} <button onclick="removeKpiFilter('${key}')">✕</button></span>`)
+    .join(" ");
 
   items.forEach(item => {
     const tr = document.createElement("tr");
@@ -625,6 +638,13 @@ window.saveRow = async function(pn) {
 document.getElementById("btnSave").onclick = async () => {
   const pns = Object.keys(dirty);
   for (const pn of pns) await window.saveRow(pn);
+};
+
+window.removeKpiFilter = function(key) {
+  activeFilters.delete(key);
+  updateUrl();
+  renderKpis();
+  renderTable();
 };
 
 document.getElementById("btnClearFilter").onclick = clearFilter;
@@ -746,7 +766,7 @@ document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn =>
   btn.onclick = () => {
     plant = btn.dataset.plant;
     document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b === btn));
-    activeKpiKey = null; activeKpiLabel = null; currentFilterFn = null;
+    activeFilters.clear();
     updateUrl();
     renderKpis();
     renderTable();
