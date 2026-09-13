@@ -2,7 +2,7 @@
   "supplier_code": "BLH98",
   "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
   "semana": "2026-W37",
-  "gerado_em": "10/09/2026 10:26",
+  "gerado_em": "10/09/2026 16:34",
   "itens": [
     {
       "part_number": "748961",
@@ -11,7 +11,7 @@
       "ship_date": "15/06/2026",
       "impact": "Hiper Critico",
       "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=364",
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Solicitacoes%20Criticas%20Cordoba%20%20CSCN%20WMF/AllItems.aspx?ID=294",
       "sharepoint_reason": "Past Due",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 320,
@@ -33,8 +33,8 @@
       "ship_date": "27/10/2026",
       "impact": "Hiper Critico",
       "sharepoint_critico": true,
-      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Critical%20Part%20List%20%20WMF%20Brasil/AllItems.aspx?ID=336",
-      "sharepoint_reason": "Systems Error",
+      "sharepoint_url": "https://cnhind.sharepoint.com/sites/TimeWMFLatam/Lists/Solicitacoes%20Criticas%20Cordoba%20%20CSCN%20WMF/AllItems.aspx?ID=266",
+      "sharepoint_reason": "System Error",
       "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
