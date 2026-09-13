@@ -220,8 +220,18 @@
   </div>
 
   <div class="kpi-section">
-    <h2>Cobertura</h2>
-    <div class="kpi-grid" id="kpiCoverage"></div>
+    <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
+    <div class="kpi-grid" id="kpiCov1"></div>
+  </div>
+
+  <div class="kpi-section">
+    <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
+    <div class="kpi-grid" id="kpiCov2"></div>
+  </div>
+
+  <div class="kpi-section">
+    <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
+    <div class="kpi-grid" id="kpiCov3"></div>
   </div>
 
   <div class="kpi-section">
@@ -295,16 +305,41 @@ function runoutBucket(item) {
 }
 
 // ---------- Replica exacta de coverage_bucket() ----------
-function coverageBucket(item, useTransit) {
-  const qty = Math.max(item.wmf_qty_past_due || 0, 1.0);
-  const transitQty = plant === "cb" ? (item.qty_transito || 0) : (item.qty_transito || 0);
-  const stockQty = plant === "cb" ? (item.stock_ws || 0) : (item.stock_b1cb || 0);
-  const promiseQty = item.promessa_qty || 0;
+function coverageBucket(qty, transitQty, stockQty, promiseQty, useTransit) {
   if (useTransit && transitQty > 0) return "c/ Transito";
   if (stockQty > 0) return "c/ Stock";
   if (promiseQty >= qty && qty > 0) return "c/ Promessa";
   if (promiseQty > 0 && promiseQty < qty) return "Prom. Insuf.";
   return "s/ Cobertura";
+}
+function inRunoutCriticoWindow(item) {
+  const b = runoutBucket(item);
+  return b === "Run Out vencido" || b.startsWith("RO resto");
+}
+function commonVals(item) {
+  return {
+    transitQty: item.qty_transito || 0,
+    stockQty: plant === "cb" ? (item.stock_ws || 0) : (item.stock_b1cb || 0),
+    promiseQty: item.promessa_qty || 0,
+  };
+}
+function bloque1Bucket(item) {
+  // Cobertura PN criticos: solo Run Out vencido/resto del mes, piso qty=max(cor,wmf,1.0)
+  const qty = Math.max(item.cor_qty_past_due || 0, item.wmf_qty_past_due || 0, 1.0);
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(qty, transitQty, stockQty, promiseQty, true);
+}
+function bloque2Bucket(item) {
+  // COR -> WMF / Ship Date: solo entra si tiene linea COR vencida real (sin piso)
+  if (!((item.cor_qty_past_due || 0) > 0)) return null;
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(item.cor_qty_past_due, transitQty, stockQty, promiseQty, true);
+}
+function bloque3Bucket(item) {
+  // WMF -> Proveedor / Ship Date: solo entra si tiene linea WMF vencida real (sin piso), sin transito
+  if (!((item.wmf_qty_past_due || 0) > 0)) return null;
+  const { stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(item.wmf_qty_past_due, 0, stockQty, promiseQty, false);
 }
 
 function promesaVigente(item) {
@@ -318,7 +353,6 @@ function promesaVigente(item) {
 
 // ---------- Definicion de KPIs ----------
 function getKpiDefs() {
-  const useTransit = plant === "3e" ? false : true;
   const runoutDefs = [
     { key: "ro_vencido", label: "Run Out vencido", tone: "red", test: i => runoutBucket(i) === "Run Out vencido" },
     { key: "ro_resto", label: "RO resto do mes", tone: "amber", test: i => runoutBucket(i).startsWith("RO resto") },
@@ -326,12 +360,29 @@ function getKpiDefs() {
     { key: "ro_futuro", label: "RO futuro", tone: "gray", test: i => runoutBucket(i) === "RO futuro" },
     { key: "ro_sem", label: "Sin Run Out", tone: "gray", test: i => runoutBucket(i) === "Sin Run Out" },
   ];
-  const coverageDefs = [
-    { key: "cov_transito", label: "c/ Transito", tone: "green", test: i => coverageBucket(i, useTransit) === "c/ Transito" },
-    { key: "cov_stock", label: "c/ Stock", tone: "green", test: i => coverageBucket(i, useTransit) === "c/ Stock" },
-    { key: "cov_promessa", label: "c/ Promessa", tone: "amber", test: i => coverageBucket(i, useTransit) === "c/ Promessa" },
-    { key: "cov_insuf", label: "Promessa Insuf.", tone: "amber", test: i => coverageBucket(i, useTransit) === "Prom. Insuf." },
-    { key: "cov_sin", label: "s/ Cobertura", tone: "red", test: i => coverageBucket(i, useTransit) === "s/ Cobertura" },
+  const cov1Defs = [
+    { key: "cov1_pastdue", label: "PN Past Due", tone: "red", test: i => inRunoutCriticoWindow(i) },
+    { key: "cov1_transito", label: "c/ Transito", tone: "green", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Transito" },
+    { key: "cov1_stock", label: "c/ Stock", tone: "green", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Stock" },
+    { key: "cov1_promessa", label: "c/ Promessa", tone: "amber", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Promessa" },
+    { key: "cov1_insuf", label: "Prom. Insuf.", tone: "amber", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "Prom. Insuf." },
+    { key: "cov1_sin", label: "s/ Cobertura", tone: "red", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "s/ Cobertura" },
+  ];
+  const cov2Defs = [
+    { key: "cov2_pastdue", label: "PN Past Due", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 },
+    { key: "cov2_transito", label: "c/ Transito", tone: "green", test: i => bloque2Bucket(i) === "c/ Transito" },
+    { key: "cov2_stock", label: "c/ Stock", tone: "green", test: i => bloque2Bucket(i) === "c/ Stock" },
+    { key: "cov2_promessa", label: "c/ Promessa", tone: "amber", test: i => bloque2Bucket(i) === "c/ Promessa" },
+    { key: "cov2_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloque2Bucket(i) === "Prom. Insuf." },
+    { key: "cov2_sin", label: "s/ Cobertura", tone: "red", test: i => bloque2Bucket(i) === "s/ Cobertura" },
+  ];
+  const cov3Defs = [
+    { key: "cov3_pastdue", label: "PN Past Due", tone: "red", test: i => (i.wmf_qty_past_due || 0) > 0 },
+    { key: "cov3_transito", label: "c/ Transito", tone: "green", test: i => bloque3Bucket(i) === "c/ Transito" },
+    { key: "cov3_stock", label: "c/ Stock", tone: "green", test: i => bloque3Bucket(i) === "c/ Stock" },
+    { key: "cov3_promessa", label: "c/ Promessa", tone: "amber", test: i => bloque3Bucket(i) === "c/ Promessa" },
+    { key: "cov3_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloque3Bucket(i) === "Prom. Insuf." },
+    { key: "cov3_sin", label: "s/ Cobertura", tone: "red", test: i => bloque3Bucket(i) === "s/ Cobertura" },
   ];
   const otherDefs = [
     { key: "cpl", label: "CPL (criticos)", tone: "red", test: i => !!i.cpl },
@@ -345,15 +396,19 @@ function getKpiDefs() {
     { key: "firm_prox", label: "Firm mes que vem", tone: "gray", test: i => (i.wmf_qty_firm_next_month || 0) > 0 },
     { key: "cum_rec", label: plant === "cb" ? "Cum Receipt CB" : "Cum Receipt 3E", tone: "gray", test: i => plant === "cb" ? (i.cum_rec_cb || 0) > 0 : (i.cum_rec_3e || 0) > 0 },
   ];
-  return { runoutDefs, coverageDefs, otherDefs };
+  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
 }
 
 // ---------- Render KPIs ----------
 function renderKpis() {
-  const { runoutDefs, coverageDefs, otherDefs } = getKpiDefs();
+  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
-  renderKpiGrid("kpiCoverage", coverageDefs);
+  renderKpiGrid("kpiCov1", cov1Defs);
+  renderKpiGrid("kpiCov2", cov2Defs);
+  renderKpiGrid("kpiCov3", cov3Defs);
   renderKpiGrid("kpiOther", otherDefs);
+  document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
+  document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
 }
 function renderKpiGrid(elId, defs) {
   const el = document.getElementById(elId);
@@ -402,8 +457,8 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpi = params.get("kpi");
   if (kpi) {
-    const { runoutDefs, coverageDefs, otherDefs } = getKpiDefs();
-    const all = [...runoutDefs, ...coverageDefs, ...otherDefs];
+    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs];
     const match = all.find(d => d.key === kpi);
     if (match) { activeKpiKey = match.key; activeKpiLabel = match.label; currentFilterFn = match.test; }
   }
@@ -436,7 +491,8 @@ function getColumns() {
   const plantCb = [
     { key: "stock_ws", label: "Stock WS" },
     { key: "qty_transito", label: "Qty Transito" },
-    { key: "wmf_qty_past_due", label: "Past Due" },
+    { key: "cor_qty_past_due", label: "COR Past Due" },
+    { key: "wmf_qty_past_due", label: "WMF Past Due" },
     { key: "wmf_qty_firm_current_month", label: "Firm Set" },
     { key: "wmf_qty_firm_next_month", label: "Firm Out" },
     { key: "cum_rec_cb", label: "Cum Rec CB" },
