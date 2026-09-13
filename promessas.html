@@ -717,6 +717,8 @@ function mergeLivePromises(items, livePromises) {
     item.entrega_confirmada = live.entrega_confirmada === 'true' || live.entrega_confirmada === true;
     item.data_coleta = live.data_coleta ? fmtDate(live.data_coleta) : item.data_coleta;
     item.nfe_enviada = live.nfe_enviada || item.nfe_enviada;
+    item.qty_confirmada = (live.qty_confirmada !== null && live.qty_confirmada !== undefined)
+      ? Number(live.qty_confirmada) : item.qty_confirmada;
     mergedCount++;
   });
   return mergedCount;
@@ -975,6 +977,7 @@ function buildRow(item, seq, tbody) {
       <div class="confirm-extra" style="display:${isConfirmed ? 'flex' : 'none'}">
         <input type="date" class="inp-data-coleta" title="Data de coleta" value="${item.data_coleta ? toISODate(item.data_coleta) : ''}">
         <input type="text" class="inp-nfe-enviada" placeholder="NFe enviada(s)" value="${item.nfe_enviada || ''}">
+        <input type="number" class="inp-qty-confirmada" placeholder="Qty entregada" min="0" step="1" value="${item.qty_confirmada !== undefined && item.qty_confirmada !== null ? item.qty_confirmada : ''}">
       </div>
     </td>
     <td><input type="date" class="inp-date" data-field="data_promessa" value="${item.data_promessa ? toISODate(item.data_promessa) : ''}"></td>
@@ -1079,9 +1082,10 @@ function parsePromiseTable(text) {
   const colConfirm = findCol(['confirmarentrega', 'confirmarentregar', 'entregaconfirmada', 'confirmar', 'confirmado']);
   const colColeta = findCol(['datacoleta', 'datadecoleta', 'coleta', 'pickupdate']);
   const colNfe = findCol(['nfeenviada', 'nfeenviadas', 'nfe', 'invoice', 'notafiscal']);
+  const colQtyConfirmada = findCol(['qtyentregada', 'qtdentregue', 'qtyconfirmada', 'entregue', 'deliveredqty']);
 
   if (colPn < 0) throw new Error('Coluna PN/Part Number nao encontrada.');
-  if (colDate < 0 && colQty < 0 && colComment < 0 && colConfirm < 0 && colColeta < 0 && colNfe < 0) {
+  if (colDate < 0 && colQty < 0 && colComment < 0 && colConfirm < 0 && colColeta < 0 && colNfe < 0 && colQtyConfirmada < 0) {
     throw new Error('Nenhuma coluna reconhecida foi encontrada.');
   }
 
@@ -1095,7 +1099,8 @@ function parsePromiseTable(text) {
       comment: colComment >= 0 ? (cells[colComment] || '').trim() : '',
       confirm: colConfirm >= 0 ? (cells[colConfirm] || '').trim() : '',
       coleta: colColeta >= 0 ? (cells[colColeta] || '').trim() : '',
-      nfe: colNfe >= 0 ? (cells[colNfe] || '').trim() : ''
+      nfe: colNfe >= 0 ? (cells[colNfe] || '').trim() : '',
+      qtyConfirmada: colQtyConfirmada >= 0 ? (cells[colQtyConfirmada] || '').trim() : ''
     };
   }).filter(r => r.pn);
 }
@@ -1143,15 +1148,18 @@ function applyImportedRows(rows) {
     const date = normalizeImportDate(row.date);
     const qty = normalizeImportQty(row.qty);
     const coleta = normalizeImportDate(row.coleta);
+    const qtyEntregue = normalizeImportQty(row.qtyConfirmada);
     if (row.date && !date) invalid.push(`linha ${row.row}: data "${row.date}"`);
     if (row.qty && !qty) invalid.push(`linha ${row.row}: qty "${row.qty}"`);
     if (row.coleta && !coleta) invalid.push(`linha ${row.row}: data coleta "${row.coleta}"`);
+    if (row.qtyConfirmada && !qtyEntregue) invalid.push(`linha ${row.row}: qty entregada "${row.qtyConfirmada}"`);
     if (date) item.data_promessa = date;
     if (qty) item.qty_prometida = Number(qty);
     if (row.comment) item.comentario = row.comment;
     if (row.confirm !== '') item.entrega_confirmada = parseImportBoolean(row.confirm);
     if (coleta) item.data_coleta = coleta;
     if (row.nfe) item.nfe_enviada = row.nfe;
+    if (qtyEntregue) item.qty_confirmada = Number(qtyEntregue);
     updated++;
   });
 
@@ -1191,7 +1199,7 @@ function exportToCSV() {
     showToast('Nenhuma linha para exportar (verifique os filtros).', 'error');
     return;
   }
-  const headers = ['PN','Supplier','Ship Date','Past Due WMF','Data Promessa','Qty Prometida','Confirmar Entrega','Data Coleta','NFe Enviada','Comentario'];
+  const headers = ['PN','Supplier','Ship Date','Past Due WMF','Data Promessa','Qty Prometida','Confirmar Entrega','Data Coleta','NFe Enviada','Qty Entregada','Comentario'];
   const lines = [headers.map(csvEscape).join(';')];
 
   rows.forEach(tr => {
@@ -1202,6 +1210,7 @@ function exportToCSV() {
     const confirmed  = tr.querySelector('.inp-confirm')?.checked ? 'Sim' : 'Nao';
     const dataColeta = tr.querySelector('.inp-data-coleta')?.value || '';
     const nfeEnviada = tr.querySelector('.inp-nfe-enviada')?.value || '';
+    const qtyConfirmada = tr.querySelector('.inp-qty-confirmada')?.value || '';
     const comment    = tr.querySelector('.inp-comment')?.value || '';
 
     const line = [
@@ -1214,6 +1223,7 @@ function exportToCSV() {
       confirmed,
       dataColeta ? fmtDate(dataColeta) : '',
       nfeEnviada,
+      qtyConfirmada,
       comment
     ].map(csvEscape).join(';');
     lines.push(line);
@@ -1256,6 +1266,7 @@ function collectRows() {
     const confirmed    = !!tr.querySelector('.inp-confirm')?.checked;
     const dataColeta   = tr.querySelector('.inp-data-coleta')?.value || '';
     const nfeEnviada   = tr.querySelector('.inp-nfe-enviada')?.value || '';
+    const qtyConfirmada = tr.querySelector('.inp-qty-confirmada')?.value;
     result.push({
       part_number:    part,
       supplier_code:  original.supplier_code  || DATA?.supplier_code || '-',
@@ -1269,6 +1280,7 @@ function collectRows() {
       entrega_confirmada: confirmed,
       data_coleta:    dataColeta ? fmtDate(dataColeta) : '',
       nfe_enviada:    nfeEnviada,
+      qty_confirmada: qtyConfirmada !== '' && qtyConfirmada !== undefined ? Number(qtyConfirmada) : null,
       data_promessa:  dateVal ? fmtDate(dateVal) : '',
       qty_prometida:  qty !== '' && qty !== undefined ? Number(qty) : null,
       comentario:     comment
