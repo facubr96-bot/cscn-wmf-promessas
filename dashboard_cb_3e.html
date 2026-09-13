@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNH Industrial — Dashboard CSCN WMF</title>
+<style>
+  :root {
+    --black: #1a1a1a;
+    --gray-900: #2b2b2b;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --gray-300: #c7c7c7;
+    --gray-100: #f0f0f0;
+    --white: #ffffff;
+    --red: #b3121f;
+    --red-dark: #7d0c16;
+    --green: #2f7d4f;
+    --amber: #b5750c;
+    --radius: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: var(--gray-100);
+    color: var(--gray-900);
+    font-size: 13px;
+  }
+  header {
+    background: var(--black);
+    color: var(--white);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 3px solid var(--red);
+  }
+  header .brand { display: flex; flex-direction: column; gap: 2px; }
+  header .brand .eyebrow { font-size: 11px; color: var(--gray-300); }
+  header .brand h1 { margin: 0; font-size: 18px; font-weight: 600; }
+
+  .plant-switch {
+    display: inline-flex;
+    background: var(--gray-900);
+    border-radius: var(--radius);
+    padding: 3px;
+    gap: 3px;
+  }
+  .plant-switch button {
+    border: none;
+    background: transparent;
+    color: var(--gray-300);
+    padding: 8px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .15s, color .15s;
+  }
+  .plant-switch button.active { background: var(--red); color: var(--white); }
+  .plant-switch button:not(.active):hover { background: rgba(255,255,255,.08); }
+
+  #statusBar {
+    padding: 8px 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 12px;
+    color: var(--gray-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #statusBar .dot { color: var(--green); font-weight: bold; }
+
+  main { padding: 20px 24px 60px; }
+
+  .kpi-section { margin-bottom: 22px; }
+  .kpi-section h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--gray-500);
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-left: 4px solid var(--gray-500);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform .1s, box-shadow .1s;
+    text-align: left;
+  }
+  .kpi-card:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
+  .kpi-card.active { border-left-color: var(--red); background: #fff5f5; }
+  .kpi-card .kpi-value { font-size: 24px; font-weight: 700; line-height: 1; color: var(--black); }
+  .kpi-card .kpi-label { margin-top: 6px; font-size: 12px; color: var(--gray-700); }
+  .kpi-card.tone-red .kpi-value { color: var(--red); }
+  .kpi-card.tone-green .kpi-value { color: var(--green); }
+  .kpi-card.tone-amber .kpi-value { color: var(--amber); }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 18px 0 10px;
+  }
+  .toolbar input[type=text] {
+    padding: 8px 10px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    font-size: 13px;
+    min-width: 180px;
+  }
+  .toolbar .filter-chip {
+    background: var(--gray-900);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .toolbar .filter-chip button {
+    background: none; border: none; color: var(--gray-300); cursor: pointer; font-size: 13px; padding: 0;
+  }
+  .toolbar .count { color: var(--gray-500); font-size: 12px; margin-left: auto; }
+  .toolbar button.btn {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .toolbar button.btn:hover { background: var(--gray-100); }
+  .toolbar button.btn-primary { background: var(--red); border-color: var(--red); color: var(--white); }
+  .toolbar button.btn-primary:hover { background: var(--red-dark); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--white); box-shadow: var(--shadow); font-size: 12px; }
+  thead th {
+    background: var(--gray-900);
+    color: var(--white);
+    text-align: left;
+    padding: 9px 10px;
+    position: sticky; top: 0;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { background: var(--black); }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; white-space: nowrap; }
+  tbody tr:hover { background: #fafafa; }
+  tbody tr.row-dirty { background: #fff9e6; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-red { background: #fde8e8; color: var(--red); }
+  .badge-green { background: #e6f4ea; color: var(--green); }
+  .badge-gray { background: var(--gray-100); color: var(--gray-700); }
+  .badge-amber { background: #fdf1de; color: var(--amber); }
+
+  input.cell-input {
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    width: 100px;
+  }
+  input.cell-input:focus { outline: 2px solid var(--red); border-color: var(--red); }
+  .qty-input { width: 70px; }
+
+  .table-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); }
+
+  .empty-state { padding: 40px; text-align: center; color: var(--gray-500); }
+
+  footer { padding: 14px 24px; color: var(--gray-500); font-size: 11px; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="eyebrow">CNH INDUSTRIAL</span>
+    <h1>CSCN WMF — Dashboard de Piezas</h1>
+  </div>
+  <div class="plant-switch" id="plantSwitch">
+    <button data-plant="3e" class="active">Planta 3E</button>
+    <button data-plant="cb">Planta CB</button>
+  </div>
+</header>
+
+<div id="statusBar">
+  <span><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
+  <span id="lastUpdate"></span>
+</div>
+
+<main>
+
+  <div class="kpi-section">
+    <h2>Run Out</h2>
+    <div class="kpi-grid" id="kpiRunout"></div>
+  </div>
+
+  <div class="kpi-section">
+    <h2>Cobertura</h2>
+    <div class="kpi-grid" id="kpiCoverage"></div>
+  </div>
+
+  <div class="kpi-section">
+    <h2>Otros indicadores</h2>
+    <div class="kpi-grid" id="kpiOther"></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="searchPn" placeholder="Buscar PN...">
+    <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
+    <div id="activeFilterChip"></div>
+    <span class="count" id="rowCount"></span>
+    <button class="btn" id="btnClearFilter">Limpiar filtro</button>
+    <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
+    <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="mainTable">
+      <thead><tr id="tableHead"></tr></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="empty-state" id="emptyState" style="display:none;">Ningun PN coincide con este filtro.</div>
+  </div>
+
+</main>
+
+<footer>CSCN WMF — datos actualizados por el pipeline diario. Los cambios de Promesa/Confirmación se guardan directo en dim_promessas via la misma API que usa el portal de proveedores.</footer>
+
+<script>
+const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev/";
+const DATA_URL = "Promessas/dashboard_cb_3e_data.json";
+
+let allItems = [];
+let plant = "3e";
+let activeKpiKey = null;
+let activeKpiLabel = null;
+let sortCol = null, sortDir = 1;
+const dirty = {}; // pn -> {campo: valor}
+
+// ---------- Utils ----------
+function parseDateBR(s) {
+  if (!s) return null;
+  const [d, m, y] = String(s).split("/");
+  if (!d || !m || !y) return null;
+  const dt = new Date(+y, +m - 1, +d);
+  return isNaN(dt) ? null : dt;
+}
+function todayNoTime() {
+  const t = new Date();
+  return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+}
+const MONTHS_ES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+
+// ---------- Replica exacta de runout_bucket() ----------
+function runoutBucket(item) {
+  const ro = parseDateBR(item.run_out_date);
+  const today = todayNoTime();
+  if (!ro) return "Sin Run Out";
+  if (ro < today) return "Run Out vencido";
+  if (ro.getMonth() === today.getMonth() && ro.getFullYear() === today.getFullYear()) {
+    return `RO resto ${MONTHS_ES[today.getMonth()]}`;
+  }
+  const nxt = today.getMonth() === 11 ? 0 : today.getMonth() + 1;
+  const yr = today.getMonth() === 11 ? today.getFullYear() + 1 : today.getFullYear();
+  if (ro.getMonth() === nxt && ro.getFullYear() === yr) return `RO ${MONTHS_ES[nxt]}`;
+  return "RO futuro";
+}
+
+// ---------- Replica exacta de coverage_bucket() ----------
+function coverageBucket(item, useTransit) {
+  const qty = Math.max(item.wmf_qty_past_due || 0, 1.0);
+  const transitQty = plant === "cb" ? (item.qty_transito || 0) : (item.qty_transito || 0);
+  const stockQty = plant === "cb" ? (item.stock_ws || 0) : (item.stock_b1cb || 0);
+  const promiseQty = item.promessa_qty || 0;
+  if (useTransit && transitQty > 0) return "c/ Transito";
+  if (stockQty > 0) return "c/ Stock";
+  if (promiseQty >= qty && qty > 0) return "c/ Promessa";
+  if (promiseQty > 0 && promiseQty < qty) return "Prom. Insuf.";
+  return "s/ Cobertura";
+}
+
+function promesaVigente(item) {
+  if (!item.promessa_data) return false;
+  if (item.entrega_confirmada) return true;
+  const pd = parseDateBR(item.promessa_data);
+  if (!pd) return false;
+  const diffDias = (todayNoTime() - pd) / 86400000;
+  return diffDias <= 5;
+}
+
+// ---------- Definicion de KPIs ----------
+function getKpiDefs() {
+  const useTransit = plant === "3e" ? false : true;
+  const runoutDefs = [
+    { key: "ro_vencido", label: "Run Out vencido", tone: "red", test: i => runoutBucket(i) === "Run Out vencido" },
+    { key: "ro_resto", label: "RO resto do mes", tone: "amber", test: i => runoutBucket(i).startsWith("RO resto") },
+    { key: "ro_prox", label: "RO mes que vem", tone: "gray", test: i => runoutBucket(i).startsWith("RO ") && !runoutBucket(i).startsWith("RO resto") && runoutBucket(i) !== "RO futuro" },
+    { key: "ro_futuro", label: "RO futuro", tone: "gray", test: i => runoutBucket(i) === "RO futuro" },
+    { key: "ro_sem", label: "Sin Run Out", tone: "gray", test: i => runoutBucket(i) === "Sin Run Out" },
+  ];
+  const coverageDefs = [
+    { key: "cov_transito", label: "c/ Transito", tone: "green", test: i => coverageBucket(i, useTransit) === "c/ Transito" },
+    { key: "cov_stock", label: "c/ Stock", tone: "green", test: i => coverageBucket(i, useTransit) === "c/ Stock" },
+    { key: "cov_promessa", label: "c/ Promessa", tone: "amber", test: i => coverageBucket(i, useTransit) === "c/ Promessa" },
+    { key: "cov_insuf", label: "Promessa Insuf.", tone: "amber", test: i => coverageBucket(i, useTransit) === "Prom. Insuf." },
+    { key: "cov_sin", label: "s/ Cobertura", tone: "red", test: i => coverageBucket(i, useTransit) === "s/ Cobertura" },
+  ];
+  const otherDefs = [
+    { key: "cpl", label: "CPL (criticos)", tone: "red", test: i => !!i.cpl },
+    { key: "con_nfe", label: "Con NFe", tone: "gray", test: i => !!(i.nfe_enviada || i.nfe_stock_ws) },
+    { key: "sin_nfe", label: "Sin NFe", tone: "gray", test: i => !(i.nfe_enviada || i.nfe_stock_ws) },
+    { key: "con_promessa", label: "Con promessa", tone: "green", test: i => promesaVigente(i) },
+    { key: "sin_promessa", label: "Sin promessa", tone: "red", test: i => !promesaVigente(i) },
+    { key: "entregas_conf", label: "Entregas confirmadas", tone: "green", test: i => !!i.entrega_confirmada },
+    { key: "past_due", label: "Past Due", tone: "red", test: i => (i.wmf_qty_past_due || 0) > 0 },
+    { key: "firm_atual", label: "Firm mes atual", tone: "gray", test: i => (i.wmf_qty_firm_current_month || 0) > 0 },
+    { key: "firm_prox", label: "Firm mes que vem", tone: "gray", test: i => (i.wmf_qty_firm_next_month || 0) > 0 },
+    { key: "cum_rec", label: plant === "cb" ? "Cum Receipt CB" : "Cum Receipt 3E", tone: "gray", test: i => plant === "cb" ? (i.cum_rec_cb || 0) > 0 : (i.cum_rec_3e || 0) > 0 },
+  ];
+  return { runoutDefs, coverageDefs, otherDefs };
+}
+
+// ---------- Render KPIs ----------
+function renderKpis() {
+  const { runoutDefs, coverageDefs, otherDefs } = getKpiDefs();
+  renderKpiGrid("kpiRunout", runoutDefs);
+  renderKpiGrid("kpiCoverage", coverageDefs);
+  renderKpiGrid("kpiOther", otherDefs);
+}
+function renderKpiGrid(elId, defs) {
+  const el = document.getElementById(elId);
+  el.innerHTML = "";
+  defs.forEach(def => {
+    const count = allItems.filter(def.test).length;
+    const card = document.createElement("button");
+    card.className = `kpi-card tone-${def.tone}` + (activeKpiKey === def.key ? " active" : "");
+    card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
+    card.onclick = () => applyKpiFilter(def.key, def.label, def.test);
+    el.appendChild(card);
+  });
+}
+
+let currentFilterFn = null;
+
+function applyKpiFilter(key, label, testFn) {
+  if (activeKpiKey === key) {
+    clearFilter();
+    return;
+  }
+  activeKpiKey = key;
+  activeKpiLabel = label;
+  currentFilterFn = testFn;
+  updateUrl();
+  renderKpis();
+  renderTable();
+}
+function clearFilter() {
+  activeKpiKey = null;
+  activeKpiLabel = null;
+  currentFilterFn = null;
+  updateUrl();
+  renderKpis();
+  renderTable();
+}
+function updateUrl() {
+  const params = new URLSearchParams();
+  params.set("planta", plant);
+  if (activeKpiKey) params.set("kpi", activeKpiKey);
+  history.replaceState(null, "", "?" + params.toString());
+}
+function loadFromUrl() {
+  const params = new URLSearchParams(location.search);
+  const p = params.get("planta");
+  if (p === "cb" || p === "3e") plant = p;
+  const kpi = params.get("kpi");
+  if (kpi) {
+    const { runoutDefs, coverageDefs, otherDefs } = getKpiDefs();
+    const all = [...runoutDefs, ...coverageDefs, ...otherDefs];
+    const match = all.find(d => d.key === kpi);
+    if (match) { activeKpiKey = match.key; activeKpiLabel = match.label; currentFilterFn = match.test; }
+  }
+}
+
+// ---------- Tabla ----------
+function getColumns() {
+  const common = [
+    { key: "pn", label: "PN" },
+    { key: "impacto", label: "Impacto" },
+    { key: "run_out_date", label: "Run Out" },
+    { key: "supplier_code", label: "Cod." },
+    { key: "supplier_name", label: "Proveedor" },
+  ];
+  const plant3e = [
+    { key: "stock_b1cb", label: "Stock B1CB" },
+    { key: "qty_transito", label: "Transito" },
+    { key: "wmf_qty_past_due", label: "Past Due" },
+    { key: "wmf_qty_firm_current_month", label: "Firm Set" },
+    { key: "wmf_qty_firm_next_month", label: "Firm Out" },
+    { key: "cum_rec_3e", label: "Cum Rec 3E" },
+    { key: "cpl", label: "CPL" },
+    { key: "entrega_confirmada", label: "Confirmo" },
+    { key: "data_coleta", label: "Data Coleta" },
+    { key: "nfe_enviada", label: "NFe" },
+    { key: "qty_nfe_confirmada", label: "Qty NFe (conf.)" },
+    { key: "promessa_data", label: "Promessa Data" },
+    { key: "promessa_qty", label: "Promessa Qty" },
+  ];
+  const plantCb = [
+    { key: "stock_ws", label: "Stock WS" },
+    { key: "qty_transito", label: "Qty Transito" },
+    { key: "wmf_qty_past_due", label: "Past Due" },
+    { key: "wmf_qty_firm_current_month", label: "Firm Set" },
+    { key: "wmf_qty_firm_next_month", label: "Firm Out" },
+    { key: "cum_rec_cb", label: "Cum Rec CB" },
+    { key: "nfe_stock_ws", label: "NFe Estoque" },
+    { key: "qty_nfe_stock", label: "Qty NFe (stock)" },
+    { key: "fc_transito", label: "FC Transito" },
+    { key: "data_inicio_transito", label: "Data Inicio" },
+  ];
+  return common.concat(plant === "cb" ? plantCb : plant3e);
+}
+
+function filteredItems() {
+  let items = allItems;
+  if (currentFilterFn) items = items.filter(currentFilterFn);
+  const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  if (sortCol) {
+    items = [...items].sort((a, b) => {
+      const av = a[sortCol] ?? "", bv = b[sortCol] ?? "";
+      if (typeof av === "number" || typeof bv === "number") return (av - bv) * sortDir;
+      return String(av).localeCompare(String(bv)) * sortDir;
+    });
+  }
+  return items;
+}
+
+function renderTable() {
+  const cols = getColumns();
+  const head = document.getElementById("tableHead");
+  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th>";
+  head.querySelectorAll("th[data-col]").forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.col;
+      sortDir = sortCol === col ? -sortDir : 1;
+      sortCol = col;
+      renderTable();
+    };
+  });
+
+  const items = filteredItems();
+  const body = document.getElementById("tableBody");
+  body.innerHTML = "";
+  document.getElementById("emptyState").style.display = items.length ? "none" : "block";
+  document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
+
+  const chipEl = document.getElementById("activeFilterChip");
+  chipEl.innerHTML = activeKpiKey
+    ? `<span class="filter-chip">${activeKpiLabel} <button onclick="clearFilter()">✕</button></span>`
+    : "";
+
+  items.forEach(item => {
+    const tr = document.createElement("tr");
+    if (dirty[item.pn]) tr.classList.add("row-dirty");
+    let html = "";
+    cols.forEach(c => { html += renderCell(item, c.key); });
+    html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button></td>`;
+    tr.innerHTML = html;
+    body.appendChild(tr);
+  });
+}
+
+function renderCell(item, key) {
+  const v = item[key];
+  switch (key) {
+    case "cpl":
+      return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "entrega_confirmada":
+      return `<td><input type="checkbox" ${v ? "checked" : ""} onchange="markDirty('${item.pn}','entrega_confirmada',this.checked)"></td>`;
+    case "promessa_data":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_data',this.value)"></td>`;
+    case "promessa_qty":
+      return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_qty',this.value)"></td>`;
+    case "data_coleta":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','data_coleta',this.value)"></td>`;
+    case "nfe_enviada":
+      return `<td><input type="text" class="cell-input" value="${v || ""}" onchange="markDirty('${item.pn}','nfe_enviada',this.value)"></td>`;
+    case "qty_nfe_confirmada":
+      return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','qty_nfe_confirmada',this.value)"></td>`;
+    case "qty_nfe_stock":
+      return `<td>${v ?? item.stock_ws ?? ""}</td>`;
+    default:
+      return `<td>${v ?? ""}</td>`;
+  }
+}
+
+window.markDirty = function(pn, field, value) {
+  dirty[pn] = dirty[pn] || {};
+  dirty[pn][field] = value;
+  const item = allItems.find(i => i.pn === pn);
+  if (item) item[field] = field === "entrega_confirmada" ? value : value;
+  renderTable();
+};
+
+window.saveRow = async function(pn) {
+  const item = allItems.find(i => i.pn === pn);
+  if (!item) return;
+  const itemPayload = {
+    part_number: item.pn,
+    data_promessa: item.promessa_data || "",
+    qty_prometida: item.promessa_qty !== "" && item.promessa_qty !== undefined ? Number(item.promessa_qty) : null,
+    entrega_confirmada: !!item.entrega_confirmada,
+    data_coleta: item.data_coleta || "",
+    nfe_enviada: item.nfe_enviada || "",
+    qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
+    comentario: "",
+  };
+  const semanaAtual = (() => {
+    const d = new Date();
+    const jan1 = new Date(d.getFullYear(), 0, 1);
+    const semana = Math.ceil((((d - jan1) / 86400000) + jan1.getDay() + 1) / 7);
+    return `${d.getFullYear()}-W${String(semana).padStart(2, "0")}`;
+  })();
+  try {
+    const resp = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ supplier_code: item.supplier_code, semana: semanaAtual, itens: [itemPayload] }),
+    });
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    delete dirty[pn];
+    document.getElementById("statusText").textContent = `Guardado: PN ${pn}`;
+    renderTable();
+  } catch (e) {
+    document.getElementById("statusText").textContent = `Error guardando PN ${pn}: ${e.message}`;
+  }
+};
+
+document.getElementById("btnSave").onclick = async () => {
+  const pns = Object.keys(dirty);
+  for (const pn of pns) await window.saveRow(pn);
+};
+
+document.getElementById("btnClearFilter").onclick = clearFilter;
+document.getElementById("btnCopyLink").onclick = () => {
+  navigator.clipboard.writeText(location.href).then(() => {
+    document.getElementById("statusText").textContent = "Link copiado al portapapeles";
+  });
+};
+document.getElementById("searchPn").oninput = renderTable;
+document.getElementById("searchSupplier").oninput = renderTable;
+
+document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    plant = btn.dataset.plant;
+    document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b === btn));
+    activeKpiKey = null; activeKpiLabel = null; currentFilterFn = null;
+    updateUrl();
+    renderKpis();
+    renderTable();
+  };
+});
+
+// ---------- Carga inicial ----------
+async function loadData() {
+  try {
+    const resp = await fetch(DATA_URL + "?t=" + Date.now());
+    allItems = await resp.json();
+    document.getElementById("statusText").textContent = `${allItems.length} PN cargados`;
+    document.getElementById("lastUpdate").textContent = "Actualizado: " + new Date().toLocaleString("pt-BR");
+    loadFromUrl();
+    document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
+    renderKpis();
+    renderTable();
+  } catch (e) {
+    document.getElementById("statusText").textContent = "Error cargando datos: " + e.message;
+  }
+}
+loadData();
+</script>
+</body>
+</html>
