@@ -236,6 +236,9 @@
     <span class="count" id="rowCount"></span>
     <button class="btn" id="btnClearFilter">Limpiar filtro</button>
     <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
+    <button class="btn" id="btnImport">Importar Excel/CSV</button>
+    <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
+    <button class="btn" id="btnExport">Exportar Excel/CSV</button>
     <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
   </div>
 
@@ -574,6 +577,112 @@ document.getElementById("btnCopyLink").onclick = () => {
     document.getElementById("statusText").textContent = "Link copiado al portapapeles";
   });
 };
+
+// ---------- Importar / Exportar Excel-CSV (mismo formato que promessas.html) ----------
+function csvEscape(v) {
+  const s = String(v ?? "");
+  return /[;,"\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+function detectDelimiter(line) {
+  return (line.match(/;/g) || []).length >= (line.match(/,/g) || []).length ? ";" : ",";
+}
+function splitDelimitedLine(line, sep) {
+  const out = []; let cur = ""; let inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { if (inQ && line[i + 1] === '"') { cur += '"'; i++; } else inQ = !inQ; }
+    else if (c === sep && !inQ) { out.push(cur); cur = ""; }
+    else cur += c;
+  }
+  out.push(cur);
+  return out.map(s => s.trim());
+}
+function normalizeDateFlexible(s) {
+  s = (s || "").trim();
+  if (!s) return "";
+  let m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s);
+  if (m) return s;
+  m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s);
+  if (m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return "";
+}
+function normalizeQtyFlexible(s) {
+  s = String(s ?? "").trim().replace(",", ".");
+  return s === "" || isNaN(Number(s)) ? "" : String(Number(s));
+}
+function normalizeBoolFlexible(s) {
+  const t = String(s || "").trim().toLowerCase();
+  return ["sim", "yes", "true", "1", "x", "si"].includes(t);
+}
+
+document.getElementById("btnExport").onclick = () => {
+  const items = filteredItems();
+  const headers = ["PN","Supplier","Promessa Data","Promessa Qty","Confirmar Entrega","Data Coleta","NFe Enviada","Qty Entregada"];
+  const lines = [headers.join(";")];
+  items.forEach(i => {
+    lines.push([
+      i.pn, i.supplier_name || i.supplier_code || "",
+      i.promessa_data || "", i.promessa_qty ?? "",
+      i.entrega_confirmada ? "Sim" : "Nao",
+      i.data_coleta || "", i.nfe_enviada || "", i.qty_nfe_confirmada ?? "",
+    ].map(csvEscape).join(";"));
+  });
+  const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `promessas_${plant}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+};
+
+document.getElementById("btnImport").onclick = () => document.getElementById("fileImport").click();
+document.getElementById("fileImport").onchange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const text = reader.result.replace(/^\uFEFF/, "");
+      const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+      if (lines.length < 2) throw new Error("Arquivo vazio.");
+      const sep = detectDelimiter(lines[0]);
+      const headerCells = splitDelimitedLine(lines[0], sep).map(h => h.toLowerCase().replace(/[^a-z0-9]/g, ""));
+      const findCol = (aliases) => headerCells.findIndex(h => aliases.includes(h));
+      const colPn = findCol(["pn", "partnumber", "part"]);
+      const colDate = findCol(["promessadata", "data", "datapromessa"]);
+      const colQty = findCol(["promessaqty", "qty", "qtyprometida", "quantidade"]);
+      const colConfirm = findCol(["confirmarentrega", "confirmado", "entregaconfirmada"]);
+      const colColeta = findCol(["datacoleta", "coleta"]);
+      const colNfe = findCol(["nfeenviada", "nfe"]);
+      const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue"]);
+      if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
+
+      let updated = 0, notFound = 0;
+      for (let li = 1; li < lines.length; li++) {
+        const cells = splitDelimitedLine(lines[li], sep);
+        const pn = (cells[colPn] || "").trim();
+        if (!pn) continue;
+        const item = allItems.find(i => i.pn === pn);
+        if (!item) { notFound++; continue; }
+        if (colDate >= 0) { const d = normalizeDateFlexible(cells[colDate]); if (d) item.promessa_data = d; }
+        if (colQty >= 0) { const q = normalizeQtyFlexible(cells[colQty]); if (q !== "") item.promessa_qty = Number(q); }
+        if (colConfirm >= 0) item.entrega_confirmada = normalizeBoolFlexible(cells[colConfirm]);
+        if (colColeta >= 0) { const d = normalizeDateFlexible(cells[colColeta]); if (d) item.data_coleta = d; }
+        if (colNfe >= 0 && cells[colNfe]) item.nfe_enviada = cells[colNfe];
+        if (colQtyConf >= 0) { const q = normalizeQtyFlexible(cells[colQtyConf]); if (q !== "") item.qty_nfe_confirmada = Number(q); }
+        dirty[pn] = dirty[pn] || {};
+        updated++;
+      }
+      document.getElementById("statusText").textContent =
+        `Importado: ${updated} PN actualizados${notFound ? `, ${notFound} no encontrados` : ""}. Revisa y apreta "Guardar cambios".`;
+      renderTable();
+    } catch (err) {
+      document.getElementById("statusText").textContent = "Error importando: " + err.message;
+    }
+    e.target.value = "";
+  };
+  reader.readAsText(file, "UTF-8");
+};
+
 document.getElementById("searchPn").oninput = renderTable;
 document.getElementById("searchSupplier").oninput = renderTable;
 
