@@ -5,7 +5,7 @@
     {
       "part_number": "91802796",
       "data_promessa": "14/09/2026",
-      "qty_prometida": 45,
+      "qty_prometida": 50,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -13,5 +13,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T11:03:10.714Z"
+  "recibido_en_worker": "2026-09-14T14:12:27.331Z"
 }
