@@ -172,6 +172,9 @@
   }
   thead th:hover { background: var(--black); }
   tbody td { padding: 7px 10px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; white-space: nowrap; }
+  td.truncate, .truncate { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: help; }
+  td.cell-truncate { max-width: 160px; overflow: hidden; text-overflow: ellipsis; cursor: help; }
+  tbody td.td-truncate { max-width: 160px; overflow: hidden; text-overflow: ellipsis; cursor: help; }
   tbody tr:hover { background: #fafafa; }
   tbody tr.row-dirty { background: #fff9e6; }
 
@@ -504,6 +507,7 @@ function getColumns() {
     { key: "supplier_name", label: "Proveedor" },
   ];
   const plant3e = [
+    { key: "stock_b1cb", label: "Stock SAP" },
     { key: "stock_ws", label: "Stock WS" },
     { key: "nfe_stock_ws", label: "NFe Estoque" },
     { key: "qty_transito", label: "Transito" },
@@ -520,6 +524,7 @@ function getColumns() {
     { key: "promessa_qty", label: "Promessa Qty" },
   ];
   const plantCb = [
+    { key: "stock_b1cb", label: "Stock SAP" },
     { key: "stock_ws", label: "Stock WS" },
     { key: "qty_transito", label: "Qty Transito" },
     { key: "cor_qty_past_due", label: "COR Past Due" },
@@ -603,9 +608,13 @@ function renderCell(item, key) {
     case "data_coleta":
       return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','data_coleta',this.value)"></td>`;
     case "nfe_enviada":
-      return `<td><input type="text" class="cell-input" value="${v || ""}" onchange="markDirty('${item.pn}','nfe_enviada',this.value)"></td>`;
+      return `<td><input type="text" class="cell-input" style="max-width:130px" value="${v || ""}" title="${v || ""}" onchange="markDirty('${item.pn}','nfe_enviada',this.value)"></td>`;
     case "qty_nfe_confirmada":
       return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','qty_nfe_confirmada',this.value)"></td>`;
+    case "nfe_stock_ws":
+      return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
+    case "fc_transito":
+      return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
     case "qty_nfe_stock":
       return `<td>${v ?? item.stock_ws ?? ""}</td>`;
     default:
