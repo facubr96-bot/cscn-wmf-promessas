@@ -249,7 +249,7 @@
       </div>
 
       <div class="kpi-section">
-        <h2>Otros indicadores</h2>
+        <h2>CPL</h2>
         <div class="kpi-grid" id="kpiOther"></div>
       </div>
     </div>
@@ -400,13 +400,11 @@ function getKpiDefs() {
     { key: "cov3_sin", label: "s/ Cobertura", tone: "red", test: i => bloque3Bucket(i) === "s/ Cobertura" },
   ];
   const otherDefs = [
-    { key: "cpl", label: "CPL (criticos)", tone: "red", test: i => !!i.cpl },
-    { key: "con_nfe", label: "Con NFe", tone: "gray", test: i => !!(i.nfe_enviada || i.nfe_stock_ws) },
-    { key: "con_promessa", label: "Con promessa", tone: "green", test: i => promesaVigente(i) },
-    { key: "entregas_conf", label: "Entregas confirmadas", tone: "green", test: i => !!i.entrega_confirmada },
-    { key: "past_due", label: "Past Due", tone: "red", test: i => (i.wmf_qty_past_due || 0) > 0 },
-    { key: "firm_atual", label: "Firm mes atual", tone: "gray", test: i => (i.wmf_qty_firm_current_month || 0) > 0 },
-    { key: "firm_prox", label: "Firm mes que vem", tone: "gray", test: i => (i.wmf_qty_firm_next_month || 0) > 0 },
+    { key: "cpl_criticos", label: "PN Criticos", tone: "red", test: i => !!i.cpl },
+    { key: "cpl_transito", label: "c/ Transito", tone: "green", test: i => !!i.cpl && (i.qty_transito || 0) > 0 },
+    { key: "cpl_stock_wmf", label: "em Stock WMF", tone: "green", test: i => !!i.cpl && (i.stock_ws || 0) > 0 },
+    { key: "cpl_con_promessa", label: "com Promessa", tone: "amber", test: i => !!i.cpl && promesaVigente(i) },
+    { key: "cpl_sin_promessa", label: "sem Promessa", tone: "red", test: i => !!i.cpl && !promesaVigente(i) },
   ];
   return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
 }
