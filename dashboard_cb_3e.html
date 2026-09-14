@@ -402,9 +402,9 @@ function getKpiDefs() {
   const otherDefs = [
     { key: "cpl_criticos", label: "PN Criticos", tone: "red", test: i => !!i.cpl },
     { key: "cpl_transito", label: "c/ Transito", tone: "green", test: i => !!i.cpl && (i.qty_transito || 0) > 0 },
-    { key: "cpl_stock_wmf", label: "em Stock WMF", tone: "green", test: i => !!i.cpl && (i.stock_ws || 0) > 0 },
-    { key: "cpl_con_promessa", label: "com Promessa", tone: "amber", test: i => !!i.cpl && promesaVigente(i) },
-    { key: "cpl_sin_promessa", label: "sem Promessa", tone: "red", test: i => !!i.cpl && !promesaVigente(i) },
+    { key: "cpl_stock_wmf", label: "em Stock WMF", tone: "green", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && (i.stock_ws || 0) > 0 },
+    { key: "cpl_con_promessa", label: "com Promessa", tone: "amber", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_ws || 0) > 0) && promesaVigente(i) },
+    { key: "cpl_sin_promessa", label: "sem Promessa", tone: "red", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_ws || 0) > 0) && !promesaVigente(i) },
   ];
   return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
 }
