@@ -440,11 +440,20 @@ function renderKpis() {
   document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
   document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
 }
+function searchBaseItems() {
+  let items = allItems;
+  const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  return items;
+}
 function renderKpiGrid(elId, defs) {
   const el = document.getElementById(elId);
   el.innerHTML = "";
+  const base = searchBaseItems();
   defs.forEach(def => {
-    const count = allItems.filter(def.test).length;
+    const count = base.filter(def.test).length;
     const card = document.createElement("button");
     card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
     card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
@@ -575,7 +584,7 @@ function renderTable() {
     if (dirty[item.pn]) tr.classList.add("row-dirty");
     let html = "";
     cols.forEach(c => { html += renderCell(item, c.key); });
-    html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button></td>`;
+    html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button> <button class="btn" onclick="clearPromise('${item.pn}')">Borrar</button></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
   });
@@ -611,6 +620,20 @@ window.markDirty = function(pn, field, value) {
   const item = allItems.find(i => i.pn === pn);
   if (item) item[field] = field === "entrega_confirmada" ? value : value;
   renderTable();
+};
+
+window.clearPromise = async function(pn) {
+  const item = allItems.find(i => i.pn === pn);
+  if (!item) return;
+  if (!confirm(`Borrar la promessa de ${pn}? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada.`)) return;
+  item.promessa_data = "";
+  item.promessa_qty = "";
+  item.entrega_confirmada = false;
+  item.data_coleta = "";
+  item.nfe_enviada = "";
+  item.qty_nfe_confirmada = "";
+  await window.saveRow(pn);
+  document.getElementById("statusText").textContent = `Promessa borrada: PN ${pn}`;
 };
 
 window.saveRow = async function(pn) {
@@ -771,8 +794,8 @@ document.getElementById("fileImport").onchange = (e) => {
   reader.readAsText(file, "UTF-8");
 };
 
-document.getElementById("searchPn").oninput = renderTable;
-document.getElementById("searchSupplier").oninput = renderTable;
+document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
+document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 
 document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
   btn.onclick = () => {
