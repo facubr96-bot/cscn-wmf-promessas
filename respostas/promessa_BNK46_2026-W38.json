@@ -3,15 +3,15 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "87332721",
+      "part_number": "87654414",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": true,
-      "data_coleta": "04/09/2026",
-      "nfe_enviada": "423818",
-      "qty_confirmada": 116,
+      "data_coleta": "09/09/2026",
+      "nfe_enviada": "423972",
+      "qty_confirmada": 100,
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T13:58:39.325Z"
+  "recibido_en_worker": "2026-09-14T14:13:15.159Z"
 }
