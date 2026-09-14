@@ -3,15 +3,15 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "495-82234",
-      "data_promessa": "09/09/2026",
-      "qty_prometida": 400,
-      "entrega_confirmada": true,
-      "data_coleta": "",
-      "nfe_enviada": "31552",
-      "qty_confirmada": null,
+      "part_number": "83903813",
+      "data_promessa": "11/09/2026",
+      "qty_prometida": 200,
+      "entrega_confirmada": false,
+      "data_coleta": "11/09/2026",
+      "nfe_enviada": "31871",
+      "qty_confirmada": 200,
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T13:56:05.447Z"
+  "recibido_en_worker": "2026-09-14T14:17:22.750Z"
 }
