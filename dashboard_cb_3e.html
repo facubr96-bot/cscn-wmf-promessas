@@ -562,7 +562,7 @@ function filteredItems() {
 function renderTable() {
   const cols = getColumns();
   const head = document.getElementById("tableHead");
-  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th>";
+  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th><th>Previsao Saida WMFBR</th>";
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -589,6 +589,7 @@ function renderTable() {
     let html = "";
     cols.forEach(c => { html += renderCell(item, c.key); });
     html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button> <button class="btn" onclick="clearPromise('${item.pn}')">Borrar</button></td>`;
+    html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
   });
@@ -655,6 +656,7 @@ window.saveRow = async function(pn) {
     data_coleta: item.data_coleta || "",
     nfe_enviada: item.nfe_enviada || "",
     qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
+    previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
     comentario: "",
   };
   const semanaAtual = (() => {
