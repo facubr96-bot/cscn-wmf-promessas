@@ -1,0 +1,17 @@
+{
+  "supplier_code": "BJD65",
+  "semana": "2026-W38",
+  "itens": [
+    {
+      "part_number": "84394057",
+      "data_promessa": "04/09/2026",
+      "qty_prometida": 11,
+      "entrega_confirmada": true,
+      "data_coleta": "04/09/2026",
+      "nfe_enviada": "147961",
+      "qty_confirmada": 11,
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-09-14T14:21:02.647Z"
+}
