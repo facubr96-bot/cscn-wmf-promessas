@@ -216,6 +216,7 @@
 
 <div id="statusBar">
   <span><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
+  <span id="releaseInfo" style="font-weight:600;"></span>
   <span id="lastUpdate"></span>
 </div>
 
@@ -410,8 +411,19 @@ function getKpiDefs() {
   return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
 }
 
+function fmtReleaseYYYYMMDD(raw) {
+  const s = String(raw || "");
+  const m = /^(\d{4})(\d{2})(\d{2})/.exec(s);
+  return m ? `${m[3]}/${m[2]}/${m[1]}` : s;
+}
+function renderReleaseInfo() {
+  const raw = plant === "cb" ? window._releaseCb : window._release3e;
+  document.getElementById("releaseInfo").textContent = raw ? `Release ${plant.toUpperCase()}: ${fmtReleaseYYYYMMDD(raw)}` : "";
+}
+
 // ---------- Render KPIs ----------
 function renderKpis() {
+  renderReleaseInfo();
   const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
@@ -780,6 +792,8 @@ async function loadData() {
     const data = await resp.json();
     allItems = Array.isArray(data) ? data : (data.items || []);
     const genAt = data.generated_at || "";
+    window._releaseCb = data.erp_release_cb || "";
+    window._release3e = data.erp_release_3e || "";
     document.getElementById("statusText").textContent = `${allItems.length} PN cargados`;
     document.getElementById("lastUpdate").textContent = genAt ? "Generado: " + genAt : "";
     loadFromUrl();
