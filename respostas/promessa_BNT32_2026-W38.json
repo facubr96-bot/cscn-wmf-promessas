@@ -1,0 +1,17 @@
+{
+  "supplier_code": "BNT32",
+  "semana": "2026-W38",
+  "itens": [
+    {
+      "part_number": "84272052",
+      "data_promessa": "09/09/2026",
+      "qty_prometida": 350,
+      "entrega_confirmada": false,
+      "data_coleta": "09/09/2026",
+      "nfe_enviada": "162533",
+      "qty_confirmada": 350,
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-09-14T14:23:39.864Z"
+}
