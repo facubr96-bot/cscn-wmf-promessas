@@ -241,11 +241,13 @@
     <span class="eyebrow">CNH INDUSTRIAL</span>
     <h1>CSCN WMF — Dashboard de Piezas</h1>
   </div>
-  <div class="plant-switch" id="plantSwitch">
-    <button data-plant="3e" class="active">Planta 3E</button>
-    <button data-plant="cb">Planta CB</button>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+    <div class="plant-switch" id="plantSwitch">
+      <button data-plant="3e" class="active">Planta 3E</button>
+      <button data-plant="cb">Planta CB</button>
+    </div>
+    <button class="btn" id="btnRawView">Ver CSCN em bruto</button>
   </div>
-  <button class="btn" id="btnRawView" style="margin-left:12px;">Ver CSCN em bruto</button>
 </header>
 
 <div class="modal-overlay" id="rawModalOverlay" style="display:none;">
