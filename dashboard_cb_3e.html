@@ -517,9 +517,6 @@ function getColumns() {
     { key: "cum_rec_3e", label: "Cum Rec 3E" },
     { key: "cpl", label: "CPL" },
     { key: "entrega_confirmada", label: "Confirmo" },
-    { key: "data_coleta", label: "Data Coleta" },
-    { key: "nfe_enviada", label: "NFe" },
-    { key: "qty_nfe_confirmada", label: "Qty NFe (conf.)" },
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
     { key: "early_pickup_date", label: "Early Pickup" },
@@ -566,7 +563,7 @@ function filteredItems() {
 function renderTable() {
   const cols = getColumns();
   const head = document.getElementById("tableHead");
-  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th><th>Previsao Saida WMFBR</th>";
+  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th>" + (plant === "3e" ? "<th>Data Coleta</th><th>NFe</th><th>Qty NFe (conf.)</th>" : "") + "<th>Previsao Saida WMFBR</th>";
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -593,6 +590,11 @@ function renderTable() {
     let html = "";
     cols.forEach(c => { html += renderCell(item, c.key); });
     html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button> <button class="btn" onclick="clearPromise('${item.pn}')">Borrar</button></td>`;
+    if (plant === "3e") {
+      html += renderCell(item, "data_coleta");
+      html += renderCell(item, "nfe_enviada");
+      html += renderCell(item, "qty_nfe_confirmada");
+    }
     html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
