@@ -1,0 +1,18 @@
+{
+  "supplier_code": "BKM21",
+  "semana": "2026-W38",
+  "itens": [
+    {
+      "part_number": "87302102",
+      "data_promessa": "16/09/2026",
+      "qty_prometida": 5,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-09-15T16:31:14.645Z"
+}
