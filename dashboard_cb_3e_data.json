@@ -1,5 +1,5 @@
 {
-  "generated_at": "15/09/2026 12:21",
+  "generated_at": "15/09/2026 12:27",
   "today": "15/09/2026",
   "total_pn": 1985,
   "erp_release_cb": "20260909",
@@ -247,7 +247,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -10222,7 +10222,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -11132,7 +11132,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -11202,7 +11202,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -13757,7 +13757,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -13792,7 +13792,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -14982,7 +14982,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -15717,7 +15717,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -15787,7 +15787,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -16732,7 +16732,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -17047,7 +17047,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -17117,7 +17117,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -17782,7 +17782,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -18447,7 +18447,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -18867,7 +18867,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -18937,7 +18937,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -18972,7 +18972,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -19007,7 +19007,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -19042,7 +19042,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -19497,7 +19497,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -20127,7 +20127,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -21492,7 +21492,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -21807,7 +21807,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -22262,7 +22262,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -22612,7 +22612,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -22647,7 +22647,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -22682,7 +22682,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -22717,7 +22717,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -24047,7 +24047,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -24082,7 +24082,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -25797,7 +25797,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -25832,7 +25832,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -26287,7 +26287,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -26322,7 +26322,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -26952,7 +26952,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -27022,7 +27022,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -27057,7 +27057,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -27092,7 +27092,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -27372,7 +27372,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28142,7 +28142,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28177,7 +28177,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28212,7 +28212,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28247,7 +28247,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28282,7 +28282,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -28317,7 +28317,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -29332,7 +29332,7 @@
       "order_release_info": "PUR - CNHILA.C10899024",
       "shipment_code": "CNHILA.26400969",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -29507,7 +29507,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -29927,7 +29927,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -31397,7 +31397,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -31432,7 +31432,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -31467,7 +31467,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -31502,7 +31502,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -32832,7 +32832,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -33952,7 +33952,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -34057,7 +34057,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -34337,7 +34337,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -34512,7 +34512,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -34582,7 +34582,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -34652,7 +34652,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -36437,7 +36437,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -37487,7 +37487,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -37627,7 +37627,7 @@
       "order_release_info": "PUR - CNHILA.C10899024",
       "shipment_code": "CNHILA.26400969",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -38572,7 +38572,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -40182,7 +40182,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -40532,7 +40532,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -40987,7 +40987,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -41022,7 +41022,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -44872,7 +44872,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -46412,7 +46412,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -48617,7 +48617,7 @@
       "order_release_info": "PUR - CNHILA.C10899024",
       "shipment_code": "CNHILA.26400969",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -48932,7 +48932,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -49352,7 +49352,7 @@
       "order_release_info": "PUR - CNHILA.C10898664",
       "shipment_code": "CNHILA.26400823",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -52607,7 +52607,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -53307,7 +53307,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -55652,7 +55652,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -56002,7 +56002,7 @@
       "order_release_info": "PUR - CNHILA.C10899024",
       "shipment_code": "CNHILA.26400969",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -57087,7 +57087,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -57367,7 +57367,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58032,7 +58032,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58382,7 +58382,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58417,7 +58417,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58592,7 +58592,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58802,7 +58802,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58837,7 +58837,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -58872,7 +58872,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59187,7 +59187,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59222,7 +59222,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59257,7 +59257,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59292,7 +59292,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59362,7 +59362,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -59607,7 +59607,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -60342,7 +60342,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -60377,7 +60377,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -60552,7 +60552,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -60902,7 +60902,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61007,7 +61007,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61042,7 +61042,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61077,7 +61077,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61112,7 +61112,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61147,7 +61147,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -61917,7 +61917,7 @@
       "order_release_info": "PUN - CNHILA.L12639535",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -62127,7 +62127,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -62652,7 +62652,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -62792,7 +62792,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63002,7 +63002,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63177,7 +63177,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63212,7 +63212,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63247,7 +63247,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63282,7 +63282,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63317,7 +63317,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63737,7 +63737,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -63772,7 +63772,7 @@
       "order_release_info": "PUN - CNHILA.L12629991",
       "shipment_code": "CNHILA.26400863",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -64402,7 +64402,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -65137,7 +65137,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -65172,7 +65172,7 @@
       "order_release_info": "PUN - CNHILA.L12639531",
       "shipment_code": "CNHILA.26400862",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -65942,7 +65942,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -65977,7 +65977,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -66082,7 +66082,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -66152,7 +66152,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -66467,7 +66467,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -66537,7 +66537,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -66572,7 +66572,7 @@
       "order_release_info": "PUN - CNHILA.L12639526",
       "shipment_code": "CNHILA.26400807",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67272,7 +67272,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67307,7 +67307,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67342,7 +67342,7 @@
       "order_release_info": "PUN - CNHILA.L12639517",
       "shipment_code": "CNHILA.26400922",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67657,7 +67657,7 @@
       "order_release_info": "PUN - CNHILA.L12639518",
       "shipment_code": "CNHILA.26400914",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67937,7 +67937,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
@@ -67972,7 +67972,7 @@
       "order_release_info": "PUN - CNHILA.L12639536",
       "shipment_code": "CNHILA.26400873",
       "destino_shipment": "MCP TRANSPORTES RODOVIARIOS LTDA",
-      "status_p44": "En Transito",
+      "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": ""
     },
     {
