@@ -1,5 +1,5 @@
 {
-  "generated_at": "15/09/2026 13:35",
+  "generated_at": "15/09/2026 13:41",
   "today": "15/09/2026",
   "total_pn": 1985,
   "erp_release_cb": "20260909",
@@ -30991,8 +30991,8 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
-      "promessa_data": "",
-      "promessa_qty": 0.0,
+      "promessa_data": "16/09/2026",
+      "promessa_qty": 12.0,
       "qty_confirmada": 0.0,
       "previsao_saida_wmfbr": "",
       "cum_rec_cb": 180.0,
