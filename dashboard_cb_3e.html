@@ -337,7 +337,7 @@ function inRunoutCriticoWindow(item) {
 function commonVals(item) {
   return {
     transitQty: item.qty_transito || 0,
-    stockQty: plant === "cb" ? (item.stock_ws || 0) : (item.stock_b1cb || 0),
+    stockQty: item.stock_b1cb || 0, // SAP unicamente - no mezclar con stock_ws (dim_stock/WS)
     promiseQty: item.promessa_qty || 0,
   };
 }
@@ -522,6 +522,9 @@ function getColumns() {
     { key: "qty_nfe_confirmada", label: "Qty NFe (conf.)" },
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
+    { key: "early_pickup_date", label: "Early Pickup" },
+    { key: "order_release_info", label: "Order Release / Shipment" },
+    { key: "destino_shipment", label: "Destino Shipment" },
   ];
   const plantCb = [
     { key: "stock_b1cb", label: "Stock SAP" },
@@ -616,6 +619,8 @@ function renderCell(item, key) {
       return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
     case "fc_transito":
       return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
+    case "order_release_info":
+      return `<td class="truncate" title="${(v || "") + (item.shipment_code ? " | " + item.shipment_code : "")}">${v || ""}${item.shipment_code ? " | " + item.shipment_code : ""}</td>`;
     case "qty_nfe_stock":
       return `<td>${v ?? item.stock_ws ?? ""}</td>`;
     default:
