@@ -340,21 +340,6 @@ function inRunoutCriticoWindow(item) {
   const b = runoutBucket(item);
   return b === "Run Out vencido" || b.startsWith("RO resto");
 }
-function computeBalances(item) {
-  // Cascada: el transito cubre Past Due primero; si sobra, cubre Firm Set;
-  // si todavia sobra, cubre Firm Out. Cada "balance" puede dar negativo
-  // (= cubierto con excedente que paso al siguiente bucket).
-  let transito = item.qty_transito || 0;
-  const pd = item.wmf_qty_past_due || 0;
-  const fs = item.wmf_qty_firm_current_month || 0;
-  const fo = item.wmf_qty_firm_next_month || 0;
-  const pdBalance = pd - transito;
-  transito = Math.max(0, transito - pd);
-  const fsBalance = fs - transito;
-  transito = Math.max(0, transito - fs);
-  const foBalance = fo - transito;
-  return { pdBalance, fsBalance, foBalance };
-}
 function commonVals(item) {
   return {
     transitQty: item.qty_transito || 0,
@@ -533,11 +518,8 @@ function getColumns() {
     { key: "nfe_stock_ws", label: "NFe Estoque" },
     { key: "qty_transito", label: "Transito" },
     { key: "wmf_qty_past_due", label: "Past Due" },
-    { key: "past_due_balance", label: "Past Due Balance" },
     { key: "wmf_qty_firm_current_month", label: "Firm Set" },
-    { key: "firm_set_balance", label: "Firm Set Balance" },
     { key: "wmf_qty_firm_next_month", label: "Firm Out" },
-    { key: "firm_out_balance", label: "Firm Out Balance" },
     { key: "cum_rec_3e", label: "Cum Rec 3E" },
     { key: "ultima_nfe_3e", label: "Last Packing List 3E" },
     { key: "cpl", label: "CPL" },
@@ -562,6 +544,8 @@ function getColumns() {
     { key: "cor_qty_firm_next_month", label: "Firm Out" },
     { key: "wmf_qty_past_due", label: "WMF Past Due" },
     { key: "cum_rec_cb", label: "Cum Rec CB" },
+    { key: "past_due_balance_cb", label: "Past Due Balance" },
+    { key: "balance_cb", label: "Balance" },
     { key: "ultima_nfe_cb", label: "Last Packing List CB" },
     { key: "nfe_stock_ws", label: "NFe Estoque" },
     { key: "qty_nfe_stock", label: "Qty NFe (stock)" },
@@ -648,17 +632,13 @@ function renderCell(item, key) {
   switch (key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
-    case "past_due_balance": {
-      const { pdBalance } = computeBalances(item);
-      return `<td style="color:${pdBalance > 0 ? 'var(--red)' : 'var(--green)'}">${pdBalance}</td>`;
+    case "past_due_balance_cb": {
+      const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
+      return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
     }
-    case "firm_set_balance": {
-      const { fsBalance } = computeBalances(item);
-      return `<td style="color:${fsBalance > 0 ? 'var(--red)' : 'var(--green)'}">${fsBalance}</td>`;
-    }
-    case "firm_out_balance": {
-      const { foBalance } = computeBalances(item);
-      return `<td style="color:${foBalance > 0 ? 'var(--red)' : 'var(--green)'}">${foBalance}</td>`;
+    case "balance_cb": {
+      const bal = (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0);
+      return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
     }
     case "ultima_nfe_3e": {
       const clean = String(v || "").split("-")[0].replace(/^0+(?=\d)/, "");
@@ -837,17 +817,31 @@ function normalizeBoolFlexible(s) {
   return ["sim", "yes", "true", "1", "x", "si"].includes(t);
 }
 
+function exportValue(item, key) {
+  switch (key) {
+    case "cpl": return item.cpl ? "Sim" : "Nao";
+    case "entrega_confirmada": return item.entrega_confirmada ? "Sim" : "Nao";
+    case "status_p44": return item.status_p44 || "-";
+    case "ultima_nfe_3e": return String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
+    case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0);
+    case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
+    default: return item[key] ?? "";
+  }
+}
+
 document.getElementById("btnExport").onclick = () => {
   const items = filteredItems();
-  const headers = ["PN","Supplier","Promessa Data","Promessa Qty","Confirmar Entrega","Data Coleta","NFe Enviada","Qty Entregada"];
+  const cols = getColumns();
+  const headers = cols.map(c => c.label);
+  if (plant === "3e") headers.push("Data Coleta", "NFe", "Qty NFe (conf.)");
+  headers.push("Previsao Saida WMFBR");
   const lines = [headers.join(";")];
   items.forEach(i => {
-    lines.push([
-      i.pn, i.supplier_name || i.supplier_code || "",
-      i.promessa_data || "", i.promessa_qty ?? "",
-      i.entrega_confirmada ? "Sim" : "Nao",
-      i.data_coleta || "", i.nfe_enviada || "", i.qty_nfe_confirmada ?? "",
-    ].map(csvEscape).join(";"));
+    const row = cols.map(c => exportValue(i, c.key));
+    if (plant === "3e") row.push(i.data_coleta || "", i.nfe_enviada || "", i.qty_nfe_confirmada ?? "");
+    row.push(i.previsao_saida_wmfbr || "");
+    lines.push(row.map(csvEscape).join(";"));
   });
   const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");
@@ -876,6 +870,7 @@ document.getElementById("fileImport").onchange = (e) => {
       const colColeta = findCol(["datacoleta", "coleta"]);
       const colNfe = findCol(["nfeenviada", "nfe"]);
       const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue"]);
+      const colPrevisao = findCol(["previsaosaidawmfbr", "previsaosaida", "saidawmfbr"]);
       if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
 
       let updated = 0, notFound = 0;
@@ -891,6 +886,7 @@ document.getElementById("fileImport").onchange = (e) => {
         if (colColeta >= 0) { const d = normalizeDateFlexible(cells[colColeta]); if (d) item.data_coleta = d; }
         if (colNfe >= 0 && cells[colNfe]) item.nfe_enviada = cells[colNfe];
         if (colQtyConf >= 0) { const q = normalizeQtyFlexible(cells[colQtyConf]); if (q !== "") item.qty_nfe_confirmada = Number(q); }
+        if (colPrevisao >= 0) { const d = normalizeDateFlexible(cells[colPrevisao]); if (d) item.previsao_saida_wmfbr = d; }
         dirty[pn] = dirty[pn] || {};
         updated++;
       }
