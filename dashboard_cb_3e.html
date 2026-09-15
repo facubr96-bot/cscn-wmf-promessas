@@ -621,6 +621,10 @@ function renderCell(item, key) {
   switch (key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "ultima_nfe_3e": {
+      const clean = String(v || "").split("-")[0].replace(/^0+(?=\d)/, "");
+      return `<td>${clean}</td>`;
+    }
     case "status_p44": {
       const cls = v === "Completed" ? "badge-green" : v === "En Transito" ? "badge-amber" : v === "Aguardando Coleta" ? "badge-gray" : "badge-gray";
       return `<td><span class="badge ${cls}">${v || "-"}</span></td>`;
