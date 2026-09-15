@@ -206,6 +206,32 @@
 
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 5px; }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.55);
+    z-index: 1000; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-content {
+    background: var(--white); width: 92vw; height: 88vh; border-radius: var(--radius);
+    display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.4);
+  }
+  .modal-header {
+    background: var(--black); color: var(--white); padding: 12px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 3px solid var(--red);
+  }
+  .modal-header h2 { margin: 0; font-size: 15px; }
+  .modal-toolbar { display: flex; gap: 8px; padding: 10px 18px; border-bottom: 1px solid var(--gray-300); align-items: center; }
+  .modal-toolbar input { padding: 7px 10px; border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 12px; }
+  .modal-body { flex: 1; overflow: auto; padding: 0 18px 18px; }
+  .modal-body table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  .modal-body thead th {
+    position: sticky; top: 0; background: var(--gray-900); color: var(--white);
+    padding: 7px 8px; text-align: left; white-space: nowrap; cursor: pointer;
+  }
+  .modal-body tbody td { padding: 5px 8px; border-bottom: 1px solid var(--gray-100); white-space: nowrap; }
+  .modal-body tbody tr:hover { background: #fafafa; }
+  .badge-pastdue { color: var(--red); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -219,7 +245,25 @@
     <button data-plant="3e" class="active">Planta 3E</button>
     <button data-plant="cb">Planta CB</button>
   </div>
+  <button class="btn" id="btnRawView" style="margin-left:12px;">Ver CSCN em bruto</button>
 </header>
+
+<div class="modal-overlay" id="rawModalOverlay" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="rawModalTitle">CSCN em bruto</h2>
+      <button class="btn" id="btnCloseRawModal">Fechar ✕</button>
+    </div>
+    <div class="modal-toolbar">
+      <input type="text" id="rawSearchPn" placeholder="Buscar PN...">
+      <input type="text" id="rawSearchSupplier" placeholder="Buscar proveedor...">
+      <span class="count" id="rawRowCount"></span>
+    </div>
+    <div class="modal-body" id="rawModalBody">
+      <div class="empty-state">Cargando...</div>
+    </div>
+  </div>
+</div>
 
 <div id="statusBar">
   <span><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
@@ -949,6 +993,96 @@ tableWrapEl.addEventListener("scroll", () => {
   topScrollWrap.scrollLeft = tableWrapEl.scrollLeft;
   _syncingScroll = false;
 });
+
+// ---------- Modal "Ver CSCN em bruto" ----------
+const RAW_DATA_URL = "dashboard_cb_3e_raw_lines.json";
+let rawLinesCache = null;
+let rawSortCol = null, rawSortDir = 1;
+
+const RAW_COLS = [
+  { key: "plant_code", label: "PLANT_CODE" },
+  { key: "supplier_code", label: "SUPPLIER_CODE" },
+  { key: "supplier_name", label: "SUPP_NAME" },
+  { key: "pn", label: "PART_NUMBER" },
+  { key: "pn_description", label: "PART_DESCR" },
+  { key: "po_number", label: "PO_NUMBER" },
+  { key: "snapshot_date", label: "RELEASE_DATE" },
+  { key: "dod_date", label: "DOD_DATE" },
+  { key: "ship_date", label: "SHIP_DATE" },
+  { key: "status_ship_date", label: "QUANTITY_TYPE" },
+  { key: "qty_due", label: "QUANTITY_DUE" },
+  { key: "cum_requirement_qty", label: "CUMULATIVE_QTY" },
+  { key: "cum_receipt_qty", label: "CUM_REC_QTY" },
+  { key: "ultima_nfe", label: "LAST_RECEIPT_PACKLIST" },
+];
+
+async function openRawModal() {
+  document.getElementById("rawModalOverlay").style.display = "flex";
+  document.getElementById("rawModalTitle").textContent = `CSCN em bruto — Planta ${plant.toUpperCase()}`;
+  if (!rawLinesCache) {
+    document.getElementById("rawModalBody").innerHTML = '<div class="empty-state">Cargando...</div>';
+    try {
+      const resp = await fetch(RAW_DATA_URL + "?t=" + Date.now());
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      const data = await resp.json();
+      rawLinesCache = Array.isArray(data) ? data : (data.items || data.lines || []);
+    } catch (e) {
+      document.getElementById("rawModalBody").innerHTML = `<div class="empty-state">Error cargando: ${e.message}. (El archivo dashboard_cb_3e_raw_lines.json puede que todavia no este publicado.)</div>`;
+      return;
+    }
+  }
+  renderRawTable();
+}
+
+function rawFilteredItems() {
+  const wantedArea = plant === "cb" ? "COR_WMFBR" : "B1CB_PROVEEDOR";
+  let items = (rawLinesCache || []).filter(r => r.source_area === wantedArea);
+  const pnQ = document.getElementById("rawSearchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("rawSearchSupplier").value.trim().toLowerCase();
+  if (pnQ) items = items.filter(r => String(r.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(r => String(r.supplier_name || "").toLowerCase().includes(supQ) || String(r.supplier_code || "").toLowerCase().includes(supQ));
+  if (rawSortCol) {
+    items = [...items].sort((a, b) => {
+      const av = a[rawSortCol] ?? "", bv = b[rawSortCol] ?? "";
+      if (typeof av === "number" || typeof bv === "number") return (av - bv) * rawSortDir;
+      return String(av).localeCompare(String(bv)) * rawSortDir;
+    });
+  }
+  return items;
+}
+
+function renderRawTable() {
+  const items = rawFilteredItems();
+  document.getElementById("rawRowCount").textContent = `${items.length} lineas`;
+  const headHtml = RAW_COLS.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("");
+  let bodyHtml = "";
+  items.forEach(r => {
+    bodyHtml += "<tr>" + RAW_COLS.map(c => {
+      const v = r[c.key] ?? "";
+      const cls = c.key === "status_ship_date" && v === "Past Due" ? ' class="badge-pastdue"' : "";
+      return `<td${cls}>${v}</td>`;
+    }).join("") + "</tr>";
+  });
+  document.getElementById("rawModalBody").innerHTML = `
+    <table><thead><tr>${headHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>
+    ${items.length === 0 ? '<div class="empty-state">Ningun registro encontrado.</div>' : ""}
+  `;
+  document.querySelectorAll("#rawModalBody th[data-col]").forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.col;
+      rawSortDir = rawSortCol === col ? -rawSortDir : 1;
+      rawSortCol = col;
+      renderRawTable();
+    };
+  });
+}
+
+document.getElementById("btnRawView").onclick = openRawModal;
+document.getElementById("btnCloseRawModal").onclick = () => {
+  document.getElementById("rawModalOverlay").style.display = "none";
+};
+document.getElementById("rawSearchPn").oninput = renderRawTable;
+document.getElementById("rawSearchSupplier").oninput = renderRawTable;
 
 loadData();
 </script>
