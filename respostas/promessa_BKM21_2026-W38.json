@@ -3,7 +3,7 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "47568404",
+      "part_number": "84556758",
       "data_promessa": "17/09/2026",
       "qty_prometida": 150,
       "entrega_confirmada": false,
@@ -14,5 +14,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-15T19:11:49.173Z"
+  "recibido_en_worker": "2026-09-15T19:11:50.438Z"
 }
