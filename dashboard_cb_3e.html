@@ -195,6 +195,8 @@
   .qty-input { width: 70px; }
 
   .table-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); }
+  .top-scroll-wrap { overflow-x: auto; overflow-y: hidden; height: 16px; margin-bottom: 2px; }
+  .top-scroll-inner { height: 1px; }
 
   .empty-state { padding: 40px; text-align: center; color: var(--gray-500); }
 
@@ -271,7 +273,8 @@
     <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
   </div>
 
-  <div class="table-wrap">
+  <div class="top-scroll-wrap" id="topScrollWrap"><div class="top-scroll-inner" id="topScrollInner"></div></div>
+  <div class="table-wrap" id="tableWrap">
     <table id="mainTable">
       <thead><tr id="tableHead"></tr></thead>
       <tbody id="tableBody"></tbody>
@@ -599,6 +602,14 @@ function renderTable() {
     tr.innerHTML = html;
     body.appendChild(tr);
   });
+  syncTopScroll();
+}
+
+function syncTopScroll() {
+  const wrap = document.getElementById("tableWrap");
+  const table = document.getElementById("mainTable");
+  const topInner = document.getElementById("topScrollInner");
+  topInner.style.width = table.scrollWidth + "px";
 }
 
 function renderCell(item, key) {
@@ -847,6 +858,22 @@ async function loadData() {
     document.getElementById("statusText").textContent = "Error cargando datos: " + e.message;
   }
 }
+const topScrollWrap = document.getElementById("topScrollWrap");
+const tableWrapEl = document.getElementById("tableWrap");
+let _syncingScroll = false;
+topScrollWrap.addEventListener("scroll", () => {
+  if (_syncingScroll) return;
+  _syncingScroll = true;
+  tableWrapEl.scrollLeft = topScrollWrap.scrollLeft;
+  _syncingScroll = false;
+});
+tableWrapEl.addEventListener("scroll", () => {
+  if (_syncingScroll) return;
+  _syncingScroll = true;
+  topScrollWrap.scrollLeft = tableWrapEl.scrollLeft;
+  _syncingScroll = false;
+});
+
 loadData();
 </script>
 </body>
