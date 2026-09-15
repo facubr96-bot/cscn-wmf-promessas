@@ -1,5 +1,5 @@
 {
-  "generated_at": "15/09/2026 07:01",
+  "generated_at": "15/09/2026 07:21",
   "today": "15/09/2026",
   "total_pn": 1985,
   "erp_release_cb": "20260909",
@@ -731,8 +731,8 @@
       "stock_ws": 1200.0,
       "nfe_stock_ws": "31558",
       "qty_transito": 1200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "10902124",
@@ -1028,8 +1028,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "11106621",
@@ -1136,8 +1136,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "11112121",
@@ -1487,8 +1487,8 @@
       "stock_ws": 160.0,
       "nfe_stock_ws": "31552 + 31710",
       "qty_transito": 160.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "11126521",
@@ -1514,8 +1514,8 @@
       "stock_ws": 140.0,
       "nfe_stock_ws": "31542 + 31543",
       "qty_transito": 140.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "11191777",
@@ -1649,8 +1649,8 @@
       "stock_ws": 800.0,
       "nfe_stock_ws": "31712",
       "qty_transito": 800.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "11254134",
@@ -1811,8 +1811,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31561",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "1186238",
@@ -2270,8 +2270,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "120098",
@@ -2324,8 +2324,8 @@
       "stock_ws": 2000.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 2000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "120101",
@@ -2351,8 +2351,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "120103",
@@ -2378,8 +2378,8 @@
       "stock_ws": 3000.0,
       "nfe_stock_ws": "31553 + 31557",
       "qty_transito": 3000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "120104",
@@ -2621,8 +2621,8 @@
       "stock_ws": 800.0,
       "nfe_stock_ws": "31552 + 31557",
       "qty_transito": 800.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12164711",
@@ -2648,8 +2648,8 @@
       "stock_ws": 919.0,
       "nfe_stock_ws": "31550 + 31710",
       "qty_transito": 827.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12574511",
@@ -2675,8 +2675,8 @@
       "stock_ws": 393.0,
       "nfe_stock_ws": "31560",
       "qty_transito": 393.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12577211",
@@ -2837,8 +2837,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31557",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12638621",
@@ -2999,8 +2999,8 @@
       "stock_ws": 1400.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 1400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12646701",
@@ -3026,8 +3026,8 @@
       "stock_ws": 2000.0,
       "nfe_stock_ws": "31551",
       "qty_transito": 2000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12646704",
@@ -3107,8 +3107,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "12647601",
@@ -3242,8 +3242,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31709",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "13000490",
@@ -3485,8 +3485,8 @@
       "stock_ws": 84.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 84.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "13276221",
@@ -3512,8 +3512,8 @@
       "stock_ws": 1868.0,
       "nfe_stock_ws": "31711",
       "qty_transito": 1868.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "134084",
@@ -3755,8 +3755,8 @@
       "stock_ws": 585.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 585.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "140083",
@@ -4862,8 +4862,8 @@
       "stock_ws": 1200.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 1200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "14496901",
@@ -4889,8 +4889,8 @@
       "stock_ws": 600.0,
       "nfe_stock_ws": "31711",
       "qty_transito": 600.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "14496931",
@@ -5159,8 +5159,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31548 + 31557",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15541921",
@@ -5240,8 +5240,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15861321",
@@ -5321,8 +5321,8 @@
       "stock_ws": 4000.0,
       "nfe_stock_ws": "31712",
       "qty_transito": 4000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15970321",
@@ -5348,8 +5348,8 @@
       "stock_ws": 500.0,
       "nfe_stock_ws": "31542",
       "qty_transito": 500.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15970521",
@@ -5483,8 +5483,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31560",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15977921",
@@ -5780,8 +5780,8 @@
       "stock_ws": 250.0,
       "nfe_stock_ws": "31551 + 31560",
       "qty_transito": 250.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "15985234",
@@ -5861,8 +5861,8 @@
       "stock_ws": 3000.0,
       "nfe_stock_ws": "31553 + 31557",
       "qty_transito": 3000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "16043421",
@@ -5942,8 +5942,8 @@
       "stock_ws": 64.0,
       "nfe_stock_ws": "31552",
       "qty_transito": 64.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "16044021",
@@ -6104,8 +6104,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31552 + 31557",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "16051121",
@@ -6131,8 +6131,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31557 + 31559",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "16100814",
@@ -6266,8 +6266,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31542 + 31551",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "16288324",
@@ -6725,8 +6725,8 @@
       "stock_ws": 1146.0,
       "nfe_stock_ws": "31712",
       "qty_transito": 1146.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "300852",
@@ -6806,8 +6806,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 40.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "309308",
@@ -6914,8 +6914,8 @@
       "stock_ws": 1903.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 1903.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "324467A1",
@@ -7211,8 +7211,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "31551",
       "qty_transito": 40.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "354775",
@@ -7481,8 +7481,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31712",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "378056",
@@ -7832,8 +7832,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "388443",
@@ -7994,8 +7994,8 @@
       "stock_ws": 74.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 74.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "394629",
@@ -8534,8 +8534,8 @@
       "stock_ws": 2000.0,
       "nfe_stock_ws": "31555",
       "qty_transito": 2000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "413984A1",
@@ -8804,8 +8804,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "43129",
@@ -8831,8 +8831,8 @@
       "stock_ws": 800.0,
       "nfe_stock_ws": "31541",
       "qty_transito": 800.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "43130",
@@ -8858,8 +8858,8 @@
       "stock_ws": 450.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 450.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "43133",
@@ -8966,8 +8966,8 @@
       "stock_ws": 1240.0,
       "nfe_stock_ws": "31547 + 31559",
       "qty_transito": 840.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "43167",
@@ -8993,8 +8993,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "43188",
@@ -9209,8 +9209,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 80.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "434640",
@@ -9668,8 +9668,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "263250",
       "qty_transito": 20.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47361681",
@@ -9857,8 +9857,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "263250",
       "qty_transito": 20.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47384439",
@@ -11018,8 +11018,8 @@
       "stock_ws": 26.0,
       "nfe_stock_ws": "172501",
       "qty_transito": 26.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47503223",
@@ -11099,8 +11099,8 @@
       "stock_ws": 43.0,
       "nfe_stock_ws": "172500",
       "qty_transito": 43.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47519016",
@@ -11126,8 +11126,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "263250",
       "qty_transito": 80.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47532475",
@@ -11774,8 +11774,8 @@
       "stock_ws": 70.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 70.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47601329",
@@ -11882,8 +11882,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47606561",
@@ -12989,8 +12989,8 @@
       "stock_ws": 8.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 8.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "47760871",
@@ -13070,8 +13070,8 @@
       "stock_ws": 120.0,
       "nfe_stock_ws": "443875",
       "qty_transito": 120.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47762146",
@@ -13097,8 +13097,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "443875",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47763583",
@@ -13745,8 +13745,8 @@
       "stock_ws": 93.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 93.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "47821777",
@@ -14204,8 +14204,8 @@
       "stock_ws": 4500.0,
       "nfe_stock_ws": "31541 + 31550",
       "qty_transito": 3000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "47873275",
@@ -14609,8 +14609,8 @@
       "stock_ws": 60.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 120.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "47910880",
@@ -16580,8 +16580,8 @@
       "stock_ws": 22.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 42.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "48094430",
@@ -16796,8 +16796,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31552",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48116615",
@@ -16823,8 +16823,8 @@
       "stock_ws": 15.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 95.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "48116617",
@@ -17039,8 +17039,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48133222",
@@ -17093,8 +17093,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48133443",
@@ -17120,8 +17120,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "263250",
       "qty_transito": 40.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48133543",
@@ -17579,8 +17579,8 @@
       "stock_ws": 24.0,
       "nfe_stock_ws": "177203",
       "qty_transito": 36.0,
-      "fc_transito": "WMF-003283",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003283 + WMF-003301",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "48163029",
@@ -18146,8 +18146,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "39311",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48179528",
@@ -18173,8 +18173,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "39311",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "48182269",
@@ -18605,8 +18605,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "39311",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "4892925",
@@ -18848,8 +18848,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "495-81162",
@@ -18902,8 +18902,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31552",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "4994066",
@@ -19010,8 +19010,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31558",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "4994071",
@@ -19118,8 +19118,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "5085797",
@@ -19874,8 +19874,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "39311",
       "qty_transito": 80.0,
-      "fc_transito": "WMF-003289",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003289 + WMF-003301",
+      "data_inicio_transito": "09/09/2026"
     },
     {
       "pn": "51475463",
@@ -20171,8 +20171,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 20.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51483216",
@@ -20198,8 +20198,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51483493",
@@ -20252,8 +20252,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 20.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "51496027",
@@ -20846,8 +20846,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "90182",
       "qty_transito": 40.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51549221",
@@ -20873,8 +20873,8 @@
       "stock_ws": 56.0,
       "nfe_stock_ws": "90181",
       "qty_transito": 56.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51549223",
@@ -21521,8 +21521,8 @@
       "stock_ws": 59.0,
       "nfe_stock_ws": "177203",
       "qty_transito": 59.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51599644",
@@ -21548,8 +21548,8 @@
       "stock_ws": 21.0,
       "nfe_stock_ws": "177203",
       "qty_transito": 21.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "51599646",
@@ -21926,8 +21926,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "222977 + 223139",
       "qty_transito": 80.0,
-      "fc_transito": "WMF-003298",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003298 + WMF-003301",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "51679790",
@@ -22007,8 +22007,8 @@
       "stock_ws": 36.0,
       "nfe_stock_ws": "177203",
       "qty_transito": 72.0,
-      "fc_transito": "WMF-003288",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003288 + WMF-003301",
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "51679799",
@@ -23006,8 +23006,8 @@
       "stock_ws": 5.0,
       "nfe_stock_ws": "31555",
       "qty_transito": 5.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "5199608",
@@ -23654,8 +23654,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31541 + 31554",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "81870144",
@@ -23735,8 +23735,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "31558",
       "qty_transito": 80.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "82001040",
@@ -23762,8 +23762,8 @@
       "stock_ws": 600.0,
       "nfe_stock_ws": "31542",
       "qty_transito": 600.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "82001205",
@@ -24113,8 +24113,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31561",
       "qty_transito": 200.0,
-      "fc_transito": "WMF-003284",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003284 + WMF-003301",
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "82024272",
@@ -24167,8 +24167,8 @@
       "stock_ws": 120.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 120.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "82025437",
@@ -24626,8 +24626,8 @@
       "stock_ws": 60.0,
       "nfe_stock_ws": "241444 + 242190",
       "qty_transito": 20.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "82039343",
@@ -24842,8 +24842,8 @@
       "stock_ws": 800.0,
       "nfe_stock_ws": "31712",
       "qty_transito": 800.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "82880748",
@@ -25058,8 +25058,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "19335",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "82991975",
@@ -25220,8 +25220,8 @@
       "stock_ws": 300.0,
       "nfe_stock_ws": "31558",
       "qty_transito": 510.0,
-      "fc_transito": "WMF-003284",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003284 + WMF-003301",
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "83904573",
@@ -25463,8 +25463,8 @@
       "stock_ws": 95.0,
       "nfe_stock_ws": "31549 + 31559 + 31710",
       "qty_transito": 45.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "83925884",
@@ -25544,8 +25544,8 @@
       "stock_ws": 1200.0,
       "nfe_stock_ws": "31541 + 31558",
       "qty_transito": 1200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "83935046",
@@ -26489,8 +26489,8 @@
       "stock_ws": 24.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 38.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "84072793",
@@ -26624,8 +26624,8 @@
       "stock_ws": 48.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 50.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "84076425",
@@ -26759,8 +26759,8 @@
       "stock_ws": 22.0,
       "nfe_stock_ws": "242342 + 242343",
       "qty_transito": 22.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84121138",
@@ -27002,8 +27002,8 @@
       "stock_ws": 380.0,
       "nfe_stock_ws": "31549 + 31559 + 31560",
       "qty_transito": 330.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84145763",
@@ -27245,8 +27245,8 @@
       "stock_ws": 38.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 38.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84165836",
@@ -27623,8 +27623,8 @@
       "stock_ws": 1.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 1.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84219375",
@@ -27758,8 +27758,8 @@
       "stock_ws": 60.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 60.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84236803",
@@ -28163,8 +28163,8 @@
       "stock_ws": 4.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 4.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84288671",
@@ -29000,8 +29000,8 @@
       "stock_ws": 26.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 26.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84367743",
@@ -29162,8 +29162,8 @@
       "stock_ws": 47.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 47.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "84382750",
@@ -29513,8 +29513,8 @@
       "stock_ws": 64.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 64.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "84391408",
@@ -29648,8 +29648,8 @@
       "stock_ws": 11.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 11.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84398273",
@@ -30215,8 +30215,8 @@
       "stock_ws": 70.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 70.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84439102",
@@ -30323,8 +30323,8 @@
       "stock_ws": 320.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 320.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84443588",
@@ -30458,8 +30458,8 @@
       "stock_ws": 10.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 10.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84472825",
@@ -30512,8 +30512,8 @@
       "stock_ws": 2.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 92.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "84480445",
@@ -31484,8 +31484,8 @@
       "stock_ws": 60.0,
       "nfe_stock_ws": "372368",
       "qty_transito": 60.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84574342",
@@ -31593,7 +31593,7 @@
       "nfe_stock_ws": "15546 + 15592",
       "qty_transito": 78.0,
       "fc_transito": "WMF-003280 + WMF-003285 + WMF-003293",
-      "data_inicio_transito": "01/01/1970"
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "84576361",
@@ -31781,8 +31781,8 @@
       "stock_ws": 7.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 7.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84586004",
@@ -32024,8 +32024,8 @@
       "stock_ws": 81.0,
       "nfe_stock_ws": "241443 + 241444 + 242190",
       "qty_transito": 53.0,
-      "fc_transito": "WMF-003288",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003288 + WMF-003301",
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "84589343",
@@ -32564,8 +32564,8 @@
       "stock_ws": 1545.0,
       "nfe_stock_ws": "31559",
       "qty_transito": 1545.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "84989315",
@@ -33050,8 +33050,8 @@
       "stock_ws": 40.0,
       "nfe_stock_ws": "31557",
       "qty_transito": 40.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86050286",
@@ -33077,8 +33077,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86505841",
@@ -33266,8 +33266,8 @@
       "stock_ws": 160.0,
       "nfe_stock_ws": "31560",
       "qty_transito": 160.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86508624",
@@ -33293,8 +33293,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86509246",
@@ -33671,8 +33671,8 @@
       "stock_ws": 300.0,
       "nfe_stock_ws": "31541",
       "qty_transito": 300.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86512439",
@@ -33779,8 +33779,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86512499",
@@ -33806,8 +33806,8 @@
       "stock_ws": 90.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 90.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86512520",
@@ -34157,8 +34157,8 @@
       "stock_ws": 1600.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 1600.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86570649",
@@ -34373,8 +34373,8 @@
       "stock_ws": 72.0,
       "nfe_stock_ws": "31541",
       "qty_transito": 72.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86585707",
@@ -34400,8 +34400,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31541",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86591786",
@@ -35075,8 +35075,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "147961",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86605625",
@@ -35372,8 +35372,8 @@
       "stock_ws": 3000.0,
       "nfe_stock_ws": "31552",
       "qty_transito": 3000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86624182",
@@ -35750,8 +35750,8 @@
       "stock_ws": 150.0,
       "nfe_stock_ws": "31556",
       "qty_transito": 150.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86637979",
@@ -35804,8 +35804,8 @@
       "stock_ws": 65.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 104.0,
-      "fc_transito": "WMF-003286",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003286 + WMF-003299",
+      "data_inicio_transito": "04/09/2026"
     },
     {
       "pn": "86639037",
@@ -35858,8 +35858,8 @@
       "stock_ws": 400.0,
       "nfe_stock_ws": "31551",
       "qty_transito": 400.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86705429",
@@ -35912,8 +35912,8 @@
       "stock_ws": 8.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 8.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86974605",
@@ -36155,8 +36155,8 @@
       "stock_ws": 1500.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 1500.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "86977789",
@@ -36641,8 +36641,8 @@
       "stock_ws": 600.0,
       "nfe_stock_ws": "31542 + 31546",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87016606",
@@ -37208,8 +37208,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87108164",
@@ -37559,8 +37559,8 @@
       "stock_ws": 10.0,
       "nfe_stock_ws": "31554",
       "qty_transito": 20.0,
-      "fc_transito": "WMF-003284",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003284 + WMF-003302",
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "87283209",
@@ -37829,8 +37829,8 @@
       "stock_ws": 1200.0,
       "nfe_stock_ws": "31542 + 31551",
       "qty_transito": 1200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87307464",
@@ -37937,8 +37937,8 @@
       "stock_ws": 230.0,
       "nfe_stock_ws": "31542 + 31551",
       "qty_transito": 230.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87312644",
@@ -38180,8 +38180,8 @@
       "stock_ws": 450.0,
       "nfe_stock_ws": "31543",
       "qty_transito": 450.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87327940",
@@ -38531,8 +38531,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "31561",
       "qty_transito": 80.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87358603",
@@ -39017,8 +39017,8 @@
       "stock_ws": 34.0,
       "nfe_stock_ws": "31556",
       "qty_transito": 34.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87389815",
@@ -39395,8 +39395,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87532034",
@@ -39584,8 +39584,8 @@
       "stock_ws": 32.0,
       "nfe_stock_ws": "31542 + 31543",
       "qty_transito": 32.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299 + WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87571013",
@@ -40286,8 +40286,8 @@
       "stock_ws": 600.0,
       "nfe_stock_ws": "31552",
       "qty_transito": 600.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87645102",
@@ -40421,8 +40421,8 @@
       "stock_ws": 554.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 554.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87653304",
@@ -40718,8 +40718,8 @@
       "stock_ws": 2400.0,
       "nfe_stock_ws": "31548 + 31557",
       "qty_transito": 1200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87656138",
@@ -40799,8 +40799,8 @@
       "stock_ws": 7.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 7.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87662506",
@@ -41204,8 +41204,8 @@
       "stock_ws": 200.0,
       "nfe_stock_ws": "31560",
       "qty_transito": 200.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87670762",
@@ -41366,8 +41366,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87676999",
@@ -41447,8 +41447,8 @@
       "stock_ws": 30.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 30.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87680388",
@@ -41690,8 +41690,8 @@
       "stock_ws": 800.0,
       "nfe_stock_ws": "31553 + 31557",
       "qty_transito": 800.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87682393",
@@ -42014,8 +42014,8 @@
       "stock_ws": 1.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 1.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "87694057",
@@ -43688,8 +43688,8 @@
       "stock_ws": 25.0,
       "nfe_stock_ws": "31711",
       "qty_transito": 25.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "90341401",
@@ -43985,8 +43985,8 @@
       "stock_ws": 80.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 80.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "90385400",
@@ -44363,8 +44363,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "90460427",
@@ -44525,8 +44525,8 @@
       "stock_ws": 70.0,
       "nfe_stock_ws": "263080",
       "qty_transito": 70.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "90497496",
@@ -44660,8 +44660,8 @@
       "stock_ws": 500.0,
       "nfe_stock_ws": "96858 + 97169",
       "qty_transito": 250.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "90501013",
@@ -45633,7 +45633,7 @@
       "nfe_stock_ws": "15546 + 15592",
       "qty_transito": 128.0,
       "fc_transito": "WMF-003280 + WMF-003285 + WMF-003293",
-      "data_inicio_transito": "01/01/1970"
+      "data_inicio_transito": "03/09/2026"
     },
     {
       "pn": "91736266",
@@ -45983,8 +45983,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "91752533",
@@ -46280,8 +46280,8 @@
       "stock_ws": 10.0,
       "nfe_stock_ws": "242190",
       "qty_transito": 20.0,
-      "fc_transito": "WMF-003289",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003289 + WMF-003301",
+      "data_inicio_transito": "09/09/2026"
     },
     {
       "pn": "91760896",
@@ -47225,8 +47225,8 @@
       "stock_ws": 82.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 82.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "91820727",
@@ -47684,8 +47684,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31560 + 31710",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "91857377",
@@ -47846,8 +47846,8 @@
       "stock_ws": 28.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 28.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "91867691",
@@ -48251,8 +48251,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "286312 + 286873",
       "qty_transito": 20.0,
-      "fc_transito": "WMF-003297",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003297 + WMF-003299",
+      "data_inicio_transito": "11/09/2026"
     },
     {
       "pn": "91893746",
@@ -48332,8 +48332,8 @@
       "stock_ws": 50.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 50.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92030378",
@@ -48629,8 +48629,8 @@
       "stock_ws": 136.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 136.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92057264",
@@ -48953,8 +48953,8 @@
       "stock_ws": 70.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 70.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92099527",
@@ -49034,8 +49034,8 @@
       "stock_ws": 33.0,
       "nfe_stock_ws": "286312",
       "qty_transito": 33.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92133619",
@@ -49223,8 +49223,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "96858",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92141411",
@@ -49628,8 +49628,8 @@
       "stock_ws": 3.0,
       "nfe_stock_ws": "263250",
       "qty_transito": 3.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92169619",
@@ -51005,8 +51005,8 @@
       "stock_ws": 60.0,
       "nfe_stock_ws": "135036 + 135037 + 135076",
       "qty_transito": 60.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92254417",
@@ -51491,8 +51491,8 @@
       "stock_ws": 20.0,
       "nfe_stock_ws": "172503",
       "qty_transito": 20.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003301",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92307632",
@@ -51923,8 +51923,8 @@
       "stock_ws": 23.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 23.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92675561",
@@ -51950,8 +51950,8 @@
       "stock_ws": 23.0,
       "nfe_stock_ws": "65196",
       "qty_transito": 23.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003299",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "92678285",
@@ -53030,8 +53030,8 @@
       "stock_ws": 100.0,
       "nfe_stock_ws": "31710",
       "qty_transito": 100.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "9706702",
@@ -53192,8 +53192,8 @@
       "stock_ws": 1000.0,
       "nfe_stock_ws": "31553",
       "qty_transito": 1000.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "9804261",
@@ -53489,8 +53489,8 @@
       "stock_ws": 300.0,
       "nfe_stock_ws": "31541 + 31546",
       "qty_transito": 260.0,
-      "fc_transito": "",
-      "data_inicio_transito": "01/01/1970"
+      "fc_transito": "WMF-003302",
+      "data_inicio_transito": "15/09/2026"
     },
     {
       "pn": "9846677",
