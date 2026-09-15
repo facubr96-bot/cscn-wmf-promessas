@@ -715,7 +715,30 @@ window.saveRow = async function(pn) {
 
 document.getElementById("btnSave").onclick = async () => {
   const pns = Object.keys(dirty);
-  for (const pn of pns) await window.saveRow(pn);
+  if (pns.length === 0) {
+    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar.";
+    return;
+  }
+  const btn = document.getElementById("btnSave");
+  btn.disabled = true;
+  btn.textContent = `Guardando 0/${pns.length}...`;
+  let ok = 0, fail = 0;
+  const failedPns = [];
+  for (let i = 0; i < pns.length; i++) {
+    const pn = pns[i];
+    try {
+      await window.saveRow(pn);
+      if (!dirty[pn]) ok++; else { fail++; failedPns.push(pn); }
+    } catch (e) {
+      fail++; failedPns.push(pn);
+    }
+    btn.textContent = `Guardando ${i + 1}/${pns.length}...`;
+  }
+  btn.disabled = false;
+  btn.textContent = "Guardar cambios";
+  document.getElementById("statusText").textContent = fail === 0
+    ? `Guardado: ${ok}/${pns.length} PN actualizados.`
+    : `Guardado ${ok}/${pns.length} — fallaron ${fail}: ${failedPns.join(", ")}`;
 };
 
 window.removeKpiFilter = function(key) {
