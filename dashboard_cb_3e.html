@@ -526,6 +526,8 @@ function getColumns() {
     { key: "order_release_info", label: "Order Release" },
     { key: "shipment_code", label: "Shipment" },
     { key: "destino_shipment", label: "Destino Shipment" },
+    { key: "status_p44", label: "Status P44" },
+    { key: "fecha_completed_p44", label: "Fecha Completed P44" },
   ];
   const plantCb = [
     { key: "stock_b1cb", label: "Stock SAP" },
@@ -617,6 +619,10 @@ function renderCell(item, key) {
   switch (key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "status_p44": {
+      const cls = v === "Completed" ? "badge-green" : v === "En Transito" ? "badge-amber" : "badge-gray";
+      return `<td><span class="badge ${cls}">${v || "-"}</span></td>`;
+    }
     case "entrega_confirmada":
       return `<td><input type="checkbox" ${v ? "checked" : ""} onchange="markDirty('${item.pn}','entrega_confirmada',this.checked)"></td>`;
     case "promessa_data":
