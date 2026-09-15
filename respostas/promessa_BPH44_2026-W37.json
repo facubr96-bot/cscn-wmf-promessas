@@ -2,7 +2,7 @@
   "supplier_code": "BPH44",
   "supplier_name": "VOSS AUTOMOTIVE LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-08T12:48:10.061Z",
+  "enviado_em": "2026-09-15T13:40:38.578Z",
   "itens": [
     {
       "part_number": "4894019",
@@ -17,6 +17,7 @@
       "entrega_confirmada": true,
       "data_coleta": "21/08/2026",
       "nfe_enviada": "237570",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -34,6 +35,7 @@
       "entrega_confirmada": true,
       "data_coleta": "21/08/2026",
       "nfe_enviada": "237570",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -51,6 +53,7 @@
       "entrega_confirmada": true,
       "data_coleta": "28/08/2026",
       "nfe_enviada": "237933",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -68,10 +71,11 @@
       "entrega_confirmada": true,
       "data_coleta": "28/08/2026",
       "nfe_enviada": "237933",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-08T12:48:06.659Z"
+  "recibido_en_worker": "2026-09-15T13:40:38.835Z"
 }
