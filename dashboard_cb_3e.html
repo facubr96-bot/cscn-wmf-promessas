@@ -311,7 +311,12 @@
   <div class="toolbar">
     <input type="text" id="searchPn" placeholder="Buscar PN...">
     <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
-    <div id="activeFilterChip"></div>
+    <select id="filterPlanejador" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
+      <option value="">Todos los planejadores</option>
+      <option value="Titon Facundo">Titon Facundo</option>
+      <option value="Vivian Strelow">Vivian Strelow</option>
+      <option value="Sin asignar">Sin asignar</option>
+    </select><div id="activeFilterChip"></div>
     <span class="count" id="rowCount"></span>
     <button class="btn" id="btnClearFilter">Limpiar filtro</button>
     <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
@@ -336,6 +341,55 @@
 
 <script>
 const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev/";
+
+const PLANNER_BY_SUPPLIER = {
+  "BDC32": "Vivian Strelow", "BHZ66": "Vivian Strelow", "BJC65": "Vivian Strelow",
+  "BJC97": "Titon Facundo", "BJD65": "Titon Facundo", "BJD67": "Titon Facundo",
+  "BJD88": "Titon Facundo", "BJD94": "Titon Facundo", "BJD99": "Vivian Strelow",
+  "BJF54": "Vivian Strelow", "BJG17": "Titon Facundo", "BJG32": "Titon Facundo",
+  "BJG52": "Vivian Strelow", "BJG54": "Vivian Strelow", "BJG65": "Titon Facundo",
+  "BJG74": "Titon Facundo", "BJH17": "Titon Facundo", "BJH41": "Titon Facundo",
+  "BJH90": "Titon Facundo", "BJJ53": "Vivian Strelow", "BJJ55": "Vivian Strelow",
+  "BJJ86": "Titon Facundo", "BJP82": "Titon Facundo", "BJP83": "Titon Facundo",
+  "BJQ09": "Titon Facundo", "BJQ95": "Titon Facundo", "BJR03": "Vivian Strelow",
+  "BJR79": "Vivian Strelow", "BJR81": "Vivian Strelow", "BKG97": "Titon Facundo",
+  "BKH14": "Vivian Strelow", "BKH47": "Titon Facundo", "BKH48": "Titon Facundo",
+  "BKH99": "Titon Facundo", "BKM21": "Titon Facundo", "BKQ39": "Titon Facundo",
+  "BKQ55": "Vivian Strelow", "BKQ71": "Titon Facundo", "BKR43": "Titon Facundo",
+  "BKR45": "Vivian Strelow", "BKR71": "Vivian Strelow", "BLB24": "Titon Facundo",
+  "BLC18": "Titon Facundo", "BLF84": "Titon Facundo", "BLH98": "Vivian Strelow",
+  "BLJ46": "Vivian Strelow", "BLK53": "Vivian Strelow", "BLL25": "Vivian Strelow",
+  "BLL51": "Titon Facundo", "BLT56": "Titon Facundo", "BMD71": "Vivian Strelow",
+  "BMH26": "Vivian Strelow", "BML33": "Vivian Strelow", "BML88": "Vivian Strelow",
+  "BMN58": "Vivian Strelow", "BMQ74": "Titon Facundo", "BMQ93": "Vivian Strelow",
+  "BMS12": "Titon Facundo", "BMW41": "Titon Facundo", "BMX47": "Titon Facundo",
+  "BMX98": "Vivian Strelow", "BMZ25": "Titon Facundo", "BMZ44": "Vivian Strelow",
+  "BND54": "Vivian Strelow", "BNF47": "Vivian Strelow", "BNG96": "Titon Facundo",
+  "BNG98": "Titon Facundo", "BNJ10": "Vivian Strelow", "BNK46": "Vivian Strelow",
+  "BNK91": "Vivian Strelow", "BNL72": "Vivian Strelow", "BNM94": "Titon Facundo",
+  "BNN21": "Titon Facundo", "BNT32": "Titon Facundo", "BNT41": "Titon Facundo",
+  "BNT57": "Vivian Strelow", "BNV40": "Vivian Strelow", "BNW32": "Vivian Strelow",
+  "BPD14": "Vivian Strelow", "BPD87": "Titon Facundo", "BPD96": "Vivian Strelow",
+  "BPH44": "Titon Facundo", "BPH65": "Vivian Strelow", "BPJ57": "Titon Facundo",
+  "BPW70": "Titon Facundo", "BPW72": "Titon Facundo", "BPX73": "Titon Facundo",
+  "BQB72": "Vivian Strelow", "BQH00": "Vivian Strelow", "BQH60": "Vivian Strelow",
+  "BQH78": "Vivian Strelow", "BQP01": "Vivian Strelow", "BQQ45": "Vivian Strelow",
+  "BQQ54": "Vivian Strelow", "BQV50": "Titon Facundo", "BRG98": "Titon Facundo",
+  "BTZ37": "Vivian Strelow", "BVC42": "Titon Facundo", "BVH54": "Vivian Strelow",
+  "BVH68": "Vivian Strelow", "BVJ10": "Titon Facundo", "BVJ30": "Vivian Strelow",
+  "BVJ94": "Vivian Strelow", "BVT60": "Titon Facundo", "BVV34": "Titon Facundo",
+  "CBN07": "Titon Facundo", "CBP27": "Titon Facundo", "CDN36": "Titon Facundo",
+  "DNG59": "Titon Facundo", "DNH73": "Titon Facundo", "DQZ06": "Titon Facundo",
+  "DSK22": "Vivian Strelow", "DVN55": "Vivian Strelow", "DYC43": "Vivian Strelow",
+  "DYF49": "Vivian Strelow", "DYY59": "Titon Facundo", "DZK11": "Vivian Strelow",
+  "FBW92": "Titon Facundo", "FBY79": "Titon Facundo", "FCR70": "Vivian Strelow",
+  "FHM67": "Titon Facundo", "FHZ16": "Vivian Strelow", "FLR29": "Vivian Strelow",
+  "FMV69": "Titon Facundo", "FQJ97": "Titon Facundo", "GT727": "Vivian Strelow",
+  "GT728": "Vivian Strelow",
+};
+function getPlanejador(item) {
+  return PLANNER_BY_SUPPLIER[item.supplier_code] || "Sin asignar";
+}
 const DATA_URL = "dashboard_cb_3e_data.json";
 
 let allItems = [];
@@ -477,6 +531,7 @@ function renderReleaseInfo() {
 // ---------- Render KPIs ----------
 function renderKpis() {
   renderReleaseInfo();
+  document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
   const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
@@ -497,8 +552,10 @@ function searchBaseItems() {
   let items = allItems;
   const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   return items;
 }
 function renderKpiGrid(elId, defs) {
@@ -559,6 +616,7 @@ function getColumns() {
     { key: "supplier_name", label: "Proveedor" },
   ];
   const plant3e = [
+    { key: "planejador", label: "Planejador" },
     { key: "stock_b1cb", label: "Stock SAP" },
     { key: "stock_ws", label: "Stock WS" },
     { key: "nfe_stock_ws", label: "NFe Estoque" },
@@ -608,8 +666,10 @@ function filteredItems() {
   }
   const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   if (sortCol) {
     items = [...items].sort((a, b) => {
       const av = a[sortCol] ?? "", bv = b[sortCol] ?? "";
@@ -678,6 +738,8 @@ function renderCell(item, key) {
   switch (key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "planejador":
+      return `<td>${getPlanejador(item)}</td>`;
     case "past_due_balance_cb": {
       const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
@@ -949,6 +1011,7 @@ document.getElementById("fileImport").onchange = (e) => {
 
 document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
+document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
 
 document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
   btn.onclick = () => {
