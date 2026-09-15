@@ -2,7 +2,7 @@
   "supplier_code": "BMX47",
   "supplier_name": "MAQUINAS SAZI LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-11T19:43:22.976Z",
+  "enviado_em": "2026-09-15T15:04:48.841Z",
   "itens": [
     {
       "part_number": "87031211",
@@ -14,12 +14,13 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000284374-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
-      "data_promessa": "31/08/2026",
-      "qty_prometida": 4,
-      "comentario": "nf 287530, + 7 pçs para 17/09"
+      "entrega_confirmada": true,
+      "data_coleta": "02/09/2026",
+      "nfe_enviada": "287530",
+      "qty_confirmada": 4,
+      "data_promessa": "21/09/2026",
+      "qty_prometida": 7,
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "91761278",
@@ -34,9 +35,10 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 13,
       "data_promessa": "24/08/2026",
-      "qty_prometida": 11,
-      "comentario": "nf 286873"
+      "qty_prometida": 13,
+      "comentario": "cancelar saldo de 1 pçs"
     },
     {
       "part_number": "91891968",
@@ -51,9 +53,10 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286312; 286873",
+      "qty_confirmada": 20,
       "data_promessa": "24/08/2026",
       "qty_prometida": 20,
-      "comentario": "nf 286312; 286873"
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "434097",
@@ -68,6 +71,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 80,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -85,6 +89,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 98,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -102,6 +107,7 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "287530",
+      "qty_confirmada": 75,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -116,9 +122,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000284374-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 20,
       "data_promessa": "14/09/2026",
       "qty_prometida": 20,
       "comentario": "Solicitar promessa."
@@ -136,6 +143,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "21/09/2026",
       "qty_prometida": 45,
       "comentario": "Solicitar promessa."
@@ -153,6 +161,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -170,6 +179,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "21/09/2026",
       "qty_prometida": 12,
       "comentario": "Solicitar promessa."
@@ -187,6 +197,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286312; 286873",
+      "qty_confirmada": 20,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -204,6 +215,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286312; 286873",
+      "qty_confirmada": 120,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -218,9 +230,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000285878-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 31,
       "data_promessa": "14/09/2026",
       "qty_prometida": 31,
       "comentario": "Solicitar promessa."
@@ -237,7 +250,8 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
-      "nfe_enviada": "287530",
+      "nfe_enviada": "287530; 288461",
+      "qty_confirmada": 50,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -255,9 +269,10 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "287530",
+      "qty_confirmada": 49,
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "Solicitar promessa."
+      "comentario": "cancelar saldo de 1 pç"
     },
     {
       "part_number": "84293407",
@@ -272,6 +287,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 84,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -289,6 +305,7 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "287530",
+      "qty_confirmada": 48,
       "data_promessa": "",
       "qty_prometida": 48,
       "comentario": "Solicitar promessa."
@@ -305,7 +322,8 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
-      "nfe_enviada": "286873; 287530",
+      "nfe_enviada": "286873; 287530; 288461",
+      "qty_confirmada": 107,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -323,6 +341,7 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "286312; 286873 e 287530",
+      "qty_confirmada": 120,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -337,9 +356,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000283410-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 40,
       "data_promessa": "14/09/2026",
       "qty_prometida": 40,
       "comentario": "Solicitar promessa."
@@ -357,6 +377,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312; 287530",
+      "qty_confirmada": 29,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -374,6 +395,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -391,6 +413,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 96,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -406,8 +429,9 @@
       "ultima_nfe": "00079",
       "semana": "2026-W37",
       "entrega_confirmada": false,
-      "data_coleta": "",
+      "data_coleta": "15/09/2026",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "28/09/2026",
       "qty_prometida": 1,
       "comentario": "Solicitar promessa."
@@ -425,6 +449,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 30,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -442,7 +467,8 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
-      "data_promessa": "14/09/2026",
+      "qty_confirmada": null,
+      "data_promessa": "21/09/2026",
       "qty_prometida": 1,
       "comentario": "Solicitar promessa."
     },
@@ -459,6 +485,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 50,
       "data_promessa": "",
       "qty_prometida": 50,
       "comentario": "Solicitar promessa."
@@ -473,9 +500,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000285878-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 2,
       "data_promessa": "21/09/2026",
       "qty_prometida": 18,
       "comentario": "Solicitar promessa."
@@ -493,6 +521,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 30,
       "data_promessa": "",
       "qty_prometida": 24,
       "comentario": "Solicitar promessa."
@@ -510,6 +539,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 1,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -527,6 +557,7 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "287530",
+      "qty_confirmada": 25,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -544,6 +575,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 41,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -558,11 +590,12 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000284374-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 10,
       "data_promessa": "21/09/2026",
-      "qty_prometida": 20,
+      "qty_prometida": 10,
       "comentario": "Solicitar promessa."
     },
     {
@@ -578,6 +611,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 50,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -595,9 +629,10 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "sem pedido "
+      "comentario": "sem pedido firme"
     },
     {
       "part_number": "91820700",
@@ -612,6 +647,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 82,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -629,6 +665,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 93,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -646,6 +683,7 @@
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
       "nfe_enviada": "286312",
+      "qty_confirmada": 28,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -663,6 +701,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 32,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -679,7 +718,8 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
-      "nfe_enviada": "286312",
+      "nfe_enviada": "286312; 288461",
+      "qty_confirmada": 43,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -697,6 +737,7 @@
       "entrega_confirmada": true,
       "data_coleta": "24/08/2026",
       "nfe_enviada": "286873",
+      "qty_confirmada": 30,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -713,7 +754,8 @@
       "semana": "2026-W37",
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
-      "nfe_enviada": "287530",
+      "nfe_enviada": "287530; 288461",
+      "qty_confirmada": 50,
       "data_promessa": "",
       "qty_prometida": 42,
       "comentario": "Solicitar promessa."
@@ -731,6 +773,7 @@
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "287530",
+      "qty_confirmada": 50,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -745,9 +788,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288460",
+      "qty_confirmada": 50,
       "data_promessa": "14/09/2026",
       "qty_prometida": 50,
       "comentario": "Solicitar promessa."
@@ -765,6 +809,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "21/09/2026",
       "qty_prometida": 25,
       "comentario": "Solicitar promessa."
@@ -779,9 +824,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "00069",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 3,
       "data_promessa": "14/09/2026",
       "qty_prometida": 3,
       "comentario": "Solicitar promessa."
@@ -796,9 +842,10 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000283850-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "288461",
+      "qty_confirmada": 13,
       "data_promessa": "14/09/2026",
       "qty_prometida": 13,
       "comentario": "Solicitar promessa."
@@ -816,10 +863,11 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
-      "comentario": "sem pedido firme"
+      "comentario": "sem pedido firme "
     }
   ],
-  "recibido_en_worker": "2026-09-11T19:43:23.757Z"
+  "recibido_en_worker": "2026-09-15T15:04:49.320Z"
 }
