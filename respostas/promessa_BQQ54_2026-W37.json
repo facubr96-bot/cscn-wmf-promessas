@@ -2,25 +2,8 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-08T14:58:24.292Z",
+  "enviado_em": "2026-09-15T14:15:55.844Z",
   "itens": [
-    {
-      "part_number": "92287283",
-      "supplier_code": "BQQ54",
-      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
-      "ship_date": "03/09/2026",
-      "past_due_wmf": true,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000063328-007",
-      "semana": "2026-W37",
-      "entrega_confirmada": true,
-      "data_coleta": "04/09/2026",
-      "nfe_enviada": "64488-007",
-      "data_promessa": "10/09/2026",
-      "qty_prometida": 7,
-      "comentario": "Solicitar promessa."
-    },
     {
       "part_number": "91793224",
       "supplier_code": "BQQ54",
@@ -34,6 +17,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -51,9 +35,28 @@
       "entrega_confirmada": true,
       "data_coleta": "03/09/2026",
       "nfe_enviada": "64377-007",
+      "qty_confirmada": 12,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "92287283",
+      "supplier_code": "BQQ54",
+      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
+      "ship_date": "03/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000063328-007",
+      "semana": "2026-W37",
+      "entrega_confirmada": true,
+      "data_coleta": "04/09/2026",
+      "nfe_enviada": "64488-007",
+      "qty_confirmada": 10,
+      "data_promessa": "10/09/2026",
+      "qty_prometida": 10,
+      "comentario": "Enviado mais 07pçs no dia 10/09 NF 64790-007"
     },
     {
       "part_number": "92647097",
@@ -65,12 +68,13 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000063190-007",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "10/09/2026",
+      "nfe_enviada": "64791-007",
+      "qty_confirmada": 9,
       "data_promessa": "10/09/2026",
-      "qty_prometida": 10,
-      "comentario": "Solicitar promessa."
+      "qty_prometida": 9,
+      "comentario": "Verificar o saldo de 13pçs de atraso não está batendo, hoje o atraso é 1pç."
     },
     {
       "part_number": "84388450",
@@ -85,6 +89,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -102,6 +107,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -114,11 +120,12 @@
       "past_due_wmf": false,
       "firm_jun_wmf": false,
       "firm_jul_wmf": false,
-      "ultima_nfe": "WMF-003145/2026",
+      "ultima_nfe": "",
       "semana": "2026-W37",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -136,6 +143,7 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
@@ -148,15 +156,16 @@
       "past_due_wmf": false,
       "firm_jun_wmf": false,
       "firm_jul_wmf": false,
-      "ultima_nfe": "WMF-003269",
+      "ultima_nfe": "",
       "semana": "2026-W37",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
+      "qty_confirmada": null,
       "data_promessa": "",
       "qty_prometida": null,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-08T14:58:24.558Z"
+  "recibido_en_worker": "2026-09-15T14:15:56.220Z"
 }
