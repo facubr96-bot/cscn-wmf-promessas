@@ -3,9 +3,9 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "92684251",
+      "part_number": "10184314",
       "data_promessa": "18/09/2026",
-      "qty_prometida": 160,
+      "qty_prometida": 150,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -14,5 +14,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-15T19:13:27.968Z"
+  "recibido_en_worker": "2026-09-15T19:13:52.992Z"
 }
