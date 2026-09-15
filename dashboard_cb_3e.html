@@ -620,7 +620,7 @@ function renderCell(item, key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
     case "status_p44": {
-      const cls = v === "Completed" ? "badge-green" : v === "En Transito" ? "badge-amber" : "badge-gray";
+      const cls = v === "Completed" ? "badge-green" : v === "En Transito" ? "badge-amber" : v === "Aguardando Coleta" ? "badge-gray" : "badge-gray";
       return `<td><span class="badge ${cls}">${v || "-"}</span></td>`;
     }
     case "entrega_confirmada":
