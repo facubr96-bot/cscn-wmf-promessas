@@ -1004,18 +1004,18 @@ let rawSortCol = null, rawSortDir = 1;
 const RAW_COLS = [
   { key: "plant_code", label: "PLANT_CODE" },
   { key: "supplier_code", label: "SUPPLIER_CODE" },
-  { key: "supplier_name", label: "SUPP_NAME" },
-  { key: "pn", label: "PART_NUMBER" },
-  { key: "pn_description", label: "PART_DESCR" },
+  { key: "supp_name", label: "SUPP_NAME" },
+  { key: "part_number", label: "PART_NUMBER" },
+  { key: "part_descr", label: "PART_DESCR" },
   { key: "po_number", label: "PO_NUMBER" },
-  { key: "snapshot_date", label: "RELEASE_DATE" },
+  { key: "release_date", label: "RELEASE_DATE" },
   { key: "dod_date", label: "DOD_DATE" },
   { key: "ship_date", label: "SHIP_DATE" },
-  { key: "status_ship_date", label: "QUANTITY_TYPE" },
-  { key: "qty_due", label: "QUANTITY_DUE" },
-  { key: "cum_requirement_qty", label: "CUMULATIVE_QTY" },
-  { key: "cum_receipt_qty", label: "CUM_REC_QTY" },
-  { key: "ultima_nfe", label: "LAST_RECEIPT_PACKLIST" },
+  { key: "quantity_type", label: "QUANTITY_TYPE" },
+  { key: "quantity_due", label: "QUANTITY_DUE" },
+  { key: "cumulative_qty", label: "CUMULATIVE_QTY" },
+  { key: "cum_rec_qty", label: "CUM_REC_QTY" },
+  { key: "last_receipt_packlist", label: "LAST_RECEIPT_PACKLIST" },
 ];
 
 async function openRawModal() {
@@ -1027,7 +1027,7 @@ async function openRawModal() {
       const resp = await fetch(RAW_DATA_URL + "?t=" + Date.now());
       if (!resp.ok) throw new Error("HTTP " + resp.status);
       const data = await resp.json();
-      rawLinesCache = Array.isArray(data) ? data : (data.items || data.lines || []);
+      rawLinesCache = Array.isArray(data) ? data : (data.rows || data.items || data.lines || []);
     } catch (e) {
       document.getElementById("rawModalBody").innerHTML = `<div class="empty-state">Error cargando: ${e.message}. (El archivo dashboard_cb_3e_raw_lines.json puede que todavia no este publicado.)</div>`;
       return;
@@ -1037,12 +1037,12 @@ async function openRawModal() {
 }
 
 function rawFilteredItems() {
-  const wantedArea = plant === "cb" ? "COR_WMFBR" : "B1CB_PROVEEDOR";
-  let items = (rawLinesCache || []).filter(r => r.source_area === wantedArea);
+  const wantedPlant = plant === "cb" ? "CB" : "3E";
+  let items = (rawLinesCache || []).filter(r => r.plant_code === wantedPlant);
   const pnQ = document.getElementById("rawSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("rawSearchSupplier").value.trim().toLowerCase();
-  if (pnQ) items = items.filter(r => String(r.pn || "").toLowerCase().includes(pnQ));
-  if (supQ) items = items.filter(r => String(r.supplier_name || "").toLowerCase().includes(supQ) || String(r.supplier_code || "").toLowerCase().includes(supQ));
+  if (pnQ) items = items.filter(r => String(r.part_number || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(r => String(r.supp_name || "").toLowerCase().includes(supQ) || String(r.supplier_code || "").toLowerCase().includes(supQ));
   if (rawSortCol) {
     items = [...items].sort((a, b) => {
       const av = a[rawSortCol] ?? "", bv = b[rawSortCol] ?? "";
@@ -1061,7 +1061,7 @@ function renderRawTable() {
   items.forEach(r => {
     bodyHtml += "<tr>" + RAW_COLS.map(c => {
       const v = r[c.key] ?? "";
-      const cls = c.key === "status_ship_date" && v === "Past Due" ? ' class="badge-pastdue"' : "";
+      const cls = c.key === "quantity_type" && v === "Past Due" ? ' class="badge-pastdue"' : "";
       return `<td${cls}>${v}</td>`;
     }).join("") + "</tr>";
   });
