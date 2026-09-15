@@ -523,7 +523,8 @@ function getColumns() {
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
     { key: "early_pickup_date", label: "Early Pickup" },
-    { key: "order_release_info", label: "Order Release / Shipment" },
+    { key: "order_release_info", label: "Order Release" },
+    { key: "shipment_code", label: "Shipment" },
     { key: "destino_shipment", label: "Destino Shipment" },
   ];
   const plantCb = [
@@ -620,7 +621,9 @@ function renderCell(item, key) {
     case "fc_transito":
       return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
     case "order_release_info":
-      return `<td class="truncate" title="${(v || "") + (item.shipment_code ? " | " + item.shipment_code : "")}">${v || ""}${item.shipment_code ? " | " + item.shipment_code : ""}</td>`;
+      return `<td class="truncate" title="${v || ""}">${(v || "").replace("CNHILA.", "")}</td>`;
+    case "shipment_code":
+      return `<td>${(v || "").replace("CNHILA.", "")}</td>`;
     case "qty_nfe_stock":
       return `<td>${v ?? item.stock_ws ?? ""}</td>`;
     default:
