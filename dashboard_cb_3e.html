@@ -171,6 +171,8 @@
     white-space: nowrap;
   }
   thead th:hover { background: var(--black); }
+  .btn-toggle-otm { background: var(--red); color: var(--white); border: none; border-radius: 3px; padding: 1px 6px; cursor: pointer; font-size: 11px; margin-left: 4px; }
+  .btn-toggle-otm:hover { background: var(--red-dark); }
   tbody td { padding: 7px 10px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; white-space: nowrap; }
   td.truncate, .truncate { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: help; }
   td.cell-truncate { max-width: 160px; overflow: hidden; text-overflow: ellipsis; cursor: help; }
@@ -291,6 +293,7 @@ const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev/";
 const DATA_URL = "dashboard_cb_3e_data.json";
 
 let allItems = [];
+let otmExpanded = false;
 let plant = "3e";
 const activeFilters = new Map(); // key -> {label, test}
 let sortCol = null, sortDir = 1;
@@ -336,6 +339,21 @@ function coverageBucket(qty, transitQty, stockQty, promiseQty, useTransit) {
 function inRunoutCriticoWindow(item) {
   const b = runoutBucket(item);
   return b === "Run Out vencido" || b.startsWith("RO resto");
+}
+function computeBalances(item) {
+  // Cascada: el transito cubre Past Due primero; si sobra, cubre Firm Set;
+  // si todavia sobra, cubre Firm Out. Cada "balance" puede dar negativo
+  // (= cubierto con excedente que paso al siguiente bucket).
+  let transito = item.qty_transito || 0;
+  const pd = item.wmf_qty_past_due || 0;
+  const fs = item.wmf_qty_firm_current_month || 0;
+  const fo = item.wmf_qty_firm_next_month || 0;
+  const pdBalance = pd - transito;
+  transito = Math.max(0, transito - pd);
+  const fsBalance = fs - transito;
+  transito = Math.max(0, transito - fs);
+  const foBalance = fo - transito;
+  return { pdBalance, fsBalance, foBalance };
 }
 function commonVals(item) {
   return {
@@ -515,8 +533,11 @@ function getColumns() {
     { key: "nfe_stock_ws", label: "NFe Estoque" },
     { key: "qty_transito", label: "Transito" },
     { key: "wmf_qty_past_due", label: "Past Due" },
+    { key: "past_due_balance", label: "Past Due Balance" },
     { key: "wmf_qty_firm_current_month", label: "Firm Set" },
+    { key: "firm_set_balance", label: "Firm Set Balance" },
     { key: "wmf_qty_firm_next_month", label: "Firm Out" },
+    { key: "firm_out_balance", label: "Firm Out Balance" },
     { key: "cum_rec_3e", label: "Cum Rec 3E" },
     { key: "ultima_nfe_3e", label: "Last Packing List 3E" },
     { key: "cpl", label: "CPL" },
@@ -524,11 +545,13 @@ function getColumns() {
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
     { key: "early_pickup_date", label: "Early Pickup" },
-    { key: "order_release_info", label: "Order Release" },
-    { key: "shipment_code", label: "Shipment" },
-    { key: "destino_shipment", label: "Destino Shipment" },
-    { key: "status_p44", label: "Status P44" },
-    { key: "fecha_completed_p44", label: "Fecha Completed P44" },
+    ...(otmExpanded ? [
+      { key: "order_release_info", label: "Order Release" },
+      { key: "shipment_code", label: "Shipment" },
+      { key: "destino_shipment", label: "Destino Shipment" },
+      { key: "status_p44", label: "Status P44" },
+      { key: "fecha_completed_p44", label: "Fecha Completed P44" },
+    ] : []),
   ];
   const plantCb = [
     { key: "stock_b1cb", label: "Stock SAP" },
@@ -570,7 +593,12 @@ function filteredItems() {
 function renderTable() {
   const cols = getColumns();
   const head = document.getElementById("tableHead");
-  head.innerHTML = cols.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("") + "<th>Acao</th>" + (plant === "3e" ? "<th>Data Coleta</th><th>NFe</th><th>Qty NFe (conf.)</th>" : "") + "<th>Previsao Saida WMFBR</th>";
+  head.innerHTML = cols.map(c => {
+    if (c.key === "early_pickup_date") {
+      return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
+    }
+    return `<th data-col="${c.key}">${c.label}</th>`;
+  }).join("") + "<th>Acao</th>" + (plant === "3e" ? "<th>Data Coleta</th><th>NFe</th><th>Qty NFe (conf.)</th>" : "") + "<th>Previsao Saida WMFBR</th>";
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -581,8 +609,7 @@ function renderTable() {
   });
 
   const items = filteredItems();
-  const body = document.getElementById("tableBody");
-  body.innerHTML = "";
+  const body = document.getElementById("tableBody");  body.innerHTML = "";
   document.getElementById("emptyState").style.display = items.length ? "none" : "block";
   document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
 
@@ -621,6 +648,18 @@ function renderCell(item, key) {
   switch (key) {
     case "cpl":
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "past_due_balance": {
+      const { pdBalance } = computeBalances(item);
+      return `<td style="color:${pdBalance > 0 ? 'var(--red)' : 'var(--green)'}">${pdBalance}</td>`;
+    }
+    case "firm_set_balance": {
+      const { fsBalance } = computeBalances(item);
+      return `<td style="color:${fsBalance > 0 ? 'var(--red)' : 'var(--green)'}">${fsBalance}</td>`;
+    }
+    case "firm_out_balance": {
+      const { foBalance } = computeBalances(item);
+      return `<td style="color:${foBalance > 0 ? 'var(--red)' : 'var(--green)'}">${foBalance}</td>`;
+    }
     case "ultima_nfe_3e": {
       const clean = String(v || "").split("-")[0].replace(/^0+(?=\d)/, "");
       return `<td>${clean}</td>`;
@@ -655,6 +694,12 @@ function renderCell(item, key) {
       return `<td>${v ?? ""}</td>`;
   }
 }
+
+window.toggleOtmColumns = function(event) {
+  event.stopPropagation();
+  otmExpanded = !otmExpanded;
+  renderTable();
+};
 
 window.markDirty = function(pn, field, value) {
   dirty[pn] = dirty[pn] || {};
