@@ -1,0 +1,18 @@
+{
+  "supplier_code": "BPJ57",
+  "semana": "2026-W38",
+  "itens": [
+    {
+      "part_number": "47502892",
+      "data_promessa": "17/09/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": true,
+      "data_coleta": "03/09/2026",
+      "nfe_enviada": "172501",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-09-16T14:08:42.383Z"
+}
