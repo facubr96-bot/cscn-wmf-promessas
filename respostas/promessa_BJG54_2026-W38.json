@@ -3,15 +3,16 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "87670759",
+      "part_number": "87367550",
       "data_promessa": "14/09/2026",
-      "qty_prometida": 136,
+      "qty_prometida": 4109,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "673638",
       "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T14:24:18.834Z"
+  "recibido_en_worker": "2026-09-16T14:38:11.362Z"
 }
