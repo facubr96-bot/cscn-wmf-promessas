@@ -3,16 +3,16 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "48133443",
+      "part_number": "90497495",
       "data_promessa": "01/09/2026",
-      "qty_prometida": 40,
+      "qty_prometida": 70,
       "entrega_confirmada": true,
       "data_coleta": "01/09/2026",
-      "nfe_enviada": "263250",
+      "nfe_enviada": "263080",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "18/09/2026",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-16T14:40:44.746Z"
+  "recibido_en_worker": "2026-09-16T14:40:50.001Z"
 }
