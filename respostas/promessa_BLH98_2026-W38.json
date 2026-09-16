@@ -3,16 +3,16 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "748961",
-      "data_promessa": "11/09/2026",
-      "qty_prometida": 350,
-      "entrega_confirmada": false,
-      "data_coleta": "11/09/2026",
+      "part_number": "15982134",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": true,
+      "data_coleta": "27/08/2026",
       "nfe_enviada": "282437",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "18/09/2026",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-16T13:15:16.049Z"
+  "recibido_en_worker": "2026-09-16T14:33:51.842Z"
 }
