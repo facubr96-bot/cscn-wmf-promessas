@@ -3,10 +3,10 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "92057264",
-      "data_promessa": "21/09/2026",
-      "qty_prometida": 200,
-      "entrega_confirmada": false,
+      "part_number": "47984018",
+      "data_promessa": "18/09/2026",
+      "qty_prometida": 16,
+      "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
@@ -14,5 +14,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-16T10:32:38.543Z"
+  "recibido_en_worker": "2026-09-16T10:34:59.223Z"
 }
