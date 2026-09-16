@@ -3,15 +3,16 @@
   "semana": "2026-W38",
   "itens": [
     {
-      "part_number": "92138457",
-      "data_promessa": "26/08/2026",
-      "qty_prometida": 100,
+      "part_number": "48190269",
+      "data_promessa": "04/09/2026",
+      "qty_prometida": 59,
       "entrega_confirmada": true,
-      "data_coleta": "26/08/2026",
-      "nfe_enviada": "96858",
-      "qty_confirmada": 100,
+      "data_coleta": "04/09/2026",
+      "nfe_enviada": "97169",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "16/09/2026",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T14:22:43.409Z"
+  "recibido_en_worker": "2026-09-16T13:08:33.763Z"
 }
