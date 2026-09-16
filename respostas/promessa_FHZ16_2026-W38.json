@@ -9,9 +9,10 @@
       "entrega_confirmada": false,
       "data_coleta": "11/09/2026",
       "nfe_enviada": "31871",
-      "qty_confirmada": 200,
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "18/09/2026",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-14T14:17:22.750Z"
+  "recibido_en_worker": "2026-09-16T13:15:42.304Z"
 }
