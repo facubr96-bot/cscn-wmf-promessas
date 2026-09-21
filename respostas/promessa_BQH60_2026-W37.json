@@ -2,7 +2,7 @@
   "supplier_code": "BQH60",
   "supplier_name": "SDS INDUSTRIA E COMERCIO LTDA EPP",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-08T12:09:43.172Z",
+  "enviado_em": "2026-09-21T10:56:50.705Z",
   "itens": [
     {
       "part_number": "87315613",
@@ -14,13 +14,14 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "71498",
+      "qty_confirmada": 220,
       "data_promessa": "14/09/2026",
       "qty_prometida": 220,
-      "comentario": "Solicitar promessa."
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-08T12:09:43.066Z"
+  "recibido_en_worker": "2026-09-21T10:56:50.743Z"
 }
