@@ -2,7 +2,7 @@
   "supplier_code": "BKQ71",
   "supplier_name": "METALURGICA TUZZI LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-15T13:41:12.127Z",
+  "enviado_em": "2026-09-21T11:12:26.744Z",
   "itens": [
     {
       "part_number": "47726387",
@@ -20,7 +20,7 @@
       "qty_confirmada": null,
       "data_promessa": "26/08/2026",
       "qty_prometida": 15,
-      "comentario": "Já enviada em 26/08."
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "47929096",
@@ -38,7 +38,7 @@
       "qty_confirmada": null,
       "data_promessa": "14/09/2026",
       "qty_prometida": 26,
-      "comentario": "+ 12 peças em 28/09"
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
     },
     {
       "part_number": "48133222",
@@ -56,7 +56,7 @@
       "qty_confirmada": null,
       "data_promessa": "21/09/2026",
       "qty_prometida": 24,
-      "comentario": "+ 12 peças em 28/09"
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento."
     },
     {
       "part_number": "51483493",
@@ -74,7 +74,7 @@
       "qty_confirmada": null,
       "data_promessa": "21/09/2026",
       "qty_prometida": 20,
-      "comentario": "+ 20 peças em 28/09"
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Em 26/08 houve o faturamento de 20 peças na NF 000682441."
     },
     {
       "part_number": "87327940",
@@ -92,7 +92,7 @@
       "qty_confirmada": null,
       "data_promessa": "28/09/2026",
       "qty_prometida": 300,
-      "comentario": ""
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "87360026",
@@ -110,7 +110,7 @@
       "qty_confirmada": null,
       "data_promessa": "26/08/2026",
       "qty_prometida": 150,
-      "comentario": "Envio realizado."
+      "comentario": "Solicitar promessa."
     },
     {
       "part_number": "87363846",
@@ -128,8 +128,8 @@
       "qty_confirmada": null,
       "data_promessa": "26/08/2026",
       "qty_prometida": 150,
-      "comentario": "Envio realizado."
+      "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-15T13:41:12.376Z"
+  "recibido_en_worker": "2026-09-21T11:12:26.849Z"
 }
