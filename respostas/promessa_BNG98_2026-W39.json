@@ -3,17 +3,17 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "84379626",
+      "part_number": "84490124",
       "data_promessa": "",
       "qty_prometida": 0,
-      "entrega_confirmada": true,
-      "data_coleta": "27/08/2026",
-      "nfe_enviada": "767432 - 767842 - 768303",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Pedido inserido fora do lead time",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-21T17:32:13.565Z"
+  "recibido_en_worker": "2026-09-21T17:32:19.516Z"
 }
