@@ -2,7 +2,7 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-15T14:15:55.844Z",
+  "enviado_em": "2026-09-21T11:21:56.435Z",
   "itens": [
     {
       "part_number": "91793224",
@@ -56,7 +56,7 @@
       "qty_confirmada": 10,
       "data_promessa": "10/09/2026",
       "qty_prometida": 10,
-      "comentario": "Enviado mais 07pçs no dia 10/09 NF 64790-007"
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
       "part_number": "92647097",
@@ -74,7 +74,7 @@
       "qty_confirmada": 9,
       "data_promessa": "10/09/2026",
       "qty_prometida": 9,
-      "comentario": "Verificar o saldo de 13pçs de atraso não está batendo, hoje o atraso é 1pç."
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa."
     },
     {
       "part_number": "84388450",
@@ -104,12 +104,12 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000406374-001",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
+      "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "data_promessa": "",
-      "qty_prometida": null,
+      "data_promessa": "24/09/2026",
+      "qty_prometida": 10,
       "comentario": "Solicitar promessa."
     },
     {
@@ -140,13 +140,13 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000063190-007",
       "semana": "2026-W37",
-      "entrega_confirmada": false,
-      "data_coleta": "",
+      "entrega_confirmada": true,
+      "data_coleta": "24/09/2026",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "data_promessa": "",
-      "qty_prometida": null,
-      "comentario": "Solicitar promessa."
+      "data_promessa": "24/09/2026",
+      "qty_prometida": 25,
+      "comentario": "Serão enviadas 25pçs seguindo o plano de embalagem"
     },
     {
       "part_number": "92137473",
@@ -167,5 +167,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-15T14:15:56.220Z"
+  "recibido_en_worker": "2026-09-21T11:21:56.551Z"
 }
