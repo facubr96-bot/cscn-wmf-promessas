@@ -351,8 +351,8 @@
 
   <div id="viewDashboard" style="display:none;">
     <div class="toolbar" style="margin-top:0;">
-      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">
-      <span class="count" id="dashRowCount"></span>
+      <input type="text" id="dashSearchPn" placeholder="Filtrar por PN...">
+      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">      <span class="count" id="dashRowCount"></span>
     </div>
     <div class="kpi-section">
       <h2>Motivos Past Due</h2>
@@ -594,8 +594,10 @@ function searchBaseItems() {
   return items;
 }
 function motivosBaseItems() {
+  const pnQ = document.getElementById("dashSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("dashSearchSupplier").value.trim().toLowerCase();
   let items = allItems;
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   return items;
 }
@@ -1130,6 +1132,7 @@ document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
 document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
+document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
 
 document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
   btn.onclick = () => {
