@@ -350,6 +350,10 @@
   </div>
 
   <div id="viewDashboard" style="display:none;">
+    <div class="toolbar" style="margin-top:0;">
+      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">
+      <span class="count" id="dashRowCount"></span>
+    </div>
     <div class="kpi-section">
       <h2>Motivos Past Due</h2>
       <div class="kpi-grid" id="kpiMotivos"></div>
@@ -360,6 +364,21 @@
         <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
           <canvas id="chartMotivosBar" height="220"></canvas>
         </div>
+      </div>
+    </div>
+    <div class="kpi-section">
+      <h2>PN em Past Due (ou com motivo ja registrado)</h2>
+      <div class="table-wrap" style="max-height: 48vh;">
+        <table id="dashPastDueTable">
+          <thead>
+            <tr>
+              <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
+              <th>Ultima NFe</th><th>Motivo Atraso</th>
+            </tr>
+          </thead>
+          <tbody id="dashPastDueBody"></tbody>
+        </table>
+        <div class="empty-state" id="dashPastDueEmpty" style="display:none;">Nenhum PN em Past Due (ou com motivo registrado) nesta planta/filtro.</div>
       </div>
     </div>
   </div>
@@ -555,8 +574,10 @@ function renderKpis() {
     renderKpiGrid("kpiCov3", cov3Defs);
   }
   renderKpiGrid("kpiOther", otherDefs);
-  renderKpiGrid("kpiMotivos", motivoDefs);
-  renderMotivosCharts(motivoDefs);
+  const dashBase = motivosBaseItems();
+  renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
+  renderMotivosCharts(motivoDefs, dashBase);
+  renderDashPastDueTable(dashBase);
   document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
   document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
 }
@@ -570,10 +591,16 @@ function searchBaseItems() {
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   return items;
 }
-function renderKpiGrid(elId, defs) {
+function motivosBaseItems() {
+  const supQ = document.getElementById("dashSearchSupplier").value.trim().toLowerCase();
+  let items = allItems;
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  return items;
+}
+function renderKpiGrid(elId, defs, baseItemsOverride) {
   const el = document.getElementById(elId);
   el.innerHTML = "";
-  const base = searchBaseItems();
+  const base = baseItemsOverride || searchBaseItems();
   defs.forEach(def => {
     const count = base.filter(def.test).length;
     const card = document.createElement("button");
@@ -585,9 +612,9 @@ function renderKpiGrid(elId, defs) {
 }
 
 let motivosDonutChart = null, motivosBarChart = null;
-function renderMotivosCharts(motivoDefs) {
+function renderMotivosCharts(motivoDefs, baseItemsOverride) {
   if (typeof Chart === "undefined") return;
-  const base = searchBaseItems();
+  const base = baseItemsOverride || motivosBaseItems();
   const labels = motivoDefs.map(d => d.label);
   const counts = motivoDefs.map(d => base.filter(d.test).length);
   const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7"];
@@ -614,6 +641,31 @@ function renderMotivosCharts(motivoDefs) {
       plugins: { legend: { display: false }, title: { display: true, text: "PN Past Due por motivo" } },
       scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
     },
+  });
+}
+
+function renderDashPastDueTable(baseItemsOverride) {
+  const base = baseItemsOverride || motivosBaseItems();
+  const items = base.filter(i => isPastDueGeneric(i) || i.motivo_atraso);
+  document.getElementById("dashRowCount").textContent = `${items.length} PN`;
+  const body = document.getElementById("dashPastDueBody");
+  body.innerHTML = "";
+  document.getElementById("dashPastDueEmpty").style.display = items.length ? "none" : "block";
+  items.forEach(item => {
+    const pastDueQty = plant === "cb" ? (item.cor_qty_past_due || 0) : (item.wmf_qty_past_due || 0);
+    const ultimaNfe = plant === "cb" ? (item.ultima_nfe_cb || "") : String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    const motivo = item.motivo_atraso || "";
+    const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.pn}</td>
+      <td>${item.supplier_code || ""}</td>
+      <td>${item.supplier_name || ""}</td>
+      <td style="${pastDueQty > 0 ? 'color:var(--red); font-weight:700;' : ''}">${pastDueQty}</td>
+      <td>${ultimaNfe}</td>
+      <td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!motivo ? "selected" : ""}>—</option>${opts}</select></td>
+    `;
+    body.appendChild(tr);
   });
 }
 
@@ -1066,6 +1118,7 @@ document.getElementById("fileImport").onchange = (e) => {
 document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
+document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
 
 document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
   btn.onclick = () => {
