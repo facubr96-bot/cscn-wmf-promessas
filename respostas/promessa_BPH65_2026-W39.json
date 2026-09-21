@@ -3,17 +3,17 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "82014606",
+      "part_number": "82024272",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": true,
-      "data_coleta": "14/08/2026",
-      "nfe_enviada": "102968",
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "103424",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Transport issue",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-21T18:30:35.507Z"
+  "recibido_en_worker": "2026-09-21T18:30:42.242Z"
 }
