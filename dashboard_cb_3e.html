@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CNH Industrial — Dashboard CSCN WMF</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
   :root {
     --black: #1a1a1a;
@@ -359,10 +358,10 @@
       <div class="kpi-grid" id="kpiMotivos"></div>
       <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
         <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:1; min-width:280px; max-width:400px;">
-          <canvas id="chartMotivosDonut" height="220"></canvas>
+          <div id="chartMotivosDonut"></div>
         </div>
         <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
-          <canvas id="chartMotivosBar" height="220"></canvas>
+          <div id="chartMotivosBar"></div>
         </div>
       </div>
     </div>
@@ -615,37 +614,58 @@ function renderKpiGrid(elId, defs, baseItemsOverride) {
   });
 }
 
-let motivosDonutChart = null, motivosBarChart = null;
 function renderMotivosCharts(motivoDefs, baseItemsOverride) {
-  if (typeof Chart === "undefined") return;
   const base = baseItemsOverride || motivosBaseItems();
   const labels = motivoDefs.map(d => d.label);
   const counts = motivoDefs.map(d => base.filter(d.test).length);
   const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7"];
+  const total = counts.reduce((a, b) => a + b, 0);
 
-  const donutCanvas = document.getElementById("chartMotivosDonut");
-  if (motivosDonutChart) motivosDonutChart.destroy();
-  motivosDonutChart = new Chart(donutCanvas, {
-    type: "doughnut",
-    data: { labels, datasets: [{ data: counts, backgroundColor: palette }] },
-    options: {
-      plugins: {
-        legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 10 } } },
-        title: { display: true, text: "Distribuicao de motivos (Past Due)" },
-      },
-    },
-  });
+  // ---- Dona (CSS conic-gradient, sin dependencias externas) ----
+  const donutEl = document.getElementById("chartMotivosDonut");
+  if (total === 0) {
+    donutEl.innerHTML = '<div class="empty-state" style="padding:20px;">Sem dados para exibir.</div>';
+  } else {
+    let acc = 0;
+    const stops = counts.map((c, i) => {
+      const start = (acc / total) * 360;
+      acc += c;
+      const end = (acc / total) * 360;
+      return `${palette[i % palette.length]} ${start}deg ${end}deg`;
+    }).join(", ");
+    const legend = labels.map((l, i) => counts[i] > 0
+      ? `<div style="display:flex; align-items:center; gap:6px; font-size:11px; margin-bottom:3px;">
+           <span style="width:10px; height:10px; border-radius:2px; background:${palette[i % palette.length]}; display:inline-block;"></span>
+           ${l} (${counts[i]})
+         </div>`
+      : "").join("");
+    donutEl.innerHTML = `
+      <div style="font-size:12px; font-weight:600; color:var(--gray-700); margin-bottom:10px;">Distribuicao de motivos (Past Due)</div>
+      <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+        <div style="width:150px; height:150px; border-radius:50%; background:conic-gradient(${stops}); position:relative; flex-shrink:0;">
+          <div style="position:absolute; inset:28px; background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px;">${total}</div>
+        </div>
+        <div>${legend}</div>
+      </div>
+    `;
+  }
 
-  const barCanvas = document.getElementById("chartMotivosBar");
-  if (motivosBarChart) motivosBarChart.destroy();
-  motivosBarChart = new Chart(barCanvas, {
-    type: "bar",
-    data: { labels, datasets: [{ label: "PN", data: counts, backgroundColor: "#b3121f" }] },
-    options: {
-      plugins: { legend: { display: false }, title: { display: true, text: "PN Past Due por motivo" } },
-      scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
-    },
-  });
+  // ---- Barras (divs con ancho proporcional, sin dependencias externas) ----
+  const barEl = document.getElementById("chartMotivosBar");
+  const maxCount = Math.max(1, ...counts);
+  const bars = labels.map((l, i) => `
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:170px; font-size:11px; text-align:right; color:var(--gray-700); flex-shrink:0;">${l}</div>
+      <div style="flex:1; background:var(--gray-100); border-radius:3px; overflow:hidden; height:18px;">
+        <div style="width:${(counts[i] / maxCount) * 100}%; background:${palette[i % palette.length]}; height:100%; min-width:${counts[i] > 0 ? '2px' : '0'};"></div>
+      </div>
+      <div style="width:30px; font-size:12px; font-weight:600;">${counts[i]}</div>
+    </div>
+  `).join("");
+  barEl.innerHTML = `
+    <div style="font-size:12px; font-weight:600; color:var(--gray-700); margin-bottom:10px;">PN Past Due por motivo</div>
+    ${bars}
+  `;
 }
 
 function renderDashPastDueTable(baseItemsOverride) {
