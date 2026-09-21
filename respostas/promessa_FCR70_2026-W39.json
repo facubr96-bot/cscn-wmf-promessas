@@ -1,0 +1,63 @@
+{
+  "supplier_code": "FCR70",
+  "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+  "semana": "2026-W39",
+  "enviado_em": "2026-09-21T13:08:24.865Z",
+  "itens": [
+    {
+      "part_number": "91837962",
+      "supplier_code": "FCR70",
+      "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+      "ship_date": "01/02/2027",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000049617-001",
+      "semana": "2026-W39",
+      "entrega_confirmada": true,
+      "data_coleta": "11/09/2026",
+      "nfe_enviada": "49617",
+      "qty_confirmada": 40,
+      "data_promessa": "14/09/2026",
+      "qty_prometida": 40,
+      "comentario": "Promessa vencida - solicitar nova data."
+    },
+    {
+      "part_number": "48163044",
+      "supplier_code": "FCR70",
+      "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+      "ship_date": "05/04/2027",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000049316-001",
+      "semana": "2026-W39",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "05/04/2027",
+      "qty_prometida": 10,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "86570650",
+      "supplier_code": "FCR70",
+      "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
+      "ship_date": "24/09/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000048907-001",
+      "semana": "2026-W39",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "22/09/2026",
+      "qty_prometida": 30,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-09-21T13:08:26.261Z"
+}
