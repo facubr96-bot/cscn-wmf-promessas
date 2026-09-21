@@ -1,0 +1,27 @@
+{
+  "supplier_code": "BQH78",
+  "supplier_name": "GBPLAST INDUSTRIA E COMERCIO LTDA",
+  "semana": "2026-W37",
+  "enviado_em": "2026-09-21T10:34:26.248Z",
+  "itens": [
+    {
+      "part_number": "48094424",
+      "supplier_code": "BQH78",
+      "supplier_name": "GBPLAST INDUSTRIA E COMERCIO LTDA",
+      "ship_date": "05/08/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000022504-001",
+      "semana": "2026-W37",
+      "entrega_confirmada": true,
+      "data_coleta": "02/09/2026",
+      "nfe_enviada": "22779",
+      "qty_confirmada": 104,
+      "data_promessa": "02/09/2026",
+      "qty_prometida": 104,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-09-21T10:34:26.378Z"
+}
