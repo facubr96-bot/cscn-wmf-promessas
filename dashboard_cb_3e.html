@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CNH Industrial — Dashboard CSCN WMF</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
   :root {
     --black: #1a1a1a;
@@ -195,6 +196,13 @@
   }
   input.cell-input:focus { outline: 2px solid var(--red); border-color: var(--red); }
   .qty-input { width: 70px; }
+  select.cell-select {
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    max-width: 170px;
+  }
 
   .table-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); }
   .top-scroll-wrap { overflow-x: auto; overflow-y: hidden; height: 16px; margin-bottom: 2px; }
@@ -308,6 +316,19 @@
     </div>
   </div>
 
+  <div class="kpi-section">
+    <h2>Motivos Past Due</h2>
+    <div class="kpi-grid" id="kpiMotivos"></div>
+    <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
+      <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:1; min-width:280px; max-width:400px;">
+        <canvas id="chartMotivosDonut" height="220"></canvas>
+      </div>
+      <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
+        <canvas id="chartMotivosBar" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+
   <div class="toolbar">
     <input type="text" id="searchPn" placeholder="Buscar PN...">
     <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
@@ -346,6 +367,15 @@ function getPlanejador(item) {
   return item.planejador || "Sin asignar";
 }
 const DATA_URL = "dashboard_cb_3e_data.json";
+
+const MOTIVO_OPTIONS = [
+  "Pedido inserido fora do lead time",
+  "Atraso do fornecedor",
+  "Transport issue",
+  "Divergencia de NF-e",
+  "Negociacao comercial",
+  "Observacao WMFBR",
+];
 
 let allItems = [];
 let otmExpanded = false;
@@ -430,6 +460,11 @@ function promesaVigente(item) {
   return diffDias <= 5;
 }
 
+function isPastDueGeneric(item) {
+  if (plant === "cb") return (item.cor_qty_past_due || 0) > 0 || (item.wmf_qty_past_due || 0) > 0;
+  return (item.wmf_qty_past_due || 0) > 0;
+}
+
 // ---------- Definicion de KPIs ----------
 function getKpiDefs() {
   const runoutDefs = [
@@ -470,7 +505,19 @@ function getKpiDefs() {
     { key: "cpl_con_promessa", label: "com Promessa", tone: "amber", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_b1cb || 0) > 0) && promesaVigente(i) },
     { key: "cpl_sin_promessa", label: "sem Promessa", tone: "red", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_b1cb || 0) > 0) && !promesaVigente(i) },
   ];
-  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs };
+  const motivoDefs = MOTIVO_OPTIONS.map(m => ({
+    key: "motivo_" + m.replace(/[^a-zA-Z0-9]/g, ""),
+    label: m,
+    tone: "amber",
+    test: i => isPastDueGeneric(i) && i.motivo_atraso === m,
+  }));
+  motivoDefs.push({
+    key: "motivo_sem",
+    label: "Sem motivo",
+    tone: "gray",
+    test: i => isPastDueGeneric(i) && !i.motivo_atraso,
+  });
+  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs };
 }
 
 function fmtReleaseYYYYMMDD(raw) {
@@ -487,7 +534,7 @@ function renderReleaseInfo() {
 function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
-  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
+  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   if (plant === "cb") {
@@ -500,6 +547,8 @@ function renderKpis() {
     renderKpiGrid("kpiCov3", cov3Defs);
   }
   renderKpiGrid("kpiOther", otherDefs);
+  renderKpiGrid("kpiMotivos", motivoDefs);
+  renderMotivosCharts(motivoDefs);
   document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
   document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
 }
@@ -524,6 +573,39 @@ function renderKpiGrid(elId, defs) {
     card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
     card.onclick = () => toggleKpiFilter(def.key, def.label, def.test);
     el.appendChild(card);
+  });
+}
+
+let motivosDonutChart = null, motivosBarChart = null;
+function renderMotivosCharts(motivoDefs) {
+  if (typeof Chart === "undefined") return;
+  const base = searchBaseItems();
+  const labels = motivoDefs.map(d => d.label);
+  const counts = motivoDefs.map(d => base.filter(d.test).length);
+  const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7"];
+
+  const donutCanvas = document.getElementById("chartMotivosDonut");
+  if (motivosDonutChart) motivosDonutChart.destroy();
+  motivosDonutChart = new Chart(donutCanvas, {
+    type: "doughnut",
+    data: { labels, datasets: [{ data: counts, backgroundColor: palette }] },
+    options: {
+      plugins: {
+        legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 10 } } },
+        title: { display: true, text: "Distribuicao de motivos (Past Due)" },
+      },
+    },
+  });
+
+  const barCanvas = document.getElementById("chartMotivosBar");
+  if (motivosBarChart) motivosBarChart.destroy();
+  motivosBarChart = new Chart(barCanvas, {
+    type: "bar",
+    data: { labels, datasets: [{ label: "PN", data: counts, backgroundColor: "#b3121f" }] },
+    options: {
+      plugins: { legend: { display: false }, title: { display: true, text: "PN Past Due por motivo" } },
+      scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
+    },
   });
 }
 
@@ -552,8 +634,8 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpiParam = params.get("kpi");
   if (kpiParam) {
-    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs } = getKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs];
+    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs } = getKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
@@ -569,6 +651,7 @@ function getColumns() {
     { key: "run_out_date", label: "Run Out" },
     { key: "supplier_code", label: "Cod." },
     { key: "supplier_name", label: "Proveedor" },
+    { key: "motivo_atraso", label: "Motivo Atraso" },
   ];
   const plant3e = [
     { key: "planejador", label: "Planejador" },
@@ -654,7 +737,8 @@ function renderTable() {
   });
 
   const items = filteredItems();
-  const body = document.getElementById("tableBody");  body.innerHTML = "";
+  const body = document.getElementById("tableBody");
+  body.innerHTML = "";
   document.getElementById("emptyState").style.display = items.length ? "none" : "block";
   document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
 
@@ -695,6 +779,10 @@ function renderCell(item, key) {
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
     case "planejador":
       return `<td>${getPlanejador(item)}</td>`;
+    case "motivo_atraso": {
+      const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${v === m ? "selected" : ""}>${m}</option>`).join("");
+      return `<td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!v ? "selected" : ""}>—</option>${opts}</select></td>`;
+    }
     case "past_due_balance_cb": {
       const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
@@ -748,7 +836,7 @@ window.markDirty = function(pn, field, value) {
   dirty[pn] = dirty[pn] || {};
   dirty[pn][field] = value;
   const item = allItems.find(i => i.pn === pn);
-  if (item) item[field] = field === "entrega_confirmada" ? value : value;
+  if (item) item[field] = value;
   renderTable();
 };
 
@@ -778,6 +866,7 @@ window.saveRow = async function(pn) {
     nfe_enviada: item.nfe_enviada || "",
     qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
     previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
+    motivo_atraso: item.motivo_atraso || "",
     comentario: "",
   };
   const semanaAtual = (() => {
@@ -934,6 +1023,7 @@ document.getElementById("fileImport").onchange = (e) => {
       const colNfe = findCol(["nfeenviada", "nfe"]);
       const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue"]);
       const colPrevisao = findCol(["previsaosaidawmfbr", "previsaosaida", "saidawmfbr"]);
+      const colMotivo = findCol(["motivoatraso", "motivo", "status"]);
       if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
 
       let updated = 0, notFound = 0;
@@ -950,6 +1040,7 @@ document.getElementById("fileImport").onchange = (e) => {
         if (colNfe >= 0 && cells[colNfe]) item.nfe_enviada = cells[colNfe];
         if (colQtyConf >= 0) { const q = normalizeQtyFlexible(cells[colQtyConf]); if (q !== "") item.qty_nfe_confirmada = Number(q); }
         if (colPrevisao >= 0) { const d = normalizeDateFlexible(cells[colPrevisao]); if (d) item.previsao_saida_wmfbr = d; }
+        if (colMotivo >= 0 && cells[colMotivo] && MOTIVO_OPTIONS.includes(cells[colMotivo])) item.motivo_atraso = cells[colMotivo];
         dirty[pn] = dirty[pn] || {};
         updated++;
       }
