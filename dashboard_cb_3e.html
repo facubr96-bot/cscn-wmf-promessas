@@ -375,6 +375,7 @@
               <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
               <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th>
               <th>Promessa Data</th><th>Promessa Qty</th>
+              <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
             </tr>
           </thead>
           <tbody id="dashPastDueBody"></tbody>
@@ -671,6 +672,9 @@ function renderDashPastDueTable(baseItemsOverride) {
       <td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!motivo ? "selected" : ""}>—</option>${opts}</select></td>
       <td>${item.promessa_data || ""}</td>
       <td>${item.promessa_qty ?? ""}</td>
+      <td>${item.ultima_nfe_emitida_num || ""}</td>
+      <td>${item.ultima_nfe_emitida_fecha || ""}</td>
+      <td>${item.ultima_nfe_emitida_qty ?? ""}</td>
     `;
     body.appendChild(tr);
   });
