@@ -2,7 +2,7 @@
   "supplier_code": "BQB72",
   "supplier_name": "MERCOBOR IND E COM LTDA",
   "semana": "2026-W37",
-  "enviado_em": "2026-09-15T13:29:18.214Z",
+  "enviado_em": "2026-09-21T10:48:37.867Z",
   "itens": [
     {
       "part_number": "47448583",
@@ -95,5 +95,5 @@
       "comentario": "Promessa vencida - solicitar nova data. Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-09-15T13:27:36.982Z"
+  "recibido_en_worker": "2026-09-21T10:47:08.968Z"
 }
