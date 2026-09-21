@@ -254,6 +254,10 @@
       <button data-plant="3e" class="active">Planta 3E</button>
       <button data-plant="cb">Planta CB</button>
     </div>
+    <div class="plant-switch" id="viewSwitch">
+      <button data-view="table" class="active">Tabela</button>
+      <button data-view="dashboard">Dashboard</button>
+    </div>
     <button class="btn" id="btnRawView">Ver CSCN em bruto</button>
   </div>
 </header>
@@ -283,77 +287,81 @@
 
 <main>
 
-  <div class="kpi-columns">
-    <div class="kpi-col">
-      <div class="kpi-section">
-        <h2>Run Out</h2>
-        <div class="kpi-grid" id="kpiRunout"></div>
+  <div id="viewTable">
+    <div class="kpi-columns">
+      <div class="kpi-col">
+        <div class="kpi-section">
+          <h2>Run Out</h2>
+          <div class="kpi-grid" id="kpiRunout"></div>
+        </div>
+
+        <div class="kpi-section">
+          <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
+          <div class="kpi-grid" id="kpiCov1"></div>
+        </div>
       </div>
 
-      <div class="kpi-section">
-        <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
-        <div class="kpi-grid" id="kpiCov1"></div>
+      <div class="kpi-divider"></div>
+
+      <div class="kpi-col">
+        <div class="kpi-section" id="kpiCov2Section">
+          <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
+          <div class="kpi-grid" id="kpiCov2"></div>
+        </div>
+
+        <div class="kpi-section" id="kpiCov3Section">
+          <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
+          <div class="kpi-grid" id="kpiCov3"></div>
+        </div>
+
+        <div class="kpi-section">
+          <h2>CPL</h2>
+          <div class="kpi-grid" id="kpiOther"></div>
+        </div>
       </div>
     </div>
 
-    <div class="kpi-divider"></div>
+    <div class="toolbar">
+      <input type="text" id="searchPn" placeholder="Buscar PN...">
+      <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
+      <select id="filterPlanejador" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
+        <option value="">Todos los planejadores</option>
+        <option value="Titon Facundo">Titon Facundo</option>
+        <option value="Vivian Strelow">Vivian Strelow</option>
+        <option value="Sin asignar">Sin asignar</option>
+      </select><div id="activeFilterChip"></div>
+      <span class="count" id="rowCount"></span>
+      <button class="btn" id="btnClearFilter">Limpiar filtro</button>
+      <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
+      <button class="btn" id="btnImport">Importar Excel/CSV</button>
+      <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
+      <button class="btn" id="btnExport">Exportar Excel/CSV</button>
+      <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
+    </div>
 
-    <div class="kpi-col">
-      <div class="kpi-section" id="kpiCov2Section">
-        <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
-        <div class="kpi-grid" id="kpiCov2"></div>
-      </div>
-
-      <div class="kpi-section" id="kpiCov3Section">
-        <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
-        <div class="kpi-grid" id="kpiCov3"></div>
-      </div>
-
-      <div class="kpi-section">
-        <h2>CPL</h2>
-        <div class="kpi-grid" id="kpiOther"></div>
-      </div>
+    <div class="top-scroll-wrap" id="topScrollWrap"><div class="top-scroll-inner" id="topScrollInner"></div></div>
+    <div class="table-wrap" id="tableWrap">
+      <table id="mainTable">
+        <thead><tr id="tableHead"></tr></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none;">Ningun PN coincide con este filtro.</div>
     </div>
   </div>
 
-  <div class="kpi-section">
-    <h2>Motivos Past Due</h2>
-    <div class="kpi-grid" id="kpiMotivos"></div>
-    <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
-      <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:1; min-width:280px; max-width:400px;">
-        <canvas id="chartMotivosDonut" height="220"></canvas>
-      </div>
-      <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
-        <canvas id="chartMotivosBar" height="220"></canvas>
+  <div id="viewDashboard" style="display:none;">
+    <div class="kpi-section">
+      <h2>Motivos Past Due</h2>
+      <div class="kpi-grid" id="kpiMotivos"></div>
+      <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
+        <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:1; min-width:280px; max-width:400px;">
+          <canvas id="chartMotivosDonut" height="220"></canvas>
+        </div>
+        <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
+          <canvas id="chartMotivosBar" height="220"></canvas>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="toolbar">
-    <input type="text" id="searchPn" placeholder="Buscar PN...">
-    <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
-    <select id="filterPlanejador" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
-      <option value="">Todos los planejadores</option>
-      <option value="Titon Facundo">Titon Facundo</option>
-      <option value="Vivian Strelow">Vivian Strelow</option>
-      <option value="Sin asignar">Sin asignar</option>
-    </select><div id="activeFilterChip"></div>
-    <span class="count" id="rowCount"></span>
-    <button class="btn" id="btnClearFilter">Limpiar filtro</button>
-    <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
-    <button class="btn" id="btnImport">Importar Excel/CSV</button>
-    <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
-    <button class="btn" id="btnExport">Exportar Excel/CSV</button>
-    <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
-  </div>
-
-  <div class="top-scroll-wrap" id="topScrollWrap"><div class="top-scroll-inner" id="topScrollInner"></div></div>
-  <div class="table-wrap" id="tableWrap">
-    <table id="mainTable">
-      <thead><tr id="tableHead"></tr></thead>
-      <tbody id="tableBody"></tbody>
-    </table>
-    <div class="empty-state" id="emptyState" style="display:none;">Ningun PN coincide con este filtro.</div>
   </div>
 
 </main>
@@ -1067,6 +1075,16 @@ document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn =>
     updateUrl();
     renderKpis();
     renderTable();
+  };
+});
+
+document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    const view = btn.dataset.view;
+    document.querySelectorAll("#viewSwitch button").forEach(b => b.classList.toggle("active", b === btn));
+    document.getElementById("viewTable").style.display = view === "table" ? "" : "none";
+    document.getElementById("viewDashboard").style.display = view === "dashboard" ? "" : "none";
+    if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos con datos frescos
   };
 });
 
