@@ -1,5 +1,5 @@
 {
-  "generated_at": "21/09/2026 20:02",
+  "generated_at": "21/09/2026 20:21",
   "today": "21/09/2026",
   "total_pn": 1987,
   "erp_release_cb": "20260916",
@@ -61222,7 +61222,7 @@
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
       "cum_rec_cb": 167.0,
-      "cum_rec_3e": 209.0,
+      "cum_rec_3e": 273.0,
       "stock_ws": 0.0,
       "nfe_stock_ws": "",
       "qty_transito": 26.0,
