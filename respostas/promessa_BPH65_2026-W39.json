@@ -3,7 +3,7 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "82024272",
+      "part_number": "82031491",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": true,
@@ -15,5 +15,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-21T18:30:42.242Z"
+  "recibido_en_worker": "2026-09-21T18:30:48.395Z"
 }
