@@ -373,7 +373,8 @@
           <thead>
             <tr>
               <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
-              <th>Ultima NFe</th><th>Motivo Atraso</th>
+              <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th>
+              <th>Promessa Data</th><th>Promessa Qty</th>
             </tr>
           </thead>
           <tbody id="dashPastDueBody"></tbody>
@@ -653,6 +654,8 @@ function renderDashPastDueTable(baseItemsOverride) {
   document.getElementById("dashPastDueEmpty").style.display = items.length ? "none" : "block";
   items.forEach(item => {
     const pastDueQty = plant === "cb" ? (item.cor_qty_past_due || 0) : (item.wmf_qty_past_due || 0);
+    const firmSet = plant === "cb" ? (item.cor_qty_firm_current_month || 0) : (item.wmf_qty_firm_current_month || 0);
+    const firmOut = plant === "cb" ? (item.cor_qty_firm_next_month || 0) : (item.wmf_qty_firm_next_month || 0);
     const ultimaNfe = plant === "cb" ? (item.ultima_nfe_cb || "") : String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
     const motivo = item.motivo_atraso || "";
     const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
@@ -662,8 +665,12 @@ function renderDashPastDueTable(baseItemsOverride) {
       <td>${item.supplier_code || ""}</td>
       <td>${item.supplier_name || ""}</td>
       <td style="${pastDueQty > 0 ? 'color:var(--red); font-weight:700;' : ''}">${pastDueQty}</td>
+      <td>${firmSet}</td>
+      <td>${firmOut}</td>
       <td>${ultimaNfe}</td>
       <td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!motivo ? "selected" : ""}>—</option>${opts}</select></td>
+      <td>${item.promessa_data || ""}</td>
+      <td>${item.promessa_qty ?? ""}</td>
     `;
     body.appendChild(tr);
   });
