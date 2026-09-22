@@ -3,10 +3,10 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "308823",
-      "data_promessa": "21/09/2026",
-      "qty_prometida": 80,
-      "entrega_confirmada": true,
+      "part_number": "394630",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-22T19:59:19.066Z"
+  "recibido_en_worker": "2026-09-22T19:59:28.656Z"
 }
