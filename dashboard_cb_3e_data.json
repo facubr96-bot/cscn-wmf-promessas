@@ -1,5 +1,5 @@
 {
-  "generated_at": "22/09/2026 09:01",
+  "generated_at": "22/09/2026 09:21",
   "today": "22/09/2026",
   "total_pn": 1987,
   "erp_release_cb": "20260916",
@@ -18480,9 +18480,9 @@
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003289",
       "ultima_nfe_3e": "000242715-001",
-      "ultima_nfe_emitida_num": "242715",
-      "ultima_nfe_emitida_fecha": "09/09/2026",
-      "ultima_nfe_emitida_qty": 15.0,
+      "ultima_nfe_emitida_num": "243679",
+      "ultima_nfe_emitida_fecha": "21/09/2026",
+      "ultima_nfe_emitida_qty": 25.0,
       "planejador": "Titon Facundo"
     },
     {
