@@ -1138,10 +1138,10 @@ document.getElementById("fileImport").onchange = (e) => {
       const colPn = findCol(["pn", "partnumber", "part"]);
       const colDate = findCol(["promessadata", "data", "datapromessa"]);
       const colQty = findCol(["promessaqty", "qty", "qtyprometida", "quantidade"]);
-      const colConfirm = findCol(["confirmarentrega", "confirmado", "entregaconfirmada"]);
+      const colConfirm = findCol(["confirmarentrega", "confirmado", "entregaconfirmada", "confirmo"]);
       const colColeta = findCol(["datacoleta", "coleta"]);
       const colNfe = findCol(["nfeenviada", "nfe"]);
-      const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue"]);
+      const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue", "qtynfeconf"]);
       const colPrevisao = findCol(["previsaosaidawmfbr", "previsaosaida", "saidawmfbr"]);
       const colMotivo = findCol(["motivoatraso", "motivo", "status"]);
       if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
