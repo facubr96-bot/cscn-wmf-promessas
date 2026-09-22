@@ -243,6 +243,20 @@
 </head>
 <body>
 
+<div class="modal-overlay" id="loginOverlay" style="display:flex;">
+  <div class="modal-content" style="width:380px; height:auto;">
+    <div class="modal-header">
+      <h2>CSCN WMF — Acceso</h2>
+    </div>
+    <div style="padding:24px;">
+      <p style="font-size:13px; color:var(--gray-700); margin-bottom:14px;">Ingresa tu codigo personal para continuar.</p>
+      <input type="text" id="loginCodeInput" placeholder="Codigo" style="width:100%; padding:10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:14px; letter-spacing:1px; text-transform:uppercase;">
+      <div id="loginError" style="color:var(--red); font-size:12px; margin-top:8px; min-height:16px;"></div>
+      <button class="btn btn-primary" id="btnLogin" style="width:100%; margin-top:10px;">Entrar</button>
+    </div>
+  </div>
+</div>
+
 <header>
   <div class="brand">
     <span class="eyebrow">CNH INDUSTRIAL</span>
@@ -390,6 +404,8 @@
 
 <script>
 const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev/";
+let currentUser = null;
+let currentCode = "";
 
 function getPlanejador(item) {
   return item.planejador || "Sin asignar";
@@ -700,6 +716,7 @@ function renderDashPastDueTable(baseItemsOverride) {
     `;
     body.appendChild(tr);
   });
+  disableEditingIfViewer(body);
 }
 
 function toggleKpiFilter(key, label, testFn) {
@@ -856,6 +873,12 @@ function renderTable() {
     body.appendChild(tr);
   });
   syncTopScroll();
+  disableEditingIfViewer(body);
+}
+
+function disableEditingIfViewer(container) {
+  if (currentUser && currentUser.role === "editor") return;
+  container.querySelectorAll("input, select, button").forEach(el => { el.disabled = true; });
 }
 
 function syncTopScroll() {
@@ -948,6 +971,10 @@ window.clearPromise = async function(pn) {
 };
 
 window.saveRow = async function(pn) {
+  if (!currentUser || currentUser.role !== "editor") {
+    document.getElementById("statusText").textContent = "No tenes permiso de edicion (solo lectura).";
+    return;
+  }
   const item = allItems.find(i => i.pn === pn);
   if (!item) return;
   const itemPayload = {
@@ -969,10 +996,10 @@ window.saveRow = async function(pn) {
     return `${d.getFullYear()}-W${String(semana).padStart(2, "0")}`;
   })();
   try {
-    const resp = await fetch(WORKER_URL, {
+    const resp = await fetch(WORKER_URL + "?action=dashboard_edit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ supplier_code: item.supplier_code, semana: semanaAtual, itens: [itemPayload] }),
+      body: JSON.stringify({ supplier_code: item.supplier_code, semana: semanaAtual, itens: [itemPayload], editor_code: currentCode }),
     });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     delete dirty[pn];
@@ -1184,7 +1211,7 @@ async function loadData() {
     const genAt = data.generated_at || "";
     window._releaseCb = data.erp_release_cb || "";
     window._release3e = data.erp_release_3e || "";
-    document.getElementById("statusText").textContent = `${allItems.length} PN cargados`;
+    document.getElementById("statusText").textContent = `${allItems.length} PN cargados${currentUser ? ` — ${currentUser.holder_name} (${currentUser.role === "editor" ? "Editor" : "Solo lectura"})` : ""}`;
     document.getElementById("lastUpdate").textContent = genAt ? "Generado: " + genAt : "";
     loadFromUrl();
     document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
@@ -1300,7 +1327,50 @@ document.getElementById("btnCloseRawModal").onclick = () => {
 document.getElementById("rawSearchPn").oninput = renderRawTable;
 document.getElementById("rawSearchSupplier").oninput = renderRawTable;
 
-loadData();
+// ---------- Login por codigo personal ----------
+async function verifyLogin(code) {
+  const errEl = document.getElementById("loginError");
+  const btn = document.getElementById("btnLogin");
+  errEl.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "Verificando...";
+  try {
+    const resp = await fetch(WORKER_URL + "?verify_code=" + encodeURIComponent(code));
+    const data = await resp.json();
+    if (!resp.ok || !data.ok) {
+      errEl.textContent = "Codigo invalido.";
+      btn.disabled = false;
+      btn.textContent = "Entrar";
+      return;
+    }
+    currentUser = { holder_name: data.holder_name, role: data.role };
+    currentCode = code;
+    document.getElementById("loginOverlay").style.display = "none";
+    applyRolePermissions();
+    loadData();
+  } catch (e) {
+    errEl.textContent = "Error de conexion: " + e.message;
+    btn.disabled = false;
+    btn.textContent = "Entrar";
+  }
+}
+function applyRolePermissions() {
+  const isEditor = currentUser && currentUser.role === "editor";
+  document.getElementById("statusText").dataset.userTag = currentUser
+    ? ` — ${currentUser.holder_name} (${isEditor ? "Editor" : "Solo lectura"})`
+    : "";
+  document.getElementById("btnSave").style.display = isEditor ? "" : "none";
+  document.getElementById("btnImport").style.display = isEditor ? "" : "none";
+}
+document.getElementById("btnLogin").onclick = () => {
+  const code = document.getElementById("loginCodeInput").value.trim().toUpperCase();
+  if (!code) { document.getElementById("loginError").textContent = "Ingresa un codigo."; return; }
+  verifyLogin(code);
+};
+document.getElementById("loginCodeInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("btnLogin").click();
+});
+
 </script>
 </body>
 </html>
