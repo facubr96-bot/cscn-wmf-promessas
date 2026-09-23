@@ -391,6 +391,7 @@
           <thead>
             <tr>
               <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
+              <th>Ship Date mas antiguo</th><th>Dias em Past Due</th>
               <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th>
               <th>Promessa Data</th><th>Promessa Qty</th>
               <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
@@ -709,6 +710,8 @@ function renderDashPastDueTable(baseItemsOverride) {
     const firmSet = plant === "cb" ? (item.cor_qty_firm_current_month || 0) : (item.wmf_qty_firm_current_month || 0);
     const firmOut = plant === "cb" ? (item.cor_qty_firm_next_month || 0) : (item.wmf_qty_firm_next_month || 0);
     const ultimaNfe = plant === "cb" ? (item.ultima_nfe_cb || "") : String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    const oldestShipDate = plant === "cb" ? (item.cor_oldest_pastdue_ship_date || "") : (item.wmf_oldest_pastdue_ship_date || "");
+    const daysInPastDue = plant === "cb" ? item.cor_days_in_past_due : item.wmf_days_in_past_due;
     const motivo = item.motivo_atraso || "";
     const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
     const tr = document.createElement("tr");
@@ -717,6 +720,8 @@ function renderDashPastDueTable(baseItemsOverride) {
       <td>${item.supplier_code || ""}</td>
       <td>${item.supplier_name || ""}</td>
       <td style="${pastDueQty > 0 ? 'color:var(--red); font-weight:700;' : ''}">${pastDueQty}</td>
+      <td>${oldestShipDate}</td>
+      <td style="${(daysInPastDue ?? 0) > 0 ? 'color:var(--red); font-weight:700;' : ''}">${daysInPastDue ?? ""}</td>
       <td>${firmSet}</td>
       <td>${firmOut}</td>
       <td>${ultimaNfe}</td>
@@ -782,6 +787,8 @@ function getColumns() {
     { key: "stock_ws", label: "Stock WS" },
     { key: "nfe_stock_ws", label: "NFe Estoque" },
     { key: "qty_transito", label: "Transito" },
+    { key: "wmf_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
+    { key: "wmf_days_in_past_due", label: "Dias em Past Due" },
     { key: "wmf_qty_past_due", label: "Past Due" },
     { key: "wmf_qty_firm_current_month", label: "Firm Set" },
     { key: "wmf_qty_firm_next_month", label: "Firm Out" },
@@ -804,6 +811,8 @@ function getColumns() {
     { key: "stock_b1cb", label: "Stock SAP" },
     { key: "stock_ws", label: "Stock WS" },
     { key: "qty_transito", label: "Qty Transito" },
+    { key: "cor_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
+    { key: "cor_days_in_past_due", label: "Dias em Past Due" },
     { key: "cor_qty_past_due", label: "COR Past Due" },
     { key: "cor_qty_firm_current_month", label: "Firm Set" },
     { key: "cor_qty_firm_next_month", label: "Firm Out" },
