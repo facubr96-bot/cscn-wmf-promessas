@@ -331,6 +331,11 @@
           <h2>CPL</h2>
           <div class="kpi-grid" id="kpiOther"></div>
         </div>
+
+        <div class="kpi-section" id="kpiBalanceSection" style="display:none;">
+          <h2>Past Due Balance (CB)</h2>
+          <div class="kpi-grid" id="kpiBalance"></div>
+        </div>
       </div>
     </div>
 
@@ -561,7 +566,12 @@ function getKpiDefs() {
     tone: "gray",
     test: i => isPastDueGeneric(i) && !i.motivo_atraso,
   });
-  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs };
+  const balancePastDueCb = i => (i.cor_qty_past_due || 0) - (i.qty_transito || 0) - (i.stock_b1cb || 0);
+  const balanceDefs = [
+    { key: "bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
+    { key: "bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
+  ];
+  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs };
 }
 
 function fmtReleaseYYYYMMDD(raw) {
@@ -578,17 +588,20 @@ function renderReleaseInfo() {
 function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
-  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs } = getKpiDefs();
+  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   if (plant === "cb") {
     document.getElementById("kpiCov2Section").style.display = "";
     document.getElementById("kpiCov3Section").style.display = "none";
     renderKpiGrid("kpiCov2", cov2Defs);
+    document.getElementById("kpiBalanceSection").style.display = "";
+    renderKpiGrid("kpiBalance", balanceDefs);
   } else {
     document.getElementById("kpiCov2Section").style.display = "none";
     document.getElementById("kpiCov3Section").style.display = "";
     renderKpiGrid("kpiCov3", cov3Defs);
+    document.getElementById("kpiBalanceSection").style.display = "none";
   }
   renderKpiGrid("kpiOther", otherDefs);
   const dashBase = motivosBaseItems();
@@ -744,8 +757,8 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpiParam = params.get("kpi");
   if (kpiParam) {
-    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs } = getKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs];
+    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs } = getKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs, ...balanceDefs];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
@@ -900,11 +913,11 @@ function renderCell(item, key) {
       return `<td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!v ? "selected" : ""}>—</option>${opts}</select></td>`;
     }
     case "past_due_balance_cb": {
-      const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
+      const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
     }
     case "balance_cb": {
-      const bal = (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0);
+      const bal = (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
     }
     case "ultima_nfe_3e": {
@@ -1095,8 +1108,8 @@ function exportValue(item, key) {
     case "entrega_confirmada": return item.entrega_confirmada ? "Sim" : "Nao";
     case "status_p44": return item.status_p44 || "-";
     case "ultima_nfe_3e": return String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
-    case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0);
-    case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0);
+    case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+    case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
     default: return item[key] ?? "";
   }
