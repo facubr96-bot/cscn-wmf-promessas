@@ -725,7 +725,7 @@ function renderDashPastDueTable(baseItemsOverride) {
       <td>${item.promessa_qty ?? ""}</td>
       <td>${item.ultima_nfe_emitida_num || ""}</td>
       <td>${item.ultima_nfe_emitida_fecha || ""}</td>
-      <td>${item.ultima_nfe_emitida_qty ?? ""}</td>
+      <td>${item.ultima_nfe_emitida_qty ?? ""}${item.ultima_nfe_emitida_unidad ? " " + item.ultima_nfe_emitida_unidad : ""}</td>
     `;
     body.appendChild(tr);
   });
