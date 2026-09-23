@@ -1,0 +1,20 @@
+{
+  "supplier_code": "BPD14",
+  "semana": "2026-W39",
+  "itens": [
+    {
+      "part_number": "47898380",
+      "data_promessa": "23/09/2026",
+      "qty_prometida": 42,
+      "entrega_confirmada": true,
+      "data_coleta": "21/08/2026",
+      "nfe_enviada": "139765",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-09-23T19:32:52.155Z"
+}
