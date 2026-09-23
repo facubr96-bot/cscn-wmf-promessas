@@ -3,18 +3,18 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "47398809",
+      "part_number": "47863894",
       "data_promessa": "24/09/2026",
-      "qty_prometida": 1,
+      "qty_prometida": 10,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "previsao_saida_wmfbr": "17/09/2026",
+      "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-23T19:48:17.102Z"
+  "recibido_en_worker": "2026-09-23T19:48:39.699Z"
 }
