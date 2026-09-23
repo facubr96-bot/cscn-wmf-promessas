@@ -3,9 +3,9 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "85006229",
+      "part_number": "87034256",
       "data_promessa": "24/09/2026",
-      "qty_prometida": 38,
+      "qty_prometida": 40,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-23T19:35:05.880Z"
+  "recibido_en_worker": "2026-09-23T19:36:00.206Z"
 }
