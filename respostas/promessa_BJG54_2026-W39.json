@@ -3,9 +3,9 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "86980471",
+      "part_number": "87670764",
       "data_promessa": "28/09/2026",
-      "qty_prometida": 1500,
+      "qty_prometida": 500,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-23T19:35:52.552Z"
+  "recibido_en_worker": "2026-09-23T19:37:33.100Z"
 }
