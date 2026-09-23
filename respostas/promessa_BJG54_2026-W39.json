@@ -3,9 +3,9 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "15984334",
+      "part_number": "47399711",
       "data_promessa": "28/09/2026",
-      "qty_prometida": 510,
+      "qty_prometida": 670,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-23T19:32:14.308Z"
+  "recibido_en_worker": "2026-09-23T19:32:31.675Z"
 }
