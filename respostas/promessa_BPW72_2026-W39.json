@@ -3,18 +3,18 @@
   "semana": "2026-W39",
   "itens": [
     {
-      "part_number": "430356",
+      "part_number": "47846438",
       "data_promessa": "24/09/2026",
-      "qty_prometida": 50,
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "qty_prometida": 51,
+      "entrega_confirmada": true,
+      "data_coleta": "31/08/2026",
+      "nfe_enviada": "60242",
       "qty_confirmada": null,
-      "previsao_saida_wmfbr": "",
+      "previsao_saida_wmfbr": "18/09/2026",
       "motivo_atraso": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-23T19:50:23.603Z"
+  "recibido_en_worker": "2026-09-23T19:50:37.696Z"
 }
