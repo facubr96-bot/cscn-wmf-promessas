@@ -1,0 +1,20 @@
+{
+  "supplier_code": "BMZ25",
+  "semana": "2026-W39",
+  "itens": [
+    {
+      "part_number": "87108166",
+      "data_promessa": "25/09/2026",
+      "qty_prometida": 8,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-09-23T19:36:07.264Z"
+}
