@@ -829,6 +829,19 @@ function getColumns() {
   return common.concat(plant === "cb" ? plantCb : plant3e);
 }
 
+const DATE_COLUMNS = new Set([
+  "run_out_date", "promessa_data", "data_coleta", "early_pickup_date",
+  "previsao_saida_wmfbr", "fecha_completed_p44", "cor_oldest_pastdue_ship_date",
+  "wmf_oldest_pastdue_ship_date", "ultima_nfe_emitida_fecha", "data_inicio_transito",
+]);
+function sortValueFor(item, col) {
+  const v = item[col];
+  if (DATE_COLUMNS.has(col)) {
+    const d = parseDateBR(v);
+    return d ? d.getTime() : (sortDir === 1 ? Infinity : -Infinity); // vacios siempre al final
+  }
+  return v ?? "";
+}
 function filteredItems() {
   let items = allItems;
   if (activeFilters.size) {
@@ -842,8 +855,8 @@ function filteredItems() {
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   if (sortCol) {
     items = [...items].sort((a, b) => {
-      const av = a[sortCol] ?? "", bv = b[sortCol] ?? "";
-      if (typeof av === "number" || typeof bv === "number") return (av - bv) * sortDir;
+      const av = sortValueFor(a, sortCol), bv = sortValueFor(b, sortCol);
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * sortDir;
       return String(av).localeCompare(String(bv)) * sortDir;
     });
   }
@@ -917,6 +930,9 @@ function renderCell(item, key) {
       return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
     case "planejador":
       return `<td>${getPlanejador(item)}</td>`;
+    case "wmf_days_in_past_due":
+    case "cor_days_in_past_due":
+      return `<td style="${(v ?? 0) > 0 ? 'color:var(--red); font-weight:700;' : ''}">${v ?? ""}</td>`;
     case "motivo_atraso": {
       const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${v === m ? "selected" : ""}>${m}</option>`).join("");
       return `<td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!v ? "selected" : ""}>—</option>${opts}</select></td>`;
