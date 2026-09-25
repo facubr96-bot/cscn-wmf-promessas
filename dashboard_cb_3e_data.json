@@ -1,5 +1,5 @@
 {
-  "generated_at": "25/09/2026 01:02",
+  "generated_at": "25/09/2026 01:21",
   "today": "25/09/2026",
   "total_pn": 1994,
   "erp_release_cb": "20260923",
@@ -39959,8 +39959,8 @@
       "pn": "5191331",
       "impacto": "4",
       "run_out_date": "16/03/2027",
-      "supplier_code": "BMZ25",
-      "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
+      "supplier_code": "BVH68",
+      "supplier_name": "MASTERMAG IND E COMERCIO PECAS AUTO",
       "stock_b1cb": 0.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 0.0,
@@ -39988,9 +39988,9 @@
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
-      "early_pickup_date": "25/09/2026",
-      "order_release_info": "PUR - CNHILA.C10903444",
-      "shipment_code": "CNHILA.26404298",
+      "early_pickup_date": "14/07/2025",
+      "order_release_info": "PUR - CNHILA.C10714086",
+      "shipment_code": "CNHILA.25296723",
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
@@ -40000,7 +40000,7 @@
       "ultima_nfe_emitida_fecha": "",
       "ultima_nfe_emitida_qty": 0.0,
       "ultima_nfe_emitida_unidad": "",
-      "planejador": "Titon Facundo"
+      "planejador": "Vivian Strelow"
     },
     {
       "pn": "5191951",
