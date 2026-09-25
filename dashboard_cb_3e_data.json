@@ -1,5 +1,5 @@
 {
-  "generated_at": "25/09/2026 11:02",
+  "generated_at": "25/09/2026 11:21",
   "today": "25/09/2026",
   "total_pn": 1982,
   "erp_release_cb": "20260923",
@@ -25003,8 +25003,8 @@
       "fecha_completed_p44": "21/09/2026",
       "ultima_nfe_cb": "WMF-003289",
       "ultima_nfe_3e": "000139765-001",
-      "ultima_nfe_emitida_num": "140053",
-      "ultima_nfe_emitida_fecha": "18/09/2026",
+      "ultima_nfe_emitida_num": "140094",
+      "ultima_nfe_emitida_fecha": "25/09/2026",
       "ultima_nfe_emitida_qty": 42.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -25802,8 +25802,8 @@
       "fecha_completed_p44": "21/09/2026",
       "ultima_nfe_cb": "WMF-001221",
       "ultima_nfe_3e": "000134978-001",
-      "ultima_nfe_emitida_num": "140053",
-      "ultima_nfe_emitida_fecha": "18/09/2026",
+      "ultima_nfe_emitida_num": "140094",
+      "ultima_nfe_emitida_fecha": "25/09/2026",
       "ultima_nfe_emitida_qty": 75.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -25849,8 +25849,8 @@
       "fecha_completed_p44": "21/09/2026",
       "ultima_nfe_cb": "WMF-001221",
       "ultima_nfe_3e": "000134978-001",
-      "ultima_nfe_emitida_num": "140053",
-      "ultima_nfe_emitida_fecha": "18/09/2026",
+      "ultima_nfe_emitida_num": "140094",
+      "ultima_nfe_emitida_fecha": "25/09/2026",
       "ultima_nfe_emitida_qty": 75.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -90427,8 +90427,8 @@
       "fecha_completed_p44": "21/09/2026",
       "ultima_nfe_cb": "",
       "ultima_nfe_3e": "",
-      "ultima_nfe_emitida_num": "140053",
-      "ultima_nfe_emitida_fecha": "18/09/2026",
+      "ultima_nfe_emitida_num": "140094",
+      "ultima_nfe_emitida_fecha": "25/09/2026",
       "ultima_nfe_emitida_qty": 300.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
