@@ -1,0 +1,27 @@
+{
+  "supplier_code": "GT727",
+  "supplier_name": "RESIPLASTIC INDUSTRIA E COMERCIO",
+  "semana": "2026-W40",
+  "enviado_em": "2026-09-28T20:42:27.907Z",
+  "itens": [
+    {
+      "part_number": "84219375",
+      "supplier_code": "GT727",
+      "supplier_name": "RESIPLASTIC INDUSTRIA E COMERCIO",
+      "ship_date": "-",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W40",
+      "entrega_confirmada": true,
+      "data_coleta": "09/09/2026",
+      "nfe_enviada": "183078",
+      "qty_confirmada": null,
+      "data_promessa": "09/09/2026",
+      "qty_prometida": 18,
+      "comentario": "Promessa vencida - solicitar nova data."
+    }
+  ],
+  "recibido_en_worker": "2026-09-28T20:42:27.932Z"
+}
