@@ -1,5 +1,5 @@
 {
-  "generated_at": "28/09/2026 17:02",
+  "generated_at": "28/09/2026 17:22",
   "today": "28/09/2026",
   "total_pn": 1977,
   "erp_release_cb": "20260923",
@@ -80255,7 +80255,7 @@
       "entrega_confirmada": true,
       "data_coleta": "09/09/2026",
       "nfe_enviada": "49853",
-      "promessa_data": "09/09/2026",
+      "promessa_data": "12/10/2026",
       "promessa_qty": 45.0,
       "qty_confirmada": 45.0,
       "previsao_saida_wmfbr": "",
