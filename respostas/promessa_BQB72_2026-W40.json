@@ -1,0 +1,45 @@
+{
+  "supplier_code": "BQB72",
+  "supplier_name": "MERCOBOR IND E COM LTDA",
+  "semana": "2026-W40",
+  "enviado_em": "2026-09-28T20:16:36.495Z",
+  "itens": [
+    {
+      "part_number": "91763013",
+      "supplier_code": "BQB72",
+      "supplier_name": "MERCOBOR IND E COM LTDA",
+      "ship_date": "05/10/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000049853-001",
+      "semana": "2026-W40",
+      "entrega_confirmada": true,
+      "data_coleta": "09/09/2026",
+      "nfe_enviada": "49853",
+      "qty_confirmada": 45,
+      "data_promessa": "12/10/2026",
+      "qty_prometida": 45,
+      "comentario": "20 peças, lead time é de 30 dias. O mesmo não esta sendo respeitado na inclusão dos pedidos."
+    },
+    {
+      "part_number": "92173874",
+      "supplier_code": "BQB72",
+      "supplier_name": "MERCOBOR IND E COM LTDA",
+      "ship_date": "12/10/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000049853-001",
+      "semana": "2026-W40",
+      "entrega_confirmada": true,
+      "data_coleta": "09/09/2026",
+      "nfe_enviada": "49853",
+      "qty_confirmada": 20,
+      "data_promessa": "",
+      "qty_prometida": 20,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. NF 49609 E NF 49738"
+    }
+  ],
+  "recibido_en_worker": "2026-09-28T20:14:53.004Z"
+}
