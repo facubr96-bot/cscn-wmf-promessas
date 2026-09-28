@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJF54",
   "supplier_name": "KABEL WIRING SYSTEMS LTDA",
-  "semana": "2026-W39",
-  "gerado_em": "21/09/2026 07:00",
+  "semana": "2026-W40",
+  "gerado_em": "28/09/2026 14:32",
   "itens": [
     {
       "part_number": "92674262",
@@ -18,7 +18,7 @@
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 70,
       "ultima_nfe": "000240267-001",
-      "semana": "2026-W39",
+      "semana": "2026-W40",
       "data_promessa": "01/09/2026",
       "qty_prometida": 70,
       "comentario": "Promessa vencida - solicitar nova data. NF 240267",
