@@ -6,7 +6,7 @@
       "part_number": "92075047",
       "data_promessa": "25/09/2026",
       "qty_prometida": 20,
-      "entrega_confirmada": false,
+      "entrega_confirmada": true,
       "data_coleta": "16/09/2026",
       "nfe_enviada": "77827",
       "qty_confirmada": null,
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "0SVYHRCB",
-  "recibido_en_worker": "2026-09-28T14:05:31.296Z"
+  "recibido_en_worker": "2026-09-28T14:10:18.743Z"
 }
