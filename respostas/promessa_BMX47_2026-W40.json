@@ -6,7 +6,7 @@
       "part_number": "87648216",
       "data_promessa": "21/09/2026",
       "qty_prometida": 18,
-      "entrega_confirmada": false,
+      "entrega_confirmada": true,
       "data_coleta": "14/09/2026",
       "nfe_enviada": "288461",
       "qty_confirmada": null,
@@ -16,5 +16,5 @@
     }
   ],
   "editor_code": "0SVYHRCB",
-  "recibido_en_worker": "2026-09-28T14:05:19.695Z"
+  "recibido_en_worker": "2026-09-28T14:10:10.937Z"
 }
