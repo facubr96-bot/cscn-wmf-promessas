@@ -312,6 +312,11 @@
           <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
           <div class="kpi-grid" id="kpiCov1"></div>
         </div>
+
+        <div class="kpi-section">
+          <h2>Escalation</h2>
+          <div class="kpi-grid" id="kpiEscalation"></div>
+        </div>
       </div>
 
       <div class="kpi-divider"></div>
@@ -515,6 +520,24 @@ function isPastDueGeneric(item) {
   return (item.wmf_qty_past_due || 0) > 0;
 }
 
+// ---------- Escalation Level (L1/L2) ----------
+function hasRunOutWithin30Days(item) {
+  const ro = parseDateBR(item.run_out_date);
+  if (!ro) return false;
+  const today = todayNoTime();
+  const diffDias = (ro - today) / 86400000;
+  return diffDias <= 30; // incluye vencido (diffDias negativo) y dentro de los proximos 30 dias
+}
+function autoEscalationLevel(item) {
+  if (!isPastDueGeneric(item)) return "";
+  return hasRunOutWithin30Days(item) ? "L2" : "L1";
+}
+function effectiveEscalationLevel(item) {
+  // Override manual (item.escalation_level) tiene prioridad sobre el calculo automatico
+  if (item.escalation_level === "L1" || item.escalation_level === "L2") return item.escalation_level;
+  return autoEscalationLevel(item);
+}
+
 // ---------- Definicion de KPIs ----------
 function getKpiDefs() {
   const runoutDefs = [
@@ -572,7 +595,11 @@ function getKpiDefs() {
     { key: "bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
     { key: "bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
   ];
-  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs };
+  const escalationDefs = [
+    { key: "esc_l2", label: "Level 2 (Run Out ≤30d)", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
+    { key: "esc_l1", label: "Level 1", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
+  ];
+  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs };
 }
 
 function fmtReleaseYYYYMMDD(raw) {
@@ -589,9 +616,10 @@ function renderReleaseInfo() {
 function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
-  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs } = getKpiDefs();
+  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
+  renderKpiGrid("kpiEscalation", escalationDefs);
   if (plant === "cb") {
     document.getElementById("kpiCov2Section").style.display = "";
     document.getElementById("kpiCov3Section").style.display = "none";
@@ -762,8 +790,8 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpiParam = params.get("kpi");
   if (kpiParam) {
-    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs } = getKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs, ...balanceDefs];
+    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs } = getKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs, ...balanceDefs, ...escalationDefs];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
@@ -776,6 +804,7 @@ function getColumns() {
   const common = [
     { key: "pn", label: "PN" },
     { key: "impacto", label: "Impacto" },
+    { key: "escalation_level", label: "Escalation" },
     { key: "run_out_date", label: "Run Out" },
     { key: "supplier_code", label: "Cod." },
     { key: "supplier_name", label: "Proveedor" },
@@ -937,6 +966,17 @@ function renderCell(item, key) {
       const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${v === m ? "selected" : ""}>${m}</option>`).join("");
       return `<td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!v ? "selected" : ""}>—</option>${opts}</select></td>`;
     }
+    case "escalation_level": {
+      const eff = effectiveEscalationLevel(item);
+      const isOverride = v === "L1" || v === "L2";
+      const badge = eff === "L2" ? '<span class="badge badge-red">L2</span>' : eff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
+      const selOpts = `
+        <option value="" ${!isOverride ? "selected" : ""}>Auto${eff ? " (" + eff + ")" : ""}</option>
+        <option value="L1" ${v === "L1" ? "selected" : ""}>L1 (manual)</option>
+        <option value="L2" ${v === "L2" ? "selected" : ""}>L2 (manual)</option>
+      `;
+      return `<td>${badge} <select class="cell-select" onchange="markDirty('${item.pn}','escalation_level',this.value)">${selOpts}</select></td>`;
+    }
     case "past_due_balance_cb": {
       const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
@@ -1025,6 +1065,7 @@ window.saveRow = async function(pn) {
     qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
     previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
     motivo_atraso: item.motivo_atraso || "",
+    escalation_level: (item.escalation_level === "L1" || item.escalation_level === "L2") ? item.escalation_level : "",
     comentario: "",
   };
   const semanaAtual = (() => {
@@ -1136,6 +1177,7 @@ function exportValue(item, key) {
     case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
+    case "escalation_level": return effectiveEscalationLevel(item) || "";
     default: return item[key] ?? "";
   }
 }
