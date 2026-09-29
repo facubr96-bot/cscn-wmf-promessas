@@ -375,7 +375,15 @@
   <div id="viewDashboard" style="display:none;">
     <div class="toolbar" style="margin-top:0;">
       <input type="text" id="dashSearchPn" placeholder="Filtrar por PN...">
-      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">      <span class="count" id="dashRowCount"></span>
+      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">
+      <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--gray-700);">
+        <input type="checkbox" id="dashOnlyPastDue"> Somente Past Due
+      </label>
+      <span class="count" id="dashRowCount"></span>
+    </div>
+    <div class="kpi-section">
+      <h2>Escalation</h2>
+      <div class="kpi-grid" id="kpiDashEscalation"></div>
     </div>
     <div class="kpi-section">
       <h2>Motivos Past Due</h2>
@@ -397,7 +405,7 @@
             <tr>
               <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
               <th>Ship Date mas antiguo</th><th>Dias em Past Due</th>
-              <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th>
+              <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th><th>Escalation</th>
               <th>Promessa Data</th><th>Promessa Qty</th>
               <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
             </tr>
@@ -424,12 +432,13 @@ function getPlanejador(item) {
 const DATA_URL = "dashboard_cb_3e_data.json";
 
 const MOTIVO_OPTIONS = [
-  "Pedido inserido fora do lead time",
+  "Pedido inserido dentro do Lead time",
   "Atraso do fornecedor",
-  "Transport issue",
-  "Divergencia de NF-e",
-  "Negociacao comercial",
-  "Observacao WMFBR",
+  "Problema de transporte",
+  "Divergência de NF-e",
+  "Negociação comercial",
+  "Fornecedor novo",
+  "Resourcing",
 ];
 
 let allItems = [];
@@ -582,13 +591,13 @@ function getKpiDefs() {
     key: "motivo_" + m.replace(/[^a-zA-Z0-9]/g, ""),
     label: m,
     tone: "amber",
-    test: i => isPastDueGeneric(i) && i.motivo_atraso === m,
+    test: i => i.motivo_atraso === m,
   }));
   motivoDefs.push({
     key: "motivo_sem",
     label: "Sem motivo",
     tone: "gray",
-    test: i => isPastDueGeneric(i) && !i.motivo_atraso,
+    test: i => !i.motivo_atraso,
   });
   const balancePastDueCb = i => (i.cor_qty_past_due || 0) - (i.qty_transito || 0) - (i.stock_b1cb || 0);
   const balanceDefs = [
@@ -633,8 +642,10 @@ function renderKpis() {
     document.getElementById("kpiBalanceSection").style.display = "none";
   }
   renderKpiGrid("kpiOther", otherDefs);
-  const dashBase = motivosBaseItems();
+  let dashBase = motivosScopeItems(motivosBaseItems());
+  for (const { test } of activeFilters.values()) dashBase = dashBase.filter(test);
   renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
+  renderKpiGrid("kpiDashEscalation", escalationDefs, dashBase);
   renderMotivosCharts(motivoDefs, dashBase);
   renderDashPastDueTable(dashBase);
   document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
@@ -658,11 +669,31 @@ function motivosBaseItems() {
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   return items;
 }
+// Alcance do painel de Motivos/Escalation na aba Dashboard: por padrao mostra
+// TODAS as pecas com motivo atribuido OU em past due (para poder marcar
+// motivo em pecas que ja entraram em firme mas nao estao em past due).
+// O checkbox "Somente Past Due" restringe para so as que estao em past due.
+function motivosScopeItems(items) {
+  const onlyPastDue = document.getElementById("dashOnlyPastDue").checked;
+  return items.filter(i => onlyPastDue ? isPastDueGeneric(i) : (isPastDueGeneric(i) || i.motivo_atraso));
+}
+// Base de um painel de KPI da aba Tabela, respeitando os OUTROS filtros ja
+// ativos (ex: clicar em "Com Past Due Balance" recalcula os paineis de
+// Cobertura/COR->WMF so com essas pecas, mostrando quantas estao em transito,
+// em stock, etc). Exclui o proprio filtro (def.key) para nao se auto-zerar.
+function activeFilterBaseItems(excludeKey) {
+  let items = searchBaseItems();
+  for (const [key, { test }] of activeFilters.entries()) {
+    if (key === excludeKey) continue;
+    items = items.filter(test);
+  }
+  return items;
+}
 function renderKpiGrid(elId, defs, baseItemsOverride) {
   const el = document.getElementById(elId);
   el.innerHTML = "";
-  const base = baseItemsOverride || searchBaseItems();
   defs.forEach(def => {
+    const base = baseItemsOverride || activeFilterBaseItems(def.key);
     const count = base.filter(def.test).length;
     const card = document.createElement("button");
     card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
@@ -742,6 +773,14 @@ function renderDashPastDueTable(baseItemsOverride) {
     const daysInPastDue = plant === "cb" ? item.cor_days_in_past_due : item.wmf_days_in_past_due;
     const motivo = item.motivo_atraso || "";
     const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
+    const escEff = effectiveEscalationLevel(item);
+    const escIsOverride = item.escalation_level === "L1" || item.escalation_level === "L2";
+    const escBadge = escEff === "L2" ? '<span class="badge badge-red">L2</span>' : escEff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
+    const escOpts = `
+      <option value="" ${!escIsOverride ? "selected" : ""}>Auto${escEff ? " (" + escEff + ")" : ""}</option>
+      <option value="L1" ${item.escalation_level === "L1" ? "selected" : ""}>L1 (manual)</option>
+      <option value="L2" ${item.escalation_level === "L2" ? "selected" : ""}>L2 (manual)</option>
+    `;
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${item.pn}</td>
@@ -754,6 +793,7 @@ function renderDashPastDueTable(baseItemsOverride) {
       <td>${firmOut}</td>
       <td>${ultimaNfe}</td>
       <td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!motivo ? "selected" : ""}>—</option>${opts}</select></td>
+      <td>${escBadge} <select class="cell-select" onchange="markDirty('${item.pn}','escalation_level',this.value)">${escOpts}</select></td>
       <td>${item.promessa_data || ""}</td>
       <td>${item.promessa_qty ?? ""}</td>
       <td>${item.ultima_nfe_emitida_num || ""}</td>
@@ -1260,6 +1300,7 @@ document.getElementById("searchSupplier").oninput = () => { renderKpis(); render
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
 document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
 document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
+document.getElementById("dashOnlyPastDue").onchange = () => { renderKpis(); };
 
 document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
   btn.onclick = () => {
