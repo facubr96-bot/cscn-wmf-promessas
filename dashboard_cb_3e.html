@@ -79,6 +79,16 @@
   main { padding: 20px 24px 60px; }
 
   .kpi-section { margin-bottom: 22px; }
+  .filter-group { margin-bottom: 16px; }
+  .filter-group-title { font-size: 12px; font-weight: 700; color: var(--gray-700); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 6px; }
+  .filter-checklist { max-height: 160px; overflow-y: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 6px 8px; background: var(--white); }
+  .filter-checklist label { display: flex; align-items: center; gap: 6px; font-size: 12px; padding: 3px 0; cursor: pointer; }
+  .filter-checklist .count { color: var(--gray-700); font-weight: 400; margin-left: auto; }
+  .cpl-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .cpl-bar-label { width: 130px; font-size: 12px; text-align: right; color: var(--gray-700); flex-shrink: 0; }
+  .cpl-bar-track { flex: 1; background: var(--gray-100); border-radius: 3px; overflow: hidden; height: 20px; }
+  .cpl-bar-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; color: var(--white); font-size: 11px; font-weight: 700; box-sizing: border-box; }
+  .cpl-bar-count { width: 40px; font-size: 12px; font-weight: 600; }
   .kpi-columns { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 18px; align-items: start; }
   .kpi-col { min-width: 0; }
   .kpi-divider { background: var(--gray-300); align-self: stretch; }
@@ -270,6 +280,7 @@
     <div class="plant-switch" id="viewSwitch">
       <button data-view="table" class="active">Tabela</button>
       <button data-view="dashboard">Dashboard</button>
+      <button data-view="cpl">CPL</button>
     </div>
     <button class="btn" id="btnRawView">Ver CSCN em bruto</button>
   </div>
@@ -413,6 +424,94 @@
           <tbody id="dashPastDueBody"></tbody>
         </table>
         <div class="empty-state" id="dashPastDueEmpty" style="display:none;">Nenhum PN em Past Due (ou com motivo registrado) nesta planta/filtro.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewCpl" style="display:none;">
+    <div class="toolbar" style="margin-top:0;">
+      <input type="text" id="cplSearchPn" placeholder="Buscar PN...">
+      <input type="text" id="cplSearchSupplier" placeholder="Buscar proveedor...">
+      <span class="count" id="cplRowCount"></span>
+      <button class="btn" id="btnCplClearFilters">Limpar filtros</button>
+      <button class="btn" id="btnCplReload">Recarregar</button>
+    </div>
+    <div id="cplEmptyState" class="empty-state" style="display:none;">
+      Esta aba ainda nao tem dados publicados (dashboard_cpl_data.json). Falta gerar/publicar esse JSON a partir da lista SharePoint "Solicitacoes Criticas Cordoba".
+    </div>
+    <div id="cplContent" style="display:none;">
+      <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+        <div style="flex:1; min-width:320px;">
+          <div class="kpi-grid" id="kpiCplCriticidad" style="margin-bottom:16px;"></div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Status Promessas</h2>
+              <div id="cplStatusPromessas"></div>
+            </div>
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Aging de Solicitacoes Abertas</h2>
+              <div id="cplAging"></div>
+            </div>
+          </div>
+
+          <div class="kpi-section" style="margin-bottom:16px;">
+            <h2>Principais Causas de Incidencia</h2>
+            <div id="cplCausas"></div>
+          </div>
+        </div>
+
+        <div style="width:220px; flex-shrink:0;">
+          <div class="kpi-section">
+            <h2>Filtros</h2>
+            <div class="filter-group">
+              <div class="filter-group-title">Criticidade</div>
+              <div id="cplFilterCriticidad" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Estado</div>
+              <div id="cplFilterEstado" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Planejador</div>
+              <div id="cplFilterPlanner" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Solicitante</div>
+              <div id="cplFilterSolicitante" class="filter-checklist"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-section">
+        <h2>Detalhe</h2>
+        <div class="table-wrap" style="max-height: 55vh;">
+          <table id="cplTable">
+            <thead>
+              <tr>
+                <th data-col="pn">PN</th>
+                <th data-col="supplier_code">Cod. Fornecedor</th>
+                <th data-col="supplier_name">Fornecedor</th>
+                <th data-col="stock_wmf">Stock WMF</th>
+                <th data-col="qty_transito">Transito</th>
+                <th data-col="qty_min">Qty Min</th>
+                <th data-col="criticidad">Criticidade</th>
+                <th data-col="reason">Reason</th>
+                <th data-col="run_out_date">Run Out Date</th>
+                <th data-col="wmf_promise">WMF Promise</th>
+                <th data-col="created">Created</th>
+                <th data-col="estado">Estado</th>
+                <th data-col="planner">Planejador</th>
+                <th data-col="solicitante">Solicitante</th>
+                <th data-col="plant">Plant</th>
+                <th>Sai do CPL?</th>
+              </tr>
+            </thead>
+            <tbody id="cplTableBody"></tbody>
+          </table>
+          <div class="empty-state" id="cplTableEmpty" style="display:none;">Nenhum item com esse filtro.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1319,7 +1418,9 @@ document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => 
     document.querySelectorAll("#viewSwitch button").forEach(b => b.classList.toggle("active", b === btn));
     document.getElementById("viewTable").style.display = view === "table" ? "" : "none";
     document.getElementById("viewDashboard").style.display = view === "dashboard" ? "" : "none";
-    if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos con datos frescos
+    document.getElementById("viewCpl").style.display = view === "cpl" ? "" : "none";
+    if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos com dados frescos
+    if (view === "cpl") loadCplData();
   };
 });
 
@@ -1356,6 +1457,244 @@ tableWrapEl.addEventListener("scroll", () => {
   _syncingScroll = true;
   topScrollWrap.scrollLeft = tableWrapEl.scrollLeft;
   _syncingScroll = false;
+});
+
+// ---------- Aba CPL (Criticidade / Solicitacoes) ----------
+// Fonte de dados: um JSON novo, publicado a partir da lista SharePoint
+// "Solicitacoes Criticas Cordoba" (a mesma que wmf_cscn_update_cordoba_list
+// mantem atualizada). Ainda NAO existe — esta aba fica com um aviso ate que
+// dashboard_cpl_data.json seja gerado/publicado pelo pipeline.
+// Formato esperado: { "generated_at": "...", "items": [ { pn, supplier_code,
+// supplier_name, stock_wmf, qty_transito, qty_min, criticidad, reason,
+// run_out_date, wmf_promise, created, estado, planner, solicitante, plant }, ... ] }
+const CPL_DATA_URL = "dashboard_cpl_data.json";
+let cplItems = [];
+let cplLoaded = false;
+let cplSortCol = null, cplSortDir = 1;
+const cplFilters = { criticidad: new Set(), estado: new Set(), planner: new Set(), solicitante: new Set() };
+const CRITICIDAD_ORDER = ["Normal", "Critico", "Crítico", "Hiper Critico", "Hiper Crítico"];
+
+function cplToneFor(label) {
+  const l = String(label || "").toLowerCase();
+  if (l.includes("hiper")) return "red";
+  if (l.includes("crit") || l.includes("crít")) return "amber";
+  if (l.includes("normal")) return "green";
+  return "gray";
+}
+function cplDaysOpen(item) {
+  const created = parseDateBR(item.created);
+  if (!created) return null;
+  return Math.floor((todayNoTime() - created) / 86400000);
+}
+function cplIsOpen(item) {
+  const estado = String(item.estado || "").toLowerCase();
+  return !estado.includes("final") && !estado.includes("conclu") && !estado.includes("fech");
+}
+function cplAgingBucket(item) {
+  if (!cplIsOpen(item)) return null;
+  const days = cplDaysOpen(item);
+  if (days === null) return null;
+  if (days > 10) return ">10 dias";
+  if (days >= 6) return "6-10 dias";
+  if (days >= 3) return "3-5 dias";
+  return "0-2 dias";
+}
+// Regra nova: o transito tem que atender a Qty Min solicitada para o PN
+// poder sair do CPL. So sinaliza quando ha uma Qty Min > 0 cadastrada.
+function cplSaiDoCpl(item) {
+  const qtyMin = Number(item.qty_min || 0);
+  const qtyTransito = Number(item.qty_transito || 0);
+  if (!(qtyMin > 0)) return false;
+  return qtyTransito >= qtyMin;
+}
+
+async function loadCplData(force) {
+  if (cplLoaded && !force) { renderCplView(); return; }
+  document.getElementById("cplEmptyState").style.display = "none";
+  document.getElementById("cplContent").style.display = "none";
+  try {
+    const resp = await fetch(CPL_DATA_URL + "?t=" + Date.now());
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    cplItems = Array.isArray(data) ? data : (data.items || []);
+    cplLoaded = true;
+    document.getElementById("cplContent").style.display = "";
+    renderCplView();
+  } catch (e) {
+    document.getElementById("cplContent").style.display = "none";
+    const el = document.getElementById("cplEmptyState");
+    el.style.display = "block";
+    el.textContent = `Esta aba ainda nao tem dados publicados (dashboard_cpl_data.json). Erro: ${e.message}`;
+  }
+}
+
+function cplUniqueValues(field) {
+  const vals = new Set();
+  cplItems.forEach(i => { if (i[field]) vals.add(i[field]); });
+  return [...vals].sort((a, b) => String(a).localeCompare(String(b)));
+}
+function renderCplFilterGroup(containerId, field) {
+  const el = document.getElementById(containerId);
+  const values = cplUniqueValues(field);
+  const set = cplFilters[field];
+  el.innerHTML = values.map(v => {
+    const count = cplItems.filter(i => i[field] === v).length;
+    const checked = set.has(v) ? "checked" : "";
+    return `<label><input type="checkbox" value="${String(v).replace(/"/g, "&quot;")}" ${checked}> ${v} <span class="count">${count}</span></label>`;
+  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem dados.</div>';
+  el.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) set.add(cb.value); else set.delete(cb.value);
+      renderCplView();
+    };
+  });
+}
+function cplBaseItems() {
+  const pnQ = document.getElementById("cplSearchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("cplSearchSupplier").value.trim().toLowerCase();
+  let items = cplItems;
+  if (pnQ) items = items.filter(i => String(i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => String(i.supplier_name || "").toLowerCase().includes(supQ) || String(i.supplier_code || "").toLowerCase().includes(supQ));
+  ["criticidad", "estado", "planner", "solicitante"].forEach(cat => {
+    const set = cplFilters[cat];
+    if (set.size) items = items.filter(i => set.has(i[cat] || ""));
+  });
+  return items;
+}
+function cplCriticidadGroups(items) {
+  const counts = {};
+  items.forEach(i => { const c = i.criticidad || "Sem criticidade"; counts[c] = (counts[c] || 0) + 1; });
+  const keys = Object.keys(counts).sort((a, b) => {
+    const ia = CRITICIDAD_ORDER.indexOf(a), ib = CRITICIDAD_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  return keys.map(k => ({ label: k, count: counts[k] }));
+}
+function cplRenderBarChart(containerId, rows, opts = {}) {
+  const el = document.getElementById(containerId);
+  const total = rows.reduce((a, r) => a + r.count, 0);
+  const maxCount = Math.max(1, ...rows.map(r => r.count));
+  if (total === 0) { el.innerHTML = '<div class="empty-state" style="padding:12px;">Sem dados para exibir.</div>'; return; }
+  el.innerHTML = rows.map(r => {
+    const pct = total ? Math.round((r.count / total) * 100) : 0;
+    const widthPct = Math.max(2, (r.count / maxCount) * 100);
+    const label = opts.showPct ? `${r.count} (${pct}%)` : `${r.count}`;
+    const insideLabel = widthPct > 28;
+    return `
+      <div class="cpl-bar-row">
+        <div class="cpl-bar-label">${r.label}</div>
+        <div class="cpl-bar-track">
+          <div class="cpl-bar-fill" style="width:${widthPct}%; background:${r.color || "var(--red)"};">${insideLabel ? label : ""}</div>
+        </div>
+        <div class="cpl-bar-count">${insideLabel ? "" : label}</div>
+      </div>`;
+  }).join("");
+}
+function renderCplTable(items) {
+  const body = document.getElementById("cplTableBody");
+  body.innerHTML = "";
+  document.getElementById("cplTableEmpty").style.display = items.length ? "none" : "block";
+  items.forEach(item => {
+    const saiDoCpl = cplSaiDoCpl(item);
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.pn || ""}</td>
+      <td>${item.supplier_code || ""}</td>
+      <td>${item.supplier_name || ""}</td>
+      <td>${item.stock_wmf ?? ""}</td>
+      <td>${item.qty_transito ?? ""}</td>
+      <td>${item.qty_min ?? ""}</td>
+      <td>${item.criticidad || ""}</td>
+      <td>${item.reason || ""}</td>
+      <td>${item.run_out_date || ""}</td>
+      <td>${item.wmf_promise || ""}</td>
+      <td>${item.created || ""}</td>
+      <td>${item.estado || ""}</td>
+      <td>${item.planner || ""}</td>
+      <td>${item.solicitante || ""}</td>
+      <td>${item.plant || ""}</td>
+      <td>${saiDoCpl ? '<span class="badge badge-green">Sim — transito &ge; Qty Min</span>' : ""}</td>
+    `;
+    body.appendChild(tr);
+  });
+}
+function renderCplView() {
+  if (!cplLoaded) return;
+  renderCplFilterGroup("cplFilterCriticidad", "criticidad");
+  renderCplFilterGroup("cplFilterEstado", "estado");
+  renderCplFilterGroup("cplFilterPlanner", "planner");
+  renderCplFilterGroup("cplFilterSolicitante", "solicitante");
+
+  const items = cplBaseItems();
+  document.getElementById("cplRowCount").textContent = `${items.length} de ${cplItems.length} solicitacoes`;
+
+  const groups = cplCriticidadGroups(items);
+  const kpiEl = document.getElementById("kpiCplCriticidad");
+  kpiEl.innerHTML = groups.map(g => `
+    <div class="kpi-card tone-${cplToneFor(g.label)}">
+      <div class="kpi-value">${g.count}</div>
+      <div class="kpi-label">${g.label}</div>
+    </div>
+  `).join("") + `
+    <div class="kpi-card tone-gray">
+      <div class="kpi-value">${items.length}</div>
+      <div class="kpi-label">Total Solicitacoes</div>
+    </div>
+  `;
+
+  const semPromessa = items.filter(i => !i.wmf_promise).length;
+  const comPromessa = items.length - semPromessa;
+  cplRenderBarChart("cplStatusPromessas", [
+    { label: "Sem Promessa", count: semPromessa, color: "var(--red)" },
+    { label: "Com Promessa", count: comPromessa, color: "var(--green)" },
+  ], { showPct: true });
+
+  const agingBuckets = [">10 dias", "6-10 dias", "3-5 dias", "0-2 dias"];
+  const agingColors = { ">10 dias": "var(--red)", "6-10 dias": "#b5750c", "3-5 dias": "#d8b34a", "0-2 dias": "var(--green)" };
+  const openItems = items.filter(cplIsOpen);
+  const agingRows = agingBuckets.map(b => ({
+    label: b,
+    count: openItems.filter(i => cplAgingBucket(i) === b).length,
+    color: agingColors[b],
+  }));
+  cplRenderBarChart("cplAging", agingRows);
+
+  const causaCounts = {};
+  items.forEach(i => { const r = i.reason || "Sem motivo"; causaCounts[r] = (causaCounts[r] || 0) + 1; });
+  const causaRows = Object.entries(causaCounts).sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count, color: "#1f3a5f" }));
+  cplRenderBarChart("cplCausas", causaRows);
+
+  let sortedItems = items;
+  if (cplSortCol) {
+    sortedItems = [...items].sort((a, b) => {
+      const av = a[cplSortCol] ?? "", bv = b[cplSortCol] ?? "";
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * cplSortDir;
+      return String(av).localeCompare(String(bv)) * cplSortDir;
+    });
+  }
+  renderCplTable(sortedItems);
+}
+
+document.getElementById("cplSearchPn").oninput = () => renderCplView();
+document.getElementById("cplSearchSupplier").oninput = () => renderCplView();
+document.getElementById("btnCplClearFilters").onclick = () => {
+  document.getElementById("cplSearchPn").value = "";
+  document.getElementById("cplSearchSupplier").value = "";
+  Object.values(cplFilters).forEach(s => s.clear());
+  renderCplView();
+};
+document.getElementById("btnCplReload").onclick = () => loadCplData(true);
+document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
+  th.style.cursor = "pointer";
+  th.onclick = () => {
+    const col = th.dataset.col;
+    cplSortDir = cplSortCol === col ? -cplSortDir : 1;
+    cplSortCol = col;
+    renderCplView();
+  };
 });
 
 // ---------- Modal "Ver CSCN em bruto" ----------
