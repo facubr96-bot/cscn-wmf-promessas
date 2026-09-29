@@ -89,6 +89,10 @@
   .cpl-bar-track { flex: 1; background: var(--gray-100); border-radius: 3px; overflow: hidden; height: 20px; }
   .cpl-bar-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; color: var(--white); font-size: 11px; font-weight: 700; box-sizing: border-box; }
   .cpl-bar-count { width: 40px; font-size: 12px; font-weight: 600; }
+  .cpl-bar-clickable { cursor: pointer; border-radius: 4px; padding: 2px 4px; margin: -2px -4px 6px -4px; }
+  .cpl-bar-clickable:hover { background: var(--gray-100); }
+  .cpl-bar-active { outline: 2px solid var(--red); background: #fde8e8; }
+  .cpl-bar-active .cpl-bar-label { font-weight: 700; color: var(--red); }
   .kpi-columns { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 18px; align-items: start; }
   .kpi-col { min-width: 0; }
   .kpi-divider { background: var(--gray-300); align-self: stretch; }
@@ -455,9 +459,15 @@
             </div>
           </div>
 
-          <div class="kpi-section" style="margin-bottom:16px;">
-            <h2>Principais Causas de Incidencia</h2>
-            <div id="cplCausas"></div>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Principais Causas de Incidencia</h2>
+              <div id="cplCausas"></div>
+            </div>
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Motivo Atraso (nosso, do dashboard)</h2>
+              <div id="cplMotivoNosso"></div>
+            </div>
           </div>
         </div>
 
@@ -1471,8 +1481,31 @@ const CPL_DATA_URL = "dashboard_cpl_data.json";
 let cplItems = [];
 let cplLoaded = false;
 let cplSortCol = null, cplSortDir = 1;
-const cplFilters = { criticidad: new Set(), estado: new Set(), planner: new Set(), solicitante: new Set() };
+// criticidad/estado/planner/solicitante: filtro por checklist (campo direto).
+// reason/aging/statusPromessa/motivoNosso: filtro por clique nos graficos de barras (valor calculado).
+const cplFilters = {
+  criticidad: new Set(), estado: new Set(), planner: new Set(), solicitante: new Set(),
+  reason: new Set(), aging: new Set(), statusPromessa: new Set(), motivoNosso: new Set(),
+};
 const CRITICIDAD_ORDER = ["Normal", "Critico", "Crítico", "Hiper Critico", "Hiper Crítico"];
+// Cruza o PN do CPL com allItems (o JSON principal do dashboard, ja carregado)
+// para trazer o motivo_atraso "nosso" (o campo editavel na aba Dashboard),
+// que e distinto do "reason" (Motivo) da propria lista SharePoint.
+let cplMotivoNossoLookup = new Map();
+function cplRebuildMotivoNossoLookup() {
+  cplMotivoNossoLookup = new Map();
+  (allItems || []).forEach(i => { if (i.pn && !cplMotivoNossoLookup.has(i.pn)) cplMotivoNossoLookup.set(i.pn, i.motivo_atraso || ""); });
+}
+const CPL_COMPUTED_CATS = {
+  aging: item => cplAgingBucket(item) || "",
+  statusPromessa: item => item.wmf_promise ? "Com Promessa" : "Sem Promessa",
+  reason: item => item.reason || "Sem motivo",
+  motivoNosso: item => cplMotivoNossoLookup.get(item.pn) || "Sem motivo (dashboard)",
+};
+function cplCategoryValue(item, cat) {
+  if (CPL_COMPUTED_CATS[cat]) return CPL_COMPUTED_CATS[cat](item);
+  return item[cat] || "";
+}
 
 function cplToneFor(label) {
   const l = String(label || "").toLowerCase();
@@ -1555,9 +1588,9 @@ function cplBaseItems() {
   let items = cplItems;
   if (pnQ) items = items.filter(i => String(i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => String(i.supplier_name || "").toLowerCase().includes(supQ) || String(i.supplier_code || "").toLowerCase().includes(supQ));
-  ["criticidad", "estado", "planner", "solicitante"].forEach(cat => {
+  Object.keys(cplFilters).forEach(cat => {
     const set = cplFilters[cat];
-    if (set.size) items = items.filter(i => set.has(i[cat] || ""));
+    if (set.size) items = items.filter(i => set.has(cplCategoryValue(i, cat)));
   });
   return items;
 }
@@ -1578,13 +1611,18 @@ function cplRenderBarChart(containerId, rows, opts = {}) {
   const total = rows.reduce((a, r) => a + r.count, 0);
   const maxCount = Math.max(1, ...rows.map(r => r.count));
   if (total === 0) { el.innerHTML = '<div class="empty-state" style="padding:12px;">Sem dados para exibir.</div>'; return; }
+  const category = opts.category;
   el.innerHTML = rows.map(r => {
     const pct = total ? Math.round((r.count / total) * 100) : 0;
     const widthPct = Math.max(2, (r.count / maxCount) * 100);
     const label = opts.showPct ? `${r.count} (${pct}%)` : `${r.count}`;
     const insideLabel = widthPct > 28;
+    const filterKey = r.filterKey ?? r.label;
+    const isActive = category && cplFilters[category] && cplFilters[category].has(filterKey);
+    const rowClass = "cpl-bar-row" + (category ? " cpl-bar-clickable" : "") + (isActive ? " cpl-bar-active" : "");
+    const dataAttrs = category ? ` data-cat="${category}" data-key="${String(filterKey).replace(/"/g, "&quot;")}"` : "";
     return `
-      <div class="cpl-bar-row">
+      <div class="${rowClass}"${dataAttrs}>
         <div class="cpl-bar-label">${r.label}</div>
         <div class="cpl-bar-track">
           <div class="cpl-bar-fill" style="width:${widthPct}%; background:${r.color || "var(--red)"};">${insideLabel ? label : ""}</div>
@@ -1592,6 +1630,16 @@ function cplRenderBarChart(containerId, rows, opts = {}) {
         <div class="cpl-bar-count">${insideLabel ? "" : label}</div>
       </div>`;
   }).join("");
+  if (category) {
+    el.querySelectorAll(".cpl-bar-clickable").forEach(row => {
+      row.onclick = () => {
+        const cat = row.dataset.cat, key = row.dataset.key;
+        const set = cplFilters[cat];
+        if (set.has(key)) set.delete(key); else set.add(key);
+        renderCplView();
+      };
+    });
+  }
 }
 function renderCplTable(items) {
   const body = document.getElementById("cplTableBody");
@@ -1623,6 +1671,7 @@ function renderCplTable(items) {
 }
 function renderCplView() {
   if (!cplLoaded) return;
+  cplRebuildMotivoNossoLookup();
   renderCplFilterGroup("cplFilterCriticidad", "criticidad");
   renderCplFilterGroup("cplFilterEstado", "estado");
   renderCplFilterGroup("cplFilterPlanner", "planner");
@@ -1650,7 +1699,7 @@ function renderCplView() {
   cplRenderBarChart("cplStatusPromessas", [
     { label: "Sem Promessa", count: semPromessa, color: "var(--red)" },
     { label: "Com Promessa", count: comPromessa, color: "var(--green)" },
-  ], { showPct: true });
+  ], { showPct: true, category: "statusPromessa" });
 
   const agingBuckets = [">10 dias", "6-10 dias", "3-5 dias", "0-2 dias"];
   const agingColors = { ">10 dias": "var(--red)", "6-10 dias": "#b5750c", "3-5 dias": "#d8b34a", "0-2 dias": "var(--green)" };
@@ -1660,12 +1709,22 @@ function renderCplView() {
     count: openItems.filter(i => cplAgingBucket(i) === b).length,
     color: agingColors[b],
   }));
-  cplRenderBarChart("cplAging", agingRows);
+  cplRenderBarChart("cplAging", agingRows, { category: "aging" });
 
   const causaCounts = {};
   items.forEach(i => { const r = i.reason || "Sem motivo"; causaCounts[r] = (causaCounts[r] || 0) + 1; });
   const causaRows = Object.entries(causaCounts).sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count, color: "#1f3a5f" }));
-  cplRenderBarChart("cplCausas", causaRows);
+  cplRenderBarChart("cplCausas", causaRows, { category: "reason" });
+
+  // Motivo Atraso "nosso" (o campo editavel na aba Dashboard/motivo_atraso),
+  // cruzado por PN contra allItems — distinto do "reason" (Motivo) da lista SharePoint.
+  const motivoNossoCounts = {};
+  items.forEach(i => {
+    const v = cplMotivoNossoLookup.get(i.pn) || "Sem motivo (dashboard)";
+    motivoNossoCounts[v] = (motivoNossoCounts[v] || 0) + 1;
+  });
+  const motivoNossoRows = Object.entries(motivoNossoCounts).sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count, color: "#6a4c93" }));
+  cplRenderBarChart("cplMotivoNosso", motivoNossoRows, { category: "motivoNosso" });
 
   let sortedItems = items;
   if (cplSortCol) {
