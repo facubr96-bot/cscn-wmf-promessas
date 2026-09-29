@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BJG17",
+  "semana": "2026-W40",
+  "itens": [
+    {
+      "part_number": "48172458",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "L2",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-09-29T12:56:34.819Z"
+}
