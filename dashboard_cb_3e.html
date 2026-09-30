@@ -436,6 +436,12 @@
     <div class="toolbar" style="margin-top:0;">
       <input type="text" id="cplSearchPn" placeholder="Buscar PN...">
       <input type="text" id="cplSearchSupplier" placeholder="Buscar proveedor...">
+      <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">Criado de
+        <input type="date" id="cplDateFrom">
+      </label>
+      <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">ate
+        <input type="date" id="cplDateTo">
+      </label>
       <span class="count" id="cplRowCount"></span>
       <button class="btn" id="btnCplClearFilters">Limpar filtros</button>
       <button class="btn" id="btnCplReload">Recarregar</button>
@@ -1609,9 +1615,22 @@ function renderCplFilterGroup(containerId, field) {
 function cplBaseItems() {
   const pnQ = document.getElementById("cplSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("cplSearchSupplier").value.trim().toLowerCase();
+  const dateFromVal = document.getElementById("cplDateFrom").value;
+  const dateToVal = document.getElementById("cplDateTo").value;
+  const dateFrom = dateFromVal ? new Date(dateFromVal + "T00:00:00") : null;
+  const dateTo = dateToVal ? new Date(dateToVal + "T23:59:59") : null;
   let items = cplItems;
   if (pnQ) items = items.filter(i => String(i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => String(i.supplier_name || "").toLowerCase().includes(supQ) || String(i.supplier_code || "").toLowerCase().includes(supQ));
+  if (dateFrom || dateTo) {
+    items = items.filter(i => {
+      const created = parseDateBR(i.created);
+      if (!created) return false;
+      if (dateFrom && created < dateFrom) return false;
+      if (dateTo && created > dateTo) return false;
+      return true;
+    });
+  }
   Object.keys(cplFilters).forEach(cat => {
     const set = cplFilters[cat];
     if (set.size) items = items.filter(i => set.has(cplCategoryValue(i, cat)));
@@ -1763,9 +1782,13 @@ function renderCplView() {
 
 document.getElementById("cplSearchPn").oninput = () => renderCplView();
 document.getElementById("cplSearchSupplier").oninput = () => renderCplView();
+document.getElementById("cplDateFrom").onchange = () => renderCplView();
+document.getElementById("cplDateTo").onchange = () => renderCplView();
 document.getElementById("btnCplClearFilters").onclick = () => {
   document.getElementById("cplSearchPn").value = "";
   document.getElementById("cplSearchSupplier").value = "";
+  document.getElementById("cplDateFrom").value = "";
+  document.getElementById("cplDateTo").value = "";
   Object.values(cplFilters).forEach(s => s.clear());
   renderCplView();
 };
