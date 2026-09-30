@@ -1266,6 +1266,7 @@ window.saveRow = async function(pn) {
     });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     delete dirty[pn];
+    persistLocalEdit(pn, item);
     document.getElementById("statusText").textContent = `Guardado: PN ${pn}`;
     renderTable();
   } catch (e) {
@@ -1470,11 +1471,57 @@ document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => 
 });
 
 // ---------- Carga inicial ----------
+// ---------- Overlay local de edicoes pendentes ----------
+// dashboard_cb_3e_data.json e um snapshot publicado periodicamente pelo Job do
+// Databricks — nao e lido ao vivo a cada refresh. Um "Guardar" grava direto em
+// dim_promessas via Worker (por isso aparece "Guardado: PN ..."), mas se o
+// snapshot ainda nao foi republicado, o proximo refresh volta a mostrar o
+// valor antigo do JSON e a edicao parece "desaparecer". Este overlay guarda a
+// ultima edicao salva no localStorage do navegador e a reaplica por cima do
+// que vier do JSON, ate que o proprio JSON publicado bata com o valor salvo
+// (sinal de que o snapshot ja foi atualizado) — ai o overlay se limpa sozinho.
+const LOCAL_EDITS_KEY = "wmfLocalEdits_v1";
+const EDITABLE_LOCAL_FIELDS = ["promessa_data", "promessa_qty", "entrega_confirmada", "data_coleta", "nfe_enviada", "qty_nfe_confirmada", "previsao_saida_wmfbr", "motivo_atraso", "escalation_level"];
+function loadLocalEdits() {
+  try { return JSON.parse(localStorage.getItem(LOCAL_EDITS_KEY) || "{}"); } catch (e) { return {}; }
+}
+function saveLocalEdits(obj) {
+  try { localStorage.setItem(LOCAL_EDITS_KEY, JSON.stringify(obj)); } catch (e) { /* localStorage indisponivel: segue sem overlay */ }
+}
+function persistLocalEdit(pn, item) {
+  const edits = loadLocalEdits();
+  const snap = {};
+  EDITABLE_LOCAL_FIELDS.forEach(f => { snap[f] = item[f] ?? ""; });
+  edits[pn] = snap;
+  saveLocalEdits(edits);
+}
+function applyLocalEditsOverlay(items) {
+  const edits = loadLocalEdits();
+  if (!Object.keys(edits).length) return;
+  const remaining = {};
+  items.forEach(item => {
+    const ov = edits[item.pn];
+    if (!ov) return;
+    let stillPending = false;
+    EDITABLE_LOCAL_FIELDS.forEach(f => {
+      const serverVal = item[f] ?? "";
+      const localVal = ov[f] ?? "";
+      if (String(serverVal) !== String(localVal)) {
+        item[f] = ov[f];
+        stillPending = true;
+      }
+    });
+    if (stillPending) remaining[item.pn] = ov;
+  });
+  saveLocalEdits(remaining);
+}
+
 async function loadData() {
   try {
     const resp = await fetch(DATA_URL + "?t=" + Date.now());
     const data = await resp.json();
     allItems = Array.isArray(data) ? data : (data.items || []);
+    applyLocalEditsOverlay(allItems);
     const genAt = data.generated_at || "";
     window._releaseCb = data.erp_release_cb || "";
     window._release3e = data.erp_release_3e || "";
