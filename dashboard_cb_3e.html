@@ -453,6 +453,7 @@
       <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
         <div style="flex:1; min-width:320px;">
           <div class="kpi-grid" id="kpiCplCriticidad" style="margin-bottom:16px;"></div>
+          <div class="kpi-grid" id="kpiCplEscalation" style="margin-bottom:16px;"></div>
 
           <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
             <div class="kpi-section" style="flex:1; min-width:260px;">
@@ -1759,6 +1760,24 @@ function renderCplView() {
     <div class="kpi-card tone-gray">
       <div class="kpi-value">${items.length}</div>
       <div class="kpi-label">Total Solicitacoes</div>
+    </div>
+  `;
+
+  const escL1 = items.filter(i => cplCategoryValue(i, "escalationNosso") === "Level 1").length;
+  const escL2 = items.filter(i => cplCategoryValue(i, "escalationNosso") === "Level 2").length;
+  const escSem = items.length - escL1 - escL2;
+  document.getElementById("kpiCplEscalation").innerHTML = `
+    <div class="kpi-card tone-amber">
+      <div class="kpi-value">${escL1}</div>
+      <div class="kpi-label">Escalation Level 1</div>
+    </div>
+    <div class="kpi-card tone-red">
+      <div class="kpi-value">${escL2}</div>
+      <div class="kpi-label">Escalation Level 2</div>
+    </div>
+    <div class="kpi-card tone-gray">
+      <div class="kpi-value">${escSem}</div>
+      <div class="kpi-label">Sem Escalation</div>
     </div>
   `;
 
