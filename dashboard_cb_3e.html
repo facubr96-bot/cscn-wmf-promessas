@@ -736,8 +736,8 @@ function getKpiDefs() {
     { key: "bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
   ];
   const escalationDefs = [
-    { key: "esc_l2", label: "Level 2 (Run Out ≤30d)", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
-    { key: "esc_l1", label: "Level 1", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
+    { key: "esc_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
+    { key: "esc_l1", label: "Level 1 (Run Out ≤30d)", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
   ];
   return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs };
 }
