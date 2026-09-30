@@ -1,5 +1,5 @@
 {
-  "generated_at": "30/09/2026 08:41",
+  "generated_at": "30/09/2026 09:01",
   "today": "30/09/2026",
   "total_pn": 1965,
   "erp_release_cb": "20260923",
@@ -59336,7 +59336,7 @@
       "cor_qty_firm_next_month": 13.0,
       "wmf_qty_firm_current_month": 0.0,
       "wmf_qty_firm_next_month": 0.0,
-      "cpl": false,
+      "cpl": true,
       "entrega_confirmada": true,
       "data_coleta": "20/08/2026",
       "nfe_enviada": "196672",
