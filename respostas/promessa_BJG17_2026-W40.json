@@ -3,7 +3,7 @@
   "semana": "2026-W40",
   "itens": [
     {
-      "part_number": "48172466",
+      "part_number": "48172455",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -12,10 +12,10 @@
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Fornecedor novo",
-      "escalation_level": "L2",
+      "escalation_level": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-09-29T12:56:45.811Z"
+  "recibido_en_worker": "2026-09-30T12:51:51.804Z"
 }
