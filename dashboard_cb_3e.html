@@ -663,7 +663,9 @@ function isEscalationResolved(item) {
 }
 function autoEscalationLevel(item) {
   if (isEscalationResolved(item)) return "";
-  return hasRunOutWithin30Days(item) ? "L2" : "L1";
+  // L2 ja nao se calcula automaticamente — so por override manual no dropdown.
+  // O que antes virava L2 (Past Due + Run Out <=30 dias) agora e L1.
+  return "L1";
 }
 function effectiveEscalationLevel(item) {
   // Resolvido sempre limpa, mesmo com override manual (entregou / balance cobre -> sai do escalation).
