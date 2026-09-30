@@ -496,6 +496,10 @@
               <div class="filter-group-title">Solicitante</div>
               <div id="cplFilterSolicitante" class="filter-checklist"></div>
             </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Escalation (dashboard)</div>
+              <div id="cplFilterEscalation" class="filter-checklist"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1516,6 +1520,7 @@ let cplSortCol = null, cplSortDir = 1;
 const cplFilters = {
   criticidad: new Set(), estado: new Set(), planner: new Set(), solicitante: new Set(),
   reason: new Set(), aging: new Set(), statusPromessa: new Set(), motivoNosso: new Set(),
+  escalationNosso: new Set(),
 };
 const CRITICIDAD_ORDER = ["Normal", "Critico", "Crítico", "Hiper Critico", "Hiper Crítico"];
 // Cruza o PN do CPL com allItems (o JSON principal do dashboard, ja carregado)
@@ -1526,11 +1531,22 @@ function cplRebuildMotivoNossoLookup() {
   cplMotivoNossoLookup = new Map();
   (allItems || []).forEach(i => { if (i.pn && !cplMotivoNossoLookup.has(i.pn)) cplMotivoNossoLookup.set(i.pn, i.motivo_atraso || ""); });
 }
+// Cruza o PN do CPL com allItems para trazer o Escalation Level (L1/L2) "nosso",
+// calculado pela mesma logica effectiveEscalationLevel usada nas abas Tabela/Dashboard.
+let cplEscalationNossoLookup = new Map();
+function cplRebuildEscalationNossoLookup() {
+  cplEscalationNossoLookup = new Map();
+  (allItems || []).forEach(i => { if (i.pn && !cplEscalationNossoLookup.has(i.pn)) cplEscalationNossoLookup.set(i.pn, effectiveEscalationLevel(i)); });
+}
 const CPL_COMPUTED_CATS = {
   aging: item => cplAgingBucket(item) || "",
   statusPromessa: item => item.wmf_promise ? "Com Promessa" : "Sem Promessa",
   reason: item => item.reason || "Sem motivo",
   motivoNosso: item => cplMotivoNossoLookup.get(item.pn) || "Sem motivo (dashboard)",
+  escalationNosso: item => {
+    const lvl = cplEscalationNossoLookup.get(item.pn);
+    return lvl === "L2" ? "Level 2" : lvl === "L1" ? "Level 1" : "Sem escalation";
+  },
 };
 function cplCategoryValue(item, cat) {
   if (CPL_COMPUTED_CATS[cat]) return CPL_COMPUTED_CATS[cat](item);
@@ -1593,26 +1609,13 @@ async function loadCplData(force) {
 
 function cplUniqueValues(field) {
   const vals = new Set();
-  cplItems.forEach(i => { if (i[field]) vals.add(i[field]); });
+  cplItems.forEach(i => { const v = cplCategoryValue(i, field); if (v) vals.add(v); });
   return [...vals].sort((a, b) => String(a).localeCompare(String(b)));
 }
-function renderCplFilterGroup(containerId, field) {
-  const el = document.getElementById(containerId);
-  const values = cplUniqueValues(field);
-  const set = cplFilters[field];
-  el.innerHTML = values.map(v => {
-    const count = cplItems.filter(i => i[field] === v).length;
-    const checked = set.has(v) ? "checked" : "";
-    return `<label><input type="checkbox" value="${String(v).replace(/"/g, "&quot;")}" ${checked}> ${v} <span class="count">${count}</span></label>`;
-  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem dados.</div>';
-  el.querySelectorAll("input[type=checkbox]").forEach(cb => {
-    cb.onchange = () => {
-      if (cb.checked) set.add(cb.value); else set.delete(cb.value);
-      renderCplView();
-    };
-  });
-}
-function cplBaseItems() {
+// items depois de busca/datas + todos os filtros de cplFilters, EXCETO a categoria
+// excludeCat (usado para que a contagem de cada checklist reflita os demais filtros
+// ja ativos, sem zerar a propria categoria que esta sendo mostrada).
+function cplBaseItems(excludeCat) {
   const pnQ = document.getElementById("cplSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("cplSearchSupplier").value.trim().toLowerCase();
   const dateFromVal = document.getElementById("cplDateFrom").value;
@@ -1632,10 +1635,30 @@ function cplBaseItems() {
     });
   }
   Object.keys(cplFilters).forEach(cat => {
+    if (cat === excludeCat) return;
     const set = cplFilters[cat];
     if (set.size) items = items.filter(i => set.has(cplCategoryValue(i, cat)));
   });
   return items;
+}
+function renderCplFilterGroup(containerId, field) {
+  const el = document.getElementById(containerId);
+  const values = cplUniqueValues(field);
+  const set = cplFilters[field];
+  // Contagem cascateada: reflete os demais filtros ja aplicados (busca, datas,
+  // outras checklists), para que os numeros mudem quando eu filtro algo.
+  const pool = cplBaseItems(field);
+  el.innerHTML = values.map(v => {
+    const count = pool.filter(i => cplCategoryValue(i, field) === v).length;
+    const checked = set.has(v) ? "checked" : "";
+    return `<label><input type="checkbox" value="${String(v).replace(/"/g, "&quot;")}" ${checked}> ${v} <span class="count">${count}</span></label>`;
+  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem dados.</div>';
+  el.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) set.add(cb.value); else set.delete(cb.value);
+      renderCplView();
+    };
+  });
 }
 function cplCriticidadGroups(items) {
   const counts = {};
@@ -1715,10 +1738,12 @@ function renderCplTable(items) {
 function renderCplView() {
   if (!cplLoaded) return;
   cplRebuildMotivoNossoLookup();
+  cplRebuildEscalationNossoLookup();
   renderCplFilterGroup("cplFilterCriticidad", "criticidad");
   renderCplFilterGroup("cplFilterEstado", "estado");
   renderCplFilterGroup("cplFilterPlanner", "planner");
   renderCplFilterGroup("cplFilterSolicitante", "solicitante");
+  renderCplFilterGroup("cplFilterEscalation", "escalationNosso");
 
   const items = cplBaseItems();
   document.getElementById("cplRowCount").textContent = `${items.length} de ${cplItems.length} solicitacoes`;
