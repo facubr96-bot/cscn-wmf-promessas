@@ -1,5 +1,5 @@
 {
-  "generated_at": "30/09/2026 09:20",
+  "generated_at": "30/09/2026 09:40",
   "today": "30/09/2026",
   "total": 377,
   "items": [
@@ -6756,8 +6756,8 @@
     {
       "id": "377",
       "pn": "51679875",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
@@ -6765,17 +6765,17 @@
       "reason": "Past Due",
       "run_out_date": "05/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "30/09/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     },
     {
       "id": "378",
       "pn": "47946052",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BNT57",
+      "supplier_name": "ETHOS INDUSTRIAL LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
@@ -6783,10 +6783,10 @@
       "reason": "Cautionary",
       "run_out_date": "06/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "30/09/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
