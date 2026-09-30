@@ -663,9 +663,11 @@ function isEscalationResolved(item) {
 }
 function autoEscalationLevel(item) {
   if (isEscalationResolved(item)) return "";
-  // L2 ja nao se calcula automaticamente — so por override manual no dropdown.
-  // O que antes virava L2 (Past Due + Run Out <=30 dias) agora e L1.
-  return "L1";
+  // L1 automatico: SOMENTE quando esta em Past Due com WMFBR (wmf_qty_past_due > 0)
+  // E tem Run Out nos proximos 30 dias. Qualquer outro caso nao escala sozinho.
+  // L2 ja nao se calcula automaticamente — so existe como override manual no dropdown.
+  if ((item.wmf_qty_past_due || 0) > 0 && hasRunOutWithin30Days(item)) return "L1";
+  return "";
 }
 function effectiveEscalationLevel(item) {
   // Resolvido sempre limpa, mesmo com override manual (entregou / balance cobre -> sai do escalation).
