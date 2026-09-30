@@ -637,6 +637,11 @@ function isPastDueGeneric(item) {
   if (plant === "cb") return (item.cor_qty_past_due || 0) > 0 || (item.wmf_qty_past_due || 0) > 0;
   return (item.wmf_qty_past_due || 0) > 0;
 }
+// Balance CB: Past Due COR menos o que ja esta cobrindo (transito + stock SAP).
+// <= 0 significa que ja esta coberto, mesmo que a linha ainda figure como Past Due.
+function balancePastDueCb(item) {
+  return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+}
 
 // ---------- Escalation Level (L1/L2) ----------
 function hasRunOutWithin30Days(item) {
@@ -646,12 +651,26 @@ function hasRunOutWithin30Days(item) {
   const diffDias = (ro - today) / 86400000;
   return diffDias <= 30; // incluye vencido (diffDias negativo) y dentro de los proximos 30 dias
 }
+// Um PN esta "resolvido" (nao precisa mais escalar) quando ja nao esta em
+// Past Due (ex: entregou), ou — so na planta CB — quando o transito + stock
+// SAP ja cobre o Past Due (balancePastDueCb <= 0), mesmo que o dado ainda
+// mostre Past Due > 0. Um item resolvido NUNCA escala, mesmo com um
+// override manual antigo (L1/L2) cargado antes de resolver-se.
+function isEscalationResolved(item) {
+  if (!isPastDueGeneric(item)) return true;
+  if (plant === "cb" && (item.cor_qty_past_due || 0) > 0 && balancePastDueCb(item) <= 0) return true;
+  return false;
+}
 function autoEscalationLevel(item) {
-  if (!isPastDueGeneric(item)) return "";
+  if (isEscalationResolved(item)) return "";
   return hasRunOutWithin30Days(item) ? "L2" : "L1";
 }
 function effectiveEscalationLevel(item) {
-  // Override manual (item.escalation_level) tiene prioridad sobre el calculo automatico
+  // Resolvido sempre limpa, mesmo com override manual (entregou / balance cobre -> sai do escalation).
+  if (isEscalationResolved(item)) return "";
+  // "NONE" = override manual explicito de "nao precisa escalar" (mantem em Past Due mas sem L1/L2).
+  if (item.escalation_level === "NONE") return "";
+  // Override manual (item.escalation_level) tem prioridade sobre o calculo automatico.
   if (item.escalation_level === "L1" || item.escalation_level === "L2") return item.escalation_level;
   return autoEscalationLevel(item);
 }
@@ -708,7 +727,6 @@ function getKpiDefs() {
     tone: "gray",
     test: i => !i.motivo_atraso,
   });
-  const balancePastDueCb = i => (i.cor_qty_past_due || 0) - (i.qty_transito || 0) - (i.stock_b1cb || 0);
   const balanceDefs = [
     { key: "bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
     { key: "bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
@@ -883,10 +901,11 @@ function renderDashPastDueTable(baseItemsOverride) {
     const motivo = item.motivo_atraso || "";
     const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
     const escEff = effectiveEscalationLevel(item);
-    const escIsOverride = item.escalation_level === "L1" || item.escalation_level === "L2";
+    const escIsOverride = ["L1", "L2", "NONE"].includes(item.escalation_level);
     const escBadge = escEff === "L2" ? '<span class="badge badge-red">L2</span>' : escEff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
     const escOpts = `
       <option value="" ${!escIsOverride ? "selected" : ""}>Auto${escEff ? " (" + escEff + ")" : ""}</option>
+      <option value="NONE" ${item.escalation_level === "NONE" ? "selected" : ""}>Nao precisa escalar</option>
       <option value="L1" ${item.escalation_level === "L1" ? "selected" : ""}>L1 (manual)</option>
       <option value="L2" ${item.escalation_level === "L2" ? "selected" : ""}>L2 (manual)</option>
     `;
@@ -1117,10 +1136,11 @@ function renderCell(item, key) {
     }
     case "escalation_level": {
       const eff = effectiveEscalationLevel(item);
-      const isOverride = v === "L1" || v === "L2";
+      const isOverride = ["L1", "L2", "NONE"].includes(v);
       const badge = eff === "L2" ? '<span class="badge badge-red">L2</span>' : eff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
       const selOpts = `
         <option value="" ${!isOverride ? "selected" : ""}>Auto${eff ? " (" + eff + ")" : ""}</option>
+        <option value="NONE" ${v === "NONE" ? "selected" : ""}>Nao precisa escalar</option>
         <option value="L1" ${v === "L1" ? "selected" : ""}>L1 (manual)</option>
         <option value="L2" ${v === "L2" ? "selected" : ""}>L2 (manual)</option>
       `;
@@ -1214,7 +1234,7 @@ window.saveRow = async function(pn) {
     qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
     previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
     motivo_atraso: item.motivo_atraso || "",
-    escalation_level: (item.escalation_level === "L1" || item.escalation_level === "L2") ? item.escalation_level : "",
+    escalation_level: ["L1", "L2", "NONE"].includes(item.escalation_level) ? item.escalation_level : "",
     comentario: "",
   };
   const semanaAtual = (() => {
