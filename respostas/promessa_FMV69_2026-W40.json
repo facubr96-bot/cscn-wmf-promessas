@@ -1,0 +1,21 @@
+{
+  "supplier_code": "FMV69",
+  "semana": "2026-W40",
+  "itens": [
+    {
+      "part_number": "90412504",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-10-01T16:23:15.592Z"
+}
