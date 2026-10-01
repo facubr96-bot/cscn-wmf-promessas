@@ -3,9 +3,9 @@
   "semana": "2026-W40",
   "itens": [
     {
-      "part_number": "84215095",
+      "part_number": "87618166",
       "data_promessa": "02/10/2026",
-      "qty_prometida": 6,
+      "qty_prometida": 7,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-01T16:22:50.338Z"
+  "recibido_en_worker": "2026-10-01T16:23:03.989Z"
 }
