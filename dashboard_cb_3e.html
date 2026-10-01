@@ -367,7 +367,11 @@
         <option value="Titon Facundo">Titon Facundo</option>
         <option value="Vivian Strelow">Vivian Strelow</option>
         <option value="Sin asignar">Sin asignar</option>
-      </select><div id="activeFilterChip"></div>
+      </select>
+      <label id="filterNfePendenteWrap" style="font-size:12px; color:var(--gray-700); display:none; align-items:center; gap:4px;">
+        <input type="checkbox" id="filterNfePendente"> Somente NFe ja faturada e nao recebida
+      </label>
+      <div id="activeFilterChip"></div>
       <span class="count" id="rowCount"></span>
       <button class="btn" id="btnClearFilter">Limpiar filtro</button>
       <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
@@ -658,6 +662,25 @@ function balancePastDueCb(item) {
   return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
 }
 
+// ---------- Comparacao Ultima NFe Emitida x Ultima recebida (Last Packing List) ----------
+// Compara o numero da ultima NFe emitida pelo fornecedor (conferencia/controle de NFe)
+// com o numero da ultima Packing List ja recebida no WMF. Se forem iguais, o que o
+// fornecedor faturou por ultimo ja chegou. Se forem diferentes (ou nada recebido ainda
+// mas ja existe algo faturado), ha uma NFe pendente de chegar — precisa cobrar o fornecedor.
+function cleanedLastReceivedNfe(item) {
+  const raw = plant === "cb" ? (item.ultima_nfe_cb || "") : (item.ultima_nfe_3e || "");
+  return String(raw).split("-")[0].replace(/^0+(?=\d)/, "");
+}
+// Retorna: "match" (ja recebido), "mismatch" (tem NFe mais nova sem receber),
+// "pending" (nada recebido ainda mas ja existe algo faturado), ou null (sem dados suficientes).
+function nfeMatchStatus(item) {
+  const emitted = String(item.ultima_nfe_emitida_num || "").trim();
+  if (!emitted) return null;
+  const received = cleanedLastReceivedNfe(item);
+  if (!received) return "pending";
+  return received === emitted ? "match" : "mismatch";
+}
+
 // ---------- Escalation Level (L1/L2) ----------
 function hasRunOutWithin30Days(item) {
   const ro = parseDateBR(item.run_out_date);
@@ -771,6 +794,7 @@ function renderReleaseInfo() {
 function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
+  document.getElementById("filterNfePendenteWrap").style.display = plant === "3e" ? "flex" : "none";
   const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
@@ -1066,9 +1090,11 @@ function filteredItems() {
   const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
   const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
+  const nfePendenteOnly = plant === "3e" && document.getElementById("filterNfePendente").checked;
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
+  if (nfePendenteOnly) items = items.filter(i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; });
   if (sortCol) {
     items = [...items].sort((a, b) => {
       const av = sortValueFor(a, sortCol), bv = sortValueFor(b, sortCol);
@@ -1186,7 +1212,13 @@ function renderCell(item, key) {
       const unidad = item.ultima_nfe_emitida_unidad || "";
       if (!num && !v) return `<td></td>`;
       const linha2 = [v, (qty ?? "") !== "" ? `${qty}${unidad ? " " + unidad : ""}` : ""].filter(Boolean).join(" · ");
-      return `<td><span style="color:#1f5f9c; font-weight:600;">${num}</span>${linha2 ? `<div style="color:#1f5f9c; font-size:11px;">${linha2}</div>` : ""}</td>`;
+      const status = nfeMatchStatus(item);
+      const statusBadge = status === "match"
+        ? '<span class="badge badge-green" title="Igual a ultima Packing List recebida — ja chegou no WMF">Recebido</span>'
+        : (status === "mismatch" || status === "pending")
+          ? '<span class="badge badge-amber" title="Diferente da ultima Packing List recebida — fornecedor ja faturou e ainda nao chegou">Pendente</span>'
+          : "";
+      return `<td><span style="color:#1f5f9c; font-weight:600;">${num}</span> ${statusBadge}${linha2 ? `<div style="color:#1f5f9c; font-size:11px;">${linha2}</div>` : ""}</td>`;
     }
     case "promessa_data":
       return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_data',this.value)"></td>`;
@@ -1457,6 +1489,7 @@ document.getElementById("fileImport").onchange = (e) => {
 document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
+document.getElementById("filterNfePendente").onchange = () => renderTable();
 document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
 document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
 document.getElementById("dashOnlyPastDue").onchange = () => { renderKpis(); };
