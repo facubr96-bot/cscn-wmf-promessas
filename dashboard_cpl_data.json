@@ -1,5 +1,5 @@
 {
-  "generated_at": "01/10/2026 11:00",
+  "generated_at": "01/10/2026 11:20",
   "today": "01/10/2026",
   "total": 397,
   "items": [
@@ -6974,7 +6974,7 @@
       "pn": "47895159",
       "supplier_code": "BNT57",
       "supplier_name": "ETHOS INDUSTRIAL LTDA",
-      "stock_wmf": null,
+      "stock_wmf": 18.0,
       "qty_transito": null,
       "qty_min": 4.0,
       "criticidad": "Normal",
