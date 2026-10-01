@@ -1,27 +1,21 @@
 {
   "supplier_code": "BKR43",
-  "supplier_name": "STABILUS LTDA",
   "semana": "2026-W40",
-  "enviado_em": "2026-09-30T19:59:52.352Z",
   "itens": [
     {
       "part_number": "83952214",
-      "supplier_code": "BKR43",
-      "supplier_name": "STABILUS LTDA",
-      "ship_date": "29/09/2026",
-      "past_due_wmf": false,
-      "firm_jun_wmf": true,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "000073538-001",
-      "semana": "2026-W40",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 1000,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "data_promessa": "05/10/2026",
-      "qty_prometida": 1000,
-      "comentario": "Solicitar promessa."
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-09-30T19:59:52.557Z"
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-10-01T16:22:43.759Z"
 }
