@@ -1,5 +1,5 @@
 {
-  "generated_at": "01/10/2026 14:01",
+  "generated_at": "01/10/2026 14:21",
   "today": "01/10/2026",
   "total_pn": 1965,
   "erp_release_cb": "20260923",
@@ -75273,8 +75273,8 @@
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
-      "promessa_data": "",
-      "promessa_qty": 0.0,
+      "promessa_data": "16/10/2026",
+      "promessa_qty": 115.0,
       "qty_confirmada": 0.0,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Fornecedor novo",
