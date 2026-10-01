@@ -3,19 +3,19 @@
   "semana": "2026-W40",
   "itens": [
     {
-      "part_number": "47606561",
+      "part_number": "84215095",
       "data_promessa": "02/10/2026",
-      "qty_prometida": 50,
+      "qty_prometida": 6,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "motivo_atraso": "Atraso do fornecedor",
       "escalation_level": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-01T16:22:22.658Z"
+  "recibido_en_worker": "2026-10-01T16:22:50.338Z"
 }
