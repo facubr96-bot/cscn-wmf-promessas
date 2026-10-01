@@ -424,7 +424,7 @@
             <tr>
               <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
               <th>Ship Date mas antiguo</th><th>Dias em Past Due</th>
-              <th>Firm Set</th><th>Firm Out</th><th>Ultima NFe</th><th>Motivo Atraso</th><th>Escalation</th>
+              <th id="thFirmSet">Firm</th><th id="thFirmOut">Firm</th><th>Ultima NFe</th><th>Motivo Atraso</th><th>Escalation</th>
               <th>Promessa Data</th><th>Promessa Qty</th>
               <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
             </tr>
@@ -589,6 +589,16 @@ function todayNoTime() {
   return new Date(t.getFullYear(), t.getMonth(), t.getDate());
 }
 const MONTHS_ES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+const MONTHS_ABBR_PT = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+// Labels de "Firm Set"/"Firm Out" dependiam do mes atual — estavam fixos no texto e
+// ficavam desatualizados quando o mes virava. Agora se calculam com base no mes atual
+// do navegador, entao "Firm <mes atual>" e "Firm <mes seguinte>" sempre acompanham.
+function firmCurrentMonthLabel() {
+  return "Firm " + MONTHS_ABBR_PT[new Date().getMonth()];
+}
+function firmNextMonthLabel() {
+  return "Firm " + MONTHS_ABBR_PT[(new Date().getMonth() + 1) % 12];
+}
 
 // ---------- Replica exacta de runout_bucket() ----------
 function runoutBucket(item) {
@@ -928,6 +938,8 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
 }
 
 function renderDashPastDueTable(baseItemsOverride) {
+  document.getElementById("thFirmSet").textContent = firmCurrentMonthLabel();
+  document.getElementById("thFirmOut").textContent = firmNextMonthLabel();
   const base = baseItemsOverride || motivosBaseItems();
   const items = base.filter(i => isPastDueGeneric(i) || i.motivo_atraso);
   document.getElementById("dashRowCount").textContent = `${items.length} PN`;
@@ -1030,8 +1042,8 @@ function getColumns() {
     { key: "wmf_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
     { key: "wmf_days_in_past_due", label: "Dias em Past Due" },
     { key: "wmf_qty_past_due", label: "Past Due" },
-    { key: "wmf_qty_firm_current_month", label: "Firm Set" },
-    { key: "wmf_qty_firm_next_month", label: "Firm Out" },
+    { key: "wmf_qty_firm_current_month", label: firmCurrentMonthLabel() },
+    { key: "wmf_qty_firm_next_month", label: firmNextMonthLabel() },
     { key: "cum_rec_3e", label: "Cum Rec 3E" },
     { key: "ultima_nfe_3e", label: "Last Packing List 3E" },
     { key: "cpl", label: "CPL" },
@@ -1054,8 +1066,8 @@ function getColumns() {
     { key: "cor_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
     { key: "cor_days_in_past_due", label: "Dias em Past Due" },
     { key: "cor_qty_past_due", label: "COR Past Due" },
-    { key: "cor_qty_firm_current_month", label: "Firm Set" },
-    { key: "cor_qty_firm_next_month", label: "Firm Out" },
+    { key: "cor_qty_firm_current_month", label: firmCurrentMonthLabel() },
+    { key: "cor_qty_firm_next_month", label: firmNextMonthLabel() },
     { key: "wmf_qty_past_due", label: "WMF Past Due" },
     { key: "cum_rec_cb", label: "Cum Rec CB" },
     { key: "past_due_balance_cb", label: "Past Due Balance" },
