@@ -12,10 +12,10 @@
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Fornecedor novo",
-      "escalation_level": "",
+      "escalation_level": "L2",
       "comentario": ""
     }
   ],
   "editor_code": "GPWHI985",
-  "recibido_en_worker": "2026-10-01T17:00:33.655Z"
+  "recibido_en_worker": "2026-10-01T17:02:25.602Z"
 }
