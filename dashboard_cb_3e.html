@@ -1011,7 +1011,7 @@ function getColumns() {
     { key: "cum_rec_3e", label: "Cum Rec 3E" },
     { key: "ultima_nfe_3e", label: "Last Packing List 3E" },
     { key: "cpl", label: "CPL" },
-    { key: "entrega_confirmada", label: "Confirmo" },
+    { key: "ultima_nfe_emitida_fecha", label: "Ultima NFe Emitida" },
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
     { key: "early_pickup_date", label: "Early Pickup" },
@@ -1046,7 +1046,7 @@ function getColumns() {
 }
 
 const DATE_COLUMNS = new Set([
-  "run_out_date", "promessa_data", "data_coleta", "early_pickup_date",
+  "run_out_date", "promessa_data", "early_pickup_date",
   "previsao_saida_wmfbr", "fecha_completed_p44", "cor_oldest_pastdue_ship_date",
   "wmf_oldest_pastdue_ship_date", "ultima_nfe_emitida_fecha", "data_inicio_transito",
 ]);
@@ -1087,7 +1087,7 @@ function renderTable() {
       return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
     return `<th data-col="${c.key}">${c.label}</th>`;
-  }).join("") + "<th>Acao</th>" + (plant === "3e" ? "<th>Data Coleta</th><th>NFe</th><th>Qty NFe (conf.)</th>" : "") + "<th>Previsao Saida WMFBR</th>";
+  }).join("") + "<th>Acao</th>" + "<th>Previsao Saida WMFBR</th>";
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -1114,11 +1114,6 @@ function renderTable() {
     let html = "";
     cols.forEach(c => { html += renderCell(item, c.key); });
     html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button> <button class="btn" onclick="clearPromise('${item.pn}')">Borrar</button></td>`;
-    if (plant === "3e") {
-      html += renderCell(item, "data_coleta");
-      html += renderCell(item, "nfe_enviada");
-      html += renderCell(item, "qty_nfe_confirmada");
-    }
     html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
@@ -1183,6 +1178,16 @@ function renderCell(item, key) {
     }
     case "entrega_confirmada":
       return `<td><input type="checkbox" ${v ? "checked" : ""} onchange="markDirty('${item.pn}','entrega_confirmada',this.checked)"></td>`;
+    case "ultima_nfe_emitida_fecha": {
+      // Cruzado por PN com a conferencia/controle de NFe (nao editavel aqui).
+      // Texto num colorsito diferente para distinguir do resto das colunas (editaveis).
+      const num = item.ultima_nfe_emitida_num || "";
+      const qty = item.ultima_nfe_emitida_qty;
+      const unidad = item.ultima_nfe_emitida_unidad || "";
+      if (!num && !v) return `<td></td>`;
+      const linha2 = [v, (qty ?? "") !== "" ? `${qty}${unidad ? " " + unidad : ""}` : ""].filter(Boolean).join(" · ");
+      return `<td><span style="color:#1f5f9c; font-weight:600;">${num}</span>${linha2 ? `<div style="color:#1f5f9c; font-size:11px;">${linha2}</div>` : ""}</td>`;
+    }
     case "promessa_data":
       return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_data',this.value)"></td>`;
     case "promessa_qty":
@@ -1367,6 +1372,13 @@ function exportValue(item, key) {
     case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
     case "escalation_level": return effectiveEscalationLevel(item) || "";
+    case "ultima_nfe_emitida_fecha": {
+      const num = item.ultima_nfe_emitida_num || "";
+      const qty = item.ultima_nfe_emitida_qty;
+      const unidad = item.ultima_nfe_emitida_unidad || "";
+      const qtyStr = (qty ?? "") !== "" ? `${qty}${unidad ? " " + unidad : ""}` : "";
+      return [num, item.ultima_nfe_emitida_fecha || "", qtyStr].filter(Boolean).join(" / ");
+    }
     default: return item[key] ?? "";
   }
 }
@@ -1375,12 +1387,10 @@ document.getElementById("btnExport").onclick = () => {
   const items = filteredItems();
   const cols = getColumns();
   const headers = cols.map(c => c.label);
-  if (plant === "3e") headers.push("Data Coleta", "NFe", "Qty NFe (conf.)");
   headers.push("Previsao Saida WMFBR");
   const lines = [headers.join(";")];
   items.forEach(i => {
     const row = cols.map(c => exportValue(i, c.key));
-    if (plant === "3e") row.push(i.data_coleta || "", i.nfe_enviada || "", i.qty_nfe_confirmada ?? "");
     row.push(i.previsao_saida_wmfbr || "");
     lines.push(row.map(csvEscape).join(";"));
   });
