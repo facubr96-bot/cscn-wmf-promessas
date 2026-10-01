@@ -12,10 +12,10 @@
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Negociação comercial",
-      "escalation_level": "",
+      "escalation_level": "L2",
       "comentario": ""
     }
   ],
-  "editor_code": "LQW5FSRR",
-  "recibido_en_worker": "2026-09-30T15:06:17.541Z"
+  "editor_code": "GPWHI985",
+  "recibido_en_worker": "2026-10-01T17:29:21.519Z"
 }
