@@ -1,7 +1,7 @@
 {
-  "generated_at": "01/10/2026 09:40",
+  "generated_at": "01/10/2026 10:02",
   "today": "01/10/2026",
-  "total": 396,
+  "total": 397,
   "items": [
     {
       "id": "1",
@@ -7125,9 +7125,27 @@
       "reason": "Past Due",
       "run_out_date": "",
       "wmf_promise": "23/09/2026",
-      "created": "",
+      "created": "01/10/2026",
       "estado": "Aberto",
       "planner": "TITON Facundo",
+      "solicitante": "HERNANDO Jazmin",
+      "plant": "CB"
+    },
+    {
+      "id": "398",
+      "pn": "84075179",
+      "supplier_code": "DSK22",
+      "supplier_name": "WAPMETAL INDUSTRIA E COMERCIO",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 154.0,
+      "criticidad": "Normal",
+      "reason": "Past Due",
+      "run_out_date": "",
+      "wmf_promise": "",
+      "created": "01/10/2026",
+      "estado": "Aberto",
+      "planner": "STRELOW Vivian",
       "solicitante": "HERNANDO Jazmin",
       "plant": "CB"
     }
