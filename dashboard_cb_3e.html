@@ -1111,8 +1111,9 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpiParam = params.get("kpi");
   if (kpiParam) {
-    const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs } = getKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...cov2Defs, ...cov3Defs, ...otherDefs, ...motivoDefs, ...balanceDefs, ...escalationDefs];
+    const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
+    const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...shipTop, ...shipBottom];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
