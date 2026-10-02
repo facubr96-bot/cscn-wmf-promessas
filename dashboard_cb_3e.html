@@ -337,24 +337,10 @@
       <div class="kpi-divider"></div>
 
       <div class="kpi-col">
-        <div class="kpi-section" id="kpiCov2Section">
-          <h2 id="kpiCov2Title">COR → WMF / Ship Date</h2>
-          <div class="kpi-grid" id="kpiCov2"></div>
-        </div>
-
-        <div class="kpi-section" id="kpiCov3Section">
-          <h2 id="kpiCov3Title">WMF → Proveedor / Ship Date</h2>
-          <div class="kpi-grid" id="kpiCov3"></div>
-        </div>
-
-        <div class="kpi-section">
-          <h2>CPL</h2>
-          <div class="kpi-grid" id="kpiOther"></div>
-        </div>
-
-        <div class="kpi-section" id="kpiBalanceSection" style="display:none;">
-          <h2>Past Due Balance (CB)</h2>
-          <div class="kpi-grid" id="kpiBalance"></div>
+        <div class="kpi-section" id="kpiShipSection">
+          <h2 id="kpiShipTitle">WMF → Proveedor / Ship Date</h2>
+          <div class="kpi-grid" id="kpiShipTop" style="margin-bottom:12px;"></div>
+          <div class="kpi-grid" id="kpiShipBottom"></div>
         </div>
       </div>
     </div>
@@ -371,6 +357,9 @@
       <label id="filterNfePendenteWrap" style="font-size:12px; color:var(--gray-700); display:none; align-items:center; gap:4px;">
         <input type="checkbox" id="filterNfePendente"> Somente NFe ja faturada e nao recebida
       </label>
+      <select id="filterStatusP44" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
+        <option value="">Todos os Status P44</option>
+      </select>
       <div id="activeFilterChip"></div>
       <span class="count" id="rowCount"></span>
       <button class="btn" id="btnClearFilter">Limpiar filtro</button>
@@ -378,7 +367,9 @@
       <button class="btn" id="btnImport">Importar Excel/CSV</button>
       <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
       <button class="btn" id="btnExport">Exportar Excel/CSV</button>
+      <span class="count" id="selectedCount" style="margin-left:6px;"></span>
       <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
+      <button class="btn" id="btnClearSelectedPromise">Borrar Promessa</button>
     </div>
 
     <div class="top-scroll-wrap" id="topScrollWrap"><div class="top-scroll-inner" id="topScrollInner"></div></div>
@@ -691,6 +682,76 @@ function nfeMatchStatus(item) {
   return received === emitted ? "match" : "mismatch";
 }
 
+// ---------- Proximo Ship Date (janelas 7/15/30 dias) ----------
+// dashboard_cb_3e_data.json so tem o ship date MAIS ANTIGO ja VENCIDO (Past Due).
+// Para um ship date FUTURO (ainda nao vencido) e preciso olhar as linhas de pedido
+// em bruto (dashboard_cb_3e_raw_lines.json, mesmo arquivo do modal "Ver em bruto"),
+// que tem um SHIP_DATE por linha/PO. Esse arquivo agora e pre-carregado no inicio
+// (alem de ficar em cache para o modal), e aqui calculamos por PN+planta a data de
+// embarque futura mais proxima.
+let nextShipDateLookup = new Map(); // key: "<PLANT_CODE>|<part_number>" -> Date
+function buildNextShipDateLookup() {
+  nextShipDateLookup = new Map();
+  const today = todayNoTime();
+  (rawLinesCache || []).forEach(r => {
+    const normalized = normalizeDateFlexible(r.ship_date);
+    const d = normalized ? parseDateBR(normalized) : null;
+    if (!d || d < today) return; // so datas futuras (ainda nao vencidas)
+    const key = `${r.plant_code}|${r.part_number}`;
+    const prev = nextShipDateLookup.get(key);
+    if (!prev || d < prev) nextShipDateLookup.set(key, d);
+  });
+}
+function nextShipDateFor(item) {
+  const plantCode = plant === "cb" ? "CB" : "3E";
+  return nextShipDateLookup.get(`${plantCode}|${item.pn}`) || null;
+}
+function businessDaysUntil(targetDate) {
+  const today = todayNoTime();
+  if (targetDate <= today) return 0;
+  let count = 0;
+  const d = new Date(today);
+  while (d < targetDate) {
+    d.setDate(d.getDate() + 1);
+    const dow = d.getDay(); // 0=domingo, 6=sabado
+    if (dow !== 0 && dow !== 6) count++;
+  }
+  return count;
+}
+function calendarDaysUntil(targetDate) {
+  const today = todayNoTime();
+  return Math.round((targetDate - today) / 86400000);
+}
+// Faixas mutuamente exclusivas (nao cumulativas): 0-7 dias uteis, 8-15 dias uteis,
+// e 16-30 dias corridos (a partir dai nao entra em nenhuma das 3 janelas).
+function shipDateWithin7BusinessDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  return businessDaysUntil(d) <= 7;
+}
+function shipDateWithin15BusinessDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  const bd = businessDaysUntil(d);
+  return bd > 7 && bd <= 15;
+}
+function shipDateWithin30CalendarDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  const bd = businessDaysUntil(d);
+  if (bd <= 15) return false; // ja contado nas janelas acima
+  const cd = calendarDaysUntil(d);
+  return cd <= 30;
+}
+// CB: o transito tem que cobrir o Past Due para contar como "c/ Transito" cheio;
+// cobertura parcial (transito > 0 mas nao cobre tudo) vira "c/ Transito Parcial".
+function transitoCbBucket(item) {
+  const pastDue = item.cor_qty_past_due || 0;
+  const transito = item.qty_transito || 0;
+  if (!(pastDue > 0) || !(transito > 0)) return null;
+  return transito >= pastDue ? "full" : "partial";
+}
+
 // ---------- Escalation Level (L1/L2) ----------
 function hasRunOutWithin30Days(item) {
   const ro = parseDateBR(item.run_out_date);
@@ -744,29 +805,6 @@ function getKpiDefs() {
     { key: "cov1_insuf", label: "Prom. Insuf.", tone: "amber", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "Prom. Insuf." },
     { key: "cov1_sin", label: "s/ Cobertura", tone: "red", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "s/ Cobertura" },
   ];
-  const cov2Defs = [
-    { key: "cov2_pastdue", label: "PN Past Due", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 },
-    { key: "cov2_transito", label: "c/ Transito", tone: "green", test: i => bloque2Bucket(i) === "c/ Transito" },
-    { key: "cov2_stock", label: "c/ Stock", tone: "green", test: i => bloque2Bucket(i) === "c/ Stock" },
-    { key: "cov2_promessa", label: "c/ Promessa", tone: "amber", test: i => bloque2Bucket(i) === "c/ Promessa" },
-    { key: "cov2_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloque2Bucket(i) === "Prom. Insuf." },
-    { key: "cov2_sin", label: "s/ Cobertura", tone: "red", test: i => bloque2Bucket(i) === "s/ Cobertura" },
-  ];
-  const cov3Defs = [
-    { key: "cov3_pastdue", label: "PN Past Due", tone: "red", test: i => (i.wmf_qty_past_due || 0) > 0 },
-    { key: "cov3_transito", label: "c/ Transito", tone: "green", test: i => bloque3Bucket(i) === "c/ Transito" },
-    { key: "cov3_stock", label: "c/ Stock", tone: "green", test: i => bloque3Bucket(i) === "c/ Stock" },
-    { key: "cov3_promessa", label: "c/ Promessa", tone: "amber", test: i => bloque3Bucket(i) === "c/ Promessa" },
-    { key: "cov3_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloque3Bucket(i) === "Prom. Insuf." },
-    { key: "cov3_sin", label: "s/ Cobertura", tone: "red", test: i => bloque3Bucket(i) === "s/ Cobertura" },
-  ];
-  const otherDefs = [
-    { key: "cpl_criticos", label: "PN Criticos", tone: "red", test: i => !!i.cpl },
-    { key: "cpl_transito", label: "c/ Transito", tone: "green", test: i => !!i.cpl && (i.qty_transito || 0) > 0 },
-    { key: "cpl_stock_wmf", label: "em Stock WMF", tone: "green", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && (i.stock_b1cb || 0) > 0 },
-    { key: "cpl_con_promessa", label: "com Promessa", tone: "amber", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_b1cb || 0) > 0) && promesaVigente(i) },
-    { key: "cpl_sin_promessa", label: "sem Promessa", tone: "red", test: i => !!i.cpl && !((i.qty_transito || 0) > 0) && !((i.stock_b1cb || 0) > 0) && !promesaVigente(i) },
-  ];
   const motivoDefs = MOTIVO_OPTIONS.map(m => ({
     key: "motivo_" + m.replace(/[^a-zA-Z0-9]/g, ""),
     label: m,
@@ -779,15 +817,54 @@ function getKpiDefs() {
     tone: "gray",
     test: i => !i.motivo_atraso,
   });
-  const balanceDefs = [
-    { key: "bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
-    { key: "bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
-  ];
   const escalationDefs = [
     { key: "esc_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
     { key: "esc_l1", label: "Level 1 (Run Out ≤30d)", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
   ];
-  return { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs };
+  return { runoutDefs, cov1Defs, motivoDefs, escalationDefs };
+}
+
+// Panel "COR -> WMF / Ship Date" (CB) ou "WMF -> Proveedor / Ship Date" (3E).
+// Linha de cima: visao geral (CPL, Past Due, janelas de Ship Date futuro, e em CB
+// a cobertura de Transito). Linha de baixo: cobertura por Stock/Promessa/Escalation,
+// mais (3E) NFe sem recebimento ou (CB) Past Due Balance.
+function getShipKpiDefs() {
+  const pastDueTest = plant === "cb" ? (i => (i.cor_qty_past_due || 0) > 0) : (i => (i.wmf_qty_past_due || 0) > 0);
+  const bloqueBucket = plant === "cb" ? bloque2Bucket : bloque3Bucket;
+
+  const top = [
+    { key: "ship_cpl", label: "PN CPL", tone: "red", test: i => !!i.cpl },
+    { key: "ship_pastdue", label: "PN Past Due", tone: "red", test: pastDueTest },
+    { key: "ship_7d", label: "Ship Date ≤7 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
+    { key: "ship_15d", label: "Ship Date 8-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
+    { key: "ship_30d", label: "Ship Date 16-30 dias", tone: "gray", test: shipDateWithin30CalendarDays },
+  ];
+  if (plant === "cb") {
+    top.push(
+      { key: "ship_transito_full", label: "c/ Transito", tone: "green", test: i => transitoCbBucket(i) === "full" },
+      { key: "ship_transito_partial", label: "c/ Transito Parcial", tone: "amber", test: i => transitoCbBucket(i) === "partial" },
+    );
+  }
+
+  const bottom = [
+    { key: "ship_stock", label: "c/ Stock", tone: "green", test: i => bloqueBucket(i) === "c/ Stock" },
+    { key: "ship_promessa", label: "c/ Promessa", tone: "amber", test: i => bloqueBucket(i) === "c/ Promessa" },
+    { key: "ship_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloqueBucket(i) === "Prom. Insuf." },
+    { key: "ship_sin", label: "s/ Cobertura", tone: "red", test: i => bloqueBucket(i) === "s/ Cobertura" },
+    { key: "ship_l1", label: "Level 1", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
+    { key: "ship_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
+  ];
+  if (plant === "cb") {
+    bottom.push(
+      { key: "ship_bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
+      { key: "ship_bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
+    );
+  } else {
+    bottom.push(
+      { key: "ship_nfe_pendente", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
+    );
+  }
+  return { top, bottom };
 }
 
 function fmtReleaseYYYYMMDD(raw) {
@@ -805,31 +882,40 @@ function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
   document.getElementById("filterNfePendenteWrap").style.display = plant === "3e" ? "flex" : "none";
-  const { runoutDefs, cov1Defs, cov2Defs, cov3Defs, otherDefs, motivoDefs, balanceDefs, escalationDefs } = getKpiDefs();
+  document.getElementById("filterStatusP44").style.display = plant === "3e" ? "" : "none";
+  populateStatusP44Filter();
+  const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   renderKpiGrid("kpiEscalation", escalationDefs);
-  if (plant === "cb") {
-    document.getElementById("kpiCov2Section").style.display = "";
-    document.getElementById("kpiCov3Section").style.display = "none";
-    renderKpiGrid("kpiCov2", cov2Defs);
-    document.getElementById("kpiBalanceSection").style.display = "";
-    renderKpiGrid("kpiBalance", balanceDefs);
-  } else {
-    document.getElementById("kpiCov2Section").style.display = "none";
-    document.getElementById("kpiCov3Section").style.display = "";
-    renderKpiGrid("kpiCov3", cov3Defs);
-    document.getElementById("kpiBalanceSection").style.display = "none";
-  }
-  renderKpiGrid("kpiOther", otherDefs);
+  const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
+  renderKpiGrid("kpiShipTop", shipTop);
+  renderKpiGrid("kpiShipBottom", shipBottom);
+  document.getElementById("kpiShipTitle").textContent = plant === "cb" ? "COR → WMF / Ship Date" : "WMF → Proveedor / Ship Date";
   let dashBase = motivosScopeItems(motivosBaseItems());
   for (const { test } of activeFilters.values()) dashBase = dashBase.filter(test);
   renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
   renderKpiGrid("kpiDashEscalation", escalationDefs, dashBase);
   renderMotivosCharts(motivoDefs, dashBase);
   renderDashPastDueTable(dashBase);
-  document.getElementById("kpiCov2Title").textContent = "COR → WMF / Ship Date";
-  document.getElementById("kpiCov3Title").textContent = "WMF → Proveedor / Ship Date";
+}
+// Status P44 so existe para 3E (OTM). O valor "Sem status" representa status_p44 vazio.
+function populateStatusP44Filter() {
+  const sel = document.getElementById("filterStatusP44");
+  if (plant !== "3e") return;
+  const current = sel.value;
+  const values = [...new Set((allItems || []).map(i => i.status_p44 || "").filter(Boolean))].sort();
+  sel.innerHTML = '<option value="">Todos os Status P44</option>' +
+    values.map(v => `<option value="${v}">${v}</option>`).join("") +
+    '<option value="__SEM_STATUS__">Sem status</option>';
+  if ([...sel.options].some(o => o.value === current)) sel.value = current;
+}
+function statusP44Filter(items) {
+  if (plant !== "3e") return items;
+  const v = document.getElementById("filterStatusP44").value;
+  if (!v) return items;
+  if (v === "__SEM_STATUS__") return items.filter(i => !i.status_p44);
+  return items.filter(i => i.status_p44 === v);
 }
 function searchBaseItems() {
   let items = allItems;
@@ -839,6 +925,7 @@ function searchBaseItems() {
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
+  items = statusP44Filter(items);
   return items;
 }
 function motivosBaseItems() {
@@ -1057,6 +1144,7 @@ function getColumns() {
       { key: "destino_shipment", label: "Destino Shipment" },
       { key: "status_p44", label: "Status P44" },
       { key: "fecha_completed_p44", label: "Fecha Completed P44" },
+      { key: "data_real_completed", label: "Data Real Completed" },
     ] : []),
   ];
   const plantCb = [
@@ -1085,6 +1173,7 @@ const DATE_COLUMNS = new Set([
   "run_out_date", "promessa_data", "early_pickup_date",
   "previsao_saida_wmfbr", "fecha_completed_p44", "cor_oldest_pastdue_ship_date",
   "wmf_oldest_pastdue_ship_date", "ultima_nfe_emitida_fecha", "data_inicio_transito",
+  "data_real_completed",
 ]);
 function sortValueFor(item, col) {
   const v = item[col];
@@ -1107,6 +1196,7 @@ function filteredItems() {
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   if (nfePendenteOnly) items = items.filter(i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; });
+  items = statusP44Filter(items);
   if (sortCol) {
     items = [...items].sort((a, b) => {
       const av = sortValueFor(a, sortCol), bv = sortValueFor(b, sortCol);
@@ -1117,15 +1207,19 @@ function filteredItems() {
   return items;
 }
 
+let selectedPns = new Set();
+function updateSelectedCount() {
+  document.getElementById("selectedCount").textContent = selectedPns.size ? `${selectedPns.size} selecionado(s)` : "";
+}
 function renderTable() {
   const cols = getColumns();
   const head = document.getElementById("tableHead");
-  head.innerHTML = cols.map(c => {
+  head.innerHTML = '<th><input type="checkbox" id="selectAllPns" title="Selecionar todos"></th>' + cols.map(c => {
     if (c.key === "early_pickup_date") {
       return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
     return `<th data-col="${c.key}">${c.label}</th>`;
-  }).join("") + "<th>Acao</th>" + "<th>Previsao Saida WMFBR</th>";
+  }).join("") + "<th>Previsao Saida WMFBR</th>";
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -1149,15 +1243,30 @@ function renderTable() {
   items.forEach(item => {
     const tr = document.createElement("tr");
     if (dirty[item.pn]) tr.classList.add("row-dirty");
-    let html = "";
+    let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
     cols.forEach(c => { html += renderCell(item, c.key); });
-    html += `<td><button class="btn" onclick="saveRow('${item.pn}')">Salvar</button> <button class="btn" onclick="clearPromise('${item.pn}')">Borrar</button></td>`;
     html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
   });
   syncTopScroll();
   disableEditingIfViewer(body);
+
+  document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
+  document.getElementById("selectAllPns").onchange = (e) => {
+    if (e.target.checked) items.forEach(i => selectedPns.add(i.pn));
+    else items.forEach(i => selectedPns.delete(i.pn));
+    renderTable();
+  };
+  body.querySelectorAll(".row-select").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) selectedPns.add(cb.dataset.pn);
+      else selectedPns.delete(cb.dataset.pn);
+      updateSelectedCount();
+      document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
+    };
+  });
+  updateSelectedCount();
 }
 
 function disableEditingIfViewer(container) {
@@ -1234,6 +1343,8 @@ function renderCell(item, key) {
     }
     case "promessa_data":
       return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_data',this.value)"></td>`;
+    case "data_real_completed":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','data_real_completed',this.value)"></td>`;
     case "promessa_qty":
       return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_qty',this.value)"></td>`;
     case "data_coleta":
@@ -1271,10 +1382,9 @@ window.markDirty = function(pn, field, value) {
   renderTable();
 };
 
-window.clearPromise = async function(pn) {
+async function clearPromiseNoConfirm(pn) {
   const item = allItems.find(i => i.pn === pn);
-  if (!item) return;
-  if (!confirm(`Borrar la promessa de ${pn}? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada.`)) return;
+  if (!item) return false;
   item.promessa_data = "";
   item.promessa_qty = "";
   item.entrega_confirmada = false;
@@ -1282,6 +1392,11 @@ window.clearPromise = async function(pn) {
   item.nfe_enviada = "";
   item.qty_nfe_confirmada = "";
   await window.saveRow(pn);
+  return true;
+}
+window.clearPromise = async function(pn) {
+  if (!confirm(`Borrar la promessa de ${pn}? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada.`)) return;
+  await clearPromiseNoConfirm(pn);
   document.getElementById("statusText").textContent = `Promessa borrada: PN ${pn}`;
 };
 
@@ -1303,6 +1418,7 @@ window.saveRow = async function(pn) {
     previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
     motivo_atraso: item.motivo_atraso || "",
     escalation_level: ["L1", "L2", "NONE"].includes(item.escalation_level) ? item.escalation_level : "",
+    data_real_completed: item.data_real_completed || "",
     comentario: "",
   };
   const semanaAtual = (() => {
@@ -1328,9 +1444,12 @@ window.saveRow = async function(pn) {
 };
 
 document.getElementById("btnSave").onclick = async () => {
-  const pns = Object.keys(dirty);
+  // Se houver PN selecionados pelo checkbox, salva so esses (tenham ou nao
+  // alteracao pendente). Sem selecao, mantem o comportamento antigo: salva
+  // todos os PN marcados como "sujos" (dirty) por alguma edicao na tabela.
+  const pns = selectedPns.size ? [...selectedPns] : Object.keys(dirty);
   if (pns.length === 0) {
-    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar.";
+    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar (ou ningun PN seleccionado).";
     return;
   }
   const btn = document.getElementById("btnSave");
@@ -1353,6 +1472,32 @@ document.getElementById("btnSave").onclick = async () => {
   document.getElementById("statusText").textContent = fail === 0
     ? `Guardado: ${ok}/${pns.length} PN actualizados.`
     : `Guardado ${ok}/${pns.length} — fallaron ${fail}: ${failedPns.join(", ")}`;
+};
+
+document.getElementById("btnClearSelectedPromise").onclick = async () => {
+  const pns = [...selectedPns];
+  if (pns.length === 0) {
+    document.getElementById("statusText").textContent = "Selecciona al menos un PN (checkbox) para borrar su promessa.";
+    return;
+  }
+  if (!confirm(`Borrar la promessa de ${pns.length} PN seleccionado(s)? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada de cada uno.`)) return;
+  const btn = document.getElementById("btnClearSelectedPromise");
+  btn.disabled = true;
+  let ok = 0, fail = 0;
+  for (let i = 0; i < pns.length; i++) {
+    btn.textContent = `Borrando ${i + 1}/${pns.length}...`;
+    try {
+      await clearPromiseNoConfirm(pns[i]);
+      ok++;
+    } catch (e) {
+      fail++;
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = "Borrar Promessa";
+  document.getElementById("statusText").textContent = fail === 0
+    ? `Promessa borrada: ${ok}/${pns.length} PN.`
+    : `Promessa borrada em ${ok}/${pns.length} — fallaron ${fail}.`;
 };
 
 window.removeKpiFilter = function(key) {
@@ -1415,7 +1560,7 @@ function exportValue(item, key) {
     case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
     case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
-    case "escalation_level": return effectiveEscalationLevel(item) || "";
+    case "escalation_level": return ["L1", "L2", "NONE"].includes(item.escalation_level) ? item.escalation_level : "";
     case "ultima_nfe_emitida_fecha": {
       const num = item.ultima_nfe_emitida_num || "";
       const qty = item.ultima_nfe_emitida_qty;
@@ -1432,10 +1577,16 @@ document.getElementById("btnExport").onclick = () => {
   const cols = getColumns();
   const headers = cols.map(c => c.label);
   headers.push("Previsao Saida WMFBR");
+  // Data Real Completed se exporta sempre (mesmo com OTM colapsado, quando a coluna
+  // nao aparece na tabela), para poder editar e reimportar via Excel. So forca aqui
+  // quando getColumns() ainda nao a incluiu (OTM fechado), para nao duplicar.
+  const hasDataRealCompletedCol = cols.some(c => c.key === "data_real_completed");
+  if (plant === "3e" && !hasDataRealCompletedCol) headers.push("Data Real Completed");
   const lines = [headers.join(";")];
   items.forEach(i => {
     const row = cols.map(c => exportValue(i, c.key));
     row.push(i.previsao_saida_wmfbr || "");
+    if (plant === "3e" && !hasDataRealCompletedCol) row.push(i.data_real_completed || "");
     lines.push(row.map(csvEscape).join(";"));
   });
   const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
@@ -1467,6 +1618,8 @@ document.getElementById("fileImport").onchange = (e) => {
       const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue", "qtynfeconf"]);
       const colPrevisao = findCol(["previsaosaidawmfbr", "previsaosaida", "saidawmfbr"]);
       const colMotivo = findCol(["motivoatraso", "motivo", "status"]);
+      const colEscalation = findCol(["escalation", "escalationlevel", "nivelescalation", "level"]);
+      const colDataRealCompleted = findCol(["datarealcompleted", "realcompleted", "datareal"]);
       if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
 
       let updated = 0, notFound = 0;
@@ -1484,6 +1637,12 @@ document.getElementById("fileImport").onchange = (e) => {
         if (colQtyConf >= 0) { const q = normalizeQtyFlexible(cells[colQtyConf]); if (q !== "") item.qty_nfe_confirmada = Number(q); }
         if (colPrevisao >= 0) { const d = normalizeDateFlexible(cells[colPrevisao]); if (d) item.previsao_saida_wmfbr = d; }
         if (colMotivo >= 0 && cells[colMotivo] && MOTIVO_OPTIONS.includes(cells[colMotivo])) item.motivo_atraso = cells[colMotivo];
+        if (colEscalation >= 0) {
+          const raw = String(cells[colEscalation] || "").trim().toUpperCase();
+          if (["L1", "L2", "NONE"].includes(raw)) item.escalation_level = raw;
+          else if (raw === "" || raw === "-") item.escalation_level = "";
+        }
+        if (colDataRealCompleted >= 0) { const d = normalizeDateFlexible(cells[colDataRealCompleted]); if (d) item.data_real_completed = d; }
         dirty[pn] = dirty[pn] || {};
         updated++;
       }
@@ -1502,6 +1661,7 @@ document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
 document.getElementById("filterNfePendente").onchange = () => renderTable();
+document.getElementById("filterStatusP44").onchange = () => { renderKpis(); renderTable(); };
 document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
 document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
 document.getElementById("dashOnlyPastDue").onchange = () => { renderKpis(); };
@@ -1540,7 +1700,7 @@ document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => 
 // que vier do JSON, ate que o proprio JSON publicado bata com o valor salvo
 // (sinal de que o snapshot ja foi atualizado) — ai o overlay se limpa sozinho.
 const LOCAL_EDITS_KEY = "wmfLocalEdits_v1";
-const EDITABLE_LOCAL_FIELDS = ["promessa_data", "promessa_qty", "entrega_confirmada", "data_coleta", "nfe_enviada", "qty_nfe_confirmada", "previsao_saida_wmfbr", "motivo_atraso", "escalation_level"];
+const EDITABLE_LOCAL_FIELDS = ["promessa_data", "promessa_qty", "entrega_confirmada", "data_coleta", "nfe_enviada", "qty_nfe_confirmada", "previsao_saida_wmfbr", "motivo_atraso", "escalation_level", "data_real_completed"];
 function loadLocalEdits() {
   try { return JSON.parse(localStorage.getItem(LOCAL_EDITS_KEY) || "{}"); } catch (e) { return {}; }
 }
@@ -1590,8 +1750,26 @@ async function loadData() {
     document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
     renderKpis();
     renderTable();
+    preloadRawLinesForKpis(); // async, nao bloqueia — atualiza os cards de Ship Date quando chegar
   } catch (e) {
     document.getElementById("statusText").textContent = "Error cargando datos: " + e.message;
+  }
+}
+// Pre-carrega as linhas em bruto (mesmo arquivo do modal "Ver em bruto") para poder
+// calcular os cards "Ship Date proximos 7/15/30 dias" ja na primeira tela, sem
+// esperar o usuario abrir o modal. Se o arquivo falhar, os cards ficam em 0/"-" —
+// nao trava o resto do dashboard.
+async function preloadRawLinesForKpis() {
+  if (rawLinesCache) { buildNextShipDateLookup(); renderKpis(); return; }
+  try {
+    const resp = await fetch(RAW_DATA_URL + "?t=" + Date.now());
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    rawLinesCache = Array.isArray(data) ? data : (data.rows || data.items || data.lines || []);
+    buildNextShipDateLookup();
+    renderKpis();
+  } catch (e) {
+    // Silencioso: os cards de Ship Date ficam em 0 ate o arquivo existir/ser alcancavel.
   }
 }
 const topScrollWrap = document.getElementById("topScrollWrap");
@@ -2077,6 +2255,7 @@ function applyRolePermissions() {
     : "";
   document.getElementById("btnSave").style.display = isEditor ? "" : "none";
   document.getElementById("btnImport").style.display = isEditor ? "" : "none";
+  document.getElementById("btnClearSelectedPromise").style.display = isEditor ? "" : "none";
 }
 document.getElementById("btnLogin").onclick = () => {
   const code = document.getElementById("loginCodeInput").value.trim().toUpperCase();
