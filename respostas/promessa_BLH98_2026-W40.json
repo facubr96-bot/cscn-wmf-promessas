@@ -3,20 +3,20 @@
   "semana": "2026-W40",
   "itens": [
     {
-      "part_number": "87032825",
+      "part_number": "87698861",
       "data_promessa": "06/10/2026",
-      "qty_prometida": 75,
+      "qty_prometida": 250,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "motivo_atraso": "Atraso do fornecedor",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "GPWHI985",
-  "recibido_en_worker": "2026-10-02T15:07:28.846Z"
+  "recibido_en_worker": "2026-10-02T15:08:39.703Z"
 }
