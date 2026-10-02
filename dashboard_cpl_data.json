@@ -1,5 +1,5 @@
 {
-  "generated_at": "02/10/2026 09:40",
+  "generated_at": "02/10/2026 10:00",
   "today": "02/10/2026",
   "total": 398,
   "items": [
@@ -7152,8 +7152,8 @@
     {
       "id": "399",
       "pn": "84490124",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BNG98",
+      "supplier_name": "IOCHPE MAXION S A",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 24.0,
@@ -7161,10 +7161,10 @@
       "reason": "Cautionary",
       "run_out_date": "13/04/2027",
       "wmf_promise": "",
-      "created": "",
+      "created": "02/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Titon Facundo",
+      "solicitante": "BERRONE Alejandro Miguel (CNH)",
       "plant": "CB"
     }
   ]
