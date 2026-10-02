@@ -350,12 +350,10 @@
         <option value="Vivian Strelow">Vivian Strelow</option>
         <option value="Sin asignar">Sin asignar</option>
       </select>
-      <label id="filterNfePendenteWrap" style="font-size:12px; color:var(--gray-700); display:none; align-items:center; gap:4px;">
-        <input type="checkbox" id="filterNfePendente"> Somente NFe ja faturada e nao recebida
-      </label>
-      <select id="filterStatusP44" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
-        <option value="">Todos os Status P44</option>
-      </select>
+      <div id="statusP44Dropdown" style="position:relative; display:none;">
+        <button type="button" class="btn" id="statusP44Btn">Status P44</button>
+        <div id="statusP44Panel" style="display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:50; background:#fff; border:1px solid var(--gray-300); border-radius:var(--radius); padding:8px; min-width:220px; max-height:280px; overflow:auto; box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
+      </div>
       <div id="activeFilterChip"></div>
       <span class="count" id="rowCount"></span>
       <button class="btn" id="btnClearFilter">Limpiar filtro</button>
@@ -858,7 +856,7 @@ function getShipKpiDefs() {
   } else {
     bottom.push(
       { key: "ship_nfe_pendente", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
-      { key: "ship_nfe_em_dia", label: "Sem NFe Nova (ja recebido)", tone: "green", test: i => nfeMatchStatus(i) === "match" },
+      { key: "ship_nfe_em_dia", label: "Sem NFe Nova (ja recebido)", tone: "red", test: i => nfeMatchStatus(i) === "match" },
       { key: "ship_pn_novo", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
     );
   }
@@ -879,8 +877,7 @@ function renderReleaseInfo() {
 function renderKpis() {
   renderReleaseInfo();
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
-  document.getElementById("filterNfePendenteWrap").style.display = plant === "3e" ? "flex" : "none";
-  document.getElementById("filterStatusP44").style.display = plant === "3e" ? "" : "none";
+  document.getElementById("statusP44Dropdown").style.display = plant === "3e" ? "" : "none";
   populateStatusP44Filter();
   const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
@@ -897,22 +894,39 @@ function renderKpis() {
   renderDashPastDueTable(dashBase);
 }
 // Status P44 so existe para 3E (OTM). O valor "Sem status" representa status_p44 vazio.
+// Multi-selecao: um Set com os valores marcados (vazio = "todos", sem filtrar).
+let statusP44Selected = new Set();
 function populateStatusP44Filter() {
-  const sel = document.getElementById("filterStatusP44");
+  const panel = document.getElementById("statusP44Panel");
   if (plant !== "3e") return;
-  const current = sel.value;
   const values = [...new Set((allItems || []).map(i => i.status_p44 || "").filter(Boolean))].sort();
-  sel.innerHTML = '<option value="">Todos os Status P44</option>' +
-    values.map(v => `<option value="${v}">${v}</option>`).join("") +
-    '<option value="__SEM_STATUS__">Sem status</option>';
-  if ([...sel.options].some(o => o.value === current)) sel.value = current;
+  const options = [...values, "__SEM_STATUS__"];
+  // Mantem apenas selecoes ainda validas (ex: ao trocar de planta e voltar).
+  statusP44Selected = new Set([...statusP44Selected].filter(v => options.includes(v)));
+  panel.innerHTML = options.map(v => {
+    const label = v === "__SEM_STATUS__" ? "Sem status" : v;
+    const checked = statusP44Selected.has(v) ? "checked" : "";
+    return `<label style="display:flex; align-items:center; gap:6px; padding:4px 2px; font-size:13px; cursor:pointer; white-space:nowrap;">
+      <input type="checkbox" class="statusP44Opt" value="${v.replace(/"/g, "&quot;")}" ${checked}> ${label}
+    </label>`;
+  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem valores</div>';
+  panel.querySelectorAll(".statusP44Opt").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) statusP44Selected.add(cb.value); else statusP44Selected.delete(cb.value);
+      updateStatusP44BtnLabel();
+      renderKpis();
+      renderTable();
+    };
+  });
+  updateStatusP44BtnLabel();
+}
+function updateStatusP44BtnLabel() {
+  const btn = document.getElementById("statusP44Btn");
+  btn.textContent = statusP44Selected.size ? `Status P44 (${statusP44Selected.size})` : "Todos os Status P44";
 }
 function statusP44Filter(items) {
-  if (plant !== "3e") return items;
-  const v = document.getElementById("filterStatusP44").value;
-  if (!v) return items;
-  if (v === "__SEM_STATUS__") return items.filter(i => !i.status_p44);
-  return items.filter(i => i.status_p44 === v);
+  if (plant !== "3e" || !statusP44Selected.size) return items;
+  return items.filter(i => statusP44Selected.has(i.status_p44 || "__SEM_STATUS__"));
 }
 function searchBaseItems() {
   let items = allItems;
@@ -1188,11 +1202,9 @@ function filteredItems() {
   const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
   const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
-  const nfePendenteOnly = plant === "3e" && document.getElementById("filterNfePendente").checked;
   if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
-  if (nfePendenteOnly) items = items.filter(i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; });
   items = statusP44Filter(items);
   if (sortCol) {
     items = [...items].sort((a, b) => {
@@ -1657,8 +1669,15 @@ document.getElementById("fileImport").onchange = (e) => {
 document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
 document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
-document.getElementById("filterNfePendente").onchange = () => renderTable();
-document.getElementById("filterStatusP44").onchange = () => { renderKpis(); renderTable(); };
+document.getElementById("statusP44Btn").onclick = (e) => {
+  e.stopPropagation();
+  const panel = document.getElementById("statusP44Panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+};
+document.addEventListener("click", (e) => {
+  const dropdown = document.getElementById("statusP44Dropdown");
+  if (!dropdown.contains(e.target)) document.getElementById("statusP44Panel").style.display = "none";
+});
 document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
 document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
 document.getElementById("dashOnlyPastDue").onchange = () => { renderKpis(); };
