@@ -328,10 +328,6 @@
           <div class="kpi-grid" id="kpiCov1"></div>
         </div>
 
-        <div class="kpi-section">
-          <h2>Escalation</h2>
-          <div class="kpi-grid" id="kpiEscalation"></div>
-        </div>
       </div>
 
       <div class="kpi-divider"></div>
@@ -889,7 +885,6 @@ function renderKpis() {
   const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
-  renderKpiGrid("kpiEscalation", escalationDefs);
   const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
   renderKpiGrid("kpiShipTop", shipTop);
   renderKpiGrid("kpiShipBottom", shipBottom);
