@@ -722,18 +722,18 @@ function calendarDaysUntil(targetDate) {
   const today = todayNoTime();
   return Math.round((targetDate - today) / 86400000);
 }
-// Faixas mutuamente exclusivas (nao cumulativas): 0-7 dias uteis, 8-15 dias uteis,
+// Faixas mutuamente exclusivas (nao cumulativas): 0-5 dias uteis, 6-15 dias uteis,
 // e 16-30 dias corridos (a partir dai nao entra em nenhuma das 3 janelas).
 function shipDateWithin7BusinessDays(item) {
   const d = nextShipDateFor(item);
   if (!d) return false;
-  return businessDaysUntil(d) <= 7;
+  return businessDaysUntil(d) <= 5;
 }
 function shipDateWithin15BusinessDays(item) {
   const d = nextShipDateFor(item);
   if (!d) return false;
   const bd = businessDaysUntil(d);
-  return bd > 7 && bd <= 15;
+  return bd > 5 && bd <= 15;
 }
 function shipDateWithin30CalendarDays(item) {
   const d = nextShipDateFor(item);
@@ -835,7 +835,7 @@ function getShipKpiDefs() {
   const top = [
     { key: "ship_cpl", label: "PN CPL", tone: "red", test: i => !!i.cpl },
     { key: "ship_pastdue", label: "PN Past Due", tone: "red", test: pastDueTest },
-    { key: "ship_7d", label: "Ship Date ≤7 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
+    { key: "ship_7d", label: "Ship Date ≤5 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
     { key: "ship_15d", label: "Ship Date 8-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
     { key: "ship_30d", label: "Ship Date 16-30 dias", tone: "gray", test: shipDateWithin30CalendarDays },
   ];
@@ -862,6 +862,8 @@ function getShipKpiDefs() {
   } else {
     bottom.push(
       { key: "ship_nfe_pendente", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
+      { key: "ship_nfe_em_dia", label: "Sem NFe Nova (ja recebido)", tone: "green", test: i => nfeMatchStatus(i) === "match" },
+      { key: "ship_pn_novo", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
     );
   }
   return { top, bottom };
