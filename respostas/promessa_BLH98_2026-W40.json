@@ -3,9 +3,9 @@
   "semana": "2026-W40",
   "itens": [
     {
-      "part_number": "300480",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "86632597",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 316,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "GPWHI985",
-  "recibido_en_worker": "2026-10-02T15:02:00.643Z"
+  "recibido_en_worker": "2026-10-02T15:03:36.855Z"
 }
