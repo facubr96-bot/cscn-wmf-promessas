@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "82039381",
+      "part_number": "84162432",
       "data_promessa": "08/10/2026",
-      "qty_prometida": 41,
+      "qty_prometida": 40,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "LQW5FSRR",
-  "recibido_en_worker": "2026-10-05T19:08:28.601Z"
+  "recibido_en_worker": "2026-10-05T19:08:34.811Z"
 }
