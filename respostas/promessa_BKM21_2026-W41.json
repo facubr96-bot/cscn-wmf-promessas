@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "552991",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "10184314",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 79,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:20:33.982Z"
+  "recibido_en_worker": "2026-10-05T17:22:16.091Z"
 }
