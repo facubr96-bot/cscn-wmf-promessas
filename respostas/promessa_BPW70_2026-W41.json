@@ -3,20 +3,20 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "87735435",
-      "data_promessa": "01/10/2026",
-      "qty_prometida": 20,
+      "part_number": "91887551",
+      "data_promessa": "14/10/2026",
+      "qty_prometida": 390,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "LQW5FSRR",
-  "recibido_en_worker": "2026-10-05T19:09:00.902Z"
+  "recibido_en_worker": "2026-10-05T19:09:08.752Z"
 }
