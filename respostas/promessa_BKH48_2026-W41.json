@@ -3,12 +3,12 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "90360417",
-      "data_promessa": "18/08/2026",
-      "qty_prometida": 30,
+      "part_number": "90497495",
+      "data_promessa": "14/06/2027",
+      "qty_prometida": 70,
       "entrega_confirmada": true,
-      "data_coleta": "18/08/2026",
-      "nfe_enviada": "262566",
+      "data_coleta": "01/09/2026",
+      "nfe_enviada": "263080",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:34:23.036Z"
+  "recibido_en_worker": "2026-10-05T18:36:08.849Z"
 }
