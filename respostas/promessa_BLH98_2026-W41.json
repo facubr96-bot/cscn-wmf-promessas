@@ -1,0 +1,22 @@
+{
+  "supplier_code": "BLH98",
+  "semana": "2026-W41",
+  "itens": [
+    {
+      "part_number": "10033411",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 500,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "P138P94G",
+  "recibido_en_worker": "2026-10-05T14:41:57.410Z"
+}
