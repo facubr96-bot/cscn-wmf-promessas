@@ -3,20 +3,20 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "91725669",
-      "data_promessa": "",
-      "qty_prometida": 0,
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "part_number": "91739735",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 230,
+      "entrega_confirmada": true,
+      "data_coleta": "25/08/2026",
+      "nfe_enviada": "263018 / 263541 / 263713",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:37:21.103Z"
+  "recibido_en_worker": "2026-10-05T18:37:43.048Z"
 }
