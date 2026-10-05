@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "47703388",
-      "data_promessa": "05/10/2026",
-      "qty_prometida": 45,
+      "part_number": "47711866",
+      "data_promessa": "",
+      "qty_prometida": 0,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:33:54.131Z"
+  "recibido_en_worker": "2026-10-05T17:34:32.710Z"
 }
