@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51483171",
-      "data_promessa": "30/10/2026",
-      "qty_prometida": 40,
+      "part_number": "51483216",
+      "data_promessa": "26/08/2026",
+      "qty_prometida": 100,
       "entrega_confirmada": true,
       "data_coleta": "26/08/2026",
       "nfe_enviada": "96858",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:57:38.819Z"
+  "recibido_en_worker": "2026-10-05T17:57:50.468Z"
 }
