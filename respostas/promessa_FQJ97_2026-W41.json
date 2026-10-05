@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "47849683",
+      "part_number": "48194547",
       "data_promessa": "",
       "qty_prometida": null,
       "entrega_confirmada": true,
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "LQW5FSRR",
-  "recibido_en_worker": "2026-10-05T19:07:34.221Z"
+  "recibido_en_worker": "2026-10-05T19:08:03.917Z"
 }
