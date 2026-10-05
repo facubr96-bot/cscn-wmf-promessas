@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51668922",
-      "data_promessa": "09/10/2026",
-      "qty_prometida": 20,
+      "part_number": "91868610",
+      "data_promessa": "25/09/2026",
+      "qty_prometida": 57,
       "entrega_confirmada": true,
       "data_coleta": "25/09/2026",
       "nfe_enviada": "77961",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:04:19.578Z"
+  "recibido_en_worker": "2026-10-05T18:41:45.215Z"
 }
