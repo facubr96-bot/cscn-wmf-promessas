@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "84370633",
-      "data_promessa": "07/10/2026",
-      "qty_prometida": 3,
+      "part_number": "84372492",
+      "data_promessa": "02/10/2026",
+      "qty_prometida": 10,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:16:08.661Z"
+  "recibido_en_worker": "2026-10-05T18:16:13.173Z"
 }
