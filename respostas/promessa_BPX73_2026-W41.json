@@ -3,11 +3,11 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51537731",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "51537734",
+      "data_promessa": "18/09/2026",
+      "qty_prometida": 30,
       "entrega_confirmada": false,
-      "data_coleta": "",
+      "data_coleta": "02/09/2026",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:59:32.066Z"
+  "recibido_en_worker": "2026-10-05T17:59:41.330Z"
 }
