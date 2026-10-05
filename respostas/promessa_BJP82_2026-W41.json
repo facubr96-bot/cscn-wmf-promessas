@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51598972",
+      "part_number": "51598977",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": true,
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:02:35.364Z"
+  "recibido_en_worker": "2026-10-05T18:02:54.438Z"
 }
