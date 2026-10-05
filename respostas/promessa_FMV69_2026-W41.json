@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "90439835",
+      "part_number": "91858632",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:35:04.068Z"
+  "recibido_en_worker": "2026-10-05T18:41:16.232Z"
 }
