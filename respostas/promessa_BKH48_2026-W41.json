@@ -3,8 +3,8 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "87283209",
-      "data_promessa": "25/08/2026",
+      "part_number": "87686906",
+      "data_promessa": "",
       "qty_prometida": 20,
       "entrega_confirmada": true,
       "data_coleta": "25/08/2026",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:27:22.380Z"
+  "recibido_en_worker": "2026-10-05T18:32:42.595Z"
 }
