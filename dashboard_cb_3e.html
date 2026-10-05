@@ -328,6 +328,10 @@
           <div class="kpi-grid" id="kpiCov1"></div>
         </div>
 
+        <div class="kpi-section">
+          <h2>Escalation</h2>
+          <div class="kpi-grid" id="kpiEscalation"></div>
+        </div>
       </div>
 
       <div class="kpi-divider"></div>
@@ -688,8 +692,10 @@ function nfeMatchStatus(item) {
 // (alem de ficar em cache para o modal), e aqui calculamos por PN+planta a data de
 // embarque futura mais proxima.
 let nextShipDateLookup = new Map(); // key: "<PLANT_CODE>|<part_number>" -> Date
+let futureShipLinesLookup = new Map(); // key: idem -> [{ d: Date, qty: Number }] (so datas futuras)
 function buildNextShipDateLookup() {
   nextShipDateLookup = new Map();
+  futureShipLinesLookup = new Map();
   const today = todayNoTime();
   (rawLinesCache || []).forEach(r => {
     const normalized = normalizeDateFlexible(r.ship_date);
@@ -698,6 +704,9 @@ function buildNextShipDateLookup() {
     const key = `${r.plant_code}|${r.part_number}`;
     const prev = nextShipDateLookup.get(key);
     if (!prev || d < prev) nextShipDateLookup.set(key, d);
+    const qty = Number(r.quantity_due) || 0;
+    if (!futureShipLinesLookup.has(key)) futureShipLinesLookup.set(key, []);
+    futureShipLinesLookup.get(key).push({ d, qty });
   });
 }
 function nextShipDateFor(item) {
@@ -740,6 +749,35 @@ function shipDateWithin30CalendarDays(item) {
   if (bd <= 15) return false; // ja contado nas janelas acima
   const cd = calendarDaysUntil(d);
   return cd <= 30;
+}
+// Faixa (1=<=5 dias uteis, 2=6-15 dias uteis, 3=16-30 dias corridos, 0=fora) de uma data.
+function shipBandOf(d) {
+  const bd = businessDaysUntil(d);
+  if (bd <= 5) return 1;
+  if (bd <= 15) return 2;
+  return calendarDaysUntil(d) <= 30 ? 3 : 0;
+}
+// Qual janela de Ship Date esta filtrada agora (ship_7d / ship_15d / ship_30d), se houver.
+function activeShipBand() {
+  if (activeFilters.has("ship_7d")) return 1;
+  if (activeFilters.has("ship_15d")) return 2;
+  if (activeFilters.has("ship_30d")) return 3;
+  return 0;
+}
+// Cobertura de um PN para a sua janela de Ship Date: a demanda e a soma de QUANTITY_DUE das
+// linhas futuras do PN que caem na mesma faixa do seu proximo ship date. Mesma logica de
+// cobertura dos demais cards (Stock > Promessa > Prom. Insuf. > s/ Cobertura; Transito so CB),
+// mas sem exigir Past Due — todo PN da janela cai em exatamente um bucket.
+function shipWindowBucket(item) {
+  const plantCode = plant === "cb" ? "CB" : "3E";
+  const key = `${plantCode}|${item.pn}`;
+  const next = nextShipDateLookup.get(key);
+  if (!next) return null;
+  const band = shipBandOf(next);
+  const lines = futureShipLinesLookup.get(key) || [];
+  const demand = lines.reduce((acc, l) => (shipBandOf(l.d) === band ? acc + l.qty : acc), 0);
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(Math.max(demand, 1), transitQty, stockQty, promiseQty, plant === "cb");
 }
 // CB: o transito tem que cobrir o Past Due para contar como "c/ Transito" cheio;
 // cobertura parcial (transito > 0 mas nao cobre tudo) vira "c/ Transito Parcial".
@@ -828,13 +866,24 @@ function getKpiDefs() {
 // mais (3E) NFe sem recebimento ou (CB) Past Due Balance.
 function getShipKpiDefs() {
   const pastDueTest = plant === "cb" ? (i => (i.cor_qty_past_due || 0) > 0) : (i => (i.wmf_qty_past_due || 0) > 0);
-  const bloqueBucket = plant === "cb" ? bloque2Bucket : bloque3Bucket;
+  // O desdobramento de cobertura (c/ Stock, c/ Promessa, Prom. Insuf., s/ Cobertura) vale para
+  // QUALQUER filtro ativo (CPL, Past Due, Run Out, Motivo, Escalation, Status P44, busca, etc.):
+  // cada PN do conjunto filtrado cai em exatamente um bucket e a soma = total filtrado.
+  // - Com janela de Ship Date filtrada: demanda = linhas da janela (shipWindowBucket).
+  // - Sem janela: demanda = Past Due do PN (piso 1), mesma regra do bloco de PN criticos.
+  // Avaliado a cada chamada (nao na criacao), pois os filtros ativos mudam.
+  const generalBucket = (i) => {
+    const qty = Math.max(i.cor_qty_past_due || 0, i.wmf_qty_past_due || 0, 1.0);
+    const { transitQty, stockQty, promiseQty } = commonVals(i);
+    return coverageBucket(qty, transitQty, stockQty, promiseQty, plant === "cb");
+  };
+  const bloqueBucket = (i) => activeShipBand() ? shipWindowBucket(i) : generalBucket(i);
 
   const top = [
     { key: "ship_cpl", label: "PN CPL", tone: "red", test: i => !!i.cpl },
     { key: "ship_pastdue", label: "PN Past Due", tone: "red", test: pastDueTest },
     { key: "ship_7d", label: "Ship Date ≤5 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
-    { key: "ship_15d", label: "Ship Date 8-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
+    { key: "ship_15d", label: "Ship Date 6-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
     { key: "ship_30d", label: "Ship Date 16-30 dias", tone: "gray", test: shipDateWithin30CalendarDays },
   ];
   if (plant === "cb") {
@@ -845,13 +894,17 @@ function getShipKpiDefs() {
   }
 
   const bottom = [
-    { key: "ship_stock", label: "c/ Stock", tone: "green", test: i => bloqueBucket(i) === "c/ Stock" },
-    { key: "ship_promessa", label: "c/ Promessa", tone: "amber", test: i => bloqueBucket(i) === "c/ Promessa" },
-    { key: "ship_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloqueBucket(i) === "Prom. Insuf." },
-    { key: "ship_sin", label: "s/ Cobertura", tone: "red", test: i => bloqueBucket(i) === "s/ Cobertura" },
-    { key: "ship_l1", label: "Level 1", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
-    { key: "ship_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
+    { key: "ship_stock", group: "cov", label: "c/ Stock", tone: "green", test: i => bloqueBucket(i) === "c/ Stock" },
+    { key: "ship_promessa", group: "cov", label: "c/ Promessa", tone: "amber", test: i => bloqueBucket(i) === "c/ Promessa" },
+    { key: "ship_insuf", group: "cov", label: "Prom. Insuf.", tone: "amber", test: i => bloqueBucket(i) === "Prom. Insuf." },
+    { key: "ship_sin", group: "cov", label: "s/ Cobertura", tone: "red", test: i => bloqueBucket(i) === "s/ Cobertura" },
   ];
+  // CB: "c/ Transito" tambem e um bucket de cobertura (soma incluida no total).
+  if (plant === "cb") {
+    bottom.unshift({ key: "ship_win_transito", group: "cov", label: activeShipBand() ? "c/ Transito (cobre a janela)" : "c/ Transito (cobertura)", tone: "green", test: i => bloqueBucket(i) === "c/ Transito" });
+  }
+  // Total do conjunto filtrado = soma dos cards de cobertura (card informativo, nao filtra).
+  bottom.unshift({ key: "ship_cov_total", group: "cov", noFilter: true, label: "Total filtrado (soma da cobertura)", tone: "gray", test: () => true });
   if (plant === "cb") {
     bottom.push(
       { key: "ship_bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
@@ -886,6 +939,7 @@ function renderKpis() {
   const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
+  renderKpiGrid("kpiEscalation", escalationDefs);
   const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
   renderKpiGrid("kpiShipTop", shipTop);
   renderKpiGrid("kpiShipBottom", shipBottom);
@@ -963,10 +1017,11 @@ function motivosScopeItems(items) {
 // ativos (ex: clicar em "Com Past Due Balance" recalcula os paineis de
 // Cobertura/COR->WMF so com essas pecas, mostrando quantas estao em transito,
 // em stock, etc). Exclui o proprio filtro (def.key) para nao se auto-zerar.
-function activeFilterBaseItems(excludeKey) {
+function activeFilterBaseItems(excludeKey, excludeKeys) {
   let items = searchBaseItems();
   for (const [key, { test }] of activeFilters.entries()) {
     if (key === excludeKey) continue;
+    if (excludeKeys && excludeKeys.has(key)) continue;
     items = items.filter(test);
   }
   return items;
@@ -975,11 +1030,15 @@ function renderKpiGrid(elId, defs, baseItemsOverride) {
   const el = document.getElementById(elId);
   el.innerHTML = "";
   defs.forEach(def => {
-    const base = baseItemsOverride || activeFilterBaseItems(def.key);
+    // Cards de um mesmo "group" (cobertura) nao se excluem entre si: a base ignora os filtros
+    // do grupo inteiro, assim a soma dos buckets continua igual ao total filtrado.
+    const groupKeys = def.group ? new Set(defs.filter(d => d.group === def.group).map(d => d.key)) : null;
+    const base = baseItemsOverride || activeFilterBaseItems(def.key, groupKeys);
     const count = base.filter(def.test).length;
     const card = document.createElement("button");
     card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
     card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
+    if (def.noFilter) { card.style.cursor = "default"; return el.appendChild(card); }
     card.onclick = () => toggleKpiFilter(def.key, def.label, def.test);
     el.appendChild(card);
   });
@@ -1756,11 +1815,48 @@ function applyLocalEditsOverlay(items) {
   saveLocalEdits(remaining);
 }
 
+// Le os campos editaveis AO VIVO de dim_promessas (via Worker, rota dashboard_overrides),
+// para que o que um usuario salva apareca para os demais sem esperar o proximo snapshot
+// do JSON. Requer o Worker atualizado; se a rota nao existir ou falhar, e silencioso e
+// o dashboard segue so com o snapshot (comportamento anterior).
+async function applyLiveOverrides(items) {
+  if (!currentCode) return false;
+  try {
+    const resp = await fetch(WORKER_URL + "?action=dashboard_overrides&code=" + encodeURIComponent(currentCode));
+    if (!resp.ok) return false;
+    const data = await resp.json();
+    if (!data || !data.ok || !Array.isArray(data.promises)) return false;
+    const byKey = new Map();
+    const byPn = new Map();
+    items.forEach(i => {
+      byKey.set(`${i.pn}|${i.supplier_code || ""}`, i);
+      if (!byPn.has(i.pn)) byPn.set(i.pn, []);
+      byPn.get(i.pn).push(i);
+    });
+    data.promises.forEach(r => {
+      const pn = String(r.pn || "");
+      let item = byKey.get(`${pn}|${r.supplier_code || ""}`);
+      if (!item) { const arr = byPn.get(pn); if (arr && arr.length === 1) item = arr[0]; }
+      if (!item) return;
+      item.promessa_data = normalizeDateFlexible(r.promise_date) || "";
+      item.promessa_qty = (r.promised_qty ?? "") === "" ? "" : Number(r.promised_qty);
+      item.previsao_saida_wmfbr = normalizeDateFlexible(r.previsao_saida_wmfbr) || "";
+      item.motivo_atraso = r.motivo_atraso || "";
+      item.escalation_level = r.escalation_level || "";
+      item.data_real_completed = normalizeDateFlexible(r.data_real_completed) || "";
+    });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 async function loadData() {
   try {
     const resp = await fetch(DATA_URL + "?t=" + Date.now());
     const data = await resp.json();
     allItems = Array.isArray(data) ? data : (data.items || []);
+    await applyLiveOverrides(allItems);
     applyLocalEditsOverlay(allItems);
     const genAt = data.generated_at || "";
     window._releaseCb = data.erp_release_cb || "";
