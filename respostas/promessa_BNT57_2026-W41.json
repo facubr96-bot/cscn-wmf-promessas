@@ -1,0 +1,22 @@
+{
+  "supplier_code": "BNT57",
+  "semana": "2026-W41",
+  "itens": [
+    {
+      "part_number": "51679875",
+      "data_promessa": "14/10/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "L2",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "GPWHI985",
+  "recibido_en_worker": "2026-10-05T18:48:21.507Z"
+}
