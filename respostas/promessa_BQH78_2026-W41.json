@@ -1,0 +1,22 @@
+{
+  "supplier_code": "BQH78",
+  "semana": "2026-W41",
+  "itens": [
+    {
+      "part_number": "48094424",
+      "data_promessa": "02/09/2026",
+      "qty_prometida": 104,
+      "entrega_confirmada": true,
+      "data_coleta": "02/09/2026",
+      "nfe_enviada": "22779",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ],
+  "editor_code": "LQW5FSRR",
+  "recibido_en_worker": "2026-10-05T17:42:15.035Z"
+}
