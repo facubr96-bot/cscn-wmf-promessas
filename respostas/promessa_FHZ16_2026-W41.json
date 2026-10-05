@@ -11,12 +11,12 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Atraso do fornecedor",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "GPWHI985",
-  "recibido_en_worker": "2026-10-05T16:56:11.867Z"
+  "recibido_en_worker": "2026-10-05T16:58:09.311Z"
 }
