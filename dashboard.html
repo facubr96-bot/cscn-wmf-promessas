@@ -3,455 +3,2372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portal-version" content="2026-09-08 dashboard-live-merge">
-<title>CSCN WMF - Dashboard de Fornecedores</title>
+<title>CNH Industrial — Dashboard CSCN WMF</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 13px;
-    background: #f0f2f5;
-    color: #222;
-    min-height: 100vh;
+  :root {
+    --black: #1a1a1a;
+    --gray-900: #2b2b2b;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --gray-300: #c7c7c7;
+    --gray-100: #f0f0f0;
+    --white: #ffffff;
+    --red: #b3121f;
+    --red-dark: #7d0c16;
+    --green: #2f7d4f;
+    --amber: #b5750c;
+    --radius: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,.12);
   }
-
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: var(--gray-100);
+    color: var(--gray-900);
+    font-size: 13px;
+  }
   header {
-    background: #1F3864;
-    color: #fff;
+    background: var(--black);
+    color: var(--white);
     padding: 14px 24px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.35);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 3px solid var(--red);
   }
-  header .divider { width: 1px; height: 36px; background: rgba(255,255,255,.3); }
-  header h1 { font-size: 17px; font-weight: 700; letter-spacing: .4px; }
+  header .brand { display: flex; flex-direction: column; gap: 2px; }
+  header .brand .eyebrow { font-size: 11px; color: var(--gray-300); }
+  header .brand h1 { margin: 0; font-size: 18px; font-weight: 600; }
+
+  .plant-switch {
+    display: inline-flex;
+    background: var(--gray-900);
+    border-radius: var(--radius);
+    padding: 3px;
+    gap: 3px;
+  }
+  .plant-switch button {
+    border: none;
+    background: transparent;
+    color: var(--gray-300);
+    padding: 8px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .15s, color .15s;
+  }
+  .plant-switch button.active { background: var(--red); color: var(--white); }
+  .plant-switch button:not(.active):hover { background: rgba(255,255,255,.08); }
+
+  #statusBar {
+    padding: 8px 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 12px;
+    color: var(--gray-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #statusBar .dot { color: var(--green); font-weight: bold; }
+
+  main { padding: 20px 24px 60px; }
+
+  .kpi-section { margin-bottom: 22px; }
+  .filter-group { margin-bottom: 16px; }
+  .filter-group-title { font-size: 12px; font-weight: 700; color: var(--gray-700); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 6px; }
+  .filter-checklist { max-height: 160px; overflow-y: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 6px 8px; background: var(--white); }
+  .filter-checklist label { display: flex; align-items: center; gap: 6px; font-size: 12px; padding: 3px 0; cursor: pointer; }
+  .filter-checklist .count { color: var(--gray-700); font-weight: 400; margin-left: auto; }
+  .cpl-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .cpl-bar-label { width: 130px; font-size: 12px; text-align: right; color: var(--gray-700); flex-shrink: 0; }
+  .cpl-bar-track { flex: 1; background: var(--gray-100); border-radius: 3px; overflow: hidden; height: 20px; }
+  .cpl-bar-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; color: var(--white); font-size: 11px; font-weight: 700; box-sizing: border-box; }
+  .cpl-bar-count { width: 40px; font-size: 12px; font-weight: 600; }
+  .cpl-bar-clickable { cursor: pointer; border-radius: 4px; padding: 2px 4px; margin: -2px -4px 6px -4px; }
+  .cpl-bar-clickable:hover { background: var(--gray-100); }
+  .cpl-bar-active { outline: 2px solid var(--red); background: #fde8e8; }
+  .cpl-bar-active .cpl-bar-label { font-weight: 700; color: var(--red); }
+  .kpi-columns { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 18px; align-items: start; }
+  .kpi-col { min-width: 0; }
+  .kpi-divider { background: var(--gray-300); align-self: stretch; }
+  @media (max-width: 900px) {
+    .kpi-columns { grid-template-columns: 1fr; }
+    .kpi-divider { display: none; }
+  }
+  .kpi-section h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--gray-500);
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-left: 4px solid var(--gray-500);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform .1s, box-shadow .1s;
+    text-align: left;
+  }
+  .kpi-card:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
+  .kpi-card.active { border-left-color: var(--red); background: #fff5f5; }
+  .kpi-card .kpi-value { font-size: 24px; font-weight: 700; line-height: 1; color: var(--black); }
+  .kpi-card .kpi-label { margin-top: 6px; font-size: 12px; color: var(--gray-700); }
+  .kpi-card.tone-red .kpi-value { color: var(--red); }
+  .kpi-card.tone-green .kpi-value { color: var(--green); }
+  .kpi-card.tone-amber .kpi-value { color: var(--amber); }
 
   .toolbar {
-    background: #fff;
-    padding: 10px 24px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
-    border-bottom: 1px solid #dde1e7;
+    margin: 18px 0 10px;
   }
-  input.search-input {
-    padding: 6px 12px;
-    border: 1.5px solid #ccc;
-    border-radius: 6px;
-    font-size: 12px;
-    min-width: 260px;
-  }
-  input.search-input:focus { outline: none; border-color: #1F3864; }
-
-  .live-indicator {
-    font-size: 11px;
-    color: #217a3c;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: auto;
-  }
-  .live-indicator .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #217a3c;
-    display: inline-block;
-  }
-  .live-indicator.loading .dot { background: #b7770d; }
-  .live-indicator.error .dot { background: #c0392b; }
-
-  .table-wrap { padding: 20px 24px 60px; }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 6px rgba(0,0,0,.10);
+  .toolbar input[type=text] {
+    padding: 8px 10px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
     font-size: 13px;
+    min-width: 180px;
   }
-  thead tr { background: #1F3864; color: #fff; text-align: left; }
-  thead th {
-    padding: 10px 12px;
+  .toolbar .filter-chip {
+    background: var(--gray-900);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 14px;
     font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .toolbar .filter-chip button {
+    background: none; border: none; color: var(--gray-300); cursor: pointer; font-size: 13px; padding: 0;
+  }
+  .toolbar .count { color: var(--gray-500); font-size: 12px; margin-left: auto; }
+  .toolbar button.btn {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .toolbar button.btn:hover { background: var(--gray-100); }
+  .toolbar button.btn-primary { background: var(--red); border-color: var(--red); color: var(--white); }
+  .toolbar button.btn-primary:hover { background: var(--red-dark); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--white); box-shadow: var(--shadow); font-size: 12px; }
+  thead th {
+    background: var(--gray-900);
+    color: var(--white);
+    text-align: left;
+    padding: 9px 10px;
+    position: sticky; top: 0;
     cursor: pointer;
     user-select: none;
+    white-space: nowrap;
   }
-  thead th:hover { background: #16294d; }
-  tbody tr { border-bottom: 1px solid #eaecef; }
-  tbody tr:hover { background: #f5f7fb; }
-  tbody td { padding: 9px 12px; vertical-align: middle; }
+  thead th:hover { background: var(--black); }
+  .btn-toggle-otm { background: var(--red); color: var(--white); border: none; border-radius: 3px; padding: 1px 6px; cursor: pointer; font-size: 11px; margin-left: 4px; }
+  .btn-toggle-otm:hover { background: var(--red-dark); }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; white-space: nowrap; }
+  td.truncate, .truncate { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: help; }
+  td.cell-truncate { max-width: 160px; overflow: hidden; text-overflow: ellipsis; cursor: help; }
+  tbody td.td-truncate { max-width: 160px; overflow: hidden; text-overflow: ellipsis; cursor: help; }
+  tbody tr:hover { background: #fafafa; }
+  tbody tr.row-dirty { background: #fff9e6; }
 
-  td.num-cell { text-align: center; font-weight: 700; }
-  td.count-cell { color: #c0392b; }
-  td.dias-cell { color: #c0392b; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-red { background: #fde8e8; color: var(--red); }
+  .badge-green { background: #e6f4ea; color: var(--green); }
+  .badge-gray { background: var(--gray-100); color: var(--gray-700); }
+  .badge-amber { background: #fdf1de; color: var(--amber); }
 
-  .pct-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-  }
-  .pct-bar-bg {
-    width: 60px;
-    height: 8px;
-    background: #eef1f5;
+  input.cell-input {
+    border: 1px solid var(--gray-300);
     border-radius: 4px;
-    overflow: hidden;
-  }
-  .pct-bar-fill { height: 100%; border-radius: 4px; }
-  .pct-bar-fill.promised { background: #e67e22; }
-  .pct-bar-fill.confirmed { background: #217a3c; }
-  .pct-label { font-size: 12px; font-weight: 700; min-width: 38px; text-align: right; }
-
-  .btn-abrir {
-    padding: 5px 16px;
-    background: #1F3864;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
+    padding: 4px 6px;
     font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
+    width: 100px;
   }
-  .btn-abrir:hover { background: #16294d; }
-
-  .loading {
-    display: flex; align-items: center; justify-content: center;
-    gap: 12px; padding: 60px 24px; color: #888; font-size: 14px;
-  }
-  .spinner {
-    width: 28px; height: 28px;
-    border: 3px solid #dde1e7;
-    border-top-color: #1F3864;
-    border-radius: 50%;
-    animation: spin .7s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .error-box {
-    margin: 24px;
-    background: #fff0f0;
-    border: 1.5px solid #e74c3c;
-    border-radius: 8px;
-    padding: 20px 24px;
-    color: #c0392b;
-    font-size: 13px;
+  input.cell-input:focus { outline: 2px solid var(--red); border-color: var(--red); }
+  .qty-input { width: 70px; }
+  select.cell-select {
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    max-width: 170px;
   }
 
-  .summary-bar {
-    background: #fff;
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    border-bottom: 1px solid #dde1e7;
+  .table-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--gray-300); border-radius: var(--radius); }
+  .top-scroll-wrap { overflow-x: auto; overflow-y: hidden; height: 16px; margin-bottom: 2px; }
+  .top-scroll-inner { height: 1px; }
+
+  .empty-state { padding: 40px; text-align: center; color: var(--gray-500); }
+
+  footer { padding: 14px 24px; color: var(--gray-500); font-size: 11px; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 5px; }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.55);
+    z-index: 1000; display: flex; align-items: center; justify-content: center;
   }
-  .summary-chip .label { font-size: 10px; text-transform: uppercase; color: #888; }
-  .summary-chip .value { font-size: 16px; font-weight: 700; color: #1F3864; }
+  .modal-content {
+    background: var(--white); width: 92vw; height: 88vh; border-radius: var(--radius);
+    display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.4);
+  }
+  .modal-header {
+    background: var(--black); color: var(--white); padding: 12px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 3px solid var(--red);
+  }
+  .modal-header h2 { margin: 0; font-size: 15px; }
+  .modal-toolbar { display: flex; gap: 8px; padding: 10px 18px; border-bottom: 1px solid var(--gray-300); align-items: center; }
+  .modal-toolbar input { padding: 7px 10px; border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 12px; }
+  .modal-body { flex: 1; overflow: auto; padding: 0 18px 18px; }
+  .modal-body table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  .modal-body thead th {
+    position: sticky; top: 0; background: var(--gray-900); color: var(--white);
+    padding: 7px 8px; text-align: left; white-space: nowrap; cursor: pointer;
+  }
+  .modal-body tbody td { padding: 5px 8px; border-bottom: 1px solid var(--gray-100); white-space: nowrap; }
+  .modal-body tbody tr:hover { background: #fafafa; }
+  .badge-pastdue { color: var(--red); font-weight: 700; }
 </style>
 </head>
 <body>
 
+<div class="modal-overlay" id="loginOverlay" style="display:flex;">
+  <div class="modal-content" style="width:380px; height:auto;">
+    <div class="modal-header">
+      <h2>CSCN WMF — Acceso</h2>
+    </div>
+    <div style="padding:24px;">
+      <p style="font-size:13px; color:var(--gray-700); margin-bottom:14px;">Ingresa tu codigo personal para continuar.</p>
+      <input type="text" id="loginCodeInput" placeholder="Codigo" style="width:100%; padding:10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:14px; letter-spacing:1px; text-transform:uppercase;">
+      <div id="loginError" style="color:var(--red); font-size:12px; margin-top:8px; min-height:16px;"></div>
+      <button class="btn btn-primary" id="btnLogin" style="width:100%; margin-top:10px;">Entrar</button>
+    </div>
+  </div>
+</div>
+
 <header>
-  <div>
-    <div style="font-size:12px;opacity:.6;letter-spacing:1px;text-transform:uppercase">CNH Industrial</div>
-    <h1>CSCN WMF &mdash; Dashboard de Fornecedores</h1>
+  <div class="brand">
+    <span class="eyebrow">CNH INDUSTRIAL</span>
+    <h1>CSCN WMF — Dashboard de Piezas</h1>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+    <div class="plant-switch" id="plantSwitch">
+      <button data-plant="3e" class="active">Planta 3E</button>
+      <button data-plant="cb">Planta CB</button>
+    </div>
+    <div class="plant-switch" id="viewSwitch">
+      <button data-view="table" class="active">Tabela</button>
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="cpl">CPL</button>
+    </div>
+    <button class="btn" id="btnRawView">Ver CSCN em bruto</button>
   </div>
 </header>
 
-<div id="errorState" class="error-box" style="display:none">
-  <strong>Erro</strong>
-  <span id="errorMsg"></span>
-</div>
-
-<div id="mainContent" style="display:none">
-  <div class="summary-bar">
-    <div class="summary-chip"><div class="label">Fornecedores com Past Due</div><div class="value" id="sumSuppliers">-</div></div>
-    <div class="summary-chip"><div class="label">Total PN em Past Due</div><div class="value" id="sumPn">-</div></div>
-    <div class="live-indicator loading" id="liveStatus"><span class="dot"></span>Verificando...</div>
-  </div>
-
-  <div class="toolbar">
-    <input type="text" id="searchInput" class="search-input" placeholder="Buscar fornecedor..." oninput="renderTable()">
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th onclick="setSort('name')">Fornecedor</th>
-          <th onclick="setSort('code')">Codigo</th>
-          <th onclick="setSort('count')" style="text-align:center">Qtd PN Past Due &#8595;</th>
-          <th onclick="setSort('dias')" style="text-align:center">Dias Vencido (pior caso)</th>
-          <th onclick="setSort('promised')" style="text-align:center">% Prometido (qty)</th>
-          <th onclick="setSort('confirmed')" style="text-align:center">% Confirmado (qty)</th>
-          <th style="text-align:center">Acao</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
+<div class="modal-overlay" id="rawModalOverlay" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="rawModalTitle">CSCN em bruto</h2>
+      <button class="btn" id="btnCloseRawModal">Fechar ✕</button>
+    </div>
+    <div class="modal-toolbar">
+      <input type="text" id="rawSearchPn" placeholder="Buscar PN...">
+      <input type="text" id="rawSearchSupplier" placeholder="Buscar proveedor...">
+      <span class="count" id="rawRowCount"></span>
+    </div>
+    <div class="modal-body" id="rawModalBody">
+      <div class="empty-state">Cargando...</div>
+    </div>
   </div>
 </div>
 
-<div id="loadingState" class="loading"><div class="spinner"></div>Carregando dados...</div>
+<div id="statusBar">
+  <span><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
+  <span id="releaseInfo" style="font-weight:600;"></span>
+  <span id="lastUpdate"></span>
+</div>
+
+<main>
+
+  <div id="viewTable">
+    <div class="kpi-columns">
+      <div class="kpi-col">
+        <div class="kpi-section">
+          <h2>Run Out</h2>
+          <div class="kpi-grid" id="kpiRunout"></div>
+        </div>
+
+        <div class="kpi-section">
+          <h2>Cobertura PN criticos / Run Out vencido + resto do mes</h2>
+          <div class="kpi-grid" id="kpiCov1"></div>
+        </div>
+
+        <div class="kpi-section">
+          <h2>Escalation</h2>
+          <div class="kpi-grid" id="kpiEscalation"></div>
+        </div>
+      </div>
+
+      <div class="kpi-divider"></div>
+
+      <div class="kpi-col">
+        <div class="kpi-section" id="kpiShipSection">
+          <h2 id="kpiShipTitle">WMF → Proveedor / Ship Date</h2>
+          <div class="kpi-grid" id="kpiShipTop" style="margin-bottom:12px;"></div>
+          <div class="kpi-grid" id="kpiShipBottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="searchPn" placeholder="Buscar PN...">
+      <input type="text" id="searchSupplier" placeholder="Buscar proveedor...">
+      <select id="filterPlanejador" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px; display:none;">
+        <option value="">Todos los planejadores</option>
+        <option value="Titon Facundo">Titon Facundo</option>
+        <option value="Vivian Strelow">Vivian Strelow</option>
+        <option value="Sin asignar">Sin asignar</option>
+      </select>
+      <div id="statusP44Dropdown" style="position:relative; display:none;">
+        <button type="button" class="btn" id="statusP44Btn">Status P44</button>
+        <div id="statusP44Panel" style="display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:50; background:#fff; border:1px solid var(--gray-300); border-radius:var(--radius); padding:8px; min-width:220px; max-height:280px; overflow:auto; box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
+      </div>
+      <div id="activeFilterChip"></div>
+      <span class="count" id="rowCount"></span>
+      <button class="btn" id="btnClearFilter">Limpiar filtro</button>
+      <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
+      <button class="btn" id="btnImport">Importar Excel/CSV</button>
+      <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
+      <button class="btn" id="btnExport">Exportar Excel/CSV</button>
+      <span class="count" id="selectedCount" style="margin-left:6px;"></span>
+      <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
+      <button class="btn" id="btnClearSelectedPromise">Borrar Promessa</button>
+    </div>
+
+    <div class="top-scroll-wrap" id="topScrollWrap"><div class="top-scroll-inner" id="topScrollInner"></div></div>
+    <div class="table-wrap" id="tableWrap">
+      <table id="mainTable">
+        <thead><tr id="tableHead"></tr></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none;">Ningun PN coincide con este filtro.</div>
+    </div>
+  </div>
+
+  <div id="viewDashboard" style="display:none;">
+    <div class="toolbar" style="margin-top:0;">
+      <input type="text" id="dashSearchPn" placeholder="Filtrar por PN...">
+      <input type="text" id="dashSearchSupplier" placeholder="Filtrar por proveedor...">
+      <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--gray-700);">
+        <input type="checkbox" id="dashOnlyPastDue"> Somente Past Due
+      </label>
+      <span class="count" id="dashRowCount"></span>
+    </div>
+    <div class="kpi-section">
+      <h2>Escalation</h2>
+      <div class="kpi-grid" id="kpiDashEscalation"></div>
+    </div>
+    <div class="kpi-section">
+      <h2>Motivos Past Due</h2>
+      <div class="kpi-grid" id="kpiMotivos"></div>
+      <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
+        <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:1; min-width:280px; max-width:400px;">
+          <div id="chartMotivosDonut"></div>
+        </div>
+        <div style="background:var(--white); border:1px solid var(--gray-300); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); flex:2; min-width:320px;">
+          <div id="chartMotivosBar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="kpi-section">
+      <h2>PN em Past Due (ou com motivo ja registrado)</h2>
+      <div class="table-wrap" style="max-height: 48vh;">
+        <table id="dashPastDueTable">
+          <thead>
+            <tr>
+              <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
+              <th>Ship Date mas antiguo</th><th>Dias em Past Due</th>
+              <th id="thFirmSet">Firm</th><th id="thFirmOut">Firm</th><th>Ultima NFe</th><th>Motivo Atraso</th><th>Escalation</th>
+              <th>Promessa Data</th><th>Promessa Qty</th>
+              <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
+            </tr>
+          </thead>
+          <tbody id="dashPastDueBody"></tbody>
+        </table>
+        <div class="empty-state" id="dashPastDueEmpty" style="display:none;">Nenhum PN em Past Due (ou com motivo registrado) nesta planta/filtro.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewCpl" style="display:none;">
+    <div class="toolbar" style="margin-top:0;">
+      <input type="text" id="cplSearchPn" placeholder="Buscar PN...">
+      <input type="text" id="cplSearchSupplier" placeholder="Buscar proveedor...">
+      <span class="count" id="cplRowCount"></span>
+      <button class="btn" id="btnCplClearFilters">Limpar filtros</button>
+      <button class="btn" id="btnCplReload">Recarregar</button>
+    </div>
+    <div id="cplEmptyState" class="empty-state" style="display:none;">
+      Esta aba ainda nao tem dados publicados (dashboard_cpl_data.json). Falta gerar/publicar esse JSON a partir da lista SharePoint "Solicitacoes Criticas Cordoba".
+    </div>
+    <div id="cplContent" style="display:none;">
+      <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+        <div style="flex:1; min-width:320px;">
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <div class="kpi-grid" id="kpiCplCriticidad" style="flex:1; min-width:260px;"></div>
+            <div class="kpi-grid" id="kpiCplEscalation" style="flex:1; min-width:200px;"></div>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Status Promessas</h2>
+              <div id="cplStatusPromessas"></div>
+            </div>
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Aging de Solicitacoes Abertas</h2>
+              <div id="cplAging"></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Principais Causas de Incidencia</h2>
+              <div id="cplCausas"></div>
+            </div>
+            <div class="kpi-section" style="flex:1; min-width:260px;">
+              <h2>Motivo Atraso (nosso, do dashboard)</h2>
+              <div id="cplMotivoNosso"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width:220px; flex-shrink:0;">
+          <div class="kpi-section">
+            <h2>Filtros</h2>
+            <div class="filter-group">
+              <div class="filter-group-title">Criticidade</div>
+              <div id="cplFilterCriticidad" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Estado</div>
+              <div id="cplFilterEstado" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Planejador</div>
+              <div id="cplFilterPlanner" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Solicitante</div>
+              <div id="cplFilterSolicitante" class="filter-checklist"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Escalation (dashboard)</div>
+              <div id="cplFilterEscalation" class="filter-checklist"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-section">
+        <h2>Detalhe</h2>
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
+          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">Criado de
+            <input type="date" id="cplDateFrom">
+          </label>
+          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">ate
+            <input type="date" id="cplDateTo">
+          </label>
+        </div>
+        <div class="table-wrap" style="max-height: 55vh;">
+          <table id="cplTable">
+            <thead>
+              <tr>
+                <th data-col="pn">PN</th>
+                <th data-col="supplier_code">Cod. Fornecedor</th>
+                <th data-col="supplier_name">Fornecedor</th>
+                <th data-col="stock_wmf">Stock WMF</th>
+                <th data-col="qty_transito">Transito</th>
+                <th data-col="qty_min">Qty Min</th>
+                <th data-col="criticidad">Criticidade</th>
+                <th data-col="reason">Reason</th>
+                <th data-col="run_out_date">Run Out Date</th>
+                <th data-col="wmf_promise">WMF Promise</th>
+                <th data-col="created">Created</th>
+                <th data-col="estado">Estado</th>
+                <th data-col="planner">Planejador</th>
+                <th data-col="solicitante">Solicitante</th>
+                <th data-col="plant">Plant</th>
+                <th>Sai do CPL?</th>
+              </tr>
+            </thead>
+            <tbody id="cplTableBody"></tbody>
+          </table>
+          <div class="empty-state" id="cplTableEmpty" style="display:none;">Nenhum item com esse filtro.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>CSCN WMF — datos actualizados por el pipeline diario. Los cambios de Promesa/Confirmación se guardan directo en dim_promessas via la misma API que usa el portal de proveedores.</footer>
 
 <script>
-const ADMIN_HASH = "24ebfc17ad38bb0cd8c2b7bde39837aba0718e77123173e6228a47d7e8ff2424";
-const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev";
+const WORKER_URL = "https://promessas-api.cscn-wmf.workers.dev/";
+let currentUser = null;
+let currentCode = "";
 
-let ROLLUP = [];
-let sortKey = 'count';
-let sortDir = 'desc';
+function getPlanejador(item) {
+  return item.planejador || "Sin asignar";
+}
+const DATA_URL = "dashboard_cb_3e_data.json";
 
-function qs(sel) { return document.querySelector(sel); }
+const MOTIVO_OPTIONS = [
+  "Pedido inserido dentro do Lead time",
+  "Atraso do fornecedor",
+  "Problema de transporte",
+  "Divergência de NF-e",
+  "Negociação comercial",
+  "Fornecedor novo",
+  "Resourcing",
+];
 
-async function sha256Hex(text) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+let allItems = [];
+let otmExpanded = false;
+let plant = "3e";
+const activeFilters = new Map(); // key -> {label, test}
+let sortCol = null, sortDir = 1;
+const dirty = {}; // pn -> {campo: valor}
+
+// ---------- Utils ----------
+function parseDateBR(s) {
+  if (!s) return null;
+  const [d, m, y] = String(s).split("/");
+  if (!d || !m || !y) return null;
+  const dt = new Date(+y, +m - 1, +d);
+  return isNaN(dt) ? null : dt;
+}
+function todayNoTime() {
+  const t = new Date();
+  return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+}
+const MONTHS_ES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+const MONTHS_ABBR_PT = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+// Labels de "Firm Set"/"Firm Out" dependiam do mes atual — estavam fixos no texto e
+// ficavam desatualizados quando o mes virava. Agora se calculam com base no mes atual
+// do navegador, entao "Firm <mes atual>" e "Firm <mes seguinte>" sempre acompanham.
+function firmCurrentMonthLabel() {
+  return "Firm " + MONTHS_ABBR_PT[new Date().getMonth()];
+}
+function firmNextMonthLabel() {
+  return "Firm " + MONTHS_ABBR_PT[(new Date().getMonth() + 1) % 12];
 }
 
-function fmtDate(raw) {
-  if (!raw) return '-';
-  raw = raw.toString().trim();
-  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) return raw;
-  if (/^\d{8}$/.test(raw)) return `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`;
-  if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
-    const [y,m,d] = raw.split('-');
-    return `${d}/${m}/${y}`;
+// ---------- Replica exacta de runout_bucket() ----------
+function runoutBucket(item) {
+  const ro = parseDateBR(item.run_out_date);
+  const today = todayNoTime();
+  if (!ro) return "Sin Run Out";
+  if (ro < today) return "Run Out vencido";
+  if (ro.getMonth() === today.getMonth() && ro.getFullYear() === today.getFullYear()) {
+    return `RO resto ${MONTHS_ES[today.getMonth()]}`;
   }
-  return raw;
+  const nxt = today.getMonth() === 11 ? 0 : today.getMonth() + 1;
+  const yr = today.getMonth() === 11 ? today.getFullYear() + 1 : today.getFullYear();
+  if (ro.getMonth() === nxt && ro.getFullYear() === yr) return `RO ${MONTHS_ES[nxt]}`;
+  return "RO futuro";
 }
 
-function toISODate(raw) {
-  if (!raw || raw === '-') return '';
-  raw = raw.toString().trim();
-  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
-  if (/^\d{8}$/.test(raw)) return `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
-  if (/^\d{2}\/\d{2}\/\d{4}$/.test(raw)) {
-    const [d,m,y] = raw.split('/');
-    return `${y}-${m}-${d}`;
+// ---------- Replica exacta de coverage_bucket() ----------
+function coverageBucket(qty, transitQty, stockQty, promiseQty, useTransit) {
+  if (useTransit && transitQty > 0) return "c/ Transito";
+  if (stockQty > 0) return "c/ Stock";
+  if (promiseQty >= qty && qty > 0) return "c/ Promessa";
+  if (promiseQty > 0 && promiseQty < qty) return "Prom. Insuf.";
+  return "s/ Cobertura";
+}
+function inRunoutCriticoWindow(item) {
+  const b = runoutBucket(item);
+  return b === "Run Out vencido" || b.startsWith("RO resto");
+}
+// Uma promessa so conta para cobertura (c/ Promessa / Prom. Insuf.) enquanto tiver
+// menos de PROMESSA_TOLERANCIA_DIAS dias de vencida. Ex.: promessa 30/09 e hoje 05/10
+// (5 dias) ja nao conta -> o PN volta a ser "s/ Cobertura". Promessa sem data nao tem
+// como ser julgada vencida, entao continua contando como antes.
+const PROMESSA_TOLERANCIA_DIAS = 5;
+function promessaCuentaParaCobertura(item) {
+  if (!item.promessa_data) return true;
+  const pd = parseDateBR(item.promessa_data);
+  if (!pd) return true;
+  const diasVencida = Math.round((todayNoTime() - pd) / 86400000);
+  return diasVencida < PROMESSA_TOLERANCIA_DIAS;
+}
+function commonVals(item) {
+  return {
+    transitQty: item.qty_transito || 0,
+    stockQty: item.stock_b1cb || 0, // SAP unicamente - no mezclar con stock_ws (dim_stock/WS)
+    promiseQty: promessaCuentaParaCobertura(item) ? (item.promessa_qty || 0) : 0,
+  };
+}
+function bloque1Bucket(item) {
+  // Cobertura PN criticos: solo Run Out vencido/resto del mes, piso qty=max(cor,wmf,1.0)
+  const qty = Math.max(item.cor_qty_past_due || 0, item.wmf_qty_past_due || 0, 1.0);
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(qty, transitQty, stockQty, promiseQty, true);
+}
+function bloque2Bucket(item) {
+  // COR -> WMF / Ship Date: solo entra si tiene linea COR vencida real (sin piso)
+  if (!((item.cor_qty_past_due || 0) > 0)) return null;
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(item.cor_qty_past_due, transitQty, stockQty, promiseQty, true);
+}
+function bloque3Bucket(item) {
+  // WMF -> Proveedor / Ship Date: solo entra si tiene linea WMF vencida real (sin piso), sin transito
+  if (!((item.wmf_qty_past_due || 0) > 0)) return null;
+  const { stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(item.wmf_qty_past_due, 0, stockQty, promiseQty, false);
+}
+
+
+function isPastDueGeneric(item) {
+  if (plant === "cb") return (item.cor_qty_past_due || 0) > 0 || (item.wmf_qty_past_due || 0) > 0;
+  return (item.wmf_qty_past_due || 0) > 0;
+}
+// Balance CB: Past Due COR menos o que ja esta cobrindo (transito + stock SAP).
+// <= 0 significa que ja esta coberto, mesmo que a linha ainda figure como Past Due.
+function balancePastDueCb(item) {
+  return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+}
+
+// ---------- Comparacao Ultima NFe Emitida x Ultima recebida (Last Packing List) ----------
+// Compara o numero da ultima NFe emitida pelo fornecedor (conferencia/controle de NFe)
+// com o numero da ultima Packing List ja recebida no WMF. Se forem iguais, o que o
+// fornecedor faturou por ultimo ja chegou. Se forem diferentes (ou nada recebido ainda
+// mas ja existe algo faturado), ha uma NFe pendente de chegar — precisa cobrar o fornecedor.
+function cleanedLastReceivedNfe(item) {
+  const raw = plant === "cb" ? (item.ultima_nfe_cb || "") : (item.ultima_nfe_3e || "");
+  return String(raw).split("-")[0].replace(/^0+(?=\d)/, "");
+}
+// Retorna: "match" (ja recebido), "mismatch" (tem NFe mais nova sem receber),
+// "pending" (nada recebido ainda mas ja existe algo faturado), ou null (sem dados suficientes).
+function nfeMatchStatus(item) {
+  const emitted = String(item.ultima_nfe_emitida_num || "").trim();
+  if (!emitted) return null;
+  const received = cleanedLastReceivedNfe(item);
+  if (!received) return "pending";
+  return received === emitted ? "match" : "mismatch";
+}
+
+// ---------- Proximo Ship Date (janelas 7/15/30 dias) ----------
+// dashboard_cb_3e_data.json so tem o ship date MAIS ANTIGO ja VENCIDO (Past Due).
+// Para um ship date FUTURO (ainda nao vencido) e preciso olhar as linhas de pedido
+// em bruto (dashboard_cb_3e_raw_lines.json, mesmo arquivo do modal "Ver em bruto"),
+// que tem um SHIP_DATE por linha/PO. Esse arquivo agora e pre-carregado no inicio
+// (alem de ficar em cache para o modal), e aqui calculamos por PN+planta a data de
+// embarque futura mais proxima.
+let nextShipDateLookup = new Map(); // key: "<PLANT_CODE>|<part_number>" -> Date
+let futureShipLinesLookup = new Map(); // key: idem -> [{ d: Date, qty: Number }] (so datas futuras)
+function buildNextShipDateLookup() {
+  nextShipDateLookup = new Map();
+  futureShipLinesLookup = new Map();
+  const today = todayNoTime();
+  (rawLinesCache || []).forEach(r => {
+    const normalized = normalizeDateFlexible(r.ship_date);
+    const d = normalized ? parseDateBR(normalized) : null;
+    if (!d || d < today) return; // so datas futuras (ainda nao vencidas)
+    const key = `${r.plant_code}|${r.part_number}`;
+    const prev = nextShipDateLookup.get(key);
+    if (!prev || d < prev) nextShipDateLookup.set(key, d);
+    const qty = Number(r.quantity_due) || 0;
+    if (!futureShipLinesLookup.has(key)) futureShipLinesLookup.set(key, []);
+    futureShipLinesLookup.get(key).push({ d, qty });
+  });
+}
+function nextShipDateFor(item) {
+  const plantCode = plant === "cb" ? "CB" : "3E";
+  return nextShipDateLookup.get(`${plantCode}|${item.pn}`) || null;
+}
+function businessDaysUntil(targetDate) {
+  const today = todayNoTime();
+  if (targetDate <= today) return 0;
+  let count = 0;
+  const d = new Date(today);
+  while (d < targetDate) {
+    d.setDate(d.getDate() + 1);
+    const dow = d.getDay(); // 0=domingo, 6=sabado
+    if (dow !== 0 && dow !== 6) count++;
   }
-  return '';
+  return count;
+}
+function calendarDaysUntil(targetDate) {
+  const today = todayNoTime();
+  return Math.round((targetDate - today) / 86400000);
+}
+// Faixas mutuamente exclusivas (nao cumulativas): 0-5 dias uteis, 6-15 dias uteis,
+// e 16-30 dias corridos (a partir dai nao entra em nenhuma das 3 janelas).
+function shipDateWithin7BusinessDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  return businessDaysUntil(d) <= 5;
+}
+function shipDateWithin15BusinessDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  const bd = businessDaysUntil(d);
+  return bd > 5 && bd <= 15;
+}
+function shipDateWithin30CalendarDays(item) {
+  const d = nextShipDateFor(item);
+  if (!d) return false;
+  const bd = businessDaysUntil(d);
+  if (bd <= 15) return false; // ja contado nas janelas acima
+  const cd = calendarDaysUntil(d);
+  return cd <= 30;
+}
+// Faixa (1=<=5 dias uteis, 2=6-15 dias uteis, 3=16-30 dias corridos, 0=fora) de uma data.
+function shipBandOf(d) {
+  const bd = businessDaysUntil(d);
+  if (bd <= 5) return 1;
+  if (bd <= 15) return 2;
+  return calendarDaysUntil(d) <= 30 ? 3 : 0;
+}
+// Qual janela de Ship Date esta filtrada agora (ship_7d / ship_15d / ship_30d), se houver.
+function activeShipBand() {
+  if (activeFilters.has("ship_7d")) return 1;
+  if (activeFilters.has("ship_15d")) return 2;
+  if (activeFilters.has("ship_30d")) return 3;
+  return 0;
+}
+// Cobertura de um PN para a sua janela de Ship Date: a demanda e a soma de QUANTITY_DUE das
+// linhas futuras do PN que caem na mesma faixa do seu proximo ship date. Mesma logica de
+// cobertura dos demais cards (Stock > Promessa > Prom. Insuf. > s/ Cobertura; Transito so CB),
+// mas sem exigir Past Due — todo PN da janela cai em exatamente um bucket.
+function shipWindowBucket(item) {
+  const plantCode = plant === "cb" ? "CB" : "3E";
+  const key = `${plantCode}|${item.pn}`;
+  const next = nextShipDateLookup.get(key);
+  if (!next) return null;
+  const band = shipBandOf(next);
+  const lines = futureShipLinesLookup.get(key) || [];
+  const demand = lines.reduce((acc, l) => (shipBandOf(l.d) === band ? acc + l.qty : acc), 0);
+  const { transitQty, stockQty, promiseQty } = commonVals(item);
+  return coverageBucket(Math.max(demand, 1), transitQty, stockQty, promiseQty, plant === "cb");
+}
+// CB: o transito tem que cobrir o Past Due para contar como "c/ Transito" cheio;
+// cobertura parcial (transito > 0 mas nao cobre tudo) vira "c/ Transito Parcial".
+function transitoCbBucket(item) {
+  const pastDue = item.cor_qty_past_due || 0;
+  const transito = item.qty_transito || 0;
+  if (!(pastDue > 0) || !(transito > 0)) return null;
+  return transito >= pastDue ? "full" : "partial";
 }
 
-function parseDMY(raw) {
-  const iso = toISODate(raw);
-  if (!iso) return null;
-  const [y, m, d] = iso.split('-').map(Number);
-  if (!y || !m || !d) return null;
-  return new Date(y, m - 1, d);
+// ---------- Escalation Level (L1/L2) ----------
+function hasRunOutWithin30Days(item) {
+  const ro = parseDateBR(item.run_out_date);
+  if (!ro) return false;
+  const today = todayNoTime();
+  const diffDias = (ro - today) / 86400000;
+  return diffDias <= 30; // incluye vencido (diffDias negativo) y dentro de los proximos 30 dias
 }
-
-function flag(val) {
-  if (val === null || val === undefined || val === '' || val === false) return false;
-  if (typeof val === 'number') return val > 0;
-  if (val === true || val === 1 || val === 'true' || val === 'sim' || val === 'yes' || val === '1') return true;
-  const n = parseFloat(val);
-  if (!isNaN(n)) return n > 0;
+// Um PN esta "resolvido" (nao precisa mais escalar) quando ja nao esta em
+// Past Due (ex: entregou), ou — so na planta CB — quando o transito + stock
+// SAP ja cobre o Past Due (balancePastDueCb <= 0), mesmo que o dado ainda
+// mostre Past Due > 0. Um item resolvido NUNCA escala, mesmo com um
+// override manual antigo (L1/L2) cargado antes de resolver-se.
+function isEscalationResolved(item) {
+  if (!isPastDueGeneric(item)) return true;
+  if (plant === "cb" && (item.cor_qty_past_due || 0) > 0 && balancePastDueCb(item) <= 0) return true;
   return false;
 }
-
-function showError(msg) {
-  qs('#loadingState').style.display = 'none';
-  qs('#errorState').style.display = 'block';
-  qs('#errorMsg').textContent = msg;
+function autoEscalationLevel(item) {
+  if (isEscalationResolved(item)) return "";
+  // L1 automatico: SOMENTE quando esta em Past Due com WMFBR (wmf_qty_past_due > 0)
+  // E tem Run Out nos proximos 30 dias. Qualquer outro caso nao escala sozinho.
+  // L2 ja nao se calcula automaticamente — so existe como override manual no dropdown.
+  if ((item.wmf_qty_past_due || 0) > 0 && hasRunOutWithin30Days(item)) return "L1";
+  return "";
+}
+function effectiveEscalationLevel(item) {
+  // Resolvido sempre limpa, mesmo com override manual (entregou / balance cobre -> sai do escalation).
+  if (isEscalationResolved(item)) return "";
+  // "NONE" = override manual explicito de "nao precisa escalar" (mantem em Past Due mas sem L1/L2).
+  if (item.escalation_level === "NONE") return "";
+  // Override manual (item.escalation_level) tem prioridade sobre o calculo automatico.
+  if (item.escalation_level === "L1" || item.escalation_level === "L2") return item.escalation_level;
+  return autoEscalationLevel(item);
 }
 
-function setLiveStatus(state, count) {
-  const el = qs('#liveStatus');
-  if (!el) return;
-  if (state === 'loading') {
-    el.className = 'live-indicator loading';
-    el.innerHTML = '<span class="dot"></span>Verificando...';
-  } else if (state === 'ok') {
-    el.className = 'live-indicator';
-    el.innerHTML = `<span class="dot"></span>Atualizado agora (${count} respostas)`;
+// ---------- Definicion de KPIs ----------
+function getKpiDefs() {
+  const runoutDefs = [
+    { key: "ro_vencido", label: "Run Out vencido", tone: "red", test: i => runoutBucket(i) === "Run Out vencido" },
+    { key: "ro_resto", label: "RO resto do mes", tone: "amber", test: i => runoutBucket(i).startsWith("RO resto") },
+    { key: "ro_prox", label: "RO mes que vem", tone: "gray", test: i => runoutBucket(i).startsWith("RO ") && !runoutBucket(i).startsWith("RO resto") && runoutBucket(i) !== "RO futuro" },
+    { key: "ro_futuro", label: "RO futuro", tone: "gray", test: i => runoutBucket(i) === "RO futuro" },
+    { key: "ro_sem", label: "Sin Run Out", tone: "gray", test: i => runoutBucket(i) === "Sin Run Out" },
+  ];
+  const cov1Defs = [
+    { key: "cov1_pastdue", label: "PN Past Due", tone: "red", test: i => inRunoutCriticoWindow(i) },
+    { key: "cov1_transito", label: "c/ Transito", tone: "green", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Transito" },
+    { key: "cov1_stock", label: "c/ Stock", tone: "green", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Stock" },
+    { key: "cov1_promessa", label: "c/ Promessa", tone: "amber", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "c/ Promessa" },
+    { key: "cov1_insuf", label: "Prom. Insuf.", tone: "amber", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "Prom. Insuf." },
+    { key: "cov1_sin", label: "s/ Cobertura", tone: "red", test: i => inRunoutCriticoWindow(i) && bloque1Bucket(i) === "s/ Cobertura" },
+  ];
+  const motivoDefs = MOTIVO_OPTIONS.map(m => ({
+    key: "motivo_" + m.replace(/[^a-zA-Z0-9]/g, ""),
+    label: m,
+    tone: "amber",
+    test: i => i.motivo_atraso === m,
+  }));
+  motivoDefs.push({
+    key: "motivo_sem",
+    label: "Sem motivo",
+    tone: "gray",
+    test: i => !i.motivo_atraso,
+  });
+  const escalationDefs = [
+    { key: "esc_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
+    { key: "esc_l1", label: "Level 1 (Run Out ≤30d)", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
+  ];
+  return { runoutDefs, cov1Defs, motivoDefs, escalationDefs };
+}
+
+// Panel "COR -> WMF / Ship Date" (CB) ou "WMF -> Proveedor / Ship Date" (3E).
+// Linha de cima: visao geral (CPL, Past Due, janelas de Ship Date futuro, e em CB
+// a cobertura de Transito). Linha de baixo: cobertura por Stock/Promessa/Escalation,
+// mais (3E) NFe sem recebimento ou (CB) Past Due Balance.
+function getShipKpiDefs() {
+  const pastDueTest = plant === "cb" ? (i => (i.cor_qty_past_due || 0) > 0) : (i => (i.wmf_qty_past_due || 0) > 0);
+  const pastDueBucket = plant === "cb" ? bloque2Bucket : bloque3Bucket;
+  // Sem janela de Ship Date filtrada: cobertura do Past Due (como sempre). Com uma janela
+  // filtrada (<=5 / 6-15 / 16-30): desdobra os PN da janela por cobertura, somando o total
+  // da janela. Avaliado a cada chamada (nao na criacao), pois o filtro ativo muda.
+  const bloqueBucket = (i) => activeShipBand() ? shipWindowBucket(i) : pastDueBucket(i);
+
+  const top = [
+    { key: "ship_cpl", label: "PN CPL", tone: "red", test: i => !!i.cpl },
+    { key: "ship_pastdue", label: "PN Past Due", tone: "red", test: pastDueTest },
+    { key: "ship_7d", label: "Ship Date ≤5 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
+    { key: "ship_15d", label: "Ship Date 8-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
+    { key: "ship_30d", label: "Ship Date 16-30 dias", tone: "gray", test: shipDateWithin30CalendarDays },
+  ];
+  if (plant === "cb") {
+    top.push(
+      { key: "ship_transito_full", label: "c/ Transito", tone: "green", test: i => transitoCbBucket(i) === "full" },
+      { key: "ship_transito_partial", label: "c/ Transito Parcial", tone: "amber", test: i => transitoCbBucket(i) === "partial" },
+    );
+  }
+
+  const bottom = [
+    { key: "ship_stock", label: "c/ Stock", tone: "green", test: i => bloqueBucket(i) === "c/ Stock" },
+    { key: "ship_promessa", label: "c/ Promessa", tone: "amber", test: i => bloqueBucket(i) === "c/ Promessa" },
+    { key: "ship_insuf", label: "Prom. Insuf.", tone: "amber", test: i => bloqueBucket(i) === "Prom. Insuf." },
+    { key: "ship_sin", label: "s/ Cobertura", tone: "red", test: i => bloqueBucket(i) === "s/ Cobertura" },
+  ];
+  // CB: com uma janela de Ship Date filtrada, "c/ Transito" tambem e um bucket de cobertura.
+  if (plant === "cb" && activeShipBand()) {
+    bottom.unshift({ key: "ship_win_transito", label: "c/ Transito", tone: "green", test: i => bloqueBucket(i) === "c/ Transito" });
+  }
+  if (plant === "cb") {
+    bottom.push(
+      { key: "ship_bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
+      { key: "ship_bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
+    );
   } else {
-    el.className = 'live-indicator error';
-    el.innerHTML = '<span class="dot"></span>Nao foi possivel atualizar';
+    bottom.push(
+      { key: "ship_nfe_pendente", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
+      { key: "ship_nfe_em_dia", label: "Sem NFe Nova (ja recebido)", tone: "red", test: i => nfeMatchStatus(i) === "match" },
+      { key: "ship_pn_novo", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
+    );
   }
+  return { top, bottom };
 }
 
-async function fetchLivePromises(adminCode) {
-  try {
-    const resp = await fetch(`${WORKER_URL}/?admin=${encodeURIComponent(adminCode)}`);
-    const data = await resp.json();
-    if (!data.ok) return null;
-    return data.promises || [];
-  } catch (e) {
-    console.error('Erro ao buscar promessas em tempo real:', e);
-    return null;
-  }
+function fmtReleaseYYYYMMDD(raw) {
+  const s = String(raw || "");
+  const m = /^(\d{4})(\d{2})(\d{2})/.exec(s);
+  return m ? `${m[3]}/${m[2]}/${m[1]}` : s;
+}
+function renderReleaseInfo() {
+  const raw = plant === "cb" ? window._releaseCb : window._release3e;
+  document.getElementById("releaseInfo").textContent = raw ? `Release ${plant.toUpperCase()}: ${fmtReleaseYYYYMMDD(raw)}` : "";
 }
 
-function mergeLivePromises(items, livePromises) {
-  const liveByPn = new Map();
-  livePromises.forEach(lp => {
-    const existing = liveByPn.get(lp.pn);
-    if (!existing || new Date(lp.fecha_registro) > new Date(existing.fecha_registro)) {
-      liveByPn.set(lp.pn, lp);
-    }
+// ---------- Render KPIs ----------
+function renderKpis() {
+  renderReleaseInfo();
+  document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
+  document.getElementById("statusP44Dropdown").style.display = plant === "3e" ? "" : "none";
+  populateStatusP44Filter();
+  const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
+  renderKpiGrid("kpiRunout", runoutDefs);
+  renderKpiGrid("kpiCov1", cov1Defs);
+  renderKpiGrid("kpiEscalation", escalationDefs);
+  const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
+  renderKpiGrid("kpiShipTop", shipTop);
+  renderKpiGrid("kpiShipBottom", shipBottom);
+  document.getElementById("kpiShipTitle").textContent = plant === "cb" ? "COR → WMF / Ship Date" : "WMF → Proveedor / Ship Date";
+  let dashBase = motivosScopeItems(motivosBaseItems());
+  for (const { test } of activeFilters.values()) dashBase = dashBase.filter(test);
+  renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
+  renderKpiGrid("kpiDashEscalation", escalationDefs, dashBase);
+  renderMotivosCharts(motivoDefs, dashBase);
+  renderDashPastDueTable(dashBase);
+}
+// Status P44 so existe para 3E (OTM). O valor "Sem status" representa status_p44 vazio.
+// Multi-selecao: um Set com os valores marcados (vazio = "todos", sem filtrar).
+let statusP44Selected = new Set();
+function populateStatusP44Filter() {
+  const panel = document.getElementById("statusP44Panel");
+  if (plant !== "3e") return;
+  const values = [...new Set((allItems || []).map(i => i.status_p44 || "").filter(Boolean))].sort();
+  const options = [...values, "__SEM_STATUS__"];
+  // Mantem apenas selecoes ainda validas (ex: ao trocar de planta e voltar).
+  statusP44Selected = new Set([...statusP44Selected].filter(v => options.includes(v)));
+  panel.innerHTML = options.map(v => {
+    const label = v === "__SEM_STATUS__" ? "Sem status" : v;
+    const checked = statusP44Selected.has(v) ? "checked" : "";
+    return `<label style="display:flex; align-items:center; gap:6px; padding:4px 2px; font-size:13px; cursor:pointer; white-space:nowrap;">
+      <input type="checkbox" class="statusP44Opt" value="${v.replace(/"/g, "&quot;")}" ${checked}> ${label}
+    </label>`;
+  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem valores</div>';
+  panel.querySelectorAll(".statusP44Opt").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) statusP44Selected.add(cb.value); else statusP44Selected.delete(cb.value);
+      updateStatusP44BtnLabel();
+      renderKpis();
+      renderTable();
+    };
   });
-
-  items.forEach(item => {
-    const live = liveByPn.get(item.part_number);
-    if (!live) return;
-    item.data_promessa = live.promise_date ? fmtDate(live.promise_date) : item.data_promessa;
-    item.qty_prometida = (live.promised_qty !== null && live.promised_qty !== undefined)
-      ? Number(live.promised_qty) : item.qty_prometida;
-    item.entrega_confirmada = live.entrega_confirmada === 'true' || live.entrega_confirmada === true;
+  updateStatusP44BtnLabel();
+}
+function updateStatusP44BtnLabel() {
+  const btn = document.getElementById("statusP44Btn");
+  btn.textContent = statusP44Selected.size ? `Status P44 (${statusP44Selected.size})` : "Todos os Status P44";
+}
+function statusP44Filter(items) {
+  if (plant !== "3e" || !statusP44Selected.size) return items;
+  return items.filter(i => statusP44Selected.has(i.status_p44 || "__SEM_STATUS__"));
+}
+function searchBaseItems() {
+  let items = allItems;
+  const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
+  items = statusP44Filter(items);
+  return items;
+}
+function motivosBaseItems() {
+  const pnQ = document.getElementById("dashSearchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("dashSearchSupplier").value.trim().toLowerCase();
+  let items = allItems;
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  return items;
+}
+// Alcance do painel de Motivos/Escalation na aba Dashboard: por padrao mostra
+// TODAS as pecas com motivo atribuido OU em past due (para poder marcar
+// motivo em pecas que ja entraram em firme mas nao estao em past due).
+// O checkbox "Somente Past Due" restringe para so as que estao em past due.
+function motivosScopeItems(items) {
+  const onlyPastDue = document.getElementById("dashOnlyPastDue").checked;
+  return items.filter(i => onlyPastDue ? isPastDueGeneric(i) : (isPastDueGeneric(i) || i.motivo_atraso));
+}
+// Base de um painel de KPI da aba Tabela, respeitando os OUTROS filtros ja
+// ativos (ex: clicar em "Com Past Due Balance" recalcula os paineis de
+// Cobertura/COR->WMF so com essas pecas, mostrando quantas estao em transito,
+// em stock, etc). Exclui o proprio filtro (def.key) para nao se auto-zerar.
+function activeFilterBaseItems(excludeKey) {
+  let items = searchBaseItems();
+  for (const [key, { test }] of activeFilters.entries()) {
+    if (key === excludeKey) continue;
+    items = items.filter(test);
+  }
+  return items;
+}
+function renderKpiGrid(elId, defs, baseItemsOverride) {
+  const el = document.getElementById(elId);
+  el.innerHTML = "";
+  defs.forEach(def => {
+    const base = baseItemsOverride || activeFilterBaseItems(def.key);
+    const count = base.filter(def.test).length;
+    const card = document.createElement("button");
+    card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
+    card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
+    card.onclick = () => toggleKpiFilter(def.key, def.label, def.test);
+    el.appendChild(card);
   });
 }
 
-async function loadData() {
-  const params = new URLSearchParams(window.location.search);
-  const adminCode = params.get('admin');
+function renderMotivosCharts(motivoDefs, baseItemsOverride) {
+  const base = baseItemsOverride || motivosBaseItems();
+  const labels = motivoDefs.map(d => d.label);
+  const counts = motivoDefs.map(d => base.filter(d.test).length);
+  const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7"];
+  const total = counts.reduce((a, b) => a + b, 0);
 
-  if (!adminCode) {
-    showError('Acesso restrito. Utilize o link com o parametro ?admin=CODIGO.');
-    return;
-  }
-  const hash = await sha256Hex(adminCode);
-  if (hash !== ADMIN_HASH) {
-    showError('Codigo de acesso invalido.');
-    return;
-  }
-
-  try {
-    const resp = await fetch(`pendencias_ALL.json?v=${Date.now()}`, { cache: 'no-store' });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status} - pendencias_ALL.json nao encontrado.`);
-    const data = await resp.json();
-    const items = Array.isArray(data) ? data : (data.itens || data.items || data.pendencias || []);
-
-    buildRollup(items, adminCode);
-
-    setLiveStatus('loading');
-    const livePromises = await fetchLivePromises(adminCode);
-    if (livePromises === null) {
-      setLiveStatus('error');
-    } else {
-      mergeLivePromises(items, livePromises);
-      setLiveStatus('ok', livePromises.length);
-      buildRollup(items, adminCode);
-    }
-  } catch (e) {
-    showError(e.message || 'Erro ao carregar pendencias_ALL.json.');
-  }
-}
-
-const TODAY = new Date();
-const START_OF_TODAY = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
-
-function buildRollup(items, adminCode) {
-  const bySupplier = new Map();
-
-  items.forEach(item => {
-    if (!flag(item.past_due_wmf)) return;
-    const code = item.supplier_code || '-';
-    const name = item.supplier_name || code;
-    const shipDate = parseDMY(item.ship_date);
-    const dias = shipDate ? Math.floor((START_OF_TODAY - shipDate) / 86400000) : 0;
-    const pastDueQtyRaw = typeof item.past_due_wmf === 'number' ? item.past_due_wmf : parseFloat(item.past_due_wmf);
-    const pastDueQty = isFinite(pastDueQtyRaw) ? pastDueQtyRaw : 0;
-    const promQtyRaw = item.qty_prometida !== null && item.qty_prometida !== undefined ? Number(item.qty_prometida) : 0;
-    const promQty = isFinite(promQtyRaw) ? promQtyRaw : 0;
-
-    if (!bySupplier.has(code)) {
-      bySupplier.set(code, {
-        code, name, count: 0, maxDias: 0,
-        totalPastDueQty: 0, promisedQty: 0, confirmedQty: 0
-      });
-    }
-    const entry = bySupplier.get(code);
-    entry.count += 1;
-    if (dias > entry.maxDias) entry.maxDias = dias;
-    entry.totalPastDueQty += pastDueQty;
-    if (promQty > 0) entry.promisedQty += promQty;
-    if (item.entrega_confirmada) entry.confirmedQty += promQty;
-  });
-
-  ROLLUP = [...bySupplier.values()];
-  ROLLUP.forEach(r => {
-    r.pctPromised = r.totalPastDueQty > 0 ? (r.promisedQty / r.totalPastDueQty * 100) : 0;
-    r.pctConfirmed = r.totalPastDueQty > 0 ? (r.confirmedQty / r.totalPastDueQty * 100) : 0;
-  });
-
-  qs('#sumSuppliers').textContent = ROLLUP.length;
-  qs('#sumPn').textContent = ROLLUP.reduce((acc, r) => acc + r.count, 0);
-
-  qs('#loadingState').style.display = 'none';
-  qs('#mainContent').style.display = 'block';
-
-  renderTable();
-}
-
-function setSort(key) {
-  if (sortKey === key) {
-    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+  // ---- Dona (CSS conic-gradient, sin dependencias externas) ----
+  const donutEl = document.getElementById("chartMotivosDonut");
+  if (total === 0) {
+    donutEl.innerHTML = '<div class="empty-state" style="padding:20px;">Sem dados para exibir.</div>';
   } else {
-    sortKey = key;
-    sortDir = 'desc';
+    let acc = 0;
+    const stops = counts.map((c, i) => {
+      const start = (acc / total) * 360;
+      acc += c;
+      const end = (acc / total) * 360;
+      return `${palette[i % palette.length]} ${start}deg ${end}deg`;
+    }).join(", ");
+    const legend = labels.map((l, i) => counts[i] > 0
+      ? `<div style="display:flex; align-items:center; gap:6px; font-size:11px; margin-bottom:3px;">
+           <span style="width:10px; height:10px; border-radius:2px; background:${palette[i % palette.length]}; display:inline-block;"></span>
+           ${l} (${counts[i]})
+         </div>`
+      : "").join("");
+    donutEl.innerHTML = `
+      <div style="font-size:12px; font-weight:600; color:var(--gray-700); margin-bottom:10px;">Distribuicao de motivos (Past Due)</div>
+      <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+        <div style="width:150px; height:150px; border-radius:50%; background:conic-gradient(${stops}); position:relative; flex-shrink:0;">
+          <div style="position:absolute; inset:28px; background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px;">${total}</div>
+        </div>
+        <div>${legend}</div>
+      </div>
+    `;
   }
-  renderTable();
-}
 
-function pctBarHtml(pct, cls) {
-  const clamped = Math.max(0, Math.min(100, pct));
-  return `
-    <div class="pct-bar-wrap">
-      <div class="pct-bar-bg"><div class="pct-bar-fill ${cls}" style="width:${clamped}%"></div></div>
-      <div class="pct-label">${pct.toFixed(0)}%</div>
+  // ---- Barras (divs con ancho proporcional, sin dependencias externas) ----
+  const barEl = document.getElementById("chartMotivosBar");
+  const maxCount = Math.max(1, ...counts);
+  const bars = labels.map((l, i) => `
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:170px; font-size:11px; text-align:right; color:var(--gray-700); flex-shrink:0;">${l}</div>
+      <div style="flex:1; background:var(--gray-100); border-radius:3px; overflow:hidden; height:18px;">
+        <div style="width:${(counts[i] / maxCount) * 100}%; background:${palette[i % palette.length]}; height:100%; min-width:${counts[i] > 0 ? '2px' : '0'};"></div>
+      </div>
+      <div style="width:30px; font-size:12px; font-weight:600;">${counts[i]}</div>
     </div>
+  `).join("");
+  barEl.innerHTML = `
+    <div style="font-size:12px; font-weight:600; color:var(--gray-700); margin-bottom:10px;">PN Past Due por motivo</div>
+    ${bars}
   `;
 }
 
-function renderTable() {
-  const search = (qs('#searchInput')?.value || '').trim().toLowerCase();
-  let rows = ROLLUP.filter(r =>
-    !search || r.name.toLowerCase().includes(search) || r.code.toLowerCase().includes(search)
-  );
-
-  rows = rows.slice().sort((a, b) => {
-    let va, vb;
-    if (sortKey === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
-    else if (sortKey === 'code') { va = a.code.toLowerCase(); vb = b.code.toLowerCase(); }
-    else if (sortKey === 'dias') { va = a.maxDias; vb = b.maxDias; }
-    else if (sortKey === 'promised') { va = a.pctPromised; vb = b.pctPromised; }
-    else if (sortKey === 'confirmed') { va = a.pctConfirmed; vb = b.pctConfirmed; }
-    else { va = a.count; vb = b.count; }
-    if (va < vb) return sortDir === 'asc' ? -1 : 1;
-    if (va > vb) return sortDir === 'asc' ? 1 : -1;
-    return 0;
+function renderDashPastDueTable(baseItemsOverride) {
+  document.getElementById("thFirmSet").textContent = firmCurrentMonthLabel();
+  document.getElementById("thFirmOut").textContent = firmNextMonthLabel();
+  const base = baseItemsOverride || motivosBaseItems();
+  const items = base.filter(i => isPastDueGeneric(i) || i.motivo_atraso);
+  document.getElementById("dashRowCount").textContent = `${items.length} PN`;
+  const body = document.getElementById("dashPastDueBody");
+  body.innerHTML = "";
+  document.getElementById("dashPastDueEmpty").style.display = items.length ? "none" : "block";
+  items.forEach(item => {
+    const pastDueQty = plant === "cb" ? (item.cor_qty_past_due || 0) : (item.wmf_qty_past_due || 0);
+    const firmSet = plant === "cb" ? (item.cor_qty_firm_current_month || 0) : (item.wmf_qty_firm_current_month || 0);
+    const firmOut = plant === "cb" ? (item.cor_qty_firm_next_month || 0) : (item.wmf_qty_firm_next_month || 0);
+    const ultimaNfe = plant === "cb" ? (item.ultima_nfe_cb || "") : String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    const oldestShipDate = plant === "cb" ? (item.cor_oldest_pastdue_ship_date || "") : (item.wmf_oldest_pastdue_ship_date || "");
+    const daysInPastDue = plant === "cb" ? item.cor_days_in_past_due : item.wmf_days_in_past_due;
+    const motivo = item.motivo_atraso || "";
+    const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${motivo === m ? "selected" : ""}>${m}</option>`).join("");
+    const escEff = effectiveEscalationLevel(item);
+    const escIsOverride = ["L1", "L2", "NONE"].includes(item.escalation_level);
+    const escBadge = escEff === "L2" ? '<span class="badge badge-red">L2</span>' : escEff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
+    const escOpts = `
+      <option value="" ${!escIsOverride ? "selected" : ""}>Auto${escEff ? " (" + escEff + ")" : ""}</option>
+      <option value="NONE" ${item.escalation_level === "NONE" ? "selected" : ""}>Nao precisa escalar</option>
+      <option value="L1" ${item.escalation_level === "L1" ? "selected" : ""}>L1 (manual)</option>
+      <option value="L2" ${item.escalation_level === "L2" ? "selected" : ""}>L2 (manual)</option>
+    `;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.pn}</td>
+      <td>${item.supplier_code || ""}</td>
+      <td>${item.supplier_name || ""}</td>
+      <td style="${pastDueQty > 0 ? 'color:var(--red); font-weight:700;' : ''}">${pastDueQty}</td>
+      <td>${oldestShipDate}</td>
+      <td style="${(daysInPastDue ?? 0) > 0 ? 'color:var(--red); font-weight:700;' : ''}">${daysInPastDue ?? ""}</td>
+      <td>${firmSet}</td>
+      <td>${firmOut}</td>
+      <td>${ultimaNfe}</td>
+      <td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!motivo ? "selected" : ""}>—</option>${opts}</select></td>
+      <td>${escBadge} <select class="cell-select" onchange="markDirty('${item.pn}','escalation_level',this.value)">${escOpts}</select></td>
+      <td>${item.promessa_data || ""}</td>
+      <td>${item.promessa_qty ?? ""}</td>
+      <td>${item.ultima_nfe_emitida_num || ""}</td>
+      <td>${item.ultima_nfe_emitida_fecha || ""}</td>
+      <td>${item.ultima_nfe_emitida_qty ?? ""}${item.ultima_nfe_emitida_unidad ? " " + item.ultima_nfe_emitida_unidad : ""}</td>
+    `;
+    body.appendChild(tr);
   });
-
-  const tbody = qs('#tableBody');
-  tbody.innerHTML = rows.map(r => `
-    <tr>
-      <td>${r.name}</td>
-      <td>${r.code}</td>
-      <td class="num-cell count-cell">${r.count}</td>
-      <td class="num-cell dias-cell">${r.maxDias}d</td>
-      <td>${pctBarHtml(r.pctPromised, 'promised')}</td>
-      <td>${pctBarHtml(r.pctConfirmed, 'confirmed')}</td>
-      <td style="text-align:center">
-        <a class="btn-abrir" href="promessas.html?supplier=${encodeURIComponent(r.code)}" target="_blank">Abrir</a>
-      </td>
-    </tr>
-  `).join('');
+  disableEditingIfViewer(body);
 }
 
-loadData();
+function toggleKpiFilter(key, label, testFn) {
+  if (activeFilters.has(key)) activeFilters.delete(key);
+  else activeFilters.set(key, { label, test: testFn });
+  updateUrl();
+  renderKpis();
+  renderTable();
+}
+function clearFilter() {
+  activeFilters.clear();
+  updateUrl();
+  renderKpis();
+  renderTable();
+}
+function updateUrl() {
+  const params = new URLSearchParams();
+  params.set("planta", plant);
+  if (activeFilters.size) params.set("kpi", [...activeFilters.keys()].join(","));
+  history.replaceState(null, "", "?" + params.toString());
+}
+function loadFromUrl() {
+  const params = new URLSearchParams(location.search);
+  const p = params.get("planta");
+  if (p === "cb" || p === "3e") plant = p;
+  const kpiParam = params.get("kpi");
+  if (kpiParam) {
+    const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
+    const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...shipTop, ...shipBottom];
+    kpiParam.split(",").forEach(k => {
+      const match = all.find(d => d.key === k);
+      if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
+    });
+  }
+}
+
+// ---------- Tabla ----------
+function getColumns() {
+  const common = [
+    { key: "pn", label: "PN" },
+    { key: "impacto", label: "Impacto" },
+    { key: "escalation_level", label: "Escalation" },
+    { key: "run_out_date", label: "Run Out" },
+    { key: "supplier_code", label: "Cod." },
+    { key: "supplier_name", label: "Proveedor" },
+    { key: "motivo_atraso", label: "Motivo Atraso" },
+  ];
+  const plant3e = [
+    { key: "planejador", label: "Planejador" },
+    { key: "stock_b1cb", label: "Stock SAP" },
+    { key: "stock_ws", label: "Stock WS" },
+    { key: "nfe_stock_ws", label: "NFe Estoque" },
+    { key: "qty_transito", label: "Transito" },
+    { key: "wmf_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
+    { key: "wmf_days_in_past_due", label: "Dias em Past Due" },
+    { key: "wmf_qty_past_due", label: "Past Due" },
+    { key: "wmf_qty_firm_current_month", label: firmCurrentMonthLabel() },
+    { key: "wmf_qty_firm_next_month", label: firmNextMonthLabel() },
+    { key: "cum_rec_3e", label: "Cum Rec 3E" },
+    { key: "ultima_nfe_3e", label: "Last Packing List 3E" },
+    { key: "cpl", label: "CPL" },
+    { key: "ultima_nfe_emitida_fecha", label: "Ultima NFe Emitida" },
+    { key: "promessa_data", label: "Promessa Data" },
+    { key: "promessa_qty", label: "Promessa Qty" },
+    { key: "early_pickup_date", label: "Early Pickup" },
+    ...(otmExpanded ? [
+      { key: "order_release_info", label: "Order Release" },
+      { key: "shipment_code", label: "Shipment" },
+      { key: "destino_shipment", label: "Destino Shipment" },
+      { key: "status_p44", label: "Status P44" },
+      { key: "fecha_completed_p44", label: "Fecha Completed P44" },
+      { key: "data_real_completed", label: "Data Real Completed" },
+    ] : []),
+  ];
+  const plantCb = [
+    { key: "stock_b1cb", label: "Stock SAP" },
+    { key: "stock_ws", label: "Stock WS" },
+    { key: "qty_transito", label: "Qty Transito" },
+    { key: "cor_oldest_pastdue_ship_date", label: "Ship Date mas antiguo" },
+    { key: "cor_days_in_past_due", label: "Dias em Past Due" },
+    { key: "cor_qty_past_due", label: "COR Past Due" },
+    { key: "cor_qty_firm_current_month", label: firmCurrentMonthLabel() },
+    { key: "cor_qty_firm_next_month", label: firmNextMonthLabel() },
+    { key: "wmf_qty_past_due", label: "WMF Past Due" },
+    { key: "cum_rec_cb", label: "Cum Rec CB" },
+    { key: "past_due_balance_cb", label: "Past Due Balance" },
+    { key: "balance_cb", label: "Balance" },
+    { key: "ultima_nfe_cb", label: "Last Packing List CB" },
+    { key: "nfe_stock_ws", label: "NFe Estoque" },
+    { key: "qty_nfe_stock", label: "Qty NFe (stock)" },
+    { key: "fc_transito", label: "FC Transito" },
+    { key: "data_inicio_transito", label: "Data Inicio" },
+  ];
+  return common.concat(plant === "cb" ? plantCb : plant3e);
+}
+
+const DATE_COLUMNS = new Set([
+  "run_out_date", "promessa_data", "early_pickup_date",
+  "previsao_saida_wmfbr", "fecha_completed_p44", "cor_oldest_pastdue_ship_date",
+  "wmf_oldest_pastdue_ship_date", "ultima_nfe_emitida_fecha", "data_inicio_transito",
+  "data_real_completed",
+]);
+function sortValueFor(item, col) {
+  const v = item[col];
+  if (DATE_COLUMNS.has(col)) {
+    const d = parseDateBR(v);
+    return d ? d.getTime() : (sortDir === 1 ? Infinity : -Infinity); // vacios siempre al final
+  }
+  return v ?? "";
+}
+function filteredItems() {
+  let items = allItems;
+  if (activeFilters.size) {
+    for (const { test } of activeFilters.values()) items = items.filter(test);
+  }
+  const pnQ = document.getElementById("searchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("searchSupplier").value.trim().toLowerCase();
+  const plannerQ = plant === "3e" ? document.getElementById("filterPlanejador").value : "";
+  if (pnQ) items = items.filter(i => (i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
+  if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
+  items = statusP44Filter(items);
+  if (sortCol) {
+    items = [...items].sort((a, b) => {
+      const av = sortValueFor(a, sortCol), bv = sortValueFor(b, sortCol);
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * sortDir;
+      return String(av).localeCompare(String(bv)) * sortDir;
+    });
+  }
+  return items;
+}
+
+let selectedPns = new Set();
+function updateSelectedCount() {
+  document.getElementById("selectedCount").textContent = selectedPns.size ? `${selectedPns.size} selecionado(s)` : "";
+}
+function renderTable() {
+  const cols = getColumns();
+  const head = document.getElementById("tableHead");
+  head.innerHTML = '<th><input type="checkbox" id="selectAllPns" title="Selecionar todos"></th>' + cols.map(c => {
+    if (c.key === "early_pickup_date") {
+      return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
+    }
+    return `<th data-col="${c.key}">${c.label}</th>`;
+  }).join("") + "<th>Previsao Saida WMFBR</th>";
+  head.querySelectorAll("th[data-col]").forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.col;
+      sortDir = sortCol === col ? -sortDir : 1;
+      sortCol = col;
+      renderTable();
+    };
+  });
+
+  const items = filteredItems();
+  const body = document.getElementById("tableBody");
+  body.innerHTML = "";
+  document.getElementById("emptyState").style.display = items.length ? "none" : "block";
+  document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
+
+  const chipEl = document.getElementById("activeFilterChip");
+  chipEl.innerHTML = [...activeFilters.entries()]
+    .map(([key, { label }]) => `<span class="filter-chip">${label} <button onclick="removeKpiFilter('${key}')">✕</button></span>`)
+    .join(" ");
+
+  items.forEach(item => {
+    const tr = document.createElement("tr");
+    if (dirty[item.pn]) tr.classList.add("row-dirty");
+    let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
+    cols.forEach(c => { html += renderCell(item, c.key); });
+    html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
+    tr.innerHTML = html;
+    body.appendChild(tr);
+  });
+  syncTopScroll();
+  disableEditingIfViewer(body);
+
+  document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
+  document.getElementById("selectAllPns").onchange = (e) => {
+    if (e.target.checked) items.forEach(i => selectedPns.add(i.pn));
+    else items.forEach(i => selectedPns.delete(i.pn));
+    renderTable();
+  };
+  body.querySelectorAll(".row-select").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) selectedPns.add(cb.dataset.pn);
+      else selectedPns.delete(cb.dataset.pn);
+      updateSelectedCount();
+      document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
+    };
+  });
+  updateSelectedCount();
+}
+
+function disableEditingIfViewer(container) {
+  if (currentUser && currentUser.role === "editor") return;
+  container.querySelectorAll("input, select, button").forEach(el => { el.disabled = true; });
+}
+
+function syncTopScroll() {
+  const wrap = document.getElementById("tableWrap");
+  const table = document.getElementById("mainTable");
+  const topInner = document.getElementById("topScrollInner");
+  topInner.style.width = table.scrollWidth + "px";
+}
+
+function renderCell(item, key) {
+  const v = item[key];
+  switch (key) {
+    case "cpl":
+      return `<td>${v ? '<span class="badge badge-red">CPL</span>' : ''}</td>`;
+    case "planejador":
+      return `<td>${getPlanejador(item)}</td>`;
+    case "wmf_days_in_past_due":
+    case "cor_days_in_past_due":
+      return `<td style="${(v ?? 0) > 0 ? 'color:var(--red); font-weight:700;' : ''}">${v ?? ""}</td>`;
+    case "motivo_atraso": {
+      const opts = MOTIVO_OPTIONS.map(m => `<option value="${m}" ${v === m ? "selected" : ""}>${m}</option>`).join("");
+      return `<td><select class="cell-select" onchange="markDirty('${item.pn}','motivo_atraso',this.value)"><option value="" ${!v ? "selected" : ""}>—</option>${opts}</select></td>`;
+    }
+    case "escalation_level": {
+      const eff = effectiveEscalationLevel(item);
+      const isOverride = ["L1", "L2", "NONE"].includes(v);
+      const badge = eff === "L2" ? '<span class="badge badge-red">L2</span>' : eff === "L1" ? '<span class="badge badge-amber">L1</span>' : "";
+      const selOpts = `
+        <option value="" ${!isOverride ? "selected" : ""}>Auto${eff ? " (" + eff + ")" : ""}</option>
+        <option value="NONE" ${v === "NONE" ? "selected" : ""}>Nao precisa escalar</option>
+        <option value="L1" ${v === "L1" ? "selected" : ""}>L1 (manual)</option>
+        <option value="L2" ${v === "L2" ? "selected" : ""}>L2 (manual)</option>
+      `;
+      return `<td>${badge} <select class="cell-select" onchange="markDirty('${item.pn}','escalation_level',this.value)">${selOpts}</select></td>`;
+    }
+    case "past_due_balance_cb": {
+      const bal = (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+      return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
+    }
+    case "balance_cb": {
+      const bal = (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+      return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
+    }
+    case "ultima_nfe_3e": {
+      const clean = String(v || "").split("-")[0].replace(/^0+(?=\d)/, "");
+      return `<td>${clean}</td>`;
+    }
+    case "status_p44": {
+      const cls = v === "Completed" ? "badge-green" : v === "En Transito" ? "badge-amber" : v === "Aguardando Coleta" ? "badge-gray" : "badge-gray";
+      return `<td><span class="badge ${cls}">${v || "-"}</span></td>`;
+    }
+    case "entrega_confirmada":
+      return `<td><input type="checkbox" ${v ? "checked" : ""} onchange="markDirty('${item.pn}','entrega_confirmada',this.checked)"></td>`;
+    case "ultima_nfe_emitida_fecha": {
+      // Cruzado por PN com a conferencia/controle de NFe (nao editavel aqui).
+      // Texto num colorsito diferente para distinguir do resto das colunas (editaveis).
+      const num = item.ultima_nfe_emitida_num || "";
+      const qty = item.ultima_nfe_emitida_qty;
+      const unidad = item.ultima_nfe_emitida_unidad || "";
+      if (!num && !v) return `<td></td>`;
+      const linha2 = [v, (qty ?? "") !== "" ? `${qty}${unidad ? " " + unidad : ""}` : ""].filter(Boolean).join(" · ");
+      const status = nfeMatchStatus(item);
+      const statusBadge = status === "match"
+        ? '<span class="badge badge-green" title="Igual a ultima Packing List recebida — ja chegou no WMF">Recebido</span>'
+        : (status === "mismatch" || status === "pending")
+          ? '<span class="badge badge-amber" title="Diferente da ultima Packing List recebida — fornecedor ja faturou e ainda nao chegou">Pendente</span>'
+          : "";
+      return `<td><span style="color:#1f5f9c; font-weight:600;">${num}</span> ${statusBadge}${linha2 ? `<div style="color:#1f5f9c; font-size:11px;">${linha2}</div>` : ""}</td>`;
+    }
+    case "promessa_data":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_data',this.value)"></td>`;
+    case "data_real_completed":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','data_real_completed',this.value)"></td>`;
+    case "promessa_qty":
+      return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','promessa_qty',this.value)"></td>`;
+    case "data_coleta":
+      return `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${v || ""}" onchange="markDirty('${item.pn}','data_coleta',this.value)"></td>`;
+    case "nfe_enviada":
+      return `<td><input type="text" class="cell-input" style="max-width:130px" value="${v || ""}" title="${v || ""}" onchange="markDirty('${item.pn}','nfe_enviada',this.value)"></td>`;
+    case "qty_nfe_confirmada":
+      return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','qty_nfe_confirmada',this.value)"></td>`;
+    case "nfe_stock_ws":
+      return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
+    case "fc_transito":
+      return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
+    case "order_release_info":
+      return `<td class="truncate" title="${v || ""}">${(v || "").replace("CNHILA.", "")}</td>`;
+    case "shipment_code":
+      return `<td>${(v || "").replace("CNHILA.", "")}</td>`;
+    case "qty_nfe_stock":
+      return `<td>${v ?? item.stock_ws ?? ""}</td>`;
+    default:
+      return `<td>${v ?? ""}</td>`;
+  }
+}
+
+window.toggleOtmColumns = function(event) {
+  event.stopPropagation();
+  otmExpanded = !otmExpanded;
+  renderTable();
+};
+
+window.markDirty = function(pn, field, value) {
+  dirty[pn] = dirty[pn] || {};
+  dirty[pn][field] = value;
+  const item = allItems.find(i => i.pn === pn);
+  if (item) item[field] = value;
+  renderTable();
+};
+
+async function clearPromiseNoConfirm(pn) {
+  const item = allItems.find(i => i.pn === pn);
+  if (!item) return false;
+  item.promessa_data = "";
+  item.promessa_qty = "";
+  item.entrega_confirmada = false;
+  item.data_coleta = "";
+  item.nfe_enviada = "";
+  item.qty_nfe_confirmada = "";
+  await window.saveRow(pn);
+  return true;
+}
+window.clearPromise = async function(pn) {
+  if (!confirm(`Borrar la promessa de ${pn}? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada.`)) return;
+  await clearPromiseNoConfirm(pn);
+  document.getElementById("statusText").textContent = `Promessa borrada: PN ${pn}`;
+};
+
+window.saveRow = async function(pn) {
+  if (!currentUser || currentUser.role !== "editor") {
+    document.getElementById("statusText").textContent = "No tenes permiso de edicion (solo lectura).";
+    return;
+  }
+  const item = allItems.find(i => i.pn === pn);
+  if (!item) return;
+  const itemPayload = {
+    part_number: item.pn,
+    data_promessa: item.promessa_data || "",
+    qty_prometida: item.promessa_qty !== "" && item.promessa_qty !== undefined ? Number(item.promessa_qty) : null,
+    entrega_confirmada: !!item.entrega_confirmada,
+    data_coleta: item.data_coleta || "",
+    nfe_enviada: item.nfe_enviada || "",
+    qty_confirmada: item.qty_nfe_confirmada !== "" && item.qty_nfe_confirmada !== undefined ? Number(item.qty_nfe_confirmada) : null,
+    previsao_saida_wmfbr: item.previsao_saida_wmfbr || "",
+    motivo_atraso: item.motivo_atraso || "",
+    escalation_level: ["L1", "L2", "NONE"].includes(item.escalation_level) ? item.escalation_level : "",
+    data_real_completed: item.data_real_completed || "",
+    comentario: "",
+  };
+  const semanaAtual = (() => {
+    const d = new Date();
+    const jan1 = new Date(d.getFullYear(), 0, 1);
+    const semana = Math.ceil((((d - jan1) / 86400000) + jan1.getDay() + 1) / 7);
+    return `${d.getFullYear()}-W${String(semana).padStart(2, "0")}`;
+  })();
+  try {
+    const resp = await fetch(WORKER_URL + "?action=dashboard_edit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ supplier_code: item.supplier_code, semana: semanaAtual, itens: [itemPayload], editor_code: currentCode }),
+    });
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    delete dirty[pn];
+    persistLocalEdit(pn, item);
+    document.getElementById("statusText").textContent = `Guardado: PN ${pn}`;
+    renderTable();
+  } catch (e) {
+    document.getElementById("statusText").textContent = `Error guardando PN ${pn}: ${e.message}`;
+  }
+};
+
+document.getElementById("btnSave").onclick = async () => {
+  // Se houver PN selecionados pelo checkbox, salva so esses (tenham ou nao
+  // alteracao pendente). Sem selecao, mantem o comportamento antigo: salva
+  // todos os PN marcados como "sujos" (dirty) por alguma edicao na tabela.
+  const pns = selectedPns.size ? [...selectedPns] : Object.keys(dirty);
+  if (pns.length === 0) {
+    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar (ou ningun PN seleccionado).";
+    return;
+  }
+  const btn = document.getElementById("btnSave");
+  btn.disabled = true;
+  btn.textContent = `Guardando 0/${pns.length}...`;
+  let ok = 0, fail = 0;
+  const failedPns = [];
+  for (let i = 0; i < pns.length; i++) {
+    const pn = pns[i];
+    try {
+      await window.saveRow(pn);
+      if (!dirty[pn]) ok++; else { fail++; failedPns.push(pn); }
+    } catch (e) {
+      fail++; failedPns.push(pn);
+    }
+    btn.textContent = `Guardando ${i + 1}/${pns.length}...`;
+  }
+  btn.disabled = false;
+  btn.textContent = "Guardar cambios";
+  document.getElementById("statusText").textContent = fail === 0
+    ? `Guardado: ${ok}/${pns.length} PN actualizados.`
+    : `Guardado ${ok}/${pns.length} — fallaron ${fail}: ${failedPns.join(", ")}`;
+};
+
+document.getElementById("btnClearSelectedPromise").onclick = async () => {
+  const pns = [...selectedPns];
+  if (pns.length === 0) {
+    document.getElementById("statusText").textContent = "Selecciona al menos un PN (checkbox) para borrar su promessa.";
+    return;
+  }
+  if (!confirm(`Borrar la promessa de ${pns.length} PN seleccionado(s)? Esto vacia fecha, qty, confirmacion, coleta, NFe y qty entregada de cada uno.`)) return;
+  const btn = document.getElementById("btnClearSelectedPromise");
+  btn.disabled = true;
+  let ok = 0, fail = 0;
+  for (let i = 0; i < pns.length; i++) {
+    btn.textContent = `Borrando ${i + 1}/${pns.length}...`;
+    try {
+      await clearPromiseNoConfirm(pns[i]);
+      ok++;
+    } catch (e) {
+      fail++;
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = "Borrar Promessa";
+  document.getElementById("statusText").textContent = fail === 0
+    ? `Promessa borrada: ${ok}/${pns.length} PN.`
+    : `Promessa borrada em ${ok}/${pns.length} — fallaron ${fail}.`;
+};
+
+window.removeKpiFilter = function(key) {
+  activeFilters.delete(key);
+  updateUrl();
+  renderKpis();
+  renderTable();
+};
+
+document.getElementById("btnClearFilter").onclick = clearFilter;
+document.getElementById("btnCopyLink").onclick = () => {
+  navigator.clipboard.writeText(location.href).then(() => {
+    document.getElementById("statusText").textContent = "Link copiado al portapapeles";
+  });
+};
+
+// ---------- Importar / Exportar Excel-CSV (mismo formato que promessas.html) ----------
+function csvEscape(v) {
+  const s = String(v ?? "");
+  return /[;,"\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+function detectDelimiter(line) {
+  return (line.match(/;/g) || []).length >= (line.match(/,/g) || []).length ? ";" : ",";
+}
+function splitDelimitedLine(line, sep) {
+  const out = []; let cur = ""; let inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { if (inQ && line[i + 1] === '"') { cur += '"'; i++; } else inQ = !inQ; }
+    else if (c === sep && !inQ) { out.push(cur); cur = ""; }
+    else cur += c;
+  }
+  out.push(cur);
+  return out.map(s => s.trim());
+}
+function normalizeDateFlexible(s) {
+  s = (s || "").trim();
+  if (!s) return "";
+  let m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s);
+  if (m) return s;
+  m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s);
+  if (m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return "";
+}
+function normalizeQtyFlexible(s) {
+  s = String(s ?? "").trim().replace(",", ".");
+  return s === "" || isNaN(Number(s)) ? "" : String(Number(s));
+}
+function normalizeBoolFlexible(s) {
+  const t = String(s || "").trim().toLowerCase();
+  return ["sim", "yes", "true", "1", "x", "si"].includes(t);
+}
+
+function exportValue(item, key) {
+  switch (key) {
+    case "cpl": return item.cpl ? "Sim" : "Nao";
+    case "entrega_confirmada": return item.entrega_confirmada ? "Sim" : "Nao";
+    case "status_p44": return item.status_p44 || "-";
+    case "ultima_nfe_3e": return String(item.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    case "past_due_balance_cb": return (item.cor_qty_past_due || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+    case "balance_cb": return (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
+    case "qty_nfe_stock": return item.qty_nfe_stock ?? item.stock_ws ?? "";
+    case "escalation_level": return ["L1", "L2", "NONE"].includes(item.escalation_level) ? item.escalation_level : "";
+    case "ultima_nfe_emitida_fecha": {
+      const num = item.ultima_nfe_emitida_num || "";
+      const qty = item.ultima_nfe_emitida_qty;
+      const unidad = item.ultima_nfe_emitida_unidad || "";
+      const qtyStr = (qty ?? "") !== "" ? `${qty}${unidad ? " " + unidad : ""}` : "";
+      return [num, item.ultima_nfe_emitida_fecha || "", qtyStr].filter(Boolean).join(" / ");
+    }
+    default: return item[key] ?? "";
+  }
+}
+
+document.getElementById("btnExport").onclick = () => {
+  const items = filteredItems();
+  const cols = getColumns();
+  const headers = cols.map(c => c.label);
+  headers.push("Previsao Saida WMFBR");
+  // Data Real Completed se exporta sempre (mesmo com OTM colapsado, quando a coluna
+  // nao aparece na tabela), para poder editar e reimportar via Excel. So forca aqui
+  // quando getColumns() ainda nao a incluiu (OTM fechado), para nao duplicar.
+  const hasDataRealCompletedCol = cols.some(c => c.key === "data_real_completed");
+  if (plant === "3e" && !hasDataRealCompletedCol) headers.push("Data Real Completed");
+  const lines = [headers.join(";")];
+  items.forEach(i => {
+    const row = cols.map(c => exportValue(i, c.key));
+    row.push(i.previsao_saida_wmfbr || "");
+    if (plant === "3e" && !hasDataRealCompletedCol) row.push(i.data_real_completed || "");
+    lines.push(row.map(csvEscape).join(";"));
+  });
+  const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `promessas_${plant}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+};
+
+document.getElementById("btnImport").onclick = () => document.getElementById("fileImport").click();
+document.getElementById("fileImport").onchange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const text = reader.result.replace(/^\uFEFF/, "");
+      const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+      if (lines.length < 2) throw new Error("Arquivo vazio.");
+      const sep = detectDelimiter(lines[0]);
+      const headerCells = splitDelimitedLine(lines[0], sep).map(h => h.toLowerCase().replace(/[^a-z0-9]/g, ""));
+      const findCol = (aliases) => headerCells.findIndex(h => aliases.includes(h));
+      const colPn = findCol(["pn", "partnumber", "part"]);
+      const colDate = findCol(["promessadata", "data", "datapromessa"]);
+      const colQty = findCol(["promessaqty", "qty", "qtyprometida", "quantidade"]);
+      const colConfirm = findCol(["confirmarentrega", "confirmado", "entregaconfirmada", "confirmo"]);
+      const colColeta = findCol(["datacoleta", "coleta"]);
+      const colNfe = findCol(["nfeenviada", "nfe"]);
+      const colQtyConf = findCol(["qtyentregada", "qtyconfirmada", "entregue", "qtynfeconf"]);
+      const colPrevisao = findCol(["previsaosaidawmfbr", "previsaosaida", "saidawmfbr"]);
+      const colMotivo = findCol(["motivoatraso", "motivo", "status"]);
+      const colEscalation = findCol(["escalation", "escalationlevel", "nivelescalation", "level"]);
+      const colDataRealCompleted = findCol(["datarealcompleted", "realcompleted", "datareal"]);
+      if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
+
+      let updated = 0, notFound = 0;
+      for (let li = 1; li < lines.length; li++) {
+        const cells = splitDelimitedLine(lines[li], sep);
+        const pn = (cells[colPn] || "").trim();
+        if (!pn) continue;
+        const item = allItems.find(i => i.pn === pn);
+        if (!item) { notFound++; continue; }
+        if (colDate >= 0) { const d = normalizeDateFlexible(cells[colDate]); if (d) item.promessa_data = d; }
+        if (colQty >= 0) { const q = normalizeQtyFlexible(cells[colQty]); if (q !== "") item.promessa_qty = Number(q); }
+        if (colConfirm >= 0) item.entrega_confirmada = normalizeBoolFlexible(cells[colConfirm]);
+        if (colColeta >= 0) { const d = normalizeDateFlexible(cells[colColeta]); if (d) item.data_coleta = d; }
+        if (colNfe >= 0 && cells[colNfe]) item.nfe_enviada = cells[colNfe];
+        if (colQtyConf >= 0) { const q = normalizeQtyFlexible(cells[colQtyConf]); if (q !== "") item.qty_nfe_confirmada = Number(q); }
+        if (colPrevisao >= 0) { const d = normalizeDateFlexible(cells[colPrevisao]); if (d) item.previsao_saida_wmfbr = d; }
+        if (colMotivo >= 0 && cells[colMotivo] && MOTIVO_OPTIONS.includes(cells[colMotivo])) item.motivo_atraso = cells[colMotivo];
+        if (colEscalation >= 0) {
+          const raw = String(cells[colEscalation] || "").trim().toUpperCase();
+          if (["L1", "L2", "NONE"].includes(raw)) item.escalation_level = raw;
+          else if (raw === "" || raw === "-") item.escalation_level = "";
+        }
+        if (colDataRealCompleted >= 0) { const d = normalizeDateFlexible(cells[colDataRealCompleted]); if (d) item.data_real_completed = d; }
+        dirty[pn] = dirty[pn] || {};
+        updated++;
+      }
+      document.getElementById("statusText").textContent =
+        `Importado: ${updated} PN actualizados${notFound ? `, ${notFound} no encontrados` : ""}. Revisa y apreta "Guardar cambios".`;
+      renderTable();
+    } catch (err) {
+      document.getElementById("statusText").textContent = "Error importando: " + err.message;
+    }
+    e.target.value = "";
+  };
+  reader.readAsText(file, "UTF-8");
+};
+
+document.getElementById("searchPn").oninput = () => { renderKpis(); renderTable(); };
+document.getElementById("searchSupplier").oninput = () => { renderKpis(); renderTable(); };
+document.getElementById("filterPlanejador").onchange = () => { renderKpis(); renderTable(); };
+document.getElementById("statusP44Btn").onclick = (e) => {
+  e.stopPropagation();
+  const panel = document.getElementById("statusP44Panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+};
+document.addEventListener("click", (e) => {
+  const dropdown = document.getElementById("statusP44Dropdown");
+  if (!dropdown.contains(e.target)) document.getElementById("statusP44Panel").style.display = "none";
+});
+document.getElementById("dashSearchSupplier").oninput = () => { renderKpis(); };
+document.getElementById("dashSearchPn").oninput = () => { renderKpis(); };
+document.getElementById("dashOnlyPastDue").onchange = () => { renderKpis(); };
+
+document.getElementById("plantSwitch").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    plant = btn.dataset.plant;
+    document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b === btn));
+    activeFilters.clear();
+    updateUrl();
+    renderKpis();
+    renderTable();
+  };
+});
+
+document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    const view = btn.dataset.view;
+    document.querySelectorAll("#viewSwitch button").forEach(b => b.classList.toggle("active", b === btn));
+    document.getElementById("viewTable").style.display = view === "table" ? "" : "none";
+    document.getElementById("viewDashboard").style.display = view === "dashboard" ? "" : "none";
+    document.getElementById("viewCpl").style.display = view === "cpl" ? "" : "none";
+    if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos com dados frescos
+    if (view === "cpl") loadCplData();
+  };
+});
+
+// ---------- Carga inicial ----------
+// ---------- Overlay local de edicoes pendentes ----------
+// dashboard_cb_3e_data.json e um snapshot publicado periodicamente pelo Job do
+// Databricks — nao e lido ao vivo a cada refresh. Um "Guardar" grava direto em
+// dim_promessas via Worker (por isso aparece "Guardado: PN ..."), mas se o
+// snapshot ainda nao foi republicado, o proximo refresh volta a mostrar o
+// valor antigo do JSON e a edicao parece "desaparecer". Este overlay guarda a
+// ultima edicao salva no localStorage do navegador e a reaplica por cima do
+// que vier do JSON, ate que o proprio JSON publicado bata com o valor salvo
+// (sinal de que o snapshot ja foi atualizado) — ai o overlay se limpa sozinho.
+const LOCAL_EDITS_KEY = "wmfLocalEdits_v1";
+const EDITABLE_LOCAL_FIELDS = ["promessa_data", "promessa_qty", "entrega_confirmada", "data_coleta", "nfe_enviada", "qty_nfe_confirmada", "previsao_saida_wmfbr", "motivo_atraso", "escalation_level", "data_real_completed"];
+function loadLocalEdits() {
+  try { return JSON.parse(localStorage.getItem(LOCAL_EDITS_KEY) || "{}"); } catch (e) { return {}; }
+}
+function saveLocalEdits(obj) {
+  try { localStorage.setItem(LOCAL_EDITS_KEY, JSON.stringify(obj)); } catch (e) { /* localStorage indisponivel: segue sem overlay */ }
+}
+function persistLocalEdit(pn, item) {
+  const edits = loadLocalEdits();
+  const snap = {};
+  EDITABLE_LOCAL_FIELDS.forEach(f => { snap[f] = item[f] ?? ""; });
+  edits[pn] = snap;
+  saveLocalEdits(edits);
+}
+function applyLocalEditsOverlay(items) {
+  const edits = loadLocalEdits();
+  if (!Object.keys(edits).length) return;
+  const remaining = {};
+  items.forEach(item => {
+    const ov = edits[item.pn];
+    if (!ov) return;
+    let stillPending = false;
+    EDITABLE_LOCAL_FIELDS.forEach(f => {
+      const serverVal = item[f] ?? "";
+      const localVal = ov[f] ?? "";
+      if (String(serverVal) !== String(localVal)) {
+        item[f] = ov[f];
+        stillPending = true;
+      }
+    });
+    if (stillPending) remaining[item.pn] = ov;
+  });
+  saveLocalEdits(remaining);
+}
+
+// Le os campos editaveis AO VIVO de dim_promessas (via Worker, rota dashboard_overrides),
+// para que o que um usuario salva apareca para os demais sem esperar o proximo snapshot
+// do JSON. Requer o Worker atualizado; se a rota nao existir ou falhar, e silencioso e
+// o dashboard segue so com o snapshot (comportamento anterior).
+async function applyLiveOverrides(items) {
+  if (!currentCode) return false;
+  try {
+    const resp = await fetch(WORKER_URL + "?action=dashboard_overrides&code=" + encodeURIComponent(currentCode));
+    if (!resp.ok) return false;
+    const data = await resp.json();
+    if (!data || !data.ok || !Array.isArray(data.promises)) return false;
+    const byKey = new Map();
+    const byPn = new Map();
+    items.forEach(i => {
+      byKey.set(`${i.pn}|${i.supplier_code || ""}`, i);
+      if (!byPn.has(i.pn)) byPn.set(i.pn, []);
+      byPn.get(i.pn).push(i);
+    });
+    data.promises.forEach(r => {
+      const pn = String(r.pn || "");
+      let item = byKey.get(`${pn}|${r.supplier_code || ""}`);
+      if (!item) { const arr = byPn.get(pn); if (arr && arr.length === 1) item = arr[0]; }
+      if (!item) return;
+      item.promessa_data = normalizeDateFlexible(r.promise_date) || "";
+      item.promessa_qty = (r.promised_qty ?? "") === "" ? "" : Number(r.promised_qty);
+      item.previsao_saida_wmfbr = normalizeDateFlexible(r.previsao_saida_wmfbr) || "";
+      item.motivo_atraso = r.motivo_atraso || "";
+      item.escalation_level = r.escalation_level || "";
+      item.data_real_completed = normalizeDateFlexible(r.data_real_completed) || "";
+    });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch(DATA_URL + "?t=" + Date.now());
+    const data = await resp.json();
+    allItems = Array.isArray(data) ? data : (data.items || []);
+    await applyLiveOverrides(allItems);
+    applyLocalEditsOverlay(allItems);
+    const genAt = data.generated_at || "";
+    window._releaseCb = data.erp_release_cb || "";
+    window._release3e = data.erp_release_3e || "";
+    document.getElementById("statusText").textContent = `${allItems.length} PN cargados${currentUser ? ` — ${currentUser.holder_name} (${currentUser.role === "editor" ? "Editor" : "Solo lectura"})` : ""}`;
+    document.getElementById("lastUpdate").textContent = genAt ? "Generado: " + genAt : "";
+    loadFromUrl();
+    document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
+    renderKpis();
+    renderTable();
+    preloadRawLinesForKpis(); // async, nao bloqueia — atualiza os cards de Ship Date quando chegar
+  } catch (e) {
+    document.getElementById("statusText").textContent = "Error cargando datos: " + e.message;
+  }
+}
+// Pre-carrega as linhas em bruto (mesmo arquivo do modal "Ver em bruto") para poder
+// calcular os cards "Ship Date proximos 7/15/30 dias" ja na primeira tela, sem
+// esperar o usuario abrir o modal. Se o arquivo falhar, os cards ficam em 0/"-" —
+// nao trava o resto do dashboard.
+async function preloadRawLinesForKpis() {
+  if (rawLinesCache) { buildNextShipDateLookup(); renderKpis(); return; }
+  try {
+    const resp = await fetch(RAW_DATA_URL + "?t=" + Date.now());
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    rawLinesCache = Array.isArray(data) ? data : (data.rows || data.items || data.lines || []);
+    buildNextShipDateLookup();
+    renderKpis();
+  } catch (e) {
+    // Silencioso: os cards de Ship Date ficam em 0 ate o arquivo existir/ser alcancavel.
+  }
+}
+const topScrollWrap = document.getElementById("topScrollWrap");
+const tableWrapEl = document.getElementById("tableWrap");
+let _syncingScroll = false;
+topScrollWrap.addEventListener("scroll", () => {
+  if (_syncingScroll) return;
+  _syncingScroll = true;
+  tableWrapEl.scrollLeft = topScrollWrap.scrollLeft;
+  _syncingScroll = false;
+});
+tableWrapEl.addEventListener("scroll", () => {
+  if (_syncingScroll) return;
+  _syncingScroll = true;
+  topScrollWrap.scrollLeft = tableWrapEl.scrollLeft;
+  _syncingScroll = false;
+});
+
+// ---------- Aba CPL (Criticidade / Solicitacoes) ----------
+// Fonte de dados: um JSON novo, publicado a partir da lista SharePoint
+// "Solicitacoes Criticas Cordoba" (a mesma que wmf_cscn_update_cordoba_list
+// mantem atualizada). Ainda NAO existe — esta aba fica com um aviso ate que
+// dashboard_cpl_data.json seja gerado/publicado pelo pipeline.
+// Formato esperado: { "generated_at": "...", "items": [ { pn, supplier_code,
+// supplier_name, stock_wmf, qty_transito, qty_min, criticidad, reason,
+// run_out_date, wmf_promise, created, estado, planner, solicitante, plant }, ... ] }
+const CPL_DATA_URL = "dashboard_cpl_data.json";
+let cplItems = [];
+let cplLoaded = false;
+let cplSortCol = null, cplSortDir = 1;
+// criticidad/estado/planner/solicitante: filtro por checklist (campo direto).
+// reason/aging/statusPromessa/motivoNosso: filtro por clique nos graficos de barras (valor calculado).
+const cplFilters = {
+  criticidad: new Set(), estado: new Set(), planner: new Set(), solicitante: new Set(),
+  reason: new Set(), aging: new Set(), statusPromessa: new Set(), motivoNosso: new Set(),
+  escalationNosso: new Set(),
+};
+const CRITICIDAD_ORDER = ["Normal", "Critico", "Crítico", "Hiper Critico", "Hiper Crítico"];
+// Cruza o PN do CPL com allItems (o JSON principal do dashboard, ja carregado)
+// para trazer o motivo_atraso "nosso" (o campo editavel na aba Dashboard),
+// que e distinto do "reason" (Motivo) da propria lista SharePoint.
+let cplMotivoNossoLookup = new Map();
+function cplRebuildMotivoNossoLookup() {
+  cplMotivoNossoLookup = new Map();
+  (allItems || []).forEach(i => { if (i.pn && !cplMotivoNossoLookup.has(i.pn)) cplMotivoNossoLookup.set(i.pn, i.motivo_atraso || ""); });
+}
+// Cruza o PN do CPL com allItems para trazer o Escalation Level (L1/L2) "nosso",
+// calculado pela mesma logica effectiveEscalationLevel usada nas abas Tabela/Dashboard.
+let cplEscalationNossoLookup = new Map();
+function cplRebuildEscalationNossoLookup() {
+  cplEscalationNossoLookup = new Map();
+  (allItems || []).forEach(i => { if (i.pn && !cplEscalationNossoLookup.has(i.pn)) cplEscalationNossoLookup.set(i.pn, effectiveEscalationLevel(i)); });
+}
+const CPL_COMPUTED_CATS = {
+  aging: item => cplAgingBucket(item) || "",
+  statusPromessa: item => item.wmf_promise ? "Com Promessa" : "Sem Promessa",
+  reason: item => item.reason || "Sem motivo",
+  motivoNosso: item => cplMotivoNossoLookup.get(item.pn) || "Sem motivo (dashboard)",
+  escalationNosso: item => {
+    const lvl = cplEscalationNossoLookup.get(item.pn);
+    return lvl === "L2" ? "Level 2" : lvl === "L1" ? "Level 1" : "Sem escalation";
+  },
+};
+function cplCategoryValue(item, cat) {
+  if (CPL_COMPUTED_CATS[cat]) return CPL_COMPUTED_CATS[cat](item);
+  return item[cat] || "";
+}
+
+function cplToneFor(label) {
+  const l = String(label || "").toLowerCase();
+  if (l.includes("hiper")) return "red";
+  if (l.includes("crit") || l.includes("crít")) return "amber";
+  if (l.includes("normal")) return "green";
+  return "gray";
+}
+function cplDaysOpen(item) {
+  const created = parseDateBR(item.created);
+  if (!created) return null;
+  return Math.floor((todayNoTime() - created) / 86400000);
+}
+function cplIsOpen(item) {
+  const estado = String(item.estado || "").toLowerCase();
+  return !estado.includes("final") && !estado.includes("conclu") && !estado.includes("fech");
+}
+function cplAgingBucket(item) {
+  if (!cplIsOpen(item)) return null;
+  const days = cplDaysOpen(item);
+  if (days === null) return null;
+  if (days > 10) return ">10 dias";
+  if (days >= 6) return "6-10 dias";
+  if (days >= 3) return "3-5 dias";
+  return "0-2 dias";
+}
+// Regra nova: o transito tem que atender a Qty Min solicitada para o PN
+// poder sair do CPL. So sinaliza quando ha uma Qty Min > 0 cadastrada.
+function cplSaiDoCpl(item) {
+  const qtyMin = Number(item.qty_min || 0);
+  const qtyTransito = Number(item.qty_transito || 0);
+  if (!(qtyMin > 0)) return false;
+  return qtyTransito >= qtyMin;
+}
+
+async function loadCplData(force) {
+  if (cplLoaded && !force) { renderCplView(); return; }
+  document.getElementById("cplEmptyState").style.display = "none";
+  document.getElementById("cplContent").style.display = "none";
+  try {
+    const resp = await fetch(CPL_DATA_URL + "?t=" + Date.now());
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    cplItems = Array.isArray(data) ? data : (data.items || []);
+    cplLoaded = true;
+    document.getElementById("cplContent").style.display = "";
+    renderCplView();
+  } catch (e) {
+    document.getElementById("cplContent").style.display = "none";
+    const el = document.getElementById("cplEmptyState");
+    el.style.display = "block";
+    el.textContent = `Esta aba ainda nao tem dados publicados (dashboard_cpl_data.json). Erro: ${e.message}`;
+  }
+}
+
+function cplUniqueValues(field) {
+  const vals = new Set();
+  cplItems.forEach(i => { const v = cplCategoryValue(i, field); if (v) vals.add(v); });
+  return [...vals].sort((a, b) => String(a).localeCompare(String(b)));
+}
+// items depois de busca/datas + todos os filtros de cplFilters, EXCETO a categoria
+// excludeCat (usado para que a contagem de cada checklist reflita os demais filtros
+// ja ativos, sem zerar a propria categoria que esta sendo mostrada).
+function cplBaseItems(excludeCat) {
+  const pnQ = document.getElementById("cplSearchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("cplSearchSupplier").value.trim().toLowerCase();
+  const dateFromVal = document.getElementById("cplDateFrom").value;
+  const dateToVal = document.getElementById("cplDateTo").value;
+  const dateFrom = dateFromVal ? new Date(dateFromVal + "T00:00:00") : null;
+  const dateTo = dateToVal ? new Date(dateToVal + "T23:59:59") : null;
+  let items = cplItems;
+  if (pnQ) items = items.filter(i => String(i.pn || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(i => String(i.supplier_name || "").toLowerCase().includes(supQ) || String(i.supplier_code || "").toLowerCase().includes(supQ));
+  if (dateFrom || dateTo) {
+    items = items.filter(i => {
+      const created = parseDateBR(i.created);
+      if (!created) return false;
+      if (dateFrom && created < dateFrom) return false;
+      if (dateTo && created > dateTo) return false;
+      return true;
+    });
+  }
+  Object.keys(cplFilters).forEach(cat => {
+    if (cat === excludeCat) return;
+    const set = cplFilters[cat];
+    if (set.size) items = items.filter(i => set.has(cplCategoryValue(i, cat)));
+  });
+  return items;
+}
+function renderCplFilterGroup(containerId, field) {
+  const el = document.getElementById(containerId);
+  const values = cplUniqueValues(field);
+  const set = cplFilters[field];
+  // Contagem cascateada: reflete os demais filtros ja aplicados (busca, datas,
+  // outras checklists), para que os numeros mudem quando eu filtro algo.
+  const pool = cplBaseItems(field);
+  el.innerHTML = values.map(v => {
+    const count = pool.filter(i => cplCategoryValue(i, field) === v).length;
+    const checked = set.has(v) ? "checked" : "";
+    return `<label><input type="checkbox" value="${String(v).replace(/"/g, "&quot;")}" ${checked}> ${v} <span class="count">${count}</span></label>`;
+  }).join("") || '<div style="font-size:12px; color:var(--gray-700);">Sem dados.</div>';
+  el.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) set.add(cb.value); else set.delete(cb.value);
+      renderCplView();
+    };
+  });
+}
+function cplCriticidadGroups(items) {
+  const counts = {};
+  items.forEach(i => { const c = i.criticidad || "Sem criticidade"; counts[c] = (counts[c] || 0) + 1; });
+  const keys = Object.keys(counts).sort((a, b) => {
+    const ia = CRITICIDAD_ORDER.indexOf(a), ib = CRITICIDAD_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  return keys.map(k => ({ label: k, count: counts[k] }));
+}
+function cplRenderBarChart(containerId, rows, opts = {}) {
+  const el = document.getElementById(containerId);
+  const total = rows.reduce((a, r) => a + r.count, 0);
+  const maxCount = Math.max(1, ...rows.map(r => r.count));
+  if (total === 0) { el.innerHTML = '<div class="empty-state" style="padding:12px;">Sem dados para exibir.</div>'; return; }
+  const category = opts.category;
+  el.innerHTML = rows.map(r => {
+    const pct = total ? Math.round((r.count / total) * 100) : 0;
+    const widthPct = Math.max(2, (r.count / maxCount) * 100);
+    const label = opts.showPct ? `${r.count} (${pct}%)` : `${r.count}`;
+    const insideLabel = widthPct > 28;
+    const filterKey = r.filterKey ?? r.label;
+    const isActive = category && cplFilters[category] && cplFilters[category].has(filterKey);
+    const rowClass = "cpl-bar-row" + (category ? " cpl-bar-clickable" : "") + (isActive ? " cpl-bar-active" : "");
+    const dataAttrs = category ? ` data-cat="${category}" data-key="${String(filterKey).replace(/"/g, "&quot;")}"` : "";
+    return `
+      <div class="${rowClass}"${dataAttrs}>
+        <div class="cpl-bar-label">${r.label}</div>
+        <div class="cpl-bar-track">
+          <div class="cpl-bar-fill" style="width:${widthPct}%; background:${r.color || "var(--red)"};">${insideLabel ? label : ""}</div>
+        </div>
+        <div class="cpl-bar-count">${insideLabel ? "" : label}</div>
+      </div>`;
+  }).join("");
+  if (category) {
+    el.querySelectorAll(".cpl-bar-clickable").forEach(row => {
+      row.onclick = () => {
+        const cat = row.dataset.cat, key = row.dataset.key;
+        const set = cplFilters[cat];
+        if (set.has(key)) set.delete(key); else set.add(key);
+        renderCplView();
+      };
+    });
+  }
+}
+function renderCplTable(items) {
+  const body = document.getElementById("cplTableBody");
+  body.innerHTML = "";
+  document.getElementById("cplTableEmpty").style.display = items.length ? "none" : "block";
+  items.forEach(item => {
+    const saiDoCpl = cplSaiDoCpl(item);
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.pn || ""}</td>
+      <td>${item.supplier_code || ""}</td>
+      <td>${item.supplier_name || ""}</td>
+      <td>${item.stock_wmf ?? ""}</td>
+      <td>${item.qty_transito ?? ""}</td>
+      <td>${item.qty_min ?? ""}</td>
+      <td>${item.criticidad || ""}</td>
+      <td>${item.reason || ""}</td>
+      <td>${item.run_out_date || ""}</td>
+      <td>${item.wmf_promise || ""}</td>
+      <td>${item.created || ""}</td>
+      <td>${item.estado || ""}</td>
+      <td>${item.planner || ""}</td>
+      <td>${item.solicitante || ""}</td>
+      <td>${item.plant || ""}</td>
+      <td>${saiDoCpl ? '<span class="badge badge-green">Sim — transito &ge; Qty Min</span>' : ""}</td>
+    `;
+    body.appendChild(tr);
+  });
+}
+function renderCplView() {
+  if (!cplLoaded) return;
+  cplRebuildMotivoNossoLookup();
+  cplRebuildEscalationNossoLookup();
+  renderCplFilterGroup("cplFilterCriticidad", "criticidad");
+  renderCplFilterGroup("cplFilterEstado", "estado");
+  renderCplFilterGroup("cplFilterPlanner", "planner");
+  renderCplFilterGroup("cplFilterSolicitante", "solicitante");
+  renderCplFilterGroup("cplFilterEscalation", "escalationNosso");
+
+  const items = cplBaseItems();
+  document.getElementById("cplRowCount").textContent = `${items.length} de ${cplItems.length} solicitacoes`;
+
+  const groups = cplCriticidadGroups(items);
+  const kpiEl = document.getElementById("kpiCplCriticidad");
+  kpiEl.innerHTML = groups.map(g => `
+    <div class="kpi-card tone-${cplToneFor(g.label)}">
+      <div class="kpi-value">${g.count}</div>
+      <div class="kpi-label">${g.label}</div>
+    </div>
+  `).join("") + `
+    <div class="kpi-card tone-gray">
+      <div class="kpi-value">${items.length}</div>
+      <div class="kpi-label">Total Solicitacoes</div>
+    </div>
+  `;
+
+  const escL1 = items.filter(i => cplCategoryValue(i, "escalationNosso") === "Level 1").length;
+  const escL2 = items.filter(i => cplCategoryValue(i, "escalationNosso") === "Level 2").length;
+  const escSem = items.length - escL1 - escL2;
+  document.getElementById("kpiCplEscalation").innerHTML = `
+    <div class="kpi-card tone-amber">
+      <div class="kpi-value">${escL1}</div>
+      <div class="kpi-label">Escalation Level 1</div>
+    </div>
+    <div class="kpi-card tone-red">
+      <div class="kpi-value">${escL2}</div>
+      <div class="kpi-label">Escalation Level 2</div>
+    </div>
+    <div class="kpi-card tone-gray">
+      <div class="kpi-value">${escSem}</div>
+      <div class="kpi-label">Sem Escalation</div>
+    </div>
+  `;
+
+  const semPromessa = items.filter(i => !i.wmf_promise).length;
+  const comPromessa = items.length - semPromessa;
+  cplRenderBarChart("cplStatusPromessas", [
+    { label: "Sem Promessa", count: semPromessa, color: "var(--red)" },
+    { label: "Com Promessa", count: comPromessa, color: "var(--green)" },
+  ], { showPct: true, category: "statusPromessa" });
+
+  const agingBuckets = [">10 dias", "6-10 dias", "3-5 dias", "0-2 dias"];
+  const agingColors = { ">10 dias": "var(--red)", "6-10 dias": "#b5750c", "3-5 dias": "#d8b34a", "0-2 dias": "var(--green)" };
+  const openItems = items.filter(cplIsOpen);
+  const agingRows = agingBuckets.map(b => ({
+    label: b,
+    count: openItems.filter(i => cplAgingBucket(i) === b).length,
+    color: agingColors[b],
+  }));
+  cplRenderBarChart("cplAging", agingRows, { category: "aging" });
+
+  const causaCounts = {};
+  items.forEach(i => { const r = i.reason || "Sem motivo"; causaCounts[r] = (causaCounts[r] || 0) + 1; });
+  const causaRows = Object.entries(causaCounts).sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count, color: "#1f3a5f" }));
+  cplRenderBarChart("cplCausas", causaRows, { category: "reason" });
+
+  // Motivo Atraso "nosso" (o campo editavel na aba Dashboard/motivo_atraso),
+  // cruzado por PN contra allItems — distinto do "reason" (Motivo) da lista SharePoint.
+  const motivoNossoCounts = {};
+  items.forEach(i => {
+    const v = cplMotivoNossoLookup.get(i.pn) || "Sem motivo (dashboard)";
+    motivoNossoCounts[v] = (motivoNossoCounts[v] || 0) + 1;
+  });
+  const motivoNossoRows = Object.entries(motivoNossoCounts).sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count, color: "#6a4c93" }));
+  cplRenderBarChart("cplMotivoNosso", motivoNossoRows, { category: "motivoNosso" });
+
+  let sortedItems = items;
+  if (cplSortCol) {
+    sortedItems = [...items].sort((a, b) => {
+      const av = a[cplSortCol] ?? "", bv = b[cplSortCol] ?? "";
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * cplSortDir;
+      return String(av).localeCompare(String(bv)) * cplSortDir;
+    });
+  }
+  renderCplTable(sortedItems);
+}
+
+document.getElementById("cplSearchPn").oninput = () => renderCplView();
+document.getElementById("cplSearchSupplier").oninput = () => renderCplView();
+document.getElementById("cplDateFrom").onchange = () => renderCplView();
+document.getElementById("cplDateTo").onchange = () => renderCplView();
+document.getElementById("btnCplClearFilters").onclick = () => {
+  document.getElementById("cplSearchPn").value = "";
+  document.getElementById("cplSearchSupplier").value = "";
+  document.getElementById("cplDateFrom").value = "";
+  document.getElementById("cplDateTo").value = "";
+  Object.values(cplFilters).forEach(s => s.clear());
+  renderCplView();
+};
+document.getElementById("btnCplReload").onclick = () => loadCplData(true);
+document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
+  th.style.cursor = "pointer";
+  th.onclick = () => {
+    const col = th.dataset.col;
+    cplSortDir = cplSortCol === col ? -cplSortDir : 1;
+    cplSortCol = col;
+    renderCplView();
+  };
+});
+
+// ---------- Modal "Ver CSCN em bruto" ----------
+const RAW_DATA_URL = "dashboard_cb_3e_raw_lines.json";
+let rawLinesCache = null;
+let rawSortCol = null, rawSortDir = 1;
+
+const RAW_COLS = [
+  { key: "plant_code", label: "PLANT_CODE" },
+  { key: "supplier_code", label: "SUPPLIER_CODE" },
+  { key: "supp_name", label: "SUPP_NAME" },
+  { key: "part_number", label: "PART_NUMBER" },
+  { key: "part_descr", label: "PART_DESCR" },
+  { key: "po_number", label: "PO_NUMBER" },
+  { key: "release_date", label: "RELEASE_DATE" },
+  { key: "dod_date", label: "DOD_DATE" },
+  { key: "ship_date", label: "SHIP_DATE" },
+  { key: "quantity_type", label: "QUANTITY_TYPE" },
+  { key: "quantity_due", label: "QUANTITY_DUE" },
+  { key: "cumulative_qty", label: "CUMULATIVE_QTY" },
+  { key: "cum_rec_qty", label: "CUM_REC_QTY" },
+  { key: "last_receipt_packlist", label: "LAST_RECEIPT_PACKLIST" },
+];
+
+async function openRawModal() {
+  document.getElementById("rawModalOverlay").style.display = "flex";
+  document.getElementById("rawModalTitle").textContent = `CSCN em bruto — Planta ${plant.toUpperCase()}`;
+  if (!rawLinesCache) {
+    document.getElementById("rawModalBody").innerHTML = '<div class="empty-state">Cargando...</div>';
+    try {
+      const resp = await fetch(RAW_DATA_URL + "?t=" + Date.now());
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      const data = await resp.json();
+      rawLinesCache = Array.isArray(data) ? data : (data.rows || data.items || data.lines || []);
+    } catch (e) {
+      document.getElementById("rawModalBody").innerHTML = `<div class="empty-state">Error cargando: ${e.message}. (El archivo dashboard_cb_3e_raw_lines.json puede que todavia no este publicado.)</div>`;
+      return;
+    }
+  }
+  renderRawTable();
+}
+
+function rawFilteredItems() {
+  const wantedPlant = plant === "cb" ? "CB" : "3E";
+  let items = (rawLinesCache || []).filter(r => r.plant_code === wantedPlant);
+  const pnQ = document.getElementById("rawSearchPn").value.trim().toLowerCase();
+  const supQ = document.getElementById("rawSearchSupplier").value.trim().toLowerCase();
+  if (pnQ) items = items.filter(r => String(r.part_number || "").toLowerCase().includes(pnQ));
+  if (supQ) items = items.filter(r => String(r.supp_name || "").toLowerCase().includes(supQ) || String(r.supplier_code || "").toLowerCase().includes(supQ));
+  if (rawSortCol) {
+    items = [...items].sort((a, b) => {
+      const av = a[rawSortCol] ?? "", bv = b[rawSortCol] ?? "";
+      if (typeof av === "number" || typeof bv === "number") return (av - bv) * rawSortDir;
+      return String(av).localeCompare(String(bv)) * rawSortDir;
+    });
+  }
+  return items;
+}
+
+function renderRawTable() {
+  const items = rawFilteredItems();
+  document.getElementById("rawRowCount").textContent = `${items.length} lineas`;
+  const headHtml = RAW_COLS.map(c => `<th data-col="${c.key}">${c.label}</th>`).join("");
+  let bodyHtml = "";
+  items.forEach(r => {
+    bodyHtml += "<tr>" + RAW_COLS.map(c => {
+      const v = r[c.key] ?? "";
+      const cls = c.key === "quantity_type" && v === "Past Due" ? ' class="badge-pastdue"' : "";
+      return `<td${cls}>${v}</td>`;
+    }).join("") + "</tr>";
+  });
+  document.getElementById("rawModalBody").innerHTML = `
+    <table><thead><tr>${headHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>
+    ${items.length === 0 ? '<div class="empty-state">Ningun registro encontrado.</div>' : ""}
+  `;
+  document.querySelectorAll("#rawModalBody th[data-col]").forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.col;
+      rawSortDir = rawSortCol === col ? -rawSortDir : 1;
+      rawSortCol = col;
+      renderRawTable();
+    };
+  });
+}
+
+document.getElementById("btnRawView").onclick = openRawModal;
+document.getElementById("btnCloseRawModal").onclick = () => {
+  document.getElementById("rawModalOverlay").style.display = "none";
+};
+document.getElementById("rawSearchPn").oninput = renderRawTable;
+document.getElementById("rawSearchSupplier").oninput = renderRawTable;
+
+// ---------- Login por codigo personal ----------
+async function verifyLogin(code) {
+  const errEl = document.getElementById("loginError");
+  const btn = document.getElementById("btnLogin");
+  errEl.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "Verificando...";
+  try {
+    const resp = await fetch(WORKER_URL + "?verify_code=" + encodeURIComponent(code));
+    const data = await resp.json();
+    if (!resp.ok || !data.ok) {
+      errEl.textContent = "Codigo invalido.";
+      btn.disabled = false;
+      btn.textContent = "Entrar";
+      return;
+    }
+    currentUser = { holder_name: data.holder_name, role: data.role };
+    currentCode = code;
+    document.getElementById("loginOverlay").style.display = "none";
+    applyRolePermissions();
+    loadData();
+  } catch (e) {
+    errEl.textContent = "Error de conexion: " + e.message;
+    btn.disabled = false;
+    btn.textContent = "Entrar";
+  }
+}
+function applyRolePermissions() {
+  const isEditor = currentUser && currentUser.role === "editor";
+  document.getElementById("statusText").dataset.userTag = currentUser
+    ? ` — ${currentUser.holder_name} (${isEditor ? "Editor" : "Solo lectura"})`
+    : "";
+  document.getElementById("btnSave").style.display = isEditor ? "" : "none";
+  document.getElementById("btnImport").style.display = isEditor ? "" : "none";
+  document.getElementById("btnClearSelectedPromise").style.display = isEditor ? "" : "none";
+}
+document.getElementById("btnLogin").onclick = () => {
+  const code = document.getElementById("loginCodeInput").value.trim().toUpperCase();
+  if (!code) { document.getElementById("loginError").textContent = "Ingresa un codigo."; return; }
+  verifyLogin(code);
+};
+document.getElementById("loginCodeInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("btnLogin").click();
+});
+
 </script>
 </body>
 </html>
