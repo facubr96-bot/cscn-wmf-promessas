@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "10280060",
+      "part_number": "10298460",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -11,12 +11,12 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Fornecedor novo",
+      "motivo_atraso": "",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:22:23.235Z"
+  "recibido_en_worker": "2026-10-05T17:22:29.506Z"
 }
