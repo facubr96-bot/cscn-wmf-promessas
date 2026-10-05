@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51679877",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "51695225",
+      "data_promessa": "11/09/2026",
+      "qty_prometida": 147,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:05:46.155Z"
+  "recibido_en_worker": "2026-10-05T18:06:27.072Z"
 }
