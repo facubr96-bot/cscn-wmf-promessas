@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "4668595",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "5155682",
+      "data_promessa": "16/10/2026",
+      "qty_prometida": 700,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:20:44.438Z"
+  "recibido_en_worker": "2026-10-05T17:21:06.551Z"
 }
