@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "433007",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "433008",
+      "data_promessa": "07/10/2026",
+      "qty_prometida": 50,
       "entrega_confirmada": true,
       "data_coleta": "31/08/2026",
       "nfe_enviada": "000060242",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:20:08.752Z"
+  "recibido_en_worker": "2026-10-05T17:20:15.747Z"
 }
