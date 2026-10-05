@@ -3,12 +3,12 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "91776795",
-      "data_promessa": "",
-      "qty_prometida": 0,
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": "",
+      "part_number": "92055144",
+      "data_promessa": "26/08/2026",
+      "qty_prometida": 136,
+      "entrega_confirmada": true,
+      "data_coleta": "26/08/2026",
+      "nfe_enviada": "96858",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:39:32.116Z"
+  "recibido_en_worker": "2026-10-05T18:43:08.191Z"
 }
