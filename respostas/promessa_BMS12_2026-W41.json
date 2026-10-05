@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "47763583",
+      "part_number": "87472724",
       "data_promessa": "10/09/2026",
       "qty_prometida": 93,
       "entrega_confirmada": false,
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:36:06.292Z"
+  "recibido_en_worker": "2026-10-05T18:29:11.338Z"
 }
