@@ -3,12 +3,12 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "91723189",
-      "data_promessa": "11/09/2026",
-      "qty_prometida": 50,
+      "part_number": "91723194",
+      "data_promessa": "",
+      "qty_prometida": 0,
       "entrega_confirmada": false,
-      "data_coleta": "11/09/2026",
-      "nfe_enviada": "65236",
+      "data_coleta": "",
+      "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:37:06.069Z"
+  "recibido_en_worker": "2026-10-05T18:37:12.558Z"
 }
