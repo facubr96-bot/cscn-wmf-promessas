@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "48172466",
+      "part_number": "82992211",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -11,12 +11,12 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Fornecedor novo",
-      "escalation_level": "L2",
+      "motivo_atraso": "",
+      "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T17:53:48.794Z"
+  "recibido_en_worker": "2026-10-05T18:08:10.557Z"
 }
