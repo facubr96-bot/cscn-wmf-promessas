@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "86597140",
-      "data_promessa": "",
-      "qty_prometida": 0,
+      "part_number": "86603000",
+      "data_promessa": "11/09/2026",
+      "qty_prometida": 30,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:24:32.736Z"
+  "recibido_en_worker": "2026-10-05T18:25:22.460Z"
 }
