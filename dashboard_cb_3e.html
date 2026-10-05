@@ -612,11 +612,23 @@ function inRunoutCriticoWindow(item) {
   const b = runoutBucket(item);
   return b === "Run Out vencido" || b.startsWith("RO resto");
 }
+// Uma promessa so conta para cobertura (c/ Promessa / Prom. Insuf.) enquanto tiver
+// menos de PROMESSA_TOLERANCIA_DIAS dias de vencida. Ex.: promessa 30/09 e hoje 05/10
+// (5 dias) ja nao conta -> o PN volta a ser "s/ Cobertura". Promessa sem data nao tem
+// como ser julgada vencida, entao continua contando como antes.
+const PROMESSA_TOLERANCIA_DIAS = 5;
+function promessaCuentaParaCobertura(item) {
+  if (!item.promessa_data) return true;
+  const pd = parseDateBR(item.promessa_data);
+  if (!pd) return true;
+  const diasVencida = Math.round((todayNoTime() - pd) / 86400000);
+  return diasVencida < PROMESSA_TOLERANCIA_DIAS;
+}
 function commonVals(item) {
   return {
     transitQty: item.qty_transito || 0,
     stockQty: item.stock_b1cb || 0, // SAP unicamente - no mezclar con stock_ws (dim_stock/WS)
-    promiseQty: item.promessa_qty || 0,
+    promiseQty: promessaCuentaParaCobertura(item) ? (item.promessa_qty || 0) : 0,
   };
 }
 function bloque1Bucket(item) {
@@ -638,14 +650,6 @@ function bloque3Bucket(item) {
   return coverageBucket(item.wmf_qty_past_due, 0, stockQty, promiseQty, false);
 }
 
-function promesaVigente(item) {
-  if (!item.promessa_data) return false;
-  if (item.entrega_confirmada) return true;
-  const pd = parseDateBR(item.promessa_data);
-  if (!pd) return false;
-  const diffDias = (todayNoTime() - pd) / 86400000;
-  return diffDias <= 5;
-}
 
 function isPastDueGeneric(item) {
   if (plant === "cb") return (item.cor_qty_past_due || 0) > 0 || (item.wmf_qty_past_due || 0) > 0;
