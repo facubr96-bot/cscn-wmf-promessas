@@ -3,12 +3,12 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "84467614",
+      "part_number": "84471274",
       "data_promessa": "05/10/2026",
-      "qty_prometida": 2,
+      "qty_prometida": 40,
       "entrega_confirmada": true,
-      "data_coleta": "14/09/2026",
-      "nfe_enviada": "288461",
+      "data_coleta": "17/08/2026",
+      "nfe_enviada": "286312; 287530",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "",
@@ -18,5 +18,5 @@
     }
   ],
   "editor_code": "P138P94G",
-  "recibido_en_worker": "2026-10-05T18:18:59.555Z"
+  "recibido_en_worker": "2026-10-05T18:19:06.907Z"
 }
