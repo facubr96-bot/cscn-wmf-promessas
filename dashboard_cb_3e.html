@@ -1563,6 +1563,11 @@ function renderCell(item, key) {
       const bal = (item.cor_qty_past_due || 0) + (item.cor_qty_firm_current_month || 0) + (item.cor_qty_firm_next_month || 0) - (item.qty_transito || 0) - (item.stock_b1cb || 0);
       return `<td style="color:${bal > 0 ? 'var(--red)' : 'var(--green)'}">${bal}</td>`;
     }
+    case "ultima_nfe_cb": {
+      // So na tela: tira o sufixo de ano (WMF-001730/2025 -> WMF-001730). O valor do JSON nao muda.
+      const clean = String(v || "").replace(/\/\d{4}$/, "");
+      return `<td>${clean}</td>`;
+    }
     case "ultima_nfe_3e": {
       const clean = String(v || "").split("-")[0].replace(/^0+(?=\d)/, "");
       return `<td>${clean}</td>`;
