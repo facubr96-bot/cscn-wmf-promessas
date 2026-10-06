@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-10-06T17:26:24.884Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "BJG74",
+      "part_number": "47487639",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 84,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPH44",
+      "part_number": "51571367",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 60,
+      "entrega_confirmada": true,
+      "data_coleta": "21/08/2026",
+      "nfe_enviada": "237570",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPH44",
+      "part_number": "51572706",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 56,
+      "entrega_confirmada": true,
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "237933",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJG74",
+      "part_number": "84591673",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 72,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJG74",
+      "part_number": "84591689",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 245,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
