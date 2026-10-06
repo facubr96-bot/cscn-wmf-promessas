@@ -903,8 +903,6 @@ function getShipKpiDefs() {
   if (plant === "cb") {
     bottom.unshift({ key: "ship_win_transito", group: "cov", label: activeShipBand() ? "c/ Transito (cobre a janela)" : "c/ Transito (cobertura)", tone: "green", test: i => bloqueBucket(i) === "c/ Transito" });
   }
-  // Total do conjunto filtrado = soma dos cards de cobertura (card informativo, nao filtra).
-  bottom.unshift({ key: "ship_cov_total", group: "cov", noFilter: true, label: "Total filtrado (soma da cobertura)", tone: "gray", test: () => true });
   if (plant === "cb") {
     bottom.push(
       { key: "ship_bal_con", label: "Com Past Due Balance (ainda em atraso)", tone: "red", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0 },
