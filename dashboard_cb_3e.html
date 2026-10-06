@@ -354,6 +354,10 @@
           <h2 id="kpiShipTitle">WMF → Proveedor / Ship Date</h2>
           <div class="kpi-grid" id="kpiShipTop" style="margin-bottom:12px;"></div>
           <div class="kpi-grid" id="kpiShipBottom"></div>
+          <div id="kpiShipFcWrap" style="display:none;margin-top:14px;">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.7;margin-bottom:6px;">Status FC</div>
+            <div class="kpi-grid" id="kpiShipFc"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -911,6 +915,7 @@ function getShipKpiDefs() {
     );
   }
 
+  const fc = [];
   const bottom = [
     { key: "ship_stock", group: "cov", label: "c/ Stock", tone: "green", test: i => bloqueBucket(i) === "c/ Stock" },
     { key: "ship_promessa", group: "cov", label: "c/ Promessa", tone: "amber", test: i => bloqueBucket(i) === "c/ Promessa" },
@@ -927,13 +932,13 @@ function getShipKpiDefs() {
       { key: "ship_bal_sem", label: "Sem Past Due Balance (ja coberto)", tone: "green", test: i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) <= 0 },
     );
   } else {
-    bottom.push(
-      { key: "ship_nfe_pendente", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
-      { key: "ship_nfe_em_dia", label: "Sem NFe Nova (ja recebido)", tone: "red", test: i => nfeMatchStatus(i) === "match" },
-      { key: "ship_pn_novo", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
+    fc.push(
+      { key: "ship_nfe_pendente", group: "fc", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
+      { key: "ship_nfe_em_dia", group: "fc", label: "Sem NFe Nova (ja recebido)", tone: "red", test: i => nfeMatchStatus(i) === "match" },
+      { key: "ship_pn_novo", group: "fc", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
     );
   }
-  return { top, bottom };
+  return { top, bottom, fc };
 }
 
 function fmtReleaseYYYYMMDD(raw) {
@@ -956,9 +961,11 @@ function renderKpis() {
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   renderKpiGrid("kpiEscalation", escalationDefs);
-  const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
+  const { top: shipTop, bottom: shipBottom, fc: shipFc } = getShipKpiDefs();
   renderKpiGrid("kpiShipTop", shipTop);
   renderKpiGrid("kpiShipBottom", shipBottom);
+  document.getElementById("kpiShipFcWrap").style.display = shipFc.length ? "" : "none";
+  renderKpiGrid("kpiShipFc", shipFc);
   document.getElementById("kpiShipTitle").textContent = plant === "cb" ? "COR → WMF / Ship Date" : "WMF → Proveedor / Ship Date";
   let dashBase = motivosScopeItems(motivosBaseItems());
   for (const { test } of activeFilters.values()) dashBase = dashBase.filter(test);
@@ -1191,8 +1198,8 @@ function loadFromUrl() {
   const kpiParam = params.get("kpi");
   if (kpiParam) {
     const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
-    const { top: shipTop, bottom: shipBottom } = getShipKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...shipTop, ...shipBottom];
+    const { top: shipTop, bottom: shipBottom, fc: shipFc } = getShipKpiDefs();
+    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...shipTop, ...shipBottom, ...shipFc];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
