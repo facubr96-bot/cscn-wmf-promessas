@@ -1,5 +1,5 @@
 {
-  "generated_at": "06/10/2026 17:01",
+  "generated_at": "06/10/2026 17:21",
   "today": "06/10/2026",
   "total_pn": 1937,
   "erp_release_cb": "20260930",
@@ -67748,7 +67748,7 @@
       "promessa_qty": 0.0,
       "qty_confirmada": 0.0,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Negociação comercial",
       "escalation_level": "",
       "data_real_completed": "",
       "cum_rec_cb": 0.0,
