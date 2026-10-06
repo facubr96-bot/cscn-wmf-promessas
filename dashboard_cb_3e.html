@@ -194,6 +194,19 @@
   tbody tr:hover { background: #fafafa; }
   tbody tr.row-dirty { background: #fff9e6; }
 
+  /* Colunas fixas a esquerda na tabela principal: checkbox + PN seguem visiveis ao rolar para o lado. */
+  #mainTable th:nth-child(1), #mainTable td:nth-child(1) {
+    position: sticky; left: 0; width: 34px; min-width: 34px; max-width: 34px; box-sizing: border-box;
+  }
+  #mainTable th:nth-child(2), #mainTable td:nth-child(2) {
+    position: sticky; left: 34px; box-shadow: 2px 0 0 var(--gray-300);
+  }
+  #mainTable td:nth-child(1), #mainTable td:nth-child(2) { background: var(--white); z-index: 2; }
+  #mainTable tbody tr:hover td:nth-child(1), #mainTable tbody tr:hover td:nth-child(2) { background: #fafafa; }
+  #mainTable tbody tr.row-dirty td:nth-child(1), #mainTable tbody tr.row-dirty td:nth-child(2) { background: #fff9e6; }
+  #mainTable thead th:nth-child(1), #mainTable thead th:nth-child(2) { z-index: 5; }
+  #mainTable thead th { z-index: 4; }
+
   .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
   .badge-red { background: #fde8e8; color: var(--red); }
   .badge-green { background: #e6f4ea; color: var(--green); }
@@ -357,6 +370,10 @@
       <div id="statusP44Dropdown" style="position:relative; display:none;">
         <button type="button" class="btn" id="statusP44Btn">Status P44</button>
         <div id="statusP44Panel" style="display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:50; background:#fff; border:1px solid var(--gray-300); border-radius:var(--radius); padding:8px; min-width:220px; max-height:280px; overflow:auto; box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
+      </div>
+      <div id="colsDropdown" style="position:relative;">
+        <button type="button" class="btn" id="colsBtn">Colunas</button>
+        <div id="colsPanel" style="display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:60; background:#fff; border:1px solid var(--gray-300); border-radius:var(--radius); padding:8px; min-width:240px; max-height:340px; overflow:auto; box-shadow:0 4px 12px rgba(0,0,0,.15);"></div>
       </div>
       <div id="activeFilterChip"></div>
       <span class="count" id="rowCount"></span>
@@ -1183,7 +1200,7 @@ function loadFromUrl() {
 }
 
 // ---------- Tabla ----------
-function getColumns() {
+function getColumns(forceOtm) {
   const common = [
     { key: "pn", label: "PN" },
     { key: "impacto", label: "Impacto" },
@@ -1211,7 +1228,7 @@ function getColumns() {
     { key: "promessa_data", label: "Promessa Data" },
     { key: "promessa_qty", label: "Promessa Qty" },
     { key: "early_pickup_date", label: "Early Pickup" },
-    ...(otmExpanded ? [
+    ...((otmExpanded || forceOtm) ? [
       { key: "order_release_info", label: "Order Release" },
       { key: "shipment_code", label: "Shipment" },
       { key: "destino_shipment", label: "Destino Shipment" },
@@ -1241,6 +1258,89 @@ function getColumns() {
   ];
   return common.concat(plant === "cb" ? plantCb : plant3e);
 }
+
+// ---------- Colunas visiveis (seletor "Colunas") ----------
+// O usuario escolhe quais colunas ver (por planta); a escolha fica salva neste navegador.
+// A coluna PN e sempre visivel e fica fixa a esquerda. A exportacao NAO usa esta selecao:
+// continua exportando todas as colunas (para nao quebrar o ciclo exportar/importar).
+const HIDDEN_COLS_KEY = "wmfHiddenCols_v1";
+const OTM_COL_KEYS = ["order_release_info", "shipment_code", "destino_shipment", "status_p44", "fecha_completed_p44", "data_real_completed"];
+let hiddenColsStore = (() => { try { return JSON.parse(localStorage.getItem(HIDDEN_COLS_KEY) || "{}") || {}; } catch (e) { return {}; } })();
+function hiddenSet() { return new Set(hiddenColsStore[plant] || []); }
+function saveHiddenSet(set) {
+  hiddenColsStore[plant] = [...set];
+  try { localStorage.setItem(HIDDEN_COLS_KEY, JSON.stringify(hiddenColsStore)); } catch (e) { /* sem localStorage: vale so nesta sessao */ }
+}
+function pickerColumns() {
+  return [...getColumns(true), { key: "previsao_saida_wmfbr", label: "Previsao Saida WMFBR" }];
+}
+function visibleColumns() {
+  const h = hiddenSet();
+  return getColumns().filter(c => c.key === "pn" || !h.has(c.key));
+}
+function showPrevisaoCol() { return !hiddenSet().has("previsao_saida_wmfbr"); }
+function isColChecked(key) {
+  if (key === "pn") return true;
+  if (OTM_COL_KEYS.includes(key) && !otmExpanded) return false;
+  return !hiddenSet().has(key);
+}
+function renderColumnsPanel() {
+  const panel = document.getElementById("colsPanel");
+  const cols = pickerColumns().filter(c => c.key !== "pn");
+  panel.innerHTML = `
+    <div style="display:flex; gap:6px; margin-bottom:6px;">
+      <button type="button" class="btn" id="colsAll" style="padding:4px 8px; font-size:12px;">Mostrar todas</button>
+      <button type="button" class="btn" id="colsNone" style="padding:4px 8px; font-size:12px;">Ocultar todas</button>
+    </div>
+    <label style="display:flex; align-items:center; gap:6px; padding:3px 2px; font-size:13px; color:var(--gray-500);">
+      <input type="checkbox" checked disabled> PN (sempre visivel)
+    </label>` + cols.map(c => `
+    <label style="display:flex; align-items:center; gap:6px; padding:3px 2px; font-size:13px; cursor:pointer; white-space:nowrap;">
+      <input type="checkbox" class="colsOpt" value="${c.key}" ${isColChecked(c.key) ? "checked" : ""}> ${c.label}
+    </label>`).join("");
+  panel.querySelectorAll(".colsOpt").forEach(cb => {
+    cb.onchange = () => {
+      const h = hiddenSet();
+      const key = cb.value;
+      if (cb.checked) {
+        h.delete(key);
+        // Marcar uma coluna OTM com o grupo fechado: abre o grupo, mas mostra so a marcada.
+        if (OTM_COL_KEYS.includes(key) && !otmExpanded) {
+          otmExpanded = true;
+          OTM_COL_KEYS.forEach(k => { if (k !== key) h.add(k); });
+        }
+      } else {
+        h.add(key);
+      }
+      saveHiddenSet(h);
+      renderColumnsPanel();
+      renderTable();
+    };
+  });
+  document.getElementById("colsAll").onclick = () => {
+    saveHiddenSet(new Set());
+    otmExpanded = true;
+    renderColumnsPanel(); renderTable();
+  };
+  document.getElementById("colsNone").onclick = () => {
+    saveHiddenSet(new Set(pickerColumns().filter(c => c.key !== "pn").map(c => c.key)));
+    renderColumnsPanel(); renderTable();
+  };
+  const hiddenCount = cols.filter(c => !isColChecked(c.key)).length;
+  document.getElementById("colsBtn").textContent = hiddenCount ? `Colunas (${cols.length - hiddenCount}/${cols.length})` : "Colunas";
+}
+(function setupColumnsDropdown() {
+  const btn = document.getElementById("colsBtn");
+  const panel = document.getElementById("colsPanel");
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const open = panel.style.display === "none";
+    if (open) renderColumnsPanel();
+    panel.style.display = open ? "block" : "none";
+  };
+  panel.addEventListener("click", e => e.stopPropagation());
+  document.addEventListener("click", () => { panel.style.display = "none"; });
+})();
 
 const DATE_COLUMNS = new Set([
   "run_out_date", "promessa_data", "early_pickup_date",
@@ -1283,14 +1383,16 @@ function updateSelectedCount() {
   document.getElementById("selectedCount").textContent = selectedPns.size ? `${selectedPns.size} selecionado(s)` : "";
 }
 function renderTable() {
-  const cols = getColumns();
+  const cols = visibleColumns();
+  const showPrev = showPrevisaoCol();
+  renderColumnsPanel();
   const head = document.getElementById("tableHead");
   head.innerHTML = '<th><input type="checkbox" id="selectAllPns" title="Selecionar todos"></th>' + cols.map(c => {
     if (c.key === "early_pickup_date") {
       return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
     return `<th data-col="${c.key}">${c.label}</th>`;
-  }).join("") + "<th>Previsao Saida WMFBR</th>";
+  }).join("") + (showPrev ? "<th>Previsao Saida WMFBR</th>" : "");
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -1316,7 +1418,7 @@ function renderTable() {
     if (dirty[item.pn]) tr.classList.add("row-dirty");
     let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
     cols.forEach(c => { html += renderCell(item, c.key); });
-    html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
+    if (showPrev) html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     body.appendChild(tr);
   });
@@ -1442,6 +1544,12 @@ function renderCell(item, key) {
 window.toggleOtmColumns = function(event) {
   event.stopPropagation();
   otmExpanded = !otmExpanded;
+  if (otmExpanded) {
+    // Ao expandir o grupo, mostra todas as colunas OTM (limpa as ocultas individualmente).
+    const h = hiddenSet();
+    OTM_COL_KEYS.forEach(k => h.delete(k));
+    saveHiddenSet(h);
+  }
   renderTable();
 };
 
