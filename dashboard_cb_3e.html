@@ -393,6 +393,7 @@
         <thead><tr id="tableHead"></tr></thead>
         <tbody id="tableBody"></tbody>
       </table>
+      <div id="moreRowsBar" style="display:none; position:sticky; left:0; padding:10px 12px; text-align:left; border-top:1px solid var(--gray-300); background:var(--white);"></div>
       <div class="empty-state" id="emptyState" style="display:none;">Ningun PN coincide con este filtro.</div>
     </div>
   </div>
@@ -1274,11 +1275,20 @@ function saveHiddenSet(set) {
 function pickerColumns() {
   return [...getColumns(true), { key: "previsao_saida_wmfbr", label: "Previsao Saida WMFBR" }];
 }
-function visibleColumns() {
-  const h = hiddenSet();
-  return getColumns().filter(c => c.key === "pn" || !h.has(c.key));
+// Ocultar/mostrar colunas e feito por CSS (display:none por data-c), SEM redesenhar as ~2000
+// linhas: por isso e instantaneo. A tabela sempre renderiza todas as colunas do grupo aberto.
+function applyHiddenColsCss() {
+  let st = document.getElementById("hiddenColsStyle");
+  if (!st) { st = document.createElement("style"); st.id = "hiddenColsStyle"; document.head.appendChild(st); }
+  const keys = [...hiddenSet()].filter(k => k !== "pn");
+  st.textContent = keys.map(k => `#mainTable [data-c="${k}"]{display:none}`).join("\n");
+  syncTopScroll();
 }
-function showPrevisaoCol() { return !hiddenSet().has("previsao_saida_wmfbr"); }
+function updateColsBtnLabel() {
+  const cols = pickerColumns().filter(c => c.key !== "pn");
+  const hidden = cols.filter(c => !isColChecked(c.key)).length;
+  document.getElementById("colsBtn").textContent = hidden ? `Colunas (${cols.length - hidden}/${cols.length})` : "Colunas";
+}
 function isColChecked(key) {
   if (key === "pn") return true;
   if (OTM_COL_KEYS.includes(key) && !otmExpanded) return false;
@@ -1313,21 +1323,25 @@ function renderColumnsPanel() {
         h.add(key);
       }
       saveHiddenSet(h);
-      renderColumnsPanel();
-      renderTable();
+      // So redesenha a tabela quando o grupo OTM muda (as colunas OTM sao renderizadas sob demanda);
+      // nos demais casos basta o CSS (instantaneo).
+      if (OTM_COL_KEYS.includes(key) && cb.checked) { renderTable(); renderColumnsPanel(); }
+      else { applyHiddenColsCss(); updateColsBtnLabel(); }
     };
   });
   document.getElementById("colsAll").onclick = () => {
+    const wasOtm = otmExpanded;
     saveHiddenSet(new Set());
     otmExpanded = true;
-    renderColumnsPanel(); renderTable();
+    if (!wasOtm) renderTable(); else applyHiddenColsCss();
+    renderColumnsPanel();
   };
   document.getElementById("colsNone").onclick = () => {
     saveHiddenSet(new Set(pickerColumns().filter(c => c.key !== "pn").map(c => c.key)));
-    renderColumnsPanel(); renderTable();
+    applyHiddenColsCss();
+    renderColumnsPanel();
   };
-  const hiddenCount = cols.filter(c => !isColChecked(c.key)).length;
-  document.getElementById("colsBtn").textContent = hiddenCount ? `Colunas (${cols.length - hiddenCount}/${cols.length})` : "Colunas";
+  updateColsBtnLabel();
 }
 (function setupColumnsDropdown() {
   const btn = document.getElementById("colsBtn");
@@ -1383,16 +1397,16 @@ function updateSelectedCount() {
   document.getElementById("selectedCount").textContent = selectedPns.size ? `${selectedPns.size} selecionado(s)` : "";
 }
 function renderTable() {
-  const cols = visibleColumns();
-  const showPrev = showPrevisaoCol();
-  renderColumnsPanel();
+  const cols = getColumns(); // todas as colunas do grupo aberto; as ocultas saem por CSS (applyHiddenColsCss)
   const head = document.getElementById("tableHead");
   head.innerHTML = '<th><input type="checkbox" id="selectAllPns" title="Selecionar todos"></th>' + cols.map(c => {
     if (c.key === "early_pickup_date") {
-      return `<th data-col="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
+      return `<th data-col="${c.key}" data-c="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
-    return `<th data-col="${c.key}">${c.label}</th>`;
-  }).join("") + (showPrev ? "<th>Previsao Saida WMFBR</th>" : "");
+    return `<th data-col="${c.key}" data-c="${c.key}">${c.label}</th>`;
+  }).join("") + '<th data-c="previsao_saida_wmfbr">Previsao Saida WMFBR</th>';
+  applyHiddenColsCss();
+  updateColsBtnLabel();
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -1406,24 +1420,27 @@ function renderTable() {
   const body = document.getElementById("tableBody");
   body.innerHTML = "";
   document.getElementById("emptyState").style.display = items.length ? "none" : "block";
-  document.getElementById("rowCount").textContent = `${items.length} de ${allItems.length} PN`;
 
   const chipEl = document.getElementById("activeFilterChip");
   chipEl.innerHTML = [...activeFilters.entries()]
     .map(([key, { label }]) => `<span class="filter-chip">${label} <button onclick="removeKpiFilter('${key}')">✕</button></span>`)
     .join(" ");
 
-  items.forEach(item => {
-    const tr = document.createElement("tr");
-    if (dirty[item.pn]) tr.classList.add("row-dirty");
-    let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
-    cols.forEach(c => { html += renderCell(item, c.key); });
-    if (showPrev) html += `<td><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
-    tr.innerHTML = html;
-    body.appendChild(tr);
-  });
+  // Renderizacao PROGRESSIVA: so as primeiras ROW_CHUNK linhas entram no DOM (o gargalo e o layout
+  // da tabela, que cresce com linhas x colunas); o resto entra ao rolar ate o fim ou pelo botao.
+  // A profundidade se mantem ao editar/guardar e volta ao inicio quando muda o filtro/busca/ordem.
+  const sig = [plant, [...activeFilters.keys()].join(","), document.getElementById("searchPn").value,
+    document.getElementById("searchSupplier").value, document.getElementById("filterPlanejador").value,
+    [...statusP44Selected].join(","), sortCol, sortDir].join("|");
+  if (sig !== lastViewSig) {
+    renderLimit = ROW_CHUNK; lastViewSig = sig;
+    document.getElementById("tableWrap").scrollTop = 0; // vista nova: volta ao topo (evita carregar tandas sem querer)
+  }
+  tableState = { items, cols, rendered: 0 };
+  appendRows(0, Math.min(items.length, Math.max(renderLimit, ROW_CHUNK)));
+  updateRowCountLabel();
+  updateMoreRowsBar();
   syncTopScroll();
-  disableEditingIfViewer(body);
 
   document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
   document.getElementById("selectAllPns").onchange = (e) => {
@@ -1431,16 +1448,74 @@ function renderTable() {
     else items.forEach(i => selectedPns.delete(i.pn));
     renderTable();
   };
-  body.querySelectorAll(".row-select").forEach(cb => {
-    cb.onchange = () => {
-      if (cb.checked) selectedPns.add(cb.dataset.pn);
-      else selectedPns.delete(cb.dataset.pn);
-      updateSelectedCount();
-      document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
-    };
-  });
   updateSelectedCount();
 }
+
+// ---------- Renderizacao progressiva das linhas ----------
+const ROW_CHUNK = 250;
+let renderLimit = ROW_CHUNK;
+let lastViewSig = "";
+let tableState = { items: [], cols: [], rendered: 0 };
+function appendRows(from, to) {
+  const { items, cols } = tableState;
+  const body = document.getElementById("tableBody");
+  const frag = document.createDocumentFragment();
+  for (let i = from; i < to; i++) {
+    const item = items[i];
+    const tr = document.createElement("tr");
+    if (dirty[item.pn]) tr.classList.add("row-dirty");
+    let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
+    cols.forEach(c => { html += renderCell(item, c.key).replace("<td", `<td data-c="${c.key}"`); });
+    html += `<td data-c="previsao_saida_wmfbr"><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
+    tr.innerHTML = html;
+    frag.appendChild(tr);
+  }
+  disableEditingIfViewer(frag);
+  body.appendChild(frag);
+  tableState.rendered = to;
+}
+function updateRowCountLabel() {
+  const { items, rendered } = tableState;
+  document.getElementById("rowCount").textContent =
+    `${items.length} de ${allItems.length} PN` + (rendered < items.length ? ` · mostrando ${rendered}` : "");
+}
+function updateMoreRowsBar() {
+  const bar = document.getElementById("moreRowsBar");
+  const { items, rendered } = tableState;
+  const left = items.length - rendered;
+  if (left <= 0) { bar.style.display = "none"; return; }
+  bar.style.display = "";
+  bar.innerHTML = `<button type="button" class="btn" id="btnMoreRows">Mostrar mais ${Math.min(ROW_CHUNK, left)}</button>
+    <button type="button" class="btn" id="btnAllRows">Mostrar todos (${left} restantes)</button>`;
+  document.getElementById("btnMoreRows").onclick = () => loadMoreRows(false);
+  document.getElementById("btnAllRows").onclick = () => loadMoreRows(true);
+}
+function loadMoreRows(all) {
+  const { items, rendered } = tableState;
+  if (rendered >= items.length) return;
+  const to = all ? items.length : Math.min(items.length, rendered + ROW_CHUNK);
+  renderLimit = to;
+  appendRows(rendered, to);
+  updateRowCountLabel();
+  updateMoreRowsBar();
+  syncTopScroll();
+}
+// Seleciona/desmarca PN por delegacao (vale tambem para as linhas que entram depois ao rolar).
+document.getElementById("tableBody").addEventListener("change", (e) => {
+  const cb = e.target;
+  if (!cb || !cb.classList || !cb.classList.contains("row-select")) return;
+  if (cb.checked) selectedPns.add(cb.dataset.pn); else selectedPns.delete(cb.dataset.pn);
+  updateSelectedCount();
+  const items = tableState.items;
+  document.getElementById("selectAllPns").checked = items.length > 0 && items.every(i => selectedPns.has(i.pn));
+});
+// Ao rolar perto do fim da tabela, carrega a proxima tanda automaticamente.
+document.getElementById("tableWrap").addEventListener("scroll", () => {
+  const w = document.getElementById("tableWrap");
+  if (tableState.rendered < tableState.items.length && w.scrollTop + w.clientHeight >= w.scrollHeight - 500) {
+    loadMoreRows(false);
+  }
+});
 
 function disableEditingIfViewer(container) {
   if (currentUser && currentUser.role === "editor") return;
@@ -1579,14 +1654,8 @@ window.clearPromise = async function(pn) {
   document.getElementById("statusText").textContent = `Promessa borrada: PN ${pn}`;
 };
 
-window.saveRow = async function(pn) {
-  if (!currentUser || currentUser.role !== "editor") {
-    document.getElementById("statusText").textContent = "No tenes permiso de edicion (solo lectura).";
-    return;
-  }
-  const item = allItems.find(i => i.pn === pn);
-  if (!item) return;
-  const itemPayload = {
+function buildItemPayload(item) {
+  return {
     part_number: item.pn,
     data_promessa: item.promessa_data || "",
     qty_prometida: item.promessa_qty !== "" && item.promessa_qty !== undefined ? Number(item.promessa_qty) : null,
@@ -1600,12 +1669,70 @@ window.saveRow = async function(pn) {
     data_real_completed: item.data_real_completed || "",
     comentario: "",
   };
-  const semanaAtual = (() => {
-    const d = new Date();
-    const jan1 = new Date(d.getFullYear(), 0, 1);
-    const semana = Math.ceil((((d - jan1) / 86400000) + jan1.getDay() + 1) / 7);
-    return `${d.getFullYear()}-W${String(semana).padStart(2, "0")}`;
-  })();
+}
+function currentWeekLabel() {
+  const d = new Date();
+  const jan1 = new Date(d.getFullYear(), 0, 1);
+  const semana = Math.ceil((((d - jan1) / 86400000) + jan1.getDay() + 1) / 7);
+  return `${d.getFullYear()}-W${String(semana).padStart(2, "0")}`;
+}
+
+// Guardado em LOTE: um unico pedido ao Worker (rota dashboard_edit_batch) grava ate BATCH_SIZE PN
+// de uma vez (1 MERGE no Databricks + 1 commit de log no GitHub), em vez de 1 pedido por PN.
+// Se o Worker ainda for a versao antiga (nao conhece a rota), responde 400 sem gravar nada e o
+// chamador cai no guardado PN a PN de sempre.
+const BATCH_SIZE = 100;
+async function saveBatch(pns, onProgress) {
+  const result = { ok: [], failed: [], unsupported: false };
+  const semana = currentWeekLabel();
+  const rows = [];
+  for (const pn of pns) {
+    const item = allItems.find(i => i.pn === pn);
+    if (!item || !item.supplier_code) { result.failed.push(pn); continue; }
+    rows.push({ pn, item, payload: { supplier_code: item.supplier_code, ...buildItemPayload(item) } });
+  }
+  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
+    const chunk = rows.slice(i, i + BATCH_SIZE);
+    if (onProgress) onProgress(Math.min(i + chunk.length, rows.length), rows.length);
+    try {
+      const resp = await fetch(WORKER_URL + "?action=dashboard_edit_batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        // Sem supplier_code no nivel superior: o Worker antigo rejeita (400) em vez de gravar sem controle.
+        body: JSON.stringify({ semana, itens: chunk.map(r => r.payload), editor_code: currentCode }),
+      });
+      if (resp.status === 400 && i === 0 && result.ok.length === 0) { result.unsupported = true; return result; }
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      chunk.forEach(r => { delete dirty[r.pn]; result.ok.push(r.pn); });
+    } catch (e) {
+      chunk.forEach(r => result.failed.push(r.pn));
+    }
+  }
+  // localStorage e o re-render uma unica vez ao final (antes: uma vez por PN).
+  if (result.ok.length) {
+    const edits = loadLocalEdits();
+    result.ok.forEach(pn => {
+      const item = allItems.find(i => i.pn === pn);
+      if (!item) return;
+      const snap = {};
+      EDITABLE_LOCAL_FIELDS.forEach(f => { snap[f] = item[f] ?? ""; });
+      edits[pn] = snap;
+    });
+    saveLocalEdits(edits);
+  }
+  return result;
+}
+
+window.saveRow = async function(pn, opts) {
+  const silent = !!(opts && opts.silent);
+  if (!currentUser || currentUser.role !== "editor") {
+    document.getElementById("statusText").textContent = "No tenes permiso de edicion (solo lectura).";
+    return;
+  }
+  const item = allItems.find(i => i.pn === pn);
+  if (!item) return;
+  const itemPayload = buildItemPayload(item);
+  const semanaAtual = currentWeekLabel();
   try {
     const resp = await fetch(WORKER_URL + "?action=dashboard_edit", {
       method: "POST",
@@ -1615,8 +1742,10 @@ window.saveRow = async function(pn) {
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     delete dirty[pn];
     persistLocalEdit(pn, item);
-    document.getElementById("statusText").textContent = `Guardado: PN ${pn}`;
-    renderTable();
+    if (!silent) {
+      document.getElementById("statusText").textContent = `Guardado: PN ${pn}`;
+      renderTable();
+    }
   } catch (e) {
     document.getElementById("statusText").textContent = `Error guardando PN ${pn}: ${e.message}`;
   }
@@ -1631,21 +1760,37 @@ document.getElementById("btnSave").onclick = async () => {
     document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar (ou ningun PN seleccionado).";
     return;
   }
+  if (!currentUser || currentUser.role !== "editor") {
+    document.getElementById("statusText").textContent = "No tenes permiso de edicion (solo lectura).";
+    return;
+  }
   const btn = document.getElementById("btnSave");
   btn.disabled = true;
   btn.textContent = `Guardando 0/${pns.length}...`;
   let ok = 0, fail = 0;
   const failedPns = [];
-  for (let i = 0; i < pns.length; i++) {
-    const pn = pns[i];
-    try {
-      await window.saveRow(pn);
-      if (!dirty[pn]) ok++; else { fail++; failedPns.push(pn); }
-    } catch (e) {
-      fail++; failedPns.push(pn);
+  let doneBatch = false;
+  if (pns.length > 1) {
+    const r = await saveBatch(pns, (n, total) => { btn.textContent = `Guardando ${n}/${total}...`; });
+    if (!r.unsupported) {
+      ok = r.ok.length; fail = r.failed.length; failedPns.push(...r.failed);
+      doneBatch = true;
     }
-    btn.textContent = `Guardando ${i + 1}/${pns.length}...`;
   }
+  if (!doneBatch) {
+    // Worker antigo (sem lote) ou um unico PN: guardado PN a PN, mas sem redesenhar a tabela a cada PN.
+    for (let i = 0; i < pns.length; i++) {
+      const pn = pns[i];
+      try {
+        await window.saveRow(pn, { silent: true });
+        if (!dirty[pn]) ok++; else { fail++; failedPns.push(pn); }
+      } catch (e) {
+        fail++; failedPns.push(pn);
+      }
+      btn.textContent = `Guardando ${i + 1}/${pns.length}...`;
+    }
+  }
+  renderTable();
   btn.disabled = false;
   btn.textContent = "Guardar cambios";
   document.getElementById("statusText").textContent = fail === 0
@@ -1663,15 +1808,30 @@ document.getElementById("btnClearSelectedPromise").onclick = async () => {
   const btn = document.getElementById("btnClearSelectedPromise");
   btn.disabled = true;
   let ok = 0, fail = 0;
-  for (let i = 0; i < pns.length; i++) {
-    btn.textContent = `Borrando ${i + 1}/${pns.length}...`;
-    try {
-      await clearPromiseNoConfirm(pns[i]);
-      ok++;
-    } catch (e) {
-      fail++;
+  // Vacia os campos de todos os PN em memoria e grava em lote (ou PN a PN se o Worker for antigo).
+  pns.forEach(pn => {
+    const item = allItems.find(i => i.pn === pn);
+    if (!item) return;
+    item.promessa_data = ""; item.promessa_qty = ""; item.entrega_confirmada = false;
+    item.data_coleta = ""; item.nfe_enviada = ""; item.qty_nfe_confirmada = "";
+  });
+  let doneBatch = false;
+  if (pns.length > 1) {
+    const r = await saveBatch(pns, (n, total) => { btn.textContent = `Borrando ${n}/${total}...`; });
+    if (!r.unsupported) { ok = r.ok.length; fail = r.failed.length; doneBatch = true; }
+  }
+  if (!doneBatch) {
+    for (let i = 0; i < pns.length; i++) {
+      btn.textContent = `Borrando ${i + 1}/${pns.length}...`;
+      try {
+        await window.saveRow(pns[i], { silent: true });
+        if (!dirty[pns[i]]) ok++; else fail++;
+      } catch (e) {
+        fail++;
+      }
     }
   }
+  renderTable();
   btn.disabled = false;
   btn.textContent = "Borrar Promessa";
   document.getElementById("statusText").textContent = fail === 0
