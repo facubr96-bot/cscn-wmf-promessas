@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-10-06T17:31:47.917Z",
+  "editor": "Victor Medeiros",
+  "semana": "2026-W41",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "BNT57",
+      "part_number": "47946052",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNT57",
+      "part_number": "48093617",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNT57",
+      "part_number": "51679799",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 8,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNT57",
+      "part_number": "84209594",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 16,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BKQ55",
+      "part_number": "84563493",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
