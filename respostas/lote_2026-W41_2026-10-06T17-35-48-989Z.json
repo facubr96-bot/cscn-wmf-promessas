@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-10-06T17:35:48.989Z",
+  "editor": "Victor Medeiros",
+  "semana": "2026-W41",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BNK46",
+      "part_number": "83954379",
+      "data_promessa": "02/10/2026",
+      "qty_prometida": 8,
+      "entrega_confirmada": true,
+      "data_coleta": "04/09/2026",
+      "nfe_enviada": "423818",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD99",
+      "part_number": "87399657",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
