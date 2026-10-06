@@ -2129,11 +2129,29 @@ async function applyLiveOverrides(items) {
   }
 }
 
+// "Ultima NFe Emitida" (conferencia): so vale a conferida de verdade. As NFe do "historico"
+// (outra automacao) chegam com quantidade 0 -> ignorar (limpa os campos do PN).
+function dropZeroQtyEmittedNfe(items) {
+  for (const it of items) {
+    if (!String(it.ultima_nfe_emitida_num || "").trim()) continue;
+    const q = it.ultima_nfe_emitida_qty;
+    if (q === null || q === undefined || String(q).trim() === "") continue;
+    const n = Number(String(q).replace(",", "."));
+    if (Number.isFinite(n) && n === 0) {
+      it.ultima_nfe_emitida_num = "";
+      it.ultima_nfe_emitida_fecha = "";
+      it.ultima_nfe_emitida_qty = "";
+      it.ultima_nfe_emitida_unidad = "";
+    }
+  }
+}
+
 async function loadData() {
   try {
     const resp = await fetch(DATA_URL + "?t=" + Date.now());
     const data = await resp.json();
     allItems = Array.isArray(data) ? data : (data.items || []);
+    dropZeroQtyEmittedNfe(allItems);
     await applyLiveOverrides(allItems);
     applyLocalEditsOverlay(allItems);
     const genAt = data.generated_at || "";
