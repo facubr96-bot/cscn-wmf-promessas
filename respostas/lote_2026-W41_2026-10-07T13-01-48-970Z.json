@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-10-07T13:01:48.970Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W41",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BJC65",
+      "part_number": "87300082",
+      "data_promessa": "09/10/2026",
+      "qty_prometida": 80,
+      "entrega_confirmada": true,
+      "data_coleta": "02/09/2026",
+      "nfe_enviada": "196284, 196641, 196895, 196903",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC65",
+      "part_number": "87654417",
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 27,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
