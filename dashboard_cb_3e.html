@@ -1140,7 +1140,9 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
   // ---- Barras (divs con ancho proporcional, sin dependencias externas) ----
   const barEl = document.getElementById("chartMotivosBar");
   const maxCount = Math.max(1, ...counts);
-  const bars = labels.map((l, i) => `
+  // Barras sempre ordenadas de maior para menor (a cor e o clique seguem o motivo original).
+  const barOrder = labels.map((_, i) => i).sort((x, y) => counts[y] - counts[x] || x - y);
+  const bars = barOrder.map(i => [labels[i], i]).map(([l, i]) => `
     <div onclick="clickMotivoChart(${i})" title="Filtrar por este motivo" style="cursor:pointer; padding:2px 4px; border-radius:4px; display:flex; align-items:center; gap:8px; margin-bottom:6px;${activeFilters.has(motivoDefs[i].key) ? ' background:var(--gray-100); outline:2px solid #b3121f;' : ''}">
       <div style="width:170px; font-size:11px; text-align:right; color:var(--gray-700); flex-shrink:0;">${l}</div>
       <div style="flex:1; background:var(--gray-100); border-radius:3px; overflow:hidden; height:18px;">
