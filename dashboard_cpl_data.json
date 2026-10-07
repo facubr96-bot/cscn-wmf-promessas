@@ -1,5 +1,5 @@
 {
-  "generated_at": "07/10/2026 09:20",
+  "generated_at": "07/10/2026 09:40",
   "today": "07/10/2026",
   "total": 400,
   "items": [
@@ -7188,19 +7188,19 @@
     {
       "id": "401",
       "pn": "87030775",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BLH98",
+      "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 1200.0,
       "criticidad": "Critico",
       "reason": "Past Due",
       "run_out_date": "06/10/2026",
-      "wmf_promise": "",
-      "created": "",
+      "wmf_promise": "06/10/2026",
+      "created": "07/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
