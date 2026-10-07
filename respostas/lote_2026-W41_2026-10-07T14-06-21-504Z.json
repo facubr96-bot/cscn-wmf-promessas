@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-10-07T14:06:21.504Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "BMX47",
+      "part_number": "84540032",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": true,
+      "data_coleta": "09/06/2026",
+      "nfe_enviada": "281683",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "NONE",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BMX47",
+      "part_number": "87031211",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 7,
+      "entrega_confirmada": true,
+      "data_coleta": "02/09/2026",
+      "nfe_enviada": "287530",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Arredondamento",
+      "escalation_level": "NONE",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BMX47",
+      "part_number": "87648216",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 39,
+      "entrega_confirmada": true,
+      "data_coleta": "28/09/2026",
+      "nfe_enviada": "289464",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "NONE",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BQH78",
+      "part_number": "90404591",
+      "data_promessa": "28/09/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": true,
+      "data_coleta": "28/09/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "data_real_completed": "01/01/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPJ57",
+      "part_number": "92146827",
+      "data_promessa": "09/10/2026",
+      "qty_prometida": 22,
+      "entrega_confirmada": true,
+      "data_coleta": "17/09/2026",
+      "nfe_enviada": "172891",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "NONE",
+      "data_real_completed": "06/10/2026",
+      "comentario": ""
+    }
+  ]
+}
