@@ -11,11 +11,11 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-07T14:55:08.338Z"
+  "recibido_en_worker": "2026-10-07T14:56:25.361Z"
 }
