@@ -1085,7 +1085,23 @@ function renderKpiGrid(elId, defs, baseItemsOverride) {
   });
 }
 
+let _chartMotivoDefs = [];
+function clickMotivoChart(i) {
+  const d = _chartMotivoDefs[i];
+  if (d) toggleKpiFilter(d.key, d.label, d.test);
+}
+function clickMotivoDonut(ev, el) {
+  const r = el.getBoundingClientRect();
+  const dx = ev.clientX - (r.left + r.width / 2), dy = ev.clientY - (r.top + r.height / 2);
+  const dist = Math.sqrt(dx * dx + dy * dy);
+  if (dist > r.width / 2 || dist < r.width / 2 - 28) return; // so o anel
+  let ang = Math.atan2(dx, -dy) * 180 / Math.PI; if (ang < 0) ang += 360;
+  const counts = JSON.parse(el.dataset.counts), total = counts.reduce((a, b) => a + b, 0);
+  let acc = 0;
+  for (let i = 0; i < counts.length; i++) { acc += counts[i]; if (ang <= (acc / total) * 360 && counts[i] > 0) return clickMotivoChart(i); }
+}
 function renderMotivosCharts(motivoDefs, baseItemsOverride) {
+  _chartMotivoDefs = motivoDefs;
   const base = baseItemsOverride || motivosBaseItems();
   const labels = motivoDefs.map(d => d.label);
   const counts = motivoDefs.map(d => base.filter(d.test).length);
@@ -1105,7 +1121,7 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
       return `${palette[i % palette.length]} ${start}deg ${end}deg`;
     }).join(", ");
     const legend = labels.map((l, i) => counts[i] > 0
-      ? `<div style="display:flex; align-items:center; gap:6px; font-size:11px; margin-bottom:3px;">
+      ? `<div onclick="clickMotivoChart(${i})" title="Filtrar por este motivo" style="cursor:pointer; display:flex;${activeFilters.has(motivoDefs[i].key) ? ' font-weight:700; text-decoration:underline;' : ''} align-items:center; gap:6px; font-size:11px; margin-bottom:3px;">
            <span style="width:10px; height:10px; border-radius:2px; background:${palette[i % palette.length]}; display:inline-block;"></span>
            ${l} (${counts[i]})
          </div>`
@@ -1113,8 +1129,8 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
     donutEl.innerHTML = `
       <div style="font-size:12px; font-weight:600; color:var(--gray-700); margin-bottom:10px;">Distribuicao de motivos (Past Due)</div>
       <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
-        <div style="width:150px; height:150px; border-radius:50%; background:conic-gradient(${stops}); position:relative; flex-shrink:0;">
-          <div style="position:absolute; inset:28px; background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px;">${total}</div>
+        <div data-counts='${JSON.stringify(counts)}' onclick="clickMotivoDonut(event,this)" title="Clique no anel para filtrar" style="width:150px; height:150px; border-radius:50%; background:conic-gradient(${stops}); position:relative; flex-shrink:0; cursor:pointer;">
+          <div style="pointer-events:none; position:absolute; inset:28px; background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px;">${total}</div>
         </div>
         <div>${legend}</div>
       </div>
@@ -1125,7 +1141,7 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
   const barEl = document.getElementById("chartMotivosBar");
   const maxCount = Math.max(1, ...counts);
   const bars = labels.map((l, i) => `
-    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+    <div onclick="clickMotivoChart(${i})" title="Filtrar por este motivo" style="cursor:pointer; padding:2px 4px; border-radius:4px; display:flex; align-items:center; gap:8px; margin-bottom:6px;${activeFilters.has(motivoDefs[i].key) ? ' background:var(--gray-100); outline:2px solid #b3121f;' : ''}">
       <div style="width:170px; font-size:11px; text-align:right; color:var(--gray-700); flex-shrink:0;">${l}</div>
       <div style="flex:1; background:var(--gray-100); border-radius:3px; overflow:hidden; height:18px;">
         <div style="width:${(counts[i] / maxCount) * 100}%; background:${palette[i % palette.length]}; height:100%; min-width:${counts[i] > 0 ? '2px' : '0'};"></div>
