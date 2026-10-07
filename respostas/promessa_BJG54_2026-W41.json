@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "15984334",
-      "data_promessa": "16/11/2026",
-      "qty_prometida": 585,
+      "part_number": "9504320",
+      "data_promessa": "03/11/2026",
+      "qty_prometida": 95,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-07T14:56:25.361Z"
+  "recibido_en_worker": "2026-10-07T14:57:43.328Z"
 }
