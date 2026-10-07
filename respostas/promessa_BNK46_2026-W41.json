@@ -3,12 +3,12 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "44995060",
+      "part_number": "87307686",
       "data_promessa": "02/10/2026",
-      "qty_prometida": 135,
-      "entrega_confirmada": true,
-      "data_coleta": "04/09/2026",
-      "nfe_enviada": "423818",
+      "qty_prometida": 26,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
       "motivo_atraso": "Atraso do fornecedor",
@@ -17,6 +17,5 @@
       "comentario": ""
     }
   ],
-  "editor_code": "GPWHI985",
-  "recibido_en_worker": "2026-10-05T18:49:48.480Z"
+  "recibido_en_worker": "2026-10-07T11:56:54.292Z"
 }
