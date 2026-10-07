@@ -1,0 +1,68 @@
+{
+  "recibido_en_worker": "2026-10-07T10:19:20.220Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 4,
+  "itens": [
+    {
+      "supplier_code": "BJH90",
+      "part_number": "47783349",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJH90",
+      "part_number": "47783350",
+      "data_promessa": "21/10/2026",
+      "qty_prometida": 50,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJH90",
+      "part_number": "91757682",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 44,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJH90",
+      "part_number": "91757687",
+      "data_promessa": "08/10/2026",
+      "qty_prometida": 29,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
