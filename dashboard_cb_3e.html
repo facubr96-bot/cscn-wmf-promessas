@@ -416,6 +416,10 @@
       <div class="kpi-grid" id="kpiDashEscalation"></div>
     </div>
     <div class="kpi-section">
+      <h2 id="kpiDashBalanceTitle">Past Due Balance / Cobertura</h2>
+      <div class="kpi-grid" id="kpiDashBalance"></div>
+    </div>
+    <div class="kpi-section">
       <h2>Motivos Past Due</h2>
       <div class="kpi-grid" id="kpiMotivos"></div>
       <div style="display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;">
@@ -578,6 +582,8 @@ const MOTIVO_OPTIONS = [
   "Negociação comercial",
   "Fornecedor novo",
   "Resourcing",
+  "Arredondamento",
+  "Erro sistêmico",
 ];
 
 let allItems = [];
@@ -969,6 +975,17 @@ function renderKpis() {
   document.getElementById("kpiShipTitle").textContent = plant === "cb" ? "COR → WMF / Ship Date" : "WMF → Proveedor / Ship Date";
   let dashBase = motivosScopeItems(motivosBaseItems());
   for (const { test } of activeFilters.values()) dashBase = dashBase.filter(test);
+  // Past Due Balance / Cobertura (mesmos cards e filtros da Tabela): cada card ignora o proprio
+  // filtro (e o do seu grupo) para os irmaos manterem a contagem, como na aba Tabela.
+  const dashScope = motivosScopeItems(motivosBaseItems());
+  renderKpiGrid("kpiDashBalance", shipBottom, (key, groupKeys) => {
+    let it = dashScope;
+    for (const [k, { test }] of activeFilters.entries()) {
+      if (k === key || (groupKeys && groupKeys.has(k))) continue;
+      it = it.filter(test);
+    }
+    return it;
+  });
   renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
   renderKpiGrid("kpiDashEscalation", escalationDefs, dashBase);
   renderMotivosCharts(motivoDefs, dashBase);
@@ -1056,7 +1073,8 @@ function renderKpiGrid(elId, defs, baseItemsOverride) {
     // Cards de um mesmo "group" (cobertura) nao se excluem entre si: a base ignora os filtros
     // do grupo inteiro, assim a soma dos buckets continua igual ao total filtrado.
     const groupKeys = def.group ? new Set(defs.filter(d => d.group === def.group).map(d => d.key)) : null;
-    const base = baseItemsOverride || activeFilterBaseItems(def.key, groupKeys);
+    const base = typeof baseItemsOverride === "function" ? baseItemsOverride(def.key, groupKeys)
+      : (baseItemsOverride || activeFilterBaseItems(def.key, groupKeys));
     const count = base.filter(def.test).length;
     const card = document.createElement("button");
     card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
@@ -1071,7 +1089,7 @@ function renderMotivosCharts(motivoDefs, baseItemsOverride) {
   const base = baseItemsOverride || motivosBaseItems();
   const labels = motivoDefs.map(d => d.label);
   const counts = motivoDefs.map(d => base.filter(d.test).length);
-  const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7"];
+  const palette = ["#b3121f", "#b5750c", "#2f7d4f", "#4a4a4a", "#767676", "#7d0c16", "#c7c7c7", "#0f6b73", "#5b3f8c", "#e08a90"];
   const total = counts.reduce((a, b) => a + b, 0);
 
   // ---- Dona (CSS conic-gradient, sin dependencias externas) ----
