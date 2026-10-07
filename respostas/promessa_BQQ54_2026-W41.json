@@ -3,19 +3,19 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "91793223",
-      "data_promessa": "08/10/2026",
-      "qty_prometida": 15,
-      "entrega_confirmada": true,
+      "part_number": "84388450",
+      "data_promessa": "15/10/2026",
+      "qty_prometida": 7,
+      "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Atraso do fornecedor",
+      "motivo_atraso": "",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-07T13:58:31.400Z"
+  "recibido_en_worker": "2026-10-07T13:59:41.480Z"
 }
