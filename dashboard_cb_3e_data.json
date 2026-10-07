@@ -1,5 +1,5 @@
 {
-  "generated_at": "07/10/2026 08:01",
+  "generated_at": "07/10/2026 08:22",
   "today": "07/10/2026",
   "total_pn": 1937,
   "erp_release_cb": "20260930",
@@ -155,7 +155,7 @@
     {
       "pn": "100015",
       "impacto": "4",
-      "run_out_date": "23/04/2027",
+      "run_out_date": "30/07/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -204,7 +204,7 @@
     {
       "pn": "10033411",
       "impacto": "4",
-      "run_out_date": "10/12/2026",
+      "run_out_date": "11/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -498,7 +498,7 @@
     {
       "pn": "10450690",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "23/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -547,7 +547,7 @@
     {
       "pn": "10516674",
       "impacto": "4",
-      "run_out_date": "21/10/2026",
+      "run_out_date": "22/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -792,7 +792,7 @@
     {
       "pn": "10519604",
       "impacto": "4",
-      "run_out_date": "07/04/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -890,7 +890,7 @@
     {
       "pn": "10520201",
       "impacto": "4",
-      "run_out_date": "30/08/2027",
+      "run_out_date": "01/09/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -939,7 +939,7 @@
     {
       "pn": "10523401",
       "impacto": "4",
-      "run_out_date": "17/01/2028",
+      "run_out_date": "11/01/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -988,7 +988,7 @@
     {
       "pn": "10571779",
       "impacto": "4",
-      "run_out_date": "12/07/2027",
+      "run_out_date": "14/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1282,7 +1282,7 @@
     {
       "pn": "10902124",
       "impacto": "4",
-      "run_out_date": "08/02/2028",
+      "run_out_date": "10/02/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1429,7 +1429,7 @@
     {
       "pn": "10902421",
       "impacto": "4",
-      "run_out_date": "07/04/2027",
+      "run_out_date": "08/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1527,7 +1527,7 @@
     {
       "pn": "11066871",
       "impacto": "4",
-      "run_out_date": "28/06/2027",
+      "run_out_date": "29/06/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1625,7 +1625,7 @@
     {
       "pn": "11106021",
       "impacto": "4",
-      "run_out_date": "08/03/2027",
+      "run_out_date": "09/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1674,7 +1674,7 @@
     {
       "pn": "11106221",
       "impacto": "4",
-      "run_out_date": "05/07/2027",
+      "run_out_date": "06/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1723,7 +1723,7 @@
     {
       "pn": "11106234",
       "impacto": "3",
-      "run_out_date": "24/11/2026",
+      "run_out_date": "25/11/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -1772,7 +1772,7 @@
     {
       "pn": "11106421",
       "impacto": "4",
-      "run_out_date": "30/04/2027",
+      "run_out_date": "05/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1821,7 +1821,7 @@
     {
       "pn": "11106621",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -1919,7 +1919,7 @@
     {
       "pn": "11107521",
       "impacto": "4",
-      "run_out_date": "28/07/2027",
+      "run_out_date": "02/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -2017,7 +2017,7 @@
     {
       "pn": "11112121",
       "impacto": "4",
-      "run_out_date": "17/05/2027",
+      "run_out_date": "25/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -2066,7 +2066,7 @@
     {
       "pn": "11112221",
       "impacto": "4",
-      "run_out_date": "22/04/2027",
+      "run_out_date": "23/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -2164,7 +2164,7 @@
     {
       "pn": "11116631",
       "impacto": "4",
-      "run_out_date": "17/02/2027",
+      "run_out_date": "16/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -2311,7 +2311,7 @@
     {
       "pn": "11119921",
       "impacto": "1",
-      "run_out_date": "07/10/2026",
+      "run_out_date": "19/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -2409,7 +2409,7 @@
     {
       "pn": "11124874",
       "impacto": "4",
-      "run_out_date": "22/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -2458,7 +2458,7 @@
     {
       "pn": "11124921",
       "impacto": "4",
-      "run_out_date": "29/03/2027",
+      "run_out_date": "31/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -2605,7 +2605,7 @@
     {
       "pn": "11125721",
       "impacto": "3",
-      "run_out_date": "30/10/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -2654,7 +2654,7 @@
     {
       "pn": "11126521",
       "impacto": "4",
-      "run_out_date": "09/03/2027",
+      "run_out_date": "11/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -2948,7 +2948,7 @@
     {
       "pn": "11254134",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -2997,7 +2997,7 @@
     {
       "pn": "11343821",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "18/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -3095,7 +3095,7 @@
     {
       "pn": "11408324",
       "impacto": "4",
-      "run_out_date": "13/01/2028",
+      "run_out_date": "10/01/2028",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -3193,7 +3193,7 @@
     {
       "pn": "11701711",
       "impacto": "4",
-      "run_out_date": "24/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -3242,7 +3242,7 @@
     {
       "pn": "1186238",
       "impacto": "4",
-      "run_out_date": "29/06/2027",
+      "run_out_date": "02/07/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -3487,7 +3487,7 @@
     {
       "pn": "120056",
       "impacto": "4",
-      "run_out_date": "20/09/2027",
+      "run_out_date": "20/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -4026,7 +4026,7 @@
     {
       "pn": "120101",
       "impacto": "4",
-      "run_out_date": "14/06/2027",
+      "run_out_date": "15/06/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -4320,7 +4320,7 @@
     {
       "pn": "12163511",
       "impacto": "4",
-      "run_out_date": "02/06/2027",
+      "run_out_date": "15/06/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -4614,7 +4614,7 @@
     {
       "pn": "12574511",
       "impacto": "3",
-      "run_out_date": "24/11/2026",
+      "run_out_date": "25/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -4712,7 +4712,7 @@
     {
       "pn": "12577221",
       "impacto": "4",
-      "run_out_date": "23/06/2027",
+      "run_out_date": "25/06/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -4761,7 +4761,7 @@
     {
       "pn": "12578015",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "09/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -4810,7 +4810,7 @@
     {
       "pn": "12601274",
       "impacto": "4",
-      "run_out_date": "07/04/2028",
+      "run_out_date": "10/04/2028",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -4908,7 +4908,7 @@
     {
       "pn": "12626201",
       "impacto": "4",
-      "run_out_date": "18/05/2027",
+      "run_out_date": "20/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -5055,7 +5055,7 @@
     {
       "pn": "12642405",
       "impacto": "4",
-      "run_out_date": "12/07/2027",
+      "run_out_date": "13/07/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -5104,7 +5104,7 @@
     {
       "pn": "12644304",
       "impacto": "4",
-      "run_out_date": "15/03/2027",
+      "run_out_date": "18/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -5202,7 +5202,7 @@
     {
       "pn": "12646001",
       "impacto": "4",
-      "run_out_date": "11/05/2027",
+      "run_out_date": "12/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -5251,7 +5251,7 @@
     {
       "pn": "12646701",
       "impacto": "4",
-      "run_out_date": "24/05/2027",
+      "run_out_date": "25/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -5300,7 +5300,7 @@
     {
       "pn": "12646704",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "23/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -5888,7 +5888,7 @@
     {
       "pn": "13000890",
       "impacto": "4",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "27/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -6035,7 +6035,7 @@
     {
       "pn": "13183201",
       "impacto": "4",
-      "run_out_date": "11/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -6133,7 +6133,7 @@
     {
       "pn": "134084",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -6231,7 +6231,7 @@
     {
       "pn": "13611211",
       "impacto": "4",
-      "run_out_date": "28/07/2027",
+      "run_out_date": "02/08/2027",
       "supplier_code": "BJG65",
       "supplier_name": "METALURGICA POTY LTDA",
       "stock_b1cb": 0.0,
@@ -6378,7 +6378,7 @@
     {
       "pn": "140022",
       "impacto": "4",
-      "run_out_date": "08/03/2027",
+      "run_out_date": "24/03/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -6623,7 +6623,7 @@
     {
       "pn": "140190",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -6819,7 +6819,7 @@
     {
       "pn": "14154711",
       "impacto": "4",
-      "run_out_date": "21/09/2027",
+      "run_out_date": "30/08/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -7015,7 +7015,7 @@
     {
       "pn": "14258131",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "01/03/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -7162,7 +7162,7 @@
     {
       "pn": "14304321",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "09/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -7211,7 +7211,7 @@
     {
       "pn": "14304621",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -7260,7 +7260,7 @@
     {
       "pn": "14305221",
       "impacto": "4",
-      "run_out_date": "20/04/2027",
+      "run_out_date": "20/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -7309,7 +7309,7 @@
     {
       "pn": "14305521",
       "impacto": "4",
-      "run_out_date": "01/07/2027",
+      "run_out_date": "06/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -7456,7 +7456,7 @@
     {
       "pn": "14306324",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -7553,8 +7553,8 @@
     },
     {
       "pn": "14432334",
-      "impacto": "3",
-      "run_out_date": "01/12/2026",
+      "impacto": "4",
+      "run_out_date": "04/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -7652,7 +7652,7 @@
     {
       "pn": "14440327",
       "impacto": "4",
-      "run_out_date": "23/12/2027",
+      "run_out_date": "20/12/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -7701,7 +7701,7 @@
     {
       "pn": "14441321",
       "impacto": "4",
-      "run_out_date": "19/05/2027",
+      "run_out_date": "18/05/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -7799,7 +7799,7 @@
     {
       "pn": "14442031",
       "impacto": "4",
-      "run_out_date": "22/04/2027",
+      "run_out_date": "21/04/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -7848,7 +7848,7 @@
     {
       "pn": "14442131",
       "impacto": "3",
-      "run_out_date": "05/11/2026",
+      "run_out_date": "04/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -7946,7 +7946,7 @@
     {
       "pn": "14460081",
       "impacto": "4",
-      "run_out_date": "03/03/2027",
+      "run_out_date": "04/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -8044,7 +8044,7 @@
     {
       "pn": "14496301",
       "impacto": "4",
-      "run_out_date": "04/05/2027",
+      "run_out_date": "05/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -8093,7 +8093,7 @@
     {
       "pn": "14496401",
       "impacto": "4",
-      "run_out_date": "14/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -8289,7 +8289,7 @@
     {
       "pn": "14496601",
       "impacto": "4",
-      "run_out_date": "18/03/2027",
+      "run_out_date": "19/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -8436,7 +8436,7 @@
     {
       "pn": "14496704",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "24/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -8828,7 +8828,7 @@
     {
       "pn": "15540324",
       "impacto": "4",
-      "run_out_date": "15/07/2027",
+      "run_out_date": "19/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -8877,7 +8877,7 @@
     {
       "pn": "15540374",
       "impacto": "4",
-      "run_out_date": "28/07/2027",
+      "run_out_date": "02/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -8926,7 +8926,7 @@
     {
       "pn": "15540421",
       "impacto": "4",
-      "run_out_date": "08/02/2028",
+      "run_out_date": "07/02/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -8975,7 +8975,7 @@
     {
       "pn": "15540821",
       "impacto": "4",
-      "run_out_date": "09/03/2027",
+      "run_out_date": "10/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -9122,7 +9122,7 @@
     {
       "pn": "15835231",
       "impacto": "4",
-      "run_out_date": "23/04/2027",
+      "run_out_date": "27/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -9269,7 +9269,7 @@
     {
       "pn": "15896411",
       "impacto": "4",
-      "run_out_date": "21/10/2027",
+      "run_out_date": "22/10/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -9416,7 +9416,7 @@
     {
       "pn": "15970611",
       "impacto": "4",
-      "run_out_date": "13/04/2027",
+      "run_out_date": "03/05/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -9661,7 +9661,7 @@
     {
       "pn": "15981134",
       "impacto": "4",
-      "run_out_date": "08/05/2028",
+      "run_out_date": "05/05/2028",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -9710,7 +9710,7 @@
     {
       "pn": "15981234",
       "impacto": "4",
-      "run_out_date": "18/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -10004,7 +10004,7 @@
     {
       "pn": "15984334",
       "impacto": "3",
-      "run_out_date": "27/10/2026",
+      "run_out_date": "29/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -10053,7 +10053,7 @@
     {
       "pn": "15984434",
       "impacto": "4",
-      "run_out_date": "09/11/2027",
+      "run_out_date": "16/11/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -10151,7 +10151,7 @@
     {
       "pn": "15985234",
       "impacto": "4",
-      "run_out_date": "07/12/2026",
+      "run_out_date": "30/11/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -10347,7 +10347,7 @@
     {
       "pn": "16043424",
       "impacto": "3",
-      "run_out_date": "18/11/2026",
+      "run_out_date": "20/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -10494,7 +10494,7 @@
     {
       "pn": "16044024",
       "impacto": "4",
-      "run_out_date": "18/03/2027",
+      "run_out_date": "19/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -10543,7 +10543,7 @@
     {
       "pn": "16044121",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -10641,7 +10641,7 @@
     {
       "pn": "16050621",
       "impacto": "3",
-      "run_out_date": "27/11/2026",
+      "run_out_date": "30/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -10935,7 +10935,7 @@
     {
       "pn": "16208430",
       "impacto": "4",
-      "run_out_date": "22/12/2026",
+      "run_out_date": "24/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -11033,7 +11033,7 @@
     {
       "pn": "16288324",
       "impacto": "4",
-      "run_out_date": "10/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -11229,7 +11229,7 @@
     {
       "pn": "197526C1",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "05/03/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -11376,7 +11376,7 @@
     {
       "pn": "220063",
       "impacto": "4",
-      "run_out_date": "26/11/2027",
+      "run_out_date": "25/11/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -11719,7 +11719,7 @@
     {
       "pn": "300480",
       "impacto": "4",
-      "run_out_date": "07/06/2027",
+      "run_out_date": "08/06/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -11866,7 +11866,7 @@
     {
       "pn": "308761",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -12062,7 +12062,7 @@
     {
       "pn": "321246",
       "impacto": "4",
-      "run_out_date": "02/04/2027",
+      "run_out_date": "06/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -12111,7 +12111,7 @@
     {
       "pn": "322356",
       "impacto": "4",
-      "run_out_date": "05/01/2028",
+      "run_out_date": "10/01/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -12356,7 +12356,7 @@
     {
       "pn": "334708",
       "impacto": "4",
-      "run_out_date": "27/05/2027",
+      "run_out_date": "26/05/2027",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -13189,7 +13189,7 @@
     {
       "pn": "378243",
       "impacto": "4",
-      "run_out_date": "23/03/2027",
+      "run_out_date": "29/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -13287,7 +13287,7 @@
     {
       "pn": "380740A1",
       "impacto": "4",
-      "run_out_date": "19/02/2027",
+      "run_out_date": "18/02/2027",
       "supplier_code": "BNM94",
       "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
       "stock_b1cb": 0.0,
@@ -13434,7 +13434,7 @@
     {
       "pn": "385681",
       "impacto": "4",
-      "run_out_date": "30/11/2026",
+      "run_out_date": "02/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -13581,7 +13581,7 @@
     {
       "pn": "385922",
       "impacto": "4",
-      "run_out_date": "19/05/2028",
+      "run_out_date": "24/04/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -13679,7 +13679,7 @@
     {
       "pn": "388443",
       "impacto": "4",
-      "run_out_date": "20/04/2027",
+      "run_out_date": "19/04/2027",
       "supplier_code": "BJG65",
       "supplier_name": "METALURGICA POTY LTDA",
       "stock_b1cb": 0.0,
@@ -13826,7 +13826,7 @@
     {
       "pn": "392530",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -14021,8 +14021,8 @@
     },
     {
       "pn": "394630",
-      "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "impacto": "",
+      "run_out_date": "",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -14218,7 +14218,7 @@
     {
       "pn": "397881",
       "impacto": "4",
-      "run_out_date": "25/05/2027",
+      "run_out_date": "24/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -14414,7 +14414,7 @@
     {
       "pn": "412061",
       "impacto": "3",
-      "run_out_date": "05/11/2026",
+      "run_out_date": "04/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -14512,7 +14512,7 @@
     {
       "pn": "412066",
       "impacto": "4",
-      "run_out_date": "20/07/2028",
+      "run_out_date": "29/06/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -14904,7 +14904,7 @@
     {
       "pn": "412595",
       "impacto": "4",
-      "run_out_date": "19/11/2027",
+      "run_out_date": "29/10/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -15051,7 +15051,7 @@
     {
       "pn": "416747A1",
       "impacto": "4",
-      "run_out_date": "02/03/2028",
+      "run_out_date": "15/03/2028",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -15541,7 +15541,7 @@
     {
       "pn": "43130",
       "impacto": "4",
-      "run_out_date": "27/07/2027",
+      "run_out_date": "28/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -15639,7 +15639,7 @@
     {
       "pn": "43138",
       "impacto": "4",
-      "run_out_date": "24/05/2027",
+      "run_out_date": "25/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -15835,7 +15835,7 @@
     {
       "pn": "43188",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "17/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -16031,7 +16031,7 @@
     {
       "pn": "43232",
       "impacto": "4",
-      "run_out_date": "24/08/2027",
+      "run_out_date": "25/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -16129,7 +16129,7 @@
     {
       "pn": "433008",
       "impacto": "4",
-      "run_out_date": "23/04/2027",
+      "run_out_date": "22/04/2027",
       "supplier_code": "BPW72",
       "supplier_name": "CRONNOS IND E COM ART ELASTOMERICOS",
       "stock_b1cb": 0.0,
@@ -16178,7 +16178,7 @@
     {
       "pn": "434097",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -16374,7 +16374,7 @@
     {
       "pn": "44015196",
       "impacto": "4",
-      "run_out_date": "17/05/2027",
+      "run_out_date": "18/05/2027",
       "supplier_code": "BJG65",
       "supplier_name": "METALURGICA POTY LTDA",
       "stock_b1cb": 0.0,
@@ -16423,7 +16423,7 @@
     {
       "pn": "44018768",
       "impacto": "1",
-      "run_out_date": "14/10/2026",
+      "run_out_date": "08/10/2026",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -16570,7 +16570,7 @@
     {
       "pn": "44945647",
       "impacto": "1",
-      "run_out_date": "19/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -16618,8 +16618,8 @@
     },
     {
       "pn": "44995060",
-      "impacto": "3",
-      "run_out_date": "23/10/2026",
+      "impacto": "1",
+      "run_out_date": "20/10/2026",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -16766,7 +16766,7 @@
     {
       "pn": "468476P",
       "impacto": "4",
-      "run_out_date": "22/06/2027",
+      "run_out_date": "21/06/2027",
       "supplier_code": "BKQ55",
       "supplier_name": "FORBAL INDUSTRIA AUTOMOTIVE LTDA",
       "stock_b1cb": 0.0,
@@ -16864,7 +16864,7 @@
     {
       "pn": "47134668",
       "impacto": "4",
-      "run_out_date": "16/06/2027",
+      "run_out_date": "22/06/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -16913,7 +16913,7 @@
     {
       "pn": "47361681",
       "impacto": "4",
-      "run_out_date": "01/07/2027",
+      "run_out_date": "05/07/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -17256,7 +17256,7 @@
     {
       "pn": "47384439",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "24/12/2026",
       "supplier_code": "BVJ10",
       "supplier_name": "PROMETEON TYRE GROUP INDUSTRIA BRAS",
       "stock_b1cb": 0.0,
@@ -17354,7 +17354,7 @@
     {
       "pn": "47398809",
       "impacto": "4",
-      "run_out_date": "29/04/2027",
+      "run_out_date": "28/04/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -17452,7 +17452,7 @@
     {
       "pn": "47404765",
       "impacto": "1",
-      "run_out_date": "15/10/2026",
+      "run_out_date": "20/10/2026",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -17844,7 +17844,7 @@
     {
       "pn": "47413975",
       "impacto": "3",
-      "run_out_date": "19/11/2026",
+      "run_out_date": "20/11/2026",
       "supplier_code": "BVJ10",
       "supplier_name": "PROMETEON TYRE GROUP INDUSTRIA BRAS",
       "stock_b1cb": 0.0,
@@ -18137,7 +18137,7 @@
     },
     {
       "pn": "47435145",
-      "impacto": "4",
+      "impacto": "3",
       "run_out_date": "02/12/2026",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
@@ -18383,7 +18383,7 @@
     {
       "pn": "47464077",
       "impacto": "4",
-      "run_out_date": "23/03/2028",
+      "run_out_date": "28/02/2028",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -18579,7 +18579,7 @@
     {
       "pn": "47483574",
       "impacto": "4",
-      "run_out_date": "09/11/2027",
+      "run_out_date": "19/11/2027",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -18628,7 +18628,7 @@
     {
       "pn": "47484017",
       "impacto": "4",
-      "run_out_date": "12/02/2027",
+      "run_out_date": "01/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -18823,7 +18823,7 @@
     },
     {
       "pn": "47486947",
-      "impacto": "4",
+      "impacto": "3",
       "run_out_date": "02/12/2026",
       "supplier_code": "BMW41",
       "supplier_name": "METALURGICA RIGITEC LTDA",
@@ -18971,7 +18971,7 @@
     {
       "pn": "47494169",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
       "stock_b1cb": 0.0,
@@ -19020,7 +19020,7 @@
     {
       "pn": "47494173",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
       "stock_b1cb": 0.0,
@@ -19363,7 +19363,7 @@
     {
       "pn": "47519016",
       "impacto": "4",
-      "run_out_date": "30/08/2027",
+      "run_out_date": "27/08/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -19657,7 +19657,7 @@
     {
       "pn": "47535074",
       "impacto": "4",
-      "run_out_date": "24/02/2027",
+      "run_out_date": "23/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -19754,8 +19754,8 @@
     },
     {
       "pn": "47539160",
-      "impacto": "3",
-      "run_out_date": "21/10/2026",
+      "impacto": "1",
+      "run_out_date": "19/10/2026",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "stock_b1cb": 15.0,
@@ -19804,7 +19804,7 @@
     {
       "pn": "47539577",
       "impacto": "4",
-      "run_out_date": "20/08/2027",
+      "run_out_date": "27/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -19902,7 +19902,7 @@
     {
       "pn": "47558167",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "15/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -19951,7 +19951,7 @@
     {
       "pn": "47558169",
       "impacto": "4",
-      "run_out_date": "04/02/2027",
+      "run_out_date": "03/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -20294,7 +20294,7 @@
     {
       "pn": "47568531",
       "impacto": "4",
-      "run_out_date": "16/06/2027",
+      "run_out_date": "18/06/2027",
       "supplier_code": "CBP27",
       "supplier_name": "COFLE INDUSTRIA E COMERCIO DO BRASI",
       "stock_b1cb": 0.0,
@@ -20735,7 +20735,7 @@
     {
       "pn": "47606560",
       "impacto": "3",
-      "run_out_date": "24/11/2026",
+      "run_out_date": "25/11/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -20784,7 +20784,7 @@
     {
       "pn": "47606561",
       "impacto": "3",
-      "run_out_date": "04/11/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -21127,7 +21127,7 @@
     {
       "pn": "47616845",
       "impacto": "4",
-      "run_out_date": "05/03/2027",
+      "run_out_date": "08/03/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -21225,7 +21225,7 @@
     {
       "pn": "47622784",
       "impacto": "4",
-      "run_out_date": "27/05/2027",
+      "run_out_date": "26/05/2027",
       "supplier_code": "BPW72",
       "supplier_name": "CRONNOS IND E COM ART ELASTOMERICOS",
       "stock_b1cb": 0.0,
@@ -21666,7 +21666,7 @@
     {
       "pn": "47640356",
       "impacto": "4",
-      "run_out_date": "30/06/2027",
+      "run_out_date": "29/06/2027",
       "supplier_code": "BJG74",
       "supplier_name": "METALUS IND MEC LTDA",
       "stock_b1cb": 0.0,
@@ -21960,7 +21960,7 @@
     {
       "pn": "47677236",
       "impacto": "4",
-      "run_out_date": "03/02/2027",
+      "run_out_date": "04/02/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -22058,7 +22058,7 @@
     {
       "pn": "47700589",
       "impacto": "4",
-      "run_out_date": "23/12/2026",
+      "run_out_date": "16/02/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -22254,7 +22254,7 @@
     {
       "pn": "47711574",
       "impacto": "4",
-      "run_out_date": "22/04/2027",
+      "run_out_date": "21/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -22548,7 +22548,7 @@
     {
       "pn": "47739624",
       "impacto": "4",
-      "run_out_date": "18/06/2027",
+      "run_out_date": "17/06/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -23136,7 +23136,7 @@
     {
       "pn": "47764023",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -23724,7 +23724,7 @@
     {
       "pn": "47797679",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -24214,7 +24214,7 @@
     {
       "pn": "47832557",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -24654,8 +24654,8 @@
     },
     {
       "pn": "47848830",
-      "impacto": "4",
-      "run_out_date": "09/12/2026",
+      "impacto": "3",
+      "run_out_date": "25/11/2026",
       "supplier_code": "FQJ97",
       "supplier_name": "HCC INDUSTRIA E COMERCIO DE EQUIPAM",
       "stock_b1cb": 0.0,
@@ -24753,7 +24753,7 @@
     {
       "pn": "47849683",
       "impacto": "3",
-      "run_out_date": "25/11/2026",
+      "run_out_date": "24/11/2026",
       "supplier_code": "FQJ97",
       "supplier_name": "HCC INDUSTRIA E COMERCIO DE EQUIPAM",
       "stock_b1cb": 0.0,
@@ -25194,7 +25194,7 @@
     {
       "pn": "47884293",
       "impacto": "1",
-      "run_out_date": "08/10/2026",
+      "run_out_date": "19/10/2026",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -25341,7 +25341,7 @@
     {
       "pn": "47898380",
       "impacto": "4",
-      "run_out_date": "07/12/2026",
+      "run_out_date": "04/12/2026",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
       "stock_b1cb": 0.0,
@@ -25390,7 +25390,7 @@
     {
       "pn": "47900911",
       "impacto": "4",
-      "run_out_date": "26/04/2027",
+      "run_out_date": "30/04/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -25880,7 +25880,7 @@
     {
       "pn": "47913531",
       "impacto": "4",
-      "run_out_date": "08/04/2027",
+      "run_out_date": "09/04/2027",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -26076,7 +26076,7 @@
     {
       "pn": "47927424",
       "impacto": "4",
-      "run_out_date": "23/09/2027",
+      "run_out_date": "22/09/2027",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -26174,7 +26174,7 @@
     {
       "pn": "47930440",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "22/02/2027",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
       "stock_b1cb": 0.0,
@@ -26223,7 +26223,7 @@
     {
       "pn": "47930441",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
       "stock_b1cb": 0.0,
@@ -26468,7 +26468,7 @@
     {
       "pn": "47940718",
       "impacto": "4",
-      "run_out_date": "25/05/2027",
+      "run_out_date": "28/04/2027",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -26713,7 +26713,7 @@
     {
       "pn": "47946052",
       "impacto": "3",
-      "run_out_date": "12/11/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "BNT57",
       "supplier_name": "ETHOS INDUSTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -26811,7 +26811,7 @@
     {
       "pn": "47949693",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -27007,7 +27007,7 @@
     {
       "pn": "47969118",
       "impacto": "3",
-      "run_out_date": "02/11/2026",
+      "run_out_date": "03/11/2026",
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
       "stock_b1cb": 0.0,
@@ -27154,7 +27154,7 @@
     {
       "pn": "47976356",
       "impacto": "4",
-      "run_out_date": "26/11/2027",
+      "run_out_date": "25/11/2027",
       "supplier_code": "BML88",
       "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
       "stock_b1cb": 0.0,
@@ -27203,7 +27203,7 @@
     {
       "pn": "47977364",
       "impacto": "4",
-      "run_out_date": "10/12/2026",
+      "run_out_date": "09/12/2026",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -27252,7 +27252,7 @@
     {
       "pn": "47977370",
       "impacto": "4",
-      "run_out_date": "02/03/2027",
+      "run_out_date": "01/03/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -27644,7 +27644,7 @@
     {
       "pn": "48023995",
       "impacto": "4",
-      "run_out_date": "27/09/2027",
+      "run_out_date": "24/09/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -27693,7 +27693,7 @@
     {
       "pn": "48028632",
       "impacto": "4",
-      "run_out_date": "27/12/2027",
+      "run_out_date": "23/12/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -27840,7 +27840,7 @@
     {
       "pn": "48041576",
       "impacto": "4",
-      "run_out_date": "14/09/2027",
+      "run_out_date": "15/09/2027",
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
       "stock_b1cb": 0.0,
@@ -27987,7 +27987,7 @@
     {
       "pn": "48050270",
       "impacto": "4",
-      "run_out_date": "17/06/2027",
+      "run_out_date": "16/06/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -28036,7 +28036,7 @@
     {
       "pn": "48050670",
       "impacto": "4",
-      "run_out_date": "18/06/2027",
+      "run_out_date": "17/06/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -28085,7 +28085,7 @@
     {
       "pn": "48050676",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -28330,7 +28330,7 @@
     {
       "pn": "48062322",
       "impacto": "4",
-      "run_out_date": "27/06/2028",
+      "run_out_date": "21/06/2028",
       "supplier_code": "BNJ10",
       "supplier_name": "V S DE LIMA & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -29359,7 +29359,7 @@
     {
       "pn": "48096617",
       "impacto": "4",
-      "run_out_date": "03/02/2027",
+      "run_out_date": "29/01/2027",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
       "stock_b1cb": 0.0,
@@ -29555,7 +29555,7 @@
     {
       "pn": "48116615",
       "impacto": "4",
-      "run_out_date": "04/12/2026",
+      "run_out_date": "03/12/2026",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -29702,7 +29702,7 @@
     {
       "pn": "48122830P",
       "impacto": "4",
-      "run_out_date": "18/12/2026",
+      "run_out_date": "16/12/2026",
       "supplier_code": "BJR03",
       "supplier_name": "FERRAMENTAS GEDORE DO BRASIL S/A",
       "stock_b1cb": 0.0,
@@ -30143,7 +30143,7 @@
     {
       "pn": "48133543",
       "impacto": "3",
-      "run_out_date": "23/10/2026",
+      "run_out_date": "26/10/2026",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -30192,7 +30192,7 @@
     {
       "pn": "48136191",
       "impacto": "3",
-      "run_out_date": "29/10/2026",
+      "run_out_date": "02/11/2026",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -30241,7 +30241,7 @@
     {
       "pn": "48144672",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
       "stock_b1cb": 0.0,
@@ -30290,7 +30290,7 @@
     {
       "pn": "48150891",
       "impacto": "3",
-      "run_out_date": "10/11/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "BJC97",
       "supplier_name": "FOTOGRAVURA ZEYANA LTDA",
       "stock_b1cb": 0.0,
@@ -30682,7 +30682,7 @@
     {
       "pn": "48154768",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "DVN55",
       "supplier_name": "HENNINGS VEDACOES HIDRAULICAS LTDA.",
       "stock_b1cb": 0.0,
@@ -30780,7 +30780,7 @@
     {
       "pn": "48154770",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "DVN55",
       "supplier_name": "HENNINGS VEDACOES HIDRAULICAS LTDA.",
       "stock_b1cb": 0.0,
@@ -30976,7 +30976,7 @@
     {
       "pn": "48163029",
       "impacto": "4",
-      "run_out_date": "25/06/2027",
+      "run_out_date": "24/06/2027",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -31123,7 +31123,7 @@
     {
       "pn": "48163044",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "15/02/2027",
       "supplier_code": "FCR70",
       "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
       "stock_b1cb": 0.0,
@@ -31172,7 +31172,7 @@
     {
       "pn": "48163594",
       "impacto": "4",
-      "run_out_date": "23/03/2027",
+      "run_out_date": "22/03/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -31221,7 +31221,7 @@
     {
       "pn": "48164673",
       "impacto": "3",
-      "run_out_date": "30/10/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -31760,7 +31760,7 @@
     {
       "pn": "48172458",
       "impacto": "1",
-      "run_out_date": "09/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJG17",
       "supplier_name": "MAXIFORJA COMPONENTES AUTOMOTIVOS L",
       "stock_b1cb": 0.0,
@@ -31809,7 +31809,7 @@
     {
       "pn": "48172466",
       "impacto": "1",
-      "run_out_date": "09/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJG17",
       "supplier_name": "MAXIFORJA COMPONENTES AUTOMOTIVOS L",
       "stock_b1cb": 0.0,
@@ -31907,7 +31907,7 @@
     {
       "pn": "48172787",
       "impacto": "4",
-      "run_out_date": "26/03/2027",
+      "run_out_date": "01/04/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -32152,7 +32152,7 @@
     {
       "pn": "48182992",
       "impacto": "4",
-      "run_out_date": "24/11/2026",
+      "run_out_date": "18/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -32642,7 +32642,7 @@
     {
       "pn": "48194554",
       "impacto": "4",
-      "run_out_date": "15/02/2027",
+      "run_out_date": "05/02/2027",
       "supplier_code": "FQJ97",
       "supplier_name": "HCC INDUSTRIA E COMERCIO DE EQUIPAM",
       "stock_b1cb": 0.0,
@@ -32838,7 +32838,7 @@
     {
       "pn": "4892925",
       "impacto": "4",
-      "run_out_date": "19/05/2027",
+      "run_out_date": "20/05/2027",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -33132,7 +33132,7 @@
     {
       "pn": "492-11050",
       "impacto": "4",
-      "run_out_date": "14/06/2028",
+      "run_out_date": "03/07/2028",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -33230,7 +33230,7 @@
     {
       "pn": "495-81069",
       "impacto": "4",
-      "run_out_date": "14/04/2027",
+      "run_out_date": "03/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33328,7 +33328,7 @@
     {
       "pn": "495-82234",
       "impacto": "4",
-      "run_out_date": "02/03/2027",
+      "run_out_date": "03/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33377,7 +33377,7 @@
     {
       "pn": "4994066",
       "impacto": "4",
-      "run_out_date": "27/04/2027",
+      "run_out_date": "03/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33524,7 +33524,7 @@
     {
       "pn": "4994070",
       "impacto": "4",
-      "run_out_date": "07/04/2027",
+      "run_out_date": "09/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33720,7 +33720,7 @@
     {
       "pn": "5085776",
       "impacto": "4",
-      "run_out_date": "10/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33818,7 +33818,7 @@
     {
       "pn": "5097539",
       "impacto": "4",
-      "run_out_date": "16/11/2027",
+      "run_out_date": "24/11/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -33916,7 +33916,7 @@
     {
       "pn": "5100516",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -34014,7 +34014,7 @@
     {
       "pn": "5118723",
       "impacto": "4",
-      "run_out_date": "03/05/2028",
+      "run_out_date": "08/05/2028",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -34112,7 +34112,7 @@
     {
       "pn": "5118725",
       "impacto": "4",
-      "run_out_date": "14/03/2028",
+      "run_out_date": "15/03/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -34308,7 +34308,7 @@
     {
       "pn": "51413212",
       "impacto": "3",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "24/11/2026",
       "supplier_code": "FMV69",
       "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
       "stock_b1cb": 0.0,
@@ -34847,7 +34847,7 @@
     {
       "pn": "51461425",
       "impacto": "4",
-      "run_out_date": "19/10/2027",
+      "run_out_date": "22/10/2027",
       "supplier_code": "BJG32",
       "supplier_name": "METALAC INDUSTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -35092,7 +35092,7 @@
     {
       "pn": "51474200",
       "impacto": "4",
-      "run_out_date": "17/06/2027",
+      "run_out_date": "16/06/2027",
       "supplier_code": "DNH73",
       "supplier_name": "ANGSTAHL INDUSTRIA E COMERCIO LTDA",
       "stock_b1cb": 0.0,
@@ -35729,7 +35729,7 @@
     {
       "pn": "51483216",
       "impacto": "3",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "25/11/2026",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -35827,7 +35827,7 @@
     {
       "pn": "51491289",
       "impacto": "4",
-      "run_out_date": "23/12/2026",
+      "run_out_date": "01/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -35876,7 +35876,7 @@
     {
       "pn": "51496027",
       "impacto": "4",
-      "run_out_date": "22/04/2027",
+      "run_out_date": "21/04/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -35974,7 +35974,7 @@
     {
       "pn": "51508371",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -36170,7 +36170,7 @@
     {
       "pn": "51516173",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "22/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -36611,7 +36611,7 @@
     {
       "pn": "51537729",
       "impacto": "4",
-      "run_out_date": "11/01/2028",
+      "run_out_date": "12/01/2028",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -37150,7 +37150,7 @@
     {
       "pn": "51557549",
       "impacto": "4",
-      "run_out_date": "13/04/2027",
+      "run_out_date": "12/04/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -37199,7 +37199,7 @@
     {
       "pn": "51557557",
       "impacto": "4",
-      "run_out_date": "24/02/2027",
+      "run_out_date": "23/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -37297,7 +37297,7 @@
     {
       "pn": "51560358",
       "impacto": "4",
-      "run_out_date": "19/02/2027",
+      "run_out_date": "16/02/2027",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
       "stock_b1cb": 0.0,
@@ -37346,7 +37346,7 @@
     {
       "pn": "51563257",
       "impacto": "4",
-      "run_out_date": "05/02/2027",
+      "run_out_date": "02/02/2027",
       "supplier_code": "BNN21",
       "supplier_name": "ACUMULADORES MOURA S A",
       "stock_b1cb": 0.0,
@@ -37444,7 +37444,7 @@
     {
       "pn": "51565126",
       "impacto": "4",
-      "run_out_date": "29/04/2027",
+      "run_out_date": "28/04/2027",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -37639,8 +37639,8 @@
     },
     {
       "pn": "51584166",
-      "impacto": "1",
-      "run_out_date": "09/10/2026",
+      "impacto": "4",
+      "run_out_date": "",
       "supplier_code": "BJG74",
       "supplier_name": "METALUS IND MEC LTDA",
       "stock_b1cb": 0.0,
@@ -37738,7 +37738,7 @@
     {
       "pn": "51598964",
       "impacto": "4",
-      "run_out_date": "02/04/2027",
+      "run_out_date": "30/03/2027",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "stock_b1cb": 33.0,
@@ -37983,7 +37983,7 @@
     {
       "pn": "51599213",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "15/02/2027",
       "supplier_code": "BVH54",
       "supplier_name": "CARRON AUTOMOTIVE LTDA",
       "stock_b1cb": 0.0,
@@ -38179,7 +38179,7 @@
     {
       "pn": "51599646",
       "impacto": "4",
-      "run_out_date": "17/09/2027",
+      "run_out_date": "16/09/2027",
       "supplier_code": "BML88",
       "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
       "stock_b1cb": 0.0,
@@ -38228,7 +38228,7 @@
     {
       "pn": "51599648",
       "impacto": "4",
-      "run_out_date": "22/09/2027",
+      "run_out_date": "21/09/2027",
       "supplier_code": "BML88",
       "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
       "stock_b1cb": 0.0,
@@ -38375,7 +38375,7 @@
     {
       "pn": "51627100",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "BJD88",
       "supplier_name": "INDUSTRIA AGRO-PERTENCES EIRELI",
       "stock_b1cb": 5.0,
@@ -38766,7 +38766,7 @@
     },
     {
       "pn": "51676274",
-      "impacto": "4",
+      "impacto": "3",
       "run_out_date": "02/12/2026",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
@@ -38816,7 +38816,7 @@
     {
       "pn": "51676887",
       "impacto": "4",
-      "run_out_date": "19/03/2027",
+      "run_out_date": "29/03/2027",
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
       "stock_b1cb": 0.0,
@@ -38914,7 +38914,7 @@
     {
       "pn": "51679792",
       "impacto": "4",
-      "run_out_date": "27/12/2027",
+      "run_out_date": "23/12/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -38963,7 +38963,7 @@
     {
       "pn": "51679793",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "BML88",
       "supplier_name": "TECNAUT INDUSTRIA E COMERCIO DE MET",
       "stock_b1cb": 0.0,
@@ -39110,7 +39110,7 @@
     {
       "pn": "51679803",
       "impacto": "4",
-      "run_out_date": "16/04/2027",
+      "run_out_date": "30/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -39159,7 +39159,7 @@
     {
       "pn": "51679807",
       "impacto": "4",
-      "run_out_date": "28/04/2027",
+      "run_out_date": "27/04/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -39208,7 +39208,7 @@
     {
       "pn": "51679808",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -39306,7 +39306,7 @@
     {
       "pn": "51679810",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -39795,8 +39795,8 @@
     },
     {
       "pn": "51679875",
-      "impacto": "3",
-      "run_out_date": "30/10/2026",
+      "impacto": "1",
+      "run_out_date": "16/10/2026",
       "supplier_code": "BNT57",
       "supplier_name": "ETHOS INDUSTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -39894,7 +39894,7 @@
     {
       "pn": "51680859",
       "impacto": "4",
-      "run_out_date": "29/12/2026",
+      "run_out_date": "08/02/2027",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
       "stock_b1cb": 12.0,
@@ -40139,7 +40139,7 @@
     {
       "pn": "51684574",
       "impacto": "4",
-      "run_out_date": "30/09/2027",
+      "run_out_date": "15/10/2027",
       "supplier_code": "BPD14",
       "supplier_name": "METALURGICA KONDAK LTDA",
       "stock_b1cb": 0.0,
@@ -40384,7 +40384,7 @@
     {
       "pn": "5171516",
       "impacto": "3",
-      "run_out_date": "13/11/2026",
+      "run_out_date": "12/11/2026",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -40678,7 +40678,7 @@
     {
       "pn": "5191331",
       "impacto": "4",
-      "run_out_date": "22/03/2027",
+      "run_out_date": "29/03/2027",
       "supplier_code": "BVH68",
       "supplier_name": "MASTERMAG IND E COMERCIO PECAS AUTO",
       "stock_b1cb": 0.0,
@@ -40874,7 +40874,7 @@
     {
       "pn": "552991",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "15/02/2027",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -40972,7 +40972,7 @@
     {
       "pn": "5802097746",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "BLB24",
       "supplier_name": "TE CONNECTIVITY BRASIL INDUSTRIA EL",
       "stock_b1cb": 0.0,
@@ -41217,7 +41217,7 @@
     {
       "pn": "80816",
       "impacto": "4",
-      "run_out_date": "27/09/2027",
+      "run_out_date": "28/09/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -41609,7 +41609,7 @@
     {
       "pn": "81853129",
       "impacto": "4",
-      "run_out_date": "27/03/2028",
+      "run_out_date": "20/03/2028",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -41707,7 +41707,7 @@
     {
       "pn": "81862981",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "BNK91",
       "supplier_name": "DANA INDUSTRIAS LTDA",
       "stock_b1cb": 0.0,
@@ -41756,7 +41756,7 @@
     {
       "pn": "81864605",
       "impacto": "4",
-      "run_out_date": "21/07/2027",
+      "run_out_date": "26/07/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -41805,7 +41805,7 @@
     {
       "pn": "81865839",
       "impacto": "4",
-      "run_out_date": "09/04/2027",
+      "run_out_date": "12/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -41952,7 +41952,7 @@
     {
       "pn": "82000094",
       "impacto": "4",
-      "run_out_date": "09/12/2026",
+      "run_out_date": "10/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -42001,7 +42001,7 @@
     {
       "pn": "82001040",
       "impacto": "3",
-      "run_out_date": "25/11/2026",
+      "run_out_date": "26/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -42295,7 +42295,7 @@
     {
       "pn": "82012528",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "27/11/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -42442,7 +42442,7 @@
     {
       "pn": "82018940",
       "impacto": "4",
-      "run_out_date": "26/08/2027",
+      "run_out_date": "25/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -42638,7 +42638,7 @@
     {
       "pn": "82020635",
       "impacto": "4",
-      "run_out_date": "10/12/2026",
+      "run_out_date": "11/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -42785,7 +42785,7 @@
     {
       "pn": "82025437",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -42883,7 +42883,7 @@
     {
       "pn": "82026241",
       "impacto": "4",
-      "run_out_date": "04/05/2027",
+      "run_out_date": "27/04/2027",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -42932,7 +42932,7 @@
     {
       "pn": "82026242",
       "impacto": "4",
-      "run_out_date": "28/04/2028",
+      "run_out_date": "02/05/2028",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -42981,7 +42981,7 @@
     {
       "pn": "82026243",
       "impacto": "4",
-      "run_out_date": "20/04/2028",
+      "run_out_date": "24/04/2028",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -43520,7 +43520,7 @@
     {
       "pn": "82034842",
       "impacto": "4",
-      "run_out_date": "16/06/2027",
+      "run_out_date": "15/06/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -43569,7 +43569,7 @@
     {
       "pn": "82038870",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -43618,7 +43618,7 @@
     {
       "pn": "82039343",
       "impacto": "4",
-      "run_out_date": "19/02/2027",
+      "run_out_date": "17/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -43716,7 +43716,7 @@
     {
       "pn": "824-1408",
       "impacto": "4",
-      "run_out_date": "24/08/2027",
+      "run_out_date": "02/09/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -43912,7 +43912,7 @@
     {
       "pn": "8273920",
       "impacto": "1",
-      "run_out_date": "13/10/2026",
+      "run_out_date": "07/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -43961,7 +43961,7 @@
     {
       "pn": "82879352",
       "impacto": "4",
-      "run_out_date": "05/04/2027",
+      "run_out_date": "06/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -44010,7 +44010,7 @@
     {
       "pn": "82880748",
       "impacto": "4",
-      "run_out_date": "07/05/2027",
+      "run_out_date": "10/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -44549,7 +44549,7 @@
     {
       "pn": "83416243",
       "impacto": "4",
-      "run_out_date": "",
+      "run_out_date": "12/06/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -44843,7 +44843,7 @@
     {
       "pn": "83908648",
       "impacto": "4",
-      "run_out_date": "03/04/2028",
+      "run_out_date": "",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -45039,7 +45039,7 @@
     {
       "pn": "83918826",
       "impacto": "4",
-      "run_out_date": "27/04/2027",
+      "run_out_date": "28/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -45235,7 +45235,7 @@
     {
       "pn": "83925884",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "BJD99",
       "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "stock_b1cb": 0.0,
@@ -45333,7 +45333,7 @@
     {
       "pn": "83933061",
       "impacto": "4",
-      "run_out_date": "06/04/2027",
+      "run_out_date": "07/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -45676,7 +45676,7 @@
     {
       "pn": "83952214",
       "impacto": "3",
-      "run_out_date": "28/10/2026",
+      "run_out_date": "29/10/2026",
       "supplier_code": "BKR43",
       "supplier_name": "STABILUS LTDA",
       "stock_b1cb": 0.0,
@@ -45872,7 +45872,7 @@
     {
       "pn": "83962571",
       "impacto": "4",
-      "run_out_date": "07/07/2027",
+      "run_out_date": "08/07/2027",
       "supplier_code": "BQB72",
       "supplier_name": "MERCOBOR IND E COM LTDA",
       "stock_b1cb": 0.0,
@@ -46264,7 +46264,7 @@
     {
       "pn": "83998908",
       "impacto": "4",
-      "run_out_date": "07/01/2028",
+      "run_out_date": "10/08/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -46460,7 +46460,7 @@
     {
       "pn": "84004895",
       "impacto": "4",
-      "run_out_date": "25/06/2027",
+      "run_out_date": "24/06/2027",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -46705,7 +46705,7 @@
     {
       "pn": "84053675",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -46999,7 +46999,7 @@
     {
       "pn": "84072623",
       "impacto": "4",
-      "run_out_date": "10/03/2027",
+      "run_out_date": "09/03/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -47097,7 +47097,7 @@
     {
       "pn": "84072933",
       "impacto": "4",
-      "run_out_date": "24/07/2028",
+      "run_out_date": "19/05/2028",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -47685,7 +47685,7 @@
     {
       "pn": "84128484",
       "impacto": "4",
-      "run_out_date": "09/04/2027",
+      "run_out_date": "13/04/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -47782,7 +47782,7 @@
     },
     {
       "pn": "84130981",
-      "impacto": "4",
+      "impacto": "3",
       "run_out_date": "02/12/2026",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
@@ -47930,7 +47930,7 @@
     {
       "pn": "84134918",
       "impacto": "3",
-      "run_out_date": "27/11/2026",
+      "run_out_date": "30/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -47979,7 +47979,7 @@
     {
       "pn": "84145763",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "22/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -48273,7 +48273,7 @@
     {
       "pn": "84162432",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "24/12/2026",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -48371,7 +48371,7 @@
     {
       "pn": "84164475",
       "impacto": "4",
-      "run_out_date": "05/02/2027",
+      "run_out_date": "02/02/2027",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -48420,7 +48420,7 @@
     {
       "pn": "84165836",
       "impacto": "4",
-      "run_out_date": "22/10/2027",
+      "run_out_date": "19/10/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -48812,7 +48812,7 @@
     {
       "pn": "84190523",
       "impacto": "4",
-      "run_out_date": "05/03/2027",
+      "run_out_date": "08/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -49057,7 +49057,7 @@
     {
       "pn": "84215095",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "10/10/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -49302,7 +49302,7 @@
     {
       "pn": "84236279",
       "impacto": "4",
-      "run_out_date": "07/12/2026",
+      "run_out_date": "04/12/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -49449,7 +49449,7 @@
     {
       "pn": "84238065",
       "impacto": "4",
-      "run_out_date": "29/05/2028",
+      "run_out_date": "24/05/2028",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -49645,7 +49645,7 @@
     {
       "pn": "84261477",
       "impacto": "4",
-      "run_out_date": "01/03/2027",
+      "run_out_date": "02/03/2027",
       "supplier_code": "BQP01",
       "supplier_name": "CCS TECNOLGIA E SERVICOS LTDA",
       "stock_b1cb": 0.0,
@@ -49988,7 +49988,7 @@
     {
       "pn": "84288644",
       "impacto": "3",
-      "run_out_date": "13/11/2026",
+      "run_out_date": "12/11/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -50037,7 +50037,7 @@
     {
       "pn": "84288671",
       "impacto": "4",
-      "run_out_date": "28/04/2027",
+      "run_out_date": "26/04/2027",
       "supplier_code": "BNL72",
       "supplier_name": "METALURGICA FIMAC LTDA",
       "stock_b1cb": 0.0,
@@ -50625,7 +50625,7 @@
     {
       "pn": "84315636",
       "impacto": "4",
-      "run_out_date": "16/04/2027",
+      "run_out_date": "30/03/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -50723,7 +50723,7 @@
     {
       "pn": "84316630",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -50870,7 +50870,7 @@
     {
       "pn": "84324783",
       "impacto": "4",
-      "run_out_date": "11/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -50919,7 +50919,7 @@
     {
       "pn": "84324784",
       "impacto": "4",
-      "run_out_date": "11/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -51017,7 +51017,7 @@
     {
       "pn": "84327223",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -51066,7 +51066,7 @@
     {
       "pn": "84331632",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "26/02/2027",
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
       "stock_b1cb": 0.0,
@@ -51115,7 +51115,7 @@
     {
       "pn": "84346577",
       "impacto": "4",
-      "run_out_date": "28/07/2027",
+      "run_out_date": "26/07/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -51164,7 +51164,7 @@
     {
       "pn": "84349242",
       "impacto": "4",
-      "run_out_date": "14/05/2027",
+      "run_out_date": "19/05/2027",
       "supplier_code": "BJG65",
       "supplier_name": "METALURGICA POTY LTDA",
       "stock_b1cb": 0.0,
@@ -51213,7 +51213,7 @@
     {
       "pn": "84352821",
       "impacto": "4",
-      "run_out_date": "26/08/2027",
+      "run_out_date": "25/08/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -51458,7 +51458,7 @@
     {
       "pn": "84359856",
       "impacto": "4",
-      "run_out_date": "26/03/2027",
+      "run_out_date": "01/04/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -51654,7 +51654,7 @@
     {
       "pn": "84372492",
       "impacto": "4",
-      "run_out_date": "17/11/2026",
+      "run_out_date": "18/11/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -51752,7 +51752,7 @@
     {
       "pn": "84380852",
       "impacto": "4",
-      "run_out_date": "04/02/2027",
+      "run_out_date": "03/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -52291,7 +52291,7 @@
     {
       "pn": "84390314",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "19/11/2026",
       "supplier_code": "BJG74",
       "supplier_name": "METALUS IND MEC LTDA",
       "stock_b1cb": 0.0,
@@ -52340,7 +52340,7 @@
     {
       "pn": "84390751",
       "impacto": "3",
-      "run_out_date": "20/11/2026",
+      "run_out_date": "19/11/2026",
       "supplier_code": "BJR79",
       "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
       "stock_b1cb": 0.0,
@@ -52389,7 +52389,7 @@
     {
       "pn": "84391407",
       "impacto": "4",
-      "run_out_date": "31/03/2027",
+      "run_out_date": "30/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -52438,7 +52438,7 @@
     {
       "pn": "84391408",
       "impacto": "4",
-      "run_out_date": "22/12/2026",
+      "run_out_date": "21/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -52487,7 +52487,7 @@
     {
       "pn": "84392009",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -52683,7 +52683,7 @@
     {
       "pn": "84398273",
       "impacto": "4",
-      "run_out_date": "26/07/2027",
+      "run_out_date": "23/07/2027",
       "supplier_code": "BJR81",
       "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
       "stock_b1cb": 0.0,
@@ -52830,7 +52830,7 @@
     {
       "pn": "84402613",
       "impacto": "4",
-      "run_out_date": "01/10/2027",
+      "run_out_date": "04/10/2027",
       "supplier_code": "BJG74",
       "supplier_name": "METALUS IND MEC LTDA",
       "stock_b1cb": 0.0,
@@ -53075,7 +53075,7 @@
     {
       "pn": "84413055",
       "impacto": "4",
-      "run_out_date": "",
+      "run_out_date": "23/02/2027",
       "supplier_code": "BVT60",
       "supplier_name": "ISOESPUMA LTDA",
       "stock_b1cb": 0.0,
@@ -53761,7 +53761,7 @@
     {
       "pn": "84441255",
       "impacto": "4",
-      "run_out_date": "17/02/2028",
+      "run_out_date": "27/12/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -54054,8 +54054,8 @@
     },
     {
       "pn": "84475630",
-      "impacto": "3",
-      "run_out_date": "30/11/2026",
+      "impacto": "4",
+      "run_out_date": "03/12/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -54202,7 +54202,7 @@
     {
       "pn": "84484657",
       "impacto": "4",
-      "run_out_date": "19/05/2027",
+      "run_out_date": "18/05/2027",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -54594,7 +54594,7 @@
     {
       "pn": "84517768",
       "impacto": "4",
-      "run_out_date": "21/05/2027",
+      "run_out_date": "04/06/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
       "stock_b1cb": 0.0,
@@ -54643,7 +54643,7 @@
     {
       "pn": "84517772",
       "impacto": "4",
-      "run_out_date": "19/08/2027",
+      "run_out_date": "25/08/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
       "stock_b1cb": 0.0,
@@ -54741,7 +54741,7 @@
     {
       "pn": "84520063",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BKH99",
       "supplier_name": "SANVEN METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -54839,7 +54839,7 @@
     {
       "pn": "84522311",
       "impacto": "4",
-      "run_out_date": "16/12/2026",
+      "run_out_date": "15/12/2026",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -54888,7 +54888,7 @@
     {
       "pn": "84522775",
       "impacto": "3",
-      "run_out_date": "04/11/2026",
+      "run_out_date": "03/11/2026",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -55182,7 +55182,7 @@
     {
       "pn": "84538095",
       "impacto": "4",
-      "run_out_date": "19/08/2027",
+      "run_out_date": "20/08/2027",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -55476,7 +55476,7 @@
     {
       "pn": "84560098",
       "impacto": "4",
-      "run_out_date": "21/05/2027",
+      "run_out_date": "24/05/2027",
       "supplier_code": "BJQ09",
       "supplier_name": "ZUKAUSKAS & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -55868,7 +55868,7 @@
     {
       "pn": "84574601",
       "impacto": "4",
-      "run_out_date": "15/06/2027",
+      "run_out_date": "16/06/2027",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -56064,7 +56064,7 @@
     {
       "pn": "84579568",
       "impacto": "4",
-      "run_out_date": "21/09/2027",
+      "run_out_date": "30/08/2027",
       "supplier_code": "BJQ09",
       "supplier_name": "ZUKAUSKAS & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -56113,7 +56113,7 @@
     {
       "pn": "84579597",
       "impacto": "4",
-      "run_out_date": "22/10/2027",
+      "run_out_date": "28/07/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -57289,7 +57289,7 @@
     {
       "pn": "84597412",
       "impacto": "3",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "25/11/2026",
       "supplier_code": "BLF84",
       "supplier_name": "DONALDSON DO BRASIL EQUIPTOS INDS L",
       "stock_b1cb": 0.0,
@@ -57436,7 +57436,7 @@
     {
       "pn": "84603436",
       "impacto": "1",
-      "run_out_date": "08/10/2026",
+      "run_out_date": "19/10/2026",
       "supplier_code": "BJD99",
       "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "stock_b1cb": 0.0,
@@ -57975,7 +57975,7 @@
     {
       "pn": "84994001",
       "impacto": "4",
-      "run_out_date": "20/04/2027",
+      "run_out_date": "26/03/2027",
       "supplier_code": "BLK53",
       "supplier_name": "BSA SISTEMAS DE ARQUIVOS LTDA",
       "stock_b1cb": 0.0,
@@ -58220,7 +58220,7 @@
     {
       "pn": "85801574",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "BNK91",
       "supplier_name": "DANA INDUSTRIAS LTDA",
       "stock_b1cb": 0.0,
@@ -58612,7 +58612,7 @@
     {
       "pn": "86508568",
       "impacto": "4",
-      "run_out_date": "24/12/2026",
+      "run_out_date": "05/02/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -58808,7 +58808,7 @@
     {
       "pn": "86508624",
       "impacto": "4",
-      "run_out_date": "13/04/2027",
+      "run_out_date": "12/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -59053,7 +59053,7 @@
     {
       "pn": "86511323",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -59298,7 +59298,7 @@
     {
       "pn": "86511892",
       "impacto": "4",
-      "run_out_date": "27/07/2028",
+      "run_out_date": "",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -59445,7 +59445,7 @@
     {
       "pn": "86512439",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -59592,7 +59592,7 @@
     {
       "pn": "86512498",
       "impacto": "4",
-      "run_out_date": "10/03/2027",
+      "run_out_date": "11/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -59690,7 +59690,7 @@
     {
       "pn": "86512520",
       "impacto": "4",
-      "run_out_date": "16/07/2027",
+      "run_out_date": "19/07/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -59837,7 +59837,7 @@
     {
       "pn": "86518210",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "23/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -59935,7 +59935,7 @@
     {
       "pn": "86528667",
       "impacto": "4",
-      "run_out_date": "28/06/2028",
+      "run_out_date": "23/06/2028",
       "supplier_code": "BJR81",
       "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
       "stock_b1cb": 0.0,
@@ -60180,7 +60180,7 @@
     {
       "pn": "86558960",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -60376,7 +60376,7 @@
     {
       "pn": "86570650",
       "impacto": "4",
-      "run_out_date": "26/02/2027",
+      "run_out_date": "25/02/2027",
       "supplier_code": "FCR70",
       "supplier_name": "SLT INDUSTRIA E COMERCIO DE MAQUINA",
       "stock_b1cb": 0.0,
@@ -60719,7 +60719,7 @@
     {
       "pn": "86585707",
       "impacto": "4",
-      "run_out_date": "02/03/2027",
+      "run_out_date": "21/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -60866,7 +60866,7 @@
     {
       "pn": "86591936",
       "impacto": "4",
-      "run_out_date": "23/04/2027",
+      "run_out_date": "22/04/2027",
       "supplier_code": "BJC65",
       "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
       "stock_b1cb": 0.0,
@@ -60915,7 +60915,7 @@
     {
       "pn": "86591937",
       "impacto": "3",
-      "run_out_date": "04/11/2026",
+      "run_out_date": "03/11/2026",
       "supplier_code": "BJC65",
       "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
       "stock_b1cb": 0.0,
@@ -61013,7 +61013,7 @@
     {
       "pn": "86592702",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -61111,7 +61111,7 @@
     {
       "pn": "86595825",
       "impacto": "4",
-      "run_out_date": "27/03/2028",
+      "run_out_date": "23/03/2028",
       "supplier_code": "BPW72",
       "supplier_name": "CRONNOS IND E COM ART ELASTOMERICOS",
       "stock_b1cb": 0.0,
@@ -61160,7 +61160,7 @@
     {
       "pn": "86595946",
       "impacto": "4",
-      "run_out_date": "27/05/2027",
+      "run_out_date": "26/05/2027",
       "supplier_code": "BQB72",
       "supplier_name": "MERCOBOR IND E COM LTDA",
       "stock_b1cb": 0.0,
@@ -61503,7 +61503,7 @@
     {
       "pn": "86602978",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "BNT41",
       "supplier_name": "TRACTOR COMPONENTS PECAS PARA TRATO",
       "stock_b1cb": 0.0,
@@ -61748,7 +61748,7 @@
     {
       "pn": "86602999",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -62042,7 +62042,7 @@
     {
       "pn": "86614914",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "BML33",
       "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
       "stock_b1cb": 0.0,
@@ -62140,7 +62140,7 @@
     {
       "pn": "86619060",
       "impacto": "1",
-      "run_out_date": "14/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -62336,7 +62336,7 @@
     {
       "pn": "86624003",
       "impacto": "1",
-      "run_out_date": "06/10/2026",
+      "run_out_date": "07/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -62385,7 +62385,7 @@
     {
       "pn": "86624176",
       "impacto": "4",
-      "run_out_date": "06/08/2027",
+      "run_out_date": "09/08/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -62434,7 +62434,7 @@
     {
       "pn": "86624182",
       "impacto": "4",
-      "run_out_date": "18/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -62483,7 +62483,7 @@
     {
       "pn": "86624184",
       "impacto": "4",
-      "run_out_date": "29/04/2027",
+      "run_out_date": "30/04/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -62532,7 +62532,7 @@
     {
       "pn": "86625000",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "18/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -62924,7 +62924,7 @@
     {
       "pn": "86632597",
       "impacto": "3",
-      "run_out_date": "06/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -62973,7 +62973,7 @@
     {
       "pn": "86633356",
       "impacto": "4",
-      "run_out_date": "30/03/2028",
+      "run_out_date": "19/06/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -63071,7 +63071,7 @@
     {
       "pn": "86637977",
       "impacto": "1",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "24/11/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -63169,7 +63169,7 @@
     {
       "pn": "86638316",
       "impacto": "4",
-      "run_out_date": "15/09/2027",
+      "run_out_date": "16/09/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -63218,7 +63218,7 @@
     {
       "pn": "86639037",
       "impacto": "4",
-      "run_out_date": "11/05/2027",
+      "run_out_date": "17/06/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -63316,7 +63316,7 @@
     {
       "pn": "86705429",
       "impacto": "4",
-      "run_out_date": "28/05/2027",
+      "run_out_date": "31/05/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -63365,7 +63365,7 @@
     {
       "pn": "86974038",
       "impacto": "4",
-      "run_out_date": "22/12/2026",
+      "run_out_date": "21/12/2026",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -63414,7 +63414,7 @@
     {
       "pn": "86974605",
       "impacto": "4",
-      "run_out_date": "23/09/2027",
+      "run_out_date": "22/09/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -63512,7 +63512,7 @@
     {
       "pn": "86975790",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "BML33",
       "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
       "stock_b1cb": 0.0,
@@ -63561,7 +63561,7 @@
     {
       "pn": "86975890",
       "impacto": "4",
-      "run_out_date": "16/04/2027",
+      "run_out_date": "31/03/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -63610,7 +63610,7 @@
     {
       "pn": "86975897",
       "impacto": "3",
-      "run_out_date": "01/12/2026",
+      "run_out_date": "30/11/2026",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -63659,7 +63659,7 @@
     {
       "pn": "86976901",
       "impacto": "4",
-      "run_out_date": "17/12/2027",
+      "run_out_date": "20/12/2027",
       "supplier_code": "BNJ10",
       "supplier_name": "V S DE LIMA & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -63904,7 +63904,7 @@
     {
       "pn": "86977790",
       "impacto": "4",
-      "run_out_date": "04/08/2027",
+      "run_out_date": "05/08/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -63953,7 +63953,7 @@
     {
       "pn": "86980471",
       "impacto": "3",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -64296,7 +64296,7 @@
     {
       "pn": "87011553",
       "impacto": "4",
-      "run_out_date": "30/08/2027",
+      "run_out_date": "27/08/2027",
       "supplier_code": "BQB72",
       "supplier_name": "MERCOBOR IND E COM LTDA",
       "stock_b1cb": 0.0,
@@ -64590,7 +64590,7 @@
     {
       "pn": "87016471",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "02/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -64639,7 +64639,7 @@
     {
       "pn": "87016581",
       "impacto": "4",
-      "run_out_date": "13/04/2027",
+      "run_out_date": "22/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -65080,7 +65080,7 @@
     {
       "pn": "87030508",
       "impacto": "4",
-      "run_out_date": "29/09/2027",
+      "run_out_date": "01/10/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -65129,7 +65129,7 @@
     {
       "pn": "87030775",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -65276,7 +65276,7 @@
     {
       "pn": "87034256",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BJP83",
       "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -65570,7 +65570,7 @@
     {
       "pn": "87105383",
       "impacto": "4",
-      "run_out_date": "04/02/2027",
+      "run_out_date": "01/03/2027",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -65619,7 +65619,7 @@
     {
       "pn": "87106279",
       "impacto": "4",
-      "run_out_date": "27/07/2027",
+      "run_out_date": "28/07/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -65668,7 +65668,7 @@
     {
       "pn": "87107781",
       "impacto": "4",
-      "run_out_date": "17/02/2027",
+      "run_out_date": "18/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -66011,7 +66011,7 @@
     {
       "pn": "87109873",
       "impacto": "4",
-      "run_out_date": "12/04/2027",
+      "run_out_date": "30/03/2027",
       "supplier_code": "BML33",
       "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
       "stock_b1cb": 0.0,
@@ -66109,7 +66109,7 @@
     {
       "pn": "87280339",
       "impacto": "4",
-      "run_out_date": "03/02/2027",
+      "run_out_date": "02/02/2027",
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
       "stock_b1cb": 0.0,
@@ -66697,7 +66697,7 @@
     {
       "pn": "87302582",
       "impacto": "4",
-      "run_out_date": "19/03/2027",
+      "run_out_date": "26/03/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -66746,7 +66746,7 @@
     {
       "pn": "87305",
       "impacto": "4",
-      "run_out_date": "30/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -66795,7 +66795,7 @@
     {
       "pn": "87305403",
       "impacto": "1",
-      "run_out_date": "06/10/2026",
+      "run_out_date": "07/10/2026",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -66942,7 +66942,7 @@
     {
       "pn": "87307686",
       "impacto": "1",
-      "run_out_date": "20/10/2026",
+      "run_out_date": "07/10/2026",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -67040,7 +67040,7 @@
     {
       "pn": "87308955",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -67089,7 +67089,7 @@
     {
       "pn": "87312644",
       "impacto": "3",
-      "run_out_date": "26/11/2026",
+      "run_out_date": "27/11/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -67138,7 +67138,7 @@
     {
       "pn": "87313773",
       "impacto": "4",
-      "run_out_date": "26/03/2027",
+      "run_out_date": "12/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -67334,7 +67334,7 @@
     {
       "pn": "87326022",
       "impacto": "4",
-      "run_out_date": "08/04/2027",
+      "run_out_date": "09/04/2027",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -67383,7 +67383,7 @@
     {
       "pn": "87327478",
       "impacto": "4",
-      "run_out_date": "01/07/2027",
+      "run_out_date": "05/07/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -67481,7 +67481,7 @@
     {
       "pn": "87327940",
       "impacto": "3",
-      "run_out_date": "12/11/2026",
+      "run_out_date": "11/11/2026",
       "supplier_code": "BKQ71",
       "supplier_name": "METALURGICA TUZZI LTDA",
       "stock_b1cb": 300.0,
@@ -67530,7 +67530,7 @@
     {
       "pn": "87329682",
       "impacto": "4",
-      "run_out_date": "21/12/2026",
+      "run_out_date": "18/12/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -67579,7 +67579,7 @@
     {
       "pn": "87331106",
       "impacto": "4",
-      "run_out_date": "04/05/2027",
+      "run_out_date": "10/05/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -67726,7 +67726,7 @@
     {
       "pn": "87335549",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -67775,7 +67775,7 @@
     {
       "pn": "87340028",
       "impacto": "4",
-      "run_out_date": "15/10/2027",
+      "run_out_date": "28/10/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -67873,7 +67873,7 @@
     {
       "pn": "87350863",
       "impacto": "4",
-      "run_out_date": "31/03/2027",
+      "run_out_date": "29/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -68118,7 +68118,7 @@
     {
       "pn": "87358603",
       "impacto": "4",
-      "run_out_date": "24/05/2028",
+      "run_out_date": "24/04/2028",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -68461,7 +68461,7 @@
     {
       "pn": "87370602",
       "impacto": "3",
-      "run_out_date": "11/11/2026",
+      "run_out_date": "10/11/2026",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
       "stock_b1cb": 0.0,
@@ -68657,7 +68657,7 @@
     {
       "pn": "87373945",
       "impacto": "4",
-      "run_out_date": "12/03/2027",
+      "run_out_date": "15/03/2027",
       "supplier_code": "BML33",
       "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
       "stock_b1cb": 0.0,
@@ -68804,7 +68804,7 @@
     {
       "pn": "87377778",
       "impacto": "4",
-      "run_out_date": "21/04/2027",
+      "run_out_date": "23/04/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -68902,7 +68902,7 @@
     {
       "pn": "87384106",
       "impacto": "4",
-      "run_out_date": "15/10/2026",
+      "run_out_date": "10/08/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -68951,7 +68951,7 @@
     {
       "pn": "87389815",
       "impacto": "4",
-      "run_out_date": "08/03/2027",
+      "run_out_date": "09/03/2027",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -69000,7 +69000,7 @@
     {
       "pn": "87399657",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BJD99",
       "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "stock_b1cb": 0.0,
@@ -69245,7 +69245,7 @@
     {
       "pn": "87480926",
       "impacto": "3",
-      "run_out_date": "02/11/2026",
+      "run_out_date": "03/11/2026",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
       "stock_b1cb": 0.0,
@@ -69539,7 +69539,7 @@
     {
       "pn": "87519056",
       "impacto": "1",
-      "run_out_date": "08/10/2026",
+      "run_out_date": "19/10/2026",
       "supplier_code": "DZK11",
       "supplier_name": "METALURGICA HAME LTDA",
       "stock_b1cb": 0.0,
@@ -69735,7 +69735,7 @@
     {
       "pn": "87542324",
       "impacto": "4",
-      "run_out_date": "04/05/2027",
+      "run_out_date": "10/05/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -69833,7 +69833,7 @@
     {
       "pn": "87549626",
       "impacto": "4",
-      "run_out_date": "19/05/2027",
+      "run_out_date": "18/05/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -69882,7 +69882,7 @@
     {
       "pn": "87549630",
       "impacto": "4",
-      "run_out_date": "27/05/2027",
+      "run_out_date": "26/05/2027",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
       "stock_b1cb": 0.0,
@@ -70029,7 +70029,7 @@
     {
       "pn": "87571015",
       "impacto": "3",
-      "run_out_date": "25/11/2026",
+      "run_out_date": "24/11/2026",
       "supplier_code": "BVC42",
       "supplier_name": "PROTOMINAS INDUSTRIA E COMERCIO LTD",
       "stock_b1cb": 0.0,
@@ -70078,7 +70078,7 @@
     {
       "pn": "87573236",
       "impacto": "4",
-      "run_out_date": "22/12/2026",
+      "run_out_date": "21/12/2026",
       "supplier_code": "BJP83",
       "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -70322,8 +70322,8 @@
     },
     {
       "pn": "87590157",
-      "impacto": "4",
-      "run_out_date": "",
+      "impacto": "3",
+      "run_out_date": "11/11/2026",
       "supplier_code": "BVT60",
       "supplier_name": "ISOESPUMA LTDA",
       "stock_b1cb": 0.0,
@@ -70372,7 +70372,7 @@
     {
       "pn": "87593673",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "24/02/2027",
       "supplier_code": "BJP83",
       "supplier_name": "VENTUROSO VALENTINI & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -70665,8 +70665,8 @@
     },
     {
       "pn": "87602190",
-      "impacto": "3",
-      "run_out_date": "18/11/2026",
+      "impacto": "4",
+      "run_out_date": "10/12/2026",
       "supplier_code": "BMN58",
       "supplier_name": "METALURGICA IMAC LTDA",
       "stock_b1cb": 0.0,
@@ -70764,7 +70764,7 @@
     {
       "pn": "87613191",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "05/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -70813,7 +70813,7 @@
     {
       "pn": "87613235",
       "impacto": "4",
-      "run_out_date": "03/05/2027",
+      "run_out_date": "04/05/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -70862,7 +70862,7 @@
     {
       "pn": "87618166",
       "impacto": "1",
-      "run_out_date": "20/10/2026",
+      "run_out_date": "21/10/2026",
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "stock_b1cb": 0.0,
@@ -71303,7 +71303,7 @@
     {
       "pn": "87648216",
       "impacto": "3",
-      "run_out_date": "05/11/2026",
+      "run_out_date": "04/11/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -71547,8 +71547,8 @@
     },
     {
       "pn": "87653932",
-      "impacto": "3",
-      "run_out_date": "18/11/2026",
+      "impacto": "4",
+      "run_out_date": "10/12/2026",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -71597,7 +71597,7 @@
     {
       "pn": "87653936",
       "impacto": "4",
-      "run_out_date": "03/05/2027",
+      "run_out_date": "04/05/2027",
       "supplier_code": "BPD87",
       "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
       "stock_b1cb": 0.0,
@@ -71646,7 +71646,7 @@
     {
       "pn": "87654414",
       "impacto": "4",
-      "run_out_date": "05/08/2027",
+      "run_out_date": "13/08/2027",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -71695,7 +71695,7 @@
     {
       "pn": "87654417",
       "impacto": "4",
-      "run_out_date": "23/12/2026",
+      "run_out_date": "01/02/2027",
       "supplier_code": "BJC65",
       "supplier_name": "FARINA SA COMPONENTES AUTOMOTIVOS",
       "stock_b1cb": 0.0,
@@ -71989,7 +71989,7 @@
     {
       "pn": "87657886",
       "impacto": "4",
-      "run_out_date": "11/06/2027",
+      "run_out_date": "14/06/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -72528,7 +72528,7 @@
     {
       "pn": "87666924",
       "impacto": "4",
-      "run_out_date": "17/12/2026",
+      "run_out_date": "23/12/2026",
       "supplier_code": "BJQ09",
       "supplier_name": "ZUKAUSKAS & CIA LTDA",
       "stock_b1cb": 0.0,
@@ -72577,7 +72577,7 @@
     {
       "pn": "87666994",
       "impacto": "4",
-      "run_out_date": "31/12/2026",
+      "run_out_date": "30/12/2026",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
       "stock_b1cb": 0.0,
@@ -72626,7 +72626,7 @@
     {
       "pn": "87668116",
       "impacto": "4",
-      "run_out_date": "28/09/2027",
+      "run_out_date": "29/09/2027",
       "supplier_code": "BNF47",
       "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
       "stock_b1cb": 0.0,
@@ -72822,7 +72822,7 @@
     {
       "pn": "87670764",
       "impacto": "3",
-      "run_out_date": "18/11/2026",
+      "run_out_date": "01/12/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -73263,7 +73263,7 @@
     {
       "pn": "87681210",
       "impacto": "4",
-      "run_out_date": "11/05/2027",
+      "run_out_date": "12/05/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -73459,7 +73459,7 @@
     {
       "pn": "87682391",
       "impacto": "4",
-      "run_out_date": "29/04/2027",
+      "run_out_date": "30/04/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -73606,7 +73606,7 @@
     {
       "pn": "87682396",
       "impacto": "4",
-      "run_out_date": "05/08/2027",
+      "run_out_date": "06/08/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -73753,7 +73753,7 @@
     {
       "pn": "87687173",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "05/03/2027",
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "stock_b1cb": 0.0,
@@ -74096,7 +74096,7 @@
     {
       "pn": "87693234",
       "impacto": "4",
-      "run_out_date": "05/04/2027",
+      "run_out_date": "08/04/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -74145,7 +74145,7 @@
     {
       "pn": "87694057",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -74243,7 +74243,7 @@
     {
       "pn": "87695219",
       "impacto": "3",
-      "run_out_date": "19/11/2026",
+      "run_out_date": "18/11/2026",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -74390,7 +74390,7 @@
     {
       "pn": "87695414",
       "impacto": "4",
-      "run_out_date": "12/06/2028",
+      "run_out_date": "14/06/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -74439,7 +74439,7 @@
     {
       "pn": "87695418",
       "impacto": "4",
-      "run_out_date": "04/06/2027",
+      "run_out_date": "03/03/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -74537,7 +74537,7 @@
     {
       "pn": "87695427",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -74929,7 +74929,7 @@
     {
       "pn": "87698833",
       "impacto": "4",
-      "run_out_date": "02/04/2027",
+      "run_out_date": "05/04/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -75419,7 +75419,7 @@
     {
       "pn": "87698853",
       "impacto": "4",
-      "run_out_date": "13/12/2027",
+      "run_out_date": "03/01/2028",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -75713,7 +75713,7 @@
     {
       "pn": "87716384",
       "impacto": "3",
-      "run_out_date": "10/11/2026",
+      "run_out_date": "05/11/2026",
       "supplier_code": "BHZ66",
       "supplier_name": "AUTOTRAVI BORRACHAS E PLASTICOS EIR",
       "stock_b1cb": 0.0,
@@ -75811,7 +75811,7 @@
     {
       "pn": "87720597",
       "impacto": "4",
-      "run_out_date": "19/02/2027",
+      "run_out_date": "18/02/2027",
       "supplier_code": "BMZ44",
       "supplier_name": "INCOFLEX INDUSTRIA DE FLEXIVEIS LTD",
       "stock_b1cb": 0.0,
@@ -75860,7 +75860,7 @@
     {
       "pn": "87728796",
       "impacto": "4",
-      "run_out_date": "02/12/2027",
+      "run_out_date": "03/12/2027",
       "supplier_code": "BNL72",
       "supplier_name": "METALURGICA FIMAC LTDA",
       "stock_b1cb": 0.0,
@@ -75958,7 +75958,7 @@
     {
       "pn": "87742029",
       "impacto": "4",
-      "run_out_date": "01/03/2027",
+      "run_out_date": "02/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -76105,7 +76105,7 @@
     {
       "pn": "87750369",
       "impacto": "4",
-      "run_out_date": "24/02/2027",
+      "run_out_date": "28/04/2027",
       "supplier_code": "BNW32",
       "supplier_name": "TITAN PNEUS DO BRASIL LTDA",
       "stock_b1cb": 9.0,
@@ -76252,7 +76252,7 @@
     {
       "pn": "87752066",
       "impacto": "4",
-      "run_out_date": "01/10/2027",
+      "run_out_date": "04/10/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -76301,7 +76301,7 @@
     {
       "pn": "87752072",
       "impacto": "4",
-      "run_out_date": "29/12/2026",
+      "run_out_date": "01/02/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -77036,7 +77036,7 @@
     {
       "pn": "90341401",
       "impacto": "4",
-      "run_out_date": "22/04/2027",
+      "run_out_date": "21/04/2027",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -77232,7 +77232,7 @@
     {
       "pn": "90359771",
       "impacto": "1",
-      "run_out_date": "09/10/2026",
+      "run_out_date": "20/10/2026",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
       "stock_b1cb": 0.0,
@@ -77624,7 +77624,7 @@
     {
       "pn": "90397908",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "BKR45",
       "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
       "stock_b1cb": 0.0,
@@ -77771,7 +77771,7 @@
     {
       "pn": "90412504",
       "impacto": "3",
-      "run_out_date": "26/10/2026",
+      "run_out_date": "27/10/2026",
       "supplier_code": "FMV69",
       "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
       "stock_b1cb": 0.0,
@@ -78016,7 +78016,7 @@
     {
       "pn": "90439883",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "05/03/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -78114,7 +78114,7 @@
     {
       "pn": "90447793",
       "impacto": "4",
-      "run_out_date": "08/02/2027",
+      "run_out_date": "05/02/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -78163,7 +78163,7 @@
     {
       "pn": "90447795",
       "impacto": "3",
-      "run_out_date": "30/11/2026",
+      "run_out_date": "27/11/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -78212,7 +78212,7 @@
     {
       "pn": "90448481",
       "impacto": "4",
-      "run_out_date": "30/03/2027",
+      "run_out_date": "29/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -78261,7 +78261,7 @@
     {
       "pn": "90460427",
       "impacto": "3",
-      "run_out_date": "10/11/2026",
+      "run_out_date": "11/11/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -78653,7 +78653,7 @@
     {
       "pn": "90500689",
       "impacto": "4",
-      "run_out_date": "17/04/2028",
+      "run_out_date": "01/05/2028",
       "supplier_code": "BJQ09",
       "supplier_name": "ZUKAUSKAS & CIA LTDA",
       "stock_b1cb": 135.0,
@@ -79339,7 +79339,7 @@
     {
       "pn": "90510379",
       "impacto": "4",
-      "run_out_date": "07/06/2027",
+      "run_out_date": "08/06/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -79388,7 +79388,7 @@
     {
       "pn": "90510383",
       "impacto": "4",
-      "run_out_date": "26/03/2027",
+      "run_out_date": "01/04/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -79731,7 +79731,7 @@
     {
       "pn": "91718610",
       "impacto": "4",
-      "run_out_date": "28/10/2027",
+      "run_out_date": "22/10/2027",
       "supplier_code": "BJR81",
       "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
       "stock_b1cb": 0.0,
@@ -80907,7 +80907,7 @@
     {
       "pn": "91746555",
       "impacto": "4",
-      "run_out_date": "18/02/2027",
+      "run_out_date": "17/02/2027",
       "supplier_code": "BMQ74",
       "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
       "stock_b1cb": 0.0,
@@ -80956,7 +80956,7 @@
     {
       "pn": "91752532",
       "impacto": "4",
-      "run_out_date": "24/03/2027",
+      "run_out_date": "25/03/2027",
       "supplier_code": "BKQ39",
       "supplier_name": "CABS INTERNATIONAL LTDA",
       "stock_b1cb": 0.0,
@@ -81152,7 +81152,7 @@
     {
       "pn": "91757682",
       "impacto": "3",
-      "run_out_date": "13/11/2026",
+      "run_out_date": "12/11/2026",
       "supplier_code": "BJH90",
       "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
       "stock_b1cb": 68.0,
@@ -81201,7 +81201,7 @@
     {
       "pn": "91757687",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BJH90",
       "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
       "stock_b1cb": 28.0,
@@ -81985,7 +81985,7 @@
     {
       "pn": "91768204",
       "impacto": "4",
-      "run_out_date": "17/02/2027",
+      "run_out_date": "16/02/2027",
       "supplier_code": "BKG97",
       "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
       "stock_b1cb": 20.0,
@@ -82181,7 +82181,7 @@
     {
       "pn": "91780475",
       "impacto": "4",
-      "run_out_date": "27/04/2027",
+      "run_out_date": "03/05/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -82377,7 +82377,7 @@
     {
       "pn": "91792267",
       "impacto": "4",
-      "run_out_date": "28/06/2027",
+      "run_out_date": "29/06/2027",
       "supplier_code": "BNK46",
       "supplier_name": "GRANEI METALURGICA DE AUTO PECAS LT",
       "stock_b1cb": 0.0,
@@ -82426,7 +82426,7 @@
     {
       "pn": "91793223",
       "impacto": "4",
-      "run_out_date": "31/03/2027",
+      "run_out_date": "11/03/2027",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -82867,7 +82867,7 @@
     {
       "pn": "91803402",
       "impacto": "4",
-      "run_out_date": "03/06/2027",
+      "run_out_date": "02/06/2027",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -83161,7 +83161,7 @@
     {
       "pn": "91821862",
       "impacto": "4",
-      "run_out_date": "15/02/2027",
+      "run_out_date": "05/02/2027",
       "supplier_code": "BPJ57",
       "supplier_name": "TUPER SA",
       "stock_b1cb": 0.0,
@@ -83210,7 +83210,7 @@
     {
       "pn": "91823685",
       "impacto": "4",
-      "run_out_date": "19/02/2027",
+      "run_out_date": "17/02/2027",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -83259,7 +83259,7 @@
     {
       "pn": "91825928",
       "impacto": "4",
-      "run_out_date": "18/02/2027",
+      "run_out_date": "17/02/2027",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -83308,7 +83308,7 @@
     {
       "pn": "91832537",
       "impacto": "4",
-      "run_out_date": "30/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "BQB72",
       "supplier_name": "MERCOBOR IND E COM LTDA",
       "stock_b1cb": 0.0,
@@ -83651,7 +83651,7 @@
     {
       "pn": "91841400",
       "impacto": "4",
-      "run_out_date": "22/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BLT56",
       "supplier_name": "BORGWARNER BRASIL LTDA",
       "stock_b1cb": 84.0,
@@ -83749,7 +83749,7 @@
     {
       "pn": "91843698",
       "impacto": "4",
-      "run_out_date": "",
+      "run_out_date": "18/02/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -83896,7 +83896,7 @@
     {
       "pn": "91858632",
       "impacto": "3",
-      "run_out_date": "10/11/2026",
+      "run_out_date": "11/11/2026",
       "supplier_code": "FMV69",
       "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
       "stock_b1cb": 0.0,
@@ -83994,7 +83994,7 @@
     {
       "pn": "91860284",
       "impacto": "4",
-      "run_out_date": "10/06/2027",
+      "run_out_date": "15/06/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -84043,7 +84043,7 @@
     {
       "pn": "91861868",
       "impacto": "4",
-      "run_out_date": "10/06/2027",
+      "run_out_date": "15/06/2027",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -84190,7 +84190,7 @@
     {
       "pn": "91867698",
       "impacto": "4",
-      "run_out_date": "06/05/2027",
+      "run_out_date": "05/05/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -84239,7 +84239,7 @@
     {
       "pn": "91868610",
       "impacto": "3",
-      "run_out_date": "30/11/2026",
+      "run_out_date": "27/11/2026",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -84337,7 +84337,7 @@
     {
       "pn": "91870937",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "05/03/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -85072,7 +85072,7 @@
     {
       "pn": "92030965",
       "impacto": "1",
-      "run_out_date": "13/10/2026",
+      "run_out_date": "15/10/2026",
       "supplier_code": "DZK11",
       "supplier_name": "METALURGICA HAME LTDA",
       "stock_b1cb": 0.0,
@@ -85219,7 +85219,7 @@
     {
       "pn": "92041854",
       "impacto": "4",
-      "run_out_date": "10/09/2027",
+      "run_out_date": "09/09/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -85415,7 +85415,7 @@
     {
       "pn": "92049794",
       "impacto": "4",
-      "run_out_date": "11/03/2027",
+      "run_out_date": "10/03/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -85561,8 +85561,8 @@
     },
     {
       "pn": "92057264",
-      "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "impacto": "",
+      "run_out_date": "",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_b1cb": 0.0,
@@ -85709,7 +85709,7 @@
     {
       "pn": "92074204",
       "impacto": "1",
-      "run_out_date": "07/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -85807,7 +85807,7 @@
     {
       "pn": "92074626",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "15/03/2027",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -85856,7 +85856,7 @@
     {
       "pn": "92075047",
       "impacto": "3",
-      "run_out_date": "30/10/2026",
+      "run_out_date": "29/10/2026",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -85905,7 +85905,7 @@
     {
       "pn": "92075169",
       "impacto": "4",
-      "run_out_date": "16/03/2027",
+      "run_out_date": "15/03/2027",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -86101,7 +86101,7 @@
     {
       "pn": "92094405",
       "impacto": "4",
-      "run_out_date": "21/05/2027",
+      "run_out_date": "08/06/2027",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -86199,7 +86199,7 @@
     {
       "pn": "92133426",
       "impacto": "4",
-      "run_out_date": "28/06/2027",
+      "run_out_date": "25/06/2027",
       "supplier_code": "DNH73",
       "supplier_name": "ANGSTAHL INDUSTRIA E COMERCIO LTDA",
       "stock_b1cb": 0.0,
@@ -86247,8 +86247,8 @@
     },
     {
       "pn": "92133614",
-      "impacto": "3",
-      "run_out_date": "18/11/2026",
+      "impacto": "4",
+      "run_out_date": "10/12/2026",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "stock_b1cb": 0.0,
@@ -86542,7 +86542,7 @@
     {
       "pn": "92137791",
       "impacto": "4",
-      "run_out_date": "25/02/2027",
+      "run_out_date": "19/02/2027",
       "supplier_code": "BKG97",
       "supplier_name": "ITALYTEC IMEX INDUSTRIA E COMERCIO",
       "stock_b1cb": 0.0,
@@ -86885,7 +86885,7 @@
     {
       "pn": "92156827",
       "impacto": "4",
-      "run_out_date": "24/05/2027",
+      "run_out_date": "20/05/2027",
       "supplier_code": "BJC97",
       "supplier_name": "FOTOGRAVURA ZEYANA LTDA",
       "stock_b1cb": 0.0,
@@ -86983,7 +86983,7 @@
     {
       "pn": "92156839",
       "impacto": "4",
-      "run_out_date": "24/05/2027",
+      "run_out_date": "20/05/2027",
       "supplier_code": "BJC97",
       "supplier_name": "FOTOGRAVURA ZEYANA LTDA",
       "stock_b1cb": 0.0,
@@ -87424,7 +87424,7 @@
     {
       "pn": "92173388",
       "impacto": "4",
-      "run_out_date": "19/04/2027",
+      "run_out_date": "16/04/2027",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -87522,7 +87522,7 @@
     {
       "pn": "92176155",
       "impacto": "4",
-      "run_out_date": "26/03/2027",
+      "run_out_date": "01/04/2027",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
       "stock_b1cb": 0.0,
@@ -87571,7 +87571,7 @@
     {
       "pn": "92186966",
       "impacto": "4",
-      "run_out_date": "01/06/2027",
+      "run_out_date": "02/06/2027",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
       "stock_b1cb": 0.0,
@@ -88159,7 +88159,7 @@
     {
       "pn": "92192014",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "10/10/2026",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
       "stock_b1cb": 0.0,
@@ -88453,7 +88453,7 @@
     {
       "pn": "92196882",
       "impacto": "4",
-      "run_out_date": "26/05/2027",
+      "run_out_date": "25/05/2027",
       "supplier_code": "DVN55",
       "supplier_name": "HENNINGS VEDACOES HIDRAULICAS LTDA.",
       "stock_b1cb": 0.0,
@@ -88502,7 +88502,7 @@
     {
       "pn": "92196886",
       "impacto": "4",
-      "run_out_date": "29/06/2027",
+      "run_out_date": "25/06/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -88551,7 +88551,7 @@
     {
       "pn": "92198174",
       "impacto": "4",
-      "run_out_date": "24/06/2027",
+      "run_out_date": "23/06/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -89482,7 +89482,7 @@
     {
       "pn": "92244204",
       "impacto": "4",
-      "run_out_date": "14/05/2027",
+      "run_out_date": "20/04/2027",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -90853,8 +90853,8 @@
     },
     {
       "pn": "92287283",
-      "impacto": "3",
-      "run_out_date": "30/11/2026",
+      "impacto": "1",
+      "run_out_date": "14/10/2026",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -91099,7 +91099,7 @@
     {
       "pn": "92308656",
       "impacto": "4",
-      "run_out_date": "05/10/2027",
+      "run_out_date": "08/10/2027",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -91148,7 +91148,7 @@
     {
       "pn": "92308795",
       "impacto": "4",
-      "run_out_date": "04/03/2027",
+      "run_out_date": "22/03/2027",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -91295,7 +91295,7 @@
     {
       "pn": "92646276",
       "impacto": "4",
-      "run_out_date": "20/04/2027",
+      "run_out_date": "19/04/2027",
       "supplier_code": "BVJ30",
       "supplier_name": "HENNINGS VEDACOES HIDRAULICAS E PNE",
       "stock_b1cb": 0.0,
@@ -91344,7 +91344,7 @@
     {
       "pn": "92647097",
       "impacto": "4",
-      "run_out_date": "22/12/2026",
+      "run_out_date": "21/12/2026",
       "supplier_code": "BQQ54",
       "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_b1cb": 0.0,
@@ -91393,7 +91393,7 @@
     {
       "pn": "92648301",
       "impacto": "4",
-      "run_out_date": "15/02/2027",
+      "run_out_date": "05/02/2027",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -91834,7 +91834,7 @@
     {
       "pn": "92678285",
       "impacto": "1",
-      "run_out_date": "19/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -91883,7 +91883,7 @@
     {
       "pn": "92678288",
       "impacto": "1",
-      "run_out_date": "19/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -91932,7 +91932,7 @@
     {
       "pn": "92678290",
       "impacto": "1",
-      "run_out_date": "19/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -91981,7 +91981,7 @@
     {
       "pn": "92678291",
       "impacto": "1",
-      "run_out_date": "19/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_b1cb": 0.0,
@@ -92373,7 +92373,7 @@
     {
       "pn": "92700013",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "16/03/2027",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -92471,7 +92471,7 @@
     {
       "pn": "92714622",
       "impacto": "4",
-      "run_out_date": "04/06/2027",
+      "run_out_date": "12/07/2027",
       "supplier_code": "BVT60",
       "supplier_name": "ISOESPUMA LTDA",
       "stock_b1cb": 0.0,
@@ -92765,7 +92765,7 @@
     {
       "pn": "92817756",
       "impacto": "4",
-      "run_out_date": "22/07/2027",
+      "run_out_date": "28/07/2027",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -92814,7 +92814,7 @@
     {
       "pn": "92817764",
       "impacto": "4",
-      "run_out_date": "16/02/2027",
+      "run_out_date": "10/03/2027",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
       "stock_b1cb": 0.0,
@@ -92912,7 +92912,7 @@
     {
       "pn": "9500923",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BNG96",
       "supplier_name": "COMPROMESSO INDUSTRIA METALURGICA L",
       "stock_b1cb": 0.0,
@@ -92961,7 +92961,7 @@
     {
       "pn": "9501756",
       "impacto": "4",
-      "run_out_date": "18/12/2026",
+      "run_out_date": "21/12/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -93010,7 +93010,7 @@
     {
       "pn": "9501985",
       "impacto": "4",
-      "run_out_date": "29/05/2028",
+      "run_out_date": "30/05/2028",
       "supplier_code": "BQH60",
       "supplier_name": "SDS INDUSTRIA E COMERCIO LTDA EPP",
       "stock_b1cb": 0.0,
@@ -93108,7 +93108,7 @@
     {
       "pn": "9504320",
       "impacto": "3",
-      "run_out_date": "15/10/2026",
+      "run_out_date": "16/10/2026",
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_b1cb": 0.0,
@@ -93206,7 +93206,7 @@
     {
       "pn": "9511052",
       "impacto": "1",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -93794,7 +93794,7 @@
     {
       "pn": "9671714",
       "impacto": "4",
-      "run_out_date": "23/06/2027",
+      "run_out_date": "28/06/2027",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -94039,7 +94039,7 @@
     {
       "pn": "9804255",
       "impacto": "1",
-      "run_out_date": "13/10/2026",
+      "run_out_date": "07/10/2026",
       "supplier_code": "BLH98",
       "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
       "stock_b1cb": 0.0,
@@ -94235,7 +94235,7 @@
     {
       "pn": "9804276",
       "impacto": "4",
-      "run_out_date": "17/09/2027",
+      "run_out_date": "20/09/2027",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
@@ -94333,7 +94333,7 @@
     {
       "pn": "9824259",
       "impacto": "4",
-      "run_out_date": "05/10/2026",
+      "run_out_date": "06/10/2026",
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_b1cb": 0.0,
