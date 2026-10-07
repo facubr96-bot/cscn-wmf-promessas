@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-07T13:47:52.404Z",
+  "editor": "Victor Medeiros",
+  "semana": "2026-W41",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BMQ74",
+      "part_number": "47699301",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC97",
+      "part_number": "51429208",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BMX47",
+      "part_number": "91761278",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 1,
+      "entrega_confirmada": true,
+      "data_coleta": "24/08/2026",
+      "nfe_enviada": "286873",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
