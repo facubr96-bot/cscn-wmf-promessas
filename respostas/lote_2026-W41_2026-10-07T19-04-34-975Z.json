@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-10-07T19:04:34.975Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W41",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BNV40",
+      "part_number": "48084110",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": true,
+      "data_coleta": "08/09/2026",
+      "nfe_enviada": "181339",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNV40",
+      "part_number": "91820727",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
