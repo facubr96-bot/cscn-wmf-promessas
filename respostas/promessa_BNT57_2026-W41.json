@@ -5,7 +5,7 @@
     {
       "part_number": "51679875",
       "data_promessa": "14/10/2026",
-      "qty_prometida": 10,
+      "qty_prometida": 20,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-08T14:53:57.790Z"
+  "recibido_en_worker": "2026-10-08T14:55:29.767Z"
 }
