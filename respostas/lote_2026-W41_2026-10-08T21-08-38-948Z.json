@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-08T21:08:38.948Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W41",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BJD99",
+      "part_number": "83925884",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD99",
+      "part_number": "84584834",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD99",
+      "part_number": "87399657",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
