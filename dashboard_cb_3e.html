@@ -1694,6 +1694,7 @@ async function clearPromiseNoConfirm(pn) {
   item.data_coleta = "";
   item.nfe_enviada = "";
   item.qty_nfe_confirmada = "";
+  markDirtyFields(pn, { promessa_data: "", promessa_qty: "", entrega_confirmada: false, data_coleta: "", nfe_enviada: "", qty_nfe_confirmada: "" });
   await window.saveRow(pn);
   return true;
 }
@@ -1703,6 +1704,49 @@ window.clearPromise = async function(pn) {
   document.getElementById("statusText").textContent = `Promessa borrada: PN ${pn}`;
 };
 
+// ---- Protecao contra pisar dados de outros usuarios ----
+// O Worker grava a linha INTEIRA do PN. Se esta aba foi carregada antes de outra pessoa guardar
+// (ou a carga dos dados guardados falhou), guardar sem cuidado apagaria o que os outros ja tinham
+// posto. Por isso, antes de CADA guardado: (1) busca os dados mais recentes do banco; (2) para os
+// campos que o usuario NAO editou nesta sessao, usa o valor do banco; (3) se nao conseguir buscar,
+// NAO guarda nada.
+const OVERRIDE_FIELD_MAP = [
+  ["promise_date", "promessa_data", r => normalizeDateFlexible(r.promise_date) || ""],
+  ["promised_qty", "promessa_qty", r => ((r.promised_qty ?? "") === "" ? "" : Number(r.promised_qty))],
+  ["previsao_saida_wmfbr", "previsao_saida_wmfbr", r => normalizeDateFlexible(r.previsao_saida_wmfbr) || ""],
+  ["motivo_atraso", "motivo_atraso", r => r.motivo_atraso || ""],
+  ["escalation_level", "escalation_level", r => r.escalation_level || ""],
+  ["data_real_completed", "data_real_completed", r => normalizeDateFlexible(r.data_real_completed) || ""],
+];
+function markDirtyFields(pn, fields) {
+  dirty[pn] = dirty[pn] || {};
+  Object.assign(dirty[pn], fields);
+}
+async function refreshFromServerBeforeSave(pns) {
+  if (!currentCode) return false;
+  try {
+    const resp = await fetch(WORKER_URL + "?action=dashboard_overrides&code=" + encodeURIComponent(currentCode) + "&t=" + Date.now());
+    if (!resp.ok) return false;
+    const data = await resp.json();
+    if (!data || !data.ok || !Array.isArray(data.promises)) return false;
+    const byKey = new Map();
+    data.promises.forEach(r => byKey.set(`${String(r.pn || "")}|${r.supplier_code || ""}`, r));
+    pns.forEach(pn => {
+      const item = allItems.find(i => i.pn === pn);
+      if (!item) return;
+      const r = byKey.get(`${pn}|${item.supplier_code || ""}`);
+      if (!r) return; // sem linha no banco: nada que proteger
+      const touched = dirty[pn] || {};
+      OVERRIDE_FIELD_MAP.forEach(([, itemField, conv]) => {
+        if (Object.prototype.hasOwnProperty.call(touched, itemField)) return; // o usuario editou: vale o dele
+        item[itemField] = conv(r);
+      });
+    });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 function buildItemPayload(item) {
   return {
     part_number: item.pn,
@@ -1732,8 +1776,12 @@ function currentWeekLabel() {
 // chamador cai no guardado PN a PN de sempre.
 const BATCH_SIZE = 100;
 async function saveBatch(pns, onProgress) {
-  const result = { ok: [], failed: [], unsupported: false };
+  const result = { ok: [], failed: [], unsupported: false, aborted: false };
   const semana = currentWeekLabel();
+  if (!(await refreshFromServerBeforeSave(pns))) {
+    result.aborted = true; result.failed.push(...pns);
+    return result;
+  }
   const rows = [];
   for (const pn of pns) {
     const item = allItems.find(i => i.pn === pn);
@@ -1780,6 +1828,10 @@ window.saveRow = async function(pn, opts) {
   }
   const item = allItems.find(i => i.pn === pn);
   if (!item) return;
+  if (!silent && !(await refreshFromServerBeforeSave([pn]))) {
+    document.getElementById("statusText").textContent = `No se guardo PN ${pn}: no se pudo verificar los datos mas recientes del servidor. Recarga la pagina (Ctrl+F5) e intenta de nuevo.`;
+    return;
+  }
   const itemPayload = buildItemPayload(item);
   const semanaAtual = currentWeekLabel();
   try {
@@ -1804,9 +1856,10 @@ document.getElementById("btnSave").onclick = async () => {
   // Se houver PN selecionados pelo checkbox, salva so esses (tenham ou nao
   // alteracao pendente). Sem selecao, mantem o comportamento antigo: salva
   // todos os PN marcados como "sujos" (dirty) por alguma edicao na tabela.
-  const pns = selectedPns.size ? [...selectedPns] : Object.keys(dirty);
+  // So guarda PN com edicao pendente (dirty). Selecionar muitos PN sem editar NAO os regrava.
+  const pns = (selectedPns.size ? [...selectedPns] : Object.keys(dirty)).filter(pn => dirty[pn]);
   if (pns.length === 0) {
-    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar (ou ningun PN seleccionado).";
+    document.getElementById("statusText").textContent = "No hay cambios pendientes para guardar (solo se guardan los PN que editaste).";
     return;
   }
   if (!currentUser || currentUser.role !== "editor") {
@@ -1821,6 +1874,11 @@ document.getElementById("btnSave").onclick = async () => {
   let doneBatch = false;
   if (pns.length > 1) {
     const r = await saveBatch(pns, (n, total) => { btn.textContent = `Guardando ${n}/${total}...`; });
+    if (r.aborted) {
+      btn.disabled = false; btn.textContent = "Guardar cambios";
+      document.getElementById("statusText").textContent = "No se guardo nada: no se pudo verificar los datos mas recientes del servidor. Recarga la pagina (Ctrl+F5) e intenta de nuevo.";
+      return;
+    }
     if (!r.unsupported) {
       ok = r.ok.length; fail = r.failed.length; failedPns.push(...r.failed);
       doneBatch = true;
@@ -1863,10 +1921,16 @@ document.getElementById("btnClearSelectedPromise").onclick = async () => {
     if (!item) return;
     item.promessa_data = ""; item.promessa_qty = ""; item.entrega_confirmada = false;
     item.data_coleta = ""; item.nfe_enviada = ""; item.qty_nfe_confirmada = "";
+    markDirtyFields(pn, { promessa_data: "", promessa_qty: "", entrega_confirmada: false, data_coleta: "", nfe_enviada: "", qty_nfe_confirmada: "" });
   });
   let doneBatch = false;
   if (pns.length > 1) {
     const r = await saveBatch(pns, (n, total) => { btn.textContent = `Borrando ${n}/${total}...`; });
+    if (r.aborted) {
+      btn.disabled = false; btn.textContent = "Borrar Promessa";
+      document.getElementById("statusText").textContent = "No se borro nada: no se pudo verificar los datos mas recientes del servidor. Recarga la pagina (Ctrl+F5) e intenta de nuevo.";
+      return;
+    }
     if (!r.unsupported) { ok = r.ok.length; fail = r.failed.length; doneBatch = true; }
   }
   if (!doneBatch) {
@@ -2032,6 +2096,15 @@ document.getElementById("fileImport").onchange = (e) => {
         }
         if (colDataRealCompleted >= 0) { const d = normalizeDateFlexible(cells[colDataRealCompleted]); if (d) item.data_real_completed = d; }
         dirty[pn] = dirty[pn] || {};
+        // Campos que o arquivo trouxe: contam como "editados" (o guardado nao os troca pelo valor do banco).
+        const importedFields = {};
+        if (colDate >= 0) importedFields.promessa_data = item.promessa_data;
+        if (colQty >= 0) importedFields.promessa_qty = item.promessa_qty;
+        if (colPrevisao >= 0) importedFields.previsao_saida_wmfbr = item.previsao_saida_wmfbr;
+        if (colMotivo >= 0) importedFields.motivo_atraso = item.motivo_atraso;
+        if (colEscalation >= 0) importedFields.escalation_level = item.escalation_level;
+        if (colDataRealCompleted >= 0) importedFields.data_real_completed = item.data_real_completed;
+        markDirtyFields(pn, importedFields);
         updated++;
       }
       document.getElementById("statusText").textContent =
