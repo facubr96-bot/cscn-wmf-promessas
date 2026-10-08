@@ -386,6 +386,8 @@
       <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
       <button class="btn" id="btnImport">Importar Excel/CSV</button>
       <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
+      <button class="btn" id="btnImportDataReal" title="Importa SOMENTE a Data Real Completed (P44) desde um CSV com PN e data. Nao toca motivos, escalation nem promessas.">Importar Data Real (P44)</button>
+      <input type="file" id="fileImportDataReal" accept=".csv,.txt" style="display:none">
       <button class="btn" id="btnExport">Exportar Excel/CSV</button>
       <span class="count" id="selectedCount" style="margin-left:6px;"></span>
       <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
@@ -2048,6 +2050,105 @@ document.getElementById("btnExport").onclick = () => {
   a.click();
 };
 
+
+// ---------- Importacao em massa SOMENTE da Data Real Completed (P44) ----------
+// Arquivo CSV (separador ; ou ,) com colunas PN e Data Real (dd/mm/aaaa, aaaa-mm-dd ou d/m/aaaa).
+// Vai por uma rota propria do Worker que so grava essa coluna: nao envia nem altera motivos,
+// escalation, promessas, coleta, NFe etc., e celulas vazias nunca apagam uma data existente.
+function parseDataRealDate(raw) {
+  const t = String(raw ?? "").trim();
+  if (!t) return "";
+  let m = /^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})/.exec(t);
+  if (m) {
+    const d = +m[1], mo = +m[2], y = +m[3];
+    if (mo < 1 || mo > 12 || d < 1 || d > 31) return "";
+    return `${String(d).padStart(2, "0")}/${String(mo).padStart(2, "0")}/${y}`;
+  }
+  m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t);
+  if (m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return "";
+}
+document.getElementById("btnImportDataReal").onclick = () => document.getElementById("fileImportDataReal").click();
+document.getElementById("fileImportDataReal").onchange = (e) => {
+  const file = e.target.files[0];
+  e.target.value = ""; // permite reimportar o mesmo arquivo
+  if (!file) return;
+  const status = document.getElementById("statusText");
+  if (!currentUser || currentUser.role !== "editor") { status.textContent = "No tenes permiso de edicion (solo lectura)."; return; }
+  const reader = new FileReader();
+  reader.onload = async () => {
+    try {
+      const text = reader.result.replace(/^﻿/, "");
+      const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+      if (lines.length < 2) throw new Error("Arquivo vazio.");
+      const sep = detectDelimiter(lines[0]);
+      const head = splitDelimitedLine(lines[0], sep).map(h => h.toLowerCase().replace(/[^a-z0-9]/g, ""));
+      const colPn = head.findIndex(h => ["pn", "partnumber", "part"].includes(h));
+      const colDate = head.findIndex(h => ["datarealcompleted", "realcompleted", "datareal", "datarecebimento", "datarecebida"].includes(h));
+      if (colPn < 0) throw new Error("Coluna PN nao encontrada.");
+      if (colDate < 0) throw new Error('Coluna "Data Real Completed" nao encontrada (aceita: Data Real Completed, Data Real).');
+
+      const toSend = [], seen = new Set();
+      let notFound = 0, badDate = 0, empty = 0;
+      for (let li = 1; li < lines.length; li++) {
+        const cells = splitDelimitedLine(lines[li], sep);
+        const pn = (cells[colPn] || "").trim();
+        if (!pn) continue;
+        const rawDate = (cells[colDate] || "").trim();
+        if (!rawDate) { empty++; continue; }
+        const date = parseDataRealDate(rawDate);
+        if (!date) { badDate++; continue; }
+        const item = allItems.find(i => i.pn === pn);
+        if (!item || !item.supplier_code) { notFound++; continue; }
+        const key = `${pn}|${item.supplier_code}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        toSend.push({ item, pn, date });
+      }
+      if (toSend.length === 0) {
+        status.textContent = `Nada para importar (sem data valida). Sem PN no dashboard: ${notFound}, data invalida: ${badDate}, celulas vazias: ${empty}.`;
+        return;
+      }
+      if (!confirm(`Importar a Data Real Completed de ${toSend.length} PN?\n\nSomente essa coluna sera gravada; motivos, escalation e promessas NAO sao alterados.` +
+        (notFound || badDate ? `\n\nIgnorados: ${notFound} PN nao encontrados, ${badDate} datas invalidas.` : ""))) return;
+
+      const btn = document.getElementById("btnImportDataReal");
+      btn.disabled = true;
+      let okCount = 0, fail = 0;
+      const CH = 200;
+      for (let i = 0; i < toSend.length; i += CH) {
+        const chunk = toSend.slice(i, i + CH);
+        btn.textContent = `Importando ${Math.min(i + CH, toSend.length)}/${toSend.length}...`;
+        try {
+          const resp = await fetch(WORKER_URL + "?action=dashboard_edit_data_real", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ itens: chunk.map(c => ({ part_number: c.pn, supplier_code: c.item.supplier_code, data_real_completed: c.date })), editor_code: currentCode }),
+          });
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+          chunk.forEach(c => { c.item.data_real_completed = c.date; });
+          okCount += chunk.length;
+        } catch (err) {
+          fail += chunk.length;
+        }
+      }
+      // Evita que um edit local antigo "ressuscite" a data anterior ao recarregar.
+      const edits = loadLocalEdits();
+      toSend.forEach(c => { if (edits[c.pn]) edits[c.pn].data_real_completed = c.item.data_real_completed || ""; });
+      saveLocalEdits(edits);
+      btn.disabled = false;
+      btn.textContent = "Importar Data Real (P44)";
+      renderTable();
+      status.textContent = fail === 0
+        ? `Data Real importada: ${okCount} PN${notFound || badDate ? ` (ignorados: ${notFound} nao encontrados, ${badDate} datas invalidas)` : ""}.`
+        : `Data Real: ${okCount} PN gravados, ${fail} falharam (Worker sem a rota nova ou erro de rede). Nada mais foi alterado.`;
+    } catch (err) {
+      status.textContent = "Erro importando Data Real: " + err.message;
+    }
+  };
+  reader.readAsText(file, "utf-8");
+};
+
 document.getElementById("btnImport").onclick = () => document.getElementById("fileImport").click();
 document.getElementById("fileImport").onchange = (e) => {
   const file = e.target.files[0];
@@ -2793,6 +2894,7 @@ function applyRolePermissions() {
     : "";
   document.getElementById("btnSave").style.display = isEditor ? "" : "none";
   document.getElementById("btnImport").style.display = isEditor ? "" : "none";
+  document.getElementById("btnImportDataReal").style.display = isEditor ? "" : "none";
   document.getElementById("btnClearSelectedPromise").style.display = isEditor ? "" : "none";
 }
 document.getElementById("btnLogin").onclick = () => {
