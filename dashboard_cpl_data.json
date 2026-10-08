@@ -1,5 +1,5 @@
 {
-  "generated_at": "08/10/2026 10:20",
+  "generated_at": "08/10/2026 10:40",
   "today": "08/10/2026",
   "total": 401,
   "items": [
@@ -1832,7 +1832,7 @@
       "criticidad": "Normal",
       "reason": "System Error",
       "run_out_date": "18/02/2027",
-      "wmf_promise": "06/10/2026",
+      "wmf_promise": "",
       "created": "27/02/2026",
       "estado": "Finalizado",
       "planner": "Vivian Strelow",
