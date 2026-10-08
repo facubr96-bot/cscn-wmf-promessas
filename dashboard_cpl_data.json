@@ -1,5 +1,5 @@
 {
-  "generated_at": "08/10/2026 15:00",
+  "generated_at": "08/10/2026 15:20",
   "today": "08/10/2026",
   "total": 401,
   "items": [
@@ -6062,7 +6062,7 @@
       "criticidad": "Hiper Critico",
       "reason": "Past Due",
       "run_out_date": "19/10/2026",
-      "wmf_promise": "30/09/2026",
+      "wmf_promise": "",
       "created": "25/09/2026",
       "estado": "Aberto",
       "planner": "Titon Facundo",
