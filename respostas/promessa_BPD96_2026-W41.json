@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "91760890",
-      "data_promessa": "26/10/2026",
-      "qty_prometida": 20,
+      "part_number": "91760897",
+      "data_promessa": "04/12/2026",
+      "qty_prometida": 25,
       "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-08T19:21:30.785Z"
+  "recibido_en_worker": "2026-10-08T19:22:29.276Z"
 }
