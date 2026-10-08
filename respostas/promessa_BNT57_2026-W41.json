@@ -3,9 +3,9 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "51679848",
+      "part_number": "51679850",
       "data_promessa": "14/10/2026",
-      "qty_prometida": 20,
+      "qty_prometida": 10,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-08T14:56:45.963Z"
+  "recibido_en_worker": "2026-10-08T14:57:08.215Z"
 }
