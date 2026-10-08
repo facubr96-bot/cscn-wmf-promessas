@@ -4,7 +4,7 @@
   "itens": [
     {
       "part_number": "91760897",
-      "data_promessa": "04/12/2026",
+      "data_promessa": "19/10/2026",
       "qty_prometida": 25,
       "entrega_confirmada": true,
       "data_coleta": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-08T19:22:29.276Z"
+  "recibido_en_worker": "2026-10-08T19:44:25.152Z"
 }
