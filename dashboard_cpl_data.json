@@ -1,7 +1,7 @@
 {
-  "generated_at": "08/10/2026 08:40",
+  "generated_at": "08/10/2026 09:00",
   "today": "08/10/2026",
-  "total": 400,
+  "total": 401,
   "items": [
     {
       "id": "1",
@@ -7201,6 +7201,24 @@
       "estado": "Aberto",
       "planner": "Vivian Strelow",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "402",
+      "pn": "90359678",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 45.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Stock Loss",
+      "run_out_date": "07/10/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
