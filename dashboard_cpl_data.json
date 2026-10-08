@@ -1,5 +1,5 @@
 {
-  "generated_at": "08/10/2026 09:00",
+  "generated_at": "08/10/2026 09:20",
   "today": "08/10/2026",
   "total": 401,
   "items": [
@@ -7206,8 +7206,8 @@
     {
       "id": "402",
       "pn": "90359678",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BMH26",
+      "supplier_name": "RESFRI AR CLIMATIZADORES E",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 45.0,
@@ -7215,10 +7215,10 @@
       "reason": "Stock Loss",
       "run_out_date": "07/10/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "08/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
