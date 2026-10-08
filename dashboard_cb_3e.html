@@ -313,6 +313,7 @@
       <input type="text" id="rawSearchPn" placeholder="Buscar PN...">
       <input type="text" id="rawSearchSupplier" placeholder="Buscar proveedor...">
       <span class="count" id="rawRowCount"></span>
+      <button class="btn" id="btnExportRaw" title="Exporta as linhas visiveis (respeita os filtros de PN e proveedor)">Exportar CSV</button>
     </div>
     <div class="modal-body" id="rawModalBody">
       <div class="empty-state">Cargando...</div>
@@ -2666,6 +2667,21 @@ function renderRawTable() {
 document.getElementById("btnRawView").onclick = openRawModal;
 document.getElementById("btnCloseRawModal").onclick = () => {
   document.getElementById("rawModalOverlay").style.display = "none";
+};
+document.getElementById("btnExportRaw").onclick = () => {
+  const items = rawFilteredItems();
+  if (!items.length) { alert("Nao ha linhas para exportar com estes filtros."); return; }
+  const lines = [RAW_COLS.map(c => c.label).join(";")];
+  items.forEach(r => lines.push(RAW_COLS.map(c => csvEscape(r[c.key] ?? "")).join(";")));
+  const slug = t => String(t || "").trim().replace(/[^a-zA-Z0-9]+/g, "_").replace(/^_|_$/g, "");
+  const sup = slug(document.getElementById("rawSearchSupplier").value);
+  const pn = slug(document.getElementById("rawSearchPn").value);
+  const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `cscn_bruto_${plant}${sup ? "_" + sup : ""}${pn ? "_" + pn : ""}_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 };
 document.getElementById("rawSearchPn").oninput = renderRawTable;
 document.getElementById("rawSearchSupplier").oninput = renderRawTable;
