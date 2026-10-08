@@ -1,5 +1,5 @@
 {
-  "generated_at": "08/10/2026 10:41",
+  "generated_at": "08/10/2026 11:01",
   "today": "08/10/2026",
   "total_pn": 1938,
   "erp_release_cb": "20260930",
@@ -14877,7 +14877,7 @@
       "promessa_qty": 838.0,
       "qty_confirmada": 0.0,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Arredondamento",
       "escalation_level": "",
       "data_real_completed": "07/10/2026",
       "cum_rec_cb": 112.0,
