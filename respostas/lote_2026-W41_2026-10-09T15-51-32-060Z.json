@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-10-09T15:51:32.060Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BKH48",
+      "part_number": "84128484",
+      "data_promessa": "18/11/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BKH48",
+      "part_number": "91868936",
+      "data_promessa": "20/10/2026",
+      "qty_prometida": 400,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
