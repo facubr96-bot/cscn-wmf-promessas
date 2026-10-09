@@ -1,0 +1,68 @@
+{
+  "recibido_en_worker": "2026-10-09T13:17:44.550Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 4,
+  "itens": [
+    {
+      "supplier_code": "BMX47",
+      "part_number": "47703388",
+      "data_promessa": "05/10/2026",
+      "qty_prometida": 45,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "NONE",
+      "data_real_completed": "08/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD65",
+      "part_number": "48172787",
+      "data_promessa": "07/10/2026",
+      "qty_prometida": 15,
+      "entrega_confirmada": true,
+      "data_coleta": "25/09/2026",
+      "nfe_enviada": "148499",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "01/01/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD65",
+      "part_number": "84215095",
+      "data_promessa": "07/10/2026",
+      "qty_prometida": 6,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "01/01/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD65",
+      "part_number": "84372492",
+      "data_promessa": "02/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "01/01/2026",
+      "comentario": ""
+    }
+  ]
+}
