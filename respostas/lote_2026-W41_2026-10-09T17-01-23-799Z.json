@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-10-09T17:01:23.799Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "FQJ97",
+      "part_number": "47705836",
+      "data_promessa": "14/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "74774",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FQJ97",
+      "part_number": "47705979",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "74775",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "NONE",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FQJ97",
+      "part_number": "47848830",
+      "data_promessa": "14/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "74774",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FQJ97",
+      "part_number": "47849683",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 10,
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "74774",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FQJ97",
+      "part_number": "48194547",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": true,
+      "data_coleta": "15/09/2026",
+      "nfe_enviada": "74774",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    }
+  ]
+}
