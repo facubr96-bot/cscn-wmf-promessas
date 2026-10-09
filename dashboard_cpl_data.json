@@ -1,5 +1,5 @@
 {
-  "generated_at": "09/10/2026 09:00",
+  "generated_at": "09/10/2026 09:20",
   "today": "09/10/2026",
   "total": 401,
   "items": [
@@ -6836,7 +6836,7 @@
       "criticidad": "Normal",
       "reason": "Projeto",
       "run_out_date": "16/03/2027",
-      "wmf_promise": "",
+      "wmf_promise": "21/10/2026",
       "created": "30/09/2026",
       "estado": "Aberto",
       "planner": "TITON Facundo",
