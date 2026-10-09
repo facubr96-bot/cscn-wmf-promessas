@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-09T15:52:54.106Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BJG17",
+      "part_number": "48172455",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "L1",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJG17",
+      "part_number": "48172458",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "L1",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJG17",
+      "part_number": "48172466",
+      "data_promessa": "",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "L1",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
