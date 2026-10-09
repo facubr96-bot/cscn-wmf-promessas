@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-09T12:56:32.303Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W41",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "FHZ16",
+      "part_number": "300806",
+      "data_promessa": "21/09/2026",
+      "qty_prometida": 234,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FHZ16",
+      "part_number": "308823",
+      "data_promessa": "21/09/2026",
+      "qty_prometida": 80,
+      "entrega_confirmada": true,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "FHZ16",
+      "part_number": "394630",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 0,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
