@@ -3,11 +3,11 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "84390751",
-      "data_promessa": "",
-      "qty_prometida": 68,
+      "part_number": "421490",
+      "data_promessa": "06/10/2026",
+      "qty_prometida": 70,
       "entrega_confirmada": true,
-      "data_coleta": "28/10/2026",
+      "data_coleta": "19/08/2026",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-09T13:54:09.005Z"
+  "recibido_en_worker": "2026-10-09T13:54:43.035Z"
 }
