@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-10-09T16:47:44.070Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W41",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "BJC97",
+      "part_number": "48150891",
+      "data_promessa": "15/09/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "25/09/2026",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC97",
+      "part_number": "51429208",
+      "data_promessa": "15/09/2026",
+      "qty_prometida": 40,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC97",
+      "part_number": "90415132",
+      "data_promessa": "15/09/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC97",
+      "part_number": "92156855",
+      "data_promessa": "15/09/2026",
+      "qty_prometida": 39,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJC97",
+      "part_number": "92642281",
+      "data_promessa": "15/09/2026",
+      "qty_prometida": 50,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
