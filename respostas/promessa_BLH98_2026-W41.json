@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "14441321",
+      "part_number": "47540519",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -11,11 +11,11 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Atraso do fornecedor",
+      "motivo_atraso": "Divergência de NF-e",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-09T12:30:11.784Z"
+  "recibido_en_worker": "2026-10-09T12:30:34.189Z"
 }
