@@ -3,7 +3,7 @@
   "semana": "2026-W41",
   "itens": [
     {
-      "part_number": "12646704",
+      "part_number": "14306324",
       "data_promessa": "",
       "qty_prometida": 0,
       "entrega_confirmada": false,
@@ -11,11 +11,11 @@
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Erro sistêmico",
+      "motivo_atraso": "Divergência de NF-e",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-08T13:39:54.801Z"
+  "recibido_en_worker": "2026-10-09T12:27:20.553Z"
 }
