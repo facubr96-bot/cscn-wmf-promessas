@@ -1,5 +1,5 @@
 {
-  "generated_at": "09/10/2026 09:20",
+  "generated_at": "09/10/2026 09:40",
   "today": "09/10/2026",
   "total": 401,
   "items": [
@@ -7154,7 +7154,7 @@
       "pn": "84490124",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
-      "stock_wmf": null,
+      "stock_wmf": 14.0,
       "qty_transito": null,
       "qty_min": 24.0,
       "criticidad": "Hiper Critico",
