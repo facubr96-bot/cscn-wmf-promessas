@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BMH26",
+  "semana": "2026-W42",
+  "itens": [
+    {
+      "part_number": "90359678",
+      "data_promessa": "20/10/2026",
+      "qty_prometida": 86,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "06/10/2026",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-10-13T17:16:18.092Z"
+}
