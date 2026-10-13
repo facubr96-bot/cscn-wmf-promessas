@@ -2089,7 +2089,7 @@ document.getElementById("fileImportDataReal").onchange = (e) => {
       if (colDate < 0) throw new Error('Coluna "Data Real Completed" nao encontrada (aceita: Data Real Completed, Data Real).');
 
       const toSend = [], seen = new Set();
-      let notFound = 0, badDate = 0, empty = 0;
+      let notFound = 0, badDate = 0, empty = 0, earlyAfter = 0;
       for (let li = 1; li < lines.length; li++) {
         const cells = splitDelimitedLine(lines[li], sep);
         const pn = (cells[colPn] || "").trim();
@@ -2100,17 +2100,18 @@ document.getElementById("fileImportDataReal").onchange = (e) => {
         if (!date) { badDate++; continue; }
         const item = allItems.find(i => i.pn === pn);
         if (!item || !item.supplier_code) { notFound++; continue; }
+        if (earlyPickupAfterDataReal(item, date)) { earlyAfter++; continue; }
         const key = `${pn}|${item.supplier_code}`;
         if (seen.has(key)) continue;
         seen.add(key);
         toSend.push({ item, pn, date });
       }
       if (toSend.length === 0) {
-        status.textContent = `Nada para importar (sem data valida). Sem PN no dashboard: ${notFound}, data invalida: ${badDate}, celulas vazias: ${empty}.`;
+        status.textContent = `Nada para importar (sem data valida). Sem PN no dashboard: ${notFound}, data invalida: ${badDate}, celulas vazias: ${empty}, Early Pickup posterior: ${earlyAfter}.`;
         return;
       }
       if (!confirm(`Importar a Data Real Completed de ${toSend.length} PN?\n\nSomente essa coluna sera gravada; motivos, escalation e promessas NAO sao alterados.` +
-        (notFound || badDate ? `\n\nIgnorados: ${notFound} PN nao encontrados, ${badDate} datas invalidas.` : ""))) return;
+        (notFound || badDate || earlyAfter ? `\n\nIgnorados: ${notFound} PN nao encontrados, ${badDate} datas invalidas, ${earlyAfter} com Early Pickup posterior a data.` : ""))) return;
 
       const btn = document.getElementById("btnImportDataReal");
       btn.disabled = true;
@@ -2140,7 +2141,7 @@ document.getElementById("fileImportDataReal").onchange = (e) => {
       btn.textContent = "Importar Data Real (P44)";
       renderTable();
       status.textContent = fail === 0
-        ? `Data Real importada: ${okCount} PN${notFound || badDate ? ` (ignorados: ${notFound} nao encontrados, ${badDate} datas invalidas)` : ""}.`
+        ? `Data Real importada: ${okCount} PN${notFound || badDate || earlyAfter ? ` (ignorados: ${notFound} nao encontrados, ${badDate} datas invalidas, ${earlyAfter} com Early Pickup posterior)` : ""}.`
         : `Data Real: ${okCount} PN gravados, ${fail} falharam (Worker sem a rota nova ou erro de rede). Nada mais foi alterado.`;
     } catch (err) {
       status.textContent = "Erro importando Data Real: " + err.message;
@@ -2340,6 +2341,31 @@ async function applyLiveOverrides(items) {
   }
 }
 
+// Regra Data Real Completed x Early Pickup: se o Early Pickup e POSTERIOR a Data Real Completed,
+// a data real e de um ciclo anterior (ja nao vale) -> fica vazia. Compara so a data (sem hora).
+// Nao e destrutivo no navegador: a limpeza definitiva no banco a faz o Job (ver generator).
+function dateOnlyMs(raw) {
+  const t = String(raw ?? "").trim();
+  if (!t) return null;
+  let m = /^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})/.exec(t);
+  if (m) return new Date(+m[3], +m[2] - 1, +m[1]).getTime();
+  m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t);
+  if (m) return new Date(+m[1], +m[2] - 1, +m[3]).getTime();
+  return null;
+}
+function earlyPickupAfterDataReal(item, dataRealRaw) {
+  const early = dateOnlyMs(item.early_pickup_date);
+  const real = dateOnlyMs(dataRealRaw);
+  return early !== null && real !== null && early > real;
+}
+function applyDataRealRule(items) {
+  for (const it of items) {
+    if (it.data_real_completed && earlyPickupAfterDataReal(it, it.data_real_completed)) {
+      it.data_real_completed = "";
+    }
+  }
+}
+
 // "Ultima NFe Emitida" (conferencia): so vale a conferida de verdade. As NFe do "historico"
 // (outra automacao) chegam com quantidade 0 -> ignorar (limpa os campos do PN).
 function dropZeroQtyEmittedNfe(items) {
@@ -2365,6 +2391,7 @@ async function loadData() {
     dropZeroQtyEmittedNfe(allItems);
     await applyLiveOverrides(allItems);
     applyLocalEditsOverlay(allItems);
+    applyDataRealRule(allItems);
     const genAt = data.generated_at || "";
     window._releaseCb = data.erp_release_cb || "";
     window._release3e = data.erp_release_3e || "";
