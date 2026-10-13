@@ -2353,12 +2353,16 @@ function dateOnlyMs(raw) {
   if (m) return new Date(+m[1], +m[2] - 1, +m[3]).getTime();
   return null;
 }
+// Regra Early Pickup > Data Real: agora aplicada 1x/dia no Job (banco), NAO no navegador.
+const CLIENT_SIDE_DATAREAL_RULE = false;
 function earlyPickupAfterDataReal(item, dataRealRaw) {
+  if (!CLIENT_SIDE_DATAREAL_RULE) return false;
   const early = dateOnlyMs(item.early_pickup_date);
   const real = dateOnlyMs(dataRealRaw);
   return early !== null && real !== null && early > real;
 }
 function applyDataRealRule(items) {
+  if (!CLIENT_SIDE_DATAREAL_RULE) return;
   for (const it of items) {
     if (it.data_real_completed && earlyPickupAfterDataReal(it, it.data_real_completed)) {
       it.data_real_completed = "";
