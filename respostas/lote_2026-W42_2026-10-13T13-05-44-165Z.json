@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-13T13:05:44.165Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W42",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BMX47",
+      "part_number": "47703388",
+      "data_promessa": "15/10/2026",
+      "qty_prometida": 45,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "NONE",
+      "data_real_completed": "08/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BMX47",
+      "part_number": "87350863",
+      "data_promessa": "15/10/2026",
+      "qty_prometida": 29,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "08/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BMX47",
+      "part_number": "87680231",
+      "data_promessa": "15/10/2026",
+      "qty_prometida": 40,
+      "entrega_confirmada": true,
+      "data_coleta": "17/08/2026",
+      "nfe_enviada": "286312",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "08/10/2026",
+      "comentario": ""
+    }
+  ]
+}
