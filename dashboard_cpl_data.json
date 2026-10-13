@@ -1,5 +1,5 @@
 {
-  "generated_at": "13/10/2026 14:40",
+  "generated_at": "13/10/2026 15:00",
   "today": "13/10/2026",
   "total": 402,
   "items": [
@@ -7224,19 +7224,19 @@
     {
       "id": "403",
       "pn": "92287283",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BQQ54",
+      "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 17.0,
       "criticidad": "Hiper Critico",
       "reason": "Production Change",
       "run_out_date": "15/10/2026",
-      "wmf_promise": "",
-      "created": "",
+      "wmf_promise": "10/09/2026",
+      "created": "13/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
