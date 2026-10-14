@@ -913,11 +913,21 @@ function getShipKpiDefs() {
     const { transitQty, stockQty, promiseQty } = commonVals(i);
     return coverageBucket(qty, transitQty, stockQty, promiseQty, plant === "cb");
   };
-  const bloqueBucket = (i) => activeShipBand() ? shipWindowBucket(i) : generalBucket(i);
+  // Card uniao "Past Due + Ship Date <=5 dias uteis"
+  const unionBucket = (i) => {
+    const key = `${plant === "cb" ? "CB" : "3E"}|${i.pn}`;
+    const win = (futureShipLinesLookup.get(key) || []).reduce((a, l) => (shipBandOf(l.d) === 1 ? a + l.qty : a), 0);
+    const pd = Math.max(i.cor_qty_past_due || 0, i.wmf_qty_past_due || 0);
+    const { transitQty, stockQty, promiseQty } = commonVals(i);
+    return coverageBucket(Math.max(pd + win, 1.0), transitQty, stockQty, promiseQty, plant === "cb");
+  };
+  const bloqueBucket = (i) => activeFilters.has("ship_pd_or_5d") ? unionBucket(i)
+    : (activeShipBand() ? shipWindowBucket(i) : generalBucket(i));
 
   const top = [
     { key: "ship_cpl", label: "PN CPL", tone: "red", test: i => !!i.cpl },
     { key: "ship_pastdue", label: "PN Past Due", tone: "red", test: pastDueTest },
+    { key: "ship_pd_or_5d", label: "Past Due + Ship Date ≤5 dias uteis", tone: "red", test: i => pastDueTest(i) || shipDateWithin7BusinessDays(i) },
     { key: "ship_7d", label: "Ship Date ≤5 dias uteis", tone: "amber", test: shipDateWithin7BusinessDays },
     { key: "ship_15d", label: "Ship Date 6-15 dias uteis", tone: "amber", test: shipDateWithin15BusinessDays },
     { key: "ship_30d", label: "Ship Date 16-30 dias", tone: "gray", test: shipDateWithin30CalendarDays },
