@@ -707,9 +707,14 @@ function cleanedLastReceivedNfe(item) {
 }
 // Retorna: "match" (ja recebido), "mismatch" (tem NFe mais nova sem receber),
 // "pending" (nada recebido ainda mas ja existe algo faturado), ou null (sem dados suficientes).
+// Planta 3E: "match" por PRESENCA -- a NFe emitida esta entre as recebidas do PN
+// (nfe_recebidas_3e = last packing list 3E + entradas 101 SAP do mesmo PN e
+// fornecedor, sem estorno 102), nao so contra a ultima recebida.
 function nfeMatchStatus(item) {
   const emitted = String(item.ultima_nfe_emitida_num || "").trim();
   if (!emitted) return null;
+  if (plant !== "cb" && Array.isArray(item.nfe_recebidas_3e)
+      && item.nfe_recebidas_3e.includes(emitted.replace(/^0+(?=\d)/, ""))) return "match";
   const received = cleanedLastReceivedNfe(item);
   if (!received) return "pending";
   return received === emitted ? "match" : "mismatch";
@@ -944,7 +949,8 @@ function getShipKpiDefs() {
     fc.push(
       { key: "ship_nfe_pendente", group: "fc", label: "c/ NFe sem recebimento", tone: "amber", test: i => { const s = nfeMatchStatus(i); return s === "mismatch" || s === "pending"; } },
       { key: "ship_nfe_em_dia", group: "fc", label: "Sem NFe Nova (ja recebido)", tone: "red", test: i => nfeMatchStatus(i) === "match" },
-      { key: "ship_pn_novo", group: "fc", label: "PN Novo", tone: "gray", test: i => !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
+      { key: "ship_pn_novo", group: "fc", label: "PN Novo", tone: "gray", test: i => !i.fornecedor_novo && !String(i.ultima_nfe_3e || "").trim() && !String(i.ultima_nfe_emitida_num || "").trim() && (i.cum_rec_3e || 0) === 0 },
+      { key: "ship_fornecedor_novo", group: "fc", label: "Fornecedor Novo", tone: "gray", test: i => !!i.fornecedor_novo },
     );
   }
   return { top, bottom, fc };
