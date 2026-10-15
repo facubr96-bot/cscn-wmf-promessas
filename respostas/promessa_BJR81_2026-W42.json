@@ -3,9 +3,9 @@
   "semana": "2026-W42",
   "itens": [
     {
-      "part_number": "87677801",
+      "part_number": "91881607",
       "data_promessa": "23/10/2026",
-      "qty_prometida": 42,
+      "qty_prometida": 140,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-15T17:41:44.060Z"
+  "recibido_en_worker": "2026-10-15T17:42:16.771Z"
 }
