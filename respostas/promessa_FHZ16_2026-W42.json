@@ -1,0 +1,21 @@
+{
+  "supplier_code": "FHZ16",
+  "semana": "2026-W42",
+  "itens": [
+    {
+      "part_number": "14442131",
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 58,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-10-15T14:36:06.044Z"
+}
