@@ -765,20 +765,30 @@ function calendarDaysUntil(targetDate) {
   const today = todayNoTime();
   return Math.round((targetDate - today) / 86400000);
 }
+function hasNetNeed(item) {
+  const cb = plant === "cb";
+  const pd = cb ? Math.max(item.cor_qty_past_due || 0, item.wmf_qty_past_due || 0) : (item.wmf_qty_past_due || 0);
+  const f0 = cb ? (item.cor_qty_firm_current_month || 0) : (item.wmf_qty_firm_current_month || 0);
+  const f1 = cb ? (item.cor_qty_firm_next_month || 0) : (item.wmf_qty_firm_next_month || 0);
+  return pd > 0 || f0 > 0 || f1 > 0;
+}
 // Faixas mutuamente exclusivas (nao cumulativas): 0-5 dias uteis, 6-15 dias uteis,
 // e 16-30 dias corridos (a partir dai nao entra em nenhuma das 3 janelas).
 function shipDateWithin7BusinessDays(item) {
+  if (!hasNetNeed(item)) return false;
   const d = nextShipDateFor(item);
   if (!d) return false;
   return businessDaysUntil(d) <= 5;
 }
 function shipDateWithin15BusinessDays(item) {
+  if (!hasNetNeed(item)) return false;
   const d = nextShipDateFor(item);
   if (!d) return false;
   const bd = businessDaysUntil(d);
   return bd > 5 && bd <= 15;
 }
 function shipDateWithin30CalendarDays(item) {
+  if (!hasNetNeed(item)) return false;
   const d = nextShipDateFor(item);
   if (!d) return false;
   const bd = businessDaysUntil(d);
