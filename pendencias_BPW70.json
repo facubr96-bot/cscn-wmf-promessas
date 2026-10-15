@@ -2,7 +2,7 @@
   "supplier_code": "BPW70",
   "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
   "semana": "2026-W42",
-  "gerado_em": "15/10/2026 08:02",
+  "gerado_em": "15/10/2026 12:01",
   "itens": [
     {
       "part_number": "47873541",
@@ -262,7 +262,7 @@
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
       "ship_date": "14/10/2026",
-      "impact": "",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
