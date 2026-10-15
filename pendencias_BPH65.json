@@ -2,7 +2,7 @@
   "supplier_code": "BPH65",
   "supplier_name": "FUNDICAO SIDERAL LTDA",
   "semana": "2026-W42",
-  "gerado_em": "15/10/2026 08:02",
+  "gerado_em": "15/10/2026 12:01",
   "itens": [
     {
       "part_number": "405828A1",
@@ -101,7 +101,7 @@
       "supplier_code": "BPH65",
       "supplier_name": "FUNDICAO SIDERAL LTDA",
       "ship_date": "15/10/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
