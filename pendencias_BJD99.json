@@ -2,7 +2,7 @@
   "supplier_code": "BJD99",
   "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
   "semana": "2026-W42",
-  "gerado_em": "16/10/2026 08:02",
+  "gerado_em": "16/10/2026 12:02",
   "itens": [
     {
       "part_number": "83925884",
@@ -55,7 +55,7 @@
       "supplier_code": "BJD99",
       "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "ship_date": "26/08/2026",
-      "impact": "3",
+      "impact": "1",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
