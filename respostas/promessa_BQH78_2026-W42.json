@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BQH78",
+  "semana": "2026-W42",
+  "itens": [
+    {
+      "part_number": "90404591",
+      "data_promessa": "16/10.2026",
+      "qty_prometida": 500,
+      "entrega_confirmada": true,
+      "data_coleta": "28/09/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Problema de transporte",
+      "escalation_level": "",
+      "data_real_completed": "01/01/2026",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-10-16T13:39:25.701Z"
+}
