@@ -2,7 +2,7 @@
   "supplier_code": "FHZ16",
   "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
   "semana": "2026-W42",
-  "gerado_em": "16/10/2026 08:02",
+  "gerado_em": "16/10/2026 12:02",
   "itens": [
     {
       "part_number": "13000890",
@@ -83,10 +83,10 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 1008,
+      "past_due_wmf": 900,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "000032307-010",
+      "ultima_nfe": "000032308-010",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W42",
       "data_promessa": "13/10/2026",
