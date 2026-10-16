@@ -2,14 +2,14 @@
   "supplier_code": "BJJ55",
   "supplier_name": "SCREW IND METALMECANICA SA",
   "semana": "2026-W42",
-  "gerado_em": "16/10/2026 08:02",
+  "gerado_em": "16/10/2026 12:02",
   "itens": [
     {
       "part_number": "51443703",
       "supplier_code": "BJJ55",
       "supplier_name": "SCREW IND METALMECANICA SA",
       "ship_date": "12/10/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
