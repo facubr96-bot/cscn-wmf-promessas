@@ -2,14 +2,14 @@
   "supplier_code": "BJQ09",
   "supplier_name": "ZUKAUSKAS & CIA LTDA",
   "semana": "2026-W42",
-  "gerado_em": "16/10/2026 08:02",
+  "gerado_em": "16/10/2026 12:02",
   "itens": [
     {
       "part_number": "84989399",
       "supplier_code": "BJQ09",
       "supplier_name": "ZUKAUSKAS & CIA LTDA",
       "ship_date": "22/10/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
