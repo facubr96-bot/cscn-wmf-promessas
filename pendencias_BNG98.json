@@ -2,7 +2,7 @@
   "supplier_code": "BNG98",
   "supplier_name": "IOCHPE MAXION S A",
   "semana": "2026-W42",
-  "gerado_em": "17/10/2026 08:02",
+  "gerado_em": "17/10/2026 12:02",
   "itens": [
     {
       "part_number": "47760874",
@@ -37,10 +37,10 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 54,
+      "past_due_wmf": 50,
       "firm_jun_wmf": 32,
       "firm_jul_wmf": 32,
-      "ultima_nfe": "000776903-003",
+      "ultima_nfe": "000777201-003",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W42",
       "data_promessa": "",
