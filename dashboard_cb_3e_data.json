@@ -1,5 +1,5 @@
 {
-  "generated_at": "17/10/2026 07:23",
+  "generated_at": "17/10/2026 07:43",
   "today": "17/10/2026",
   "total_pn": 1914,
   "erp_release_cb": "20261014",
@@ -27009,9 +27009,11 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000776904-003",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "776904"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "776904",
@@ -46959,9 +46961,11 @@
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000211637-001",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "211637"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "211637",
@@ -47414,6 +47418,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "776903",
+        "776521",
         "774488",
         "774475",
         "773843",
@@ -58002,9 +58007,10 @@
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-002711/2025",
-      "ultima_nfe_3e": "000199293-001",
+      "ultima_nfe_3e": "000211633-001",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "211633",
         "199293"
       ],
       "fornecedor_novo": false,
@@ -64044,9 +64050,10 @@
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003297",
-      "ultima_nfe_3e": "000628451-002",
+      "ultima_nfe_3e": "000633068-002",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "633068",
         "628451",
         "626930",
         "611950"
@@ -79821,6 +79828,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "245861",
+        "245858",
         "245534",
         "244094",
         "241444",
@@ -101816,6 +101824,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "245855",
+        "245854",
         "220141",
         "220140",
         "219521"
