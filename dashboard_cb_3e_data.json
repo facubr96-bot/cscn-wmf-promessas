@@ -1,5 +1,5 @@
 {
-  "generated_at": "17/10/2026 20:03",
+  "generated_at": "17/10/2026 20:23",
   "today": "17/10/2026",
   "total_pn": 1914,
   "erp_release_cb": "20261014",
@@ -15762,7 +15762,7 @@
       "cor_qty_firm_current_month": 0.0,
       "cor_qty_firm_next_month": 56.0,
       "wmf_qty_firm_current_month": 0.0,
-      "wmf_qty_firm_next_month": 0.0,
+      "wmf_qty_firm_next_month": 56.0,
       "cpl": false,
       "entrega_confirmada": false,
       "data_coleta": "",
