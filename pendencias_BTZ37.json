@@ -2,7 +2,7 @@
   "supplier_code": "BTZ37",
   "supplier_name": "FVA INDUSTRIA DE VALVULAS AUTOMOTIV",
   "semana": "2026-W43",
-  "gerado_em": "19/10/2026 08:32",
+  "gerado_em": "19/10/2026 12:02",
   "itens": [
     {
       "part_number": "9576934",
@@ -22,8 +22,8 @@
       "semana": "2026-W43",
       "data_promessa": "16/10/2026",
       "qty_prometida": 500,
-      "comentario": "Promessa vencida - solicitar nova data.",
-      "entrega_confirmada": false,
+      "comentario": "Promessa vencida - solicitar nova data. Promessa vencida - solicitar nova data.",
+      "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "43378"
     }
