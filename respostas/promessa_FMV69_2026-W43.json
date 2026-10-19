@@ -1,0 +1,45 @@
+{
+  "supplier_code": "FMV69",
+  "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
+  "semana": "2026-W43",
+  "enviado_em": "2026-10-19T11:55:26.242Z",
+  "itens": [
+    {
+      "part_number": "90412504",
+      "supplier_code": "FMV69",
+      "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
+      "ship_date": "22/10/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000000485-001",
+      "semana": "2026-W43",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 20,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "91858632",
+      "supplier_code": "FMV69",
+      "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
+      "ship_date": "22/10/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "",
+      "semana": "2026-W43",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 50,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-10-19T12:02:53.286Z"
+}
