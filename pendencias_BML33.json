@@ -1,8 +1,8 @@
 {
   "supplier_code": "BML33",
   "supplier_name": "NELSON DO BRASIL PECAS TUBULARES E",
-  "semana": "2026-W42",
-  "gerado_em": "18/10/2026 12:02",
+  "semana": "2026-W43",
+  "gerado_em": "19/10/2026 08:02",
   "itens": [
     {
       "part_number": "91715445",
@@ -19,7 +19,7 @@
       "firm_jul_wmf": 0,
       "ultima_nfe": "000265004-003",
       "ultima_nfe_origem": "3E",
-      "semana": "2026-W42",
+      "semana": "2026-W43",
       "data_promessa": "20/10/2026",
       "qty_prometida": 10,
       "comentario": "Favor confirmar se esta entrega sera cumprida.",
@@ -42,7 +42,7 @@
       "firm_jul_wmf": 0,
       "ultima_nfe": "000265005-003",
       "ultima_nfe_origem": "3E",
-      "semana": "2026-W42",
+      "semana": "2026-W43",
       "data_promessa": "20/10/2026",
       "qty_prometida": 10,
       "comentario": "Favor confirmar se esta entrega sera cumprida.",
