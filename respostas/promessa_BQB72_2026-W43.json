@@ -1,0 +1,27 @@
+{
+  "supplier_code": "BQB72",
+  "supplier_name": "MERCOBOR IND E COM LTDA",
+  "semana": "2026-W43",
+  "enviado_em": "2026-10-19T12:50:16.232Z",
+  "itens": [
+    {
+      "part_number": "92173874",
+      "supplier_code": "BQB72",
+      "supplier_name": "MERCOBOR IND E COM LTDA",
+      "ship_date": "12/10/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000049853-001",
+      "semana": "2026-W43",
+      "entrega_confirmada": true,
+      "data_coleta": "13/10/2026",
+      "nfe_enviada": "50267",
+      "qty_confirmada": 20,
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-10-19T12:47:51.895Z"
+}
