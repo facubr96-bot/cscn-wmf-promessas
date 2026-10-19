@@ -1,7 +1,7 @@
 {
-  "generated_at": "19/10/2026 14:41",
+  "generated_at": "19/10/2026 15:01",
   "today": "19/10/2026",
-  "total": 414,
+  "total": 417,
   "items": [
     {
       "id": "1",
@@ -7453,6 +7453,60 @@
       "estado": "Aberto",
       "planner": "VIVIAN STRELOW",
       "solicitante": "HERNANDO JAZMIN",
+      "plant": "CB"
+    },
+    {
+      "id": "416",
+      "pn": "86585706",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 120.0,
+      "criticidad": "Normal",
+      "reason": "Stock Loss",
+      "run_out_date": "12/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "417",
+      "pn": "90507386",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 10.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "18/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "418",
+      "pn": "90507387",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 10.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "18/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
