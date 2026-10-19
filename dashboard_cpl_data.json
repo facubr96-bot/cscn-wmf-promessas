@@ -1,5 +1,5 @@
 {
-  "generated_at": "19/10/2026 15:01",
+  "generated_at": "19/10/2026 15:21",
   "today": "19/10/2026",
   "total": 417,
   "items": [
@@ -7458,8 +7458,8 @@
     {
       "id": "416",
       "pn": "86585706",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "FHZ16",
+      "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 120.0,
@@ -7467,17 +7467,17 @@
       "reason": "Stock Loss",
       "run_out_date": "12/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "19/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     },
     {
       "id": "417",
       "pn": "90507386",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BQQ45",
+      "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
@@ -7485,17 +7485,17 @@
       "reason": "Past Due",
       "run_out_date": "18/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "19/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     },
     {
       "id": "418",
       "pn": "90507387",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BQQ45",
+      "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
@@ -7503,10 +7503,10 @@
       "reason": "Past Due",
       "run_out_date": "18/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "19/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
