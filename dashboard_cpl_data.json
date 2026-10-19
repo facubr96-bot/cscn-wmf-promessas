@@ -1,7 +1,7 @@
 {
-  "generated_at": "19/10/2026 16:41",
+  "generated_at": "19/10/2026 17:01",
   "today": "19/10/2026",
-  "total": 417,
+  "total": 418,
   "items": [
     {
       "id": "1",
@@ -7507,6 +7507,24 @@
       "estado": "Aberto",
       "planner": "Vivian Strelow",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "419",
+      "pn": "44945647",
+      "supplier_code": "BQQ45",
+      "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
+      "stock_wmf": 80.0,
+      "qty_transito": null,
+      "qty_min": 80.0,
+      "criticidad": "Critico",
+      "reason": "Engineering Structure Change",
+      "run_out_date": "19/10/2026",
+      "wmf_promise": "",
+      "created": "19/10/2026",
+      "estado": "Aberto",
+      "planner": "VIVIAN STRELOW",
+      "solicitante": "HERNANDO JAZMIN",
       "plant": "CB"
     }
   ]
