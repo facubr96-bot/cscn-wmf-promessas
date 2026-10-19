@@ -1,0 +1,45 @@
+{
+  "supplier_code": "BJG52",
+  "supplier_name": "METALURGICA FALLGATTER LTDA",
+  "semana": "2026-W43",
+  "enviado_em": "2026-10-19T16:28:06.574Z",
+  "itens": [
+    {
+      "part_number": "90359771",
+      "supplier_code": "BJG52",
+      "supplier_name": "METALURGICA FALLGATTER LTDA",
+      "ship_date": "13/10/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000540950-001",
+      "semana": "2026-W43",
+      "entrega_confirmada": true,
+      "data_coleta": "19/10/2026",
+      "nfe_enviada": "542486",
+      "qty_confirmada": 86,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 86,
+      "comentario": "Coleta acionada via email - nota fiscal 542486"
+    },
+    {
+      "part_number": "87480926",
+      "supplier_code": "BJG52",
+      "supplier_name": "METALURGICA FALLGATTER LTDA",
+      "ship_date": "20/10/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000540001-001",
+      "semana": "2026-W43",
+      "entrega_confirmada": true,
+      "data_coleta": "19/10/2026",
+      "nfe_enviada": "542489 ",
+      "qty_confirmada": 16,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 16,
+      "comentario": "Coleta acionada via email - nota fiscal 542489"
+    }
+  ],
+  "recibido_en_worker": "2026-10-19T16:28:08.685Z"
+}
