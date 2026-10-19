@@ -1,5 +1,5 @@
 {
-  "generated_at": "19/10/2026 13:01",
+  "generated_at": "19/10/2026 13:21",
   "today": "19/10/2026",
   "total": 405,
   "items": [
@@ -7278,19 +7278,19 @@
     {
       "id": "406",
       "pn": "84603436",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BJD99",
+      "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 113.0,
       "criticidad": "Hiper Critico",
       "reason": "Past Due",
       "run_out_date": "30/10/2026",
-      "wmf_promise": "",
-      "created": "",
+      "wmf_promise": "16/10/2026",
+      "created": "19/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
