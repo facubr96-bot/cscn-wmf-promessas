@@ -2,7 +2,7 @@
   "supplier_code": "BRG98",
   "supplier_name": "CONDUMAX - ELETRO METALURGICA CIAFU",
   "semana": "2026-W43",
-  "gerado_em": "19/10/2026 12:02",
+  "gerado_em": "20/10/2026 08:02",
   "itens": [
     {
       "part_number": "91759298",
@@ -13,19 +13,19 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 2,
       "firm_jun_wmf": 60,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000445953-003",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W43",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa.",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": ""
+      "data_promessa": "20/10/2026",
+      "qty_prometida": 1,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento.",
+      "entrega_confirmada": true,
+      "data_coleta": "24/08/2026",
+      "nfe_enviada": "443309"
     },
     {
       "part_number": "91759299",
@@ -36,19 +36,19 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 4,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000445860-003",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W43",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa.",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": ""
+      "data_promessa": "20/10/2026",
+      "qty_prometida": 3,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento.",
+      "entrega_confirmada": true,
+      "data_coleta": "20/08/2026",
+      "nfe_enviada": "443146"
     }
   ]
 }
