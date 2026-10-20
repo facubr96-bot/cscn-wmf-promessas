@@ -2,14 +2,14 @@
   "supplier_code": "BKQ71",
   "supplier_name": "METALURGICA TUZZI LTDA",
   "semana": "2026-W43",
-  "gerado_em": "20/10/2026 08:02",
+  "gerado_em": "20/10/2026 12:02",
   "itens": [
     {
       "part_number": "47929096",
       "supplier_code": "BKQ71",
       "supplier_name": "METALURGICA TUZZI LTDA",
       "ship_date": "21/10/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
