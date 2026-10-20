@@ -1,0 +1,278 @@
+{
+  "recibido_en_worker": "2026-10-20T13:05:34.211Z",
+  "editor": "Raissa Machado",
+  "tipo": "data_real_completed",
+  "total": 54,
+  "itens": [
+    {
+      "part_number": "92242397",
+      "supplier_code": "BJG52",
+      "data_real_completed": "16/09/2026"
+    },
+    {
+      "part_number": "92242398",
+      "supplier_code": "BJG52",
+      "data_real_completed": "16/09/2026"
+    },
+    {
+      "part_number": "92244204",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92254984",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92254991",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92255790",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92256382",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92256387",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92258497",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92258498",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92283813",
+      "supplier_code": "BVJ30",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92283842",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92283845",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92287283",
+      "supplier_code": "BQQ54",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92307632",
+      "supplier_code": "BJC97",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92307633",
+      "supplier_code": "BJC97",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92308186",
+      "supplier_code": "BNF47",
+      "data_real_completed": "07/10/2026"
+    },
+    {
+      "part_number": "92308656",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92308795",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92642281",
+      "supplier_code": "BJC97",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92646276",
+      "supplier_code": "BVJ30",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92647097",
+      "supplier_code": "BQQ54",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92667325",
+      "supplier_code": "BVJ30",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92668823",
+      "supplier_code": "BVJ30",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92674262",
+      "supplier_code": "BJF54",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "92678285",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92678288",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92678290",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92678291",
+      "supplier_code": "BQQ45",
+      "data_real_completed": "13/10/2026"
+    },
+    {
+      "part_number": "92714622",
+      "supplier_code": "BVT60",
+      "data_real_completed": "04/09/2026"
+    },
+    {
+      "part_number": "92730776",
+      "supplier_code": "BJC97",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92730777",
+      "supplier_code": "BJC97",
+      "data_real_completed": "19/10/2026"
+    },
+    {
+      "part_number": "92751763",
+      "supplier_code": "BVH68",
+      "data_real_completed": "15/07/2025"
+    },
+    {
+      "part_number": "92751765",
+      "supplier_code": "BVH68",
+      "data_real_completed": "15/07/2025"
+    },
+    {
+      "part_number": "9500920",
+      "supplier_code": "BJG65",
+      "data_real_completed": "28/08/2026"
+    },
+    {
+      "part_number": "9501756",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9501985",
+      "supplier_code": "BQH60",
+      "data_real_completed": "14/09/2026"
+    },
+    {
+      "part_number": "9511052",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9576267",
+      "supplier_code": "BLL51",
+      "data_real_completed": "09/07/2026"
+    },
+    {
+      "part_number": "9576276",
+      "supplier_code": "BLL51",
+      "data_real_completed": "09/07/2026"
+    },
+    {
+      "part_number": "9576277",
+      "supplier_code": "BVJ10",
+      "data_real_completed": "20/02/2026"
+    },
+    {
+      "part_number": "9576476",
+      "supplier_code": "BLL51",
+      "data_real_completed": "09/07/2026"
+    },
+    {
+      "part_number": "9578924",
+      "supplier_code": "BLL51",
+      "data_real_completed": "09/07/2026"
+    },
+    {
+      "part_number": "9578926",
+      "supplier_code": "BLL51",
+      "data_real_completed": "09/07/2026"
+    },
+    {
+      "part_number": "9671714",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9706687",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9804255",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9804261",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9838356",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9842687",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "9846677",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "C5NNF847A",
+      "supplier_code": "BLH98",
+      "data_real_completed": "09/10/2026"
+    },
+    {
+      "part_number": "D8NN486BB",
+      "supplier_code": "BJG65",
+      "data_real_completed": "28/08/2026"
+    },
+    {
+      "part_number": "F53473",
+      "supplier_code": "BNF47",
+      "data_real_completed": "07/10/2026"
+    }
+  ]
+}
