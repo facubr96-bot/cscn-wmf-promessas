@@ -315,6 +315,22 @@
   </div>
 </header>
 
+<div class="modal-overlay" id="shpLoadOverlay" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="shpLoadTitle">Carregar Excel — Shipments</h2>
+      <button class="btn" id="btnShpLoadClose">Fechar ✕</button>
+    </div>
+    <div class="modal-toolbar">
+      <span class="count" id="shpLoadSummary" style="margin-left:0;"></span>
+      <span style="margin-left:auto;"></span>
+      <button class="btn" id="btnShpLoadReport" style="display:none;">Baixar relatorio</button>
+      <button class="btn btn-primary" id="btnShpLoadSave" style="display:none;">Gravar</button>
+    </div>
+    <div class="modal-body" id="shpLoadBody"><div class="empty-state">Lendo o arquivo...</div></div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="rawModalOverlay" style="display:none;">
   <div class="modal-content">
     <div class="modal-header">
@@ -585,6 +601,9 @@
       <select id="shpFilterTipo" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px;">
         <option value="">Todos os tipos</option><option value="PUR">PUR</option><option value="PUN">PUN</option><option value="AETC">AETC</option>
       </select>
+      <select id="shpFilterRevisado" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px;">
+        <option value="">Revisado: todos</option><option value="nao">Não revisados</option><option value="sim">Revisados</option>
+      </select>
       <select id="shpFilterPlanner" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px;">
         <option value="">Todos los planejadores</option>
       </select>
@@ -593,6 +612,8 @@
       <button class="btn" id="btnShpClear">Limpiar filtro</button>
       <button class="btn" id="btnShpReload">Recarregar</button>
       <button class="btn" id="btnShpExcel" title="Baixa as order releases visiveis (respeita os filtros desta aba). Somente leitura: nao grava nada.">Baixar Excel</button>
+      <button class="btn" id="btnShpLoadExcel" style="display:none;" title="Carrega Real Completed e Revisado a partir do Excel baixado desta aba. Mostra uma previa antes de gravar.">Carregar Excel</button>
+      <input type="file" id="fileShpExcel" accept=".xlsx" style="display:none">
     </div>
     <div id="shpEmptyState" class="empty-state" style="display:none;"></div>
     <div id="shpContent" style="display:none;">
@@ -2889,9 +2910,9 @@ document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
 // e nao recebidas (portal 3E / SAP 101). O estado vem calculado do gerador. Nada aqui grava em tabela
 // nem mexe em allItems: os filtros/contagens da Tabela e do Dashboard nao dependem deste arquivo.
 // Se o JSON falhar, as colunas resumo ficam vazias e a aba mostra o erro.
-const SHP_ESTADOS = ["Atrasado", "Sin dato P44", "En tránsito", "Futuro", "OK"];
-const SHP_ESTADO_BADGE = { "Atrasado": "badge-red", "Sin dato P44": "badge-amber", "En tránsito": "badge-blue", "Futuro": "badge-gray", "OK": "badge-green" };
-const SHP_ESTADO_TONE = { "Atrasado": "red", "Sin dato P44": "amber", "En tránsito": "gray", "Futuro": "gray", "OK": "green" };
+const SHP_ESTADOS = ["Atrasado", "Sin dato P44", "En tránsito", "Futuro", "OK", "OK (manual)"];
+const SHP_ESTADO_BADGE = { "Atrasado": "badge-red", "Sin dato P44": "badge-amber", "En tránsito": "badge-blue", "Futuro": "badge-gray", "OK": "badge-green", "OK (manual)": "badge-green" };
+const SHP_ESTADO_TONE = { "Atrasado": "red", "Sin dato P44": "amber", "En tránsito": "gray", "Futuro": "gray", "OK": "green", "OK (manual)": "green" };
 const SHP_COLS = [
   { key: "estado", label: "Estado" },
   { key: "dias_atraso", label: "Dias atraso" },
@@ -2910,9 +2931,12 @@ const SHP_COLS = [
   { key: "p44_last_milestone", label: "P44 ultimo evento" },
   { key: "p44_completed", label: "Completed P44" },
   { key: "recibo_3e_pos_pickup", label: "Recibo 3E pos-pickup" },
+  { key: "real_completed", label: "Real Completed" },
+  { key: "revisado", label: "Revisado" },
 ];
-const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "recibo_3e_pos_pickup"]);
+const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "recibo_3e_pos_pickup", "real_completed"]);
 let shpEstadoFilter = "";
+let shpDivFilter = false;   // KPI "Divergencias manual x P44" clicado
 let shpSortCol = null, shpSortDir = 1;
 
 function shpEsc(s) {
@@ -2937,6 +2961,7 @@ async function loadShipmentsData(force) {
     const data = await resp.json();
     if (!Array.isArray(data.shipments)) throw new Error("formato inesperado");
     shpData = data;
+    await shpLoadManualLive();
     buildShpSummary();
     emptyEl.style.display = "none";
     document.getElementById("shpContent").style.display = "";
@@ -2966,7 +2991,7 @@ function buildShpSummary() {
     s.rows++;
     const ep = shpDateMs(r.early_pickup);
     if (ep !== null && ep >= t0 && (s.next === null || ep < s.next)) { s.next = ep; s.nextTipo = r.tipo; }
-    if (ep !== null && ep <= t0) { s.total++; if (r.estado === "OK") s.done++; }
+    if (ep !== null && ep <= t0) { s.total++; if (r.estado === "OK" || r.estado === "OK (manual)") s.done++; }
     if (r.estado === "Atrasado") { s.late++; s.maxLate = Math.max(s.maxLate, r.dias_atraso || 0); }
     if (r.estado === "Sin dato P44") s.semP44++;
   });
@@ -3036,12 +3061,14 @@ function shpBaseRows(ignoreEstado) {
   const orQ = document.getElementById("shpSearchOr").value.trim().toLowerCase();
   const tipo = document.getElementById("shpFilterTipo").value;
   const planner = document.getElementById("shpFilterPlanner").value;
+  const revisado = document.getElementById("shpFilterRevisado").value;
   return shpData.shipments.filter(r =>
     shpMatchesSupplier(r.supplier_code, r.supplier_name)
     && (!orQ || r.order_release.toLowerCase().includes(orQ) || (r.shipment || "").toLowerCase().includes(orQ))
     && (!tipo || r.tipo === tipo)
     && (!planner || (r.planejador || "Sin asignar") === planner)
-    && (ignoreEstado || !shpEstadoFilter || r.estado === shpEstadoFilter));
+    && (!revisado || (revisado === "sim" ? r.revisado === true : r.revisado !== true))
+    && (ignoreEstado || ((!shpEstadoFilter || r.estado === shpEstadoFilter) && (!shpDivFilter || r.divergencia_p44))));
 }
 function shpCell(r, key) {
   const v = r[key];
@@ -3067,6 +3094,16 @@ function shpCell(r, key) {
       return `<td>${r.p44
         ? (v ? `${shpEsc(v)}<div style="color:var(--gray-500);font-size:11px;">${shpEsc(r.p44_last_update)}</div>` : '<span style="color:var(--gray-500);">sem eventos</span>')
         : (r.shipment ? '<span class="badge badge-gray">Nao esta no P44</span>' : "")}</td>`;
+    case "real_completed": {
+      if (!v) return "<td></td>";
+      const marks = [
+        r.divergencia_p44 ? `<span class="badge badge-amber" title="Completed P44 em ${shpEsc(r.p44_completed)}; o valor manual prevalece">≠ P44 ${shpEsc((r.p44_completed || "").slice(0, 5))}</span>` : "",
+        r.pickup_reprogramado ? `<span class="badge badge-gray" title="O early pickup atual (${shpEsc(r.early_pickup)}) ficou depois do Real Completed">pickup reprogramado</span>` : "",
+      ].filter(Boolean).join(" ");
+      return `<td title="${r.manual_by ? "Carregado por " + shpEsc(r.manual_by) + (r.manual_at ? " em " + shpEsc(r.manual_at) : "") : ""}">${shpEsc(v)} ${marks}</td>`;
+    }
+    case "revisado":
+      return `<td>${v === true ? '<span class="badge badge-green">Sim</span>' : v === false ? '<span class="badge badge-gray">Não</span>' : ""}</td>`;
     case "recibo_3e_pos_pickup":
       return `<td title="${r.recibo_3e_packing ? "Packing list " + shpEsc(r.recibo_3e_packing) + " — informativo, nao muda o estado" : ""}">${shpEsc(v)}</td>`;
     default:
@@ -3091,7 +3128,8 @@ function renderShipmentsView() {
     "Uma linha por <b>Order Release</b> (OTM so tem o trecho proveedor → 3E; Cordoba aparece como AETC). "
     + "<b>Sin dato P44</b>: tem shipment mas nao aparece no P44 e OTM nao confirmou a entrega. "
     + "<b>Atrasado</b>: fim planejado do shipment (OTM) vencido sem entrega no P44, ou pickup vencido sem shipment. "
-    + "<b>Recibo 3E pos-pickup</b> e so informativo (primeiro recibo 3E do proveedor depois do pickup) e nao muda o estado.";
+    + "<b>Recibo 3E pos-pickup</b> e so informativo (primeiro recibo 3E do proveedor depois do pickup) e nao muda o estado. "
+    + "<b>OK (manual)</b>: um editor carregou o Real Completed; se o P44 diz outra data aparece \"≠ P44\" e o valor manual prevalece. <b>Revisado</b> nao muda o estado.";
 
   const base = shpBaseRows(true);
   const kpi = document.getElementById("kpiShpEstado");
@@ -3103,16 +3141,23 @@ function renderShipmentsView() {
     <div class="kpi-card tone-gray" data-estado="">
       <div class="kpi-value">${base.length}</div>
       <div class="kpi-label">Total order releases</div>
+    </div>
+    <div class="kpi-card tone-amber${shpDivFilter ? " active" : ""}" data-div="1" title="Real Completed manual e Completed P44 em datas diferentes (o valor manual prevalece)">
+      <div class="kpi-value">${base.filter(r => r.divergencia_p44).length}</div>
+      <div class="kpi-label">Divergencias manual × P44</div>
     </div>`;
   kpi.querySelectorAll(".kpi-card").forEach(card => {
     card.onclick = () => {
+      if (card.dataset.div) { shpDivFilter = !shpDivFilter; renderShipmentsView(); return; }
       const e = card.dataset.estado;
       shpEstadoFilter = (e && shpEstadoFilter !== e) ? e : "";
       renderShipmentsView();
     };
   });
-  document.getElementById("shpActiveChip").innerHTML = shpEstadoFilter
-    ? `<span class="filter-chip">Estado: ${shpEsc(shpEstadoFilter)} <button onclick="shpEstadoFilter='';renderShipmentsView()">✕</button></span>` : "";
+  document.getElementById("shpActiveChip").innerHTML = [
+    shpEstadoFilter ? `<span class="filter-chip">Estado: ${shpEsc(shpEstadoFilter)} <button onclick="shpEstadoFilter='';renderShipmentsView()">✕</button></span>` : "",
+    shpDivFilter ? `<span class="filter-chip">Divergencias manual × P44 <button onclick="shpDivFilter=false;renderShipmentsView()">✕</button></span>` : "",
+  ].join(" ");
 
   const rows = [...shpBaseRows(false)].sort((a, b) => {
     if (shpSortCol) {
@@ -3137,7 +3182,7 @@ function renderShipmentsView() {
   shpLastRows = rows;
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
-  document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases`;
+  document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases · ${rows.filter(r => r.revisado !== true).length} nao revisados`;
   renderShpNfe();
 }
 
@@ -3198,9 +3243,11 @@ document.getElementById("shpSearchSupplier").oninput = () => renderShipmentsView
 document.getElementById("shpSearchOr").oninput = () => renderShipmentsView();
 document.getElementById("shpFilterTipo").onchange = () => renderShipmentsView();
 document.getElementById("shpFilterPlanner").onchange = () => renderShipmentsView();
+document.getElementById("shpFilterRevisado").onchange = () => renderShipmentsView();
 document.getElementById("btnShpClear").onclick = () => {
-  ["shpSearchSupplier", "shpSearchOr", "shpFilterTipo", "shpFilterPlanner"].forEach(id => { document.getElementById(id).value = ""; });
+  ["shpSearchSupplier", "shpSearchOr", "shpFilterTipo", "shpFilterPlanner", "shpFilterRevisado"].forEach(id => { document.getElementById(id).value = ""; });
   shpEstadoFilter = "";
+  shpDivFilter = false;
   renderShipmentsView();
 };
 document.getElementById("btnShpReload").onclick = () => loadShipmentsData(true);
@@ -3222,10 +3269,11 @@ const SHP_XLSX_COLS = [
   { h: "Completed P44", w: 17, v: r => r.p44_completed },
   { h: "Recibo 3E pos pickup", w: 18, v: r => r.recibo_3e_pos_pickup },
   { h: "Estado", w: 13, v: r => r.estado },
+  { h: "Estado automatico", w: 15, v: r => r.estado_auto || r.estado },
   { h: "Real Completed", w: 15, v: r => r.real_completed || "", edit: true },
-  { h: "Revisado", w: 10, v: r => r.revisado || "", edit: true },
+  { h: "Revisado", w: 10, v: r => shpRevisadoTxt(r.revisado), edit: true },
   { h: "_lido_real_completed", w: 12, v: r => r.real_completed || "", hidden: true },
-  { h: "_lido_revisado", w: 10, v: r => r.revisado || "", hidden: true },
+  { h: "_lido_revisado", w: 10, v: r => shpRevisadoTxt(r.revisado), hidden: true },
   { h: "_exportado_em", w: 18, v: () => shpXlsxStamp, hidden: true },
 ];
 let shpLastRows = [];   // linhas visiveis na ultima renderizacao da aba (mesmo filtro e ordem)
@@ -3316,6 +3364,324 @@ document.getElementById("btnShpExcel").onclick = () => {
   a.download = `shipments_${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}.xlsx`;
   a.click();
 };
+
+// ---------- Aba Shipments: campos manuais Real Completed / Revisado (2026-10-20, fase 2) ----------
+// Os valores manuais vivem em dim_shipments_manual (escrita SO pelo Worker, rotas shipments_manual_*).
+// O JSON do Job ja traz real_completed/revisado/estado_auto (leitura da tabela, atraso de ate 20 min);
+// com o Worker habilitado, a aba tambem le os valores AO VIVO e eles prevalecem sobre o JSON.
+//
+// INTERRUPTOR: shpManualWorkerEnabled = false ate confirmar o Worker. Com false: o botao "Carregar
+// Excel" fica oculto e NAO se faz nenhuma chamada ao Worker por esta aba (o POST na raiz do Worker
+// atual e a rota do portal de proveedores: nao mandar nada para la sem as rotas novas).
+//
+// Contrato com o Worker (POST WORKER_URL, header Authorization: Bearer <codigo>, corpo JSON):
+//   {action:"shipments_manual_read"}
+//     -> {ok:true, rows:[{order_release_code, real_completed:"dd/mm/aaaa"|null, revisado:true|false|null, updated_by, updated_at}]}
+//   {action:"shipments_manual_preview"|"shipments_manual_save", file_name, exported_at,
+//    rows:[{line, order_release_code, real_completed, revisado, read_real_completed, read_revisado}]}
+//      real_completed: "dd/mm/aaaa" | "LIMPAR" | "" (sem mudanca);  revisado: "Sim" | "Não" | "LIMPAR" | ""
+//     -> {ok:true, batch_id, results:[{line, order_release_code, field, result, reason, old_value, new_value}]}
+//        result: ok | sem_mudanca | conflito | rejeitado   (preview nao grava; save grava com controle de valor)
+//   Erros: 401 {error:"codigo_invalido"} · 403 {error:"sem_permissao"} · 503 {error:"servico_indisponivel"}
+let shpManualWorkerEnabled = false;
+let shpLoadState = null;   // {fileName, exportedAt, lines, localResults, sendRows, results}
+
+function shpRevisadoTxt(v) { return v === true ? "Sim" : v === false ? "Não" : ""; }
+function shpDateBR(d) { return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`; }
+
+// Mesmo calculo do gerador (apply_manual): estado final, divergencia com P44 e pickup reprogramado.
+function shpApplyManual(r, m) {
+  if (r.estado_auto === undefined) { r.estado_auto = r.estado; r.dias_atraso_auto = r.dias_atraso; }
+  if (r.dias_atraso_auto === undefined) r.dias_atraso_auto = r.dias_atraso;
+  const rc = m && m.real_completed ? parseDateBR(m.real_completed) : null;
+  r.real_completed = rc ? shpDateBR(rc) : "";
+  r.revisado = m ? (m.revisado === true ? true : m.revisado === false ? false : null) : null;
+  r.manual_by = (m && m.updated_by) || "";
+  r.manual_at = (m && m.updated_at) || "";
+  const p44 = parseDateBR((r.p44_completed || "").slice(0, 10));
+  const ep = parseDateBR(r.early_pickup);
+  r.divergencia_p44 = !!(rc && p44 && rc.getTime() !== p44.getTime());
+  r.pickup_reprogramado = !!(rc && ep && ep.getTime() > rc.getTime());
+  r.estado = rc ? "OK (manual)" : r.estado_auto;
+  r.dias_atraso = rc ? null : r.dias_atraso_auto;
+}
+
+async function shpWorkerCall(body) {
+  let resp;
+  try {
+    resp = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + currentCode },
+      body: JSON.stringify(body),
+    });
+  } catch (e) {
+    throw new Error("Sem conexao com o servidor (Worker). Nada foi gravado.");
+  }
+  const data = await resp.json().catch(() => ({}));
+  if (resp.status === 401) throw new Error("Codigo invalido. Entre de novo no dashboard. Nada foi gravado.");
+  if (resp.status === 403) throw new Error("Seu codigo nao tem permissao de editor. Nada foi gravado.");
+  if (resp.status === 503) throw new Error("Servico indisponivel (Databricks). Tente de novo em alguns minutos. Nada foi gravado.");
+  if (!resp.ok || !data.ok) throw new Error((data.error || ("HTTP " + resp.status)) + ". Nada foi gravado.");
+  return data;
+}
+
+// Le os valores manuais ao vivo (so com o interruptor ligado e usuario logado). Se falhar, fica o JSON.
+async function shpLoadManualLive() {
+  if (!shpManualWorkerEnabled || !currentCode || !shpData) return false;
+  try {
+    const data = await shpWorkerCall({ action: "shipments_manual_read" });
+    const byOr = new Map((data.rows || []).map(m => [m.order_release_code, m]));
+    shpData.shipments.forEach(r => shpApplyManual(r, byOr.get(r.order_release) || null));
+    shpData._manualLiveAt = new Date();
+    return true;
+  } catch (e) {
+    console.warn("shipments_manual_read:", e.message);
+    return false;
+  }
+}
+
+// ---- Leitura do .xlsx no navegador (sem biblioteca): ZIP (stored/deflate) + XML ----
+function shpUnzip(buf) {
+  const dv = new DataView(buf.buffer, buf.byteOffset, buf.byteLength);
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 65557); i--) {
+    if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+  }
+  if (eocd < 0) throw new Error("O arquivo nao e um .xlsx valido.");
+  const count = dv.getUint16(eocd + 10, true);
+  let off = dv.getUint32(eocd + 16, true);
+  const dec = new TextDecoder();
+  const entries = {};
+  for (let n = 0; n < count; n++) {
+    if (dv.getUint32(off, true) !== 0x02014b50) throw new Error("ZIP corrompido.");
+    const method = dv.getUint16(off + 10, true);
+    const csize = dv.getUint32(off + 20, true);
+    const nlen = dv.getUint16(off + 28, true), xlen = dv.getUint16(off + 30, true), clen = dv.getUint16(off + 32, true);
+    const loff = dv.getUint32(off + 42, true);
+    const name = dec.decode(buf.subarray(off + 46, off + 46 + nlen));
+    const start = loff + 30 + dv.getUint16(loff + 26, true) + dv.getUint16(loff + 28, true);
+    entries[name] = { method, data: buf.subarray(start, start + csize) };
+    off += 46 + nlen + xlen + clen;
+  }
+  return entries;
+}
+async function shpZipText(entries, name) {
+  const e = entries[name];
+  if (!e) return null;
+  let bytes = e.data;
+  if (e.method === 8) {
+    const stream = new Response(e.data).body.pipeThrough(new DecompressionStream("deflate-raw"));
+    bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+  } else if (e.method !== 0) {
+    throw new Error("Compressao do .xlsx nao suportada.");
+  }
+  return new TextDecoder().decode(bytes);
+}
+function shpColIndex(ref) {
+  const letters = ref.replace(/[0-9]/g, "");
+  let n = 0;
+  for (const ch of letters) n = n * 26 + (ch.charCodeAt(0) - 64);
+  return n - 1;
+}
+// Devolve a primeira planilha como matriz de strings (numeros ficam como texto do <v>).
+async function shpReadXlsx(bytes) {
+  const entries = shpUnzip(bytes);
+  const xml = t => new DOMParser().parseFromString(t, "application/xml");
+  let sheetPath = "xl/worksheets/sheet1.xml";
+  const wb = await shpZipText(entries, "xl/workbook.xml");
+  const rels = await shpZipText(entries, "xl/_rels/workbook.xml.rels");
+  if (wb && rels) {
+    const first = xml(wb).getElementsByTagName("sheet")[0];
+    const rid = first && (first.getAttribute("r:id") || first.getAttributeNS("http://schemas.openxmlformats.org/officeDocument/2006/relationships", "id"));
+    const rel = [...xml(rels).getElementsByTagName("Relationship")].find(x => x.getAttribute("Id") === rid);
+    if (rel) sheetPath = "xl/" + rel.getAttribute("Target").replace(/^\/?xl\//, "").replace(/^\//, "");
+  }
+  const shared = [];
+  const sst = await shpZipText(entries, "xl/sharedStrings.xml");
+  if (sst) [...xml(sst).getElementsByTagName("si")].forEach(si => shared.push([...si.getElementsByTagName("t")].map(t => t.textContent).join("")));
+  const sheet = await shpZipText(entries, sheetPath);
+  if (!sheet) throw new Error("Planilha nao encontrada no arquivo.");
+  const out = [];
+  [...xml(sheet).getElementsByTagName("row")].forEach(row => {
+    const rIdx = parseInt(row.getAttribute("r"), 10) - 1;
+    const line = [];
+    [...row.getElementsByTagName("c")].forEach(c => {
+      const t = c.getAttribute("t");
+      const v = c.getElementsByTagName("v")[0];
+      let val = "";
+      if (t === "s") val = shared[parseInt(v ? v.textContent : "-1", 10)] ?? "";
+      else if (t === "inlineStr") val = [...c.getElementsByTagName("t")].map(x => x.textContent).join("");
+      else if (t === "b") val = v && v.textContent === "1" ? "TRUE" : "FALSE";
+      else val = v ? v.textContent : "";
+      line[shpColIndex(c.getAttribute("r"))] = val;
+    });
+    out[rIdx] = line;
+  });
+  return out;
+}
+
+// ---- Validacao local (o Worker valida de novo; isto so evita mandar lixo) ----
+function shpNormDate(raw) {
+  const s = String(raw ?? "").trim();
+  if (!s) return { v: "" };
+  if (s.toUpperCase() === "LIMPAR") return { v: "LIMPAR" };
+  let d = null;
+  if (/^\d+(\.\d+)?$/.test(s)) {                      // data serial do Excel (sistema 1900)
+    const n = Math.floor(parseFloat(s));
+    if (n > 40000 && n < 60000) d = new Date(Date.UTC(1899, 11, 30) + n * 86400000);
+    if (d) d = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  } else {
+    const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (m) {
+      d = new Date(+m[3], +m[2] - 1, +m[1]);
+      if (d.getDate() !== +m[1] || d.getMonth() !== +m[2] - 1) d = null;
+    }
+  }
+  if (!d) return { err: `Data invalida "${s}" (use dd/mm/aaaa)` };
+  return { v: shpDateBR(d), d };
+}
+function shpNormRevisado(raw) {
+  const s = String(raw ?? "").trim().toLowerCase();
+  if (!s) return { v: "" };
+  if (s === "limpar") return { v: "LIMPAR" };
+  if (["sim", "s", "true", "1"].includes(s)) return { v: "Sim" };
+  if (["não", "nao", "n", "false", "0"].includes(s)) return { v: "Não" };
+  return { err: `Revisado invalido "${raw}" (use Sim ou Não)` };
+}
+function shpBuildLoad(matrix, fileName) {
+  const header = (matrix[0] || []).map(h => String(h ?? "").trim());
+  const col = name => header.indexOf(name);
+  const need = ["Order Release", "Real Completed", "Revisado", "_lido_real_completed", "_lido_revisado"];
+  const missing = need.filter(n => col(n) < 0);
+  if (missing.length) throw new Error(`Colunas faltando: ${missing.join(", ")}. Use o Excel baixado com "Baixar Excel" desta aba.`);
+  const iExp = col("_exportado_em");
+  const today = todayNoTime();
+  const byOr = new Map((shpData ? shpData.shipments : []).map(r => [r.order_release, r]));
+  const lines = [];
+  for (let i = 1; i < matrix.length; i++) {
+    const row = matrix[i];
+    if (!row) continue;
+    const orc = String(row[col("Order Release")] ?? "").trim().replace(/^CNHILA\./i, "");
+    const rcRaw = row[col("Real Completed")], revRaw = row[col("Revisado")];
+    if (!orc && !String(rcRaw ?? "").trim() && !String(revRaw ?? "").trim()) continue;
+    lines.push({
+      line: i + 1, orc, rcRaw, revRaw,
+      readRc: String(row[col("_lido_real_completed")] ?? "").trim(),
+      readRev: String(row[col("_lido_revisado")] ?? "").trim(),
+      exportedAt: iExp >= 0 ? String(row[iExp] ?? "") : "",
+    });
+  }
+  const count = new Map();
+  lines.forEach(l => count.set(l.orc, (count.get(l.orc) || 0) + 1));
+  const localResults = [], sendRows = [];
+  let unchanged = 0;
+  lines.forEach(l => {
+    const reject = (field, reason) => localResults.push({ line: l.line, order_release_code: l.orc, field, result: "rejeitado", reason, old_value: "", new_value: "" });
+    if (!l.orc) return reject("—", "Order Release vazia");
+    if (count.get(l.orc) > 1) return reject("—", "Order Release repetida no arquivo (todas as linhas dela foram rejeitadas)");
+    const rc = shpNormDate(l.rcRaw), rev = shpNormRevisado(l.revRaw);
+    const shp = byOr.get(l.orc);
+    let bad = false;
+    if (rc.err) { reject("real_completed", rc.err); bad = true; }
+    else if (rc.d && rc.d > today) { reject("real_completed", "Data futura"); bad = true; }
+    else if (rc.d && shp && parseDateBR(shp.early_pickup) && rc.d < parseDateBR(shp.early_pickup)) { reject("real_completed", `Anterior ao early pickup ${shp.early_pickup}`); bad = true; }
+    if (rev.err) { reject("revisado", rev.err); bad = true; }
+    if (bad) return;
+    const rcNew = rc.v === l.readRc ? "" : rc.v;          // igual ao lido -> sem mudanca
+    const revNew = rev.v === l.readRev ? "" : rev.v;
+    if (!rcNew && !revNew) { unchanged++; return; }   // linha sem edicao: nao entra na previa
+    sendRows.push({ line: l.line, order_release_code: l.orc, real_completed: rcNew, revisado: revNew,
+                    read_real_completed: l.readRc, read_revisado: l.readRev });
+  });
+  return { fileName, exportedAt: (lines.find(l => l.exportedAt) || {}).exportedAt || "", lines, localResults, sendRows, unchanged, results: null };
+}
+
+// ---- Modal: previa -> Gravar -> resultado ----
+const SHP_RESULT_BADGE = { ok: "badge-green", sem_mudanca: "badge-gray", conflito: "badge-amber", rejeitado: "badge-red" };
+function shpRenderLoad(stage, workerResults, errMsg) {
+  const st = shpLoadState;
+  const all = [...st.localResults, ...(workerResults || [])].sort((a, b) => a.line - b.line);
+  st.results = all;
+  const c = r => all.filter(x => x.result === r).length;
+  const title = stage === "saved" ? "Resultado da gravacao" : "Previa (nada foi gravado ainda)";
+  document.getElementById("shpLoadTitle").textContent = `Carregar Excel — ${title}`;
+  document.getElementById("shpLoadSummary").textContent =
+    `${st.fileName} · ${st.lines.length} linhas (${st.unchanged} sem edicao) · ok ${c("ok")} · sem mudanca ${c("sem_mudanca")} · conflito ${c("conflito")} · rejeitado ${c("rejeitado")}`;
+  const canSave = stage === "preview" && !errMsg && (workerResults || []).some(r => r.result === "ok");
+  document.getElementById("btnShpLoadSave").style.display = canSave ? "" : "none";
+  document.getElementById("btnShpLoadReport").style.display = all.length ? "" : "none";
+  document.getElementById("shpLoadBody").innerHTML =
+    (errMsg ? `<div class="shp-note" style="border-left-color:var(--red);background:#fde8e8;">${shpEsc(errMsg)}</div>` : "")
+    + (stage === "preview" && !errMsg ? '<div class="shp-note">Revise a previa. So as linhas "ok" serao gravadas, e so se o valor no banco ainda for o valor exportado (senao viram "conflito").</div>' : "")
+    + `<table><thead><tr><th>Linha</th><th>Order Release</th><th>Campo</th><th>Valor atual</th><th>Novo</th><th>Resultado</th><th>Motivo</th></tr></thead><tbody>${all.map(r => `
+      <tr><td>${r.line}</td><td>${shpEsc(r.order_release_code)}</td><td>${shpEsc(r.field)}</td><td>${shpEsc(r.old_value ?? "")}</td><td>${shpEsc(r.new_value ?? "")}</td>
+      <td><span class="badge ${SHP_RESULT_BADGE[r.result] || "badge-gray"}">${shpEsc(r.result)}</span></td><td>${shpEsc(r.reason || "")}</td></tr>`).join("")}</tbody></table>`;
+}
+async function shpProcessExcelBytes(bytes, fileName) {
+  document.getElementById("shpLoadOverlay").style.display = "flex";
+  document.getElementById("btnShpLoadSave").style.display = "none";
+  document.getElementById("btnShpLoadReport").style.display = "none";
+  document.getElementById("shpLoadSummary").textContent = "";
+  document.getElementById("shpLoadBody").innerHTML = '<div class="empty-state">Lendo o arquivo...</div>';
+  try {
+    shpLoadState = shpBuildLoad(await shpReadXlsx(bytes), fileName);
+  } catch (e) {
+    shpLoadState = null;
+    document.getElementById("shpLoadBody").innerHTML = `<div class="empty-state">${shpEsc(e.message)}</div>`;
+    return;
+  }
+  if (!shpLoadState.sendRows.length) { shpRenderLoad("preview", [], "Nenhuma linha com mudanca valida para enviar."); return; }
+  try {
+    const data = await shpWorkerCall({ action: "shipments_manual_preview", file_name: fileName, exported_at: shpLoadState.exportedAt, rows: shpLoadState.sendRows });
+    shpRenderLoad("preview", data.results || []);
+  } catch (e) {
+    shpRenderLoad("preview", [], e.message);
+  }
+}
+async function shpSaveLoad() {
+  const st = shpLoadState;
+  if (!st) return;
+  const okLines = new Set(st.results.filter(r => r.result === "ok").map(r => r.line));
+  const rows = st.sendRows.filter(r => okLines.has(r.line));
+  const btn = document.getElementById("btnShpLoadSave");
+  btn.disabled = true; btn.textContent = "Gravando...";
+  try {
+    const data = await shpWorkerCall({ action: "shipments_manual_save", file_name: st.fileName, exported_at: st.exportedAt, rows });
+    shpRenderLoad("saved", data.results || []);
+    await shpLoadManualLive();
+    buildShpSummary();
+    renderShipmentsView();
+  } catch (e) {
+    shpRenderLoad("preview", st.results.filter(r => !st.localResults.includes(r)), e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = "Gravar";
+  }
+}
+function shpDownloadReport() {
+  const st = shpLoadState;
+  if (!st || !st.results) return;
+  const head = ["Linha", "Order Release", "Campo", "Valor atual", "Novo", "Resultado", "Motivo"];
+  const lines = [head.join(";")].concat(st.results.map(r => [r.line, r.order_release_code, r.field, r.old_value ?? "", r.new_value ?? "", r.result, r.reason || ""].map(csvEscape).join(";")));
+  const blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `carga_shipments_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+}
+document.getElementById("btnShpLoadExcel").onclick = () => {
+  if (!shpManualWorkerEnabled) return;
+  const inp = document.getElementById("fileShpExcel");
+  inp.value = "";
+  inp.click();
+};
+document.getElementById("fileShpExcel").onchange = async e => {
+  const f = e.target.files && e.target.files[0];
+  if (!f || !shpManualWorkerEnabled) return;
+  await shpProcessExcelBytes(new Uint8Array(await f.arrayBuffer()), f.name);
+};
+document.getElementById("btnShpLoadSave").onclick = () => shpSaveLoad();
+document.getElementById("btnShpLoadReport").onclick = () => shpDownloadReport();
+document.getElementById("btnShpLoadClose").onclick = () => { document.getElementById("shpLoadOverlay").style.display = "none"; };
 
 // ---------- Modal "Ver CSCN em bruto" ----------
 const RAW_DATA_URL = "dashboard_cb_3e_raw_lines.json";
@@ -3458,6 +3824,7 @@ function applyRolePermissions() {
   document.getElementById("btnImport").style.display = isEditor ? "" : "none";
   document.getElementById("btnImportDataReal").style.display = isEditor ? "" : "none";
   document.getElementById("btnClearSelectedPromise").style.display = isEditor ? "" : "none";
+  document.getElementById("btnShpLoadExcel").style.display = (isEditor && shpManualWorkerEnabled) ? "" : "none";
 }
 document.getElementById("btnLogin").onclick = () => {
   const code = document.getElementById("loginCodeInput").value.trim().toUpperCase();
