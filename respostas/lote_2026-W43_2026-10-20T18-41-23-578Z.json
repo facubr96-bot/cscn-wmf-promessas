@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-20T18:41:23.578Z",
+  "editor": "Victor Medeiros",
+  "semana": "2026-W43",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BJD65",
+      "part_number": "47606560",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": true,
+      "data_coleta": "25/09/2026",
+      "nfe_enviada": "148544",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "L1",
+      "data_real_completed": "19/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD65",
+      "part_number": "47788748",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "L1",
+      "data_real_completed": "19/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BJD65",
+      "part_number": "84586004",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": true,
+      "data_coleta": "11/09/2026",
+      "nfe_enviada": "148219",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "L1",
+      "data_real_completed": "19/10/2026",
+      "comentario": ""
+    }
+  ]
+}
