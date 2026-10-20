@@ -1,7 +1,7 @@
 {
-  "generated_at": "20/10/2026 09:01",
+  "generated_at": "20/10/2026 09:20",
   "today": "20/10/2026",
-  "total": 418,
+  "total": 419,
   "items": [
     {
       "id": "1",
@@ -7525,6 +7525,24 @@
       "estado": "Aberto",
       "planner": "VIVIAN STRELOW",
       "solicitante": "HERNANDO JAZMIN",
+      "plant": "CB"
+    },
+    {
+      "id": "420",
+      "pn": "87335549",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 250.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Drop In",
+      "run_out_date": "13/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
