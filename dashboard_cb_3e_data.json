@@ -1,5 +1,5 @@
 {
-  "generated_at": "20/10/2026 15:22",
+  "generated_at": "20/10/2026 15:42",
   "today": "20/10/2026",
   "total_pn": 1944,
   "erp_release_cb": "20261014",
@@ -79904,9 +79904,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "275762",
-      "ultima_nfe_emitida_fecha": "24/08/2026",
-      "ultima_nfe_emitida_qty": 0.0,
+      "ultima_nfe_emitida_num": "277416",
+      "ultima_nfe_emitida_fecha": "20/10/2026",
+      "ultima_nfe_emitida_qty": 10.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
     },
