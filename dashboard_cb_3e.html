@@ -212,6 +212,17 @@
   .badge-green { background: #e6f4ea; color: var(--green); }
   .badge-gray { background: var(--gray-100); color: var(--gray-700); }
   .badge-amber { background: #fdf1de; color: var(--amber); }
+  .badge-blue { background: #e3edf7; color: #1f5f9c; }
+  .shp-sum { cursor: pointer; }
+  .shp-sum:hover { text-decoration: underline; }
+  .shp-note { font-size: 12px; color: var(--gray-700); background: #fdf1de; border-left: 3px solid var(--amber); padding: 8px 12px; margin: 10px 0; border-radius: 4px; }
+  .nfe-sup { border: 1px solid var(--gray-300); border-radius: var(--radius); background: var(--white); margin-bottom: 8px; }
+  .nfe-sup > summary { padding: 8px 12px; cursor: pointer; font-size: 13px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .nfe-sup .nfe-one { margin: 0 12px 8px 24px; font-size: 12px; }
+  .nfe-sup .nfe-one > summary { cursor: pointer; padding: 3px 0; }
+  .nfe-sup table { width: auto; box-shadow: none; margin: 4px 0 6px 18px; font-size: 11.5px; }
+  .nfe-sup table thead th { position: static; padding: 4px 8px; cursor: default; }
+  .nfe-sup table tbody td { padding: 3px 8px; }
 
   input.cell-input {
     border: 1px solid var(--gray-300);
@@ -298,6 +309,7 @@
       <button data-view="table" class="active">Tabela</button>
       <button data-view="dashboard">Dashboard</button>
       <button data-view="cpl">CPL</button>
+      <button data-view="shipments">Shipments</button>
     </div>
     <button class="btn" id="btnRawView">Ver CSCN em bruto</button>
   </div>
@@ -563,6 +575,48 @@
     </div>
   </div>
 
+  <!-- Aba Shipments (2026-10-20, fase 1 SOMENTE LEITURA): 1 linha por Order Release OTM (proveedor -> 3E)
+       + NF-e emitidas e nao recebidas por proveedor. Fonte: shipments_cb_3e.json (Task generate_shipments).
+       Nao edita nada, nao usa allItems para filtros/contagens da Tabela. -->
+  <div id="viewShipments" style="display:none;">
+    <div class="toolbar" style="margin-top:0;">
+      <input type="text" id="shpSearchSupplier" placeholder="Buscar proveedor...">
+      <input type="text" id="shpSearchOr" placeholder="Order Release / Shipment...">
+      <select id="shpFilterTipo" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px;">
+        <option value="">Todos os tipos</option><option value="PUR">PUR</option><option value="PUN">PUN</option><option value="AETC">AETC</option>
+      </select>
+      <select id="shpFilterPlanner" style="padding:8px 10px; border:1px solid var(--gray-300); border-radius:var(--radius); font-size:13px;">
+        <option value="">Todos los planejadores</option>
+      </select>
+      <div id="shpActiveChip"></div>
+      <span class="count" id="shpRowCount"></span>
+      <button class="btn" id="btnShpClear">Limpiar filtro</button>
+      <button class="btn" id="btnShpReload">Recarregar</button>
+    </div>
+    <div id="shpEmptyState" class="empty-state" style="display:none;"></div>
+    <div id="shpContent" style="display:none;">
+      <div class="kpi-section">
+        <h2 id="shpTitle">Coletas proveedor → 3E</h2>
+        <div class="kpi-grid" id="kpiShpEstado"></div>
+      </div>
+      <div class="shp-note" id="shpNoteShip"></div>
+      <div class="table-wrap" style="max-height: 55vh;">
+        <table id="shpTable">
+          <thead><tr id="shpHead"></tr></thead>
+          <tbody id="shpBody"></tbody>
+        </table>
+        <div class="empty-state" id="shpTableEmpty" style="display:none;">Nenhuma order release com esse filtro.</div>
+      </div>
+
+      <div class="kpi-section" style="margin-top:22px;">
+        <h2>NF-e emitidas e nao recebidas</h2>
+        <div class="kpi-grid" id="kpiShpNfe"></div>
+      </div>
+      <div class="shp-note" id="shpNoteNfe"></div>
+      <div id="shpNfeList"></div>
+    </div>
+  </div>
+
 </main>
 
 <footer>CSCN WMF — datos actualizados por el pipeline diario. Los cambios de Promesa/Confirmación se guardan directo en dim_promessas via la misma API que usa el portal de proveedores.</footer>
@@ -576,6 +630,16 @@ function getPlanejador(item) {
   return item.planejador || "Sin asignar";
 }
 const DATA_URL = "dashboard_cb_3e_data.json";
+// Aba Shipments + colunas resumo (2026-10-20, somente leitura): JSON separado, ver bloco "Aba Shipments".
+const SHIPMENTS_DATA_URL = "shipments_cb_3e.json";
+let shpData = null;                 // payload de shipments_cb_3e.json (null = ainda nao carregou / falhou)
+let shpSummaryBySup = new Map();    // supplier_code -> resumo (colunas resumo da Tabela)
+const SHIP_SUM_COLS = [
+  { key: "ship_next", label: "Proxima coleta" },
+  { key: "ship_done", label: "Coletas OK/total" },
+  { key: "ship_late", label: "Coletas atrasadas" },
+  { key: "ship_nfe", label: "NF-e pendentes" },
+];
 
 const MOTIVO_OPTIONS = [
   "Pedido inserido dentro do Lead time",
@@ -1345,7 +1409,7 @@ function saveHiddenSet(set) {
   try { localStorage.setItem(HIDDEN_COLS_KEY, JSON.stringify(hiddenColsStore)); } catch (e) { /* sem localStorage: vale so nesta sessao */ }
 }
 function pickerColumns() {
-  return [...getColumns(true), { key: "previsao_saida_wmfbr", label: "Previsao Saida WMFBR" }];
+  return [...getColumns(true), ...SHIP_SUM_COLS, { key: "previsao_saida_wmfbr", label: "Previsao Saida WMFBR" }];
 }
 // Ocultar/mostrar colunas e feito por CSS (display:none por data-c), SEM redesenhar as ~2000
 // linhas: por isso e instantaneo. A tabela sempre renderiza todas as colunas do grupo aberto.
@@ -1435,6 +1499,7 @@ const DATE_COLUMNS = new Set([
   "data_real_completed",
 ]);
 function sortValueFor(item, col) {
+  if (col.startsWith("ship_")) return shpSortValue(item, col);
   const v = item[col];
   if (DATE_COLUMNS.has(col)) {
     const d = parseDateBR(v);
@@ -1476,7 +1541,8 @@ function renderTable() {
       return `<th data-col="${c.key}" data-c="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
     return `<th data-col="${c.key}" data-c="${c.key}">${c.label}</th>`;
-  }).join("") + '<th data-c="previsao_saida_wmfbr">Previsao Saida WMFBR</th>';
+  }).join("") + SHIP_SUM_COLS.map(c => `<th data-col="${c.key}" data-c="${c.key}" title="Calculado da aba Shipments (somente leitura)">${c.label}</th>`).join("")
+    + '<th data-c="previsao_saida_wmfbr">Previsao Saida WMFBR</th>';
   applyHiddenColsCss();
   updateColsBtnLabel();
   head.querySelectorAll("th[data-col]").forEach(th => {
@@ -1538,6 +1604,7 @@ function appendRows(from, to) {
     if (dirty[item.pn]) tr.classList.add("row-dirty");
     let html = `<td><input type="checkbox" class="row-select" data-pn="${item.pn}" ${selectedPns.has(item.pn) ? "checked" : ""}></td>`;
     cols.forEach(c => { html += renderCell(item, c.key).replace("<td", `<td data-c="${c.key}"`); });
+    html += shpSummaryCells(item);
     html += `<td data-c="previsao_saida_wmfbr"><input type="text" class="cell-input" placeholder="dd/mm/aaaa" value="${item.previsao_saida_wmfbr || ""}" onchange="markDirty('${item.pn}','previsao_saida_wmfbr',this.value)"></td>`;
     tr.innerHTML = html;
     frag.appendChild(tr);
@@ -2280,8 +2347,10 @@ document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => 
     document.getElementById("viewTable").style.display = view === "table" ? "" : "none";
     document.getElementById("viewDashboard").style.display = view === "dashboard" ? "" : "none";
     document.getElementById("viewCpl").style.display = view === "cpl" ? "" : "none";
+    document.getElementById("viewShipments").style.display = view === "shipments" ? "" : "none";
     if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos com dados frescos
     if (view === "cpl") loadCplData();
+    if (view === "shipments") { if (shpData) renderShipmentsView(); else loadShipmentsData(); }
   };
 });
 
@@ -2432,6 +2501,7 @@ async function loadData() {
     renderKpis();
     renderTable();
     preloadRawLinesForKpis(); // async, nao bloqueia — atualiza os cards de Ship Date quando chegar
+    loadShipmentsData();      // async, nao bloqueia — so preenche as colunas resumo e a aba Shipments
   } catch (e) {
     document.getElementById("statusText").textContent = "Error cargando datos: " + e.message;
   }
@@ -2811,6 +2881,327 @@ document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
     renderCplView();
   };
 });
+
+// ---------- Aba Shipments + colunas resumo da Tabela (2026-10-20, SOMENTE LEITURA) ----------
+// Fonte: shipments_cb_3e.json (Task generate_shipments do Job wmf_cscn_dashboard_cb_3e), 1 linha por
+// Order Release OTM (proveedor -> 3E, early pickup hoje-7..hoje+14, data SP) + NF-e emitidas (Validador)
+// e nao recebidas (portal 3E / SAP 101). O estado vem calculado do gerador. Nada aqui grava em tabela
+// nem mexe em allItems: os filtros/contagens da Tabela e do Dashboard nao dependem deste arquivo.
+// Se o JSON falhar, as colunas resumo ficam vazias e a aba mostra o erro.
+const SHP_ESTADOS = ["Atrasado", "Sin dato P44", "En tránsito", "Futuro", "OK"];
+const SHP_ESTADO_BADGE = { "Atrasado": "badge-red", "Sin dato P44": "badge-amber", "En tránsito": "badge-blue", "Futuro": "badge-gray", "OK": "badge-green" };
+const SHP_ESTADO_TONE = { "Atrasado": "red", "Sin dato P44": "amber", "En tránsito": "gray", "Futuro": "gray", "OK": "green" };
+const SHP_COLS = [
+  { key: "estado", label: "Estado" },
+  { key: "dias_atraso", label: "Dias atraso" },
+  { key: "supplier_code", label: "Cod." },
+  { key: "supplier_name", label: "Proveedor" },
+  { key: "planejador", label: "Planejador" },
+  { key: "tipo", label: "Tipo" },
+  { key: "order_release", label: "Order Release" },
+  { key: "early_pickup", label: "Early Pickup" },
+  { key: "shipment", label: "Shipment" },
+  { key: "milk_run_n", label: "Prov. no shipment" },
+  { key: "destino", label: "Destino" },
+  { key: "otm_fim_planejado", label: "Fim planejado OTM" },
+  { key: "otm_pickup_conf", label: "Coleta OTM" },
+  { key: "otm_delivery_conf", label: "Entrega OTM" },
+  { key: "p44_last_milestone", label: "P44 ultimo evento" },
+  { key: "p44_completed", label: "Completed P44" },
+  { key: "recibo_3e_pos_pickup", label: "Recibo 3E pos-pickup" },
+];
+const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "recibo_3e_pos_pickup"]);
+let shpEstadoFilter = "";
+let shpSortCol = null, shpSortDir = 1;
+
+function shpEsc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+// "dd/mm/aaaa" ou "dd/mm/aaaa HH:MM" -> ms (null se vazio)
+function shpDateMs(s) {
+  if (!s) return null;
+  const [d, t] = String(s).split(" ");
+  const dt = parseDateBR(d);
+  if (!dt) return null;
+  if (t) { const [h, mi] = t.split(":"); dt.setHours(+h || 0, +mi || 0); }
+  return dt.getTime();
+}
+
+async function loadShipmentsData(force) {
+  if (shpData && !force) return;
+  const emptyEl = document.getElementById("shpEmptyState");
+  try {
+    const resp = await fetch(SHIPMENTS_DATA_URL + "?t=" + Date.now());
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    if (!Array.isArray(data.shipments)) throw new Error("formato inesperado");
+    shpData = data;
+    buildShpSummary();
+    emptyEl.style.display = "none";
+    document.getElementById("shpContent").style.display = "";
+    if (allItems.length && document.getElementById("viewTable").style.display !== "none") renderTable();
+    if (document.getElementById("viewShipments").style.display !== "none") renderShipmentsView();
+  } catch (e) {
+    shpData = null;
+    shpSummaryBySup = new Map();
+    document.getElementById("shpContent").style.display = "none";
+    emptyEl.style.display = "";
+    emptyEl.textContent = `Esta aba ainda nao tem dados publicados (${SHIPMENTS_DATA_URL}). Erro: ${e.message}`;
+  }
+}
+
+// Resumo por proveedor para as 4 colunas da Tabela. "Hoje" = o do gerador (data SP), o mesmo
+// usado para calcular o estado de cada order release.
+function buildShpSummary() {
+  const today = parseDateBR(shpData.today) || todayNoTime();
+  const t0 = today.getTime();
+  const m = new Map();
+  const get = sup => {
+    if (!m.has(sup)) m.set(sup, { next: null, nextTipo: "", done: 0, total: 0, late: 0, maxLate: 0, semP44: 0, rows: 0, nfe: 0, nfeOldest: null, nfeVerificar: 0 });
+    return m.get(sup);
+  };
+  shpData.shipments.forEach(r => {
+    const s = get(r.supplier_code);
+    s.rows++;
+    const ep = shpDateMs(r.early_pickup);
+    if (ep !== null && ep >= t0 && (s.next === null || ep < s.next)) { s.next = ep; s.nextTipo = r.tipo; }
+    if (ep !== null && ep <= t0) { s.total++; if (r.estado === "OK") s.done++; }
+    if (r.estado === "Atrasado") { s.late++; s.maxLate = Math.max(s.maxLate, r.dias_atraso || 0); }
+    if (r.estado === "Sin dato P44") s.semP44++;
+  });
+  (shpData.nfe_pendentes || []).forEach(n => {
+    if (!n.supplier_code) return;
+    const s = get(n.supplier_code);
+    s.nfe++;
+    if (n.idade_dias !== null && (s.nfeOldest === null || n.idade_dias > s.nfeOldest)) s.nfeOldest = n.idade_dias;
+    if (n.verificar) s.nfeVerificar++;
+  });
+  shpSummaryBySup = m;
+}
+// Semaforo: verde 0 atrasadas, amarelo 1 (ate 3 dias), vermelho 2+ ou alguma com mais de 3 dias.
+function shpLateTone(s) {
+  if (!s.late) return "green";
+  return (s.late >= 2 || s.maxLate > 3) ? "red" : "amber";
+}
+function shpSummaryCells(item) {
+  const s = shpSummaryBySup.get(item.supplier_code);
+  const sup = shpEsc(item.supplier_code || "");
+  if (!s) return SHIP_SUM_COLS.map(c => `<td data-c="${c.key}"></td>`).join("");
+  const go = `onclick="gotoShipments('${sup}')"`;
+  const fmt = ms => { const d = new Date(ms); return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`; };
+  const next = s.rows ? (s.next !== null ? `${fmt(s.next)} <span style="color:var(--gray-500);font-size:11px;">${s.nextTipo}</span>` : "—") : "";
+  const done = s.total ? `<span style="color:${s.done === s.total ? "var(--green)" : "var(--gray-700)"};font-weight:600;">${s.done}/${s.total}</span>` : (s.rows ? "0/0" : "");
+  const late = s.rows
+    ? `<span class="badge badge-${shpLateTone(s)}" title="${s.late} atrasada(s), maior atraso ${s.maxLate} dia(s)">${s.late}</span>`
+      + (s.semP44 ? ` <span class="badge badge-gray" title="Order releases com shipment que nao aparecem no P44">${s.semP44} s/P44</span>` : "")
+    : "";
+  const nfe = s.nfe
+    ? `<span class="badge ${s.nfeVerificar ? "badge-red" : "badge-amber"}" title="${s.nfe} NF-e emitida(s) e nao recebida(s); mais antiga com ${s.nfeOldest} dia(s)${s.nfeVerificar ? `; ${s.nfeVerificar} com mais de ${shpData.nfe_verificar_dias} dias` : ""}">${s.nfe} · ${s.nfeOldest}d</span>`
+    : "";
+  return `<td data-c="ship_next" class="shp-sum" ${go}>${next}</td>`
+    + `<td data-c="ship_done" class="shp-sum" ${go}>${done}</td>`
+    + `<td data-c="ship_late" class="shp-sum" ${go}>${late}</td>`
+    + `<td data-c="ship_nfe" class="shp-sum" ${go}>${nfe}</td>`;
+}
+function shpSortValue(item, col) {
+  const s = shpSummaryBySup.get(item.supplier_code);
+  const empty = sortDir === 1 ? Infinity : -Infinity; // vazios sempre no fim
+  if (!s) return empty;
+  switch (col) {
+    case "ship_next": return s.next ?? empty;
+    case "ship_done": return s.total ? s.done / s.total : empty;
+    case "ship_late": return s.rows ? s.late * 1000 + s.maxLate : empty;
+    case "ship_nfe": return s.nfe ? s.nfe * 1000 + (s.nfeOldest || 0) : empty;
+    default: return empty;
+  }
+}
+window.gotoShipments = function(sup) {
+  document.getElementById("shpSearchSupplier").value = sup;
+  shpEstadoFilter = "";
+  document.querySelector('#viewSwitch button[data-view="shipments"]').click();
+};
+
+function shpPlannerOf(sup) {
+  const r = shpData.shipments.find(x => x.supplier_code === sup && x.planejador);
+  if (r) return r.planejador;
+  const it = allItems.find(i => i.supplier_code === sup);
+  return it ? getPlanejador(it) : "Sin asignar";
+}
+function shpMatchesSupplier(code, name) {
+  const q = document.getElementById("shpSearchSupplier").value.trim().toLowerCase();
+  return !q || (code || "").toLowerCase().includes(q) || (name || "").toLowerCase().includes(q);
+}
+function shpBaseRows(ignoreEstado) {
+  const orQ = document.getElementById("shpSearchOr").value.trim().toLowerCase();
+  const tipo = document.getElementById("shpFilterTipo").value;
+  const planner = document.getElementById("shpFilterPlanner").value;
+  return shpData.shipments.filter(r =>
+    shpMatchesSupplier(r.supplier_code, r.supplier_name)
+    && (!orQ || r.order_release.toLowerCase().includes(orQ) || (r.shipment || "").toLowerCase().includes(orQ))
+    && (!tipo || r.tipo === tipo)
+    && (!planner || (r.planejador || "Sin asignar") === planner)
+    && (ignoreEstado || !shpEstadoFilter || r.estado === shpEstadoFilter));
+}
+function shpCell(r, key) {
+  const v = r[key];
+  switch (key) {
+    case "estado":
+      return `<td><span class="badge ${SHP_ESTADO_BADGE[v] || "badge-gray"}">${shpEsc(v)}</span></td>`;
+    case "dias_atraso":
+      return `<td style="${v ? "color:var(--red); font-weight:700;" : ""}">${v ?? ""}</td>`;
+    case "supplier_name":
+      return `<td class="truncate" title="${shpEsc(v)}">${shpEsc(v)}</td>`;
+    case "planejador":
+      return `<td>${shpEsc(v || "Sin asignar")}</td>`;
+    case "tipo":
+      return `<td>${shpEsc(v)}${r.cordoba ? ' <span class="badge badge-blue" title="AETC com CNHI PLANT = CORDOBA WMF BRAZIL">Cordoba</span>' : ""}</td>`;
+    case "shipment":
+      return `<td>${v ? shpEsc(v) : `<span style="color:var(--gray-500);" title="Order release sem shipment (OTM PLANNING ${shpEsc(r.otm_planning)})">sem shipment</span>`}</td>`;
+    case "milk_run_n":
+      return `<td title="${shpEsc(r.milk_run_suppliers)}">${v > 1 ? `<span class="badge badge-amber">${v}</span>` : (v || "")}</td>`;
+    case "otm_pickup_conf":
+    case "otm_delivery_conf":
+      return `<td>${v === "CONFIRMED" ? '<span class="badge badge-green">Confirmado</span>' : (v ? '<span style="color:var(--gray-500);">Nao confirmado</span>' : "")}</td>`;
+    case "p44_last_milestone":
+      return `<td>${r.p44
+        ? (v ? `${shpEsc(v)}<div style="color:var(--gray-500);font-size:11px;">${shpEsc(r.p44_last_update)}</div>` : '<span style="color:var(--gray-500);">sem eventos</span>')
+        : (r.shipment ? '<span class="badge badge-gray">Nao esta no P44</span>' : "")}</td>`;
+    case "recibo_3e_pos_pickup":
+      return `<td title="${r.recibo_3e_packing ? "Packing list " + shpEsc(r.recibo_3e_packing) + " — informativo, nao muda o estado" : ""}">${shpEsc(v)}</td>`;
+    default:
+      return `<td>${shpEsc(v)}</td>`;
+  }
+}
+function shpSortVal(r, col) {
+  if (col === "estado") return SHP_ESTADOS.indexOf(r.estado);
+  if (SHP_DATE_KEYS.has(col)) return shpDateMs(r[col]) ?? (shpSortDir === 1 ? Infinity : -Infinity);
+  return r[col] ?? "";
+}
+function renderShipmentsView() {
+  if (!shpData) return;
+  const plannerSel = document.getElementById("shpFilterPlanner");
+  if (plannerSel.options.length <= 1) {
+    [...new Set(shpData.shipments.map(r => r.planejador || "Sin asignar"))].sort()
+      .forEach(p => plannerSel.insertAdjacentHTML("beforeend", `<option value="${shpEsc(p)}">${shpEsc(p)}</option>`));
+  }
+  document.getElementById("shpTitle").textContent =
+    `Coletas proveedor → 3E (early pickup ${shpData.window.from} a ${shpData.window.to}) — gerado ${shpData.generated_at}`;
+  document.getElementById("shpNoteShip").innerHTML =
+    "Uma linha por <b>Order Release</b> (OTM so tem o trecho proveedor → 3E; Cordoba aparece como AETC). "
+    + "<b>Sin dato P44</b>: tem shipment mas nao aparece no P44 e OTM nao confirmou a entrega. "
+    + "<b>Atrasado</b>: fim planejado do shipment (OTM) vencido sem entrega no P44, ou pickup vencido sem shipment. "
+    + "<b>Recibo 3E pos-pickup</b> e so informativo (primeiro recibo 3E do proveedor depois do pickup) e nao muda o estado.";
+
+  const base = shpBaseRows(true);
+  const kpi = document.getElementById("kpiShpEstado");
+  kpi.innerHTML = SHP_ESTADOS.map(e => `
+    <div class="kpi-card tone-${SHP_ESTADO_TONE[e]}${shpEstadoFilter === e ? " active" : ""}" data-estado="${e}">
+      <div class="kpi-value">${base.filter(r => r.estado === e).length}</div>
+      <div class="kpi-label">${e}</div>
+    </div>`).join("") + `
+    <div class="kpi-card tone-gray" data-estado="">
+      <div class="kpi-value">${base.length}</div>
+      <div class="kpi-label">Total order releases</div>
+    </div>`;
+  kpi.querySelectorAll(".kpi-card").forEach(card => {
+    card.onclick = () => {
+      const e = card.dataset.estado;
+      shpEstadoFilter = (e && shpEstadoFilter !== e) ? e : "";
+      renderShipmentsView();
+    };
+  });
+  document.getElementById("shpActiveChip").innerHTML = shpEstadoFilter
+    ? `<span class="filter-chip">Estado: ${shpEsc(shpEstadoFilter)} <button onclick="shpEstadoFilter='';renderShipmentsView()">✕</button></span>` : "";
+
+  const rows = [...shpBaseRows(false)].sort((a, b) => {
+    if (shpSortCol) {
+      const av = shpSortVal(a, shpSortCol), bv = shpSortVal(b, shpSortCol);
+      const c = (typeof av === "number" && typeof bv === "number") ? av - bv : String(av).localeCompare(String(bv));
+      if (c) return c * shpSortDir;
+    }
+    return (SHP_ESTADOS.indexOf(a.estado) - SHP_ESTADOS.indexOf(b.estado))
+      || ((shpDateMs(a.early_pickup) || 0) - (shpDateMs(b.early_pickup) || 0))
+      || a.supplier_code.localeCompare(b.supplier_code);
+  });
+  const head = document.getElementById("shpHead");
+  head.innerHTML = SHP_COLS.map(c => `<th data-col="${c.key}">${c.label}${shpSortCol === c.key ? (shpSortDir === 1 ? " ▲" : " ▼") : ""}</th>`).join("");
+  head.querySelectorAll("th[data-col]").forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.col;
+      shpSortDir = shpSortCol === col ? -shpSortDir : 1;
+      shpSortCol = col;
+      renderShipmentsView();
+    };
+  });
+  document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
+  document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
+  document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases`;
+  renderShpNfe();
+}
+
+function renderShpNfe() {
+  const c = shpData.receipts_cutoff || {};
+  const planner = document.getElementById("shpFilterPlanner").value;
+  const all = shpData.nfe_pendentes || [];
+  const list = all.filter(n => shpMatchesSupplier(n.supplier_code, n.supplier_name)
+    && (!planner || (n.supplier_code && shpPlannerOf(n.supplier_code) === planner)));
+  document.getElementById("shpNoteNfe").innerHTML =
+    `NF-e do Validador sem recebimento no portal 3E nem 101 SAP B1CB. <b>Portal 3E com dados ate ${shpEsc(c.portal_3e || "?")}, SAP ate ${shpEsc(c.sap_101 || "?")}</b>: `
+    + "NF-e emitidas perto ou depois dessa data podem ja ter chegado (contagem inflada). "
+    + "O Validador nao recebe cancelamentos: uma NF-e cancelada continua aqui. <b>Possivel reemitida</b> = outra NF-e recebida do mesmo proveedor "
+    + `com os mesmos PN e quantidades, numero maior e emitida ate 3 dias depois. <b>Verificar</b> = mais de ${shpData.nfe_verificar_dias} dias.`;
+  const sups = new Set(list.filter(n => n.supplier_code).map(n => n.supplier_code));
+  document.getElementById("kpiShpNfe").innerHTML = [
+    { v: list.length, l: "NF-e pendentes", t: "amber" },
+    { v: sups.size, l: "Proveedores", t: "gray" },
+    { v: list.filter(n => n.verificar).length, l: `Verificar (>${shpData.nfe_verificar_dias} dias)`, t: "red" },
+    { v: list.filter(n => n.posible_reemitida).length, l: "Possivel reemitida", t: "gray" },
+    { v: list.filter(n => !n.supplier_code).length, l: "Sem proveedor", t: "gray" },
+  ].map(k => `<div class="kpi-card tone-${k.t}" style="cursor:default;"><div class="kpi-value">${k.v}</div><div class="kpi-label">${k.l}</div></div>`).join("");
+
+  const groups = new Map();
+  list.forEach(n => {
+    const k = n.supplier_code || "";
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(n);
+  });
+  const keys = [...groups.keys()].sort((a, b) => (a === "") - (b === "") || groups.get(b).length - groups.get(a).length || a.localeCompare(b));
+  const open = keys.length <= 3 ? " open" : "";
+  document.getElementById("shpNfeList").innerHTML = keys.length ? keys.map(k => {
+    const nfs = groups.get(k);
+    const oldest = Math.max(...nfs.map(n => n.idade_dias || 0));
+    const name = k ? `${shpEsc(k)} — ${shpEsc(nfs[0].supplier_name)}` : "Sem proveedor";
+    return `<details class="nfe-sup"${open}><summary>
+        <b>${name}</b>
+        <span class="badge badge-amber">${nfs.length} NF-e</span>
+        <span class="badge ${oldest > shpData.nfe_verificar_dias ? "badge-red" : "badge-gray"}">mais antiga ${oldest} dias</span>
+        <span style="color:var(--gray-700); font-size:12px;">${nfs.map(n => shpEsc(n.nfe)).join(", ")}</span>
+      </summary>${nfs.map(shpNfeOne).join("")}</details>`;
+  }).join("") : '<div class="empty-state">Nenhuma NF-e pendente com esse filtro.</div>';
+}
+function shpNfeOne(n) {
+  const marks = [
+    n.verificar ? '<span class="badge badge-red">verificar</span>' : "",
+    n.posible_reemitida ? `<span class="badge badge-gray" title="Recebida: ${shpEsc(n.posible_reemitida)}">possivel reemitida → ${shpEsc(n.posible_reemitida)}</span>` : "",
+    n.recibida_otro_proveedor ? '<span class="badge badge-gray" title="Mesmo numero e PN recebidos com outro codigo de proveedor">recebida em outro proveedor</span>' : "",
+    n.supplier_por_cnpj ? `<span class="badge badge-blue" title="supplier_code vazio no Validador; resolvido pelo CNPJ ${shpEsc(n.cnpj)}">proveedor via CNPJ</span>` : "",
+    !n.supplier_code && n.cnpj ? `<span style="color:var(--gray-500);">CNPJ ${shpEsc(n.cnpj)}</span>` : "",
+  ].filter(Boolean).join(" ");
+  const lines = n.linhas.map(l => `<tr><td>${l.item}</td><td>${shpEsc(l.pn)}${l.pn_no_resuelto ? ' <span class="badge badge-amber" title="PN nao resolvido no maestro: codigo como veio do proveedor">PN nao resolvido</span>' : ""}</td><td style="text-align:right;">${l.qty}</td><td>${shpEsc(l.un)}</td></tr>`).join("");
+  return `<details class="nfe-one"><summary>NF-e <b>${shpEsc(n.nfe)}</b> serie ${shpEsc(n.serie)} · emitida ${shpEsc(n.emissao)} (${n.idade_dias ?? "?"} dias) · ${n.linhas.length} linha(s)${n.pedido ? " · pedido " + shpEsc(n.pedido) : ""} ${marks}</summary>
+    <table><thead><tr><th>Item</th><th>PN</th><th>Qty</th><th>Un</th></tr></thead><tbody>${lines}</tbody></table></details>`;
+}
+
+document.getElementById("shpSearchSupplier").oninput = () => renderShipmentsView();
+document.getElementById("shpSearchOr").oninput = () => renderShipmentsView();
+document.getElementById("shpFilterTipo").onchange = () => renderShipmentsView();
+document.getElementById("shpFilterPlanner").onchange = () => renderShipmentsView();
+document.getElementById("btnShpClear").onclick = () => {
+  ["shpSearchSupplier", "shpSearchOr", "shpFilterTipo", "shpFilterPlanner"].forEach(id => { document.getElementById(id).value = ""; });
+  shpEstadoFilter = "";
+  renderShipmentsView();
+};
+document.getElementById("btnShpReload").onclick = () => loadShipmentsData(true);
 
 // ---------- Modal "Ver CSCN em bruto" ----------
 const RAW_DATA_URL = "dashboard_cb_3e_raw_lines.json";
