@@ -216,6 +216,14 @@
   .shp-sum { cursor: pointer; }
   .shp-sum:hover { text-decoration: underline; }
   .shp-note { font-size: 12px; color: var(--gray-700); background: #fdf1de; border-left: 3px solid var(--amber); padding: 8px 12px; margin: 10px 0; border-radius: 4px; }
+  .shp-nfe > summary { cursor: pointer; white-space: nowrap; }
+  .shp-nfe .shp-nfe-list { white-space: normal; min-width: 280px; max-width: 420px; font-size: 11px; margin-top: 4px; }
+  .shp-nfe .shp-nfe-one { padding: 4px 0; border-top: 1px solid var(--gray-100); }
+  #shpTable thead th { z-index: 4; }
+  #shpTable th:first-child, #shpTable td:first-child { position: sticky; left: 0; box-shadow: 2px 0 0 var(--gray-300); }
+  #shpTable td:first-child { background: var(--white); z-index: 2; }
+  #shpTable thead th:first-child { z-index: 5; }
+  #shpTable tbody tr:hover td:first-child { background: #fafafa; }
   .nfe-sup { border: 1px solid var(--gray-300); border-radius: var(--radius); background: var(--white); margin-bottom: 8px; }
   .nfe-sup > summary { padding: 8px 12px; cursor: pointer; font-size: 13px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .nfe-sup .nfe-one { margin: 0 12px 8px 24px; font-size: 12px; }
@@ -592,7 +600,7 @@
   </div>
 
   <!-- Aba Shipments (2026-10-20, fase 1 SOMENTE LEITURA): 1 linha por Order Release OTM (proveedor -> 3E)
-       + NF-e emitidas e nao recebidas por proveedor. Fonte: shipments_cb_3e.json (Task generate_shipments).
+       + coluna NF-e emitidas e nao recebidas (por proveedor). Fonte: shipments_cb_3e.json (Task generate_shipments).
        Nao edita nada, nao usa allItems para filtros/contagens da Tabela. -->
   <div id="viewShipments" style="display:none;">
     <div class="toolbar" style="margin-top:0;">
@@ -622,7 +630,8 @@
         <div class="kpi-grid" id="kpiShpEstado"></div>
       </div>
       <div class="shp-note" id="shpNoteShip"></div>
-      <div class="table-wrap" style="max-height: 55vh;">
+      <div class="top-scroll-wrap" id="shpTopScroll"><div class="top-scroll-inner" id="shpTopScrollInner"></div></div>
+      <div class="table-wrap" id="shpTableWrap" style="max-height: 55vh;">
         <table id="shpTable">
           <thead><tr id="shpHead"></tr></thead>
           <tbody id="shpBody"></tbody>
@@ -630,12 +639,6 @@
         <div class="empty-state" id="shpTableEmpty" style="display:none;">Nenhuma order release com esse filtro.</div>
       </div>
 
-      <div class="kpi-section" style="margin-top:22px;">
-        <h2>NF-e emitidas e nao recebidas</h2>
-        <div class="kpi-grid" id="kpiShpNfe"></div>
-      </div>
-      <div class="shp-note" id="shpNoteNfe"></div>
-      <div id="shpNfeList"></div>
     </div>
   </div>
 
@@ -656,6 +659,7 @@ const DATA_URL = "dashboard_cb_3e_data.json";
 const SHIPMENTS_DATA_URL = "shipments_cb_3e.json";
 let shpData = null;                 // payload de shipments_cb_3e.json (null = ainda nao carregou / falhou)
 let shpSummaryBySup = new Map();    // supplier_code -> resumo (colunas resumo da Tabela)
+let shpNfeBySup = new Map();        // supplier_code -> NF-e pendentes (coluna da aba Shipments)
 const SHIP_SUM_COLS = [
   { key: "ship_next", label: "Proxima coleta" },
   { key: "ship_done", label: "Coletas OK/total" },
@@ -2914,7 +2918,7 @@ const SHP_ESTADOS = ["Atrasado", "Sin dato P44", "En tránsito", "Futuro", "OK",
 const SHP_ESTADO_BADGE = { "Atrasado": "badge-red", "Sin dato P44": "badge-amber", "En tránsito": "badge-blue", "Futuro": "badge-gray", "OK": "badge-green", "OK (manual)": "badge-green" };
 const SHP_ESTADO_TONE = { "Atrasado": "red", "Sin dato P44": "amber", "En tránsito": "gray", "Futuro": "gray", "OK": "green", "OK (manual)": "green" };
 const SHP_COLS = [
-  { key: "estado", label: "Estado" },
+  { key: "estado", label: "Estado", tip: "OK: entrega no P44 ou entrega confirmada no OTM. OK (manual): Real Completed carregado por um editor. Futuro: early pickup depois de hoje. Atrasado: fim planejado do shipment (OTM) vencido sem entrega, ou pickup vencido sem shipment. En transito: o resto. Sin dato P44: Coleta com shipment no OTM sem registro no P44 (sem rastreio). Nao implica atraso." },
   { key: "dias_atraso", label: "Dias atraso" },
   { key: "supplier_code", label: "Cod." },
   { key: "supplier_name", label: "Proveedor" },
@@ -2926,15 +2930,16 @@ const SHP_COLS = [
   { key: "milk_run_n", label: "Prov. no shipment" },
   { key: "destino", label: "Destino" },
   { key: "otm_fim_planejado", label: "Fim planejado OTM" },
-  { key: "otm_pickup_conf", label: "Coleta OTM" },
-  { key: "otm_delivery_conf", label: "Entrega OTM" },
+  { key: "otm_pickup_conf", label: "Coleta OTM", tip: "Status ORDER_PICKUP_CONFIRMATION da order release no OTM (tabela ft_tms_order_release_status, codigo CNHILA.ORDER_PICKUP_CONFIRMATION). Confirmado = CONFIRMED. Nao traz data." },
+  { key: "otm_delivery_conf", label: "Entrega OTM", tip: "Status ORDER_DELIVERY_CONFIRMATION da order release no OTM (tabela ft_tms_order_release_status, codigo CNHILA.ORDER_DELIVERY_CONFIRMATION). Confirmado = alguem confirmou a entrega no OTM (CONFIRMED). Nao traz data e nao e o P44." },
   { key: "p44_last_milestone", label: "P44 ultimo evento" },
   { key: "p44_completed", label: "Completed P44" },
-  { key: "recibo_3e_pos_pickup", label: "Recibo 3E pos-pickup" },
   { key: "real_completed", label: "Real Completed" },
   { key: "revisado", label: "Revisado" },
+  { key: "nfe_pend", label: "NF-e pendentes", tip: "NF-e emitidas pelo proveedor (Validador) e ainda nao recebidas (portal 3E / 101 SAP). E por proveedor, nao por coleta: se repete em todas as linhas do proveedor." },
 ];
-const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "recibo_3e_pos_pickup", "real_completed"]);
+const SHP_SIN_DATO_TIP = "Coleta com shipment no OTM sem registro no P44 (sem rastreio). Nao implica atraso.";
+const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "real_completed"]);
 let shpEstadoFilter = "";
 let shpDivFilter = false;   // KPI "Divergencias manual x P44" clicado
 let shpSortCol = null, shpSortDir = 1;
@@ -2995,8 +3000,11 @@ function buildShpSummary() {
     if (r.estado === "Atrasado") { s.late++; s.maxLate = Math.max(s.maxLate, r.dias_atraso || 0); }
     if (r.estado === "Sin dato P44") s.semP44++;
   });
+  shpNfeBySup = new Map();
   (shpData.nfe_pendentes || []).forEach(n => {
     if (!n.supplier_code) return;
+    if (!shpNfeBySup.has(n.supplier_code)) shpNfeBySup.set(n.supplier_code, []);
+    shpNfeBySup.get(n.supplier_code).push(n);
     const s = get(n.supplier_code);
     s.nfe++;
     if (n.idade_dias !== null && (s.nfeOldest === null || n.idade_dias > s.nfeOldest)) s.nfeOldest = n.idade_dias;
@@ -3047,12 +3055,6 @@ window.gotoShipments = function(sup) {
   document.querySelector('#viewSwitch button[data-view="shipments"]').click();
 };
 
-function shpPlannerOf(sup) {
-  const r = shpData.shipments.find(x => x.supplier_code === sup && x.planejador);
-  if (r) return r.planejador;
-  const it = allItems.find(i => i.supplier_code === sup);
-  return it ? getPlanejador(it) : "Sin asignar";
-}
 function shpMatchesSupplier(code, name) {
   const q = document.getElementById("shpSearchSupplier").value.trim().toLowerCase();
   return !q || (code || "").toLowerCase().includes(q) || (name || "").toLowerCase().includes(q);
@@ -3074,7 +3076,7 @@ function shpCell(r, key) {
   const v = r[key];
   switch (key) {
     case "estado":
-      return `<td><span class="badge ${SHP_ESTADO_BADGE[v] || "badge-gray"}">${shpEsc(v)}</span></td>`;
+      return `<td><span class="badge ${SHP_ESTADO_BADGE[v] || "badge-gray"}"${v === "Sin dato P44" ? ` title="${SHP_SIN_DATO_TIP}"` : ""}>${shpEsc(v)}</span></td>`;
     case "dias_atraso":
       return `<td style="${v ? "color:var(--red); font-weight:700;" : ""}">${v ?? ""}</td>`;
     case "supplier_name":
@@ -3104,8 +3106,20 @@ function shpCell(r, key) {
     }
     case "revisado":
       return `<td>${v === true ? '<span class="badge badge-green">Sim</span>' : v === false ? '<span class="badge badge-gray">Não</span>' : ""}</td>`;
-    case "recibo_3e_pos_pickup":
-      return `<td title="${r.recibo_3e_packing ? "Packing list " + shpEsc(r.recibo_3e_packing) + " — informativo, nao muda o estado" : ""}">${shpEsc(v)}</td>`;
+    case "nfe_pend": {
+      const nfs = shpNfeBySup.get(r.supplier_code);
+      if (!nfs || !nfs.length) return "<td></td>";
+      const oldest = Math.max(...nfs.map(n => n.idade_dias || 0));
+      const items = nfs.map(n => {
+        const marks = [
+          n.verificar ? '<span class="badge badge-red">verificar</span>' : "",
+          n.posible_reemitida ? `<span class="badge badge-gray" title="Outra NF-e recebida do mesmo proveedor com os mesmos PN e quantidades">possivel reemitida → ${shpEsc(n.posible_reemitida)}</span>` : "",
+        ].filter(Boolean).join(" ");
+        const pns = n.linhas.map(l => `${shpEsc(l.pn)}${l.pn_no_resuelto ? ' <span class="badge badge-amber" title="PN nao resolvido no maestro: codigo como veio do proveedor">?</span>' : ""} × ${l.qty}${l.un ? " " + shpEsc(l.un) : ""}`).join(" · ");
+        return `<div class="shp-nfe-one"><b>NF-e ${shpEsc(n.nfe)}</b> · ${n.idade_dias ?? "?"} dias ${marks}<div style="color:var(--gray-700);">${pns}</div></div>`;
+      }).join("");
+      return `<td><details class="shp-nfe"><summary><span class="badge badge-amber">${nfs.length} NF-e</span> <span class="badge ${oldest > shpData.nfe_verificar_dias ? "badge-red" : "badge-gray"}">${oldest}d</span></summary><div class="shp-nfe-list">${items}</div></details></td>`;
+    }
     default:
       return `<td>${shpEsc(v)}</td>`;
   }
@@ -3113,6 +3127,7 @@ function shpCell(r, key) {
 function shpSortVal(r, col) {
   if (col === "estado") return SHP_ESTADOS.indexOf(r.estado);
   if (SHP_DATE_KEYS.has(col)) return shpDateMs(r[col]) ?? (shpSortDir === 1 ? Infinity : -Infinity);
+  if (col === "nfe_pend") return (shpNfeBySup.get(r.supplier_code) || []).length;
   return r[col] ?? "";
 }
 function renderShipmentsView() {
@@ -3126,15 +3141,16 @@ function renderShipmentsView() {
     `Coletas proveedor → 3E (early pickup ${shpData.window.from} a ${shpData.window.to}) — gerado ${shpData.generated_at}`;
   document.getElementById("shpNoteShip").innerHTML =
     "Uma linha por <b>Order Release</b> (OTM so tem o trecho proveedor → 3E; Cordoba aparece como AETC). "
-    + "<b>Sin dato P44</b>: tem shipment mas nao aparece no P44 e OTM nao confirmou a entrega. "
+    + `<b>Sin dato P44</b>: ${SHP_SIN_DATO_TIP} `
     + "<b>Atrasado</b>: fim planejado do shipment (OTM) vencido sem entrega no P44, ou pickup vencido sem shipment. "
-    + "<b>Recibo 3E pos-pickup</b> e so informativo (primeiro recibo 3E do proveedor depois do pickup) e nao muda o estado. "
+    + `<b>NF-e pendentes</b> (por proveedor): portal 3E com dados ate ${shpEsc((shpData.receipts_cutoff || {}).portal_3e || "?")} e SAP ate ${shpEsc((shpData.receipts_cutoff || {}).sap_101 || "?")}; `
+    + "NF-e recentes podem ja ter chegado e o Validador nao recebe cancelamentos. "
     + "<b>OK (manual)</b>: um editor carregou o Real Completed; se o P44 diz outra data aparece \"≠ P44\" e o valor manual prevalece. <b>Revisado</b> nao muda o estado.";
 
   const base = shpBaseRows(true);
   const kpi = document.getElementById("kpiShpEstado");
   kpi.innerHTML = SHP_ESTADOS.map(e => `
-    <div class="kpi-card tone-${SHP_ESTADO_TONE[e]}${shpEstadoFilter === e ? " active" : ""}" data-estado="${e}">
+    <div class="kpi-card tone-${SHP_ESTADO_TONE[e]}${shpEstadoFilter === e ? " active" : ""}" data-estado="${e}"${e === "Sin dato P44" ? ` title="${SHP_SIN_DATO_TIP}"` : ""}>
       <div class="kpi-value">${base.filter(r => r.estado === e).length}</div>
       <div class="kpi-label">${e}</div>
     </div>`).join("") + `
@@ -3170,7 +3186,7 @@ function renderShipmentsView() {
       || a.supplier_code.localeCompare(b.supplier_code);
   });
   const head = document.getElementById("shpHead");
-  head.innerHTML = SHP_COLS.map(c => `<th data-col="${c.key}">${c.label}${shpSortCol === c.key ? (shpSortDir === 1 ? " ▲" : " ▼") : ""}</th>`).join("");
+  head.innerHTML = SHP_COLS.map(c => `<th data-col="${c.key}"${c.tip ? ` title="${shpEsc(c.tip)}"` : ""}>${c.label}${shpSortCol === c.key ? (shpSortDir === 1 ? " ▲" : " ▼") : ""}</th>`).join("");
   head.querySelectorAll("th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
@@ -3183,61 +3199,20 @@ function renderShipmentsView() {
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
   document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases · ${rows.filter(r => r.revisado !== true).length} nao revisados`;
-  renderShpNfe();
+  shpSyncTopScroll();
 }
 
-function renderShpNfe() {
-  const c = shpData.receipts_cutoff || {};
-  const planner = document.getElementById("shpFilterPlanner").value;
-  const all = shpData.nfe_pendentes || [];
-  const list = all.filter(n => shpMatchesSupplier(n.supplier_code, n.supplier_name)
-    && (!planner || (n.supplier_code && shpPlannerOf(n.supplier_code) === planner)));
-  document.getElementById("shpNoteNfe").innerHTML =
-    `NF-e do Validador sem recebimento no portal 3E nem 101 SAP B1CB. <b>Portal 3E com dados ate ${shpEsc(c.portal_3e || "?")}, SAP ate ${shpEsc(c.sap_101 || "?")}</b>: `
-    + "NF-e emitidas perto ou depois dessa data podem ja ter chegado (contagem inflada). "
-    + "O Validador nao recebe cancelamentos: uma NF-e cancelada continua aqui. <b>Possivel reemitida</b> = outra NF-e recebida do mesmo proveedor "
-    + `com os mesmos PN e quantidades, numero maior e emitida ate 3 dias depois. <b>Verificar</b> = mais de ${shpData.nfe_verificar_dias} dias.`;
-  const sups = new Set(list.filter(n => n.supplier_code).map(n => n.supplier_code));
-  document.getElementById("kpiShpNfe").innerHTML = [
-    { v: list.length, l: "NF-e pendentes", t: "amber" },
-    { v: sups.size, l: "Proveedores", t: "gray" },
-    { v: list.filter(n => n.verificar).length, l: `Verificar (>${shpData.nfe_verificar_dias} dias)`, t: "red" },
-    { v: list.filter(n => n.posible_reemitida).length, l: "Possivel reemitida", t: "gray" },
-    { v: list.filter(n => !n.supplier_code).length, l: "Sem proveedor", t: "gray" },
-  ].map(k => `<div class="kpi-card tone-${k.t}" style="cursor:default;"><div class="kpi-value">${k.v}</div><div class="kpi-label">${k.l}</div></div>`).join("");
-
-  const groups = new Map();
-  list.forEach(n => {
-    const k = n.supplier_code || "";
-    if (!groups.has(k)) groups.set(k, []);
-    groups.get(k).push(n);
-  });
-  const keys = [...groups.keys()].sort((a, b) => (a === "") - (b === "") || groups.get(b).length - groups.get(a).length || a.localeCompare(b));
-  const open = keys.length <= 3 ? " open" : "";
-  document.getElementById("shpNfeList").innerHTML = keys.length ? keys.map(k => {
-    const nfs = groups.get(k);
-    const oldest = Math.max(...nfs.map(n => n.idade_dias || 0));
-    const name = k ? `${shpEsc(k)} — ${shpEsc(nfs[0].supplier_name)}` : "Sem proveedor";
-    return `<details class="nfe-sup"${open}><summary>
-        <b>${name}</b>
-        <span class="badge badge-amber">${nfs.length} NF-e</span>
-        <span class="badge ${oldest > shpData.nfe_verificar_dias ? "badge-red" : "badge-gray"}">mais antiga ${oldest} dias</span>
-        <span style="color:var(--gray-700); font-size:12px;">${nfs.map(n => shpEsc(n.nfe)).join(", ")}</span>
-      </summary>${nfs.map(shpNfeOne).join("")}</details>`;
-  }).join("") : '<div class="empty-state">Nenhuma NF-e pendente com esse filtro.</div>';
+// Barra de scroll horizontal em cima da tabela, sincronizada com a de baixo (mesmo esquema da Tabela).
+function shpSyncTopScroll() {
+  document.getElementById("shpTopScrollInner").style.width = document.getElementById("shpTable").scrollWidth + "px";
 }
-function shpNfeOne(n) {
-  const marks = [
-    n.verificar ? '<span class="badge badge-red">verificar</span>' : "",
-    n.posible_reemitida ? `<span class="badge badge-gray" title="Recebida: ${shpEsc(n.posible_reemitida)}">possivel reemitida → ${shpEsc(n.posible_reemitida)}</span>` : "",
-    n.recibida_otro_proveedor ? '<span class="badge badge-gray" title="Mesmo numero e PN recebidos com outro codigo de proveedor">recebida em outro proveedor</span>' : "",
-    n.supplier_por_cnpj ? `<span class="badge badge-blue" title="supplier_code vazio no Validador; resolvido pelo CNPJ ${shpEsc(n.cnpj)}">proveedor via CNPJ</span>` : "",
-    !n.supplier_code && n.cnpj ? `<span style="color:var(--gray-500);">CNPJ ${shpEsc(n.cnpj)}</span>` : "",
-  ].filter(Boolean).join(" ");
-  const lines = n.linhas.map(l => `<tr><td>${l.item}</td><td>${shpEsc(l.pn)}${l.pn_no_resuelto ? ' <span class="badge badge-amber" title="PN nao resolvido no maestro: codigo como veio do proveedor">PN nao resolvido</span>' : ""}</td><td style="text-align:right;">${l.qty}</td><td>${shpEsc(l.un)}</td></tr>`).join("");
-  return `<details class="nfe-one"><summary>NF-e <b>${shpEsc(n.nfe)}</b> serie ${shpEsc(n.serie)} · emitida ${shpEsc(n.emissao)} (${n.idade_dias ?? "?"} dias) · ${n.linhas.length} linha(s)${n.pedido ? " · pedido " + shpEsc(n.pedido) : ""} ${marks}</summary>
-    <table><thead><tr><th>Item</th><th>PN</th><th>Qty</th><th>Un</th></tr></thead><tbody>${lines}</tbody></table></details>`;
-}
+(function setupShpTopScroll() {
+  const top = document.getElementById("shpTopScroll"), wrap = document.getElementById("shpTableWrap");
+  let syncing = false;
+  top.addEventListener("scroll", () => { if (syncing) return; syncing = true; wrap.scrollLeft = top.scrollLeft; syncing = false; });
+  wrap.addEventListener("scroll", () => { if (syncing) return; syncing = true; top.scrollLeft = wrap.scrollLeft; syncing = false; });
+  document.getElementById("shpBody").addEventListener("toggle", shpSyncTopScroll, true);  // abrir NF-e muda a largura
+})();
 
 document.getElementById("shpSearchSupplier").oninput = () => renderShipmentsView();
 document.getElementById("shpSearchOr").oninput = () => renderShipmentsView();
@@ -3267,7 +3242,6 @@ const SHP_XLSX_COLS = [
   { h: "Fim planejado OTM", w: 17, v: r => r.otm_fim_planejado },
   { h: "Status P44", w: 24, v: r => r.p44 ? (r.p44_completed ? "Completed" : (r.p44_last_milestone || "Sem eventos")) : (r.shipment ? "Nao esta no P44" : "Sem shipment") },
   { h: "Completed P44", w: 17, v: r => r.p44_completed },
-  { h: "Recibo 3E pos pickup", w: 18, v: r => r.recibo_3e_pos_pickup },
   { h: "Estado", w: 13, v: r => r.estado },
   { h: "Estado automatico", w: 15, v: r => r.estado_auto || r.estado },
   { h: "Real Completed", w: 15, v: r => r.real_completed || "", edit: true },
