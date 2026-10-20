@@ -592,6 +592,7 @@
       <span class="count" id="shpRowCount"></span>
       <button class="btn" id="btnShpClear">Limpiar filtro</button>
       <button class="btn" id="btnShpReload">Recarregar</button>
+      <button class="btn" id="btnShpExcel" title="Baixa as order releases visiveis (respeita os filtros desta aba). Somente leitura: nao grava nada.">Baixar Excel</button>
     </div>
     <div id="shpEmptyState" class="empty-state" style="display:none;"></div>
     <div id="shpContent" style="display:none;">
@@ -3133,6 +3134,7 @@ function renderShipmentsView() {
       renderShipmentsView();
     };
   });
+  shpLastRows = rows;
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
   document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases`;
@@ -3202,6 +3204,118 @@ document.getElementById("btnShpClear").onclick = () => {
   renderShipmentsView();
 };
 document.getElementById("btnShpReload").onclick = () => loadShipmentsData(true);
+
+// ---------- Aba Shipments: "Baixar Excel" (2026-10-20, SOMENTE LEITURA) ----------
+// Gera um .xlsx no navegador com as linhas visiveis da aba (respeita filtros e ordem). Sem biblioteca
+// externa (a rede corporativa bloqueia CDNs): ZIP sem compressao + SpreadsheetML minimo. Nao chama o
+// Worker nem grava nada. "Real Completed" e "Revisado" vao vazias (editaveis, amarelas); as colunas
+// ocultas "_lido_*" guardam o valor lido no export, para o controle de conflito da futura carga.
+const SHP_XLSX_COLS = [
+  { h: "Order Release", w: 14, v: r => r.order_release },
+  { h: "Shipment", w: 12, v: r => r.shipment },
+  { h: "Proveedor", w: 38, v: r => `${r.supplier_code} - ${r.supplier_name}` },
+  { h: "Planejador", w: 16, v: r => r.planejador || "Sin asignar" },
+  { h: "Tipo", w: 8, v: r => r.tipo + (r.cordoba ? " Cordoba" : "") },
+  { h: "Early Pickup (SP)", w: 14, v: r => r.early_pickup },
+  { h: "Fim planejado OTM", w: 17, v: r => r.otm_fim_planejado },
+  { h: "Status P44", w: 24, v: r => r.p44 ? (r.p44_completed ? "Completed" : (r.p44_last_milestone || "Sem eventos")) : (r.shipment ? "Nao esta no P44" : "Sem shipment") },
+  { h: "Completed P44", w: 17, v: r => r.p44_completed },
+  { h: "Recibo 3E pos pickup", w: 18, v: r => r.recibo_3e_pos_pickup },
+  { h: "Estado", w: 13, v: r => r.estado },
+  { h: "Real Completed", w: 15, v: r => r.real_completed || "", edit: true },
+  { h: "Revisado", w: 10, v: r => r.revisado || "", edit: true },
+  { h: "_lido_real_completed", w: 12, v: r => r.real_completed || "", hidden: true },
+  { h: "_lido_revisado", w: 10, v: r => r.revisado || "", hidden: true },
+  { h: "_exportado_em", w: 18, v: () => shpXlsxStamp, hidden: true },
+];
+let shpLastRows = [];   // linhas visiveis na ultima renderizacao da aba (mesmo filtro e ordem)
+let shpXlsxStamp = "";
+
+function shpCrc32(bytes) {
+  let c, crc = 0xFFFFFFFF;
+  for (let i = 0; i < bytes.length; i++) {
+    c = (crc ^ bytes[i]) & 0xFF;
+    for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+    crc = (crc >>> 8) ^ c;
+  }
+  return (crc ^ 0xFFFFFFFF) >>> 0;
+}
+// ZIP "stored" (sem compressao): suficiente para o Excel e sem dependencias.
+function shpZip(files) {
+  const enc = new TextEncoder(), parts = [], central = [];
+  let offset = 0;
+  const u16 = n => [n & 0xFF, (n >>> 8) & 0xFF];
+  const u32 = n => [n & 0xFF, (n >>> 8) & 0xFF, (n >>> 16) & 0xFF, (n >>> 24) & 0xFF];
+  files.forEach(({ name, data }) => {
+    const nameB = enc.encode(name), dataB = enc.encode(data), crc = shpCrc32(dataB);
+    const common = [...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(crc), ...u32(dataB.length), ...u32(dataB.length), ...u16(nameB.length), ...u16(0)];
+    const local = new Uint8Array([...u32(0x04034b50), ...common]);
+    parts.push(local, nameB, dataB);
+    central.push(new Uint8Array([...u32(0x02014b50), ...u16(20), ...common, ...u16(0), ...u16(0), ...u16(0), ...u32(0), ...u32(offset)]), nameB);
+    offset += local.length + nameB.length + dataB.length;
+  });
+  const cdSize = central.reduce((s, p) => s + p.length, 0);
+  const end = new Uint8Array([...u32(0x06054b50), ...u16(0), ...u16(0), ...u16(files.length), ...u16(files.length), ...u32(cdSize), ...u32(offset), ...u16(0)]);
+  const all = [...parts, ...central, end], out = new Uint8Array(all.reduce((s, p) => s + p.length, 0));
+  let pos = 0;
+  all.forEach(p => { out.set(p, pos); pos += p.length; });
+  return out;
+}
+function shpXmlEsc(s) {
+  return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]))
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "");
+}
+function shpColRef(i) { let s = ""; i++; while (i) { const m = (i - 1) % 26; s = String.fromCharCode(65 + m) + s; i = Math.floor((i - 1) / 26); } return s; }
+function shpBuildXlsx(rows) {
+  const cols = SHP_XLSX_COLS;
+  // estilos: 0 normal, 1 cabecalho, 2 editavel (amarelo), 3 cabecalho editavel
+  const cell = (ref, v, s) => `<c r="${ref}" t="inlineStr"${s ? ` s="${s}"` : ""}><is><t xml:space="preserve">${shpXmlEsc(v)}</t></is></c>`;
+  const head = `<row r="1">${cols.map((c, i) => cell(shpColRef(i) + "1", c.h, c.edit ? 3 : 1)).join("")}</row>`;
+  const body = rows.map((r, n) => `<row r="${n + 2}">${cols.map((c, i) => cell(shpColRef(i) + (n + 2), c.v(r), c.edit ? 2 : 0)).join("")}</row>`).join("");
+  const last = rows.length + 1;
+  const colRefOf = h => shpColRef(cols.findIndex(c => c.h === h));
+  const sheet = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+<sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>
+<cols>${cols.map((c, i) => `<col min="${i + 1}" max="${i + 1}" width="${c.w}" customWidth="1"${c.hidden ? ' hidden="1"' : ""}/>`).join("")}</cols>
+<sheetData>${head}${body}</sheetData>
+<autoFilter ref="A1:${shpColRef(cols.length - 1)}${last}"/>
+<dataValidations count="1"><dataValidation type="list" allowBlank="1" showErrorMessage="1" errorTitle="Revisado" error="Use Sim ou Não" sqref="${colRefOf("Revisado")}2:${colRefOf("Revisado")}${Math.max(last, 2)}"><formula1>"Sim,Não"</formula1></dataValidation></dataValidations>
+</worksheet>`;
+  const styles = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+<fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts>
+<fills count="4"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFFFF2CC"/><bgColor indexed="64"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9D9D9"/><bgColor indexed="64"/></patternFill></fill></fills>
+<borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>
+<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>
+<cellXfs count="4"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="3" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="49" fontId="0" fillId="2" borderId="0" xfId="0" applyFill="1" applyNumberFormat="1"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/></cellXfs>
+<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>
+</styleSheet>`;
+  return shpZip([
+    { name: "[Content_Types].xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>` },
+    { name: "_rels/.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>` },
+    { name: "xl/workbook.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Shipments" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">Shipments!$A$1:$${shpColRef(cols.length - 1)}$${last}</definedName></definedNames></workbook>` },
+    { name: "xl/_rels/workbook.xml.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>` },
+    { name: "xl/worksheets/sheet1.xml", data: sheet },
+    { name: "xl/styles.xml", data: styles },
+  ]);
+}
+document.getElementById("btnShpExcel").onclick = () => {
+  if (!shpData) return;
+  const now = new Date();
+  const pad = n => String(n).padStart(2, "0");
+  shpXlsxStamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())} (dados ${shpData.generated_at})`;
+  const bytes = shpBuildXlsx(shpLastRows);
+  const blob = new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `shipments_${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}.xlsx`;
+  a.click();
+};
 
 // ---------- Modal "Ver CSCN em bruto" ----------
 const RAW_DATA_URL = "dashboard_cb_3e_raw_lines.json";
