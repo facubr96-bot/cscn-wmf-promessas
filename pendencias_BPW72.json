@@ -2,7 +2,7 @@
   "supplier_code": "BPW72",
   "supplier_name": "CRONNOS IND E COM ART ELASTOMERICOS",
   "semana": "2026-W43",
-  "gerado_em": "19/10/2026 12:02",
+  "gerado_em": "20/10/2026 08:02",
   "itens": [
     {
       "part_number": "47843187",
@@ -14,8 +14,8 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Confirmar entrega",
-      "past_due_wmf": 49,
-      "firm_jun_wmf": 50,
+      "past_due_wmf": 59,
+      "firm_jun_wmf": 40,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000060580-002",
       "ultima_nfe_origem": "3E",
