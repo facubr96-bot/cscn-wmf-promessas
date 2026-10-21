@@ -217,6 +217,9 @@
   .shp-sum:hover { text-decoration: underline; }
   .shp-note { font-size: 12px; color: var(--gray-700); background: #fdf1de; border-left: 3px solid var(--amber); padding: 8px 12px; margin: 10px 0; border-radius: 4px; }
   .shp-nfe > summary { cursor: pointer; white-space: nowrap; }
+  .shp-nfe-fora { border: 1px solid var(--gray-300); border-radius: var(--radius); background: var(--white); }
+  .shp-nfe-fora > summary { padding: 8px 12px; cursor: pointer; font-size: 13px; }
+  .shp-nfe-fora .shp-nfe-grp { padding: 6px 12px 8px 24px; border-top: 1px solid var(--gray-100); font-size: 12px; }
   .shp-nfe .shp-nfe-list { white-space: normal; min-width: 280px; max-width: 420px; font-size: 11px; margin-top: 4px; }
   .shp-nfe .shp-nfe-one { padding: 4px 0; border-top: 1px solid var(--gray-100); }
   #shpTable thead th { z-index: 4; }
@@ -638,6 +641,7 @@
         </table>
         <div class="empty-state" id="shpTableEmpty" style="display:none;">Nenhuma order release com esse filtro.</div>
       </div>
+      <div id="shpNfeFora" style="margin-top:8px;"></div>
 
     </div>
   </div>
@@ -2927,7 +2931,7 @@ const SHP_COLS = [
   { key: "order_release", label: "Order Release" },
   { key: "early_pickup", label: "Early Pickup" },
   { key: "shipment", label: "Shipment" },
-  { key: "milk_run_n", label: "Prov. no shipment" },
+  { key: "milk_run_n", label: "Prov. no shipment", tip: "Quantos proveedores diferentes viajam no mesmo shipment (milk run). Conta os proveedores de TODAS as order releases desse shipment no OTM, inclusive as fora da janela. 1 = shipment so deste proveedor; vazio = order release ainda sem shipment. Passe o mouse na celula para ver os codigos." },
   { key: "destino", label: "Destino" },
   { key: "otm_fim_planejado", label: "Fim planejado OTM" },
   { key: "otm_pickup_conf", label: "Coleta OTM", tip: "Status ORDER_PICKUP_CONFIRMATION da order release no OTM (tabela ft_tms_order_release_status, codigo CNHILA.ORDER_PICKUP_CONFIRMATION). Confirmado = CONFIRMED. Nao traz data." },
@@ -3110,19 +3114,50 @@ function shpCell(r, key) {
       const nfs = shpNfeBySup.get(r.supplier_code);
       if (!nfs || !nfs.length) return "<td></td>";
       const oldest = Math.max(...nfs.map(n => n.idade_dias || 0));
-      const items = nfs.map(n => {
-        const marks = [
-          n.verificar ? '<span class="badge badge-red">verificar</span>' : "",
-          n.posible_reemitida ? `<span class="badge badge-gray" title="Outra NF-e recebida do mesmo proveedor com os mesmos PN e quantidades">possivel reemitida → ${shpEsc(n.posible_reemitida)}</span>` : "",
-        ].filter(Boolean).join(" ");
-        const pns = n.linhas.map(l => `${shpEsc(l.pn)}${l.pn_no_resuelto ? ' <span class="badge badge-amber" title="PN nao resolvido no maestro: codigo como veio do proveedor">?</span>' : ""} × ${l.qty}${l.un ? " " + shpEsc(l.un) : ""}`).join(" · ");
-        return `<div class="shp-nfe-one"><b>NF-e ${shpEsc(n.nfe)}</b> · ${n.idade_dias ?? "?"} dias ${marks}<div style="color:var(--gray-700);">${pns}</div></div>`;
-      }).join("");
+      const items = nfs.map(shpNfeItemHtml).join("");
       return `<td><details class="shp-nfe"><summary><span class="badge badge-amber">${nfs.length} NF-e</span> <span class="badge ${oldest > shpData.nfe_verificar_dias ? "badge-red" : "badge-gray"}">${oldest}d</span></summary><div class="shp-nfe-list">${items}</div></details></td>`;
     }
     default:
       return `<td>${shpEsc(v)}</td>`;
   }
+}
+// Una NF-e: numero, antiguedad, marcas y PN x cantidad (celda de la tabla y pie "sin colecta").
+function shpNfeItemHtml(n) {
+  const marks = [
+    n.verificar ? '<span class="badge badge-red">verificar</span>' : "",
+    n.posible_reemitida ? `<span class="badge badge-gray" title="Outra NF-e recebida do mesmo proveedor com os mesmos PN e quantidades">possivel reemitida → ${shpEsc(n.posible_reemitida)}</span>` : "",
+    !n.supplier_code && n.cnpj ? `<span style="color:var(--gray-500);">CNPJ ${shpEsc(n.cnpj)}</span>` : "",
+  ].filter(Boolean).join(" ");
+  const pns = n.linhas.map(l => `${shpEsc(l.pn)}${l.pn_no_resuelto ? ' <span class="badge badge-amber" title="PN nao resolvido no maestro: codigo como veio do proveedor">?</span>' : ""} × ${l.qty}${l.un ? " " + shpEsc(l.un) : ""}`).join(" · ");
+  return `<div class="shp-nfe-one"><b>NF-e ${shpEsc(n.nfe)}</b> · ${n.idade_dias ?? "?"} dias ${marks}<div style="color:var(--gray-700);">${pns}</div></div>`;
+}
+// Pie de la tabla: NF-e de proveedores sin ninguna order release en la ventana, y las sin proveedor.
+// Respeta la busqueda de proveedor y el planejador (via la Tabela principal); las sin proveedor solo
+// aparecen sin esos dos filtros.
+function renderShpNfeFora() {
+  const el = document.getElementById("shpNfeFora");
+  const comFila = new Set(shpData.shipments.map(r => r.supplier_code));
+  const planner = document.getElementById("shpFilterPlanner").value;
+  const supQ = document.getElementById("shpSearchSupplier").value.trim();
+  const plannerOf = sup => { const it = allItems.find(i => i.supplier_code === sup); return it ? getPlanejador(it) : "Sin asignar"; };
+  const list = (shpData.nfe_pendentes || []).filter(n => !n.supplier_code || !comFila.has(n.supplier_code))
+    .filter(n => n.supplier_code
+      ? shpMatchesSupplier(n.supplier_code, n.supplier_name) && (!planner || plannerOf(n.supplier_code) === planner)
+      : !planner && !supQ);
+  if (!list.length) { el.innerHTML = ""; return; }
+  const groups = new Map();
+  list.forEach(n => { const k = n.supplier_code || ""; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(n); });
+  const keys = [...groups.keys()].sort((a, b) => (a === "") - (b === "") || groups.get(b).length - groups.get(a).length || a.localeCompare(b));
+  el.innerHTML = `<details class="shp-nfe-fora"><summary><b>NF-e de proveedores sin colecta na janela: ${list.length}</b>
+      <span style="color:var(--gray-500); font-size:12px;"> (${keys.filter(k => k).length} proveedor(es) sem order release entre ${shpEsc(shpData.window.from)} e ${shpEsc(shpData.window.to)}${groups.has("") ? ` + ${groups.get("").length} NF-e sem proveedor` : ""})</span></summary>
+    ${keys.map(k => {
+      const nfs = groups.get(k);
+      const oldest = Math.max(...nfs.map(n => n.idade_dias || 0));
+      return `<div class="shp-nfe-grp"><b>${k ? shpEsc(k) + " — " + shpEsc(nfs[0].supplier_name) : "Sem proveedor"}</b>
+        <span class="badge badge-amber">${nfs.length} NF-e</span>
+        <span class="badge ${oldest > shpData.nfe_verificar_dias ? "badge-red" : "badge-gray"}">${oldest}d</span>
+        ${nfs.map(shpNfeItemHtml).join("")}</div>`;
+    }).join("")}</details>`;
 }
 function shpSortVal(r, col) {
   if (col === "estado") return SHP_ESTADOS.indexOf(r.estado);
@@ -3199,6 +3234,7 @@ function renderShipmentsView() {
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
   document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases · ${rows.filter(r => r.revisado !== true).length} nao revisados`;
+  renderShpNfeFora();
   shpSyncTopScroll();
 }
 
@@ -3545,15 +3581,26 @@ function shpBuildLoad(matrix, fileName) {
       exportedAt: iExp >= 0 ? String(row[iExp] ?? "") : "",
     });
   }
-  const count = new Map();
-  lines.forEach(l => count.set(l.orc, (count.get(l.orc) || 0) + 1));
-  const localResults = [], sendRows = [];
+  // Linea "editada" = algun campo distinto del valor exportado (o invalido). Las demas no se mandan.
+  // allRows (todas las editadas, tambien las invalidas) es lo que va al Worker en "Gravar": el Worker
+  // revalida y audita cada linea, incluidas las rechazadas (diseno aprobado: auditoria por linea).
+  const edited = [];
   let unchanged = 0;
   lines.forEach(l => {
+    const rc = shpNormDate(l.rcRaw), rev = shpNormRevisado(l.revRaw);
+    const rcSend = rc.err ? String(l.rcRaw ?? "").trim() : (rc.v === l.readRc ? "" : rc.v);
+    const revSend = rev.err ? String(l.revRaw ?? "").trim() : (rev.v === l.readRev ? "" : rev.v);
+    if (l.orc && !rcSend && !revSend) { unchanged++; return; }   // linha sem edicao: nao entra na previa
+    edited.push({ l, rc, rev, wire: { line: l.line, order_release_code: l.orc, real_completed: rcSend, revisado: revSend,
+                                      read_real_completed: l.readRc, read_revisado: l.readRev } });
+  });
+  const count = new Map();
+  edited.forEach(e => count.set(e.l.orc, (count.get(e.l.orc) || 0) + 1));
+  const localResults = [], sendRows = [], allRows = edited.map(e => e.wire);
+  edited.forEach(({ l, rc, rev, wire }) => {
     const reject = (field, reason) => localResults.push({ line: l.line, order_release_code: l.orc, field, result: "rejeitado", reason, old_value: "", new_value: "" });
     if (!l.orc) return reject("—", "Order Release vazia");
     if (count.get(l.orc) > 1) return reject("—", "Order Release repetida no arquivo (todas as linhas dela foram rejeitadas)");
-    const rc = shpNormDate(l.rcRaw), rev = shpNormRevisado(l.revRaw);
     const shp = byOr.get(l.orc);
     let bad = false;
     if (rc.err) { reject("real_completed", rc.err); bad = true; }
@@ -3561,13 +3608,9 @@ function shpBuildLoad(matrix, fileName) {
     else if (rc.d && shp && parseDateBR(shp.early_pickup) && rc.d < parseDateBR(shp.early_pickup)) { reject("real_completed", `Anterior ao early pickup ${shp.early_pickup}`); bad = true; }
     if (rev.err) { reject("revisado", rev.err); bad = true; }
     if (bad) return;
-    const rcNew = rc.v === l.readRc ? "" : rc.v;          // igual ao lido -> sem mudanca
-    const revNew = rev.v === l.readRev ? "" : rev.v;
-    if (!rcNew && !revNew) { unchanged++; return; }   // linha sem edicao: nao entra na previa
-    sendRows.push({ line: l.line, order_release_code: l.orc, real_completed: rcNew, revisado: revNew,
-                    read_real_completed: l.readRc, read_revisado: l.readRev });
+    sendRows.push(wire);
   });
-  return { fileName, exportedAt: (lines.find(l => l.exportedAt) || {}).exportedAt || "", lines, localResults, sendRows, unchanged, results: null };
+  return { fileName, exportedAt: (lines.find(l => l.exportedAt) || {}).exportedAt || "", lines, localResults, sendRows, allRows, unchanged, results: null };
 }
 
 // ---- Modal: previa -> Gravar -> resultado ----
@@ -3615,13 +3658,16 @@ async function shpProcessExcelBytes(bytes, fileName) {
 async function shpSaveLoad() {
   const st = shpLoadState;
   if (!st) return;
-  const okLines = new Set(st.results.filter(r => r.result === "ok").map(r => r.line));
-  const rows = st.sendRows.filter(r => okLines.has(r.line));
+  // Manda TODAS las lineas editadas: el Worker solo graba las que siguen "ok" (con control de valor)
+  // y deja en la auditoria tambien las rechazadas, los conflictos y las sin cambio.
   const btn = document.getElementById("btnShpLoadSave");
   btn.disabled = true; btn.textContent = "Gravando...";
   try {
-    const data = await shpWorkerCall({ action: "shipments_manual_save", file_name: st.fileName, exported_at: st.exportedAt, rows });
+    const data = await shpWorkerCall({ action: "shipments_manual_save", file_name: st.fileName, exported_at: st.exportedAt, rows: st.allRows });
+    const prevLocal = st.localResults;
+    st.localResults = [];   // el resultado de la gravacao viene entero del Worker
     shpRenderLoad("saved", data.results || []);
+    st.prevLocal = prevLocal;
     await shpLoadManualLive();
     buildShpSummary();
     renderShipmentsView();
