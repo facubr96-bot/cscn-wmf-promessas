@@ -1,13 +1,13 @@
 {
   "itens": [
     {
-      "comentario": "prueba O'Brien \\ fin",
-      "data_promessa": "30/10/2026",
+      "comentario": "prueba 2",
+      "data_promessa": "31/10/2026",
       "part_number": "TESTPN1",
-      "qty_prometida": 1
+      "qty_prometida": 2
     }
   ],
   "supplier_code": "TEST",
   "semana": "2026-W43",
-  "recibido_en_worker": "2026-10-20T18:58:45.968Z"
+  "recibido_en_worker": "2026-10-21T14:09:48.036Z"
 }
