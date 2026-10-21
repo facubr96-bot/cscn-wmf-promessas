@@ -1,5 +1,5 @@
 {
-  "generated_at": "21/10/2026 10:20",
+  "generated_at": "21/10/2026 10:40",
   "today": "21/10/2026",
   "total": 419,
   "items": [
@@ -7136,7 +7136,7 @@
       "pn": "84075179",
       "supplier_code": "DSK22",
       "supplier_name": "WAPMETAL INDUSTRIA E COMERCIO",
-      "stock_wmf": null,
+      "stock_wmf": 154.0,
       "qty_transito": null,
       "qty_min": 154.0,
       "criticidad": "Normal",
@@ -7244,7 +7244,7 @@
       "pn": "90359771",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
-      "stock_wmf": 172.0,
+      "stock_wmf": null,
       "qty_transito": 86.0,
       "qty_min": null,
       "criticidad": "Hiper Critico",
@@ -7334,7 +7334,7 @@
       "pn": "91802211",
       "supplier_code": "FBW92",
       "supplier_name": "DELGA INDUSTRIA E COMERCIO SA",
-      "stock_wmf": 10.0,
+      "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 50.0,
       "criticidad": "Hiper Critico",
