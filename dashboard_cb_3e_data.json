@@ -1,5 +1,5 @@
 {
-  "generated_at": "21/10/2026 10:22",
+  "generated_at": "21/10/2026 10:42",
   "today": "21/10/2026",
   "total_pn": 1944,
   "erp_release_cb": "20261014",
@@ -69461,9 +69461,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "321058",
-      "ultima_nfe_emitida_fecha": "16/10/2026",
-      "ultima_nfe_emitida_qty": 60.0,
+      "ultima_nfe_emitida_num": "321255",
+      "ultima_nfe_emitida_fecha": "21/10/2026",
+      "ultima_nfe_emitida_qty": 100.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
     },
@@ -83406,9 +83406,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "321058",
-      "ultima_nfe_emitida_fecha": "16/10/2026",
-      "ultima_nfe_emitida_qty": 75.0,
+      "ultima_nfe_emitida_num": "321255",
+      "ultima_nfe_emitida_fecha": "21/10/2026",
+      "ultima_nfe_emitida_qty": 25.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
     },
