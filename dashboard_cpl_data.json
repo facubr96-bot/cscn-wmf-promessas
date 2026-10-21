@@ -1,5 +1,5 @@
 {
-  "generated_at": "21/10/2026 10:00",
+  "generated_at": "21/10/2026 10:20",
   "today": "21/10/2026",
   "total": 419,
   "items": [
@@ -6020,7 +6020,7 @@
       "pn": "84522775",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
-      "stock_wmf": 129.0,
+      "stock_wmf": 150.0,
       "qty_transito": null,
       "qty_min": 150.0,
       "criticidad": "Critico",
@@ -6074,7 +6074,7 @@
       "pn": "47631585",
       "supplier_code": "BJP82",
       "supplier_name": "METHAL COMPANY INDSUTRIAL LTDA",
-      "stock_wmf": 7.0,
+      "stock_wmf": 95.0,
       "qty_transito": null,
       "qty_min": 18.0,
       "criticidad": "Critico",
@@ -6812,7 +6812,7 @@
       "pn": "47568404",
       "supplier_code": "BKM21",
       "supplier_name": "BETENHEUSER METAL TECNICA LTDA",
-      "stock_wmf": 93.0,
+      "stock_wmf": 150.0,
       "qty_transito": null,
       "qty_min": 150.0,
       "criticidad": "Critico",
