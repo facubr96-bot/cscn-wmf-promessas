@@ -2,7 +2,7 @@
   "supplier_code": "BMQ74",
   "supplier_name": "TECPARTS DO BRASIL INDUSTRIA E COME",
   "semana": "2026-W43",
-  "gerado_em": "20/10/2026 12:02",
+  "gerado_em": "21/10/2026 08:02",
   "itens": [
     {
       "part_number": "87645102",
@@ -36,7 +36,7 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa insuficiente - solicitar complemento",
+      "acao_requerida": "Promessa vencida - solicitar nova data",
       "past_due_wmf": 72,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
@@ -45,7 +45,7 @@
       "semana": "2026-W43",
       "data_promessa": "20/10/2026",
       "qty_prometida": 71,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento.",
+      "comentario": "Promessa vencida - solicitar nova data.",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": ""
