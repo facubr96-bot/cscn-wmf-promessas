@@ -1,5 +1,5 @@
 {
-  "generated_at": "21/10/2026 08:42",
+  "generated_at": "21/10/2026 09:04",
   "today": "21/10/2026",
   "total_pn": 1944,
   "erp_release_cb": "20261014",
@@ -69910,9 +69910,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "10621",
-      "ultima_nfe_emitida_fecha": "01/09/2026",
-      "ultima_nfe_emitida_qty": 0.0,
+      "ultima_nfe_emitida_num": "10645",
+      "ultima_nfe_emitida_fecha": "20/10/2026",
+      "ultima_nfe_emitida_qty": 30.0,
       "ultima_nfe_emitida_unidad": "UN",
       "planejador": "Vivian Strelow"
     },
@@ -98066,9 +98066,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "935364",
-      "ultima_nfe_emitida_fecha": "14/10/2026",
-      "ultima_nfe_emitida_qty": 12.0,
+      "ultima_nfe_emitida_num": "936406",
+      "ultima_nfe_emitida_fecha": "20/10/2026",
+      "ultima_nfe_emitida_qty": 24.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
