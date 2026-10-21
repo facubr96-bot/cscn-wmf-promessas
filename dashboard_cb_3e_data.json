@@ -1,5 +1,5 @@
 {
-  "generated_at": "20/10/2026 20:43",
+  "generated_at": "20/10/2026 21:03",
   "today": "20/10/2026",
   "total_pn": 1944,
   "erp_release_cb": "20261014",
@@ -2033,8 +2033,7 @@
         "26027",
         "25690",
         "25354",
-        "24676",
-        "24085"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -2222,8 +2221,7 @@
         "28460",
         "26024",
         "25543",
-        "25256",
-        "24081"
+        "25256"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -2284,8 +2282,7 @@
         "28141",
         "25689",
         "25540",
-        "25254",
-        "24076"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -2344,8 +2341,7 @@
         "28460",
         "26278",
         "25540",
-        "25254",
-        "24075"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -3177,8 +3173,7 @@
         "26602",
         "25689",
         "25276",
-        "25253",
-        "24080"
+        "25253"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -3307,8 +3302,7 @@
         "25689",
         "25540",
         "25255",
-        "24677",
-        "24087"
+        "24677"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -3382,8 +3376,7 @@
         "25543",
         "25540",
         "25255",
-        "24675",
-        "24074"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -4428,8 +4421,7 @@
         "30101",
         "29716",
         "27881",
-        "27209",
-        "24082"
+        "27209"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -4541,8 +4533,7 @@
       "nfe_recebidas_3e": [
         "30767",
         "29713",
-        "27881",
-        "24082"
+        "27881"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -4826,8 +4817,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "31841",
-        "29733",
-        "24083"
+        "29733"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -5073,8 +5063,7 @@
         "28144",
         "26023",
         "25474",
-        "25256",
-        "24084"
+        "25256"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -5146,8 +5135,7 @@
         "25540",
         "25474",
         "25257",
-        "24675",
-        "24075"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -5612,8 +5600,7 @@
         "31710",
         "31550",
         "30768",
-        "29712",
-        "24076"
+        "29712"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -6040,8 +6027,7 @@
         "25690",
         "25474",
         "25257",
-        "24675",
-        "24082"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -6859,8 +6845,7 @@
       "nfe_recebidas_3e": [
         "32055",
         "31709",
-        "26022",
-        "24083"
+        "26022"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -8132,8 +8117,7 @@
         "30261",
         "29714",
         "28143",
-        "24677",
-        "24080"
+        "24677"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -9858,8 +9842,7 @@
         "30260",
         "30099",
         "25688",
-        "24676",
-        "24084"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -10914,9 +10897,7 @@
         "25543",
         "25254",
         "25252",
-        "24848",
-        "24078",
-        "24077"
+        "24848"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -11277,8 +11258,7 @@
         "30443",
         "30442",
         "28145",
-        "28143",
-        "24083"
+        "28143"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -11689,8 +11669,7 @@
         "26024",
         "25474",
         "25253",
-        "24313",
-        "24080"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -12096,8 +12075,7 @@
         "28142",
         "25688",
         "25543",
-        "25257",
-        "24074"
+        "25257"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -12510,8 +12488,7 @@
         "26024",
         "25540",
         "25257",
-        "24675",
-        "24075"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -12868,8 +12845,7 @@
       "nfe_recebidas_3e": [
         "31546",
         "30104",
-        "29521",
-        "24076"
+        "29521"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -13109,9 +13085,7 @@
         "25253",
         "25252",
         "24677",
-        "24313",
-        "24080",
-        "24078"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -13299,8 +13273,7 @@
         "25474",
         "25255",
         "24676",
-        "24313",
-        "24085"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -13488,8 +13461,7 @@
         "26024",
         "25540",
         "25474",
-        "25254",
-        "24076"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -14404,8 +14376,7 @@
         "29714",
         "27788",
         "27791",
-        "26812",
-        "24080"
+        "26812"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -14758,8 +14729,7 @@
         "25540",
         "25474",
         "25257",
-        "24675",
-        "24074"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -14894,8 +14864,7 @@
         "217750",
         "217746",
         "216536",
-        "215890",
-        "213703"
+        "215890"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -15976,8 +15945,7 @@
         "31712",
         "29716",
         "28460",
-        "24676",
-        "24085"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -16330,8 +16298,7 @@
         "28460",
         "27332",
         "26603",
-        "24313",
-        "24081"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -16683,8 +16650,7 @@
         "30444",
         "30100",
         "29726",
-        "29263",
-        "24078"
+        "29263"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -17043,8 +17009,7 @@
         "28141",
         "27330",
         "27204",
-        "26812",
-        "24080"
+        "26812"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -17230,8 +17195,7 @@
         "28143",
         "27788",
         "27555",
-        "24675",
-        "24082"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -19074,9 +19038,7 @@
         "27555",
         "27332",
         "25690",
-        "25254",
-        "24088",
-        "24078"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -19139,8 +19101,7 @@
         "30444",
         "30100",
         "29723",
-        "28762",
-        "24077"
+        "28762"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -19209,8 +19170,7 @@
         "28763",
         "28145",
         "27209",
-        "26027",
-        "24081"
+        "26027"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -20132,8 +20092,7 @@
         "28141",
         "27209",
         "26280",
-        "24677",
-        "24077"
+        "24677"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -21134,8 +21093,7 @@
         "230211",
         "228948",
         "225297",
-        "220150",
-        "213703"
+        "220150"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -25441,8 +25399,7 @@
         "217746",
         "216614",
         "215980",
-        "215890",
-        "213703"
+        "215890"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -30471,8 +30428,7 @@
         "219519",
         "217746",
         "217143",
-        "215890",
-        "213703"
+        "215890"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -40546,8 +40502,7 @@
       "ultima_nfe_3e": "000030959-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "30959",
-        "24088"
+        "30959"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -43088,8 +43043,7 @@
         "227616",
         "225297",
         "223395",
-        "216536",
-        "213894"
+        "216536"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -48736,8 +48690,7 @@
         "709198",
         "709047",
         "708900",
-        "707609",
-        "704977"
+        "707609"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -50978,8 +50931,7 @@
         "25540",
         "25475",
         "25474",
-        "25254",
-        "24077"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -51738,8 +51690,7 @@
         "29720",
         "29520",
         "28762",
-        "28144",
-        "24084"
+        "28144"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -53022,8 +52973,7 @@
         "218785",
         "218321",
         "217746",
-        "217742",
-        "213703"
+        "217742"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -53146,8 +53096,7 @@
         "25542",
         "25475",
         "25252",
-        "24847",
-        "24080"
+        "24847"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -54867,8 +54816,7 @@
         "25540",
         "25474",
         "25258",
-        "24675",
-        "24086"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -55902,8 +55850,7 @@
         "30255",
         "30103",
         "30102",
-        "29727",
-        "24086"
+        "29727"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -57370,8 +57317,7 @@
         "218323",
         "218322",
         "217743",
-        "215980",
-        "213894"
+        "215980"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -57877,9 +57823,7 @@
         "27061",
         "26024",
         "25541",
-        "25252",
-        "24083",
-        "24074"
+        "25252"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -61557,8 +61501,7 @@
         "233668",
         "219519",
         "216536",
-        "215890",
-        "213703"
+        "215890"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -62344,8 +62287,7 @@
         "709046",
         "708804",
         "708486",
-        "706644",
-        "704978"
+        "706644"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -65940,8 +65882,7 @@
         "218321",
         "217746",
         "216536",
-        "214451",
-        "213703"
+        "214451"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -67681,8 +67622,7 @@
         "14185",
         "14108",
         "14062",
-        "13841",
-        "13772"
+        "13841"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -70590,9 +70530,7 @@
         "28141",
         "27788",
         "27332",
-        "24848",
-        "24088",
-        "24079"
+        "24848"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -70654,8 +70592,7 @@
         "27555",
         "26278",
         "26024",
-        "25254",
-        "24085"
+        "25254"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -70890,8 +70827,7 @@
         "30260",
         "25543",
         "25253",
-        "24677",
-        "24081"
+        "24677"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -71708,8 +71644,7 @@
         "25474",
         "25254",
         "24675",
-        "24314",
-        "24087"
+        "24314"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -71883,8 +71818,7 @@
         "29721",
         "29520",
         "27209",
-        "27205",
-        "24083"
+        "27205"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -72169,8 +72103,7 @@
         "31710",
         "29264",
         "28144",
-        "26279",
-        "24078"
+        "26279"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -72572,8 +72505,7 @@
         "26025",
         "26022",
         "24677",
-        "24675",
-        "24083"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -78044,8 +77976,7 @@
         "25690",
         "25540",
         "25257",
-        "24675",
-        "24082"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -78118,8 +78049,7 @@
         "26280",
         "25256",
         "25255",
-        "24676",
-        "24084"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -80158,8 +80088,7 @@
         "27555",
         "26602",
         "26278",
-        "25255",
-        "24083"
+        "25255"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -80803,8 +80732,7 @@
         "25690",
         "25541",
         "25252",
-        "24313",
-        "24081"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -81173,8 +81101,7 @@
         "27332",
         "26025",
         "25256",
-        "25253",
-        "24081"
+        "25253"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -81905,8 +81832,7 @@
         "27204",
         "26812",
         "26603",
-        "24676",
-        "24077"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -85986,8 +85912,7 @@
         "27205",
         "26812",
         "25017",
-        "24315",
-        "24082"
+        "24315"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -86382,9 +86307,7 @@
         "25474",
         "25253",
         "25252",
-        "24313",
-        "24081",
-        "24078"
+        "24313"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -86969,8 +86892,7 @@
         "26812",
         "26811",
         "26280",
-        "26026",
-        "24080"
+        "26026"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -88259,8 +88181,7 @@
         "27205",
         "26278",
         "25256",
-        "24676",
-        "24084"
+        "24676"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -88642,9 +88563,7 @@
         "28144",
         "27209",
         "27205",
-        "24675",
-        "24087",
-        "24076"
+        "24675"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -88937,8 +88856,7 @@
         "26603",
         "26278",
         "24676",
-        "24314",
-        "24077"
+        "24314"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -89644,8 +89562,7 @@
         "25541",
         "25252",
         "24848",
-        "24314",
-        "24078"
+        "24314"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -90014,8 +89931,7 @@
       "ultima_nfe_3e": "000029727-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "29727",
-        "24088"
+        "29727"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -90088,8 +90004,7 @@
         "26602",
         "26278",
         "26023",
-        "25354",
-        "24076"
+        "25354"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -96001,8 +95916,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "220142",
-        "219522",
-        "213702"
+        "219522"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -96992,8 +96906,7 @@
         "14185",
         "14108",
         "14062",
-        "13841",
-        "13772"
+        "13841"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -113327,8 +113240,7 @@
         "28763",
         "28142",
         "27204",
-        "26812",
-        "24076"
+        "26812"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -113733,8 +113645,7 @@
         "32048",
         "30633",
         "29730",
-        "26023",
-        "24078"
+        "26023"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
