@@ -2,7 +2,7 @@
   "supplier_code": "BPD87",
   "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
   "semana": "2026-W43",
-  "gerado_em": "22/10/2026 08:03",
+  "gerado_em": "22/10/2026 12:01",
   "itens": [
     {
       "part_number": "87665224",
@@ -23,29 +23,6 @@
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa.",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": ""
-    },
-    {
-      "part_number": "51676887",
-      "supplier_code": "BPD87",
-      "supplier_name": "PHD SOLUCOES AUTOMOTIVAS LTDA",
-      "ship_date": "14/10/2026",
-      "impact": "4",
-      "sharepoint_critico": false,
-      "sharepoint_url": "",
-      "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
-      "past_due_wmf": 28,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 0,
-      "ultima_nfe": "000224197-003",
-      "ultima_nfe_origem": "3E",
-      "semana": "2026-W43",
-      "data_promessa": "20/10/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa vencida - solicitar nova data.",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": ""
