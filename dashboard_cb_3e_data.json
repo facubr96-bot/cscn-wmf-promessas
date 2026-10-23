@@ -1,5 +1,5 @@
 {
-  "generated_at": "23/10/2026 12:23",
+  "generated_at": "23/10/2026 12:43",
   "today": "23/10/2026",
   "total_pn": 1941,
   "erp_release_cb": "20261021",
@@ -46616,10 +46616,10 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "",
-      "ultima_nfe_emitida_fecha": "",
-      "ultima_nfe_emitida_qty": 0.0,
-      "ultima_nfe_emitida_unidad": "",
+      "ultima_nfe_emitida_num": "78504",
+      "ultima_nfe_emitida_fecha": "23/10/2026",
+      "ultima_nfe_emitida_qty": 34.0,
+      "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
     {
@@ -46784,10 +46784,10 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "",
-      "ultima_nfe_emitida_fecha": "",
-      "ultima_nfe_emitida_qty": 0.0,
-      "ultima_nfe_emitida_unidad": "",
+      "ultima_nfe_emitida_num": "78504",
+      "ultima_nfe_emitida_fecha": "23/10/2026",
+      "ultima_nfe_emitida_qty": 37.0,
+      "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
     {
@@ -46900,10 +46900,10 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "",
-      "ultima_nfe_emitida_fecha": "",
-      "ultima_nfe_emitida_qty": 0.0,
-      "ultima_nfe_emitida_unidad": "",
+      "ultima_nfe_emitida_num": "78504",
+      "ultima_nfe_emitida_fecha": "23/10/2026",
+      "ultima_nfe_emitida_qty": 20.0,
+      "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
     {
@@ -84821,10 +84821,10 @@
       "nfe_recebidas_3e": [],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "",
-      "ultima_nfe_emitida_fecha": "",
-      "ultima_nfe_emitida_qty": 0.0,
-      "ultima_nfe_emitida_unidad": "",
+      "ultima_nfe_emitida_num": "28622",
+      "ultima_nfe_emitida_fecha": "23/10/2026",
+      "ultima_nfe_emitida_qty": 19.0,
+      "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
     {
