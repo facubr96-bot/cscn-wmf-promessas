@@ -1,5 +1,5 @@
 {
-  "generated_at": "23/10/2026 10:20",
+  "generated_at": "23/10/2026 10:40",
   "today": "23/10/2026",
   "total": 419,
   "items": [
@@ -7515,14 +7515,14 @@
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
       "stock_wmf": null,
-      "qty_transito": null,
+      "qty_transito": 80.0,
       "qty_min": 80.0,
       "criticidad": "Critico",
       "reason": "Engineering Structure Change",
       "run_out_date": "22/10/2026",
       "wmf_promise": "",
       "created": "19/10/2026",
-      "estado": "Aberto",
+      "estado": "Finalizado",
       "planner": "VIVIAN STRELOW",
       "solicitante": "HERNANDO JAZMIN",
       "plant": "CB"
