@@ -425,8 +425,6 @@
       <button class="btn" id="btnCopyLink">Copiar link de este KPI</button>
       <button class="btn" id="btnImport">Importar Excel/CSV</button>
       <input type="file" id="fileImport" accept=".csv,.txt" style="display:none">
-      <button class="btn" id="btnImportDataReal" title="Importa SOMENTE a Data Real Completed (P44) desde um CSV com PN e data. Nao toca motivos, escalation nem promessas.">Importar Data Real (P44)</button>
-      <input type="file" id="fileImportDataReal" accept=".csv,.txt" style="display:none">
       <button class="btn" id="btnExport">Exportar Excel/CSV</button>
       <span class="count" id="selectedCount" style="margin-left:6px;"></span>
       <button class="btn btn-primary" id="btnSave">Guardar cambios</button>
@@ -625,6 +623,8 @@
       <button class="btn" id="btnShpExcel" title="Baixa as order releases visiveis (respeita os filtros desta aba). Somente leitura: nao grava nada.">Baixar Excel</button>
       <button class="btn" id="btnShpLoadExcel" style="display:none;" title="Carrega Real Completed e Revisado a partir do Excel baixado desta aba. Mostra uma previa antes de gravar.">Carregar Excel</button>
       <input type="file" id="fileShpExcel" accept=".xlsx" style="display:none">
+      <button class="btn" id="btnImportDataReal" style="display:none;" title="Importa SOMENTE a Data Real Completed (P44) desde um CSV com PN e data. Nao toca motivos, escalation nem promessas.">Importar Data Real (P44)</button>
+      <input type="file" id="fileImportDataReal" accept=".csv,.txt" style="display:none">
     </div>
     <div id="shpEmptyState" class="empty-state" style="display:none;"></div>
     <div id="shpContent" style="display:none;">
@@ -633,6 +633,7 @@
         <div class="kpi-grid" id="kpiShpEstado"></div>
       </div>
       <div class="shp-note" id="shpNoteShip"></div>
+      <div id="shpUrgent"></div>
       <div class="top-scroll-wrap" id="shpTopScroll"><div class="top-scroll-inner" id="shpTopScrollInner"></div></div>
       <div class="table-wrap" id="shpTableWrap" style="max-height: 55vh;">
         <table id="shpTable">
@@ -1530,7 +1531,7 @@ const DATE_COLUMNS = new Set([
 ]);
 function sortValueFor(item, col) {
   if (col.startsWith("ship_")) return shpSortValue(item, col);
-  const v = item[col];
+  const v = col === "early_pickup_date" ? earlyPickupShown(item) : item[col];
   if (DATE_COLUMNS.has(col)) {
     const d = parseDateBR(v);
     return d ? d.getTime() : (sortDir === 1 ? Infinity : -Infinity); // vacios siempre al final
@@ -1571,7 +1572,7 @@ function renderTable() {
       return `<th data-col="${c.key}" data-c="${c.key}">${c.label} <button class="btn-toggle-otm" onclick="toggleOtmColumns(event)" title="Expandir/ocultar Order Release, Shipment, Destino, Status P44">${otmExpanded ? "&#9664;" : "&#9654;"}</button></th>`;
     }
     return `<th data-col="${c.key}" data-c="${c.key}">${c.label}</th>`;
-  }).join("") + SHIP_SUM_COLS.map(c => `<th data-col="${c.key}" data-c="${c.key}" title="Calculado da aba Shipments (somente leitura)">${c.label}</th>`).join("")
+  }).join("") + SHIP_SUM_COLS.map(c => `<th data-col="${c.key}" data-c="${c.key}" title="${c.key === "ship_next" ? "Coleta seguinte a do Early Pickup (sempre outra data). " : ""}Calculado da aba Shipments (somente leitura)">${c.label}</th>`).join("")
     + '<th data-c="previsao_saida_wmfbr">Previsao Saida WMFBR</th>';
   applyHiddenColsCss();
   updateColsBtnLabel();
@@ -1777,6 +1778,12 @@ function renderCell(item, key) {
       return `<td><input type="number" class="cell-input qty-input" value="${v || ""}" onchange="markDirty('${item.pn}','qty_nfe_confirmada',this.value)"></td>`;
     case "nfe_stock_ws":
       return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
+    case "early_pickup_date": {
+      const shown = earlyPickupShown(item);
+      const orig = item.early_pickup_date || "";
+      const tip = shown !== orig && orig ? ` title="Primeira coleta agendada a partir de hoje (OTM). Valor original da order release mais recente: ${orig}"` : "";
+      return `<td${tip}>${shown}</td>`;
+    }
     case "fc_transito":
       return `<td><div class="truncate" title="${v || ""}">${v ?? ""}</div></td>`;
     case "order_release_info":
@@ -2945,6 +2952,7 @@ const SHP_COLS = [
 const SHP_SIN_DATO_TIP = "Coleta com shipment no OTM sem registro no P44 (sem rastreio). Nao implica atraso.";
 const SHP_DATE_KEYS = new Set(["early_pickup", "otm_fim_planejado", "p44_completed", "real_completed"]);
 let shpEstadoFilter = "";
+let shpUrgFilter = false;   // KPI "Past Due + Ship <=5d uteis SEM coleta" clicado
 let shpDivFilter = false;   // KPI "Divergencias manual x P44" clicado
 let shpSortCol = null, shpSortDir = 1;
 
@@ -2992,17 +3000,25 @@ function buildShpSummary() {
   const t0 = today.getTime();
   const m = new Map();
   const get = sup => {
-    if (!m.has(sup)) m.set(sup, { next: null, nextTipo: "", done: 0, total: 0, late: 0, maxLate: 0, semP44: 0, rows: 0, nfe: 0, nfeOldest: null, nfeVerificar: 0 });
+    if (!m.has(sup)) m.set(sup, { dmap: new Map(), epDate: null, epTipo: "", next: null, nextTipo: "", done: 0, total: 0, late: 0, maxLate: 0, semP44: 0, rows: 0, nfe: 0, nfeOldest: null, nfeVerificar: 0 });
     return m.get(sup);
   };
   shpData.shipments.forEach(r => {
     const s = get(r.supplier_code);
     s.rows++;
     const ep = shpDateMs(r.early_pickup);
-    if (ep !== null && ep >= t0 && (s.next === null || ep < s.next)) { s.next = ep; s.nextTipo = r.tipo; }
+    if (ep !== null && ep >= t0 && !s.dmap.has(ep)) s.dmap.set(ep, r.tipo);
     if (ep !== null && ep <= t0) { s.total++; if (r.estado === "OK" || r.estado === "OK (manual)") s.done++; }
     if (r.estado === "Atrasado") { s.late++; s.maxLate = Math.max(s.maxLate, r.dias_atraso || 0); }
     if (r.estado === "Sin dato P44") s.semP44++;
+  });
+  // Early Pickup = 1a coleta agendada a partir de hoje; Proxima coleta = a seguinte (data DIFERENTE).
+  m.forEach(s => {
+    const ds = [...s.dmap.keys()].sort((a, b) => a - b);
+    s.epDate = ds.length ? ds[0] : null;
+    s.epTipo = ds.length ? s.dmap.get(ds[0]) : "";
+    s.next = ds.length > 1 ? ds[1] : null;
+    s.nextTipo = ds.length > 1 ? s.dmap.get(ds[1]) : "";
   });
   shpNfeBySup = new Map();
   (shpData.nfe_pendentes || []).forEach(n => {
@@ -3021,12 +3037,18 @@ function shpLateTone(s) {
   if (!s.late) return "green";
   return (s.late >= 2 || s.maxLate > 3) ? "red" : "amber";
 }
+function shpFmtMs(ms) { const d = new Date(ms); return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`; }
+// Early Pickup da Tabela: 1a coleta do proveedor a partir de hoje (OTM). Sem dado de Shipments, cai no valor original.
+function earlyPickupShown(item) {
+  const s = (typeof shpSummaryBySup !== "undefined" && shpSummaryBySup) ? shpSummaryBySup.get(item.supplier_code) : null;
+  return (s && s.epDate !== null) ? shpFmtMs(s.epDate) : (item.early_pickup_date || "");
+}
 function shpSummaryCells(item) {
   const s = shpSummaryBySup.get(item.supplier_code);
   const sup = shpEsc(item.supplier_code || "");
   if (!s) return SHIP_SUM_COLS.map(c => `<td data-c="${c.key}"></td>`).join("");
   const go = `onclick="gotoShipments('${sup}')"`;
-  const fmt = ms => { const d = new Date(ms); return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`; };
+  const fmt = shpFmtMs;
   const next = s.rows ? (s.next !== null ? `${fmt(s.next)} <span style="color:var(--gray-500);font-size:11px;">${s.nextTipo}</span>` : "—") : "";
   const done = s.total ? `<span style="color:${s.done === s.total ? "var(--green)" : "var(--gray-700)"};font-weight:600;">${s.done}/${s.total}</span>` : (s.rows ? "0/0" : "");
   const late = s.rows
@@ -3159,6 +3181,50 @@ function renderShpNfeFora() {
         ${nfs.map(shpNfeItemHtml).join("")}</div>`;
     }).join("")}</details>`;
 }
+// Proveedores 3E com PN em Past Due ou com Ship Date <=5 dias uteis (mesmo criterio do card uniao da Tabela)
+// e SEM nenhuma coleta agendada a partir de hoje na janela do OTM => precisam de coleta urgente.
+function shpUrgentSuppliers() {
+  const out = new Map();
+  if (!shpData || !allItems.length) return [];
+  const planner = document.getElementById("shpFilterPlanner").value;
+  const prevPlant = plant;
+  plant = "3e";   // Shipments e so proveedor -> 3E; helpers de ship date usam a planta global
+  try {
+    allItems.forEach(it => {
+      if (!it.supplier_code) return;
+      const pd = (it.wmf_qty_past_due || 0) > 0;
+      const sd = shipDateWithin7BusinessDays(it);
+      if (!pd && !sd) return;
+      const s = shpSummaryBySup.get(it.supplier_code);
+      if (s && s.epDate !== null) return;            // ja tem coleta agendada
+      if (!shpMatchesSupplier(it.supplier_code, it.supplier_name)) return;
+      if (planner && getPlanejador(it) !== planner) return;
+      if (!out.has(it.supplier_code)) out.set(it.supplier_code, { code: it.supplier_code, name: it.supplier_name, planner: getPlanejador(it), pdN: 0, sdN: 0, pdQty: 0, oldest: null, nextShip: null, late: s ? s.late : 0 });
+      const o = out.get(it.supplier_code);
+      if (pd) { o.pdN++; o.pdQty += it.wmf_qty_past_due || 0; const d = parseDateBR(it.wmf_oldest_pastdue_ship_date); if (d && (o.oldest === null || d < o.oldest)) o.oldest = d; }
+      if (sd) { o.sdN++; const d = nextShipDateFor(it); if (d && (o.nextShip === null || d < o.nextShip)) o.nextShip = d; }
+    });
+  } finally { plant = prevPlant; }
+  return [...out.values()].sort((a, b) => b.pdN - a.pdN || b.sdN - a.sdN || a.code.localeCompare(b.code));
+}
+function renderShpUrgent(list) {
+  const el = document.getElementById("shpUrgent");
+  if (!shpUrgFilter) { el.innerHTML = ""; return; }
+  const f = d => d ? shpFmtMs(d.getTime()) : "";
+  el.innerHTML = `<div class="shp-note" style="margin-bottom:8px;"><b>Proveedores SEM coleta agendada</b> (nenhuma order release com early pickup de hoje a ${shpEsc(shpData.window.to)}) que tem PN em <b>Past Due</b> e/ou com <b>Ship Date ≤5 dias uteis</b>. Foco do planejador: criar coleta urgente.</div>`
+    + (list.length ? `<div class="table-wrap" style="max-height:60vh;"><table><thead><tr><th>Cod.</th><th>Proveedor</th><th>Planejador</th><th>PN Past Due</th><th>Qtd Past Due</th><th>Past Due mais antigo</th><th>PN Ship ≤5d uteis</th><th>Proximo ship date</th><th></th></tr></thead><tbody>`
+      + list.map(o => `<tr><td>${shpEsc(o.code)}</td><td class="truncate" title="${shpEsc(o.name)}">${shpEsc(o.name)}</td><td>${shpEsc(o.planner)}</td>`
+        + `<td>${o.pdN ? `<span class="badge badge-red">${o.pdN}</span>` : ""}</td><td>${o.pdQty ? Math.round(o.pdQty).toLocaleString("pt-BR") : ""}</td><td>${f(o.oldest)}</td>`
+        + `<td>${o.sdN ? `<span class="badge badge-amber">${o.sdN}</span>` : ""}</td><td>${f(o.nextShip)}</td>`
+        + `<td><button class="btn" onclick="shpUrgGoTable('${shpEsc(o.code)}')">Ver PN na Tabela</button></td></tr>`).join("")
+      + `</tbody></table></div>`
+      : `<div class="empty-state">Nenhum proveedor nessa situacao com os filtros atuais.</div>`);
+}
+window.shpUrgGoTable = function(code) {
+  document.getElementById("searchSupplier").value = code;
+  document.querySelector('#viewSwitch button[data-view="table"]').click();
+  renderTable();
+};
 function shpSortVal(r, col) {
   if (col === "estado") return SHP_ESTADOS.indexOf(r.estado);
   if (SHP_DATE_KEYS.has(col)) return shpDateMs(r[col]) ?? (shpSortDir === 1 ? Infinity : -Infinity);
@@ -3183,6 +3249,7 @@ function renderShipmentsView() {
     + "<b>OK (manual)</b>: um editor carregou o Real Completed; se o P44 diz outra data aparece \"≠ P44\" e o valor manual prevalece. <b>Revisado</b> nao muda o estado.";
 
   const base = shpBaseRows(true);
+  const urgList = shpUrgentSuppliers();
   const kpi = document.getElementById("kpiShpEstado");
   kpi.innerHTML = SHP_ESTADOS.map(e => `
     <div class="kpi-card tone-${SHP_ESTADO_TONE[e]}${shpEstadoFilter === e ? " active" : ""}" data-estado="${e}"${e === "Sin dato P44" ? ` title="${SHP_SIN_DATO_TIP}"` : ""}>
@@ -3193,12 +3260,17 @@ function renderShipmentsView() {
       <div class="kpi-value">${base.length}</div>
       <div class="kpi-label">Total order releases</div>
     </div>
+    <div class="kpi-card tone-red${shpUrgFilter ? " active" : ""}" data-urg="1" title="Proveedores sem nenhuma coleta agendada a partir de hoje (janela OTM) que tem PN em Past Due ou com Ship Date ≤5 dias uteis. Clique para listar e criar coleta urgente.">
+      <div class="kpi-value">${urgList.length}</div>
+      <div class="kpi-label">Past Due + Ship ≤5 dias uteis · SEM coleta</div>
+    </div>
     <div class="kpi-card tone-amber${shpDivFilter ? " active" : ""}" data-div="1" title="Real Completed manual e Completed P44 em datas diferentes (o valor manual prevalece)">
       <div class="kpi-value">${base.filter(r => r.divergencia_p44).length}</div>
       <div class="kpi-label">Divergencias manual × P44</div>
     </div>`;
   kpi.querySelectorAll(".kpi-card").forEach(card => {
     card.onclick = () => {
+      if (card.dataset.urg) { shpUrgFilter = !shpUrgFilter; renderShipmentsView(); return; }
       if (card.dataset.div) { shpDivFilter = !shpDivFilter; renderShipmentsView(); return; }
       const e = card.dataset.estado;
       shpEstadoFilter = (e && shpEstadoFilter !== e) ? e : "";
@@ -3207,6 +3279,7 @@ function renderShipmentsView() {
   });
   document.getElementById("shpActiveChip").innerHTML = [
     shpEstadoFilter ? `<span class="filter-chip">Estado: ${shpEsc(shpEstadoFilter)} <button onclick="shpEstadoFilter='';renderShipmentsView()">✕</button></span>` : "",
+    shpUrgFilter ? `<span class="filter-chip">Past Due + Ship ≤5d · sem coleta <button onclick="shpUrgFilter=false;renderShipmentsView()">✕</button></span>` : "",
     shpDivFilter ? `<span class="filter-chip">Divergencias manual × P44 <button onclick="shpDivFilter=false;renderShipmentsView()">✕</button></span>` : "",
   ].join(" ");
 
@@ -3234,6 +3307,10 @@ function renderShipmentsView() {
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
   document.getElementById("shpRowCount").textContent = `${rows.length} de ${shpData.shipments.length} order releases · ${rows.filter(r => r.revisado !== true).length} nao revisados`;
+  renderShpUrgent(urgList);
+  document.getElementById("shpTableWrap").style.display = shpUrgFilter ? "none" : "";
+  document.getElementById("shpTopScroll").style.display = shpUrgFilter ? "none" : "";
+  document.getElementById("shpTableEmpty").style.display = (!shpUrgFilter && !rows.length) ? "block" : "none";
   renderShpNfeFora();
   shpSyncTopScroll();
 }
@@ -3259,6 +3336,7 @@ document.getElementById("btnShpClear").onclick = () => {
   ["shpSearchSupplier", "shpSearchOr", "shpFilterTipo", "shpFilterPlanner", "shpFilterRevisado"].forEach(id => { document.getElementById(id).value = ""; });
   shpEstadoFilter = "";
   shpDivFilter = false;
+  shpUrgFilter = false;
   renderShipmentsView();
 };
 document.getElementById("btnShpReload").onclick = () => loadShipmentsData(true);
