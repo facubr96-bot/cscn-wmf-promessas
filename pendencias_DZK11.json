@@ -2,7 +2,7 @@
   "supplier_code": "DZK11",
   "supplier_name": "METALURGICA HAME LTDA",
   "semana": "2026-W43",
-  "gerado_em": "22/10/2026 12:01",
+  "gerado_em": "23/10/2026 08:01",
   "itens": [
     {
       "part_number": "47984290",
@@ -37,8 +37,8 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 0,
-      "firm_jun_wmf": 47,
+      "past_due_wmf": 47,
+      "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
       "ultima_nfe": "000155216-002",
       "ultima_nfe_origem": "3E",
