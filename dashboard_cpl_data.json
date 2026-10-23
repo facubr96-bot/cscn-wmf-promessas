@@ -1,5 +1,5 @@
 {
-  "generated_at": "23/10/2026 11:20",
+  "generated_at": "23/10/2026 11:40",
   "today": "23/10/2026",
   "total": 419,
   "items": [
@@ -7533,14 +7533,14 @@
       "supplier_code": "BJG54",
       "supplier_name": "METALURGICA HASSMANN S/A",
       "stock_wmf": 297.0,
-      "qty_transito": null,
+      "qty_transito": 297.0,
       "qty_min": 250.0,
       "criticidad": "Hiper Critico",
       "reason": "Drop In",
       "run_out_date": "04/11/2026",
       "wmf_promise": "19/10/2026",
       "created": "20/10/2026",
-      "estado": "Aberto",
+      "estado": "Finalizado",
       "planner": "Vivian Strelow",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
