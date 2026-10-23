@@ -3,9 +3,9 @@
   "semana": "2026-W43",
   "itens": [
     {
-      "part_number": "90507386",
+      "part_number": "90507387",
       "data_promessa": "04/11/2026",
-      "qty_prometida": 67,
+      "qty_prometida": 64,
       "entrega_confirmada": true,
       "data_coleta": "25/08/2026",
       "nfe_enviada": "174737",
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-23T20:09:01.809Z"
+  "recibido_en_worker": "2026-10-23T20:09:51.743Z"
 }
