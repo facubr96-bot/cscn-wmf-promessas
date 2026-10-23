@@ -1,5 +1,5 @@
 {
-  "generated_at": "23/10/2026 13:23",
+  "generated_at": "23/10/2026 13:43",
   "today": "23/10/2026",
   "total_pn": 1941,
   "erp_release_cb": "20261021",
@@ -35072,9 +35072,9 @@
       "nfe_recebidas_3e": [],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "182357",
-      "ultima_nfe_emitida_fecha": "21/10/2026",
-      "ultima_nfe_emitida_qty": 138.0,
+      "ultima_nfe_emitida_num": "182396",
+      "ultima_nfe_emitida_fecha": "23/10/2026",
+      "ultima_nfe_emitida_qty": 62.0,
       "ultima_nfe_emitida_unidad": "KG",
       "planejador": "Vivian Strelow"
     },
