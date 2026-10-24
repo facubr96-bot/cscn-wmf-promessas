@@ -2,7 +2,7 @@
   "supplier_code": "BJR79",
   "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
   "semana": "2026-W43",
-  "gerado_em": "23/10/2026 12:01",
+  "gerado_em": "24/10/2026 08:02",
   "itens": [
     {
       "part_number": "421490",
@@ -83,9 +83,9 @@
       "sharepoint_url": "",
       "sharepoint_reason": "",
       "acao_requerida": "Solicitar promessa",
-      "past_due_wmf": 60,
+      "past_due_wmf": 52,
       "firm_jun_wmf": 15,
-      "firm_jul_wmf": 0,
+      "firm_jul_wmf": 8,
       "ultima_nfe": "000719366-011",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W43",
