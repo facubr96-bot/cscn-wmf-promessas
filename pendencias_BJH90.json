@@ -2,7 +2,7 @@
   "supplier_code": "BJH90",
   "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
   "semana": "2026-W43",
-  "gerado_em": "23/10/2026 12:01",
+  "gerado_em": "24/10/2026 08:02",
   "itens": [
     {
       "part_number": "47783350",
@@ -39,7 +39,7 @@
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 12,
       "firm_jun_wmf": 0,
-      "firm_jul_wmf": 8,
+      "firm_jul_wmf": 16,
       "ultima_nfe": "000934764-003",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W43",
