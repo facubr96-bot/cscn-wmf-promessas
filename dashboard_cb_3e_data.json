@@ -1,5 +1,5 @@
 {
-  "generated_at": "25/10/2026 08:43",
+  "generated_at": "25/10/2026 09:03",
   "today": "25/10/2026",
   "total_pn": 1953,
   "erp_release_cb": "20261021",
@@ -18514,6 +18514,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "721190",
         "719366",
         "717829",
         "716505",
@@ -21004,10 +21005,10 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-002493/2025",
-      "ultima_nfe_3e": "000393384-001",
+      "ultima_nfe_3e": "000067648-007",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
-        "393384"
+        "67648"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -47027,7 +47028,8 @@
       "ultima_nfe_3e": "STOCK_ADJ",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "STOCK_ADJ"
+        "STOCK_ADJ",
+        "78504"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -52990,6 +52992,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "246338",
         "242715",
         "241444",
         "242190",
@@ -56200,6 +56203,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "721190",
         "716505",
         "707380",
         "699037",
@@ -63427,6 +63431,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "721190",
         "719366",
         "717829",
         "716505",
@@ -81275,6 +81280,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "246338",
         "245861",
         "245858",
         "245534",
@@ -102456,6 +102462,8 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "STOCK_ADJ",
+        "246335",
+        "246334",
         "232822",
         "228342",
         "226866",
