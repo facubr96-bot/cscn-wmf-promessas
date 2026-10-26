@@ -1,0 +1,63 @@
+{
+  "supplier_code": "BPJ57",
+  "supplier_name": "TUPER SA",
+  "semana": "2026-W44",
+  "enviado_em": "2026-10-26T12:16:42.396Z",
+  "itens": [
+    {
+      "part_number": "47503568",
+      "supplier_code": "BPJ57",
+      "supplier_name": "TUPER SA",
+      "ship_date": "17/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000172885-001",
+      "semana": "2026-W44",
+      "entrega_confirmada": true,
+      "data_coleta": "17/09/2026",
+      "nfe_enviada": "172885",
+      "qty_confirmada": 8,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 46,
+      "comentario": "NF 173648"
+    },
+    {
+      "part_number": "92146827",
+      "supplier_code": "BPJ57",
+      "supplier_name": "TUPER SA",
+      "ship_date": "17/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000172891-001",
+      "semana": "2026-W44",
+      "entrega_confirmada": true,
+      "data_coleta": "17/09/2026",
+      "nfe_enviada": "172891",
+      "qty_confirmada": 23,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 25,
+      "comentario": "NF 173649 - 07 peças início de novembro."
+    },
+    {
+      "part_number": "92292083",
+      "supplier_code": "BPJ57",
+      "supplier_name": "TUPER SA",
+      "ship_date": "18/09/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000172503-001",
+      "semana": "2026-W44",
+      "entrega_confirmada": true,
+      "data_coleta": "03/09/2026",
+      "nfe_enviada": "172503",
+      "qty_confirmada": 20,
+      "data_promessa": "19/10/2026",
+      "qty_prometida": 30,
+      "comentario": "NF 173650"
+    }
+  ],
+  "recibido_en_worker": "2026-10-26T12:16:42.885Z"
+}
