@@ -1,45 +1,21 @@
 {
   "supplier_code": "BNL72",
-  "supplier_name": "METALURGICA FIMAC LTDA",
   "semana": "2026-W44",
-  "enviado_em": "2026-10-26T14:02:40.350Z",
   "itens": [
     {
       "part_number": "92678899",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "19/10/2026",
-      "past_due_wmf": true,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": false,
-      "ultima_nfe": "",
-      "semana": "2026-W44",
+      "data_promessa": "09/11/2026",
+      "qty_prometida": 9,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "data_promessa": "09/11/2026",
-      "qty_prometida": 20,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Favor confirmar se esta entrega sera cumprida."
-    },
-    {
-      "part_number": "92678897",
-      "supplier_code": "BNL72",
-      "supplier_name": "METALURGICA FIMAC LTDA",
-      "ship_date": "09/11/2026",
-      "past_due_wmf": false,
-      "firm_jun_wmf": false,
-      "firm_jul_wmf": true,
-      "ultima_nfe": "000139519-001",
-      "semana": "2026-W44",
-      "entrega_confirmada": false,
-      "data_coleta": "17/08/2026",
-      "nfe_enviada": "139519",
-      "qty_confirmada": null,
-      "data_promessa": "09/11/2026",
-      "qty_prometida": 20,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida."
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-26T14:02:40.353Z"
+  "recibido_en_worker": "2026-10-26T14:31:00.516Z"
 }
