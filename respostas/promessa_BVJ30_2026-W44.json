@@ -2,7 +2,7 @@
   "supplier_code": "BVJ30",
   "supplier_name": "HENNINGS VEDACOES HIDRAULICAS E PNE",
   "semana": "2026-W44",
-  "enviado_em": "2026-10-26T12:06:27.381Z",
+  "enviado_em": "2026-10-26T12:06:35.181Z",
   "itens": [
     {
       "part_number": "48073728",
@@ -77,5 +77,5 @@
       "comentario": "Materiais prontos, enviei o PUR para voces no e-mail, por favor seguir com a coleta"
     }
   ],
-  "recibido_en_worker": "2026-10-26T12:06:27.480Z"
+  "recibido_en_worker": "2026-10-26T12:06:35.210Z"
 }
