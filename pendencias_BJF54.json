@@ -2,7 +2,7 @@
   "supplier_code": "BJF54",
   "supplier_name": "KABEL WIRING SYSTEMS LTDA",
   "semana": "2026-W44",
-  "gerado_em": "26/10/2026 08:31",
+  "gerado_em": "26/10/2026 12:03",
   "itens": [
     {
       "part_number": "92674262",
@@ -22,9 +22,9 @@
       "semana": "2026-W44",
       "data_promessa": "04/11/2026",
       "qty_prometida": 70,
-      "comentario": "Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
+      "comentario": "Favor confirmar se esta entrega sera cumprida. Favor confirmar se esta entrega sera cumprida. Solicitar promessa.",
       "entrega_confirmada": false,
-      "data_coleta": "",
+      "data_coleta": "04/11/2026",
       "nfe_enviada": ""
     }
   ]
