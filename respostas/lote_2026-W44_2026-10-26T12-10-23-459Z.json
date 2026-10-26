@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-26T12:10:23.459Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W44",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BPD87",
+      "part_number": "48068511",
+      "data_promessa": "28/10/2026",
+      "qty_prometida": 4,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPD87",
+      "part_number": "48068512",
+      "data_promessa": "28/10/2026",
+      "qty_prometida": 4,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPD87",
+      "part_number": "87665224",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 50,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
