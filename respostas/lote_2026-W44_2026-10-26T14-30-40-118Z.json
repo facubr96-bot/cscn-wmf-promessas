@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-10-26T14:30:40.118Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W44",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BJR81",
+      "part_number": "92161805",
+      "data_promessa": "18/12/2026",
+      "qty_prometida": 75,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNL72",
+      "part_number": "92678897",
+      "data_promessa": "09/11/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": false,
+      "data_coleta": "17/08/2026",
+      "nfe_enviada": "139519",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
