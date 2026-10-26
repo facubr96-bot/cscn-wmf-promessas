@@ -620,7 +620,7 @@
       <span class="count" id="shpRowCount"></span>
       <button class="btn" id="btnShpClear">Limpiar filtro</button>
       <button class="btn" id="btnShpReload">Recarregar</button>
-      <button class="btn" id="btnShpExcel" title="Baixa as order releases visiveis (respeita os filtros desta aba). Somente leitura: nao grava nada.">Baixar Excel</button>
+      <button class="btn" id="btnShpExcel" title="Baixa as linhas visiveis (respeita os filtros desta aba). Com o filtro Past Due + Ship ≤5d sem coleta ativo, baixa a lista de proveedores. Somente leitura.">Baixar Excel</button>
       <button class="btn" id="btnShpLoadExcel" style="display:none;" title="Carrega Real Completed e Revisado a partir do Excel baixado desta aba. Mostra uma previa antes de gravar.">Carregar Excel</button>
       <input type="file" id="fileShpExcel" accept=".xlsx" style="display:none">
       <button class="btn" id="btnImportDataReal" style="display:none;" title="Importa SOMENTE a Data Real Completed (P44) desde um CSV com PN e data. Nao toca motivos, escalation nem promessas.">Importar Data Real (P44)</button>
@@ -3199,15 +3199,17 @@ function shpUrgentSuppliers() {
       if (s && s.epDate !== null) return;            // ja tem coleta agendada
       if (!shpMatchesSupplier(it.supplier_code, it.supplier_name)) return;
       if (planner && getPlanejador(it) !== planner) return;
-      if (!out.has(it.supplier_code)) out.set(it.supplier_code, { code: it.supplier_code, name: it.supplier_name, planner: getPlanejador(it), pdN: 0, sdN: 0, pdQty: 0, oldest: null, nextShip: null, late: s ? s.late : 0 });
+      if (!out.has(it.supplier_code)) out.set(it.supplier_code, { code: it.supplier_code, name: it.supplier_name, planner: getPlanejador(it), pdN: 0, sdN: 0, pdQty: 0, pdPns: [], sdPns: [], oldest: null, nextShip: null, late: s ? s.late : 0 });
       const o = out.get(it.supplier_code);
-      if (pd) { o.pdN++; o.pdQty += it.wmf_qty_past_due || 0; const d = parseDateBR(it.wmf_oldest_pastdue_ship_date); if (d && (o.oldest === null || d < o.oldest)) o.oldest = d; }
-      if (sd) { o.sdN++; const d = nextShipDateFor(it); if (d && (o.nextShip === null || d < o.nextShip)) o.nextShip = d; }
+      if (pd) { o.pdN++; o.pdPns.push(it.pn); o.pdQty += it.wmf_qty_past_due || 0; const d = parseDateBR(it.wmf_oldest_pastdue_ship_date); if (d && (o.oldest === null || d < o.oldest)) o.oldest = d; }
+      if (sd) { o.sdN++; o.sdPns.push(it.pn); const d = nextShipDateFor(it); if (d && (o.nextShip === null || d < o.nextShip)) o.nextShip = d; }
     });
   } finally { plant = prevPlant; }
   return [...out.values()].sort((a, b) => b.pdN - a.pdN || b.sdN - a.sdN || a.code.localeCompare(b.code));
 }
+let shpLastUrg = [];
 function renderShpUrgent(list) {
+  shpLastUrg = list;
   const el = document.getElementById("shpUrgent");
   if (!shpUrgFilter) { el.innerHTML = ""; return; }
   const f = d => d ? shpFmtMs(d.getTime()) : "";
@@ -3402,21 +3404,22 @@ function shpXmlEsc(s) {
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "");
 }
 function shpColRef(i) { let s = ""; i++; while (i) { const m = (i - 1) % 26; s = String.fromCharCode(65 + m) + s; i = Math.floor((i - 1) / 26); } return s; }
-function shpBuildXlsx(rows) {
-  const cols = SHP_XLSX_COLS;
+function shpBuildXlsx(rows, opt) {
+  const cols = opt ? opt.cols : SHP_XLSX_COLS;
   // estilos: 0 normal, 1 cabecalho, 2 editavel (amarelo), 3 cabecalho editavel
   const cell = (ref, v, s) => `<c r="${ref}" t="inlineStr"${s ? ` s="${s}"` : ""}><is><t xml:space="preserve">${shpXmlEsc(v)}</t></is></c>`;
   const head = `<row r="1">${cols.map((c, i) => cell(shpColRef(i) + "1", c.h, c.edit ? 3 : 1)).join("")}</row>`;
   const body = rows.map((r, n) => `<row r="${n + 2}">${cols.map((c, i) => cell(shpColRef(i) + (n + 2), c.v(r), c.edit ? 2 : 0)).join("")}</row>`).join("");
   const last = rows.length + 1;
   const colRefOf = h => shpColRef(cols.findIndex(c => c.h === h));
+  const sheetName = opt ? opt.sheet : "Shipments";
   const sheet = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
 <sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>
 <cols>${cols.map((c, i) => `<col min="${i + 1}" max="${i + 1}" width="${c.w}" customWidth="1"${c.hidden ? ' hidden="1"' : ""}/>`).join("")}</cols>
 <sheetData>${head}${body}</sheetData>
 <autoFilter ref="A1:${shpColRef(cols.length - 1)}${last}"/>
-<dataValidations count="1"><dataValidation type="list" allowBlank="1" showErrorMessage="1" errorTitle="Revisado" error="Use Sim ou Não" sqref="${colRefOf("Revisado")}2:${colRefOf("Revisado")}${Math.max(last, 2)}"><formula1>"Sim,Não"</formula1></dataValidation></dataValidations>
+${opt ? "" : `<dataValidations count="1"><dataValidation type="list" allowBlank="1" showErrorMessage="1" errorTitle="Revisado" error="Use Sim ou Não" sqref="${colRefOf("Revisado")}2:${colRefOf("Revisado")}${Math.max(last, 2)}"><formula1>"Sim,Não"</formula1></dataValidation></dataValidations>`}
 </worksheet>`;
   const styles = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
@@ -3433,7 +3436,7 @@ function shpBuildXlsx(rows) {
     { name: "_rels/.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>` },
     { name: "xl/workbook.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Shipments" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">Shipments!$A$1:$${shpColRef(cols.length - 1)}$${last}</definedName></definedNames></workbook>` },
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${sheetName}" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">${sheetName}!$A$1:$${shpColRef(cols.length - 1)}$${last}</definedName></definedNames></workbook>` },
     { name: "xl/_rels/workbook.xml.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>` },
     { name: "xl/worksheets/sheet1.xml", data: sheet },
@@ -3445,11 +3448,24 @@ document.getElementById("btnShpExcel").onclick = () => {
   const now = new Date();
   const pad = n => String(n).padStart(2, "0");
   shpXlsxStamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())} (dados ${shpData.generated_at})`;
-  const bytes = shpBuildXlsx(shpLastRows);
+  const fmtD = d => d ? shpFmtMs(d.getTime()) : "";
+  const urgOpt = shpUrgFilter ? { sheet: "Sem coleta", cols: [
+    { h: "Cod.", w: 10, v: o => o.code },
+    { h: "Proveedor", w: 40, v: o => o.name },
+    { h: "Planejador", w: 16, v: o => o.planner },
+    { h: "PN Past Due", w: 12, v: o => o.pdN },
+    { h: "Qtd Past Due", w: 13, v: o => Math.round(o.pdQty) },
+    { h: "Past Due mais antigo", w: 18, v: o => fmtD(o.oldest) },
+    { h: "PN Ship <=5d uteis", w: 17, v: o => o.sdN },
+    { h: "Proximo ship date", w: 17, v: o => fmtD(o.nextShip) },
+    { h: "PN em Past Due", w: 45, v: o => o.pdPns.join(", ") },
+    { h: "PN Ship <=5d uteis (lista)", w: 45, v: o => o.sdPns.join(", ") },
+  ] } : null;
+  const bytes = urgOpt ? shpBuildXlsx(shpLastUrg, urgOpt) : shpBuildXlsx(shpLastRows);
   const blob = new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = `shipments_${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}.xlsx`;
+  a.download = `${shpUrgFilter ? "sem_coleta_pastdue_ship5d" : "shipments"}_${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}.xlsx`;
   a.click();
 };
 
