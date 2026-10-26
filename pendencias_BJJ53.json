@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJJ53",
   "supplier_name": "SCHULZ SA",
-  "semana": "2026-W43",
-  "gerado_em": "25/10/2026 12:02",
+  "semana": "2026-W44",
+  "gerado_em": "26/10/2026 08:03",
   "itens": [
     {
       "part_number": "84574187",
@@ -19,7 +19,7 @@
       "firm_jul_wmf": 44,
       "ultima_nfe": "000372368-004",
       "ultima_nfe_origem": "3E",
-      "semana": "2026-W43",
+      "semana": "2026-W44",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa.",
