@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/10/2026 12:21",
+  "generated_at": "26/10/2026 12:41",
   "today": "26/10/2026",
   "total": 423,
   "items": [
@@ -7595,7 +7595,7 @@
       "wmf_promise": "",
       "created": "26/10/2026",
       "estado": "Aberto",
-      "planner": "",
+      "planner": "Titon Facundo",
       "solicitante": "HERNANDO Jazmin",
       "plant": "CB"
     },
@@ -7611,9 +7611,9 @@
       "reason": "Projeto",
       "run_out_date": "30/06/2027",
       "wmf_promise": "",
-      "created": "",
+      "created": "26/10/2026",
       "estado": "Aberto",
-      "planner": "",
+      "planner": "Titon Facundo",
       "solicitante": "HERNANDO Jazmin",
       "plant": "CB"
     }
