@@ -5,17 +5,17 @@
     {
       "part_number": "92678899",
       "data_promessa": "09/11/2026",
-      "qty_prometida": 9,
+      "qty_prometida": 20,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Atraso do fornecedor",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-26T14:31:00.516Z"
+  "recibido_en_worker": "2026-10-26T15:22:59.147Z"
 }
