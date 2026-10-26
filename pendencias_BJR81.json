@@ -1,8 +1,8 @@
 {
   "supplier_code": "BJR81",
   "supplier_name": "ESFER ESTAMPARIA E FERRAMENTARIA LT",
-  "semana": "2026-W43",
-  "gerado_em": "25/10/2026 12:02",
+  "semana": "2026-W44",
+  "gerado_em": "26/10/2026 08:03",
   "itens": [
     {
       "part_number": "92161805",
@@ -19,7 +19,7 @@
       "firm_jul_wmf": 75,
       "ultima_nfe": "000103926-010",
       "ultima_nfe_origem": "3E",
-      "semana": "2026-W43",
+      "semana": "2026-W44",
       "data_promessa": "",
       "qty_prometida": "",
       "comentario": "Solicitar promessa.",
