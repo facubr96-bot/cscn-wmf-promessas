@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-10-26T19:00:13.048Z",
+  "editor": "Facundo Titon",
+  "semana": "2026-W44",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BPH44",
+      "part_number": "51571367",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": true,
+      "data_coleta": "21/08/2026",
+      "nfe_enviada": "237570",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "29/09/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPH44",
+      "part_number": "51571372",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": true,
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "237933",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "29/09/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPH44",
+      "part_number": "51572706",
+      "data_promessa": "26/10/2026",
+      "qty_prometida": 100,
+      "entrega_confirmada": true,
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "237933",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "29/09/2026",
+      "comentario": ""
+    }
+  ]
+}
