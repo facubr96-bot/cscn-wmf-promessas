@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/10/2026 11:01",
+  "generated_at": "26/10/2026 11:21",
   "today": "26/10/2026",
   "total": 421,
   "items": [
@@ -7566,8 +7566,8 @@
     {
       "id": "422",
       "pn": "51599229",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BVH54",
+      "supplier_name": "CARRON AUTOMOTIVE LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
@@ -7575,10 +7575,10 @@
       "reason": "Past Due",
       "run_out_date": "18/11/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "26/10/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
