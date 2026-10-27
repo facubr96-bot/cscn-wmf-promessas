@@ -2,7 +2,7 @@
   "supplier_code": "BJD65",
   "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
   "semana": "2026-W44",
-  "gerado_em": "27/10/2026 08:03",
+  "gerado_em": "27/10/2026 09:32",
   "itens": [
     {
       "part_number": "47606560",
@@ -32,7 +32,7 @@
       "supplier_code": "BJD65",
       "supplier_name": "INDUSTRIA METALURGICA STORI EIRELI",
       "ship_date": "16/09/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
