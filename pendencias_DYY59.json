@@ -2,7 +2,7 @@
   "supplier_code": "DYY59",
   "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
   "semana": "2026-W44",
-  "gerado_em": "27/10/2026 09:32",
+  "gerado_em": "27/10/2026 12:01",
   "itens": [
     {
       "part_number": "51668140",
@@ -40,7 +40,7 @@
       "past_due_wmf": 42,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 0,
-      "ultima_nfe": "STOCK_ADJ",
+      "ultima_nfe": "000078504-000",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W44",
       "data_promessa": "06/11/2026",
@@ -63,7 +63,7 @@
       "past_due_wmf": 47,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 40,
-      "ultima_nfe": "STOCK_ADJ",
+      "ultima_nfe": "000078262-000",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W44",
       "data_promessa": "06/11/2026",
