@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BJG74",
+  "semana": "2026-W44",
+  "itens": [
+    {
+      "part_number": "84591673",
+      "data_promessa": "02/11/2026",
+      "qty_prometida": 245,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "07/10/2026",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-10-27T11:21:06.077Z"
+}
