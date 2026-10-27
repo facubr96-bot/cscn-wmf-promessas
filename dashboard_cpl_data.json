@@ -1,7 +1,7 @@
 {
-  "generated_at": "27/10/2026 07:40",
+  "generated_at": "27/10/2026 08:01",
   "today": "27/10/2026",
-  "total": 423,
+  "total": 424,
   "items": [
     {
       "id": "1",
@@ -7615,6 +7615,24 @@
       "estado": "Aberto",
       "planner": "Titon Facundo",
       "solicitante": "HERNANDO Jazmin",
+      "plant": "CB"
+    },
+    {
+      "id": "425",
+      "pn": "5100516",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 2000.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Past Due",
+      "run_out_date": "25/10/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
