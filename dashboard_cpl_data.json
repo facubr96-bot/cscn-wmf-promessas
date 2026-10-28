@@ -1,5 +1,5 @@
 {
-  "generated_at": "28/10/2026 09:01",
+  "generated_at": "28/10/2026 09:20",
   "today": "28/10/2026",
   "total": 442,
   "items": [
@@ -7352,7 +7352,7 @@
       "pn": "91858632",
       "supplier_code": "FMV69",
       "supplier_name": "DONGHUA DO BRASIL CORRENTES E COMPO",
-      "stock_wmf": null,
+      "stock_wmf": 100.0,
       "qty_transito": null,
       "qty_min": 50.0,
       "criticidad": "Hiper Critico",
@@ -7928,7 +7928,7 @@
       "pn": "48164673",
       "supplier_code": "BKH48",
       "supplier_name": "COMP INDUSTRIA E COMERCIO DE METAIS",
-      "stock_wmf": null,
+      "stock_wmf": 120.0,
       "qty_transito": null,
       "qty_min": 139.0,
       "criticidad": "Critico",
@@ -7946,7 +7946,7 @@
       "pn": "92146827",
       "supplier_code": "BPJ57",
       "supplier_name": "TUPER SA",
-      "stock_wmf": null,
+      "stock_wmf": 25.0,
       "qty_transito": null,
       "qty_min": 32.0,
       "criticidad": "Critico",
