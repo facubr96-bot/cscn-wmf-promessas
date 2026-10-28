@@ -1,5 +1,5 @@
 {
-  "generated_at": "27/10/2026 20:41",
+  "generated_at": "27/10/2026 21:02",
   "today": "27/10/2026",
   "total_pn": 1936,
   "erp_release_cb": "20261021",
@@ -17485,8 +17485,7 @@
         "98891",
         "98890",
         "98889",
-        "98817",
-        "98815"
+        "98817"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -22976,8 +22975,7 @@
       "ultima_nfe_3e": "000218466-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "218466",
-        "210170"
+        "218466"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -28170,8 +28168,7 @@
         "98890",
         "98889",
         "98817",
-        "98816",
-        "98815"
+        "98816"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -43824,8 +43821,7 @@
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
         "163454",
-        "163162",
-        "160836"
+        "163162"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -51675,8 +51671,7 @@
         "98890",
         "98889",
         "98817",
-        "98816",
-        "98815"
+        "98816"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
