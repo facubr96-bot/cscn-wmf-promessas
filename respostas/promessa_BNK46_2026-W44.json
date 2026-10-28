@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BNK46",
+  "semana": "2026-W44",
+  "itens": [
+    {
+      "part_number": "84420072",
+      "data_promessa": "09/11/2026",
+      "qty_prometida": 4,
+      "entrega_confirmada": true,
+      "data_coleta": "29/09/2026",
+      "nfe_enviada": "425966",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "03/10/2026",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-10-28T16:28:17.259Z"
+}
