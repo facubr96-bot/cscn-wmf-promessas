@@ -1,5 +1,5 @@
 {
-  "generated_at": "28/10/2026 10:00",
+  "generated_at": "28/10/2026 10:20",
   "today": "28/10/2026",
   "total": 442,
   "items": [
@@ -7016,7 +7016,7 @@
       "criticidad": "Normal",
       "reason": "Projeto",
       "run_out_date": "23/03/2027",
-      "wmf_promise": "",
+      "wmf_promise": "30/11/2026",
       "created": "30/09/2026",
       "estado": "Aberto",
       "planner": "STRELOW Vivian",
