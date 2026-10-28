@@ -1,7 +1,7 @@
 {
-  "generated_at": "28/10/2026 10:40",
+  "generated_at": "28/10/2026 11:00",
   "today": "28/10/2026",
-  "total": 442,
+  "total": 445,
   "items": [
     {
       "id": "1",
@@ -7957,6 +7957,60 @@
       "estado": "Aberto",
       "planner": "Titon Facundo",
       "solicitante": "BERRONE Alejandro Miguel (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "444",
+      "pn": "48040231",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 110.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "02/12/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "445",
+      "pn": "84215095",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 55.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "30/10/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "446",
+      "pn": "92292083",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 30.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "30/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
