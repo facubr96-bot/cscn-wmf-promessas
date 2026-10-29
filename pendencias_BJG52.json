@@ -2,14 +2,14 @@
   "supplier_code": "BJG52",
   "supplier_name": "METALURGICA FALLGATTER LTDA",
   "semana": "2026-W44",
-  "gerado_em": "29/10/2026 08:02",
+  "gerado_em": "29/10/2026 12:01",
   "itens": [
     {
       "part_number": "90359771",
       "supplier_code": "BJG52",
       "supplier_name": "METALURGICA FALLGATTER LTDA",
       "ship_date": "25/11/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
