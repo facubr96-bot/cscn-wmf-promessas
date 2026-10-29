@@ -3,19 +3,19 @@
   "semana": "2026-W44",
   "itens": [
     {
-      "part_number": "86981477",
-      "data_promessa": "11/12/2026",
-      "qty_prometida": 2994,
+      "part_number": "11119921",
+      "data_promessa": "03/11/2026",
+      "qty_prometida": 250,
       "entrega_confirmada": true,
-      "data_coleta": "30/11/2026",
+      "data_coleta": "03/11/2026",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "Pedido inserido dentro do Lead time",
+      "motivo_atraso": "Divergência de NF-e",
       "escalation_level": "",
       "data_real_completed": "09/10/2026",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-28T17:07:28.049Z"
+  "recibido_en_worker": "2026-10-29T14:46:57.358Z"
 }
