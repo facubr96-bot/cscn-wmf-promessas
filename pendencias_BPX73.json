@@ -2,7 +2,7 @@
   "supplier_code": "BPX73",
   "supplier_name": "DUGALE METALURGICA LTDA",
   "semana": "2026-W44",
-  "gerado_em": "29/10/2026 08:02",
+  "gerado_em": "29/10/2026 12:01",
   "itens": [
     {
       "part_number": "51535161",
@@ -101,7 +101,7 @@
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
       "ship_date": "27/10/2026",
-      "impact": "1",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
