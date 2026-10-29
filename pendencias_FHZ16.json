@@ -2,7 +2,7 @@
   "supplier_code": "FHZ16",
   "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
   "semana": "2026-W44",
-  "gerado_em": "29/10/2026 08:02",
+  "gerado_em": "29/10/2026 12:01",
   "itens": [
     {
       "part_number": "86585706",
@@ -239,7 +239,7 @@
       "supplier_code": "FHZ16",
       "supplier_name": "BOLLHOFF SERVICE CENTER LTDA",
       "ship_date": "11/11/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
