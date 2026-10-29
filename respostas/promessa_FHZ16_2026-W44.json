@@ -3,10 +3,10 @@
   "semana": "2026-W44",
   "itens": [
     {
-      "part_number": "86585706",
-      "data_promessa": "03/11/2026",
-      "qty_prometida": 500,
-      "entrega_confirmada": true,
+      "part_number": "14442131",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": 2942,
+      "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
@@ -17,5 +17,5 @@
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-10-28T11:52:49.573Z"
+  "recibido_en_worker": "2026-10-29T18:30:09.859Z"
 }
