@@ -1,5 +1,5 @@
 {
-  "generated_at": "29/10/2026 14:22",
+  "generated_at": "29/10/2026 14:41",
   "today": "29/10/2026",
   "total_pn": 1936,
   "erp_release_cb": "20261021",
@@ -44308,9 +44308,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "66242",
-      "ultima_nfe_emitida_fecha": "14/10/2026",
-      "ultima_nfe_emitida_qty": 19.0,
+      "ultima_nfe_emitida_num": "66370",
+      "ultima_nfe_emitida_fecha": "29/10/2026",
+      "ultima_nfe_emitida_qty": 11.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
@@ -59969,10 +59969,10 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "",
-      "ultima_nfe_emitida_fecha": "",
-      "ultima_nfe_emitida_qty": 0.0,
-      "ultima_nfe_emitida_unidad": "",
+      "ultima_nfe_emitida_num": "66370",
+      "ultima_nfe_emitida_fecha": "29/10/2026",
+      "ultima_nfe_emitida_qty": 200.0,
+      "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
     {
@@ -73802,9 +73802,9 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "66242",
-      "ultima_nfe_emitida_fecha": "14/10/2026",
-      "ultima_nfe_emitida_qty": 2.0,
+      "ultima_nfe_emitida_num": "66370",
+      "ultima_nfe_emitida_fecha": "29/10/2026",
+      "ultima_nfe_emitida_qty": 4.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Titon Facundo"
     },
