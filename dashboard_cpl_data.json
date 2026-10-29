@@ -1,7 +1,7 @@
 {
-  "generated_at": "29/10/2026 12:20",
+  "generated_at": "29/10/2026 12:40",
   "today": "29/10/2026",
-  "total": 445,
+  "total": 447,
   "items": [
     {
       "id": "1",
@@ -8011,6 +8011,42 @@
       "estado": "Aberto",
       "planner": "Titon Facundo",
       "solicitante": "BERRONE Alejandro Miguel (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "447",
+      "pn": "84388450",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 4.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Production Change",
+      "run_out_date": "28/10/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "448",
+      "pn": "91802211",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 30.0,
+      "criticidad": "Critico",
+      "reason": "Past Due",
+      "run_out_date": "11/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
