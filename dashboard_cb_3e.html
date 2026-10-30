@@ -381,9 +381,15 @@
           <div class="kpi-grid" id="kpiCov1"></div>
         </div>
 
-        <div class="kpi-section">
-          <h2>Escalation</h2>
-          <div class="kpi-grid" id="kpiEscalation"></div>
+        <div style="display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start;">
+          <div class="kpi-section">
+            <h2>Escalation</h2>
+            <div class="kpi-grid" id="kpiEscalation"></div>
+          </div>
+          <div class="kpi-section" id="kpiDeliverySection" style="display:none;">
+            <h2>Impacto Delivery performance</h2>
+            <div class="kpi-grid" id="kpiDelivery"></div>
+          </div>
         </div>
       </div>
 
@@ -451,9 +457,15 @@
       </label>
       <span class="count" id="dashRowCount"></span>
     </div>
-    <div class="kpi-section">
-      <h2>Escalation</h2>
-      <div class="kpi-grid" id="kpiDashEscalation"></div>
+    <div style="display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start;">
+      <div class="kpi-section">
+        <h2>Escalation</h2>
+        <div class="kpi-grid" id="kpiDashEscalation"></div>
+      </div>
+      <div class="kpi-section" id="kpiDashDeliverySection" style="display:none;">
+        <h2>Impacto Delivery performance</h2>
+        <div class="kpi-grid" id="kpiDashDelivery"></div>
+      </div>
     </div>
     <div class="kpi-section">
       <h2 id="kpiDashBalanceTitle">Past Due Balance / Cobertura</h2>
@@ -998,7 +1010,16 @@ function getKpiDefs() {
     { key: "esc_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
     { key: "esc_l1", label: "Level 1 (Run Out ≤30d)", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
   ];
-  return { runoutDefs, cov1Defs, motivoDefs, escalationDefs };
+  // Impacto Delivery performance (so CB): PN com Past Due Balance (cor_qty_past_due > 0 e saldo > 0
+  // depois de descontar transito e stock) separados pelos dias em atraso. Faixas exclusivas: soma = total.
+  const inBalance = i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0;
+  const daysLate = i => i.cor_days_in_past_due || 0;
+  const deliveryDefs = [
+    { key: "del_gt10", label: "+10 dias em atraso", tone: "red", tip: "PN com Past Due Balance e mais de 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 10 },
+    { key: "del_6_10", label: "+5 e ate 10 dias em atraso", tone: "amber", tip: "PN com Past Due Balance e de 6 a 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 5 && daysLate(i) <= 10 },
+    { key: "del_le5", label: "Ate 5 dias em atraso", tone: "gray", tip: "PN com Past Due Balance e ate 5 dias de atraso", test: i => inBalance(i) && daysLate(i) <= 5 },
+  ];
+  return { runoutDefs, cov1Defs, motivoDefs, escalationDefs, deliveryDefs };
 }
 
 // Panel "COR -> WMF / Ship Date" (CB) ou "WMF -> Proveedor / Ship Date" (3E).
@@ -1087,10 +1108,14 @@ function renderKpis() {
   document.getElementById("filterPlanejador").style.display = plant === "3e" ? "" : "none";
   document.getElementById("statusP44Dropdown").style.display = plant === "3e" ? "" : "none";
   populateStatusP44Filter();
-  const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
+  const { runoutDefs, cov1Defs, motivoDefs, escalationDefs, deliveryDefs } = getKpiDefs();
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   renderKpiGrid("kpiEscalation", escalationDefs);
+  const showDelivery = plant === "cb";
+  document.getElementById("kpiDeliverySection").style.display = showDelivery ? "" : "none";
+  document.getElementById("kpiDashDeliverySection").style.display = showDelivery ? "" : "none";
+  if (showDelivery) renderKpiGrid("kpiDelivery", deliveryDefs);
   const { top: shipTop, bottom: shipBottom, fc: shipFc } = getShipKpiDefs();
   renderKpiGrid("kpiShipTop", shipTop);
   renderKpiGrid("kpiShipBottom", shipBottom);
@@ -1112,6 +1137,7 @@ function renderKpis() {
   });
   renderKpiGrid("kpiMotivos", motivoDefs, dashBase);
   renderKpiGrid("kpiDashEscalation", escalationDefs, dashBase);
+  if (showDelivery) renderKpiGrid("kpiDashDelivery", deliveryDefs, dashBase);
   renderMotivosCharts(motivoDefs, dashBase);
   renderDashPastDueTable(dashBase);
 }
@@ -1203,6 +1229,7 @@ function renderKpiGrid(elId, defs, baseItemsOverride) {
     const card = document.createElement("button");
     card.className = `kpi-card tone-${def.tone}` + (activeFilters.has(def.key) ? " active" : "");
     card.innerHTML = `<div class="kpi-value">${count}</div><div class="kpi-label">${def.label}</div>`;
+    if (def.tip) card.title = def.tip;
     if (def.noFilter) { card.style.cursor = "default"; return el.appendChild(card); }
     card.onclick = () => toggleKpiFilter(def.key, def.label, def.test);
     el.appendChild(card);
@@ -1357,9 +1384,9 @@ function loadFromUrl() {
   if (p === "cb" || p === "3e") plant = p;
   const kpiParam = params.get("kpi");
   if (kpiParam) {
-    const { runoutDefs, cov1Defs, motivoDefs, escalationDefs } = getKpiDefs();
+    const { runoutDefs, cov1Defs, motivoDefs, escalationDefs, deliveryDefs } = getKpiDefs();
     const { top: shipTop, bottom: shipBottom, fc: shipFc } = getShipKpiDefs();
-    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...shipTop, ...shipBottom, ...shipFc];
+    const all = [...runoutDefs, ...cov1Defs, ...motivoDefs, ...escalationDefs, ...deliveryDefs, ...shipTop, ...shipBottom, ...shipFc];
     kpiParam.split(",").forEach(k => {
       const match = all.find(d => d.key === k);
       if (match) activeFilters.set(match.key, { label: match.label, test: match.test });
