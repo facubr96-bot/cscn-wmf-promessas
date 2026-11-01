@@ -2,7 +2,7 @@
   "supplier_code": "DWB45",
   "supplier_name": "ARCO FORJADO EXPORTACAO IMPORTACAO",
   "semana": "2026-W44",
-  "gerado_em": "31/10/2026 12:01",
+  "gerado_em": "01/11/2026 08:01",
   "itens": [
     {
       "part_number": "83919385",
@@ -15,8 +15,8 @@
       "sharepoint_reason": "",
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
-      "firm_jun_wmf": 0,
-      "firm_jul_wmf": 700,
+      "firm_jun_wmf": 700,
+      "firm_jul_wmf": 0,
       "ultima_nfe": "",
       "ultima_nfe_origem": "",
       "semana": "2026-W44",
