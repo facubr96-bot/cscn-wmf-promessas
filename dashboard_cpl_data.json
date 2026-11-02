@@ -1,7 +1,7 @@
 {
-  "generated_at": "02/11/2026 08:40",
+  "generated_at": "02/11/2026 09:01",
   "today": "02/11/2026",
-  "total": 448,
+  "total": 450,
   "items": [
     {
       "id": "1",
@@ -8065,6 +8065,42 @@
       "estado": "Aberto",
       "planner": "Vivian Strelow",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "450",
+      "pn": "92269712",
+      "supplier_code": "BPD96",
+      "supplier_name": "NELSON DO BRASIL IND MET LTDA",
+      "stock_wmf": 15.0,
+      "qty_transito": null,
+      "qty_min": 15.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Projeto",
+      "run_out_date": "26/11/2026",
+      "wmf_promise": "",
+      "created": "02/11/2026",
+      "estado": "Aberto",
+      "planner": "STRELOW Vivian",
+      "solicitante": "HERNANDO Jazmin",
+      "plant": "CB"
+    },
+    {
+      "id": "451",
+      "pn": "92269713",
+      "supplier_code": "BPW70",
+      "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
+      "stock_wmf": 42.0,
+      "qty_transito": null,
+      "qty_min": 42.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Projeto",
+      "run_out_date": "26/11/2026",
+      "wmf_promise": "",
+      "created": "02/11/2026",
+      "estado": "Aberto",
+      "planner": "TITON Facundo",
+      "solicitante": "HERNANDO Jazmin",
       "plant": "CB"
     }
   ]
