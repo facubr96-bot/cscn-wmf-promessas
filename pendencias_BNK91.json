@@ -1,8 +1,8 @@
 {
   "supplier_code": "BNK91",
   "supplier_name": "DANA INDUSTRIAS LTDA",
-  "semana": "2026-W44",
-  "gerado_em": "01/11/2026 12:01",
+  "semana": "2026-W45",
+  "gerado_em": "02/11/2026 08:01",
   "itens": [
     {
       "part_number": "87354003",
@@ -19,7 +19,7 @@
       "firm_jul_wmf": 10,
       "ultima_nfe": "",
       "ultima_nfe_origem": "",
-      "semana": "2026-W44",
+      "semana": "2026-W45",
       "data_promessa": "30/11/2026",
       "qty_prometida": 10,
       "comentario": "Hiper Critico SharePoint - confirmar plano.",
