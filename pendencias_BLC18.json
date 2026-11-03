@@ -2,7 +2,7 @@
   "supplier_code": "BLC18",
   "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
   "semana": "2026-W45",
-  "gerado_em": "03/11/2026 08:01",
+  "gerado_em": "03/11/2026 12:01",
   "itens": [
     {
       "part_number": "84215091",
@@ -124,7 +124,7 @@
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "ship_date": "27/10/2026",
-      "impact": "4",
+      "impact": "3",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
@@ -308,7 +308,7 @@
       "supplier_code": "BLC18",
       "supplier_name": "MARTIACO INDUSTRIA DE ARTEFATOS MET",
       "ship_date": "03/11/2026",
-      "impact": "3",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
