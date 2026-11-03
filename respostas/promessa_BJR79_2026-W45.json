@@ -1,0 +1,63 @@
+{
+  "supplier_code": "BJR79",
+  "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+  "semana": "2026-W45",
+  "enviado_em": "2026-11-03T11:31:36.107Z",
+  "itens": [
+    {
+      "part_number": "421490",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "16/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000721190-011",
+      "semana": "2026-W45",
+      "entrega_confirmada": true,
+      "data_coleta": "19/08/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "47405749",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "16/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000722372-011",
+      "semana": "2026-W45",
+      "entrega_confirmada": true,
+      "data_coleta": "19/08/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "84390751",
+      "supplier_code": "BJR79",
+      "supplier_name": "GATES DO BRASIL INDUSTRIA E COMERCI",
+      "ship_date": "04/11/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000722372-011",
+      "semana": "2026-W45",
+      "entrega_confirmada": true,
+      "data_coleta": "28/10/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "",
+      "qty_prometida": null,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-11-03T11:31:36.222Z"
+}
