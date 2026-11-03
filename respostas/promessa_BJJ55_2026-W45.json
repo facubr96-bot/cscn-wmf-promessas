@@ -1,0 +1,63 @@
+{
+  "supplier_code": "BJJ55",
+  "supplier_name": "SCREW IND METALMECANICA SA",
+  "semana": "2026-W45",
+  "enviado_em": "2026-11-03T12:13:06.836Z",
+  "itens": [
+    {
+      "part_number": "51443709",
+      "supplier_code": "BJJ55",
+      "supplier_name": "SCREW IND METALMECANICA SA",
+      "ship_date": "07/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000277194-001",
+      "semana": "2026-W45",
+      "entrega_confirmada": false,
+      "data_coleta": "07/12/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "07/12/2026",
+      "qty_prometida": 10,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "51552615",
+      "supplier_code": "BJJ55",
+      "supplier_name": "SCREW IND METALMECANICA SA",
+      "ship_date": "30/11/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000277194-001",
+      "semana": "2026-W45",
+      "entrega_confirmada": false,
+      "data_coleta": "28/09/2026",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 10,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "87280339",
+      "supplier_code": "BJJ55",
+      "supplier_name": "SCREW IND METALMECANICA SA",
+      "ship_date": "16/11/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000277416-001",
+      "semana": "2026-W45",
+      "entrega_confirmada": false,
+      "data_coleta": "17/08/2026",
+      "nfe_enviada": "275538",
+      "qty_confirmada": null,
+      "data_promessa": "16/11/2026",
+      "qty_prometida": 20,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-11-03T12:13:07.230Z"
+}
