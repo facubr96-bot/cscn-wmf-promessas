@@ -1,0 +1,53 @@
+{
+  "recibido_en_worker": "2026-11-04T14:13:48.534Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W45",
+  "total": 3,
+  "itens": [
+    {
+      "supplier_code": "BNK46",
+      "part_number": "84420072",
+      "data_promessa": "16/11/2026",
+      "qty_prometida": 4,
+      "entrega_confirmada": true,
+      "data_coleta": "29/09/2026",
+      "nfe_enviada": "425966",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNK46",
+      "part_number": "87332721",
+      "data_promessa": "16/11/2026",
+      "qty_prometida": 20,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNK46",
+      "part_number": "87751611",
+      "data_promessa": "16/11/2026",
+      "qty_prometida": 45,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Atraso do fornecedor",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
