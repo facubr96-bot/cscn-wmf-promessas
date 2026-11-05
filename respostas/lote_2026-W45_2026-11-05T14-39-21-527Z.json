@@ -1,0 +1,83 @@
+{
+  "recibido_en_worker": "2026-11-05T14:39:21.527Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W45",
+  "total": 5,
+  "itens": [
+    {
+      "supplier_code": "BNG98",
+      "part_number": "47760871",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": 36,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNG98",
+      "part_number": "47760874",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": 4,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Fornecedor novo",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNG98",
+      "part_number": "51680859",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": 34,
+      "entrega_confirmada": true,
+      "data_coleta": "11/09/2026",
+      "nfe_enviada": "770747",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido fora do lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNG98",
+      "part_number": "84379626",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": null,
+      "entrega_confirmada": true,
+      "data_coleta": "27/08/2026",
+      "nfe_enviada": "767432 - 767842 - 768303",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Pedido inserido fora do lead time",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BNG98",
+      "part_number": "92760505",
+      "data_promessa": "11/11/2026",
+      "qty_prometida": 18,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
