@@ -1,5 +1,5 @@
 {
-  "generated_at": "05/11/2026 10:21",
+  "generated_at": "05/11/2026 10:41",
   "today": "05/11/2026",
   "total": 450,
   "items": [
@@ -8072,7 +8072,7 @@
       "pn": "92269712",
       "supplier_code": "BPD96",
       "supplier_name": "NELSON DO BRASIL IND MET LTDA",
-      "stock_wmf": null,
+      "stock_wmf": 62.0,
       "qty_transito": null,
       "qty_min": 15.0,
       "criticidad": "Hiper Critico",
@@ -8090,7 +8090,7 @@
       "pn": "92269713",
       "supplier_code": "BPW70",
       "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
-      "stock_wmf": null,
+      "stock_wmf": 62.0,
       "qty_transito": null,
       "qty_min": 42.0,
       "criticidad": "Hiper Critico",
