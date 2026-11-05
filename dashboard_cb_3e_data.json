@@ -1,5 +1,5 @@
 {
-  "generated_at": "05/11/2026 09:24",
+  "generated_at": "05/11/2026 09:44",
   "today": "05/11/2026",
   "total_pn": 1943,
   "erp_release_cb": "20261028",
@@ -1377,6 +1377,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "285990",
+        "285932",
         "285912",
         "282390",
         "280321",
@@ -14506,6 +14507,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "285990",
+        "285932",
         "284908"
       ],
       "fornecedor_novo": false,
@@ -46105,8 +46107,8 @@
       "order_release_info": "AETC - CNHILA.A12715350",
       "shipment_code": "CNHILA.26413047",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
-      "fecha_completed_p44": "",
+      "status_p44": "Completed",
+      "fecha_completed_p44": "05/11/2026",
       "ultima_nfe_cb": "WMF-003252",
       "ultima_nfe_3e": "000065632-001",
       "ultima_nfe_3e_origem": "3E",
@@ -46161,8 +46163,8 @@
       "order_release_info": "AETC - CNHILA.A12715350",
       "shipment_code": "CNHILA.26413047",
       "destino_shipment": "WMF BRAZIL",
-      "status_p44": "En Transito",
-      "fecha_completed_p44": "",
+      "status_p44": "Completed",
+      "fecha_completed_p44": "05/11/2026",
       "ultima_nfe_cb": "WMF-003252",
       "ultima_nfe_3e": "000065632-001",
       "ultima_nfe_3e_origem": "3E",
@@ -52264,6 +52266,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "285990",
+        "285932",
         "285912",
         "284865",
         "282437",
@@ -63438,9 +63441,10 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003299",
-      "ultima_nfe_3e": "000147961-001",
+      "ultima_nfe_3e": "000150253-001",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "150253",
         "147961",
         "146483",
         "144757"
@@ -74887,6 +74891,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "285990",
+        "285932",
         "285912",
         "278898",
         "277549",
@@ -89986,6 +89991,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "285990",
+        "285932",
         "278898",
         "277549",
         "272364",
@@ -99880,6 +99886,8 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "147332",
+        "147331",
+        "147330",
         "147329",
         "147328",
         "147039",
@@ -102074,6 +102082,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "246963",
+        "246961",
         "246335",
         "246334",
         "232822",
@@ -109078,7 +109087,8 @@
       "ultima_nfe_3e": "000247144-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "247144"
+        "247144",
+        "247143"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
