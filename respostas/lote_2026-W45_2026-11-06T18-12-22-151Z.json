@@ -1,0 +1,38 @@
+{
+  "recibido_en_worker": "2026-11-06T18:12:22.151Z",
+  "editor": "Vivian Strelow",
+  "semana": "2026-W45",
+  "total": 2,
+  "itens": [
+    {
+      "supplier_code": "BJD65",
+      "part_number": "84586004",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": true,
+      "data_coleta": "11/09/2026",
+      "nfe_enviada": "148219",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Arredondamento",
+      "escalation_level": "L1",
+      "data_real_completed": "19/10/2026",
+      "comentario": ""
+    },
+    {
+      "supplier_code": "BPH65",
+      "part_number": "405828A1",
+      "data_promessa": "",
+      "qty_prometida": null,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "Arredondamento",
+      "escalation_level": "",
+      "data_real_completed": "",
+      "comentario": ""
+    }
+  ]
+}
