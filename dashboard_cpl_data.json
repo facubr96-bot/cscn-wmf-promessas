@@ -1,5 +1,5 @@
 {
-  "generated_at": "08/11/2026 07:41",
+  "generated_at": "08/11/2026 08:01",
   "today": "08/11/2026",
   "total": 450,
   "items": [
@@ -2660,7 +2660,7 @@
       "criticidad": "Hiper Critico",
       "reason": "Stock Loss",
       "run_out_date": "06/11/2026",
-      "wmf_promise": "02/11/2026",
+      "wmf_promise": "",
       "created": "08/04/2026",
       "estado": "Finalizado",
       "planner": "Vivian Strelow",
