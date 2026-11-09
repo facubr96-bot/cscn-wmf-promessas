@@ -1,0 +1,27 @@
+{
+  "supplier_code": "BNN21",
+  "supplier_name": "ACUMULADORES MOURA S A",
+  "semana": "2026-W46",
+  "enviado_em": "2026-11-09T12:04:32.726Z",
+  "itens": [
+    {
+      "part_number": "51563257",
+      "supplier_code": "BNN21",
+      "supplier_name": "ACUMULADORES MOURA S A",
+      "ship_date": "02/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000025465-010",
+      "semana": "2026-W46",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "02/12/2026",
+      "qty_prometida": 72,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-11-09T12:04:40.580Z"
+}
