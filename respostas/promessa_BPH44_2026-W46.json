@@ -1,0 +1,45 @@
+{
+  "supplier_code": "BPH44",
+  "supplier_name": "VOSS AUTOMOTIVE LTDA",
+  "semana": "2026-W46",
+  "enviado_em": "2026-11-09T11:55:01.001Z",
+  "itens": [
+    {
+      "part_number": "51571367",
+      "supplier_code": "BPH44",
+      "supplier_name": "VOSS AUTOMOTIVE LTDA",
+      "ship_date": "30/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000240574-004",
+      "semana": "2026-W46",
+      "entrega_confirmada": true,
+      "data_coleta": "21/08/2026",
+      "nfe_enviada": "237570",
+      "qty_confirmada": null,
+      "data_promessa": "30/12/2026",
+      "qty_prometida": 84,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "51572706",
+      "supplier_code": "BPH44",
+      "supplier_name": "VOSS AUTOMOTIVE LTDA",
+      "ship_date": "23/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000240574-004",
+      "semana": "2026-W46",
+      "entrega_confirmada": true,
+      "data_coleta": "28/08/2026",
+      "nfe_enviada": "237933",
+      "qty_confirmada": null,
+      "data_promessa": "01/01/2027",
+      "qty_prometida": 72,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-11-09T11:54:59.405Z"
+}
