@@ -3,19 +3,19 @@
   "semana": "2026-W46",
   "itens": [
     {
-      "part_number": "84471274",
+      "part_number": "92133614",
       "data_promessa": "16/11/2026",
-      "qty_prometida": 14,
+      "qty_prometida": 12,
       "entrega_confirmada": true,
       "data_coleta": "17/08/2026",
-      "nfe_enviada": "286312; 287530",
+      "nfe_enviada": "286312; 288461",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Arredondamento",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-11-09T13:09:30.842Z"
+  "recibido_en_worker": "2026-11-09T13:09:54.875Z"
 }
