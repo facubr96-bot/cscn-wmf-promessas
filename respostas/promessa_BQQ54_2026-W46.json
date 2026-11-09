@@ -2,7 +2,7 @@
   "supplier_code": "BQQ54",
   "supplier_name": "PK CABLES DO BRASIL INDUSTRIAL E CO",
   "semana": "2026-W46",
-  "enviado_em": "2026-11-09T11:41:19.894Z",
+  "enviado_em": "2026-11-09T11:41:47.376Z",
   "itens": [
     {
       "part_number": "90461158",
@@ -14,7 +14,7 @@
       "firm_jul_wmf": true,
       "ultima_nfe": "000067648-007",
       "semana": "2026-W46",
-      "entrega_confirmada": true,
+      "entrega_confirmada": false,
       "data_coleta": "03/09/2026",
       "nfe_enviada": "64377-007",
       "qty_confirmada": null,
@@ -32,7 +32,7 @@
       "firm_jul_wmf": false,
       "ultima_nfe": "000067648-007",
       "semana": "2026-W46",
-      "entrega_confirmada": true,
+      "entrega_confirmada": false,
       "data_coleta": "10/09/2026",
       "nfe_enviada": "64791-007",
       "qty_confirmada": null,
@@ -41,5 +41,5 @@
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-11-09T11:41:19.931Z"
+  "recibido_en_worker": "2026-11-09T11:41:47.368Z"
 }
