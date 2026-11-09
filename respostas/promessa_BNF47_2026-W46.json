@@ -1,0 +1,63 @@
+{
+  "supplier_code": "BNF47",
+  "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
+  "semana": "2026-W46",
+  "enviado_em": "2026-11-09T11:45:35.962Z",
+  "itens": [
+    {
+      "part_number": "14442021",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
+      "ship_date": "30/11/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000013722-001",
+      "semana": "2026-W46",
+      "entrega_confirmada": false,
+      "data_coleta": "31/08/2026",
+      "nfe_enviada": "13641",
+      "qty_confirmada": null,
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 200,
+      "comentario": "Temos material em estoque, aguardando a coleta para enviarmos as 200un."
+    },
+    {
+      "part_number": "47884293",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
+      "ship_date": "30/11/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": true,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000013800-001",
+      "semana": "2026-W46",
+      "entrega_confirmada": false,
+      "data_coleta": "21/09/2026",
+      "nfe_enviada": "13666",
+      "qty_confirmada": null,
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 58,
+      "comentario": "Temos material em estoque, aguardando a coleta para enviarmos as 58un."
+    },
+    {
+      "part_number": "87752074",
+      "supplier_code": "BNF47",
+      "supplier_name": "PROSOMA COMPONENTES TECNICOS LTDA.",
+      "ship_date": "07/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000013666-001",
+      "semana": "2026-W46",
+      "entrega_confirmada": false,
+      "data_coleta": "14/09/2026",
+      "nfe_enviada": "13666",
+      "qty_confirmada": null,
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 200,
+      "comentario": "Temos material em estoque, aguardando a coleta para enviarmos as 200un. "
+    }
+  ],
+  "recibido_en_worker": "2026-11-09T11:45:36.159Z"
+}
