@@ -1,5 +1,5 @@
 {
-  "generated_at": "09/11/2026 08:21",
+  "generated_at": "09/11/2026 08:41",
   "today": "09/11/2026",
   "total": 450,
   "items": [
@@ -302,7 +302,7 @@
       "criticidad": "Normal",
       "reason": "Past Due",
       "run_out_date": "19/02/2027",
-      "wmf_promise": "",
+      "wmf_promise": "26/11/2026",
       "created": "27/11/2025",
       "estado": "Finalizado",
       "planner": "Vivian Strelow",
@@ -2282,7 +2282,7 @@
       "criticidad": "Hiper Critico",
       "reason": "Stock Loss",
       "run_out_date": "08/02/2027",
-      "wmf_promise": "",
+      "wmf_promise": "17/12/2026",
       "created": "19/03/2026",
       "estado": "Finalizado",
       "planner": "Vivian Strelow",
