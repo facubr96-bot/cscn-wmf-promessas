@@ -1,5 +1,5 @@
 {
-  "generated_at": "10/11/2026 04:43",
+  "generated_at": "10/11/2026 05:04",
   "today": "10/11/2026",
   "total_pn": 1942,
   "erp_release_cb": "20261104",
@@ -49418,7 +49418,7 @@
       "early_pickup_date": "10/11/2026",
       "order_release_info": "AETC - CNHILA.A12726046",
       "shipment_code": "CNHILA.26414890",
-      "destino_shipment": "",
+      "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003037/2025",
