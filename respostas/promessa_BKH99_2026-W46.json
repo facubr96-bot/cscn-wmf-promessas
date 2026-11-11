@@ -2,7 +2,7 @@
   "supplier_code": "BKH99",
   "supplier_name": "SANVEN METALURGICA LTDA",
   "semana": "2026-W46",
-  "enviado_em": "2026-11-11T18:48:11.607Z",
+  "enviado_em": "2026-11-11T18:50:17.799Z",
   "itens": [
     {
       "part_number": "84520063",
@@ -18,10 +18,10 @@
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
-      "data_promessa": "27/11/2026",
+      "data_promessa": "09/12/2026",
       "qty_prometida": 40,
       "comentario": "Solicitar promessa."
     }
   ],
-  "recibido_en_worker": "2026-11-11T18:46:32.051Z"
+  "recibido_en_worker": "2026-11-11T18:48:38.205Z"
 }
