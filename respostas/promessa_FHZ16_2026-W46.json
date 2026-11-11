@@ -3,19 +3,19 @@
   "semana": "2026-W46",
   "itens": [
     {
-      "part_number": "87374",
+      "part_number": "87553944",
       "data_promessa": "16/11/2026",
-      "qty_prometida": 100,
-      "entrega_confirmada": false,
+      "qty_prometida": 50,
+      "entrega_confirmada": true,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Problema de transporte",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-11-11T17:21:00.116Z"
+  "recibido_en_worker": "2026-11-11T17:21:27.697Z"
 }
