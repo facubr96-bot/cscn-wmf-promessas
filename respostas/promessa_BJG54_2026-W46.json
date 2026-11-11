@@ -3,19 +3,19 @@
   "semana": "2026-W46",
   "itens": [
     {
-      "part_number": "87681209",
+      "part_number": "92700013",
       "data_promessa": "23/11/2026",
-      "qty_prometida": 301,
+      "qty_prometida": 5000,
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": "",
       "qty_confirmada": null,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Fornecedor novo",
       "escalation_level": "",
       "data_real_completed": "",
       "comentario": ""
     }
   ],
-  "recibido_en_worker": "2026-11-11T11:35:36.009Z"
+  "recibido_en_worker": "2026-11-11T11:36:15.180Z"
 }
