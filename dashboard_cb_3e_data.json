@@ -1,5 +1,5 @@
 {
-  "generated_at": "12/11/2026 08:43",
+  "generated_at": "12/11/2026 09:04",
   "today": "12/11/2026",
   "total_pn": 1948,
   "erp_release_cb": "20261104",
@@ -4205,6 +4205,7 @@
       "ultima_nfe_3e": "000031291-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32958",
         "31291"
       ],
       "fornecedor_novo": false,
@@ -4428,6 +4429,7 @@
       "ultima_nfe_3e": "000030769-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "30769",
         "30259",
         "30101",
@@ -4543,6 +4545,7 @@
       "ultima_nfe_3e": "000030767-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "30767",
         "29713",
         "27881"
@@ -5910,6 +5913,7 @@
       "ultima_nfe_3e": "000026022-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32958",
         "26022"
       ],
       "fornecedor_novo": false,
@@ -8073,6 +8077,7 @@
       "ultima_nfe_3e": "000030767-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "30767",
         "29716"
       ],
@@ -8130,7 +8135,8 @@
       "ultima_nfe_3e": "000013144-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "13144"
+        "13144",
+        "32958"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -8246,6 +8252,7 @@
       "ultima_nfe_3e": "000031289-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32961",
         "31289",
         "31281",
         "30261",
@@ -8872,7 +8879,8 @@
       "ultima_nfe_3e": "000023805-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "23805"
+        "23805",
+        "32960"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -8928,6 +8936,7 @@
       "ultima_nfe_3e": "000030261-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32959",
         "30261",
         "30094",
         "29261"
@@ -9975,6 +9984,7 @@
       "ultima_nfe_3e": "000031299-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "31299",
         "30960",
         "30260",
@@ -12211,6 +12221,7 @@
       "ultima_nfe_3e": "000664417-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "664417",
         "653768",
         "652205",
@@ -12330,6 +12341,7 @@
       "ultima_nfe_3e": "000682991-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "682991"
       ],
       "fornecedor_novo": false,
@@ -12494,6 +12506,7 @@
       "ultima_nfe_3e": "000032305-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "32305",
         "32056",
         "31560",
@@ -12562,6 +12575,7 @@
       "ultima_nfe_3e": "000681755-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "681755",
         "664416",
         "662006",
@@ -14743,11 +14757,13 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-000436",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
-      "fornecedor_novo": true,
-      "fornecedor_anterior": "FHZ16",
+      "ultima_nfe_3e": "000683962-000",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "683962"
+      ],
+      "fornecedor_novo": false,
+      "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "683962",
       "ultima_nfe_emitida_fecha": "05/11/2026",
       "ultima_nfe_emitida_qty": 500.0,
@@ -16139,6 +16155,7 @@
       "ultima_nfe_3e": "000031281-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32961",
         "31281"
       ],
       "fornecedor_novo": false,
@@ -16426,6 +16443,7 @@
       "ultima_nfe_3e": "000025354-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "25354"
       ],
       "fornecedor_novo": false,
@@ -16772,6 +16790,7 @@
       "ultima_nfe_3e": "000029725-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32961",
         "29725",
         "29264",
         "28143",
@@ -16894,6 +16913,7 @@
       "ultima_nfe_3e": "000031550-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "31550",
         "31294",
         "30444",
@@ -18310,6 +18330,7 @@
       "ultima_nfe_3e": "000671324-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "671324"
       ],
       "fornecedor_novo": false,
@@ -18366,6 +18387,7 @@
       "ultima_nfe_3e": "000030516-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "30516",
         "30256",
         "30103",
@@ -19294,6 +19316,7 @@
       "ultima_nfe_3e": "000032307-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "32307",
         "31835",
         "30956",
@@ -21865,8 +21888,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 1370.0,
       "cum_rec_3e": 1396.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 48.0,
+      "nfe_stock_ws": "226336 + 226337",
       "qty_transito": 26.0,
       "fc_transito": "WMF-003370 + WMF-003380",
       "data_inicio_transito": "26/10/2026",
@@ -25188,6 +25211,7 @@
       "ultima_nfe_3e": "000097473-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "98134",
         "97473",
         "96858",
         "96103",
@@ -25418,8 +25442,8 @@
       "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "cum_rec_cb": 1446.0,
       "cum_rec_3e": 1590.0,
-      "stock_ws": 49.0,
-      "nfe_stock_ws": "150482",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 144.0,
       "fc_transito": "WMF-003374 + WMF-003382",
       "data_inicio_transito": "28/10/2026",
@@ -25433,6 +25457,7 @@
       "ultima_nfe_3e": "000150253-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "150482",
         "150253",
         "149924",
         "149345",
@@ -26453,8 +26478,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 1710.0,
       "cum_rec_3e": 1832.0,
-      "stock_ws": 126.0,
-      "nfe_stock_ws": "150482",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -26468,6 +26493,7 @@
       "ultima_nfe_3e": "000147586-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "150482",
         "147586",
         "146228",
         "145396",
@@ -27076,7 +27102,8 @@
       "ultima_nfe_3e": "000263151-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "263151"
+        "263151",
+        "292372"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -27902,7 +27929,7 @@
       "run_out_date": "",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 8.0,
       "cor_qty_past_due": 61.0,
       "wmf_qty_past_due": 0.0,
       "cor_oldest_pastdue_ship_date": "06/11/2026",
@@ -27927,8 +27954,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 56.0,
       "cum_rec_3e": 0.0,
-      "stock_ws": 28.0,
-      "nfe_stock_ws": "782186",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -27986,8 +28013,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 0.0,
       "cum_rec_3e": 0.0,
-      "stock_ws": 4.0,
-      "nfe_stock_ws": "782185",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -28696,6 +28723,7 @@
       "ultima_nfe_3e": "000937503-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "938821",
         "937503"
       ],
       "fornecedor_novo": false,
@@ -33784,7 +33812,7 @@
       "run_out_date": "14/12/2026",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
-      "stock_b1cb": 70.0,
+      "stock_b1cb": 78.0,
       "cor_qty_past_due": 80.0,
       "wmf_qty_past_due": 80.0,
       "cor_oldest_pastdue_ship_date": "26/09/2026",
@@ -33809,8 +33837,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 950.0,
       "cum_rec_3e": 980.0,
-      "stock_ws": 70.0,
-      "nfe_stock_ws": "224600",
+      "stock_ws": 78.0,
+      "nfe_stock_ws": "224600 + 225068",
       "qty_transito": 30.0,
       "fc_transito": "WMF-003379",
       "data_inicio_transito": "30/10/2026",
@@ -33824,6 +33852,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "222413",
         "221529",
@@ -36466,6 +36495,7 @@
       "ultima_nfe_3e": "000097773-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "98134",
         "97773",
         "96858",
         "96103",
@@ -39678,8 +39708,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 0.0,
       "cum_rec_3e": 30.0,
-      "stock_ws": 20.0,
-      "nfe_stock_ws": "75026",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -39693,6 +39723,7 @@
       "ultima_nfe_3e": "000074774-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "75026",
         "74774",
         "74663",
         "74643",
@@ -40986,6 +41017,7 @@
       "ultima_nfe_3e": "000032302-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32963",
         "32302",
         "31554",
         "31297",
@@ -43044,7 +43076,7 @@
       "run_out_date": "16/02/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
-      "stock_b1cb": 60.0,
+      "stock_b1cb": 100.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 100.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -43069,8 +43101,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 997.0,
       "cum_rec_3e": 1017.0,
-      "stock_ws": 60.0,
-      "nfe_stock_ws": "224600",
+      "stock_ws": 100.0,
+      "nfe_stock_ws": "224600 + 225068",
       "qty_transito": 20.0,
       "fc_transito": "WMF-003379",
       "data_inicio_transito": "30/10/2026",
@@ -43084,6 +43116,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "221529",
         "221188",
@@ -43213,6 +43246,7 @@
       "ultima_nfe_3e": "000096858-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "98134",
         "96858",
         "96103",
         "95623",
@@ -44952,6 +44986,7 @@
       "ultima_nfe_3e": "000098029-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "98134",
         "98029"
       ],
       "fornecedor_novo": false,
@@ -46009,7 +46044,7 @@
       "run_out_date": "19/02/2027",
       "supplier_code": "BVH54",
       "supplier_name": "CARRON AUTOMOTIVE LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 10.0,
       "cor_qty_past_due": 10.0,
       "wmf_qty_past_due": 0.0,
       "cor_oldest_pastdue_ship_date": "24/10/2026",
@@ -46066,7 +46101,7 @@
       "run_out_date": "04/12/2026",
       "supplier_code": "BVH54",
       "supplier_name": "CARRON AUTOMOTIVE LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 10.0,
       "cor_qty_past_due": 10.0,
       "wmf_qty_past_due": 0.0,
       "cor_oldest_pastdue_ship_date": "23/10/2026",
@@ -48199,7 +48234,7 @@
       "run_out_date": "10/05/2027",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
-      "stock_b1cb": 52.0,
+      "stock_b1cb": 62.0,
       "cor_qty_past_due": 50.0,
       "wmf_qty_past_due": 34.0,
       "cor_oldest_pastdue_ship_date": "31/10/2026",
@@ -48224,8 +48259,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 807.0,
       "cum_rec_3e": 887.0,
-      "stock_ws": 20.0,
-      "nfe_stock_ws": "782611",
+      "stock_ws": 52.0,
+      "nfe_stock_ws": "782611 + 782815",
       "qty_transito": 80.0,
       "fc_transito": "WMF-003373 + WMF-003381 + WMF-003382 + WMF-003383",
       "data_inicio_transito": "26/10/2026",
@@ -48239,6 +48274,8 @@
       "ultima_nfe_3e": "000780581-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "782815",
+        "782611",
         "780581",
         "780109",
         "778855",
@@ -49380,7 +49417,7 @@
       "run_out_date": "25/03/2027",
       "supplier_code": "BLB24",
       "supplier_name": "TE CONNECTIVITY BRASIL INDUSTRIA EL",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 120.0,
       "cor_qty_past_due": 120.0,
       "wmf_qty_past_due": 143.0,
       "cor_oldest_pastdue_ship_date": "01/11/2026",
@@ -49405,8 +49442,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 120.0,
       "cum_rec_3e": 120.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 120.0,
+      "nfe_stock_ws": "1041790",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -49476,6 +49513,7 @@
       "ultima_nfe_3e": "000030441-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32963",
         "30441",
         "29714",
         "27788",
@@ -50973,9 +51011,11 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000032962-010",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "32962"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "32962",
@@ -52322,6 +52362,7 @@
       "ultima_nfe_3e": "000673638-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "673638",
         "668032",
         "662006",
@@ -53079,6 +53120,8 @@
       "ultima_nfe_3e": "000031297-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32961",
+        "32959",
         "31297",
         "31291",
         "30441",
@@ -54274,6 +54317,7 @@
       "ultima_nfe_3e": "000030443-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32963",
         "30443",
         "30256",
         "29728",
@@ -58181,6 +58225,7 @@
       "ultima_nfe_3e": "000098029-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "98134",
         "98029",
         "97473",
         "96858",
@@ -58405,9 +58450,10 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "000396907-090",
+      "ultima_nfe_3e": "000399293-090",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "399293",
         "396907",
         "393781",
         "390338",
@@ -59162,8 +59208,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 142.0,
       "cum_rec_3e": 142.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 3.0,
+      "nfe_stock_ws": "183980",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -59871,7 +59917,7 @@
       "run_out_date": "10/05/2027",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 195.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 200.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -59896,8 +59942,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 800.0,
       "cum_rec_3e": 1000.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 195.0,
+      "nfe_stock_ws": "66489",
       "qty_transito": 200.0,
       "fc_transito": "WMF-003381",
       "data_inicio_transito": "04/11/2026",
@@ -60179,8 +60225,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 250.0,
       "cum_rec_3e": 250.0,
-      "stock_ws": 118.0,
-      "nfe_stock_ws": "150482",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -60194,6 +60240,7 @@
       "ultima_nfe_3e": "000149126-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "150482",
         "149126",
         "147961",
         "145396",
@@ -61086,6 +61133,7 @@
       "ultima_nfe_3e": "000679202-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "679202",
         "673638"
       ],
@@ -63183,8 +63231,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 308.0,
       "cum_rec_3e": 308.0,
-      "stock_ws": 10.0,
-      "nfe_stock_ws": "150482",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -63198,6 +63246,7 @@
       "ultima_nfe_3e": "000149248-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "150482",
         "149248",
         "147586",
         "146483",
@@ -64668,8 +64717,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 1915.0,
       "cum_rec_3e": 2155.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 160.0,
+      "nfe_stock_ws": "32960",
       "qty_transito": 240.0,
       "fc_transito": "WMF-003380",
       "data_inicio_transito": "03/11/2026",
@@ -64683,6 +64732,7 @@
       "ultima_nfe_3e": "000032303-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "32303",
         "31543",
         "31295",
@@ -64916,6 +64966,7 @@
       "ultima_nfe_3e": "000288461-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "292372",
         "288461",
         "269053"
       ],
@@ -64973,6 +65024,7 @@
       "ultima_nfe_3e": "000289464-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "292372",
         "289464",
         "287530",
         "286312",
@@ -65089,8 +65141,8 @@
       "acao_requerida": "Promessa vencida - solicitar nova data",
       "cum_rec_cb": 1736.0,
       "cum_rec_3e": 1910.0,
-      "stock_ws": 3.0,
-      "nfe_stock_ws": "150482",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 88.0,
       "fc_transito": "WMF-003374",
       "data_inicio_transito": "28/10/2026",
@@ -65104,6 +65156,7 @@
       "ultima_nfe_3e": "000149924-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "150482",
         "149924",
         "148219",
         "147961",
@@ -66182,7 +66235,7 @@
       "run_out_date": "12/11/2026",
       "supplier_code": "DNH73",
       "supplier_name": "ANGSTAHL INDUSTRIA E COMERCIO LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 100.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 0.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -68318,8 +68371,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 0.0,
       "cum_rec_3e": 0.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 245.0,
+      "nfe_stock_ws": "219087",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -72035,6 +72088,7 @@
       "ultima_nfe_3e": "000032057-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "32057",
         "31837",
         "31710",
@@ -74866,6 +74920,7 @@
       "ultima_nfe_3e": "000030959-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32959",
         "30959",
         "30515",
         "29709"
@@ -76336,6 +76391,7 @@
       "ultima_nfe_3e": "000286873-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "292372",
         "286873",
         "285878",
         "284888",
@@ -76943,6 +76999,7 @@
       "ultima_nfe_3e": "000681755-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "681755",
         "679202",
         "676480",
@@ -77744,6 +77801,8 @@
       "ultima_nfe_3e": "000031292-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32963",
+        "32961",
         "31292",
         "31291",
         "28152",
@@ -78863,6 +78922,7 @@
       "ultima_nfe_3e": "000029709-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32959",
         "29709"
       ],
       "fornecedor_novo": false,
@@ -79173,7 +79233,7 @@
       "run_out_date": "05/04/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
-      "stock_b1cb": 12.0,
+      "stock_b1cb": 16.0,
       "cor_qty_past_due": 10.0,
       "wmf_qty_past_due": 14.0,
       "cor_oldest_pastdue_ship_date": "03/11/2026",
@@ -79198,8 +79258,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 264.0,
       "cum_rec_3e": 268.0,
-      "stock_ws": 12.0,
-      "nfe_stock_ws": "224600",
+      "stock_ws": 16.0,
+      "nfe_stock_ws": "224600 + 225068",
       "qty_transito": 4.0,
       "fc_transito": "WMF-003379",
       "data_inicio_transito": "30/10/2026",
@@ -79213,6 +79273,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "221529",
         "221188",
@@ -79244,7 +79305,7 @@
       "run_out_date": "09/04/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
-      "stock_b1cb": 8.0,
+      "stock_b1cb": 11.0,
       "cor_qty_past_due": 7.0,
       "wmf_qty_past_due": 11.0,
       "cor_oldest_pastdue_ship_date": "06/11/2026",
@@ -79269,8 +79330,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 260.0,
       "cum_rec_3e": 264.0,
-      "stock_ws": 8.0,
-      "nfe_stock_ws": "224600",
+      "stock_ws": 11.0,
+      "nfe_stock_ws": "224600 + 225068",
       "qty_transito": 4.0,
       "fc_transito": "WMF-003379",
       "data_inicio_transito": "30/10/2026",
@@ -79284,6 +79345,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "221529",
         "221188",
@@ -80386,6 +80448,7 @@
       "ultima_nfe_3e": "000026811-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32963",
         "26811",
         "25255"
       ],
@@ -80732,7 +80795,7 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 2490.0,
       "cum_rec_3e": 2500.0,
-      "stock_ws": 240.0,
+      "stock_ws": 80.0,
       "nfe_stock_ws": "32960",
       "qty_transito": 10.0,
       "fc_transito": "WMF-003380",
@@ -80747,6 +80810,7 @@
       "ultima_nfe_3e": "000032303-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "32303",
         "32057",
         "31551",
@@ -81427,6 +81491,7 @@
       "ultima_nfe_3e": "000679202-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "679202",
         "676480",
         "673638",
@@ -82648,6 +82713,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "222413",
         "221529",
@@ -82679,7 +82745,7 @@
       "run_out_date": "10/03/2027",
       "supplier_code": "BMZ25",
       "supplier_name": "MAGNO PECAS INDUSTRIA E COMERCIO IM",
-      "stock_b1cb": 72.0,
+      "stock_b1cb": 76.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 76.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -82704,8 +82770,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 1048.0,
       "cum_rec_3e": 1072.0,
-      "stock_ws": 72.0,
-      "nfe_stock_ws": "224600",
+      "stock_ws": 76.0,
+      "nfe_stock_ws": "224600 + 225068",
       "qty_transito": 24.0,
       "fc_transito": "WMF-003379",
       "data_inicio_transito": "30/10/2026",
@@ -82719,6 +82785,7 @@
       "ultima_nfe_3e": "000224112-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "224600",
         "224112",
         "222413",
         "219577",
@@ -83313,6 +83380,7 @@
       "ultima_nfe_3e": "000031556-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32959",
         "31556",
         "30956",
         "25475"
@@ -85446,6 +85514,7 @@
       "ultima_nfe_3e": "000028143-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32959",
         "28149",
         "28145",
         "28143"
@@ -88136,6 +88205,7 @@
       "ultima_nfe_3e": "000032052-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "32052",
         "31840",
         "31553",
@@ -88452,6 +88522,7 @@
       "ultima_nfe_3e": "000673638-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "673638",
         "668032",
         "648933",
@@ -91157,11 +91228,13 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003019/2025",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
-      "fornecedor_novo": true,
-      "fornecedor_anterior": "BLH98",
+      "ultima_nfe_3e": "000683962-000",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "683962"
+      ],
+      "fornecedor_novo": false,
+      "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "683962",
       "ultima_nfe_emitida_fecha": "05/11/2026",
       "ultima_nfe_emitida_qty": 48.0,
@@ -91918,6 +91991,7 @@
       "ultima_nfe_3e": "000290816-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "292372",
         "290816",
         "289464",
         "283410",
@@ -95834,7 +95908,7 @@
       "run_out_date": "27/11/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
-      "stock_b1cb": 131.0,
+      "stock_b1cb": 67.0,
       "cor_qty_past_due": 70.0,
       "wmf_qty_past_due": 70.0,
       "cor_oldest_pastdue_ship_date": "10/10/2026",
@@ -95874,6 +95948,7 @@
       "ultima_nfe_3e": "000163458-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "178133",
         "163458"
       ],
       "fornecedor_novo": false,
@@ -95890,7 +95965,7 @@
       "run_out_date": "27/11/2026",
       "supplier_code": "BQQ45",
       "supplier_name": "VEXILOM EMBLEMAS TECNICOS COM LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 64.0,
       "cor_qty_past_due": 70.0,
       "wmf_qty_past_due": 70.0,
       "cor_oldest_pastdue_ship_date": "10/10/2026",
@@ -100062,8 +100137,8 @@
       "acao_requerida": "",
       "cum_rec_cb": 230.0,
       "cum_rec_3e": 280.0,
-      "stock_ws": 20.0,
-      "nfe_stock_ws": "147334 + 147335",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 30.0,
       "fc_transito": "WMF-003383",
       "data_inicio_transito": "05/11/2026",
@@ -105011,7 +105086,7 @@
       "run_out_date": "23/07/2027",
       "supplier_code": "BPX73",
       "supplier_name": "DUGALE METALURGICA LTDA",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 14.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 14.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -105036,8 +105111,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 16.0,
       "cum_rec_3e": 16.0,
-      "stock_ws": 0.0,
-      "nfe_stock_ws": "",
+      "stock_ws": 14.0,
+      "nfe_stock_ws": "66489",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -105601,8 +105676,8 @@
       "acao_requerida": "Solicitar promessa",
       "cum_rec_cb": 20.0,
       "cum_rec_3e": 30.0,
-      "stock_ws": 13.0,
-      "nfe_stock_ws": "75027",
+      "stock_ws": 0.0,
+      "nfe_stock_ws": "",
       "qty_transito": 0.0,
       "fc_transito": "",
       "data_inicio_transito": "",
@@ -105616,6 +105691,7 @@
       "ultima_nfe_3e": "000074774-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "75027",
         "74774",
         "74726",
         "74578",
@@ -111990,7 +112066,7 @@
       "run_out_date": "11/11/2026",
       "supplier_code": "BNG98",
       "supplier_name": "IOCHPE MAXION S A",
-      "stock_b1cb": 0.0,
+      "stock_b1cb": 10.0,
       "cor_qty_past_due": 0.0,
       "wmf_qty_past_due": 18.0,
       "cor_oldest_pastdue_ship_date": "",
@@ -112531,6 +112607,7 @@
       "ultima_nfe_3e": "000032050-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "32050",
         "30638",
         "30257",
@@ -112594,6 +112671,7 @@
       "ultima_nfe_3e": "000682992-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "683962",
         "682992",
         "673638"
       ],
@@ -113332,7 +113410,8 @@
       "ultima_nfe_3e": "000013141-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "13141"
+        "13141",
+        "32963"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -113684,6 +113763,7 @@
       "ultima_nfe_3e": "000031550-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32962",
         "31550",
         "31299",
         "30640",
@@ -113807,6 +113887,7 @@
       "ultima_nfe_3e": "000032832-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "32960",
         "32832",
         "32303",
         "31849",
@@ -114099,9 +114180,11 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000032959-010",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "32959"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "32959",
