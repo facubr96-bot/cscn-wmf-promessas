@@ -1,5 +1,5 @@
 {
-  "generated_at": "11/11/2026 20:43",
+  "generated_at": "11/11/2026 21:03",
   "today": "11/11/2026",
   "total_pn": 1948,
   "erp_release_cb": "20261104",
@@ -27431,8 +27431,7 @@
         "609720",
         "599860",
         "599276",
-        "598528",
-        "596804"
+        "598528"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -36596,8 +36595,7 @@
         "621264",
         "619830",
         "611950",
-        "598528",
-        "596804"
+        "598528"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -36839,8 +36837,7 @@
         "134762",
         "131409",
         "128188",
-        "127822",
-        "127274"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -41553,8 +41550,7 @@
       "ultima_nfe_3e": "000030797-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "30797",
-        "30560"
+        "30797"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -48623,9 +48619,7 @@
         "128188",
         "127822",
         "127529",
-        "127367",
-        "127274",
-        "127272"
+        "127367"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -48683,8 +48677,7 @@
       "nfe_recebidas_3e": [
         "46856",
         "46730",
-        "46328",
-        "45666"
+        "46328"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -59862,8 +59855,7 @@
         "131409",
         "130236",
         "128188",
-        "127367",
-        "127274"
+        "127367"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -67811,9 +67803,7 @@
         "619830",
         "613692",
         "611950",
-        "599860",
-        "596804",
-        "596256"
+        "599860"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -76553,8 +76543,7 @@
         "129342",
         "128188",
         "127822",
-        "127367",
-        "127274"
+        "127367"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -84338,8 +84327,7 @@
         "622829",
         "611950",
         "609720",
-        "599276",
-        "596256"
+        "599276"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -104706,8 +104694,7 @@
         "46948",
         "46791",
         "46604",
-        "46103",
-        "45667"
+        "46103"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
