@@ -1,5 +1,5 @@
 {
-  "generated_at": "13/11/2026 08:43",
+  "generated_at": "13/11/2026 09:04",
   "today": "13/11/2026",
   "total_pn": 1950,
   "erp_release_cb": "20261111",
@@ -21953,6 +21953,7 @@
       "ultima_nfe_3e": "000226336-007",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "226337",
         "226336",
         "223522",
         "222187",
@@ -28013,9 +28014,10 @@
       "status_p44": "Completed",
       "fecha_completed_p44": "11/11/2026",
       "ultima_nfe_cb": "WMF-003366",
-      "ultima_nfe_3e": "000782186-003",
+      "ultima_nfe_3e": "000783089-003",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "783089",
         "782186",
         "777784",
         "777199",
