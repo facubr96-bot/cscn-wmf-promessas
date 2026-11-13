@@ -1,5 +1,5 @@
 {
-  "generated_at": "13/11/2026 14:43",
+  "generated_at": "13/11/2026 15:03",
   "today": "13/11/2026",
   "total_pn": 1950,
   "erp_release_cb": "20261111",
@@ -47515,7 +47515,7 @@
       "promessa_qty": 0.0,
       "qty_confirmada": 0.0,
       "previsao_saida_wmfbr": "",
-      "motivo_atraso": "",
+      "motivo_atraso": "Negociação comercial",
       "escalation_level": "",
       "data_real_completed": "",
       "acao_requerida": "Solicitar promessa",
