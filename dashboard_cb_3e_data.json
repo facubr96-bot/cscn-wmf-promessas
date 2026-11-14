@@ -1,5 +1,5 @@
 {
-  "generated_at": "14/11/2026 08:23",
+  "generated_at": "14/11/2026 08:43",
   "today": "14/11/2026",
   "total_pn": 1950,
   "erp_release_cb": "20261111",
@@ -103277,9 +103277,10 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "WMF-003218",
-      "ultima_nfe_3e": "000064916-003",
+      "ultima_nfe_3e": "000065626-003",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
+        "65626",
         "64916"
       ],
       "fornecedor_novo": false,
