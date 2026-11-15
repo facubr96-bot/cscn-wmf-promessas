@@ -1,5 +1,5 @@
 {
-  "generated_at": "15/11/2026 07:23",
+  "generated_at": "15/11/2026 07:43",
   "today": "15/11/2026",
   "total_pn": 1950,
   "erp_release_cb": "20261111",
@@ -33167,6 +33167,7 @@
       "ultima_nfe_3e": "000243680-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "248106",
         "243680",
         "241451",
         "241447",
@@ -41722,6 +41723,7 @@
       "ultima_nfe_3e": "000826337-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "836606",
         "826337",
         "825406",
         "824352",
@@ -81007,6 +81009,7 @@
       "ultima_nfe_3e": "000246338-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "248106",
         "246338",
         "245861",
         "245858",
@@ -82375,6 +82378,7 @@
       "ultima_nfe_3e": "000243794-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "248106",
         "243794",
         "243144",
         "242715",
@@ -102339,6 +102343,7 @@
       "ultima_nfe_3e": "000247419-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "247931",
         "247419",
         "247404",
         "246963",
@@ -102416,6 +102421,7 @@
       "ultima_nfe_3e": "000245802-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
+        "247932",
         "245802",
         "244619",
         "244566",
@@ -105570,9 +105576,11 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000248153-001",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "248153"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "248153",
@@ -109009,9 +109017,11 @@
       "status_p44": "-",
       "fecha_completed_p44": "",
       "ultima_nfe_cb": "",
-      "ultima_nfe_3e": "",
-      "ultima_nfe_3e_origem": "",
-      "nfe_recebidas_3e": [],
+      "ultima_nfe_3e": "000248106-001",
+      "ultima_nfe_3e_origem": "SAP",
+      "nfe_recebidas_3e": [
+        "248106"
+      ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
       "ultima_nfe_emitida_num": "248106",
