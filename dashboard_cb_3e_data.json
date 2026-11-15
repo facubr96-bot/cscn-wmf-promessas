@@ -1,5 +1,5 @@
 {
-  "generated_at": "14/11/2026 20:45",
+  "generated_at": "14/11/2026 21:03",
   "today": "14/11/2026",
   "total_pn": 1950,
   "erp_release_cb": "20261111",
@@ -5615,8 +5615,7 @@
         "28460",
         "26027",
         "26024",
-        "25414",
-        "25075"
+        "25414"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -8019,8 +8018,7 @@
         "27790",
         "27789",
         "25256",
-        "25162",
-        "25017"
+        "25162"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -13951,8 +13949,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "134955",
-        "133361",
-        "127080"
+        "133361"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -17983,8 +17980,7 @@
         "29730",
         "28151",
         "28141",
-        "26812",
-        "25017"
+        "26812"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -21238,8 +21234,7 @@
         "192309",
         "151931",
         "146556",
-        "129766",
-        "128922"
+        "129766"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -21981,8 +21976,7 @@
         "131174",
         "130167",
         "129739",
-        "129738",
-        "128921"
+        "129738"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -22751,8 +22745,7 @@
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
         "129342",
-        "127822",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -23227,9 +23220,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "73305",
-        "73098",
-        "71879",
-        "71878"
+        "73098"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -23399,8 +23390,7 @@
       "nfe_recebidas_3e": [
         "136743",
         "136440",
-        "131332",
-        "131139"
+        "131332"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -30929,8 +30919,7 @@
       "ultima_nfe_3e": "000163162-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "163162",
-        "161890"
+        "163162"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -36053,8 +36042,7 @@
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
         "1441835",
-        "1432507",
-        "1431723"
+        "1432507"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -36233,8 +36221,7 @@
         "130615",
         "130028",
         "129342",
-        "128188",
-        "127367"
+        "128188"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -38486,9 +38473,7 @@
       "nfe_recebidas_3e": [
         "133604",
         "130028",
-        "127822",
-        "127367",
-        "127080"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -43676,8 +43661,7 @@
         "135767",
         "133361",
         "128188",
-        "127822",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -43735,8 +43719,7 @@
       "nfe_recebidas_3e": [
         "129342",
         "128188",
-        "127822",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -48532,9 +48515,7 @@
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
         "128188",
-        "127822",
-        "127529",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -59586,9 +59567,7 @@
       "ultima_nfe_3e": "000127822-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "127822",
-        "127367",
-        "127080"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -59827,8 +59806,7 @@
         "133361",
         "131409",
         "130236",
-        "128188",
-        "127367"
+        "128188"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -75950,8 +75928,7 @@
         "29730",
         "29266",
         "29265",
-        "25354",
-        "25017"
+        "25354"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -76633,8 +76610,7 @@
         "130633",
         "129342",
         "128188",
-        "127822",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -76692,8 +76668,7 @@
       "nfe_recebidas_3e": [
         "193363",
         "193038",
-        "192043",
-        "189732"
+        "192043"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -81593,8 +81568,7 @@
         "134762",
         "133604",
         "130028",
-        "129342",
-        "127367"
+        "129342"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -82345,7 +82319,6 @@
       "ultima_nfe_3e": "000127080-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "127367",
         "127080"
       ],
       "fornecedor_novo": false,
@@ -83237,8 +83210,7 @@
         "131409",
         "129342",
         "128188",
-        "127822",
-        "127367"
+        "127822"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -84243,8 +84215,7 @@
         "134762",
         "133604",
         "130028",
-        "129342",
-        "127367"
+        "129342"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -84363,8 +84334,7 @@
         "132229",
         "130615",
         "130236",
-        "128188",
-        "127367"
+        "128188"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -85734,8 +85704,7 @@
       "nfe_recebidas_3e": [
         "135276",
         "134955",
-        "134762",
-        "127080"
+        "134762"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -85981,8 +85950,7 @@
         "27881",
         "27792",
         "27205",
-        "26812",
-        "25017"
+        "26812"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -86054,8 +86022,7 @@
         "171878",
         "171719",
         "171531",
-        "171382",
-        "171246"
+        "171382"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -91658,8 +91625,7 @@
         "298847",
         "297482",
         "295423",
-        "288598",
-        "286394"
+        "288598"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -97922,8 +97888,7 @@
         "172058",
         "171719",
         "171531",
-        "171382",
-        "171246"
+        "171382"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -98447,8 +98412,7 @@
         "436925",
         "436739",
         "433135",
-        "432461",
-        "422474"
+        "432461"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -98577,8 +98541,7 @@
         "137814",
         "136743",
         "135652",
-        "134865",
-        "131139"
+        "134865"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -98882,8 +98845,7 @@
       "nfe_recebidas_3e": [
         "138349",
         "136761",
-        "135247",
-        "131139"
+        "135247"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -99123,8 +99085,7 @@
         "48323",
         "48030",
         "47364",
-        "47022",
-        "46926"
+        "47022"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -99247,8 +99208,7 @@
         "71115",
         "66687",
         "63716",
-        "60932",
-        "41367"
+        "60932"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -113271,8 +113231,7 @@
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
         "43668",
-        "43378",
-        "41103"
+        "43378"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
