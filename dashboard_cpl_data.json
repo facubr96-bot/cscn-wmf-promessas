@@ -1,5 +1,5 @@
 {
-  "generated_at": "16/11/2026 09:21",
+  "generated_at": "16/11/2026 09:41",
   "today": "16/11/2026",
   "total": 457,
   "items": [
@@ -5822,7 +5822,7 @@
       "pn": "47703388",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
-      "stock_wmf": 2.0,
+      "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 45.0,
       "criticidad": "Hiper Critico",
@@ -7766,7 +7766,7 @@
       "pn": "47703388",
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
-      "stock_wmf": 2.0,
+      "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 45.0,
       "criticidad": "Critico",
