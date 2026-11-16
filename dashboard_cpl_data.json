@@ -1,5 +1,5 @@
 {
-  "generated_at": "16/11/2026 18:21",
+  "generated_at": "16/11/2026 18:41",
   "today": "16/11/2026",
   "total": 458,
   "items": [
@@ -5918,7 +5918,7 @@
       "criticidad": "Hiper Critico",
       "reason": "Stock Loss",
       "run_out_date": "09/02/2027",
-      "wmf_promise": "",
+      "wmf_promise": "01/12/2026",
       "created": "16/09/2026",
       "estado": "Finalizado",
       "planner": "Titon Facundo",
