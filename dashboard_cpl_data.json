@@ -1,7 +1,7 @@
 {
-  "generated_at": "16/11/2026 14:01",
+  "generated_at": "16/11/2026 14:21",
   "today": "16/11/2026",
-  "total": 457,
+  "total": 458,
   "items": [
     {
       "id": "1",
@@ -8227,6 +8227,24 @@
       "estado": "Aberto",
       "planner": "Vivian Strelow",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
+      "plant": "CB"
+    },
+    {
+      "id": "459",
+      "pn": "47931901",
+      "supplier_code": "GT728",
+      "supplier_name": "BRUNING TECNOMETAL LTDA",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 30.0,
+      "criticidad": "Critico",
+      "reason": "Projeto",
+      "run_out_date": "22/03/2027",
+      "wmf_promise": "",
+      "created": "16/11/2026",
+      "estado": "Aberto",
+      "planner": "STRELOW VIVIAN",
+      "solicitante": "HERNANDO JAZMIN",
       "plant": "CB"
     }
   ]
