@@ -1,7 +1,7 @@
 {
-  "generated_at": "17/11/2026 10:01",
+  "generated_at": "17/11/2026 10:21",
   "today": "17/11/2026",
-  "total": 458,
+  "total": 459,
   "items": [
     {
       "id": "1",
@@ -8244,6 +8244,24 @@
       "created": "16/11/2026",
       "estado": "Aberto",
       "planner": "STRELOW VIVIAN",
+      "solicitante": "HERNANDO JAZMIN",
+      "plant": "CB"
+    },
+    {
+      "id": "460",
+      "pn": "92269711",
+      "supplier_code": "BPW70",
+      "supplier_name": "ALFAGOMMA DO BRASIL LTDA",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 20.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Projeto",
+      "run_out_date": "16/11/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "FACUNDO TITON",
       "solicitante": "HERNANDO JAZMIN",
       "plant": "CB"
     }
