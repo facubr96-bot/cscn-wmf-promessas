@@ -1,7 +1,7 @@
 {
-  "generated_at": "17/11/2026 14:41",
+  "generated_at": "17/11/2026 15:01",
   "today": "17/11/2026",
-  "total": 459,
+  "total": 461,
   "items": [
     {
       "id": "1",
@@ -8263,6 +8263,42 @@
       "estado": "Aberto",
       "planner": "FACUNDO TITON",
       "solicitante": "HERNANDO JAZMIN",
+      "plant": "CB"
+    },
+    {
+      "id": "461",
+      "pn": "48154770",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 10.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Production Change",
+      "run_out_date": "09/12/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
+      "plant": "CB"
+    },
+    {
+      "id": "462",
+      "pn": "47723551",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 5.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Stock Loss",
+      "run_out_date": "01/12/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "CB"
     }
   ]
