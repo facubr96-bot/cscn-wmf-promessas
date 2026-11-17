@@ -1,5 +1,5 @@
 {
-  "generated_at": "17/11/2026 15:01",
+  "generated_at": "17/11/2026 15:21",
   "today": "17/11/2026",
   "total": 461,
   "items": [
@@ -8268,26 +8268,26 @@
     {
       "id": "461",
       "pn": "48154770",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "DVN55",
+      "supplier_name": "HENNINGS VEDACOES HIDRAULICAS LTDA.",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 10.0,
       "criticidad": "Hiper Critico",
       "reason": "Production Change",
       "run_out_date": "09/12/2026",
-      "wmf_promise": "",
-      "created": "",
+      "wmf_promise": "09/12/2026",
+      "created": "17/11/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     },
     {
       "id": "462",
       "pn": "47723551",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BPX73",
+      "supplier_name": "DUGALE METALURGICA LTDA",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 5.0,
@@ -8295,10 +8295,10 @@
       "reason": "Stock Loss",
       "run_out_date": "01/12/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "17/11/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Titon Facundo",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "CB"
     }
   ]
