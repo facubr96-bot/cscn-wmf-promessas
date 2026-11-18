@@ -2,7 +2,7 @@
   "supplier_code": "BMX47",
   "supplier_name": "MAQUINAS SAZI LTDA",
   "semana": "2026-W47",
-  "gerado_em": "18/11/2026 08:02",
+  "gerado_em": "18/11/2026 12:02",
   "itens": [
     {
       "part_number": "87011009",
@@ -538,7 +538,7 @@
       "supplier_code": "BMX47",
       "supplier_name": "MAQUINAS SAZI LTDA",
       "ship_date": "07/12/2026",
-      "impact": "1",
+      "impact": "4",
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
