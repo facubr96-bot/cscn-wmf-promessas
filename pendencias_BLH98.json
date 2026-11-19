@@ -2,7 +2,7 @@
   "supplier_code": "BLH98",
   "supplier_name": "WURTH INDUSTRY BRASIL LTDA",
   "semana": "2026-W47",
-  "gerado_em": "18/11/2026 12:02",
+  "gerado_em": "19/11/2026 08:02",
   "itens": [
     {
       "part_number": "82025437",
@@ -450,18 +450,18 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Promessa vencida - solicitar nova data",
+      "acao_requerida": "Solicitar promessa",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 121,
       "ultima_nfe": "000286882-002",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W47",
-      "data_promessa": "13/11/2026",
-      "qty_prometida": 171,
-      "comentario": "Promessa vencida - solicitar nova data.",
-      "entrega_confirmada": true,
-      "data_coleta": "30/11/2026",
+      "data_promessa": "",
+      "qty_prometida": "",
+      "comentario": "Solicitar promessa.",
+      "entrega_confirmada": false,
+      "data_coleta": "",
       "nfe_enviada": ""
     },
     {
