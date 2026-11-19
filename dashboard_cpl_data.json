@@ -1,5 +1,5 @@
 {
-  "generated_at": "19/11/2026 12:01",
+  "generated_at": "19/11/2026 12:21",
   "today": "19/11/2026",
   "total": 460,
   "items": [
@@ -8222,7 +8222,7 @@
       "criticidad": "Critico",
       "reason": "Projeto",
       "run_out_date": "22/03/2027",
-      "wmf_promise": "",
+      "wmf_promise": "19/11/2026",
       "created": "16/11/2026",
       "estado": "Aberto",
       "planner": "STRELOW VIVIAN",
@@ -8240,7 +8240,7 @@
       "criticidad": "Hiper Critico",
       "reason": "Projeto",
       "run_out_date": "18/11/2026",
-      "wmf_promise": "",
+      "wmf_promise": "18/11/2026",
       "created": "17/11/2026",
       "estado": "Aberto",
       "planner": "FACUNDO TITON",
