@@ -1024,10 +1024,11 @@ function getKpiDefs() {
     { key: "esc_l2", label: "Level 2", tone: "red", test: i => effectiveEscalationLevel(i) === "L2" },
     { key: "esc_l1", label: "Level 1 (Run Out ≤30d)", tone: "amber", test: i => effectiveEscalationLevel(i) === "L1" },
   ];
-  // Impacto Delivery performance (so CB): PN com Past Due Balance (cor_qty_past_due > 0 e saldo > 0
-  // depois de descontar transito e stock) separados pelos dias em atraso. Faixas exclusivas: soma = total.
-  const inBalance = i => (i.cor_qty_past_due || 0) > 0 && balancePastDueCb(i) > 0;
-  const daysLate = i => i.cor_days_in_past_due || 0;
+  // Impacto Delivery performance (so planta 3E): PN com Past Due Balance WMF -> Proveedor
+  // (wmf_qty_past_due > 0 e saldo > 0 depois de descontar o stock SAP; sem transito, igual a cobertura 3E)
+  // separados pelos dias em atraso (wmf_days_in_past_due). Faixas exclusivas: soma = total.
+  const inBalance = i => (i.wmf_qty_past_due || 0) > 0 && ((i.wmf_qty_past_due || 0) - (i.stock_b1cb || 0)) > 0;
+  const daysLate = i => i.wmf_days_in_past_due || 0;
   const deliveryDefs = [
     { key: "del_gt10", label: "+10 dias em atraso", tone: "red", tip: "PN com Past Due Balance e mais de 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 10 },
     { key: "del_6_10", label: "+5 e ate 10 dias em atraso", tone: "amber", tip: "PN com Past Due Balance e de 6 a 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 5 && daysLate(i) <= 10 },
@@ -1130,7 +1131,7 @@ function renderKpis() {
   renderKpiGrid("kpiRunout", runoutDefs);
   renderKpiGrid("kpiCov1", cov1Defs);
   renderKpiGrid("kpiEscalation", escalationDefs);
-  const showDelivery = plant === "cb";
+  const showDelivery = plant === "3e";
   document.getElementById("kpiDeliverySection").style.display = showDelivery ? "" : "none";
   document.getElementById("kpiDashDeliverySection").style.display = showDelivery ? "" : "none";
   if (showDelivery) renderKpiGrid("kpiDelivery", deliveryDefs);
@@ -2634,9 +2635,9 @@ function applyPlantaUi() {
     }
   }
   const ban = document.getElementById("plantaBanner");
-  if (cb) { ban.style.display = "none"; ban.innerHTML = ""; }
+  const pm = plantsMeta.find(p => p.codigo === plantaDest) || {};
+  if (cb || !pm.error) { ban.style.display = "none"; ban.innerHTML = ""; }
   else {
-    const pm = plantsMeta.find(p => p.codigo === plantaDest) || {};
     const semSched = allItems.filter(i => i.sin_schedule_proveedor).map(i => i.pn);
     ban.innerHTML = `<b>${plantaDest} — ${nome}</b> · fluxo iniciado${pm.historico_desde ? ` em ${pm.historico_desde}` : ""}; ainda pode haver pouco ou nenhum historico.<br>`
       + `Lado cliente = ${nome} pedindo ao WMFBR; Lado WMF = WMF comprando do proveedor. `
