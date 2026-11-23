@@ -43,6 +43,10 @@
   header .brand .eyebrow { font-size: 11px; color: var(--gray-300); }
   header .brand h1 { margin: 0; font-size: 18px; font-weight: 600; }
 
+  #plantaBox { display:none; align-items:center; gap:6px; color:#fff; font-size:12px; }
+  #plantaBox select { background:#1f1f1f; color:#fff; border:1px solid rgba(255,255,255,.35); border-radius:6px; padding:5px 8px; font-size:13px; font-weight:600; }
+  #plantaBanner { display:none; margin:8px 24px 0; padding:10px 14px; border:1px solid var(--amber, #d98e04); background:rgba(217,142,4,.10); border-radius:8px; font-size:13px; line-height:1.45; }
+  body.dest-ro #viewTable table input, body.dest-ro #viewTable table select, body.dest-ro #viewTable table textarea { pointer-events:none; opacity:.55; }
   .plant-switch {
     display: inline-flex;
     background: var(--gray-900);
@@ -312,6 +316,7 @@
     <h1>CSCN WMF — Dashboard de Piezas</h1>
   </div>
   <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+    <div id="plantaBox"><label for="plantaSelect">Planta destino</label><select id="plantaSelect"></select></div>
     <div class="plant-switch" id="plantSwitch">
       <button data-plant="3e" class="active">Planta 3E</button>
       <button data-plant="cb">Planta CB</button>
@@ -366,6 +371,7 @@
   <span id="lastUpdate"></span>
 </div>
 
+<div id="plantaBanner"></div>
 <main>
 
   <div id="viewTable">
@@ -697,6 +703,11 @@ const MOTIVO_OPTIONS = [
 ];
 
 let allItems = [];
+let allItemsAll = [];       // todos os itens do JSON (todas as plantas destino)
+let plantaDest = "B1CB";    // planta destino ativa (Cordoba por padrao)
+let plantsMeta = [];        // data.plants (se o JSON nao tiver, comporta-se como antes)
+const itemPlanta = (x) => (x && x.planta) || "B1CB";
+const isDestCB = () => plantaDest === "B1CB";
 let otmExpanded = false;
 let plant = "3e";
 const activeFilters = new Map(); // key -> {label, test}
@@ -841,6 +852,7 @@ function buildNextShipDateLookup() {
   futureShipLinesLookup = new Map();
   const today = todayNoTime();
   (rawLinesCache || []).forEach(r => {
+    if (itemPlanta(r) !== plantaDest) return;
     const normalized = normalizeDateFlexible(r.ship_date);
     const d = normalized ? parseDateBR(normalized) : null;
     if (!d || d < today) return; // so datas futuras (ainda nao vencidas)
@@ -1098,7 +1110,11 @@ function fmtReleaseYYYYMMDD(raw) {
   return m ? `${m[3]}/${m[2]}/${m[1]}` : s;
 }
 function renderReleaseInfo() {
-  const raw = plant === "cb" ? window._releaseCb : window._release3e;
+  let raw = plant === "cb" ? window._releaseCb : window._release3e;
+  if (!isDestCB()) {
+    const pm = plantsMeta.find(p => p.codigo === plantaDest) || {};
+    raw = plant === "cb" ? pm.release_cb : pm.release_3e;
+  }
   document.getElementById("releaseInfo").textContent = raw ? `Release ${plant.toUpperCase()}: ${fmtReleaseYYYYMMDD(raw)}` : "";
 }
 
@@ -1375,6 +1391,7 @@ function clearFilter() {
 function updateUrl() {
   const params = new URLSearchParams();
   params.set("planta", plant);
+  if (plantaDest !== "B1CB") params.set("dest", plantaDest);
   if (activeFilters.size) params.set("kpi", [...activeFilters.keys()].join(","));
   history.replaceState(null, "", "?" + params.toString());
 }
@@ -1382,6 +1399,11 @@ function loadFromUrl() {
   const params = new URLSearchParams(location.search);
   const p = params.get("planta");
   if (p === "cb" || p === "3e") plant = p;
+  const dp = params.get("dest");
+  if (dp && plantsMeta.some(x => x.codigo === dp && x.estado === "active")) {
+    plantaDest = dp;
+    allItems = allItemsAll.filter(i => itemPlanta(i) === plantaDest);
+  }
   const kpiParam = params.get("kpi");
   if (kpiParam) {
     const { runoutDefs, cov1Defs, motivoDefs, escalationDefs, deliveryDefs } = getKpiDefs();
@@ -1837,6 +1859,7 @@ window.toggleOtmColumns = function(event) {
 };
 
 window.markDirty = function(pn, field, value) {
+  if (!isDestCB()) return;
   dirty[pn] = dirty[pn] || {};
   dirty[pn][field] = value;
   const item = allItems.find(i => i.pn === pn);
@@ -2546,21 +2569,94 @@ function dropZeroQtyEmittedNfe(items) {
   }
 }
 
+function setStatusText() {
+  document.getElementById("statusText").textContent = `${allItems.length} PN cargados${currentUser ? ` — ${currentUser.holder_name} (${currentUser.role === "editor" ? "Editor" : "Solo lectura"})` : ""}`;
+}
+function plantaNome(code) {
+  const p = plantsMeta.find(x => x.codigo === code);
+  return p ? p.nombre : code;
+}
+function buildPlantaSelect() {
+  const box = document.getElementById("plantaBox");
+  const sel = document.getElementById("plantaSelect");
+  if (plantsMeta.length <= 1) { box.style.display = "none"; return; }
+  box.style.display = "flex";
+  sel.innerHTML = plantsMeta.map(p => {
+    const pending = p.estado !== "active";
+    const label = `${p.codigo} — ${p.nombre}${pending ? " (sem dados)" : ""}`;
+    return `<option value="${p.codigo}"${pending ? " disabled" : ""}>${label}</option>`;
+  }).join("");
+  sel.value = plantaDest;
+  sel.onchange = () => selectPlanta(sel.value);
+}
+function selectPlanta(code) {
+  if (!plantsMeta.some(p => p.codigo === code && p.estado === "active")) return;
+  plantaDest = code;
+  allItems = allItemsAll.filter(i => itemPlanta(i) === plantaDest);
+  activeFilters.clear();
+  Object.keys(dirty).forEach(k => delete dirty[k]);
+  buildNextShipDateLookup();
+  setStatusText();
+  applyPlantaUi();
+  updateUrl();
+  renderKpis();
+  renderTable();
+}
+function applyPlantaUi() {
+  const cb = isDestCB();
+  const nome = plantaNome(plantaDest);
+  document.body.classList.toggle("dest-ro", !cb);
+  const b3 = document.querySelector('#plantSwitch button[data-plant="3e"]');
+  const bc = document.querySelector('#plantSwitch button[data-plant="cb"]');
+  b3.textContent = cb ? "Planta 3E" : `Lado WMF — ${nome}`;
+  bc.textContent = cb ? "Planta CB" : `Lado cliente — ${nome}`;
+  const sel = document.getElementById("plantaSelect");
+  if (sel) sel.value = plantaDest;
+  // CPL e Shipments dependem de dados exclusivos de Cordoba/3E
+  ["cpl", "shipments"].forEach(v => {
+    const b = document.querySelector(`#viewSwitch button[data-view="${v}"]`);
+    if (b) b.style.display = cb ? "" : "none";
+  });
+  if (!cb) {
+    const act = document.querySelector("#viewSwitch button.active");
+    if (act && (act.dataset.view === "cpl" || act.dataset.view === "shipments")) {
+      document.querySelector('#viewSwitch button[data-view="table"]').click();
+    }
+  }
+  const ban = document.getElementById("plantaBanner");
+  if (cb) { ban.style.display = "none"; ban.innerHTML = ""; }
+  else {
+    const pm = plantsMeta.find(p => p.codigo === plantaDest) || {};
+    const semSched = allItems.filter(i => i.sin_schedule_proveedor).map(i => i.pn);
+    ban.innerHTML = `<b>${plantaDest} — ${nome}</b> · fluxo iniciado${pm.historico_desde ? ` em ${pm.historico_desde}` : ""}; ainda pode haver pouco ou nenhum historico.<br>`
+      + `Lado cliente = ${nome} pedindo ao WMFBR; Lado WMF = WMF comprando do proveedor. `
+      + `Sem CPL, run-out, impacto, OTM/P44 nem stock nesta planta; promessas e edicoes desativadas (somente leitura).`
+      + (semSched.length ? `<br><span style="color:var(--red)">${semSched.length} PN sem schedule do proveedor: ${semSched.join(", ")}</span>` : "")
+      + (pm.error ? `<br><span style="color:var(--red)">Erro na geracao desta planta: ${String(pm.error).replace(/</g, "&lt;")}</span>` : "");
+    ban.style.display = "block";
+  }
+}
 async function loadData() {
   try {
     const resp = await fetch(DATA_URL + "?t=" + Date.now());
     const data = await resp.json();
-    allItems = Array.isArray(data) ? data : (data.items || []);
-    dropZeroQtyEmittedNfe(allItems);
+    allItemsAll = Array.isArray(data) ? data : (data.items || []);
+    plantsMeta = Array.isArray(data.plants) ? data.plants : [];
+    dropZeroQtyEmittedNfe(allItemsAll);
+    // overlays (edicoes ao vivo, locais, Data Real) so valem para Cordoba (B1CB)
+    allItems = allItemsAll.filter(i => itemPlanta(i) === "B1CB");
     await applyLiveOverrides(allItems);
     applyLocalEditsOverlay(allItems);
     applyDataRealRule(allItems);
+    plantaDest = "B1CB";
     const genAt = data.generated_at || "";
     window._releaseCb = data.erp_release_cb || "";
     window._release3e = data.erp_release_3e || "";
-    document.getElementById("statusText").textContent = `${allItems.length} PN cargados${currentUser ? ` — ${currentUser.holder_name} (${currentUser.role === "editor" ? "Editor" : "Solo lectura"})` : ""}`;
     document.getElementById("lastUpdate").textContent = genAt ? "Generado: " + genAt : "";
     loadFromUrl();
+    setStatusText();
+    buildPlantaSelect();
+    applyPlantaUi();
     document.querySelectorAll("#plantSwitch button").forEach(b => b.classList.toggle("active", b.dataset.plant === plant));
     renderKpis();
     renderTable();
@@ -3067,11 +3163,12 @@ function shpLateTone(s) {
 function shpFmtMs(ms) { const d = new Date(ms); return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`; }
 // Early Pickup da Tabela: 1a coleta do proveedor a partir de hoje (OTM). Sem dado de Shipments, cai no valor original.
 function earlyPickupShown(item) {
+  if (itemPlanta(item) !== "B1CB") return "";
   const s = (typeof shpSummaryBySup !== "undefined" && shpSummaryBySup) ? shpSummaryBySup.get(item.supplier_code) : null;
   return (s && s.epDate !== null) ? shpFmtMs(s.epDate) : (item.early_pickup_date || "");
 }
 function shpSummaryCells(item) {
-  const s = shpSummaryBySup.get(item.supplier_code);
+  const s = itemPlanta(item) !== "B1CB" ? null : shpSummaryBySup.get(item.supplier_code);
   const sup = shpEsc(item.supplier_code || "");
   if (!s) return SHIP_SUM_COLS.map(c => `<td data-c="${c.key}"></td>`).join("");
   const go = `onclick="gotoShipments('${sup}')"`;
@@ -3091,7 +3188,7 @@ function shpSummaryCells(item) {
     + `<td data-c="ship_nfe" class="shp-sum" ${go}>${nfe}</td>`;
 }
 function shpSortValue(item, col) {
-  const s = shpSummaryBySup.get(item.supplier_code);
+  const s = itemPlanta(item) !== "B1CB" ? null : shpSummaryBySup.get(item.supplier_code);
   const empty = sortDir === 1 ? Infinity : -Infinity; // vazios sempre no fim
   if (!s) return empty;
   switch (col) {
@@ -3866,7 +3963,7 @@ async function openRawModal() {
 
 function rawFilteredItems() {
   const wantedPlant = plant === "cb" ? "CB" : "3E";
-  let items = (rawLinesCache || []).filter(r => r.plant_code === wantedPlant);
+  let items = (rawLinesCache || []).filter(r => r.plant_code === wantedPlant && itemPlanta(r) === plantaDest);
   const pnQ = document.getElementById("rawSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("rawSearchSupplier").value.trim().toLowerCase();
   if (pnQ) items = items.filter(r => String(r.part_number || "").toLowerCase().includes(pnQ));
@@ -3967,6 +4064,15 @@ function applyRolePermissions() {
   document.getElementById("btnClearSelectedPromise").style.display = isEditor ? "" : "none";
   document.getElementById("btnShpLoadExcel").style.display = (isEditor && shpManualWorkerEnabled) ? "" : "none";
 }
+["btnSave", "btnImport", "btnImportDataReal", "btnShpLoadExcel"].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const orig = el.onclick;
+  el.onclick = function (e) {
+    if (!isDestCB()) { alert("Planta " + plantaDest + ": somente leitura por enquanto (edicoes so em B1CB)."); return; }
+    return orig ? orig.call(this, e) : undefined;
+  };
+});
 document.getElementById("btnLogin").onclick = () => {
   const code = document.getElementById("loginCodeInput").value.trim().toUpperCase();
   if (!code) { document.getElementById("loginError").textContent = "Ingresa un codigo."; return; }
