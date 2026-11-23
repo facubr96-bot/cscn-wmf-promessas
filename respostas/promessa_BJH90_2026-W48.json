@@ -1,0 +1,45 @@
+{
+  "supplier_code": "BJH90",
+  "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+  "semana": "2026-W48",
+  "enviado_em": "2026-11-23T14:31:58.387Z",
+  "itens": [
+    {
+      "part_number": "47783350",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "16/10/2026",
+      "past_due_wmf": true,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": false,
+      "ultima_nfe": "000938821-003",
+      "semana": "2026-W48",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "27/11/2026",
+      "qty_prometida": 5,
+      "comentario": "Solicitar promessa."
+    },
+    {
+      "part_number": "91757682",
+      "supplier_code": "BJH90",
+      "supplier_name": "MODINE DO BRASIL SISTEMAS TERMICOSL",
+      "ship_date": "16/12/2026",
+      "past_due_wmf": false,
+      "firm_jun_wmf": false,
+      "firm_jul_wmf": true,
+      "ultima_nfe": "000937892-003",
+      "semana": "2026-W48",
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "data_promessa": "27/11/2026",
+      "qty_prometida": 16,
+      "comentario": "Solicitar promessa."
+    }
+  ],
+  "recibido_en_worker": "2026-11-23T14:31:58.576Z"
+}
