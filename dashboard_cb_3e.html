@@ -511,12 +511,14 @@
 
   <div id="viewCpl" style="display:none;">
     <div class="toolbar" style="margin-top:0;">
+      <label id="cplPlantaBox" style="display:none; align-items:center; gap:6px; font-size:12px;">Planta<select id="cplPlantaSelect" style="padding:5px 8px; font-size:13px; font-weight:600;"></select></label>
       <input type="text" id="cplSearchPn" placeholder="Buscar PN...">
       <input type="text" id="cplSearchSupplier" placeholder="Buscar proveedor...">
       <span class="count" id="cplRowCount"></span>
       <button class="btn" id="btnCplClearFilters">Limpar filtros</button>
       <button class="btn" id="btnCplReload">Recarregar</button>
     </div>
+    <div id="cplPlantaNote" class="empty-state" style="display:none; margin-bottom:12px;"></div>
     <div id="cplEmptyState" class="empty-state" style="display:none;">
       Esta aba ainda nao tem dados publicados (dashboard_cpl_data.json). Falta gerar/publicar esse JSON a partir da lista SharePoint "Solicitacoes Criticas Cordoba".
     </div>
@@ -2588,6 +2590,10 @@ function buildPlantaSelect() {
   }).join("");
   sel.value = plantaDest;
   sel.onchange = () => selectPlanta(sel.value);
+  const cs = document.getElementById("cplPlantaSelect");
+  cs.innerHTML = sel.innerHTML; cs.value = plantaDest;
+  cs.onchange = () => selectPlanta(cs.value);
+  document.getElementById("cplPlantaBox").style.display = "flex";
 }
 function selectPlanta(code) {
   if (!plantsMeta.some(p => p.codigo === code && p.estado === "active")) return;
@@ -2598,6 +2604,8 @@ function selectPlanta(code) {
   buildNextShipDateLookup();
   setStatusText();
   applyPlantaUi();
+  Object.keys(cplFilters).forEach(k => { if (cplFilters[k] && cplFilters[k].clear) cplFilters[k].clear(); });
+  if (cplLoaded) renderCplView();
   updateUrl();
   renderKpis();
   renderTable();
@@ -2612,14 +2620,16 @@ function applyPlantaUi() {
   bc.textContent = cb ? "Planta CB" : `Lado cliente — ${nome}`;
   const sel = document.getElementById("plantaSelect");
   if (sel) sel.value = plantaDest;
-  // CPL e Shipments dependem de dados exclusivos de Cordoba/3E
-  ["cpl", "shipments"].forEach(v => {
+  const csel = document.getElementById("cplPlantaSelect");
+  if (csel) csel.value = plantaDest;
+  // Shipments depende de dados exclusivos de Cordoba/3E (CPL agora filtra por planta)
+  ["shipments"].forEach(v => {
     const b = document.querySelector(`#viewSwitch button[data-view="${v}"]`);
     if (b) b.style.display = cb ? "" : "none";
   });
   if (!cb) {
     const act = document.querySelector("#viewSwitch button.active");
-    if (act && (act.dataset.view === "cpl" || act.dataset.view === "shipments")) {
+    if (act && act.dataset.view === "shipments") {
       document.querySelector('#viewSwitch button[data-view="table"]').click();
     }
   }
@@ -2709,6 +2719,23 @@ tableWrapEl.addEventListener("scroll", () => {
 // run_out_date, wmf_promise, created, estado, planner, solicitante, plant }, ... ] }
 const CPL_DATA_URL = "dashboard_cpl_data.json";
 let cplItems = [];
+let cplItemsAll = [];
+// planta destino de uma solicitacao CPL: aceita "CB", "HR", "B1HR"... (vazio = Cordoba)
+function cplPlantaOf(i) {
+  const p = String((i && (i.planta || i.plant)) || "").trim().toUpperCase();
+  if (!p) return "B1CB";
+  if (/^B1[A-Z0-9]{2}$/.test(p)) return p;
+  if (/^[A-Z0-9]{2}$/.test(p)) return "B1" + p;
+  return p;
+}
+function cplApplyPlanta() {
+  cplItems = cplItemsAll.filter(i => cplPlantaOf(i) === plantaDest);
+  const note = document.getElementById("cplPlantaNote");
+  if (!cplItems.length && !isDestCB()) {
+    note.textContent = `Sem solicitacoes CPL registradas para ${plantaDest} (${plantaNome(plantaDest)}). Quando a lista de Solicitacoes Criticas tiver itens desta planta, aparecem aqui.`;
+    note.style.display = "block";
+  } else { note.style.display = "none"; }
+}
 let cplLoaded = false;
 let cplSortCol = null, cplSortDir = 1;
 // criticidad/estado/planner/solicitante: filtro por checklist (campo direto).
@@ -2791,7 +2818,8 @@ async function loadCplData(force) {
     const resp = await fetch(CPL_DATA_URL + "?t=" + Date.now());
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const data = await resp.json();
-    cplItems = Array.isArray(data) ? data : (data.items || []);
+    cplItemsAll = Array.isArray(data) ? data : (data.items || []);
+    cplApplyPlanta();
     cplLoaded = true;
     document.getElementById("cplContent").style.display = "";
     renderCplView();
@@ -2933,6 +2961,7 @@ function renderCplTable(items) {
 }
 function renderCplView() {
   if (!cplLoaded) return;
+  cplApplyPlanta();
   cplRebuildMotivoNossoLookup();
   cplRebuildEscalationNossoLookup();
   renderCplFilterGroup("cplFilterCriticidad", "criticidad");
