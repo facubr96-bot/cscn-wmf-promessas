@@ -2,7 +2,7 @@
   "supplier_code": "BNM94",
   "supplier_name": "PARKER HANNIFIN INDUSTRIA E COMERCI",
   "semana": "2026-W48",
-  "gerado_em": "23/11/2026 08:31",
+  "gerado_em": "23/11/2026 12:02",
   "itens": [
     {
       "part_number": "83961305",
@@ -20,9 +20,9 @@
       "ultima_nfe": "000394990-090",
       "ultima_nfe_origem": "3E",
       "semana": "2026-W48",
-      "data_promessa": "30/11/2026",
+      "data_promessa": "24/11/2026",
       "qty_prometida": 25,
-      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Programa está para 31/12, será atendido em janeiro apenas",
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Promessa insuficiente para a necessidade atual. Favor informar complemento. Programa está para 31/12, será atendido em janeiro apenas",
       "entrega_confirmada": false,
       "data_coleta": "",
       "nfe_enviada": ""
