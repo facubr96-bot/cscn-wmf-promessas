@@ -2767,9 +2767,20 @@ function cplRebuildEscalationNossoLookup() {
   cplEscalationNossoLookup = new Map();
   (allItems || []).forEach(i => { if (i.pn && !cplEscalationNossoLookup.has(i.pn)) cplEscalationNossoLookup.set(i.pn, effectiveEscalationLevel(i)); });
 }
+// Promessa "atende" = data de previsao do proveedor (wmf_promise) ate 10 dias ANTES do Run Out
+// (promessa <= run_out - 10 dias corridos). Depois disso "nao atende". Sem Run Out valido nao da para avaliar.
+const CPL_PROMESSA_FOLGA_DIAS = 10;
+const CPL_ST_SEM = "Sem Promessa", CPL_ST_OK = "Com Promessa: atende", CPL_ST_NOK = "Com Promessa: nao atende", CPL_ST_SRO = "Com Promessa: sem Run Out";
+function cplStatusPromessa(item) {
+  if (!item.wmf_promise) return CPL_ST_SEM;
+  const pd = parseDateBR(item.wmf_promise), ro = parseDateBR(item.run_out_date);
+  if (!pd || !ro) return CPL_ST_SRO;
+  const folga = Math.round((ro - pd) / 86400000); // dias entre a promessa e o Run Out
+  return folga >= CPL_PROMESSA_FOLGA_DIAS ? CPL_ST_OK : CPL_ST_NOK;
+}
 const CPL_COMPUTED_CATS = {
   aging: item => cplAgingBucket(item) || "",
-  statusPromessa: item => item.wmf_promise ? "Com Promessa" : "Sem Promessa",
+  statusPromessa: item => cplStatusPromessa(item),
   reason: item => item.reason || "Sem motivo",
   motivoNosso: item => cplMotivoNossoLookup.get(item.pn) || "Sem motivo (dashboard)",
   escalationNosso: item => {
@@ -3011,12 +3022,17 @@ function renderCplView() {
     </div>
   `;
 
-  const semPromessa = items.filter(i => !i.wmf_promise).length;
-  const comPromessa = items.length - semPromessa;
-  cplRenderBarChart("cplStatusPromessas", [
-    { label: "Sem Promessa", count: semPromessa, color: "var(--red)" },
-    { label: "Com Promessa", count: comPromessa, color: "var(--green)" },
-  ], { showPct: true, category: "statusPromessa" });
+  const stCount = st => items.filter(i => cplStatusPromessa(i) === st).length;
+  const stRows = [
+    { label: CPL_ST_SEM, count: stCount(CPL_ST_SEM), color: "var(--red)" },
+    { label: CPL_ST_NOK, count: stCount(CPL_ST_NOK), color: "#b5750c" },
+    { label: CPL_ST_OK, count: stCount(CPL_ST_OK), color: "var(--green)" },
+  ];
+  const stSro = stCount(CPL_ST_SRO);
+  if (stSro) stRows.push({ label: CPL_ST_SRO, count: stSro, color: "var(--gray-500)" });
+  cplRenderBarChart("cplStatusPromessas", stRows, { showPct: true, category: "statusPromessa" });
+  document.getElementById("cplStatusPromessas").insertAdjacentHTML("beforeend",
+    `<div style="font-size:11px; color:var(--gray-500); margin-top:8px;">Atende: previsao do proveedor ate ${CPL_PROMESSA_FOLGA_DIAS} dias antes do Run Out. Nao atende: depois desse prazo.</div>`);
 
   const agingBuckets = [">10 dias", "6-10 dias", "3-5 dias", "0-2 dias"];
   const agingColors = { ">10 dias": "var(--red)", "6-10 dias": "#b5750c", "3-5 dias": "#d8b34a", "0-2 dias": "var(--green)" };
