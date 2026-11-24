@@ -1,7 +1,7 @@
 {
-  "generated_at": "24/11/2026 14:01",
+  "generated_at": "24/11/2026 14:21",
   "today": "24/11/2026",
-  "total": 460,
+  "total": 461,
   "items": [
     {
       "id": "1",
@@ -8281,6 +8281,24 @@
       "estado": "Aberto",
       "planner": "Titon Facundo",
       "solicitante": "GUTIERREZ LUCIA (CNH)",
+      "plant": "B1CB"
+    },
+    {
+      "id": "463",
+      "pn": "91739656",
+      "supplier_code": "",
+      "supplier_name": "",
+      "stock_wmf": null,
+      "qty_transito": null,
+      "qty_min": 80.0,
+      "criticidad": "Hiper Critico",
+      "reason": "Past Due",
+      "run_out_date": "21/12/2026",
+      "wmf_promise": "",
+      "created": "",
+      "estado": "Aberto",
+      "planner": "",
+      "solicitante": "",
       "plant": "B1CB"
     }
   ]
