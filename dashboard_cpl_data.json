@@ -1,5 +1,5 @@
 {
-  "generated_at": "24/11/2026 14:21",
+  "generated_at": "24/11/2026 14:41",
   "today": "24/11/2026",
   "total": 461,
   "items": [
@@ -8286,8 +8286,8 @@
     {
       "id": "463",
       "pn": "91739656",
-      "supplier_code": "",
-      "supplier_name": "",
+      "supplier_code": "BKR45",
+      "supplier_name": "SULPLAST FIBRA DE VIDRO E TERMOPLST",
       "stock_wmf": null,
       "qty_transito": null,
       "qty_min": 80.0,
@@ -8295,10 +8295,10 @@
       "reason": "Past Due",
       "run_out_date": "21/12/2026",
       "wmf_promise": "",
-      "created": "",
+      "created": "24/11/2026",
       "estado": "Aberto",
-      "planner": "",
-      "solicitante": "",
+      "planner": "Vivian Strelow",
+      "solicitante": "GUTIERREZ LUCIA (CNH)",
       "plant": "B1CB"
     }
   ]
