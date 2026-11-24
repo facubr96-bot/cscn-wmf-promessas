@@ -1,5 +1,5 @@
 {
-  "generated_at": "24/11/2026 13:41",
+  "generated_at": "24/11/2026 14:01",
   "today": "24/11/2026",
   "total": 460,
   "items": [
@@ -8114,7 +8114,7 @@
       "criticidad": "Critico",
       "reason": "Production Change",
       "run_out_date": "23/11/2026",
-      "wmf_promise": "",
+      "wmf_promise": "27/11/2026",
       "created": "13/11/2026",
       "estado": "Aberto",
       "planner": "Vivian Strelow",
