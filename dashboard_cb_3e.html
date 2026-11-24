@@ -1026,13 +1026,17 @@ function getKpiDefs() {
   ];
   // Impacto Delivery performance (so planta 3E): PN com Past Due Balance WMF -> Proveedor
   // (wmf_qty_past_due > 0 e saldo > 0 depois de descontar o stock SAP; sem transito, igual a cobertura 3E)
-  // separados pelos dias em atraso (wmf_days_in_past_due). Faixas exclusivas: soma = total.
+  // separados pelos dias UTEIS em atraso (wmf_business_days_in_past_due, 2026-11-24): seg-sex sem
+  // feriados nacionais BR (dim_feriados_br), mesmo calculo da tabela dms_delivery_perf_diario (Power BI
+  // New DMS). Se o JSON nao trouxer o campo (null), cai nos dias corridos (wmf_days_in_past_due).
+  // Faixas exclusivas: soma = total.
   const inBalance = i => (i.wmf_qty_past_due || 0) > 0 && ((i.wmf_qty_past_due || 0) - (i.stock_b1cb || 0)) > 0;
-  const daysLate = i => i.wmf_days_in_past_due || 0;
+  const daysLate = i => (i.wmf_business_days_in_past_due ?? i.wmf_days_in_past_due) || 0;
+  const DU_TIP = " (dias uteis: seg-sex sem feriados nacionais BR)";
   const deliveryDefs = [
-    { key: "del_gt10", label: "+10 dias em atraso", tone: "red", tip: "PN com Past Due Balance e mais de 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 10 },
-    { key: "del_6_10", label: "+5 e ate 10 dias em atraso", tone: "amber", tip: "PN com Past Due Balance e de 6 a 10 dias de atraso", test: i => inBalance(i) && daysLate(i) > 5 && daysLate(i) <= 10 },
-    { key: "del_le5", label: "Ate 5 dias em atraso", tone: "gray", tip: "PN com Past Due Balance e ate 5 dias de atraso", test: i => inBalance(i) && daysLate(i) <= 5 },
+    { key: "del_gt10", label: "+10 dias uteis em atraso", tone: "red", tip: "PN com Past Due Balance e mais de 10 dias uteis de atraso" + DU_TIP, test: i => inBalance(i) && daysLate(i) > 10 },
+    { key: "del_6_10", label: "+5 e ate 10 dias uteis em atraso", tone: "amber", tip: "PN com Past Due Balance e de 6 a 10 dias uteis de atraso" + DU_TIP, test: i => inBalance(i) && daysLate(i) > 5 && daysLate(i) <= 10 },
+    { key: "del_le5", label: "Ate 5 dias uteis em atraso", tone: "gray", tip: "PN com Past Due Balance e ate 5 dias uteis de atraso" + DU_TIP, test: i => inBalance(i) && daysLate(i) <= 5 },
   ];
   return { runoutDefs, cov1Defs, motivoDefs, escalationDefs, deliveryDefs };
 }
