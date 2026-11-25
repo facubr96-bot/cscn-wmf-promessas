@@ -1,0 +1,31 @@
+{
+  "supplier_code": "BJG52",
+  "supplier_name": "METALURGICA FALLGATTER LTDA",
+  "semana": "2026-W48",
+  "gerado_em": "25/11/2026 12:02",
+  "itens": [
+    {
+      "part_number": "90359771",
+      "supplier_code": "BJG52",
+      "supplier_name": "METALURGICA FALLGATTER LTDA",
+      "ship_date": "28/12/2026",
+      "impact": "4",
+      "sharepoint_critico": false,
+      "sharepoint_url": "",
+      "sharepoint_reason": "",
+      "acao_requerida": "Confirmar entrega",
+      "past_due_wmf": 0,
+      "firm_jun_wmf": 0,
+      "firm_jul_wmf": 86,
+      "ultima_nfe": "000542486-001",
+      "ultima_nfe_origem": "3E",
+      "semana": "2026-W48",
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 86,
+      "comentario": "Favor confirmar se esta entrega sera cumprida.",
+      "entrega_confirmada": true,
+      "data_coleta": "19/10/2026",
+      "nfe_enviada": "542486"
+    }
+  ]
+}
