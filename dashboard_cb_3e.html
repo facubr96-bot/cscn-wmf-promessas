@@ -648,7 +648,7 @@
                 <th data-col="cor_ship_date" title="Ship Date mais antigo em Past Due de Cordoba para o WMFBR (COR -> WMFBR) deste PN">Ship Date COR&rarr;WMFBR (mais antigo)</th>
                 <th data-col="wmf_promise">WMF Promise</th>
                 <th data-col="created">Created</th>
-                <th data-col="estado">Estado</th>
+                <th data-col="estado" title="Finalizado quando Transito ≥ Qty Min (calculado pelo dashboard); senao vale o estado da lista SharePoint">Estado</th>
                 <th data-col="planner">Planejador</th>
                 <th data-col="solicitante">Solicitante</th>
                 <th data-col="plant">Plant</th>
@@ -3070,6 +3070,7 @@ function renderCplTable(items) {
     body.appendChild(tr);
   });
 }
+const CPL_ESTADO_REABRE = false;
 const CPL_DATE_COLS = new Set(["run_out_date", "wmf_promise", "created", "cor_ship_date"]);
 function renderCplView() {
   if (!cplLoaded) return;
@@ -3077,6 +3078,12 @@ function renderCplView() {
   // Colunas vindas da aba Tabela (mesma planta destino): Impacto e Ship Date COR->WMFBR mais antigo
   const mainByPn = new Map(allItems.map(m => [m.pn, m]));
   cplItems.forEach(i => {
+    // Estado calculado pelo dashboard: Finalizado so se Transito cobre a Qty Min; senao Aberto.
+    // (guarda o estado original da lista SharePoint em estado_sp; sem Qty Min cai no original)
+    if (i.estado_sp === undefined) i.estado_sp = i.estado;
+    // CPL_ESTADO_REABRE=false: so promove Aberto -> Finalizado quando Transito >= Qty Min (o que ja esta
+    // Finalizado na lista SharePoint continua). true: tambem reabre (Aberto) o que o Transito nao cobre.
+    i.estado = cplSaiDoCpl(i) ? "Finalizado" : (CPL_ESTADO_REABRE && Number(i.qty_min || 0) > 0 ? "Aberto" : i.estado_sp);
     const m = mainByPn.get(i.pn);
     i.impacto = m && m.impacto !== null && m.impacto !== undefined ? String(m.impacto) : "";
     i.cor_ship_date = m ? (m.cor_oldest_pastdue_ship_date || "") : "";
