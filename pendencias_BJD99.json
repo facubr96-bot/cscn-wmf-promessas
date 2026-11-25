@@ -2,7 +2,7 @@
   "supplier_code": "BJD99",
   "supplier_name": "INDUSTRIAS MANGOTEX LTDA",
   "semana": "2026-W48",
-  "gerado_em": "24/11/2026 12:02",
+  "gerado_em": "25/11/2026 08:02",
   "itens": [
     {
       "part_number": "48191908",
@@ -13,19 +13,19 @@
       "sharepoint_critico": false,
       "sharepoint_url": "",
       "sharepoint_reason": "",
-      "acao_requerida": "Solicitar promessa",
+      "acao_requerida": "Promessa insuficiente - solicitar complemento",
       "past_due_wmf": 0,
       "firm_jun_wmf": 0,
       "firm_jul_wmf": 150,
       "ultima_nfe": "",
       "ultima_nfe_origem": "",
       "semana": "2026-W48",
-      "data_promessa": "",
-      "qty_prometida": "",
-      "comentario": "Solicitar promessa.",
-      "entrega_confirmada": false,
-      "data_coleta": "",
-      "nfe_enviada": ""
+      "data_promessa": "27/11/2026",
+      "qty_prometida": 100,
+      "comentario": "Promessa insuficiente para a necessidade atual. Favor informar complemento. Solicitar promessa.",
+      "entrega_confirmada": true,
+      "data_coleta": "23/11/2026",
+      "nfe_enviada": "322620"
     },
     {
       "part_number": "84164533",
