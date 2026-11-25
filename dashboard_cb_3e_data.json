@@ -1,5 +1,5 @@
 {
-  "generated_at": "24/11/2026 22:04",
+  "generated_at": "24/11/2026 22:24",
   "today": "24/11/2026",
   "total_pn": 1956,
   "erp_release_cb": "20261118",
@@ -19314,7 +19314,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "06/11/2026",
-      "ultima_nfe_cb": "WMF-003362",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000721190-011",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -19398,7 +19398,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003366",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000082274-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -21830,7 +21830,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-002493/2025",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000067648-007",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
@@ -21888,7 +21888,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003301",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000265113-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -23948,7 +23948,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003353",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000062573-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -25146,7 +25146,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -25333,7 +25333,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003272",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000265113-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -26293,7 +26293,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003336",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000150692-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -26434,7 +26434,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003341",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000246338-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -27239,7 +27239,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003272",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000266051-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -27302,7 +27302,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003366",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -34365,7 +34365,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003353",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000264823-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -34969,7 +34969,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003340",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000225068-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -36504,7 +36504,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003355",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000023011-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -36647,7 +36647,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003222",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000264936-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -37143,7 +37143,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003104/2026",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "001441835-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -37766,7 +37766,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003366",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -39170,7 +39170,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003198",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000265113-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -39463,7 +39463,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003242",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000264823-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -44485,7 +44485,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003314",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000225068-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -45306,7 +45306,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "29/10/2026",
-      "ultima_nfe_cb": "WMF-003344",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000251298-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -46974,7 +46974,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003341",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000240258-004",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -47372,7 +47372,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -48140,7 +48140,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003341",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000078504-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -48320,7 +48320,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-002063/2025",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000078504-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -48436,7 +48436,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003341",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000078504-000",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -48558,7 +48558,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -48621,7 +48621,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003369",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000224646-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -54302,7 +54302,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003309",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000246338-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -54440,7 +54440,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003341",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000246338-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -57629,7 +57629,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "06/11/2026",
-      "ultima_nfe_cb": "WMF-003349",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000721190-011",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -59213,7 +59213,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003272",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000264823-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -59791,7 +59791,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003326",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000149924-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -60829,7 +60829,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003316",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000266340-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -62443,7 +62443,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003366",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000007490-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -63762,7 +63762,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003272",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000264823-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -69585,7 +69585,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "30/10/2026",
-      "ultima_nfe_cb": "WMF-003369",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000015936-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -70097,7 +70097,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003232",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -81916,7 +81916,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003314",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000225068-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -81989,7 +81989,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003314",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000225068-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -83696,7 +83696,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000248106-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -85469,7 +85469,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003340",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000224600-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -85542,7 +85542,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Aguardando Coleta",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003340",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000225068-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -87192,7 +87192,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -87518,7 +87518,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003336",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000265542-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -87827,7 +87827,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003336",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000265542-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -88667,7 +88667,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "16/11/2026",
-      "ultima_nfe_cb": "WMF-003326",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000106775-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -91210,7 +91210,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "16/11/2026",
-      "ultima_nfe_cb": "WMF-003266",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000106775-010",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -92141,7 +92141,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003286",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000265113-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -94618,7 +94618,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003327",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000301408-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -96398,7 +96398,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "Completed",
       "fecha_completed_p44": "28/10/2026",
-      "ultima_nfe_cb": "WMF-000071",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000015095-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -96456,7 +96456,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003316",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000211206-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -97883,7 +97883,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003307",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000067648-007",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -101507,7 +101507,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000936664-003",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -101809,7 +101809,7 @@
       "destino_shipment": "",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003286",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000138529-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -105488,7 +105488,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003209",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000265111-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -105812,7 +105812,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "En Transito",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003360",
+      "ultima_nfe_cb": "WMF-003379",
       "ultima_nfe_3e": "000634621-002",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -108712,7 +108712,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003332",
+      "ultima_nfe_cb": "WMF-003374",
       "ultima_nfe_3e": "000174345-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -113399,7 +113399,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003365",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000067648-007",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -114063,7 +114063,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003336",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000067648-007",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
@@ -114131,7 +114131,7 @@
       "destino_shipment": "WMF BRAZIL",
       "status_p44": "-",
       "fecha_completed_p44": "",
-      "ultima_nfe_cb": "WMF-003309",
+      "ultima_nfe_cb": "WMF-003373",
       "ultima_nfe_3e": "000246338-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
