@@ -324,6 +324,24 @@
   /* titulos de secao: sublinhado cinza com destaque vermelho */
   .kpi-section h2 { color: var(--gray-900); font-size: 12.5px; padding-bottom: 5px; margin-bottom: 10px; border-bottom: 1px solid var(--gray-300); position: relative; }
   .kpi-section h2::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 34px; height: 2px; background: var(--red); }
+  /* cabecalho em 3 zonas: plantas (esq.) | titulo centrado | vistas (dir.) */
+  header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  header .brand { flex-direction: column; align-items: center; gap: 1px; text-align: center; }
+  header .brand h1 { font-size: 16px; }
+  .hdr-controls { flex-wrap: nowrap; gap: 8px; }
+  .hdr-controls .plant-switch button { padding: 5px 10px; white-space: nowrap; }
+  #plantaBox label { white-space: nowrap; }
+  #plantaBox select { max-width: 150px; }
+  .hdr-left { justify-content: flex-start; }
+  .hdr-right { justify-content: flex-end; }
+  #statusBar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  #statusBar .sb-right { text-align: right; }
+  #statusBar #releaseInfo { text-align: center; }
+  @media (max-width: 1250px) {
+    header { grid-template-columns: 1fr; justify-items: center; gap: 6px; }
+    .hdr-left, .hdr-right { justify-content: center; }
+    header .brand { order: -1; }
+  }
 </style>
 </head>
 <body>
@@ -343,16 +361,18 @@
 </div>
 
 <header>
+  <div class="hdr-controls hdr-left">
+    <div id="plantaBox"><label for="plantaSelect">Planta destino</label><select id="plantaSelect"></select></div>
+    <div class="plant-switch" id="plantSwitch">
+      <button data-plant="3e" class="active">WMF → Proveedor (3E)</button>
+      <button data-plant="cb">Planta → WMFBR (CB)</button>
+    </div>
+  </div>
   <div class="brand">
     <span class="eyebrow">CNH INDUSTRIAL</span>
     <h1>CSCN WMF — Dashboard de Piezas</h1>
   </div>
-  <div class="hdr-controls">
-    <div id="plantaBox"><label for="plantaSelect">Planta destino</label><select id="plantaSelect"></select></div>
-    <div class="plant-switch" id="plantSwitch">
-      <button data-plant="3e" class="active">Planta 3E</button>
-      <button data-plant="cb">Planta CB</button>
-    </div>
+  <div class="hdr-controls hdr-right">
     <div class="plant-switch" id="viewSwitch">
       <button data-view="table" class="active">Tabela</button>
       <button data-view="dashboard">Dashboard</button>
@@ -398,9 +418,9 @@
 </div>
 
 <div id="statusBar">
-  <span><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
+  <span class="sb-left"><span class="dot">●</span> <span id="statusText">Cargando datos...</span></span>
   <span id="releaseInfo" style="font-weight:600;"></span>
-  <span id="lastUpdate"></span>
+  <span id="lastUpdate" class="sb-right"></span>
 </div>
 
 <div id="plantaBanner"></div>
