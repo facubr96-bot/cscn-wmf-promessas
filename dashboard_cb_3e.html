@@ -342,6 +342,24 @@
     .hdr-left, .hdr-right { justify-content: center; }
     header .brand { order: -1; }
   }
+  /* filtros estilo Excel nos titulos da tabela CPL */
+  #cplTable thead th { white-space: nowrap; }
+  .cpl-fbtn { display: inline-block; margin-left: 6px; padding: 0 4px; border-radius: 3px; font-size: 10px; line-height: 14px; opacity: .55; cursor: pointer; }
+  .cpl-fbtn:hover { opacity: 1; background: rgba(255,255,255,.2); }
+  .cpl-fbtn.active { opacity: 1; background: var(--red); color: var(--white); }
+  #cplColPop { position: fixed; z-index: 300; display: none; width: 260px; background: var(--white); border: 1px solid var(--gray-300); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); padding: 10px; font-size: 12px; color: var(--gray-900); }
+  #cplColPop .cpl-pop-search { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 12px; margin-bottom: 6px; }
+  #cplColPop .cpl-pop-list { max-height: 240px; overflow-y: auto; border: 1px solid var(--gray-100); border-radius: 6px; padding: 2px 4px; margin: 4px 0 8px; }
+  #cplColPop .cpl-pop-row { display: flex; align-items: center; gap: 6px; padding: 3px 2px; cursor: pointer; }
+  #cplColPop .cpl-pop-row:hover { background: var(--gray-100); }
+  #cplColPop .cpl-pop-row span:nth-child(2) { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #cplColPop .cpl-pop-all { font-weight: 600; }
+  #cplColPop .cpl-pop-n { color: var(--gray-500); }
+  #cplColPop .cpl-pop-more { color: var(--gray-500); padding: 4px 2px; }
+  #cplColPop .cpl-pop-foot { display: flex; justify-content: flex-end; gap: 8px; }
+  #cplColPop .cpl-pop-foot .btn { padding: 5px 12px; font-size: 12px; font-weight: 600; cursor: pointer; border-radius: var(--radius); border: 1px solid var(--gray-300); background: var(--white); }
+  #cplColPop .cpl-pop-foot .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
+  #cplColPop .cpl-pop-foot .btn:disabled { opacity: .45; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -602,6 +620,44 @@
               <div id="cplMotivoNosso"></div>
             </div>
           </div>
+
+      <div class="kpi-section">
+        <h2>Detalhe</h2>
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
+          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">Criado de
+            <input type="date" id="cplDateFrom">
+          </label>
+          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">ate
+            <input type="date" id="cplDateTo">
+          </label>
+        </div>
+        <div class="table-wrap" style="max-height: 62vh;">
+          <table id="cplTable">
+            <thead>
+              <tr>
+                <th data-col="pn">PN</th>
+                <th data-col="supplier_code">Cod. Fornecedor</th>
+                <th data-col="supplier_name">Fornecedor</th>
+                <th data-col="stock_wmf">Stock WMF</th>
+                <th data-col="qty_transito">Transito</th>
+                <th data-col="qty_min">Qty Min</th>
+                <th data-col="criticidad">Criticidade</th>
+                <th data-col="reason">Reason</th>
+                <th data-col="run_out_date">Run Out Date</th>
+                <th data-col="wmf_promise">WMF Promise</th>
+                <th data-col="created">Created</th>
+                <th data-col="estado">Estado</th>
+                <th data-col="planner">Planejador</th>
+                <th data-col="solicitante">Solicitante</th>
+                <th data-col="plant">Plant</th>
+                <th data-col="sai">Sai do CPL?</th>
+              </tr>
+            </thead>
+            <tbody id="cplTableBody"></tbody>
+          </table>
+          <div class="empty-state" id="cplTableEmpty" style="display:none;">Nenhum item com esse filtro.</div>
+        </div>
+      </div>
         </div>
 
         <div style="width:220px; flex-shrink:0;">
@@ -631,43 +687,6 @@
         </div>
       </div>
 
-      <div class="kpi-section">
-        <h2>Detalhe</h2>
-        <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;">
-          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">Criado de
-            <input type="date" id="cplDateFrom">
-          </label>
-          <label style="font-size:12px; color:var(--gray-700); display:flex; align-items:center; gap:4px;">ate
-            <input type="date" id="cplDateTo">
-          </label>
-        </div>
-        <div class="table-wrap" style="max-height: 55vh;">
-          <table id="cplTable">
-            <thead>
-              <tr>
-                <th data-col="pn">PN</th>
-                <th data-col="supplier_code">Cod. Fornecedor</th>
-                <th data-col="supplier_name">Fornecedor</th>
-                <th data-col="stock_wmf">Stock WMF</th>
-                <th data-col="qty_transito">Transito</th>
-                <th data-col="qty_min">Qty Min</th>
-                <th data-col="criticidad">Criticidade</th>
-                <th data-col="reason">Reason</th>
-                <th data-col="run_out_date">Run Out Date</th>
-                <th data-col="wmf_promise">WMF Promise</th>
-                <th data-col="created">Created</th>
-                <th data-col="estado">Estado</th>
-                <th data-col="planner">Planejador</th>
-                <th data-col="solicitante">Solicitante</th>
-                <th data-col="plant">Plant</th>
-                <th>Sai do CPL?</th>
-              </tr>
-            </thead>
-            <tbody id="cplTableBody"></tbody>
-          </table>
-          <div class="empty-state" id="cplTableEmpty" style="display:none;">Nenhum item com esse filtro.</div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -2656,6 +2675,7 @@ function selectPlanta(code) {
   setStatusText();
   applyPlantaUi();
   Object.keys(cplFilters).forEach(k => { if (cplFilters[k] && cplFilters[k].clear) cplFilters[k].clear(); });
+  Object.keys(cplColFilters).forEach(k => delete cplColFilters[k]);
   if (cplLoaded) renderCplView();
   updateUrl();
   renderKpis();
@@ -2804,6 +2824,10 @@ const cplFilters = {
   reason: new Set(), aging: new Set(), statusPromessa: new Set(), motivoNosso: new Set(),
   escalationNosso: new Set(),
 };
+// Filtros estilo Excel nos titulos da tabela Detalhe: col -> Set de valores permitidos.
+const cplColFilters = {};
+const cplColVal = (i, col) => col === "sai" ? (cplSaiDoCpl(i) ? "Sim" : "Nao")
+  : (i[col] === null || i[col] === undefined ? "" : String(i[col]));
 const CRITICIDAD_ORDER = ["Normal", "Critico", "Crítico", "Hiper Critico", "Hiper Crítico"];
 // Cruza o PN do CPL com allItems (o JSON principal do dashboard, ja carregado)
 // para trazer o motivo_atraso "nosso" (o campo editavel na aba Dashboard),
@@ -2932,6 +2956,11 @@ function cplBaseItems(excludeCat) {
     if (cat === excludeCat) return;
     const set = cplFilters[cat];
     if (set.size) items = items.filter(i => set.has(cplCategoryValue(i, cat)));
+  });
+  Object.keys(cplColFilters).forEach(col => {
+    if (excludeCat === "col:" + col) return;
+    const set = cplColFilters[col];
+    if (set && set.size) items = items.filter(i => set.has(cplColVal(i, col)));
   });
   return items;
 }
@@ -3115,12 +3144,13 @@ function renderCplView() {
   let sortedItems = items;
   if (cplSortCol) {
     sortedItems = [...items].sort((a, b) => {
-      const av = a[cplSortCol] ?? "", bv = b[cplSortCol] ?? "";
+      const av = cplSortCol === "sai" ? cplColVal(a, "sai") : (a[cplSortCol] ?? ""), bv = cplSortCol === "sai" ? cplColVal(b, "sai") : (b[cplSortCol] ?? "");
       if (typeof av === "number" && typeof bv === "number") return (av - bv) * cplSortDir;
       return String(av).localeCompare(String(bv)) * cplSortDir;
     });
   }
   renderCplTable(sortedItems);
+  cplUpdateColFilterBtns();
 }
 
 document.getElementById("cplSearchPn").oninput = () => renderCplView();
@@ -3133,6 +3163,7 @@ document.getElementById("btnCplClearFilters").onclick = () => {
   document.getElementById("cplDateFrom").value = "";
   document.getElementById("cplDateTo").value = "";
   Object.values(cplFilters).forEach(s => s.clear());
+  Object.keys(cplColFilters).forEach(k => delete cplColFilters[k]);
   renderCplView();
 };
 document.getElementById("btnCplReload").onclick = () => loadCplData(true);
@@ -3145,6 +3176,82 @@ document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
     renderCplView();
   };
 });
+
+
+// ---------- Filtro estilo Excel nos titulos da tabela Detalhe (CPL) ----------
+function cplUpdateColFilterBtns() {
+  document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
+    const b = th.querySelector(".cpl-fbtn"), st = cplColFilters[th.dataset.col];
+    if (b) b.classList.toggle("active", !!(st && st.size));
+  });
+}
+function cplCloseColPop() { const p = document.getElementById("cplColPop"); if (p) p.style.display = "none"; }
+function cplOpenColPop(col, anchor) {
+  let pop = document.getElementById("cplColPop");
+  if (!pop) { pop = document.createElement("div"); pop.id = "cplColPop"; document.body.appendChild(pop); }
+  const counts = new Map();
+  cplBaseItems("col:" + col).forEach(i => { const v = cplColVal(i, col); counts.set(v, (counts.get(v) || 0) + 1); });
+  const cur = cplColFilters[col];
+  if (cur) cur.forEach(v => { if (!counts.has(v)) counts.set(v, 0); });
+  const vals = [...counts.keys()];
+  const filled = vals.filter(v => v !== "");
+  const isDate = filled.length && filled.every(v => /^\d{2}\/\d{2}\/\d{4}/.test(v));
+  const isNum = filled.length && filled.every(v => v.trim() !== "" && !isNaN(Number(v)));
+  vals.sort((a, b) => {
+    if (a === "" || b === "") return a === b ? 0 : (a === "" ? 1 : -1);
+    if (isDate) return ((parseDateBR(a) || 0) - (parseDateBR(b) || 0));
+    if (isNum) return Number(a) - Number(b);
+    return a.localeCompare(b);
+  });
+  const sel = new Set(cur && cur.size ? cur : vals);
+  pop.innerHTML = '<input type="text" class="cpl-pop-search" placeholder="Buscar...">'
+    + '<label class="cpl-pop-row cpl-pop-all"><input type="checkbox" class="cpl-pop-allchk"> <span>(Selecionar tudo)</span></label>'
+    + '<div class="cpl-pop-list"></div>'
+    + '<div class="cpl-pop-foot"><button type="button" class="btn cpl-pop-clear">Limpar</button><button type="button" class="btn btn-primary cpl-pop-ok">OK</button></div>';
+  const search = pop.querySelector(".cpl-pop-search"), list = pop.querySelector(".cpl-pop-list");
+  const allChk = pop.querySelector(".cpl-pop-allchk"), okBtn = pop.querySelector(".cpl-pop-ok");
+  const disp = v => v === "" ? "(Vazio)" : v;
+  const visible = () => { const q = search.value.trim().toLowerCase(); return vals.filter(v => !q || disp(v).toLowerCase().includes(q)); };
+  const sync = () => { const vis = visible(); allChk.checked = vis.length > 0 && vis.every(v => sel.has(v)); okBtn.disabled = sel.size === 0; };
+  const draw = () => {
+    const vis = visible(); list.innerHTML = "";
+    vis.slice(0, 500).forEach(v => {
+      const row = document.createElement("label"); row.className = "cpl-pop-row";
+      const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = sel.has(v);
+      cb.onchange = () => { if (cb.checked) sel.add(v); else sel.delete(v); sync(); };
+      const t = document.createElement("span"); t.textContent = disp(v);
+      const n = document.createElement("span"); n.className = "cpl-pop-n"; n.textContent = counts.get(v);
+      row.append(cb, t, n); list.appendChild(row);
+    });
+    if (vis.length > 500) { const m = document.createElement("div"); m.className = "cpl-pop-more"; m.textContent = `+${vis.length - 500} valores (use a busca)`; list.appendChild(m); }
+    sync();
+  };
+  search.oninput = draw;
+  allChk.onchange = () => { visible().forEach(v => allChk.checked ? sel.add(v) : sel.delete(v)); draw(); };
+  okBtn.onclick = () => {
+    if (vals.every(v => sel.has(v))) delete cplColFilters[col]; else cplColFilters[col] = new Set(sel);
+    cplCloseColPop(); renderCplView();
+  };
+  pop.querySelector(".cpl-pop-clear").onclick = () => { delete cplColFilters[col]; cplCloseColPop(); renderCplView(); };
+  draw();
+  const r = anchor.getBoundingClientRect();
+  pop.style.display = "block";
+  pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - pop.offsetWidth - 8)) + "px";
+  pop.style.top = Math.min(r.bottom + 4, window.innerHeight - pop.offsetHeight - 8) + "px";
+  search.focus();
+}
+document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
+  const b = document.createElement("span");
+  b.className = "cpl-fbtn"; b.textContent = "▾"; b.title = "Filtrar esta coluna";
+  b.onclick = e => { e.stopPropagation(); cplOpenColPop(th.dataset.col, b); };
+  th.appendChild(b);
+});
+document.addEventListener("mousedown", e => {
+  const p = document.getElementById("cplColPop");
+  if (p && p.style.display !== "none" && !p.contains(e.target) && !(e.target.classList && e.target.classList.contains("cpl-fbtn"))) cplCloseColPop();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") cplCloseColPop(); });
+window.addEventListener("resize", cplCloseColPop);
 
 // ---------- Aba Shipments + colunas resumo da Tabela (2026-10-20, SOMENTE LEITURA) ----------
 // Fonte: shipments_cb_3e.json (Task generate_shipments do Job wmf_cscn_dashboard_cb_3e), 1 linha por
