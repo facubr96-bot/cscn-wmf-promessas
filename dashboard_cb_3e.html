@@ -645,7 +645,7 @@
                 <th data-col="criticidad">Criticidade</th>
                 <th data-col="reason">Reason</th>
                 <th data-col="run_out_date">Run Out Date</th>
-                <th data-col="cor_ship_date" title="Ship Date mais antigo em Past Due de Cordoba para o WMFBR (COR -> WMFBR) deste PN">Ship Date COR&rarr;WMFBR (mais antigo)</th>
+                <th data-col="cor_ship_date" title="Ship Date mais antigo de Cordoba para o WMFBR (COR -> WMFBR) deste PN: Past Due, Firm ou Planning">Ship Date COR&rarr;WMFBR (mais antigo)</th>
                 <th data-col="wmf_promise">WMF Promise</th>
                 <th data-col="created">Created</th>
                 <th data-col="estado" title="Finalizado quando Transito ≥ Qty Min (calculado pelo dashboard); senao vale o estado da lista SharePoint">Estado</th>
@@ -3077,6 +3077,16 @@ function renderCplView() {
   cplApplyPlanta();
   // Colunas vindas da aba Tabela (mesma planta destino): Impacto e Ship Date COR->WMFBR mais antigo
   const mainByPn = new Map(allItems.map(m => [m.pn, m]));
+  // Ship Date mais antigo de Cordoba -> WMFBR por PN: menor SHIP_DATE entre as linhas CB com quantidade
+  // (inclui Past Due, Firm e Planning; Past Due ja e a mais antiga quando existe)
+  const cplOldestShip = new Map(), cplOldestMs = new Map();
+  (rawLinesCache || []).forEach(r => {
+    if (r.plant_code !== "CB" || itemPlanta(r) !== plantaDest || !(Number(r.quantity_due) > 0)) return;
+    const nd = normalizeDateFlexible(r.ship_date), d = nd ? parseDateBR(nd) : null;
+    if (!d) return;
+    const prev = cplOldestMs.get(r.part_number);
+    if (prev === undefined || d.getTime() < prev) { cplOldestMs.set(r.part_number, d.getTime()); cplOldestShip.set(r.part_number, nd); }
+  });
   cplItems.forEach(i => {
     // Estado calculado pelo dashboard: Finalizado so se Transito cobre a Qty Min; senao Aberto.
     // (guarda o estado original da lista SharePoint em estado_sp; sem Qty Min cai no original)
@@ -3086,7 +3096,7 @@ function renderCplView() {
     i.estado = cplSaiDoCpl(i) ? "Finalizado" : (CPL_ESTADO_REABRE && Number(i.qty_min || 0) > 0 ? "Aberto" : i.estado_sp);
     const m = mainByPn.get(i.pn);
     i.impacto = m && m.impacto !== null && m.impacto !== undefined ? String(m.impacto) : "";
-    i.cor_ship_date = m ? (m.cor_oldest_pastdue_ship_date || "") : "";
+    i.cor_ship_date = cplOldestShip.get(i.pn) || (m ? (m.cor_oldest_pastdue_ship_date || "") : "");
   });
   cplRebuildMotivoNossoLookup();
   cplRebuildEscalationNossoLookup();
