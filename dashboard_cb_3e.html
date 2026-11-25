@@ -636,6 +636,7 @@
             <thead>
               <tr>
                 <th data-col="pn">PN</th>
+                <th data-col="impacto" title="Impacto (mesmo campo da aba Tabela)">Impacto</th>
                 <th data-col="supplier_code">Cod. Fornecedor</th>
                 <th data-col="supplier_name">Fornecedor</th>
                 <th data-col="stock_wmf">Stock WMF</th>
@@ -644,6 +645,7 @@
                 <th data-col="criticidad">Criticidade</th>
                 <th data-col="reason">Reason</th>
                 <th data-col="run_out_date">Run Out Date</th>
+                <th data-col="cor_ship_date" title="Ship Date mais antigo em Past Due de Cordoba para o WMFBR (COR -> WMFBR) deste PN">Ship Date COR&rarr;WMFBR (mais antigo)</th>
                 <th data-col="wmf_promise">WMF Promise</th>
                 <th data-col="created">Created</th>
                 <th data-col="estado">Estado</th>
@@ -3047,6 +3049,7 @@ function renderCplTable(items) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${item.pn || ""}</td>
+      <td>${item.impacto || ""}</td>
       <td>${item.supplier_code || ""}</td>
       <td>${item.supplier_name || ""}</td>
       <td>${item.stock_wmf ?? ""}</td>
@@ -3055,6 +3058,7 @@ function renderCplTable(items) {
       <td>${item.criticidad || ""}</td>
       <td>${item.reason || ""}</td>
       <td>${item.run_out_date || ""}</td>
+      <td>${item.cor_ship_date || ""}</td>
       <td>${item.wmf_promise || ""}</td>
       <td>${item.created || ""}</td>
       <td>${item.estado || ""}</td>
@@ -3066,9 +3070,17 @@ function renderCplTable(items) {
     body.appendChild(tr);
   });
 }
+const CPL_DATE_COLS = new Set(["run_out_date", "wmf_promise", "created", "cor_ship_date"]);
 function renderCplView() {
   if (!cplLoaded) return;
   cplApplyPlanta();
+  // Colunas vindas da aba Tabela (mesma planta destino): Impacto e Ship Date COR->WMFBR mais antigo
+  const mainByPn = new Map(allItems.map(m => [m.pn, m]));
+  cplItems.forEach(i => {
+    const m = mainByPn.get(i.pn);
+    i.impacto = m && m.impacto !== null && m.impacto !== undefined ? String(m.impacto) : "";
+    i.cor_ship_date = m ? (m.cor_oldest_pastdue_ship_date || "") : "";
+  });
   cplRebuildMotivoNossoLookup();
   cplRebuildEscalationNossoLookup();
   renderCplFilterGroup("cplFilterCriticidad", "criticidad");
@@ -3154,6 +3166,13 @@ function renderCplView() {
     sortedItems = [...items].sort((a, b) => {
       const av = cplSortCol === "sai" ? cplColVal(a, "sai") : (a[cplSortCol] ?? ""), bv = cplSortCol === "sai" ? cplColVal(b, "sai") : (b[cplSortCol] ?? "");
       if (typeof av === "number" && typeof bv === "number") return (av - bv) * cplSortDir;
+      if (av === "" || bv === "") return av === bv ? 0 : (av === "" ? 1 : -1);   // vazios sempre no fim
+      if (CPL_DATE_COLS.has(cplSortCol)) {   // datas dd/mm/yyyy: ordena por data; vazios sempre no fim
+        const da = parseDateBR(av), db = parseDateBR(bv);
+        if (!da || !db) return (da ? -1 : db ? 1 : 0);
+        return (da - db) * cplSortDir;
+      }
+      if (av !== "" && bv !== "" && !isNaN(Number(av)) && !isNaN(Number(bv))) return (Number(av) - Number(bv)) * cplSortDir;
       return String(av).localeCompare(String(bv)) * cplSortDir;
     });
   }
