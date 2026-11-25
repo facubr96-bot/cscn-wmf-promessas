@@ -343,11 +343,11 @@
     header .brand { order: -1; }
   }
   /* filtros estilo Excel nos titulos da tabela CPL */
-  #cplTable thead th { white-space: nowrap; }
+  #cplTable thead th, #dashPastDueTable thead th { white-space: nowrap; }
   .cpl-fbtn { display: inline-block; margin-left: 6px; padding: 0 4px; border-radius: 3px; font-size: 10px; line-height: 14px; opacity: .55; cursor: pointer; }
   .cpl-fbtn:hover { opacity: 1; background: rgba(255,255,255,.2); }
   .cpl-fbtn.active { opacity: 1; background: var(--red); color: var(--white); }
-  #cplColPop { position: fixed; z-index: 300; display: none; width: 260px; background: var(--white); border: 1px solid var(--gray-300); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); padding: 10px; font-size: 12px; color: var(--gray-900); }
+  #cplColPop { position: fixed; z-index: 10000; display: none; width: 260px; background: var(--white); border: 1px solid var(--gray-300); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.22); padding: 10px; font-size: 12px; color: var(--gray-900); }
   #cplColPop .cpl-pop-search { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 12px; margin-bottom: 6px; }
   #cplColPop .cpl-pop-list { max-height: 240px; overflow-y: auto; border: 1px solid var(--gray-100); border-radius: 6px; padding: 2px 4px; margin: 4px 0 8px; }
   #cplColPop .cpl-pop-row { display: flex; align-items: center; gap: 6px; padding: 3px 2px; cursor: pointer; }
@@ -388,7 +388,7 @@
   </div>
   <div class="brand">
     <span class="eyebrow">CNH INDUSTRIAL</span>
-    <h1>CSCN WMF — Dashboard de Piezas</h1>
+    <h1 id="appTitle">CSCN WMF — Dashboard de Piezas</h1>
   </div>
   <div class="hdr-controls hdr-right">
     <div class="plant-switch" id="viewSwitch">
@@ -564,11 +564,11 @@
         <table id="dashPastDueTable">
           <thead>
             <tr>
-              <th>PN</th><th>Cod.</th><th>Proveedor</th><th>Past Due</th>
-              <th>Ship Date mas antiguo</th><th>Dias em Past Due</th>
-              <th id="thFirmSet">Firm</th><th id="thFirmOut">Firm</th><th>Ultima NFe</th><th>Motivo Atraso</th><th>Escalation</th>
-              <th>Promessa Data</th><th>Promessa Qty</th>
-              <th>Ultima NFe Emitida</th><th>Data NFe Emitida</th><th>Qty NFe Emitida</th>
+              <th data-col="pn">PN</th><th data-col="cod">Cod.</th><th data-col="prov">Proveedor</th><th data-col="pd">Past Due</th>
+              <th data-col="old">Ship Date mas antiguo</th><th data-col="dias">Dias em Past Due</th>
+              <th id="thFirmSet" data-col="fs">Firm</th><th id="thFirmOut" data-col="fo">Firm</th><th data-col="unfe">Ultima NFe</th><th data-col="mot">Motivo Atraso</th><th data-col="esc">Escalation</th>
+              <th data-col="pdata">Promessa Data</th><th data-col="pqty">Promessa Qty</th>
+              <th data-col="nfn">Ultima NFe Emitida</th><th data-col="nfd">Data NFe Emitida</th><th data-col="nfq">Qty NFe Emitida</th>
             </tr>
           </thead>
           <tbody id="dashPastDueBody"></tbody>
@@ -1405,7 +1405,9 @@ function renderDashPastDueTable(baseItemsOverride) {
   document.getElementById("thFirmSet").textContent = firmCurrentMonthLabel();
   document.getElementById("thFirmOut").textContent = firmNextMonthLabel();
   const base = baseItemsOverride || motivosBaseItems();
-  const items = base.filter(i => isPastDueGeneric(i) || i.motivo_atraso);
+  dpdAllItems = base.filter(i => isPastDueGeneric(i) || i.motivo_atraso);
+  colfAttach("dpd");
+  const items = colfPass("dpd", dpdAllItems);
   document.getElementById("dashRowCount").textContent = `${items.length} PN`;
   const body = document.getElementById("dashPastDueBody");
   body.innerHTML = "";
@@ -1461,6 +1463,7 @@ function toggleKpiFilter(key, label, testFn) {
 }
 function clearFilter() {
   activeFilters.clear();
+  colfClear("main");
   updateUrl();
   renderKpis();
   renderTable();
@@ -1664,7 +1667,7 @@ function sortValueFor(item, col) {
   }
   return v ?? "";
 }
-function filteredItems() {
+function filteredItems(exclCol) {
   let items = allItems;
   if (activeFilters.size) {
     for (const { test } of activeFilters.values()) items = items.filter(test);
@@ -1676,6 +1679,7 @@ function filteredItems() {
   if (supQ) items = items.filter(i => (i.supplier_name || "").toLowerCase().includes(supQ) || (i.supplier_code || "").toLowerCase().includes(supQ));
   if (plannerQ) items = items.filter(i => getPlanejador(i) === plannerQ);
   items = statusP44Filter(items);
+  items = colfPass("main", items, exclCol);
   if (sortCol) {
     items = [...items].sort((a, b) => {
       const av = sortValueFor(a, sortCol), bv = sortValueFor(b, sortCol);
@@ -1711,6 +1715,7 @@ function renderTable() {
     };
   });
 
+  colfAttach("main");
   const items = filteredItems();
   const body = document.getElementById("tableBody");
   body.innerHTML = "";
@@ -1726,7 +1731,7 @@ function renderTable() {
   // A profundidade se mantem ao editar/guardar e volta ao inicio quando muda o filtro/busca/ordem.
   const sig = [plant, [...activeFilters.keys()].join(","), document.getElementById("searchPn").value,
     document.getElementById("searchSupplier").value, document.getElementById("filterPlanejador").value,
-    [...statusP44Selected].join(","), sortCol, sortDir].join("|");
+    [...statusP44Selected].join(","), sortCol, sortDir, JSON.stringify(Object.keys(COLF.main.state).map(k => [k, [...COLF.main.state[k]]]))].join("|");
   if (sig !== lastViewSig) {
     renderLimit = ROW_CHUNK; lastViewSig = sig;
     document.getElementById("tableWrap").scrollTop = 0; // vista nova: volta ao topo (evita carregar tandas sem querer)
@@ -2507,6 +2512,8 @@ document.getElementById("viewSwitch").querySelectorAll("button").forEach(btn => 
     document.getElementById("viewDashboard").style.display = view === "dashboard" ? "" : "none";
     document.getElementById("viewCpl").style.display = view === "cpl" ? "" : "none";
     document.getElementById("viewShipments").style.display = view === "shipments" ? "" : "none";
+    const TITLES = { table: "Dashboard de Piezas", dashboard: "Dashboard de Piezas", cpl: "CPL Critical Part List", shipments: "Shipments" };
+    document.getElementById("appTitle").textContent = "CSCN WMF — " + (TITLES[view] || TITLES.table);
     if (view === "dashboard") renderKpis(); // recalcula/redibuja los graficos com dados frescos
     if (view === "cpl") loadCplData();
     if (view === "shipments") { if (shpData) renderShipmentsView(); else loadShipmentsData(); }
@@ -2670,12 +2677,13 @@ function selectPlanta(code) {
   plantaDest = code;
   allItems = allItemsAll.filter(i => itemPlanta(i) === plantaDest);
   activeFilters.clear();
+  colfClearAll();
   Object.keys(dirty).forEach(k => delete dirty[k]);
   buildNextShipDateLookup();
   setStatusText();
   applyPlantaUi();
   Object.keys(cplFilters).forEach(k => { if (cplFilters[k] && cplFilters[k].clear) cplFilters[k].clear(); });
-  Object.keys(cplColFilters).forEach(k => delete cplColFilters[k]);
+  colfClear("cpl");
   if (cplLoaded) renderCplView();
   updateUrl();
   renderKpis();
@@ -3163,7 +3171,7 @@ document.getElementById("btnCplClearFilters").onclick = () => {
   document.getElementById("cplDateFrom").value = "";
   document.getElementById("cplDateTo").value = "";
   Object.values(cplFilters).forEach(s => s.clear());
-  Object.keys(cplColFilters).forEach(k => delete cplColFilters[k]);
+  colfClear("cpl");
   renderCplView();
 };
 document.getElementById("btnCplReload").onclick = () => loadCplData(true);
@@ -3178,20 +3186,46 @@ document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
 });
 
 
-// ---------- Filtro estilo Excel nos titulos da tabela Detalhe (CPL) ----------
-function cplUpdateColFilterBtns() {
-  document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
-    const b = th.querySelector(".cpl-fbtn"), st = cplColFilters[th.dataset.col];
-    if (b) b.classList.toggle("active", !!(st && st.size));
+// ---------- Filtro estilo Excel nos titulos de TODAS as tabelas ----------
+// COLF[tabela] = { state: {col: Set de valores permitidos}, base(exclCol) -> itens, val(item,col), render() }
+const COLF = {};
+function colfPass(key, items, exclCol) {
+  const d = COLF[key];
+  Object.keys(d.state).forEach(c => {
+    if (c === exclCol) return;
+    const st = d.state[c];
+    if (st && st.size) items = items.filter(i => st.has(d.val(i, c)));
+  });
+  return items;
+}
+function colfClear(key) { const d = COLF[key]; if (d) Object.keys(d.state).forEach(k => delete d.state[k]); }
+function colfClearAll() { Object.keys(COLF).forEach(colfClear); }
+function colfUpdateBtns(key) {
+  const d = COLF[key]; if (!d) return;
+  document.querySelectorAll(d.sel + " th[data-col] .cpl-fbtn").forEach(b => {
+    const st = d.state[b.parentNode.dataset.col];
+    b.classList.toggle("active", !!(st && st.size));
   });
 }
-function cplCloseColPop() { const p = document.getElementById("cplColPop"); if (p) p.style.display = "none"; }
-function cplOpenColPop(col, anchor) {
+function colfAttach(key) {
+  const d = COLF[key];
+  document.querySelectorAll(d.sel + " th[data-col]").forEach(th => {
+    th.querySelectorAll(".cpl-fbtn").forEach(x => x.remove());
+    const b = document.createElement("span");
+    b.className = "cpl-fbtn"; b.textContent = "▾"; b.title = "Filtrar esta coluna";
+    b.onclick = e => { e.stopPropagation(); colfOpen(key, th.dataset.col, b); };
+    th.appendChild(b);
+  });
+  colfUpdateBtns(key);
+}
+function colfClosePop() { const p = document.getElementById("cplColPop"); if (p) p.style.display = "none"; }
+function colfOpen(key, col, anchor) {
+  const d = COLF[key];
   let pop = document.getElementById("cplColPop");
   if (!pop) { pop = document.createElement("div"); pop.id = "cplColPop"; document.body.appendChild(pop); }
   const counts = new Map();
-  cplBaseItems("col:" + col).forEach(i => { const v = cplColVal(i, col); counts.set(v, (counts.get(v) || 0) + 1); });
-  const cur = cplColFilters[col];
+  d.base(col).forEach(i => { const v = d.val(i, col); counts.set(v, (counts.get(v) || 0) + 1); });
+  const cur = d.state[col];
   if (cur) cur.forEach(v => { if (!counts.has(v)) counts.set(v, 0); });
   const vals = [...counts.keys()];
   const filled = vals.filter(v => v !== "");
@@ -3229,29 +3263,59 @@ function cplOpenColPop(col, anchor) {
   search.oninput = draw;
   allChk.onchange = () => { visible().forEach(v => allChk.checked ? sel.add(v) : sel.delete(v)); draw(); };
   okBtn.onclick = () => {
-    if (vals.every(v => sel.has(v))) delete cplColFilters[col]; else cplColFilters[col] = new Set(sel);
-    cplCloseColPop(); renderCplView();
+    if (vals.every(v => sel.has(v))) delete d.state[col]; else d.state[col] = new Set(sel);
+    colfClosePop(); d.render();
   };
-  pop.querySelector(".cpl-pop-clear").onclick = () => { delete cplColFilters[col]; cplCloseColPop(); renderCplView(); };
+  pop.querySelector(".cpl-pop-clear").onclick = () => { delete d.state[col]; colfClosePop(); d.render(); };
   draw();
   const r = anchor.getBoundingClientRect();
   pop.style.display = "block";
   pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - pop.offsetWidth - 8)) + "px";
-  pop.style.top = Math.min(r.bottom + 4, window.innerHeight - pop.offsetHeight - 8) + "px";
+  pop.style.top = Math.max(8, Math.min(r.bottom + 4, window.innerHeight - pop.offsetHeight - 8)) + "px";
   search.focus();
 }
-document.querySelectorAll("#cplTable thead th[data-col]").forEach(th => {
-  const b = document.createElement("span");
-  b.className = "cpl-fbtn"; b.textContent = "▾"; b.title = "Filtrar esta coluna";
-  b.onclick = e => { e.stopPropagation(); cplOpenColPop(th.dataset.col, b); };
-  th.appendChild(b);
-});
 document.addEventListener("mousedown", e => {
   const p = document.getElementById("cplColPop");
-  if (p && p.style.display !== "none" && !p.contains(e.target) && !(e.target.classList && e.target.classList.contains("cpl-fbtn"))) cplCloseColPop();
+  if (p && p.style.display !== "none" && !p.contains(e.target) && !(e.target.classList && e.target.classList.contains("cpl-fbtn"))) colfClosePop();
 });
-document.addEventListener("keydown", e => { if (e.key === "Escape") cplCloseColPop(); });
-window.addEventListener("resize", cplCloseColPop);
+document.addEventListener("keydown", e => { if (e.key === "Escape") colfClosePop(); });
+window.addEventListener("resize", colfClosePop);
+function cplUpdateColFilterBtns() { colfUpdateBtns("cpl"); }
+
+// Past Due (aba Dashboard): valor de cada coluna como texto
+function dpdVal(i, k) {
+  const cb = plant === "cb";
+  switch (k) {
+    case "pn": return i.pn || "";
+    case "cod": return i.supplier_code || "";
+    case "prov": return i.supplier_name || "";
+    case "pd": return String(cb ? (i.cor_qty_past_due || 0) : (i.wmf_qty_past_due || 0));
+    case "old": return (cb ? i.cor_oldest_pastdue_ship_date : i.wmf_oldest_pastdue_ship_date) || "";
+    case "dias": { const d = cb ? i.cor_days_in_past_due : i.wmf_days_in_past_due; return d === null || d === undefined ? "" : String(d); }
+    case "fs": return String(cb ? (i.cor_qty_firm_current_month || 0) : (i.wmf_qty_firm_current_month || 0));
+    case "fo": return String(cb ? (i.cor_qty_firm_next_month || 0) : (i.wmf_qty_firm_next_month || 0));
+    case "unfe": return cb ? (i.ultima_nfe_cb || "") : String(i.ultima_nfe_3e || "").split("-")[0].replace(/^0+(?=\d)/, "");
+    case "mot": return i.motivo_atraso || "";
+    case "esc": return effectiveEscalationLevel(i) || "";
+    case "pdata": return i.promessa_data || "";
+    case "pqty": return String(i.promessa_qty ?? "");
+    case "nfn": return i.ultima_nfe_emitida_num || "";
+    case "nfd": return i.ultima_nfe_emitida_fecha || "";
+    case "nfq": return String(i.ultima_nfe_emitida_qty ?? "");
+  }
+  return "";
+}
+let dpdAllItems = [];
+const colfStr = v => v === null || v === undefined ? "" : String(v);
+COLF.cpl = { sel: "#cplTable", state: cplColFilters, base: c => cplBaseItems("col:" + c), val: cplColVal, render: () => renderCplView() };
+COLF.main = { sel: "#mainTable", state: {}, base: c => filteredItems(c),
+  val: (i, c) => colfStr(c.startsWith("ship_") ? shpSortValue(i, c) : c === "early_pickup_date" ? earlyPickupShown(i) : c === "planejador" ? getPlanejador(i) : i[c]),
+  render: () => renderTable() };
+COLF.shp = { sel: "#shpTable", state: {}, base: c => colfPass("shp", shpBaseRows(false), c),
+  val: (r, c) => c === "planejador" ? (r.planejador || "Sin asignar") : colfStr(r[c]), render: () => renderShipmentsView() };
+COLF.raw = { sel: "#rawModalBody table", state: {}, base: c => rawFilteredItems(c), val: (r, c) => colfStr(r[c]), render: () => renderRawTable() };
+COLF.dpd = { sel: "#dashPastDueTable", state: {}, base: c => colfPass("dpd", dpdAllItems, c), val: dpdVal, render: () => renderDashPastDueTable() };
+colfAttach("cpl");
 
 // ---------- Aba Shipments + colunas resumo da Tabela (2026-10-20, SOMENTE LEITURA) ----------
 // Fonte: shipments_cb_3e.json (Task generate_shipments do Job wmf_cscn_dashboard_cb_3e), 1 linha por
@@ -3621,7 +3685,7 @@ function renderShipmentsView() {
     shpDivFilter ? `<span class="filter-chip">Divergencias manual × P44 <button onclick="shpDivFilter=false;renderShipmentsView()">✕</button></span>` : "",
   ].join(" ");
 
-  const rows = [...shpBaseRows(false)].sort((a, b) => {
+  const rows = [...colfPass("shp", shpBaseRows(false))].sort((a, b) => {
     if (shpSortCol) {
       const av = shpSortVal(a, shpSortCol), bv = shpSortVal(b, shpSortCol);
       const c = (typeof av === "number" && typeof bv === "number") ? av - bv : String(av).localeCompare(String(bv));
@@ -3641,6 +3705,7 @@ function renderShipmentsView() {
       renderShipmentsView();
     };
   });
+  colfAttach("shp");
   shpLastRows = rows;
   document.getElementById("shpBody").innerHTML = rows.map(r => `<tr>${SHP_COLS.map(c => shpCell(r, c.key)).join("")}</tr>`).join("");
   document.getElementById("shpTableEmpty").style.display = rows.length ? "none" : "block";
@@ -3675,6 +3740,7 @@ document.getElementById("btnShpClear").onclick = () => {
   shpEstadoFilter = "";
   shpDivFilter = false;
   shpUrgFilter = false;
+  colfClear("shp");
   renderShipmentsView();
 };
 document.getElementById("btnShpReload").onclick = () => loadShipmentsData(true);
@@ -4173,13 +4239,14 @@ async function openRawModal() {
   renderRawTable();
 }
 
-function rawFilteredItems() {
+function rawFilteredItems(exclCol) {
   const wantedPlant = plant === "cb" ? "CB" : "3E";
   let items = (rawLinesCache || []).filter(r => r.plant_code === wantedPlant && itemPlanta(r) === plantaDest);
   const pnQ = document.getElementById("rawSearchPn").value.trim().toLowerCase();
   const supQ = document.getElementById("rawSearchSupplier").value.trim().toLowerCase();
   if (pnQ) items = items.filter(r => String(r.part_number || "").toLowerCase().includes(pnQ));
   if (supQ) items = items.filter(r => String(r.supp_name || "").toLowerCase().includes(supQ) || String(r.supplier_code || "").toLowerCase().includes(supQ));
+  items = colfPass("raw", items, exclCol);
   if (rawSortCol) {
     items = [...items].sort((a, b) => {
       const av = a[rawSortCol] ?? "", bv = b[rawSortCol] ?? "";
@@ -4206,6 +4273,7 @@ function renderRawTable() {
     <table><thead><tr>${headHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>
     ${items.length === 0 ? '<div class="empty-state">Ningun registro encontrado.</div>' : ""}
   `;
+  colfAttach("raw");
   document.querySelectorAll("#rawModalBody th[data-col]").forEach(th => {
     th.onclick = () => {
       const col = th.dataset.col;
