@@ -2647,8 +2647,15 @@ function applyPlantaUi() {
   document.body.classList.toggle("dest-ro", !cb);
   const b3 = document.querySelector('#plantSwitch button[data-plant="3e"]');
   const bc = document.querySelector('#plantSwitch button[data-plant="cb"]');
-  b3.textContent = cb ? "Planta 3E" : `Lado WMF — ${nome}`;
-  bc.textContent = cb ? "Planta CB" : `Lado cliente — ${nome}`;
+  // nome por papel + codigo CSCN de cada lado entre parenteses (Cordoba 3E/CB, Harbin 2M/HR, Pune 3M/PN...)
+  const pmL = plantsMeta.find(p => p.codigo === plantaDest) || {};
+  const LADOS = { B1CB: ["3E", "CB"], B1HR: ["2M", "HR"], B1PN: ["3M", "PN"], B1CX: ["", "CX"] };
+  const lw = pmL.codigo_wmf !== undefined ? pmL.codigo_wmf : (LADOS[plantaDest] || ["", ""])[0];
+  const lc = pmL.codigo_cliente !== undefined ? pmL.codigo_cliente : ((LADOS[plantaDest] || [])[1] || plantaDest.replace(/^B1/, ""));
+  b3.textContent = "WMF → Proveedor" + (lw ? ` (${lw})` : "");
+  bc.textContent = "Planta → WMFBR" + (lc ? ` (${lc})` : "");
+  b3.title = `Lado WMF: WMF Brasil comprando do proveedor${lw ? ` (${lw})` : ""}`;
+  bc.title = `Lado cliente: ${nome} pedindo ao WMFBR${lc ? ` (${lc})` : ""}`;
   const sel = document.getElementById("plantaSelect");
   if (sel) sel.value = plantaDest;
   const csel = document.getElementById("cplPlantaSelect");
