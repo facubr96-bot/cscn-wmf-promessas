@@ -1,0 +1,21 @@
+{
+  "supplier_code": "BDC32",
+  "semana": "2026-W48",
+  "itens": [
+    {
+      "part_number": "86988833",
+      "data_promessa": "30/11/2026",
+      "qty_prometida": 300,
+      "entrega_confirmada": false,
+      "data_coleta": "",
+      "nfe_enviada": "",
+      "qty_confirmada": null,
+      "previsao_saida_wmfbr": "",
+      "motivo_atraso": "",
+      "escalation_level": "",
+      "data_real_completed": "06/07/2026",
+      "comentario": ""
+    }
+  ],
+  "recibido_en_worker": "2026-11-25T18:49:09.048Z"
+}
