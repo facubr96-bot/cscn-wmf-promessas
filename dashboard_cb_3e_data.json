@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/11/2026 13:03",
+  "generated_at": "26/11/2026 13:23",
   "today": "26/11/2026",
   "total_pn": 1956,
   "erp_release_cb": "20261118",
@@ -38018,8 +38018,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "136355",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "136372",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 20.0,
       "ultima_nfe_emitida_unidad": "UN",
       "planejador": "Titon Facundo"
