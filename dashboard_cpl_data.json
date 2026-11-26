@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/11/2026 09:01",
+  "generated_at": "26/11/2026 09:21",
   "today": "26/11/2026",
   "total": 461,
   "items": [
@@ -7820,7 +7820,7 @@
       "pn": "92074204",
       "supplier_code": "DYY59",
       "supplier_name": "IDEAL MECANICA DE PRECISAO LTDA",
-      "stock_wmf": null,
+      "stock_wmf": 56.0,
       "qty_transito": null,
       "qty_min": 88.0,
       "criticidad": "Critico",
