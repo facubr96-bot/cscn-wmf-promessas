@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/11/2026 10:44",
+  "generated_at": "26/11/2026 11:03",
   "today": "26/11/2026",
   "total_pn": 1956,
   "erp_release_cb": "20261118",
@@ -21757,8 +21757,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "140589",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "140592",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 60.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -49909,8 +49909,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "140589",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "140592",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 431.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -55121,8 +55121,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "140589",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "140592",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 50.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -100784,8 +100784,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "140589",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "140592",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 100.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
@@ -115106,8 +115106,8 @@
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
-      "ultima_nfe_emitida_num": "140589",
-      "ultima_nfe_emitida_fecha": "25/11/2026",
+      "ultima_nfe_emitida_num": "140592",
+      "ultima_nfe_emitida_fecha": "26/11/2026",
       "ultima_nfe_emitida_qty": 433.0,
       "ultima_nfe_emitida_unidad": "PC",
       "planejador": "Vivian Strelow"
