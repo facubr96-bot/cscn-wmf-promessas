@@ -1,5 +1,5 @@
 {
-  "generated_at": "26/11/2026 20:44",
+  "generated_at": "26/11/2026 21:03",
   "today": "26/11/2026",
   "total_pn": 1956,
   "erp_release_cb": "20261118",
@@ -23872,8 +23872,7 @@
         "61702",
         "61105",
         "60524",
-        "60364",
-        "60275"
+        "60364"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -23938,8 +23937,7 @@
         "61560",
         "61105",
         "60524",
-        "60364",
-        "60275"
+        "60364"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -36578,8 +36576,7 @@
         "64580",
         "64000",
         "63933",
-        "63763",
-        "63715"
+        "63763"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -37014,8 +37011,7 @@
         "64580",
         "64193",
         "64000",
-        "63933",
-        "63715"
+        "63933"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -47133,8 +47129,7 @@
         "216609",
         "216134",
         "211269",
-        "211207",
-        "211158"
+        "211207"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -49970,8 +49965,7 @@
         "735612",
         "710079",
         "709786",
-        "709198",
-        "709047"
+        "709198"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -56307,8 +56301,7 @@
       "ultima_nfe_3e": "000651532-000",
       "ultima_nfe_3e_origem": "SAP",
       "nfe_recebidas_3e": [
-        "651532",
-        "620872"
+        "651532"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -61638,8 +61631,7 @@
       "ultima_nfe_3e": "000105736-001",
       "ultima_nfe_3e_origem": "3E",
       "nfe_recebidas_3e": [
-        "105736",
-        "105352"
+        "105736"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -64149,8 +64141,7 @@
         "718071",
         "713646",
         "710335",
-        "710078",
-        "709046"
+        "710078"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
@@ -106377,8 +106368,7 @@
       "nfe_recebidas_3e": [
         "65674",
         "65196",
-        "64916",
-        "63715"
+        "64916"
       ],
       "fornecedor_novo": false,
       "fornecedor_anterior": "",
